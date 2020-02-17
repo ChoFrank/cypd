@@ -2,9 +2,11 @@
     "name": "cypd",
     "version": "1.0.0",
     "description": "CYP React Component Design",
+    "files": ["build"],
     "main": "build/index.js",
     "module": "build/index.es.js",
     "jsnext:main": "build/index.es.js",
+    "typings": "build/index.d.ts",
     "scripts": {
         "build": "rollup -c",
         "lint": "standard",
@@ -15,6 +17,9 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ChoFrank/cypd.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
     },
     "author": "ChoFrank <cho821130@gmail.com>",
     "license": "ISC",
@@ -28,8 +33,8 @@
         "@types/react-dom": "^16.9.5",
         "@types/react-router-dom": "^5.1.3",
         "jest": "^24.9.0",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
+        "react": "16",
+        "react-dom": "16",
         "react-router-dom": "^5.1.2",
         "rollup": "^1.27.13",
         "rollup-plugin-commonjs": "^10.1.0",
