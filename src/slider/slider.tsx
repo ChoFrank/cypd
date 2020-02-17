@@ -1,0 +1,183 @@
+import React, { CSSProperties } from 'react';
+
+import { Tooltip } from '../index';
+
+
+type SlideProps = {
+    value: number,
+    min: number,
+    max: number,
+    step: number,
+    className: string,
+    style: CSSProperties,
+    onChange: (value: number) => void,
+    onAfterChange: (value: number) => void,
+    disabled: boolean,
+}
+
+type SlideState = {
+    value: number;
+    min: number;
+    max: number;
+    step: number;
+    prevProps: Partial<SlideProps>;
+    pressSta?: boolean;
+}
+
+const props_proc = (props: Partial<SlideProps>): SlideState => {
+    var { value, min, max, step } = props;
+    min = min ? min : 0;
+    max = max ? max : 100;
+    step = step ? step : 1;
+    value = value ? value : min;
+    value = (value < min) ? min : value;
+    value = (value > max) ? max : value;
+    return { value, min, max, step, prevProps: { ...props } };
+}
+
+const cssDragWidth = parseInt(getComputedStyle(document.body).getPropertyValue("--default-slider-drag-width").replace('px', ''));
+
+export default class Slider extends React.Component<Partial<SlideProps>> {
+    state: SlideState;
+    trackElem?: HTMLDivElement;
+    dragElem?: HTMLDivElement;
+    origX?: string;
+    origM?: string;
+    prevR?: number;
+    tempR?: number;
+    constructor(props: Partial<SlideProps>) {
+        super(props);
+        this.state = props_proc(this.props);
+    }
+    componentDidMount() {
+        this.forceUpdate();
+    }
+    static getDerivedStateFromProps(nextProps: Partial<SlideProps>, prevState: SlideState) {
+        const { prevProps } = prevState;
+        if (!prevState.pressSta && (nextProps.value !== prevProps.value || nextProps.min !== prevProps.min ||
+            nextProps.max !== prevProps.max || nextProps.step !== prevProps.step)) {
+            return props_proc(nextProps);
+        } else if (!prevState.pressSta && (nextProps.value !== prevState.value || nextProps.min !== prevState.min ||
+            nextProps.max !== prevState.max || nextProps.step !== prevState.step)) {
+            return props_proc(nextProps);
+        } else {
+            return null;
+        }
+    }
+    clearTemp = () => {
+        this.origX = undefined;
+        this.origM = undefined;
+        this.tempR = undefined;
+    }
+    handleDrag = (ev: MouseEvent) => {
+        const { step, max, min } = this.state;
+        if (this.dragElem && this.trackElem && this.origX && this.origM) {
+            const drag_w_p = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
+            const track_w = this.trackElem.offsetWidth ? this.trackElem.offsetWidth : 1; // avoid zero divide
+            const orig_px = parseInt(this.origX);
+            const orig_p = parseFloat(this.origM);
+            const dist_x = ev.clientX - orig_px;
+            const offset_bound_p = 100 - (drag_w_p * 100 / track_w);
+            const offset_x_p = (dist_x * offset_bound_p / track_w);
+            const offset_temp_p = orig_p + offset_x_p;
+            if (offset_temp_p < 0) {
+                this.tempR = min;
+            } else if (offset_temp_p > offset_bound_p) {
+                this.tempR = max;
+            } else {
+                const temp = Math.floor((max - min) * (offset_temp_p / offset_bound_p) / step);
+                this.tempR = parseFloat((min + temp * step).toFixed(10));
+            }
+            if (this.prevR !== this.tempR) {
+                this.prevR = this.tempR;
+                this.setState({ value: this.tempR });
+                if (this.props.onChange) this.props.onChange(this.tempR);
+            }
+        }
+    }
+    handleDragMouseUp = () => {
+        if (this.props.onAfterChange && this.tempR) this.props.onAfterChange(this.tempR);
+        this.clearTemp();
+        document.body.style.userSelect = 'auto';
+        document.removeEventListener('mousemove', this.handleDrag, false);
+        document.removeEventListener('mouseup', this.handleDragMouseUp, false);
+        this.setState({ pressSta: false });
+    }
+    handleDragMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (this.props.disabled) { return; }
+        event.stopPropagation();
+        if (this.dragElem && this.dragElem.style.left) {
+            this.origX = event.clientX.toString();
+            this.origM = this.dragElem.style.left.replace('%', '');
+        }
+        document.body.style.userSelect = 'none';
+        document.addEventListener('mousemove', this.handleDrag, false);
+        document.addEventListener('mouseup', this.handleDragMouseUp, false);
+        this.setState({ pressSta: true });
+    }
+    handleTrackMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        if (this.props.disabled) { return; }
+        if (this.trackElem) {
+            const { step, max, min } = this.state;
+            const { offsetWidth } = this.trackElem;
+            const offset_temp_p = (event.clientX - this.trackElem.getBoundingClientRect().left) * 100 / offsetWidth;
+            const press_v = parseFloat((min + Math.round((max - min) * (offset_temp_p / 100) / step) * step).toFixed(10));
+            if (this.prevR !== press_v) {
+                this.setState({value: press_v}, () => { this.prevR = press_v; });
+                if (this.props.onChange) this.props.onChange(press_v);
+                if (this.props.onAfterChange) this.props.onAfterChange(press_v);
+            }
+        }
+    }
+    render() {
+        const { value, min, max, pressSta } = this.state
+        var containerClass = 'cypd-slider-container';
+        var wrapperClass = 'cypd-slider-wrapper';
+        var trackClass = 'cypd-slider-track';
+        var pointClass = 'cypd-slider-point';
+        var rangeClass = 'cypd-slider-range';
+        var draw, offset_p = 0;
+        // var offset_bound_p = 0;
+        // if (this.trackElem) {
+        //     const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
+        //     const track_w = this.trackElem.offsetWidth ? this.trackElem.offsetWidth : 1; // avoid zero divide
+        //     offset_bound_p = 100 - (drag_w_px * 100 / track_w);
+        //     offset_p = ((value - min) * offset_bound_p) / (max - min);
+        //     draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
+        //         <path d={`M0 ${drag_w_px / 2} H 3000`}/>
+        //     </svg>);
+        // }
+        const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
+        offset_p = ((value - min) * 100) / (max - min);
+        draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
+            <path d={`M0 ${drag_w_px / 2} H 3000`}/>
+        </svg>);
+        if (this.props.className)
+            containerClass += ` ${this.props.className}`;
+        if (this.props.disabled)
+            containerClass += ` disabled`;
+        if (!!pressSta) {
+            pointClass += ' active';
+            trackClass += ' active'
+        }
+        return (
+            <div className={containerClass} style={this.props.style}>
+                <div className={wrapperClass}>
+                    <div className={trackClass} ref={(node) => { if (node) this.trackElem = node; }} onMouseDown={this.handleTrackMouseDown}>
+                        {draw}
+                        <div
+                            ref={(node) => { if (node) this.dragElem = node; }}
+                            className={pointClass + ' drag'}
+                            style={{ left: `${offset_p}%` }}
+                            onMouseDown={this.handleDragMouseDown}
+                        >
+                            <Tooltip text={value.toString()} direction='top' open={!!pressSta}>
+                                <div style={{ width: `${cssDragWidth}px`, height: `${cssDragWidth}px` }} />
+                            </Tooltip>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+};

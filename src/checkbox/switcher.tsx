@@ -1,0 +1,27 @@
+import React, { CSSProperties } from 'react';
+
+
+type SwitchButtonProps = {
+    // label: string,
+    checked: boolean,
+    disabled: boolean,
+    className: string,
+    style: CSSProperties,
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
+    render() {
+        var wrapperClass = 'cypd-switchbutton-wrapper';
+        if (this.props.className)
+            wrapperClass += ` ${this.props.className}`;
+        if (this.props.disabled)
+            wrapperClass += ` disabled`;
+        return (
+            <label className={wrapperClass} style={this.props.style}>
+                <input type='checkbox' disabled={this.props.disabled} checked={this.props.checked} onChange={this.props.onChange}/>
+                <div className='cypd-switchbutton'/>
+            </label>
+        );
+    }
+};
