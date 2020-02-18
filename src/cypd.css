@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-html {
-    visibility: visible;
-}
-
 * {
     box-sizing: border-box;
     font-family: "Open Sans", sans-serif;
@@ -2205,4 +2201,8 @@ button.react-calendar__century-view__decades__decade {
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+html {
+    visibility: visible;
 }
