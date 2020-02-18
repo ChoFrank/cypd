@@ -1826,9 +1826,9 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-slider-range {
-    position: absolute;
+    /* position: absolute; */
     overflow: visible;
-    height: var(--default-slider-drag-width);
+    height: 5px;
 }
 
 .cypd-slider-range path {

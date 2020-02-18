@@ -29,7 +29,6 @@ export default {
       rollupCommonJSResolveHack: true,
       exclude: [
         '**/__tests__/**',
-        'src/index.tsx'
       ],
       clean: true
     }),

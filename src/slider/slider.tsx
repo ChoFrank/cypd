@@ -147,10 +147,10 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         //         <path d={`M0 ${drag_w_px / 2} H 3000`}/>
         //     </svg>);
         // }
-        const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
+        // const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
         offset_p = ((value - min) * 100) / (max - min);
         draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
-            <path d={`M0 ${drag_w_px / 2} H 3000`}/>
+            <path d={`M2.5 2.5 H 3000`}/>
         </svg>);
         if (this.props.className)
             containerClass += ` ${this.props.className}`;
