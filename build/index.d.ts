@@ -1,3 +1,4 @@
+import './cypd.css';
 import Select, { Option } from './select/component';
 export { default as Icon } from './icon/component';
 export { default as Modal } from './modal/modal';

@@ -1,3 +1,4 @@
+import './cypd.css'
 import Select, { Option } from './select/component';
 
 

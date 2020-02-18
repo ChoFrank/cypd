@@ -33,7 +33,7 @@ export default {
       clean: true
     }),
     postcss({
-        plugins: []
+        extensions: ['.css']
     }),
     commonjs({
       include: ['node_modules/**'],

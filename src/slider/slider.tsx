@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 
-import { Tooltip } from '../index';
+import Tooltip from '../tooltip/component';
 
 
 type SlideProps = {
