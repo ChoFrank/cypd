@@ -5,6 +5,7 @@ declare type CheckBoxProps = {
     disabled: boolean;
     className: string;
     style: CSSProperties;
+    readOnly: boolean;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 export default class CheckBox extends React.Component<Partial<CheckBoxProps>> {

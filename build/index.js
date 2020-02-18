@@ -8122,7 +8122,7 @@ var CheckBox = /** @class */ (function (_super) {
         if (this.props.disabled)
             wrapperClass += " disabled";
         return (react.createElement("label", { className: wrapperClass, style: this.props.style },
-            react.createElement("input", { type: 'checkbox', checked: this.props.checked, disabled: this.props.disabled, onChange: this.props.onChange }),
+            react.createElement("input", { type: 'checkbox', checked: this.props.checked, disabled: this.props.disabled, onChange: this.props.onChange, readOnly: this.props.readOnly }),
             react.createElement("span", { className: 'cypd-checkbox' }),
             react.createElement("span", null, this.props.label)));
     };
@@ -8141,7 +8141,7 @@ var SwitchButton = /** @class */ (function (_super) {
         if (this.props.disabled)
             wrapperClass += " disabled";
         return (react.createElement("label", { className: wrapperClass, style: this.props.style },
-            react.createElement("input", { type: 'checkbox', disabled: this.props.disabled, checked: this.props.checked, onChange: this.props.onChange }),
+            react.createElement("input", { type: 'checkbox', disabled: this.props.disabled, checked: this.props.checked, onChange: this.props.onChange, readOnly: this.props.readOnly }),
             react.createElement("div", { className: 'cypd-switchbutton' })));
     };
     return SwitchButton;

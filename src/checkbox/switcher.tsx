@@ -7,6 +7,7 @@ type SwitchButtonProps = {
     disabled: boolean,
     className: string,
     style: CSSProperties,
+    readOnly: boolean,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -19,7 +20,7 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
             wrapperClass += ` disabled`;
         return (
             <label className={wrapperClass} style={this.props.style}>
-                <input type='checkbox' disabled={this.props.disabled} checked={this.props.checked} onChange={this.props.onChange}/>
+                <input type='checkbox' disabled={this.props.disabled} checked={this.props.checked} onChange={this.props.onChange} readOnly={this.props.readOnly}/>
                 <div className='cypd-switchbutton'/>
             </label>
         );
