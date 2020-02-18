@@ -2,7 +2,9 @@
     "name": "cypd",
     "version": "1.0.0",
     "description": "CYP React Component Design",
-    "files": ["build"],
+    "files": [
+        "build"
+    ],
     "main": "build/index.js",
     "module": "build/index.es.js",
     "jsnext:main": "build/index.es.js",
@@ -40,6 +42,7 @@
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
         "rollup-plugin-peer-deps-external": "^2.2.0",
+        "rollup-plugin-postcss": "^2.0.6",
         "rollup-plugin-typescript2": "^0.25.3",
         "standard": "^14.3.1",
         "standard-prettier": "^1.0.1",
@@ -57,7 +60,6 @@
         ]
     },
     "dependencies": {
-        "react-calendar": "^2.19.2",
-        "react-draggable": "^4.2.0"
+        "react-calendar": "^2.19.2"
     }
 }
