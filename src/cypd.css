@@ -1820,6 +1820,10 @@ svg.cypd-icon:not([class*='fc-']) * {
     cursor: not-allowed;
 }
 
+.cypd-slider-point.drag .cypd-tooltip-wrapper {
+    display: flex !important;
+}
+
 .cypd-slider-point.drag .cypd-tooltip {
     width: auto;
     transition-delay: 0ms;
