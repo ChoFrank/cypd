@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react';
 declare type HrefProps = {
-    to: string;
-    external?: boolean;
+    to: string | (() => void);
     className?: string;
     style?: CSSProperties;
 };
