@@ -13,7 +13,9 @@
         "build": "rollup -c",
         "lint": "standard",
         "format": "prettier-standard --format",
-        "test": "jest --coverage"
+        "test": "jest --coverage",
+        "start": "react-scripts start",
+        "eject": "react-scripts eject"
     },
     "keywords": [],
     "repository": {
@@ -36,6 +38,7 @@
         "jest": "^24.9.0",
         "react": "16",
         "react-dom": "16",
+        "react-scripts": "^3.4.0",
         "rollup": "^1.27.13",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-node-resolve": "^5.2.0",
@@ -59,5 +62,17 @@
     },
     "dependencies": {
         "react-calendar": "^2.19.2"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
     }
 }

@@ -28,7 +28,8 @@ export default {
     typescript({
       rollupCommonJSResolveHack: true,
       exclude: [
-        '**/__tests__/**'
+        '**/__tests__/**',
+        'src/index.tsx'
       ],
       clean: true
     }),
