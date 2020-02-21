@@ -2158,7 +2158,7 @@ button.react-calendar__century-view__decades__decade {
 
 #g__cypd_notify_window .cypd-notify-container .icon {
     overflow: visible;
-    width: 25px;
+    min-width: 25px;
     height: 25px;
     left: 15px;
     border-radius: 50%;
@@ -2191,6 +2191,7 @@ button.react-calendar__century-view__decades__decade {
     flex-grow: 10;
     margin-left: 20px;
     margin-right: 15px;
+    width: 240px;
 }
 
 #g__cypd_notify_window .cypd-notify-container .content .title {
@@ -2199,11 +2200,14 @@ button.react-calendar__century-view__decades__decade {
 
 #g__cypd_notify_window .cypd-notify-container .content .message {
     margin-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 #g__cypd_notify_window .cypd-notify-container .remove {
     overflow: visible;
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     cursor: pointer;
 }
