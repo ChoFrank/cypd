@@ -1808,6 +1808,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     border-radius: 50%;
     cursor: pointer;
     z-index: 1;
+    transform: translateX(var(--default-slider-drag-width) / 2);
     transition: border-color var(--default-transition-duration), box-shadow var(--default-transition-duration);
 }
 
