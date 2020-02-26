@@ -63,7 +63,7 @@ const notify = (options: NotificationArgs) => {
             onRemove={() => { removeBlock(block); }}
         />
     , block);
-    auto_timeout = setTimeout(() => { removeBlock(block); }, (timeout?timeout:5000));
+    auto_timeout = global.setTimeout(() => { removeBlock(block); }, (timeout?timeout:5000));
 }
 
 export default notify;

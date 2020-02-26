@@ -340,6 +340,7 @@ body {
     display: table-cell;
     vertical-align: middle;
     line-height: 100%;
+    text-align: center;
     transition: transform 100ms ease-in-out;
 }
 
