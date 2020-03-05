@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Table, Icon, Input, Button, Select, DateTime, Checkbox, Option, RadioGroup, SwitchButton, Notify, Slider } from './src';
 
 class App extends React.Component {
-    triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.', type: 'success', timeout: 1000000 }); }
+    triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.........................................................................................', type: 'success', timeout: 1000000 }); }
     triggerWarningDemo() { Notify({ title: 'Warning', context: 'This is a Warning notification demo.', type: 'warning' }); }
     triggerInfoDemo() { Notify({ title: 'Info', context: 'This is a Info notification demo.', type: 'info' }); }
     triggerErrorDemo() { Notify({ title: 'Error', context: 'This is a Error notification demo.', type: 'error' }); }

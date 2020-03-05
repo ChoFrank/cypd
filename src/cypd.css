@@ -1901,9 +1901,8 @@ button.react-calendar__century-view__decades__decade {
 
 #g__cypd_notify_window .cypd-notify-container .content .message {
     margin-top: 5px;
-    /* overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; */
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 #g__cypd_notify_window .cypd-notify-container .remove {
