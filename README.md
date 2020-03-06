@@ -15,6 +15,11 @@ npm install --save https://github.com/ChoFrank/cypd.git
 ```
 npm update cypd
 ```
+Update to speific version
+```
+npm install --save https://github.com/ChoFrank/cypd.git#${commit}
+# commit fillin version number
+```
 
 ## 3. Example
 
