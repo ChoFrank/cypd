@@ -147,6 +147,11 @@ const sissors = (props: SVGProps) => ([
     <path key={`11_${props.svgId}`} fill='white' stroke='none' d="M 6.632812 7.019531 C 6.53125 7.019531 6.433594 6.953125 6.398438 6.859375 C 6.359375 6.757812 6.386719 6.644531 6.46875 6.574219 C 6.550781 6.503906 6.671875 6.496094 6.761719 6.550781 C 6.851562 6.605469 6.898438 6.714844 6.878906 6.816406 C 6.855469 6.929688 6.75 7.019531 6.632812 7.019531 Z M 6.632812 7.019531 "/>,
 ]);
 
+const _import = (props: SVGProps) => ([
+    <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M2 8 12 8 M8 4 12 8 8 12' fill='none'/>,
+    <path key={`2_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M0 4 0 0 16 0 16 16 0 16 0 12' fill='none'/>,
+]);
+
 const download = (props: SVGProps) => ([
     <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M8 2 8 12 M4 8 8 12 12 8' fill='none'/>,
     <path key={`2_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M1 12 1 16 15 16 15 12' fill='none'/>,
@@ -308,6 +313,7 @@ const TYPE_ICON_DRAW_INDEX: { [s: string]: {
     'senario': { className: 'senario', generator: Senario },
     'scissors': { className: 'scissors', generator: sissors },
     'cancel': { className: 'cancel', generator: cancel },
+    'import': { className: 'import', generator: _import },
     'download': { className: 'download', generator: download },
     'upload': { className: 'upload', generator: upload },
 }

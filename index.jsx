@@ -29,7 +29,7 @@ class App extends React.Component {
                         [<Icon type='led-red' />,<Input size='small' placeholder='sample input' style={{width: '75%'}} />,<Select value='' onChange={() => {}} style={{width: '75%'}} size='small'>{sampleOptions}</Select>,'4'],
                         [<Icon type='led-red' />,<Button type='primary' size='small' icon='edit'>Nickname</Button>,<Button size='small'>IP addr</Button>,<Button icon='square-minus' type='danger' size='small'>gateway</Button>],
                         [<Icon type='led-red' />,<Button type='primary' icon='edit'>Nickname</Button>,<Button>IP addr</Button>,<Button icon='square-minus' type='danger'>gateway</Button>],
-                        [<Icon type='led-red' />,<Button type='primary' icon='edit' />,<Button icon='square-plus'/>,<Button icon='square-minus' type='danger'/>],
+                        [<Icon type='led-red' />,<Button type='primary' icon='import' />,<Button icon='square-plus'/>,<Button icon='square-minus' type='danger'/>],
                         [<Icon type='loading' />,<Button type='primary' icon='save' size='small' />,<Button icon='square-plus' size='small'/>,<Button icon='square-minus' type='danger' size='small'/>],
                         [<Slider />],
                     ]}
