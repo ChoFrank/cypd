@@ -12,7 +12,7 @@ declare global {
 type OptionProps = {
     value: string | number,
     disabled?: boolean,
-    selected?: boolean,
+    __selected?: boolean,
     __name?: string,
 }
 
@@ -36,12 +36,12 @@ window.__cypd_select_on_change = (window.__cypd_select_on_change) ? window.__cyp
 
 export class Option extends React.Component<OptionProps> {
     render() {
-        const { value, disabled, selected, __name } = this.props;
+        const { value, disabled, __selected, __name } = this.props;
         var optionClass = 'cypd-option';
         if (disabled)
             optionClass += ' disabled';
         return <div className={optionClass}>
-            <input id={`${__name}_${value}`} value={value.toString()} name={__name} type='radio' checked={selected} onChange={(e) => { if (__name) window.__cypd_select_on_change[__name](e.target.value); }}/>
+            <input id={`${__name}_${value}`} value={value.toString()} name={__name} type='radio' checked={__selected} onChange={(e) => { if (__name) window.__cypd_select_on_change[__name](e.target.value); }}/>
             <label htmlFor={`${__name}_${value}`}>{this.props.children}</label>
         </div>
     }
@@ -121,7 +121,7 @@ export default class Select extends React.Component<SelectProps> {
                     React.Children.map(this.props.children, (child, idx) => {
                         if (React.isValidElement(child) && child.type === Option) {
                             this.scrollIndex = (this.props.value === child.props.value) ? idx : this.scrollIndex;
-                            return React.cloneElement(child, { selected: (`${this.props.value}` === `${child.props.value}`), __name: this.selectId });
+                            return React.cloneElement(child, { __selected: (`${this.props.value}` === `${child.props.value}`), __name: this.selectId });
                         }
                         else 
                             return child;

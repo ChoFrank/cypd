@@ -10,7 +10,7 @@ declare global {
 declare type OptionProps = {
     value: string | number;
     disabled?: boolean;
-    selected?: boolean;
+    __selected?: boolean;
     __name?: string;
 };
 declare type SelectProps = {

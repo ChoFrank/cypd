@@ -3,7 +3,6 @@ interface IconProps {
     type: string;
     className?: string;
     style?: React.CSSProperties;
-    viewBox?: string;
     color?: string;
     onClick?: (event: React.MouseEvent) => void;
 }

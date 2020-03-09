@@ -750,7 +750,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 5px 0px 5px;
     border-radius: 4px;
     cursor: pointer;
     height: 32px;
@@ -769,8 +769,13 @@ svg.cypd-icon:not([class*='fc-']) * {
     border-radius: calc(var(--default-select-small-height) / 2);
 }
 
+.cypd-button.small {
+    padding: 1px 5px 0px 5px;
+}
+
 .cypd-button.no-content {
     width: var(--default-select-normal-height);
+    padding: 0px 10px 0px 10px;
 }
 
 .cypd-button.small.no-content {
@@ -851,6 +856,10 @@ svg.cypd-icon:not([class*='fc-']) * {
 
 .cypd-button.no-content span>* {
     margin-right: 0px;
+}
+
+.cypd-button:not(.no-content) span.hasicon {
+    margin-right: 3px;
 }
 
 .cypd-button .cypd-icon-wrapper {
