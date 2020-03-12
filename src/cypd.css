@@ -1565,7 +1565,8 @@ svg.cypd-icon:not([class*='fc-']) * {
     margin-right: 5px;
 }
 
-.cypd-formitem-wrapper>*:not(.cypd-formitem-label) {
+.cypd-formitem-wrapper>.cypd-select-wrapper,
+.cypd-formitem-wrapper>.cypd-input {
     flex-grow: 10;
 }
 
