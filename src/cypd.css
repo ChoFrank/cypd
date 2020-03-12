@@ -446,9 +446,8 @@ body {
 /* cypd href */
 
 .cypd-href {
+    display: inline;
     color: var(--default-cyp-blue-hover);
-    height: var(--default-small-height);
-    line-height: var(--default-small-height);
     cursor: pointer;
 }
 
