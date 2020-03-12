@@ -1365,6 +1365,8 @@ svg.cypd-icon:not([class*='fc-']) * {
     border-radius: 3px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);
     opacity: 0;
+    z-index: 41;
+    visibility: hidden;
     transition: opacity var(--default-transition-duration);
 }
 
