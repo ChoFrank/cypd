@@ -243,7 +243,7 @@ body {
     .column.left {
         position: absolute;
         z-index: 21;
-        height: 100%;
+        height: calc(100% - var(--default-header-height) - var(--default-nav-height));
     }
     .column .collapser {
         top: calc(100% - var(--default-header-height) - var(--default-nav-height) - 90px);
