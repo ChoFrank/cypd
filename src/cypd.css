@@ -41,8 +41,6 @@ body {
     --default-cyp-blue-opa-light: #00839E2F;
     --default-cyp-blue-opa-medium: #00839E7F;
     --default-cyp-blue-opa-deep: #00839EAF;
-    --default-app-min-height: 642px;
-    --default-app-min-width: 600px;
     --default-header-height: 60px;
     --default-nav-height: 40px;
     --default-footer-height: 0px;
@@ -86,14 +84,6 @@ body {
 
 
 /* cypd general */
-
-.App {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    min-height: var(--default-app-min-height);
-    min-height: var(--default-app-min-width);
-}
 
 [class^='cypd-'].small {
     height: var(--default-small-height);
@@ -139,7 +129,6 @@ body {
 .cypd-layout-navigation {
     background-color: var(--default-cyp-blue-active);
     height: var(--default-nav-height);
-    min-width: var(--default-app-min-width);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -149,7 +138,6 @@ body {
 .cypd-layout-content {
     display: flex;
     flex-direction: row;
-    min-width: var(--default-app-min-width);
     height: var(--default-content-height);
 }
 
@@ -1327,7 +1315,6 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-layout-navigation .cypd-tree-element .self {
-    width: 120px;
     padding: 0px 10px 0px 10px;
 }
 
