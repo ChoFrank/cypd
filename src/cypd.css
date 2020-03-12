@@ -240,10 +240,15 @@ body {
 }
 
 @media (max-width: 800px) {
-    .column.left {
+    .column {
         position: absolute;
-        z-index: 21;
         height: calc(100% - var(--default-header-height) - var(--default-nav-height));
+    }
+    .column.left {
+        z-index: 21;
+    }
+    .column.middle {
+        width: 100%;
     }
     .column .collapser {
         top: calc(100% - var(--default-header-height) - var(--default-nav-height) - 90px);
