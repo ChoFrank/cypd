@@ -106,7 +106,7 @@ export default class Table extends React.Component<TableProps> {
         const showRows = rows.map((row, ridx) => {
             if (pagination && (ridx < startRow || ridx >= endRow))
                 return null;
-            const cols = row.map((elem, cidx) => <div className='cell' key={'ctc'+cidx}>{elem}</div>).filter((_v, idx) => idx < headers.length);
+            const cols = row.map((elem, cidx) => <div className='cell' key={'ctc'+cidx}><div className='cell-wrapper'>{elem}</div></div>).filter((_v, idx) => idx < headers.length);
             return <div className='row normal' key={'ctr'+ridx}>{cols}</div>;
         }).filter(node => node);
         var wrapperClass = 'table-wrapper';
