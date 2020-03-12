@@ -18,11 +18,7 @@ window.layout = {};
 interface SiderProps {
     direction?: 'left' | 'right',
     visible?: boolean,
-    onCollapse?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void,
-}
-
-interface CenterProps {
-    extend: CenterExtendType
+    onCollapse?: (visible: boolean) => void,
 }
 
 class Header extends React.Component {
@@ -48,24 +44,27 @@ class Navigation extends React.Component {
 class Sider extends React.Component<SiderProps> {
     container?: HTMLDivElement | null;
     render() {
+        const { visible, onCollapse } = this.props;
         const direction = this.props.direction ? this.props.direction : 'left';
         if (direction === 'left')
-            window.layout.leftSideStatus = (this.props.visible) ? 'extend' : 'collapsed';
+            window.layout.leftSideStatus = (visible) ? 'extend' : 'collapsed';
         else
-            window.layout.rightSideStatus = (this.props.visible) ? 'extend' : 'collapsed';
+            window.layout.rightSideStatus = (visible) ? 'extend' : 'collapsed';
         return (
-            <div className={'column ' + direction + (this.props.visible ? ' visible' : '')} ref={(e) => { this.container = e; }}>
-                {this.props.onCollapse ? <div className='collapser' onClick={this.props.onCollapse} /> : undefined}
+            <div className={'column ' + direction + (visible ? ' visible' : '')} ref={(e) => { this.container = e; }}>
+                {onCollapse ? <label className='collapser'>
+                    <input style={{ visibility: 'hidden' }} type='checkbox' checked={(typeof visible === 'undefined' || visible)} onChange={(e) => { onCollapse(e.target.checked); }}/>
+                </label> : undefined}
                 <div className='cypd-layout-column-wrapper'>{this.props.children}</div>
             </div>
         );
     }
 }
 
-class Center extends React.Component<CenterProps> {
+class Center extends React.Component {
     render() {
         return (
-            <div className={'column middle ' + this.props.extend}>
+            <div className={'column middle'}>
                 {this.props.children}
             </div>
         );

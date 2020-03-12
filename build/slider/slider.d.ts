@@ -17,6 +17,7 @@ declare type SlideState = {
     step: number;
     prevProps: Partial<SlideProps>;
     pressSta?: boolean;
+    hoverSta?: boolean;
 };
 export default class Slider extends React.Component<Partial<SlideProps>> {
     state: SlideState;

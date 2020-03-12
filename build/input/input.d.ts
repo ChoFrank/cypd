@@ -8,10 +8,14 @@ declare type InputProps = {
     className: string;
     style: React.CSSProperties;
     readOnly: boolean;
+    instance: (inst: HTMLInputElement | null) => void;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
     onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     onMouseDown: (e: React.MouseEvent<HTMLInputElement>) => void;
+    onMouseUp: (e: React.MouseEvent<HTMLInputElement>) => void;
+    onMouseLeave: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
+    onMouseEnter: (event: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
 };
 export default class Input extends React.Component<Partial<InputProps>> {
     render(): JSX.Element;

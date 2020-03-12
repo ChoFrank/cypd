@@ -13,10 +13,7 @@ declare global {
 interface SiderProps {
     direction?: 'left' | 'right';
     visible?: boolean;
-    onCollapse?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-}
-interface CenterProps {
-    extend: CenterExtendType;
+    onCollapse?: (visible: boolean) => void;
 }
 declare class Header extends React.Component {
     render(): JSX.Element;
@@ -28,7 +25,7 @@ declare class Sider extends React.Component<SiderProps> {
     container?: HTMLDivElement | null;
     render(): JSX.Element;
 }
-declare class Center extends React.Component<CenterProps> {
+declare class Center extends React.Component {
     render(): JSX.Element;
 }
 declare class Body extends React.Component {

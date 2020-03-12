@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 
-import Tooltip from '../tooltip/component';
+// import Tooltip from '../tooltip/component';
 
 
 type SlideProps = {
@@ -22,6 +22,7 @@ type SlideState = {
     step: number;
     prevProps: Partial<SlideProps>;
     pressSta?: boolean;
+    hoverSta?: boolean;
 }
 
 const props_proc = (props: Partial<SlideProps>): SlideState => {
@@ -130,24 +131,13 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         }
     }
     render() {
-        const { value, min, max, pressSta } = this.state
+        const { value, min, max, pressSta, hoverSta } = this.state
         var containerClass = 'cypd-slider-container';
         var wrapperClass = 'cypd-slider-wrapper';
         var trackClass = 'cypd-slider-track';
         var pointClass = 'cypd-slider-point';
         var rangeClass = 'cypd-slider-range';
         var draw, offset_p = 0;
-        // var offset_bound_p = 0;
-        // if (this.trackElem) {
-        //     const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
-        //     const track_w = this.trackElem.offsetWidth ? this.trackElem.offsetWidth : 1; // avoid zero divide
-        //     offset_bound_p = 100 - (drag_w_px * 100 / track_w);
-        //     offset_p = ((value - min) * offset_bound_p) / (max - min);
-        //     draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
-        //         <path d={`M0 ${drag_w_px / 2} H 3000`}/>
-        //     </svg>);
-        // }
-        // const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
         offset_p = ((value - min) * 100) / (max - min);
         draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
             <path d={`M2.5 2.5 H 3000`}/>
@@ -170,10 +160,10 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
                             className={pointClass + ' drag'}
                             style={{ left: `${offset_p}%` }}
                             onMouseDown={this.handleDragMouseDown}
+                            onMouseEnter={() => { this.setState({ hoverSta: true }); }}
+                            onMouseLeave={() => { this.setState({ hoverSta: false }); }}
                         >
-                            <Tooltip text={value.toString()} direction='top' open={!!pressSta}>
-                                <div style={{ width: `${cssDragWidth}px`, height: `${cssDragWidth}px` }} />
-                            </Tooltip>
+                            <div className={`cypd-tooltip top ${(pressSta || hoverSta)?'active':'hide'}`} style={{ marginLeft: '6px', visibility: (pressSta || hoverSta)?'visible':'hidden' }}>{value}</div>
                         </div>
                     </div>
                 </div>

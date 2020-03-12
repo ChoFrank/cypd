@@ -47,7 +47,7 @@ class Node extends React.Component<Partial<TreeNodeProps>> {
         return (
             <div className={parentClass} onClick={(e) => { if (this.props.onClick) { e.stopPropagation(); this.props.onClick(e); } }}>
                 <div className='self'>
-                    {(this.props.children)?<Icon className='cypd-tree-icon-expand' type={this.state.collapsed?'square-plus':'square-minus'} onClick={this.onCollapse}/>:((this.props.icon)?<Icon className='cypd-tree-inline-icon' type={this.props.icon} />:undefined)}
+                    {(this.props.children && this.props.collapsable)?<Icon className='cypd-tree-icon-expand' type={this.state.collapsed?'square-plus':'square-minus'} onClick={this.onCollapse}/>:((this.props.icon)?<Icon className='cypd-tree-inline-icon' type={this.props.icon} />:undefined)}
                     <span className='label'>{this.props.label}</span>
                 </div>
                 <div className='children' style={{display: ((childrenCount>0)?undefined:'none')}}>
@@ -58,7 +58,7 @@ class Node extends React.Component<Partial<TreeNodeProps>> {
                         if (idx === childrenCount-1)
                             childClass += ' last';
                         if (React.isValidElement(child)) 
-                            return React.cloneElement(child, { className: `${childClass}${child.props.className?child.props.className:''}` });
+                            return React.cloneElement(child, { className: `${childClass}${child.props.className?child.props.className:''}`, collapsable: this.props.collapsable });
                         else 
                             return child;
                     })}
@@ -85,7 +85,7 @@ class Tree extends React.Component<Partial<TreeProps>> {
                     if (idx === childrenCount-1)
                         childClass += ' last';
                     if (React.isValidElement(child)) 
-                        return React.cloneElement(child, { className: `${childClass}${child.props.className?child.props.className:''}` });
+                        return React.cloneElement(child, { className: `${childClass}${child.props.className?child.props.className:''}`, collapsable: this.props.collapsable });
                     else
                         return child;
                 })}

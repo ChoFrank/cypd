@@ -38,17 +38,19 @@ declare type DatePickerProps = {
     onChange: (date: Date | Date[]) => void;
 };
 declare type PickerState = {
-    visible: boolean;
+    mouseOutside: boolean;
+    direction: 'extend-top' | 'extend-bottom';
     prevProps: Partial<DatePickerProps>;
 };
 declare class DatePicker extends React.Component<Partial<DatePickerProps>> {
     state: PickerState;
     initTime: Date;
+    wrapperRef?: HTMLInputElement | null;
     constructor(props: Partial<DatePickerProps>);
     componentWillUnmount(): void;
     onChange: (date: Date | Date[]) => void;
     onCollapseCalendar: () => void;
-    onMouseDown: () => void;
+    onMouseUp: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => void;
     onMouseLeave: () => void;
     onMouseEnter: () => void;
     render(): JSX.Element;

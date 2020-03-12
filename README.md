@@ -1,6 +1,6 @@
 # CYPD Module
 
-## 1. Quick Start
+## I. Quick Start
 
 * 利用 npx 安裝開發環境
 ```
@@ -18,7 +18,7 @@ npm run build
 # compile your project to ES5 javascript code
 ```
 
-## 2. Upgrade Library
+## II. Upgrade Library
 
 ```
 npm update cypd
@@ -29,15 +29,18 @@ npm install --save https://github.com/ChoFrank/cypd.git#${commit}
 # commit fillin version number
 ```
 
-## 3. Component Example
+## III. Basic Component Example
 
-* [Button](#1)
-* [Icon](#2)
-* [Input](#3)
-* [Select & Option](#4)
-* [Checkbox](#5)
+* [Button 按鍵](#1)
+* [Icon 圖標](#2)
+* [Input 輸入框](#3)
+* [Select & Option 選擇框與選項](#4)
+* [Checkbox 勾選框](#5)
+* [SwitchButton 切換鈕](#6)
+* [RadioGroup 單選選項群](#7)
+* [Slider 拉霸](#8)
 
-### 1. <a name="1"></a>Button
+### 1. <a name="1"></a>Button 按鍵
 
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
@@ -72,7 +75,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### 2. <a name="2"></a>Icon
+### 2. <a name="2"></a>Icon 圖標
 
 > properties (*) are compulsory
 
@@ -106,7 +109,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### 3. <a name="3"></a>Input
+### 3. <a name="3"></a>Input 輸入框
 
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
@@ -151,7 +154,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### 4. <a name="4"></a>Select & Option
+### 4. <a name="4"></a>Select & Option 選擇框與選項
 
 #### Select
 
@@ -205,7 +208,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### 5. <a name="5"></a>Checkbox
+### 5. <a name="5"></a>Checkbox 勾選框
 
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
@@ -239,7 +242,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### <a name="6"></a>6. SwitchButton
+### <a name="6"></a>6. SwitchButton 切換鈕
 
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
@@ -271,7 +274,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### <a name="7"></a>7. RadioGroup
+### <a name="7"></a>7. RadioGroup 單選選項群
 
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
@@ -317,7 +320,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('root'));
 ```
 
-### <a name="8"></a>8. Slider
+### <a name="8"></a>8. Slider 拉霸
 
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
@@ -328,8 +331,8 @@ max             | `number` \| `undefined`                           | `undefined
 step            | `number` \| `undefined`                           | `undefined`       | Define value unit
 className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
 style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
-onChange        | `(value: string) => void` \| `undefined`          | `undefined`       | This function is triggered ***when*** draging.
-onAfterChange   | `(value: string) => void` \| `undefined`          | `undefined`       | This function is triggered ***after*** draging.
+onChange        | `(value: number) => void` \| `undefined`          | `undefined`       | This function is triggered ***when*** draging.
+onAfterChange   | `(value: number) => void` \| `undefined`          | `undefined`       | This function is triggered ***after*** draging.
 
 ![](image/8.png)
 
@@ -344,6 +347,427 @@ class App extends React.Component {
         return ( 
             <div>
                 <Slider />
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+## IV. Advanced Component Example
+
+* [Layout 布局](#9)
+* [DatePicker & TimePicker 日期與時間選擇器](#10)
+* [FormItem 表單元素](#11)
+* [Modal 對話視窗](#12)
+* [Notify 通知](#13)
+* [Table 表格](#14)
+* [Tooltip 提示框](#15)
+* [Tree 樹狀展開結構](#16)
+* [Spin 旋轉](#17)
+
+### 9. <a name="9"></a>Layout 布局
+
+#### Layout.Sider
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+direction       | "left" \| "right"                                 | "left"            | Sider appears in left/right of center context
+visible         | `boolean` | `undefined`                           | `undefined`       | Determine sider visible or not
+onCollapse      | `(visible: boolean) => void` \| `undefined`       | `undefined`       | This function will be triggered after collapser is clicked. Notice that if `onCollapse` is undefined, the collapser button will not be shown.
+
+
+![](image/9.gif)
+
+```javascript
+// CYPD Layout sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Layout } from 'cypd';
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { visible: true };
+    }
+    render() {
+        return ( 
+            <div style={{ height: 100%, width: 100% }}>
+                <Layout.Header />
+                <Layout.Navigation />
+                <Layout.Body>
+                    <Layout.Sider 
+                        visible={this.state.visible}
+                        onCollapse={(visible) => { this.setState({ visible }); }}
+                    ></Layout.Sider>
+                    <Layout.Center>
+                        <div></div>
+                    </Layout.Center>
+                </Layout.Body>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 10. <a name="10"></a>DatePicker & TimePicker 日期與時間選擇器
+
+#### DatePicker
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+value           | `Date`                                            | Depends on component created time | Determine date
+format          | `string`                                          | "YYYY-MM-DD"      | Determine the format of date showed
+disabled        | `boolean` \| `undefined`                          | `undefined`       | Determine picker is disabled or not.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
+onChange        | `(date: Date | Date[]) => void` \| `undefined`    | `undefined`       | This function will be triggered after date is changed
+
+> The format string should follow these rules, the following words will be replaced with real value:
+> * YYYY (year)
+> * MM (month)
+> * DD (day)
+> * HH (hour)
+> * mm (minute)
+> * ss (second)
+> * sss (millisecond)
+
+#### TimePicker
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+value           | `Date`                                            | Depends on component created time | Determine time
+format          | `string`                                          | "YYYY-MM-DD"      | Determine the format of time showed
+clockSystem     | "12-hour" \| "24-hour"                            | "24-hour"         | Determine time showed as 12-hour or 24-hour format
+disabled        | `boolean` \| `undefined`                          | `undefined`       | Determine picker is disabled or not.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
+onChange        | `(date: Date | Date[]) => void` \| `undefined`    | `undefined`       | This function will be triggered after time is changed
+
+![](image/10.gif)
+
+```javascript
+// CYPD DateTime sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { DateTime } from 'cypd';
+
+class App extends React.Component {
+    render() {
+        return ( 
+            <div>
+                <DateTime.DatePicker></DateTime.DatePicker>
+                <DateTime.TimePicker></DateTime.TimePicker>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 11. <a name="11"></a>FormItem 表單元素
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+label           | `ReactNode` \| `string` \| `undefined`            | `undefined`       | Determine the label is shown or not.
+colon           | `boolean`                                         | `true`            | Determine the ":" character is shown or not.
+layout          | "vertical" \| "horizontal"                        | "horizontal"      | Determine children components' orientation
+error           | `string` \| `undefined`                           | `undefined`       | Present error message if `error` is not `undefined`.
+disabled        | `boolean` \| `undefined`                          | `undefined`       | Determine picker is disabled or not.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
+
+![](image/11.png)
+
+```javascript
+// CYPD Form sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Form, Input, Select, Option, DateTime } from 'cypd';
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            gender: '1',
+            birthday: new Date()
+        }
+    }
+    render() {
+        return ( 
+            <div style={{ width: '300px' }}>
+                <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>}>
+                    <Input 
+                        value={this.state.name} 
+                        onChange={(e) => { this.setState({ name: e.target.name }); }}
+                    ></Input>
+                </Form.Item>
+                <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Gender</span>}>
+                    <Select value={this.state.gender} onChange={(v) => { this.setState({ gender: v }); }}>
+                        <Option value='1'>Male</Option>
+                        <Option value='2'>Female</Option>
+                    </Select>
+                </Form.Item>
+                <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Email</span>}>
+                    <Input
+                        value={this.state.email}
+                        placeholder="frank.cho@example.com"
+                        onChange={(e) => { this.setState({ email: e.target.name }); }}
+                    ></Input>
+                </Form.Item>
+                <Form.Item label='Birthday'>
+                    <DateTime.DatePicker 
+                        value={this.state.birthday} 
+                        onChange={(date) => { this.setState({ birthday: date }); }} 
+                    ></DateTime.DatePicker>
+                </Form.Item>
+            </div>
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 12. <a name="12"></a>Modal 對話視窗
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+title           | `string` \| `undefined`                           | `undefined`       | Determine the title of modal. If `title` is `undefined`, pop-up modal will not have a title.
+visible         | `boolean` \| `undefined`                          | `undefined`       | Determine modal is visible or not.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
+headerStyle     | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of modal's title***.
+bodyStyle       | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of modal's inner body***.
+onClose         | `(e: React.MouseEvent) => void` \| `undefined`    | `undefined`       | If `onClose` is not `undefined`, user can close modal by clicking "x" button or mask behind modal.
+
+![](image/12.gif)
+
+```javascript
+// CYPD Modal sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Modal, Button } from 'cypd';
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { popup: false };
+    }
+    open = () => { this.setState({ popup: true }); }
+    close = () => { this.setState({ popup: false }); }
+    render() {
+        return ( 
+            <div>
+                <Button onClick={this.open}>Click</Button>
+                <Modal
+                    visible={this.state.popup}
+                    onClose={this.close}
+                    title='Demostration'
+                >
+                    This is a CYPD demostration
+                </Modal>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 13. <a name="13"></a>Notify 通知
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+title (*)       | `string`                                          |                   | Notification's title.
+context (*)     | `string`                                          |                   | Notification's message.
+type            | "success" \| "info" \| "warning" \| "error"       | "info"            | Notification's type.
+timeout (ms)    | `number` \| `undefined`                           | 5000              | Disappearing timeout.
+
+![](image/13.gif)
+
+```javascript
+// CYPD Notify sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Notify, Button } from 'cypd';
+
+class App extends React.Component {
+    render() {
+        return ( 
+            <div>
+                <Button onClick={() => {
+                    Notify({ 
+                        title: 'Demo', 
+                        context: 'This is a demostration message.', 
+                        type: 'success' 
+                    });
+                }}>Click</Button>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 14. <a name="14"></a>Table 表格
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+headers (*)     | `Array<string | ReactNode | undefined>`           |                   | Define each column of table.
+rows (*)        | `Array<Array<string | ReactNode | undefined>>`    |                   | Define each row of table.
+pagination      | `boolean` \| `undefined`                          | `undefined`       | Determine the table shows contents in different page or not. 
+rowLimit        | `number` \| `undefined`                           | `undefined`       | Determine how many rows can a page have, only works when `pagination` is not `undefined`
+headerStyle     | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of table's header***.
+bodyStyle       | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of table's rows***.
+
+
+![](image/14.png)
+
+```javascript
+// CYPD Table sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Table } from 'cypd';
+
+class App extends React.Component {
+    render() {
+        return ( 
+            <div>
+                <Table
+                    headers={['Name', 'Gender', 'Email', 'Birthday']}
+                    rows={[
+                        ['David', 'Male', 'david.chang@example.com', '1987/5/31'],
+                        ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1'],
+                        ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9'],
+                        ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
+                    ]}
+                    pagination={true}
+                    rowLimit={10}
+                ></Table>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 15. <a name="15"></a>Tooltip 提示框
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+text (*)        | `string`                                          |                   | Define tip message.
+direction       | "top" \| "bottom" \| "left" \| "right"            | "bottom"          | Define the direction of bubble appears.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+
+![](image/15.gif)
+
+```javascript
+// CYPD Tooltip sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Tooltip, Button } from 'cypd';
+
+class App extends React.Component {
+    render() {
+        return ( 
+            <div>
+                <Tooltip 
+                    text='Refresh dashboard data.'
+                    direction='top'
+                >
+                    <Button>Refresh</Button>
+                </Tooltip>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 16. <a name="16"></a>Tree 樹狀展開結構
+
+#### Tree
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+collapsable     | `boolean` \| `undefined`                          | `false`           | Define tree is collapsable or not.
+color           | "white" \| "black"                                | "white"           | Define the color of font.
+
+#### Node
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+label           | `string` \| `ReactNode` \| `undefined`            | `undefined`       | Define the context showed in this node.
+collapsable     | `boolean` \| `undefined`                          | `false`           | Define tree is collapsable or not.
+icon            | `string` \| `undefined`                           | `undefined`       | Define postfix icon in the node.
+defaultClose    | `boolean` \| `undefined`                          | `false`           | If `defaultClose` is `true`, the node will be closed after created.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
+
+![](image/16.gif)
+
+```javascript
+// CYPD Tree sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Tree } from 'cypd';
+
+class App extends React.Component {
+    render() {
+        return ( 
+            <div>
+                <Tree.Tree color='black' collapsable>
+                    <Tree.Node label='RD'>
+                        <Tree.Node label='Charos'>
+                            <Tree.Node label='Eric'></Tree.Node>
+                            <Tree.Node label='Madona'>
+                                <Tree.Node label='Rouis'></Tree.Node>
+                                <Tree.Node label='Lorenz'>
+                                    <Tree.Node label='Jay'></Tree.Node>
+                                </Tree.Node>
+                                <Tree.Node label='Kevin'></Tree.Node>
+                            </Tree.Node>
+                            <Tree.Node label='Susan'></Tree.Node>
+                        </Tree.Node>
+                        <Tree.Node label='Tiffiny'>
+                            <Tree.Node label='Standford'></Tree.Node>
+                            <Tree.Node label='Koward'></Tree.Node>
+                            <Tree.Node label='Jaff'></Tree.Node>
+                        </Tree.Node>
+                    </Tree.Node>
+                </Tree.Tree>
+            </div> 
+        );
+    }
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+### 17. <a name="17"></a>Spin 旋轉
+
+Properties      | Type                                              | Default value     | Description
+----------------|:--------------------------------------------------|:------------------|:----------------------
+message         | `string` \| `undefined`                           | `undefined`       | Define message.
+visible         | `boolean` \| `undefined`                          | `undefined`       | Define spin mask visible or not.
+layout          | "vertical" \| "horizontal"                        | "horizontal"      | Define spin and message orientation.
+className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
+style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
+
+![](image/17.gif)
+
+```javascript
+// CYPD Spin sample code
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Spin } from 'cypd';
+
+class App extends React.Component {
+    render() {
+        return ( 
+            <div>
+                <Spin message='loading'></Spin>
             </div> 
         );
     }

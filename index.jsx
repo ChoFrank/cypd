@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Checkbox, Option, RadioGroup, SwitchButton, Notify, Slider } from './src';
+import { Table, Icon, Input, Button, Select, DateTime, Form, Checkbox, Option, RadioGroup, SwitchButton, Tree, Notify, Spin, Layout, Slider, Modal, Tooltip } from './src';
 
 import './index.css'
 
@@ -23,6 +23,12 @@ const icon_container = (type) => {
 }
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false };
+        this.openModal = () => { this.setState({ popup: true }); }
+        this.closeModal = () => { this.setState({ popup: false }); }
+    }
     triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.........................................................................................', type: 'success', timeout: 1000000 }); }
     triggerWarningDemo() { Notify({ title: 'Warning', context: 'This is a Warning notification demo.', type: 'warning' }); }
     triggerInfoDemo() { Notify({ title: 'Info', context: 'This is a Info notification demo.', type: 'info' }); }
@@ -43,25 +49,80 @@ class App extends React.Component {
         const table = <Table
             headers={['1', '2', '3', '4']}
             rows={[
-                [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <DateTime.TimePicker disabled />],
+                [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
                 [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton checked />],
                 [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
                 [<Icon type='led-yellow' />, <Button type='primary' icon='edit'>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
                 [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
                 [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
-                [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
+                [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
                 [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
                 [<Icon type='loading' />, <Slider />, <Button icon='zoom-in' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
-                ['', <Slider />],
+                ['', <Slider />, <DateTime.DatePicker />, <DateTime.TimePicker />],
             ]}
             pagination={true}
             rowLimit={11}
         />;
+        // const table = <Table
+        //     headers={['Name', 'Gender', 'Email', 'Birthday']}
+        //     rows={[
+        //         ['David', 'Male', 'david.chang@example.com', '1987/5/31'],
+        //         ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1'],
+        //         ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9'],
+        //         ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
+        //     ]}
+        //     pagination={true}
+        //     rowLimit={10}
+        // ></Table>;
         const icondemo = icons.map(type => icon_container(type));
+        const form = <div style={{ width: '300px' }}>
+            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>}>
+                <Input 
+                    value={this.state.name} 
+                    onChange={(e) => { this.setState({ name: e.target.name }); }}
+                ></Input>
+            </Form.Item>
+            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Gender</span>}>
+                <Select value={this.state.gender} onChange={(v) => { this.setState({ gender: v }); }}>
+                    <Option value='1'>Male</Option>
+                    <Option value='2'>Female</Option>
+                </Select>
+            </Form.Item>
+            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Email</span>}>
+                <Input
+                    value={this.state.email}
+                    placeholder="frank.cho@example.com"
+                    onChange={(e) => { this.setState({ email: e.target.name }); }}
+                ></Input>
+            </Form.Item>
+            <Form.Item label='Birthday'>
+                <DateTime.DatePicker value={this.state.birthday} onChange={(date) => { this.setState({ birthday: date }); }} />
+            </Form.Item>
+        </div>;
         return (
-            <div className='app_dashboard_container'>
-                {table}
-                {icondemo}
+            <div className='app'>
+                <Layout.Header />
+                <Layout.Navigation />
+                <Layout.Body>
+                    <Layout.Sider 
+                        visible={this.state.visible}
+                        onCollapse={(visible) => { this.setState({ visible }); }}
+                    ></Layout.Sider>
+                    <Layout.Center>
+                        <div className='app_dashboard_container'>
+                            {table}
+                            {icondemo}
+                            {form}
+                        </div>
+                    </Layout.Center>
+                </Layout.Body>
+                <Modal
+                    visible={this.state.popup}
+                    onClose={this.closeModal}
+                    title='Demostration'
+                >
+                    This is a CYPD demostration.
+                </Modal>
             </div>
         );
     }

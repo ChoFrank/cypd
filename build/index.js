@@ -29,7 +29,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "* {\r\n    box-sizing: border-box;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-size: var(--default-normal-fontsize);\r\n    letter-spacing: 0.5px;\r\n    scrollbar-color: #7fbeca rgba(108, 151, 158, 0.376);\r\n    scrollbar-width: thin;\r\n    scrollbar-highlight-color: #00839E;\r\n    scrollbar-darkshadow-color: #00839E;\r\n}\r\n\r\n*::selection {\r\n    color: white;\r\n    background-color: #00839E;\r\n}\r\n\r\n\r\n/* \r\n@font-face {\r\n    font-family: 'Noto Sans TC', sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');\r\n    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+F900-FAFF, U+2F800-2FA1F;\r\n}\r\n\r\n@font-face {\r\n    font-family: \"Open Sans\", sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');\r\n    unicode-range: U+00-7F;\r\n} */\r\n\r\nbody {\r\n    --default-large-fontsize: 16px;\r\n    --default-normal-fontsize: 14px;\r\n    --default-small-fontsize: 12px;\r\n    --default-large-height: 39px;\r\n    --default-normal-height: 32px;\r\n    --default-small-height: 25px;\r\n    --default-cyp-blue-active: #00839E;\r\n    --default-cyp-blue-hover: #33a8c0;\r\n    --default-cyp-blue-light: #47bbd3;\r\n    --default-cyp-blue-opa-light: #00839E2F;\r\n    --default-cyp-blue-opa-medium: #00839E7F;\r\n    --default-cyp-blue-opa-deep: #00839EAF;\r\n    --default-app-min-height: 642px;\r\n    --default-app-min-width: 600px;\r\n    --default-header-height: 60px;\r\n    --default-nav-height: 40px;\r\n    --default-footer-height: 0px;\r\n    --default-leftsider-width: 280px;\r\n    --default-rightsider-width: 0px;\r\n    --default-content-height: calc(100% - var(--default-header-height) - var(--default-nav-height) - var(--default-footer-height));\r\n    /* --default-leftsider-width: 0px;\r\n--default-rightsider-width: 250px; */\r\n    --default-header-width: 100%;\r\n    --default-left-collapser-width: 13px;\r\n    --default-right-collapser-width: 0px;\r\n    /* --default-left-collapser-width: 0px;\r\n--default-right-collapser-width: 15px; */\r\n    --default-gray-color: rgb(163, 163, 163);\r\n    --default-disabled-color: rgb(185, 185, 185);\r\n    --default-disabled-background: rgb(231, 231, 231);\r\n    --default-red-color: rgb(255, 72, 72);\r\n    --default-red-hover-color: rgb(255, 128, 128);\r\n    --default-red-active-color: rgb(255, 28, 28);\r\n    --default-deepgray-color: rgb(139, 139, 139);\r\n    --default-lightblack-color: rgb(31, 31, 31);\r\n    --default-transition-duration: 150ms;\r\n    /* for navbar cypd-tree */\r\n    --default-nav-background-color: rgb(51, 51, 51);\r\n    --default-navhover-background-color: rgba(51, 51, 51, 0.9);\r\n    --default-nav-item-width: 150px;\r\n    --default-nav-item-padding: 0px 20px 0px 20px;\r\n    --default-dropdown-item-height: 35px;\r\n    /* for cypd-select */\r\n    --default-select-normal-height: 32px;\r\n    --default-select-small-height: 25px;\r\n    --default-select-dropdown-height: 200px;\r\n    /* for cypd-tooltip */\r\n    --default-tooltip-width: 150px;\r\n    --default-tooltip-opacity: 1;\r\n    /* for cypd-slider */\r\n    --default-slider-drag-width: 17px;\r\n    --default-inrange-hover-color: var(--default-cyp-blue-active);\r\n    --default-inrange-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd general */\r\n\r\n.App {\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-height: var(--default-app-min-height);\r\n    min-height: var(--default-app-min-width);\r\n}\r\n\r\n[class^='cypd-'].small {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    /* width */\r\n    width: 5px;\r\n}\r\n\r\n ::-webkit-scrollbar-track {\r\n    /* Track */\r\n    background: rgba(108, 151, 158, 0.376);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb {\r\n    /* Handle */\r\n    background: var(--default-cyp-blue-light);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:hover {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-hover);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:active {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-active);\r\n}\r\n\r\n\r\n/* cypd layout */\r\n\r\n.cypd-layout-header {\r\n    background-color: white;\r\n    text-align: center;\r\n    height: var(--default-header-height);\r\n    padding: 10px;\r\n}\r\n\r\n.cypd-layout-navigation {\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: var(--default-nav-height);\r\n    min-width: var(--default-app-min-width);\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.cypd-layout-content {\r\n    display: flex;\r\n    flex-direction: row;\r\n    min-width: var(--default-app-min-width);\r\n    height: var(--default-content-height);\r\n}\r\n\r\n.cypd-layout-content:after {\r\n    content: '';\r\n    display: table;\r\n    clear: both;\r\n}\r\n\r\n.column {\r\n    position: relative;\r\n    overflow: visible;\r\n    transition: width var(--default-transition-duration);\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.column.left {\r\n    width: 2px;\r\n    align-self: stretch;\r\n    background-color: black;\r\n    margin-right: var(--default-left-collapser-width);\r\n    border-right: 1.3px solid rgb(153, 153, 153);\r\n}\r\n\r\n.column.right {\r\n    margin-right: var(--default-right-collapser-width);\r\n    border-left: 1.3px solid rgb(153, 153, 153);\r\n}\r\n\r\n.column .cypd-layout-column-wrapper {\r\n    position: relative;\r\n    flex-grow: 2;\r\n    height: 100%;\r\n    z-index: 7;\r\n    transition: transform var(--default-transition-duration);\r\n    transition-delay: calc(var(--default-transition-duration) / 2);\r\n}\r\n\r\n.column.left .cypd-layout-column-wrapper {\r\n    transform: translateX(calc(-1 * var(--default-leftsider-width)));\r\n}\r\n\r\n.column.right .cypd-layout-column-wrapper {\r\n    transform: translateX(var(--default-rightsider-width));\r\n}\r\n\r\n.column .collapser {\r\n    position: absolute;\r\n    height: 60px;\r\n    top: calc(100% - 90px);\r\n    z-index: 5;\r\n    cursor: pointer;\r\n}\r\n\r\n.column.left .collapser {\r\n    width: var(--default-left-collapser-width);\r\n    right: calc(-1 * var(--default-left-collapser-width) + 1px);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M3 3 9 3 9 3 Q 12 3 12 6 12 6 12 54 Z' stroke='black' fill='black'/><path d='M12 54 Q 12 57 9 57 9 57 3 57 Z' stroke='black' fill='black'/><path d='M3 57 3 3 12 54 Z' stroke='black' fill='black'/><path d='M3 3 A 3 3, 0, 0, 1, 0 0 L 0 3 Z' stroke='black' fill='black'/><path d='M3 57 A 3 3, 0, 0, 0, 0 60 L 0 57 Z' stroke='black' fill='black'/><path d='M0 3 3 3 3 57 0 57 Z' stroke='black' fill='black'/><polyline points='3,24 3,36 8,30' fill='white'/></svg>\");\r\n}\r\n\r\n.column.right .collapser {\r\n    width: var(--default-right-collapser-width);\r\n    left: calc(-1 * var(--default-right-collapser-width) + 1px);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M 6 3 Q 3 3 3 6 Z' stroke='black' fill='black'/><path d='M 3 6 3 54 Q 3 57 6 57 Z' stroke='black' fill='black'/><path d='M 3 6 6 57 6 3 Z' stroke='black' fill='black'/><path d='M12 3 A 3 3, 0, 0, 0, 15 0 L 15 3 Z' stroke='black' fill='black'/><path d='M12 57 A 3 3, 0, 0, 1, 15 60 L 15 57 Z' stroke='black' fill='black'/><path d='M15 3 15 57 6 57 6 3 Z' stroke='black' fill='black'/><polyline points='12,24 12,36 7,30' fill='white'/></svg>\");\r\n}\r\n\r\n.column.left.visible {\r\n    width: var(--default-leftsider-width);\r\n    flex-shrink: 0;\r\n    transition-delay: calc(var(--default-transition-duration) / 2);\r\n}\r\n\r\n.column.right.visible {\r\n    width: var(--default-rightsider-width);\r\n    margin-left: var(--default-right-collapser-width);\r\n}\r\n\r\n.column.visible .cypd-layout-column-wrapper {\r\n    transform: none;\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.column.middle {\r\n    flex-grow: 5;\r\n    overflow: hidden;\r\n    padding: 10px 10px 10px 10px;\r\n}\r\n\r\n.column.middle.collapsed {\r\n    transition-delay: calc(var(--default-transition-duration) / 2);\r\n}\r\n\r\n.cypd-layout-footer {\r\n    /* position: fixed;\r\n    bottom: 0px; */\r\n    background-color: var(--default-cyp-blue-active);\r\n    text-align: center;\r\n    width: 100%;\r\n    height: var(--default-footer-height);\r\n}\r\n\r\n@media (max-width: 800px) {\r\n    .column.left {\r\n        position: absolute;\r\n        z-index: 21;\r\n        height: 100%;\r\n    }\r\n    .column .collapser {\r\n        top: calc(100% - var(--default-header-height) - var(--default-nav-height) - 90px);\r\n    }\r\n}\r\n\r\n\r\n/* cypd table */\r\n\r\n.cypd-table-container {\r\n    margin: 10px;\r\n    width: 100%;\r\n    display: table;\r\n}\r\n\r\n.cypd-table-container .table-wrapper {\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    /* cursor: pointer; */\r\n    background: white;\r\n    transition: box-shadow 100ms ease-in-out;\r\n}\r\n\r\n.cypd-table-container .table-wrapper.show-empty {\r\n    min-height: 150px;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' overflow='visible'><ellipse cx='50' cy='70' rx='30' ry='5' stroke='%none' fill='rgba(170,170,170,0.125)' /><path d='M25 55 35 40 65 40 75 55' stroke='rgba(170,170,170,0.5)' fill='none' stroke-linejoin='round' /><path d='M75 55 60 55 58 60 42 60 40 55 25 55 25 70 75 70 Z' stroke='rgba(170,170,170,0.5)' fill='rgb(238,238,238)' stroke-linejoin='round' /><text x='50' y='95' fill='rgba(170,170,170,0.5)' text-anchor='middle'>No Data</text></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n}\r\n\r\n.cypd-table-container .cypd-table {\r\n    display: table;\r\n    border-collapse: collapse;\r\n    width: 100%;\r\n}\r\n\r\n\r\n/* .cypd-table-container .table-wrapper:hover {\r\n    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212), 0px 0px 4px rgba(0, 0, 0, 0.486);\r\n} */\r\n\r\n.cypd-table-container .cypd-table .row {\r\n    height: 30px;\r\n    line-height: 1.5;\r\n    display: table-row;\r\n    transition: background-color 100ms ease-in-out;\r\n}\r\n\r\n.cypd-table-container .cypd-table .row.header {\r\n    color: white;\r\n    font-size: 20px;\r\n    font-weight: bolder;\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n\r\n/* .cypd-table-container .cypd-table .row.header:hover {\r\n    background-color: var(--default-cyp-blue-opa-medium);\r\n} */\r\n\r\n.cypd-table-container .cypd-table .row.normal {\r\n    border-bottom: 1px solid var(--default-cyp-blue-opa-light);\r\n    color: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-table-container .cypd-table.nextpage .row.normal {\r\n    animation: NextPage 300ms cubic-bezier(1, 0, 0, 1);\r\n}\r\n\r\n.cypd-table-container .cypd-table.prevpage .row.normal {\r\n    animation: PrevPage 300ms cubic-bezier(1, 0, 0, 1);\r\n}\r\n\r\n\r\n/* .cypd-table-container .cypd-table .row.normal:hover {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n} */\r\n\r\n.cypd-table-container .cypd-table .cell {\r\n    position: relative;\r\n    padding: 5px 10px 5px 10px;\r\n    display: table-cell;\r\n    vertical-align: middle;\r\n    line-height: 100%;\r\n    text-align: center;\r\n    transition: transform 100ms ease-in-out;\r\n}\r\n\r\n.cypd-table-container .footer {\r\n    box-sizing: border-box;\r\n    position: relative;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    flex-direction: row-reverse;\r\n    align-items: center;\r\n    padding: 10px 20px 10px 20px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-table-container .footer .cypd-span,\r\n.cypd-table-container .footer .cypd-input,\r\n.cypd-table-container .footer .cypd-button {\r\n    float: right;\r\n}\r\n\r\n\r\n/* .cypd-table-container .cypd-table .cell .cypd-icon-wrapper {\r\n    position: relative;\r\n    display: inline-block;\r\n    transform: translateY(3px);\r\n} */\r\n\r\n.cypd-table-container .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-table-container .cypd-tooltip-wrapper {\r\n    display: inline-flex;\r\n}\r\n\r\n@keyframes NextPage {\r\n    0% {\r\n        opacity: 0;\r\n        transform: translate(20px);\r\n    }\r\n    20% {\r\n        opacity: 0;\r\n    }\r\n    100% {\r\n        opacity: 1;\r\n        transform: translate(0);\r\n    }\r\n}\r\n\r\n@keyframes PrevPage {\r\n    0% {\r\n        opacity: 0;\r\n        transform: translate(-20px);\r\n    }\r\n    20% {\r\n        opacity: 0;\r\n    }\r\n    100% {\r\n        opacity: 1;\r\n        transform: translate(0);\r\n    }\r\n}\r\n\r\n\r\n/* cypd cypd-modal */\r\n\r\n.cypd-modal-container {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100vh;\r\n    width: 100vw;\r\n    user-select: text;\r\n}\r\n\r\n.cypd-modal-container.active {\r\n    opacity: 1;\r\n    z-index: 11;\r\n    visibility: visible;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container.hide {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility 0ms ease-in var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.8);\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal {\r\n    position: relative;\r\n    background: white;\r\n    display: inline-block;\r\n    border-radius: 3px;\r\n    min-width: 400px;\r\n    padding: 10px;\r\n    text-align: left;\r\n}\r\n\r\n.cypd-confirm-dialog-container {\r\n    position: relative;\r\n    z-index: 31;\r\n}\r\n\r\n\r\n/* \r\n.cypd-modal-container.active .cypd-modal-background .cypd-modal {\r\n    animation: popIn 300ms;\r\n}\r\n\r\n.cypd-modal-container.hide .cypd-modal-background .cypd-modal {\r\n    animation: popOut 300ms;\r\n} */\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal h3 {\r\n    margin: 10px 20px 15px 20px;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    line-height: 30px;\r\n    font-size: 18px;\r\n    border-bottom: 1px solid rgba(40, 40, 40, 0.3);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal .content {\r\n    margin: 0px 20px 15px 20px;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal svg.close-svg {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    height: 20px;\r\n    width: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n@keyframes popIn {\r\n    0% {\r\n        transform: scale(0.9);\r\n        /* opacity: 0; */\r\n    }\r\n    100% {\r\n        transform: scale(1);\r\n        /* opacity: 1; */\r\n    }\r\n}\r\n\r\n@keyframes popOut {\r\n    0% {\r\n        transform: scale(1);\r\n    }\r\n    100% {\r\n        transform: scale(0);\r\n    }\r\n}\r\n\r\n\r\n/* cypd href */\r\n\r\n.cypd-href {\r\n    color: var(--default-cyp-blue-hover);\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    cursor: pointer;\r\n}\r\n\r\n.cypd-href:hover {\r\n    color: var(--default-cyp-blue-light);\r\n    text-decoration: underline;\r\n}\r\n\r\n\r\n/* cypd input */\r\n\r\n.cypd-input {\r\n    width: 60px;\r\n    height: 32px;\r\n    position: relative;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    text-align: left;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-input::placeholder {\r\n    color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-input:hover {\r\n    /* border: 1px solid var(---default-cyp-blue-hover); */\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-input:focus {\r\n    cursor: text;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd select */\r\n\r\n.cypd-select-wrapper {\r\n    position: relative;\r\n    display: inline-block;\r\n    text-align: left;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select {\r\n    padding: 0px 10px 0px 10px;\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    cursor: pointer;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2333a8c0' fill='%2333a8c0' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:hover {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:disabled {\r\n    cursor: not-allowed;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='rgb(160,160,160)' fill='rgb(160,160,160)' /></svg>\");\r\n    background-color: var(--default-disabled-background);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select.focus {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2300839E' fill='%2300839E' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select::placeholder {\r\n    color: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-options-container {\r\n    position: absolute;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    border-radius: 3px;\r\n    transform: scaleY(1) translateY(1px);\r\n    transform-origin: top;\r\n    opacity: 1;\r\n    z-index: 21;\r\n    box-shadow: 0px 0px 4px var(--default-cyp-blue-active);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 50ms;\r\n}\r\n\r\n.cypd-options-container.extend-top {\r\n    transform: scaleY(1) translateY(calc(-100% - var(--default-select-normal-height) - 2px));\r\n    transform-origin: bottom;\r\n}\r\n\r\n.cypd-options-container.limit-height {\r\n    height: var(--default-select-dropdown-height);\r\n}\r\n\r\n.cypd-options-container.collapsed {\r\n    opacity: 0;\r\n    height: 0;\r\n    transform: scaleY(0);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 150ms;\r\n}\r\n\r\n.cypd-options-wrapper {\r\n    position: relative;\r\n    width: 100%;\r\n    max-height: 100%;\r\n    scrollbar-color: #7fbeca white;\r\n    overflow-y: auto;\r\n}\r\n\r\n.cypd-options-wrapper::-webkit-scrollbar-track {\r\n    background: white;\r\n}\r\n\r\n.cypd-options-wrapper .cypd-option {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-option input[type=\"radio\"] {\r\n    position: absolute;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-option label {\r\n    position: relative;\r\n    display: block;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration), color var(--default-transition-duration);\r\n    color: black;\r\n    background-color: white;\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-option label {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n.cypd-option input[type=\"radio\"]:checked~label,\r\n.cypd-option label:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    color: white;\r\n}\r\n\r\n\r\n/* cypd icon */\r\n\r\n.cypd-icon-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable {\r\n    cursor: pointer;\r\n    pointer-events: all;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable:active {\r\n    opacity: 0.5;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable svg.cypd-icon * {\r\n    /* if not disable pointer event, parent onclick will not triggered sometimes */\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon:not(.senario) {\r\n    overflow: visible;\r\n    max-width: 16px;\r\n    max-height: 16px;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.fc-loading {\r\n    animation: rotateLoad 1s linear infinite;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.senario {\r\n    overflow: visible;\r\n    top: 0;\r\n    left: 0;\r\n    min-height: 100%;\r\n    min-width: 250px;\r\n    opacity: 0.3;\r\n}\r\n\r\nsvg.cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n    stroke-linejoin: round;\r\n    stroke-linecap: round;\r\n}\r\n\r\n@keyframes rotateLoad {\r\n    0% {\r\n        transform: rotate(0);\r\n    }\r\n    100% {\r\n        transform: rotate(1turn);\r\n    }\r\n}\r\n\r\n\r\n/* cypd button */\r\n\r\n.cypd-button {\r\n    box-sizing: border-box;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: relative;\r\n    padding: 0px 5px 0px 5px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    transition: color var(--default-transition-duration) ease-in-out 50ms, border var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-button.round {\r\n    border-radius: calc(var(--default-select-normal-height) / 2);\r\n}\r\n\r\n.cypd-button.small.round {\r\n    border-radius: calc(var(--default-select-small-height) / 2);\r\n}\r\n\r\n.cypd-button.small {\r\n    padding: 1px 5px 0px 5px;\r\n}\r\n\r\n.cypd-button.no-content {\r\n    width: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-button.small.no-content {\r\n    width: var(--default-select-small-height);\r\n}\r\n\r\n.cypd-button.primary {\r\n    color: white;\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.primary:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.primary:active {\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.danger {\r\n    color: white;\r\n    background-color: var(--default-red-color);\r\n}\r\n\r\n.cypd-button.danger:hover {\r\n    background-color: var(--default-red-hover-color);\r\n}\r\n\r\n.cypd-button.danger:active {\r\n    background-color: var(--default-red-active-color);\r\n}\r\n\r\n.cypd-button.default {\r\n    background-color: white;\r\n    color: var(--default-deepgray-color);\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.cypd-button.default:hover {\r\n    color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active {\r\n    color: var(--default-cyp-blue-active);\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.default .cypd-icon:not([class*='fc-']) * {\r\n    transition: stroke var(--default-transition-duration) ease-in-out 50ms;\r\n}\r\n\r\n.cypd-button.disabled {\r\n    background-color: var(--default-disabled-background);\r\n    color: var(--default-disabled-color);\r\n    border: 1px solid var(--default-disabled-color);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-button span {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-button.small span {\r\n    font-weight: 500;\r\n}\r\n\r\n.cypd-button span>* {\r\n    margin-right: 5px;\r\n}\r\n\r\n.cypd-button.small {\r\n    border-radius: 3px;\r\n}\r\n\r\n.cypd-button.no-content span>* {\r\n    margin-right: 0px;\r\n}\r\n\r\n.cypd-button:not(.no-content) span.hasicon {\r\n    margin-right: 3px;\r\n}\r\n\r\n.cypd-button .cypd-icon-wrapper {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-button.primary .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) *,\r\n.cypd-button.danger .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-button.default .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(139, 139, 139);\r\n}\r\n\r\n.cypd-button.default:hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(163, 163, 163);\r\n}\r\n\r\n\r\n/* cypd checkbox */\r\n\r\n.cypd-checkbox-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    position: relative;\r\n    width: auto;\r\n    height: var(--default-normal-height);\r\n    line-height: var(--default-normal-height);\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-checkbox-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-checkbox-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-checkbox-wrapper .cypd-checkbox {\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 3px;\r\n    background-color: white;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='white' stroke-width='2' fill='none' /></svg>\");\r\n    transition: border var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-checkbox-wrapper:hover .cypd-checkbox {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:checked~.cypd-checkbox {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:disabled~.cypd-checkbox {\r\n    background-color: gray;\r\n    border: 1px solid gray;\r\n}\r\n\r\n.cypd-checkbox-wrapper span {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    margin-left: 5px;\r\n}\r\n\r\n\r\n/* cypd radio group */\r\n\r\n.cypd-radio-group-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical {\r\n    flex-direction: column;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical .cypd-radio-wrapper {\r\n    margin-top: 2.5px;\r\n    margin-bottom: 2.5px;\r\n}\r\n\r\n.cypd-radio-wrapper input {\r\n    position: absolute;\r\n    visibility: hidden;\r\n    height: 0;\r\n    width: 0;\r\n}\r\n\r\n.cypd-radio-wrapper {\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    margin-left: 5px;\r\n}\r\n\r\n.cypd-radio-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    transition: border-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper:hover .cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio::after {\r\n    content: '';\r\n    width: 10px;\r\n    height: 10px;\r\n    border-radius: 50%;\r\n    background-color: var(--default-cyp-blue-hover);\r\n    transform: scale(0);\r\n    transition: transform var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio::after {\r\n    transform: scale(1);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n    border: 1px solid rgb(163, 163, 163);\r\n    box-shadow: none;\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio::after {\r\n    background-color: rgb(163, 163, 163) !important;\r\n}\r\n\r\n.cypd-radio-wrapper span {\r\n    height: 20px;\r\n    line-height: 20px;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n\r\n/* cypd switch button */\r\n\r\n.cypd-switchbutton-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-switchbutton {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 30px;\r\n    height: 7px;\r\n    border-radius: 3.5px;\r\n    background-color: var(--default-gray-color);\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-switchbutton::after {\r\n    content: '';\r\n    position: absolute;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    box-shadow: 0px 1px 3px var(--default-deepgray-color);\r\n    transition: transform var(--default-transition-duration), background-color 80ms 70ms;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton {\r\n    background-color: #84abb4;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::after {\r\n    background-color: var(--default-cyp-blue-active);\r\n    transform: translateX(15px);\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton::after {\r\n    background-color: rgb(160, 160, 160) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 12px;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: transparent;\r\n}\r\n\r\n\r\n/* .cypd-switchbutton-wrapper.animated input:checked+.cypd-switchbutton::before {\r\n    animation: Ripple 350ms;\r\n    animation-delay: 130ms;\r\n    animation-iteration-count: 1;\r\n}\r\n\r\n@keyframes Ripple {\r\n    0% {\r\n        border: 3px solid var(--default-cyp-blue-opa-medium);\r\n        transform: scale3d(0.75, 0.75, 1);\r\n        opacity: 1;\r\n    }\r\n    100% {\r\n        border: none;\r\n        transform: scale3d(1.5, 1.5, 1);\r\n        opacity: 0;\r\n    }\r\n} */\r\n\r\n\r\n/* cypd spin */\r\n\r\n.cypd-spin-wrapper {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    background: white;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    animation: FadeOut 200ms;\r\n    z-index: 0;\r\n    opacity: 1;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal {\r\n    flex-direction: row;\r\n}\r\n\r\n.cypd-spin-wrapper.visible {\r\n    z-index: 31;\r\n    opacity: 1;\r\n    animation: FadeIn 200ms;\r\n}\r\n\r\n.cypd-spin-wrapper>* {\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal>* {\r\n    margin-bottom: 0px;\r\n    margin-right: 12px;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin {\r\n    transform: scale(1.5);\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg {\r\n    letter-spacing: 1px;\r\n    color: var(--default-cyp-blue-active);\r\n    font-weight: normal;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg::after {\r\n    content: ' ...';\r\n}\r\n\r\n@keyframes FadeIn {\r\n    0% {\r\n        opacity: 0;\r\n    }\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes FadeOut {\r\n    0% {\r\n        opacity: 1;\r\n    }\r\n    100% {\r\n        opacity: 0;\r\n    }\r\n}\r\n\r\n\r\n/* cypd tree */\r\n\r\n.cypd-tree-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    text-align: left;\r\n    padding: 10px;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-tree-element .children,\r\n.cypd-tree-element {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding-left: 13px;\r\n    width: 100%;\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-tree-element.hide .children {\r\n    display: none;\r\n}\r\n\r\n.cypd-tree-element .self {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    padding-left: 5px;\r\n    cursor: pointer;\r\n    color: rgba(255, 255, 255, 0.883);\r\n    transition: color var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self {\r\n    color: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: rgba(255, 255, 255, 0.883);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self:hover {\r\n    background-color: var(--default-lightblack-color);\r\n    color: white;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self:hover {\r\n    background-color: rgba(128, 128, 128, 0.3);\r\n    color: rgb(109, 109, 109);\r\n}\r\n\r\n.cypd-tree-element .self:hover .cypd-icon-wrapper svg * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-tree-element .self>* {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-tree-element .self .label {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-tree-container.collapsable .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.collapsable .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.collapsable .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-container.black.collapsable .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black.collapsable .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black.collapsable .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-icon-expand,\r\n.cypd-tree-inline-icon {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container {\r\n    position: relative;\r\n    flex-direction: row;\r\n    padding: 0;\r\n    background: transparent;\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container>.cypd-tree-element:not(:last-child) {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element {\r\n    padding-left: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self {\r\n    width: 120px;\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>* {\r\n    margin-right: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>.label {\r\n    text-align: center;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .children {\r\n    visibility: hidden;\r\n}\r\n\r\n\r\n/* cypd tooltip */\r\n\r\n.cypd-tooltip-wrapper {\r\n    position: relative;\r\n    display: flex;\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-tooltip-wrapper .cypd-tooltip {\r\n    position: absolute;\r\n    word-break: break-all;\r\n    cursor: default;\r\n    font-weight: normal;\r\n    width: var(--default-tooltip-width);\r\n    height: auto;\r\n    color: white;\r\n    background-color: var(--default-cyp-blue-active);\r\n    line-height: 1.3;\r\n    padding: 10px;\r\n    border-radius: 3px;\r\n    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);\r\n    opacity: 0;\r\n    z-index: 0;\r\n    transform: scale(0);\r\n    letter-spacing: 0.5px;\r\n    word-break: normal;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration), visibility var(--default-transition-duration);\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip {\r\n    z-index: 21;\r\n    transform: scale(1);\r\n    visibility: visible;\r\n    transition-delay: 500ms;\r\n    opacity: var(--default-tooltip-opacity);\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip::before,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip::before {\r\n    content: ' ';\r\n    position: absolute;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.left,\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.right,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.left,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.right {\r\n    top: 50%;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.top,\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.bottom,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.top,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.bottom {\r\n    left: 50%;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.right,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.right {\r\n    left: calc(100% + 5px);\r\n    transform: translateY(-50%);\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.right::before,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.right::before {\r\n    left: -7px;\r\n    top: calc(50% - 5px);\r\n    background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 5 10 0 10 10 Z' fill='%2300839E' /></svg>\") no-repeat center;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.left,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.left {\r\n    transform: translate(calc(-100% - 5px), -50%);\r\n}\r\n\r\n.cypd-tooltip-wrapper .cypd-tooltip.left::before {\r\n    right: -7px;\r\n    top: calc(50% - 5px);\r\n    background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 0 10 10 5 Z' fill='%2300839E' /></svg>\") no-repeat center;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.top,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.top {\r\n    transform: translate(-50%, calc(-100% - 9px));\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.top::before,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.top::before {\r\n    bottom: -9px;\r\n    left: calc(50% - 5px);\r\n    background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 10 0 5 10 Z' fill='%2300839E' /></svg>\") no-repeat center;\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.bottom,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.bottom {\r\n    top: calc(100% + 7px);\r\n    transform: translate(-50%);\r\n}\r\n\r\n.cypd-tooltip-wrapper.open .cypd-tooltip.bottom::before,\r\n.cypd-tooltip-wrapper:hover .cypd-tooltip.bottom::before {\r\n    top: -9px;\r\n    left: calc(50% - 5px);\r\n    background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M5 0 0 10 10 10 Z' fill='%2300839E' /></svg>\") no-repeat center;\r\n}\r\n\r\n\r\n/* cypd slider */\r\n\r\n.cypd-slider-container {\r\n    position: relative;\r\n    height: var(--default-large-height);\r\n    padding: 5px;\r\n    flex-grow: 1;\r\n    /* background-color: var(--default-cyp-blue-opa-deep); */\r\n}\r\n\r\n.cypd-slider-container.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-slider-track {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 5px;\r\n    width: 100%;\r\n    border-radius: 2.5px;\r\n    background-color: var(--default-disabled-color);\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-track {\r\n    background-color: rgb(163, 163, 163, 0.6);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-track.active,\r\n.cypd-slider-track:hover {\r\n    background-color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-slider-point.drag {\r\n    position: absolute;\r\n    height: var(--default-slider-drag-width);\r\n    width: var(--default-slider-drag-width);\r\n    background-color: white;\r\n    border: 3px solid var(--default-cyp-blue-hover);\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n    z-index: 1;\r\n    transform: translateX(calc(-1 * var(--default-slider-drag-width) / 2));\r\n    transition: border-color var(--default-transition-duration), box-shadow var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-point.drag.active {\r\n    border-color: var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 5px var(--default-cyp-blue-opa-medium);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-point.drag {\r\n    border-color: rgb(160, 160, 160) !important;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip-wrapper {\r\n    display: flex !important;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip {\r\n    width: auto;\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.cypd-slider-range {\r\n    position: absolute;\r\n    overflow: visible;\r\n    height: 5px;\r\n}\r\n\r\n.cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-light);\r\n    stroke-width: 5px;\r\n    stroke-linecap: round;\r\n    transition: stroke var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-track.active .cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-range path {\r\n    stroke: rgb(160, 160, 160) !important;\r\n}\r\n\r\n\r\n/* cypd form */\r\n\r\n.cypd-formitem-wrapper {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    text-align: left;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper.vertical {\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n}\r\n\r\n.cypd-formitem-wrapper>* {\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper>.help {\r\n    color: var(--default-red-active-color);\r\n    position: absolute;\r\n    right: 0;\r\n    bottom: -13px;\r\n}\r\n\r\n.cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {\r\n    content: ':';\r\n    display: inline;\r\n}\r\n\r\n.cypd-formitem-wrapper.error {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.cypd-formitem-wrapper.error>.cypd-select-wrapper,\r\n.cypd-formitem-wrapper.error>.cypd-input {\r\n    border-color: var(--default-red-color);\r\n}\r\n\r\n\r\n/* cypd calendar - overwrite react-calendar */\r\n\r\n.cypd-picker-wrapper {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    height: var(--default-normal-height);\r\n    width: 150px;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    top: 6px;\r\n    right: 5px;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-picker-wrapper.hide .react-calendar {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-input {\r\n    position: absolute;\r\n    cursor: text;\r\n    color: var(--default-gray-color);\r\n    width: 100%;\r\n}\r\n\r\n.cypd-picker-wrapper.hide .cypd-input:focus {\r\n    box-shadow: none;\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.react-calendar {\r\n    position: absolute;\r\n    width: 250px;\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    padding: 5px;\r\n    margin-top: 10px;\r\n    margin-bottom: 10px;\r\n    background: white;\r\n    z-index: 1;\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n    transform: scaleY(1) translateY(calc(-100% - 10px));\r\n    transform-origin: bottom;\r\n    transition: transform 100ms ease-in-out 50ms, opacity var(--default-transition-duration);\r\n}\r\n\r\n.react-calendar button {\r\n    position: relative;\r\n    background-color: transparent;\r\n    color: var(--default-cyp-blue-active);\r\n    border: 0;\r\n    height: 30px;\r\n    cursor: pointer;\r\n    transition: background-color 50ms;\r\n}\r\n\r\n.react-calendar button abbr {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.react-calendar button.react-calendar__tile--active,\r\n.react-calendar button:focus,\r\n.react-calendar button::-moz-focus-inner {\r\n    border: none;\r\n}\r\n\r\n.react-calendar button.react-calendar__month-view__days__day.react-calendar__tile--active,\r\n.react-calendar button.react-calendar__month-view__days__day:focus,\r\n.react-calendar button.react-calendar__month-view__days__day::-moz-focus-inner {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\nbutton.react-calendar__month-view__days__day {\r\n    height: 0;\r\n    padding-top: calc(100% / 7);\r\n    border-radius: 50%;\r\n}\r\n\r\nbutton.react-calendar__century-view__decades__decade {\r\n    height: 40px;\r\n}\r\n\r\n.react-calendar button:hover {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\n.react-calendar__month-view__weekdays {\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: 30px;\r\n    line-height: 30px;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.react-calendar__month-view__weekdays__weekday abbr {\r\n    color: white;\r\n    font-weight: bold;\r\n    text-decoration: none;\r\n}\r\n\r\n.cypd-digital-clock-wrapper {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    width: 150px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input {\r\n    position: absolute;\r\n    width: 100%;\r\n    z-index: 1;\r\n    color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input:hover {\r\n    cursor: text;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper {\r\n    margin-right: -1px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select {\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-options-container {\r\n    margin-top: 1px;\r\n    box-shadow: none;\r\n    background-color: white;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container {\r\n    height: var(--default-select-dropdown-height);\r\n    transition-delay: 0s;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.hr .cypd-options-container {\r\n    border-radius: 3px 0 0 3px;\r\n    box-shadow: -1px 1px 2px 0px var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.hr .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.min .cypd-options-container {\r\n    border-radius: 0;\r\n    border-left: 1 solid var(--default-cyp-blue-active);\r\n    border-right: 1 solid var(--default-cyp-blue-active);\r\n    box-shadow: 1px 1px 2px 0px var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.sec .cypd-options-container {\r\n    border-radius: 0 3px 3px 0;\r\n    border-left: 1 solid var(--default-cyp-blue-active);\r\n    box-shadow: 1px 1px 2px 0px var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    width: 0;\r\n    top: 6px;\r\n    right: 20px;\r\n    z-index: 1;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n\r\n/* cypd notification */\r\n\r\n#g__cypd_notify_window {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-flow: column-reverse;\r\n    flex-direction: column-reverse;\r\n    margin-right: 10px;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 350px;\r\n    z-index: 9;\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper {\r\n    overflow: hidden;\r\n    margin-bottom: 10px;\r\n    max-height: 90px;\r\n    box-shadow: 0px 0px 12px -2px var(--default-deepgray-color);\r\n    transition: max-height .2s cubic-bezier(0.215, 0.610, 0.355, 1), margin-bottom 0s cubic-bezier(0.215, 0.610, 0.355, 1) .1s;\r\n    animation: PushIn 500ms cubic-bezier(0.215, 0.610, 0.355, 1);\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper.hide {\r\n    margin-bottom: 0px;\r\n    max-height: 0px;\r\n}\r\n\r\n@keyframes PushIn {\r\n    0% {\r\n        transform: translateX(150%);\r\n    }\r\n    100% {\r\n        transform: none;\r\n    }\r\n}\r\n\r\n@keyframes PushOut {\r\n    0% {\r\n        transform: scaleY(1);\r\n    }\r\n    100% {\r\n        transform: scaleY(0);\r\n    }\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 100%;\r\n    padding: 10px 10px 10px 15px;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info {\r\n    border-left: 5px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success {\r\n    border-left: 5px solid #2fdc17;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning {\r\n    border-left: 5px solid #ff9b02;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error {\r\n    border-left: 5px solid var(--default-red-active-color);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .icon {\r\n    overflow: visible;\r\n    min-width: 25px;\r\n    height: 25px;\r\n    left: 15px;\r\n    border-radius: 50%;\r\n    background-position-y: center;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info .icon {\r\n    background-color: var(--default-cyp-blue-active);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><circle cx='12.5' cy='8' r='2' stroke='none' fill='white'/><path d='M9.5 12.5 14.5 12.5 14.5 18.5 16.5 19.5 9.5 19.5 11.5 18.5 11.5 14.5 Z' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success .icon {\r\n    background-color: #2fdc17;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M5 13 11 17 18 7' stroke='white' stroke-width='3' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning .icon {\r\n    background-color: white;\r\n    border-radius: 0px;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M12.5 2 22.026 20 2.974 20 Z' stroke='%23ff9b02' stroke-width='3' stroke-linejoin='round' fill='%23ff9b02'/><path d='M11.1 7 13.9 7 12.5 15 Z' stroke='none' fill='white' /><circle cx='12.5' cy='17.4' r='1.4' stroke='none' fill='white'/><circle cx='12.5' cy='7' r='1.4' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error .icon {\r\n    background-color: var(--default-red-active-color);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M7.5 7.5 17.5 17.5 M17.5 7.5 7.5 17.5' stroke='white' stroke-width='4' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content {\r\n    height: 80%;\r\n    flex-grow: 10;\r\n    margin-left: 20px;\r\n    margin-right: 15px;\r\n    min-width: 240px;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .title {\r\n    font-weight: bold;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .message {\r\n    margin-top: 5px;\r\n    white-space: pre-wrap;\r\n    word-wrap: break-word;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .remove {\r\n    overflow: visible;\r\n    min-width: 20px;\r\n    height: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\nhtml {\r\n    visibility: visible;\r\n}";
+var css = "* {\r\n    box-sizing: border-box;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-size: var(--default-normal-fontsize);\r\n    letter-spacing: 0.5px;\r\n    scrollbar-color: #7fbeca rgba(108, 151, 158, 0.376);\r\n    scrollbar-width: thin;\r\n    scrollbar-highlight-color: #00839E;\r\n    scrollbar-darkshadow-color: #00839E;\r\n}\r\n\r\n*::selection {\r\n    color: white;\r\n    background-color: #00839E;\r\n}\r\n\r\n\r\n/* \r\n@font-face {\r\n    font-family: 'Noto Sans TC', sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');\r\n    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+F900-FAFF, U+2F800-2FA1F;\r\n}\r\n\r\n@font-face {\r\n    font-family: \"Open Sans\", sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');\r\n    unicode-range: U+00-7F;\r\n} */\r\n\r\nbody {\r\n    --default-large-fontsize: 16px;\r\n    --default-normal-fontsize: 14px;\r\n    --default-small-fontsize: 12px;\r\n    --default-large-height: 39px;\r\n    --default-normal-height: 32px;\r\n    --default-small-height: 25px;\r\n    --default-cyp-blue-active: #00839E;\r\n    --default-cyp-blue-hover: #33a8c0;\r\n    --default-cyp-blue-light: #47bbd3;\r\n    --default-cyp-blue-opa-light: #00839E2F;\r\n    --default-cyp-blue-opa-medium: #00839E7F;\r\n    --default-cyp-blue-opa-deep: #00839EAF;\r\n    --default-app-min-height: 642px;\r\n    --default-app-min-width: 600px;\r\n    --default-header-height: 60px;\r\n    --default-nav-height: 40px;\r\n    --default-footer-height: 0px;\r\n    --default-leftsider-width: 280px;\r\n    --default-rightsider-width: 0px;\r\n    --default-content-height: calc(100% - var(--default-header-height) - var(--default-nav-height) - var(--default-footer-height));\r\n    /* --default-leftsider-width: 0px;\r\n--default-rightsider-width: 250px; */\r\n    --default-header-width: 100%;\r\n    --default-left-collapser-width: 13px;\r\n    --default-right-collapser-width: 0px;\r\n    /* --default-left-collapser-width: 0px;\r\n--default-right-collapser-width: 15px; */\r\n    --default-gray-color: rgb(163, 163, 163);\r\n    --default-disabled-color: rgb(185, 185, 185);\r\n    --default-disabled-background: rgb(231, 231, 231);\r\n    --default-red-color: rgb(255, 72, 72);\r\n    --default-red-hover-color: rgb(255, 128, 128);\r\n    --default-red-active-color: rgb(255, 28, 28);\r\n    --default-deepgray-color: rgb(139, 139, 139);\r\n    --default-lightblack-color: rgb(31, 31, 31);\r\n    --default-transition-duration: 150ms;\r\n    /* for navbar cypd-tree */\r\n    --default-nav-background-color: rgb(51, 51, 51);\r\n    --default-navhover-background-color: rgba(51, 51, 51, 0.9);\r\n    --default-nav-item-width: 150px;\r\n    --default-nav-item-padding: 0px 20px 0px 20px;\r\n    --default-dropdown-item-height: 35px;\r\n    /* for cypd-select */\r\n    --default-select-normal-height: 32px;\r\n    --default-select-small-height: 25px;\r\n    --default-select-dropdown-height: 200px;\r\n    /* for cypd-tooltip */\r\n    --default-tooltip-width: 150px;\r\n    --default-tooltip-opacity: 1;\r\n    /* for cypd-slider */\r\n    --default-slider-drag-width: 17px;\r\n    --default-inrange-hover-color: var(--default-cyp-blue-active);\r\n    --default-inrange-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd general */\r\n\r\n.App {\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    min-height: var(--default-app-min-height);\r\n    min-height: var(--default-app-min-width);\r\n}\r\n\r\n[class^='cypd-'].small {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    /* width */\r\n    width: 5px;\r\n}\r\n\r\n ::-webkit-scrollbar-track {\r\n    /* Track */\r\n    background: rgba(108, 151, 158, 0.376);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb {\r\n    /* Handle */\r\n    background: var(--default-cyp-blue-light);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:hover {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-hover);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:active {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-active);\r\n}\r\n\r\n\r\n/* cypd layout */\r\n\r\n.cypd-layout-header {\r\n    background-color: white;\r\n    text-align: center;\r\n    height: var(--default-header-height);\r\n    padding: 10px;\r\n}\r\n\r\n.cypd-layout-navigation {\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: var(--default-nav-height);\r\n    min-width: var(--default-app-min-width);\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.cypd-layout-content {\r\n    display: flex;\r\n    flex-direction: row;\r\n    min-width: var(--default-app-min-width);\r\n    height: var(--default-content-height);\r\n}\r\n\r\n.cypd-layout-content:after {\r\n    content: '';\r\n    display: table;\r\n    clear: both;\r\n}\r\n\r\n.column {\r\n    position: relative;\r\n    overflow: visible;\r\n    transition: width var(--default-transition-duration);\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.column.left {\r\n    width: 2px;\r\n    align-self: stretch;\r\n    background-color: black;\r\n    margin-right: var(--default-left-collapser-width);\r\n    border-right: 1.3px solid rgb(153, 153, 153);\r\n}\r\n\r\n.column.right {\r\n    margin-right: var(--default-right-collapser-width);\r\n    border-left: 1.3px solid rgb(153, 153, 153);\r\n}\r\n\r\n.column .cypd-layout-column-wrapper {\r\n    position: relative;\r\n    flex-grow: 2;\r\n    height: 100%;\r\n    z-index: 7;\r\n    transition: transform var(--default-transition-duration);\r\n    transition-delay: calc(var(--default-transition-duration) / 2);\r\n}\r\n\r\n.column.left .cypd-layout-column-wrapper {\r\n    transform: translateX(calc(-1 * var(--default-leftsider-width)));\r\n}\r\n\r\n.column.right .cypd-layout-column-wrapper {\r\n    transform: translateX(var(--default-rightsider-width));\r\n}\r\n\r\n.column .collapser {\r\n    position: absolute;\r\n    height: 60px;\r\n    top: calc(100% - 90px);\r\n    z-index: 5;\r\n    cursor: pointer;\r\n}\r\n\r\n.column.left .collapser {\r\n    width: var(--default-left-collapser-width);\r\n    right: calc(-1 * var(--default-left-collapser-width) + 1px);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M3 3 9 3 9 3 Q 12 3 12 6 12 6 12 54 Z' stroke='black' fill='black'/><path d='M12 54 Q 12 57 9 57 9 57 3 57 Z' stroke='black' fill='black'/><path d='M3 57 3 3 12 54 Z' stroke='black' fill='black'/><path d='M3 3 A 3 3, 0, 0, 1, 0 0 L 0 3 Z' stroke='black' fill='black'/><path d='M3 57 A 3 3, 0, 0, 0, 0 60 L 0 57 Z' stroke='black' fill='black'/><path d='M0 3 3 3 3 57 0 57 Z' stroke='black' fill='black'/><polyline points='3,24 3,36 8,30' fill='white'/></svg>\");\r\n}\r\n\r\n.column.right .collapser {\r\n    width: var(--default-right-collapser-width);\r\n    left: calc(-1 * var(--default-right-collapser-width) + 1px);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M 6 3 Q 3 3 3 6 Z' stroke='black' fill='black'/><path d='M 3 6 3 54 Q 3 57 6 57 Z' stroke='black' fill='black'/><path d='M 3 6 6 57 6 3 Z' stroke='black' fill='black'/><path d='M12 3 A 3 3, 0, 0, 0, 15 0 L 15 3 Z' stroke='black' fill='black'/><path d='M12 57 A 3 3, 0, 0, 1, 15 60 L 15 57 Z' stroke='black' fill='black'/><path d='M15 3 15 57 6 57 6 3 Z' stroke='black' fill='black'/><polyline points='12,24 12,36 7,30' fill='white'/></svg>\");\r\n}\r\n\r\n.column.left.visible {\r\n    width: var(--default-leftsider-width);\r\n    flex-shrink: 0;\r\n    transition-delay: calc(var(--default-transition-duration) / 2);\r\n}\r\n\r\n.column.right.visible {\r\n    width: var(--default-rightsider-width);\r\n    margin-left: var(--default-right-collapser-width);\r\n}\r\n\r\n.column.visible .cypd-layout-column-wrapper {\r\n    transform: none;\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.column.middle {\r\n    flex-grow: 5;\r\n    overflow: hidden;\r\n    padding: 10px 10px 10px 10px;\r\n}\r\n\r\n.column.middle.collapsed {\r\n    transition-delay: calc(var(--default-transition-duration) / 2);\r\n}\r\n\r\n.cypd-layout-footer {\r\n    /* position: fixed;\r\n    bottom: 0px; */\r\n    background-color: var(--default-cyp-blue-active);\r\n    text-align: center;\r\n    width: 100%;\r\n    height: var(--default-footer-height);\r\n}\r\n\r\n@media (max-width: 800px) {\r\n    .column.left {\r\n        position: absolute;\r\n        z-index: 21;\r\n        height: 100%;\r\n    }\r\n    .column .collapser {\r\n        top: calc(100% - var(--default-header-height) - var(--default-nav-height) - 90px);\r\n    }\r\n}\r\n\r\n\r\n/* cypd table */\r\n\r\n.cypd-table-container {\r\n    margin: 10px;\r\n    width: 100%;\r\n    display: table;\r\n}\r\n\r\n.cypd-table-container .table-wrapper {\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    /* cursor: pointer; */\r\n    background: white;\r\n    transition: box-shadow 100ms ease-in-out;\r\n}\r\n\r\n.cypd-table-container .table-wrapper.show-empty {\r\n    min-height: 150px;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' overflow='visible'><ellipse cx='50' cy='70' rx='30' ry='5' stroke='%none' fill='rgba(170,170,170,0.125)' /><path d='M25 55 35 40 65 40 75 55' stroke='rgba(170,170,170,0.5)' fill='none' stroke-linejoin='round' /><path d='M75 55 60 55 58 60 42 60 40 55 25 55 25 70 75 70 Z' stroke='rgba(170,170,170,0.5)' fill='rgb(238,238,238)' stroke-linejoin='round' /><text x='50' y='95' fill='rgba(170,170,170,0.5)' text-anchor='middle'>No Data</text></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n}\r\n\r\n.cypd-table-container .cypd-table {\r\n    display: table;\r\n    border-collapse: collapse;\r\n    width: 100%;\r\n}\r\n\r\n\r\n/* .cypd-table-container .table-wrapper:hover {\r\n    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.212), 0px 0px 4px rgba(0, 0, 0, 0.486);\r\n} */\r\n\r\n.cypd-table-container .cypd-table .row {\r\n    height: 30px;\r\n    line-height: 1.5;\r\n    display: table-row;\r\n    transition: background-color 100ms ease-in-out;\r\n}\r\n\r\n.cypd-table-container .cypd-table .row.header {\r\n    color: white;\r\n    font-size: 20px;\r\n    font-weight: bolder;\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n\r\n/* .cypd-table-container .cypd-table .row.header:hover {\r\n    background-color: var(--default-cyp-blue-opa-medium);\r\n} */\r\n\r\n.cypd-table-container .cypd-table .row.normal {\r\n    border-bottom: 1px solid var(--default-cyp-blue-opa-light);\r\n    color: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-table-container .cypd-table.nextpage .row.normal {\r\n    animation: NextPage 300ms cubic-bezier(1, 0, 0, 1);\r\n}\r\n\r\n.cypd-table-container .cypd-table.prevpage .row.normal {\r\n    animation: PrevPage 300ms cubic-bezier(1, 0, 0, 1);\r\n}\r\n\r\n\r\n/* .cypd-table-container .cypd-table .row.normal:hover {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n} */\r\n\r\n.cypd-table-container .cypd-table .cell {\r\n    position: relative;\r\n    padding: 5px 10px 5px 10px;\r\n    display: table-cell;\r\n    vertical-align: middle;\r\n    line-height: 100%;\r\n    text-align: center;\r\n    transition: transform 100ms ease-in-out;\r\n}\r\n\r\n.cypd-table-container .footer {\r\n    box-sizing: border-box;\r\n    position: relative;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    flex-direction: row-reverse;\r\n    align-items: center;\r\n    padding: 10px 20px 10px 20px;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-table-container .footer .cypd-span,\r\n.cypd-table-container .footer .cypd-input,\r\n.cypd-table-container .footer .cypd-button {\r\n    float: right;\r\n}\r\n\r\n\r\n/* .cypd-table-container .cypd-table .cell .cypd-icon-wrapper {\r\n    position: relative;\r\n    display: inline-block;\r\n    transform: translateY(3px);\r\n} */\r\n\r\n.cypd-table-container .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-table-container .cypd-tooltip-wrapper {\r\n    display: inline-flex;\r\n}\r\n\r\n@keyframes NextPage {\r\n    0% {\r\n        opacity: 0;\r\n        transform: translate(20px);\r\n    }\r\n    20% {\r\n        opacity: 0;\r\n    }\r\n    100% {\r\n        opacity: 1;\r\n        transform: translate(0);\r\n    }\r\n}\r\n\r\n@keyframes PrevPage {\r\n    0% {\r\n        opacity: 0;\r\n        transform: translate(-20px);\r\n    }\r\n    20% {\r\n        opacity: 0;\r\n    }\r\n    100% {\r\n        opacity: 1;\r\n        transform: translate(0);\r\n    }\r\n}\r\n\r\n\r\n/* cypd cypd-modal */\r\n\r\n.cypd-modal-container {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100vh;\r\n    width: 100vw;\r\n    user-select: text;\r\n    z-index: 11;\r\n}\r\n\r\n.cypd-modal-container.active {\r\n    opacity: 1;\r\n    visibility: visible;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container.hide {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility 0ms ease-in var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.8);\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal {\r\n    position: relative;\r\n    background: white;\r\n    display: inline-block;\r\n    border-radius: 3px;\r\n    min-width: 400px;\r\n    padding: 10px;\r\n    text-align: left;\r\n}\r\n\r\n.cypd-confirm-dialog-container {\r\n    position: relative;\r\n    z-index: 31;\r\n}\r\n\r\n\r\n/* \r\n.cypd-modal-container.active .cypd-modal-background .cypd-modal {\r\n    animation: popIn 300ms;\r\n}\r\n\r\n.cypd-modal-container.hide .cypd-modal-background .cypd-modal {\r\n    animation: popOut 300ms;\r\n} */\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal h3 {\r\n    margin: 10px 20px 15px 20px;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    line-height: 30px;\r\n    font-size: 18px;\r\n    border-bottom: 1px solid rgba(40, 40, 40, 0.3);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal .content {\r\n    margin: 0px 20px 15px 20px;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal svg.close-svg {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    height: 20px;\r\n    width: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n@keyframes popIn {\r\n    0% {\r\n        transform: scale(0.9);\r\n        /* opacity: 0; */\r\n    }\r\n    100% {\r\n        transform: scale(1);\r\n        /* opacity: 1; */\r\n    }\r\n}\r\n\r\n@keyframes popOut {\r\n    0% {\r\n        transform: scale(1);\r\n    }\r\n    100% {\r\n        transform: scale(0);\r\n    }\r\n}\r\n\r\n\r\n/* cypd href */\r\n\r\n.cypd-href {\r\n    color: var(--default-cyp-blue-hover);\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    cursor: pointer;\r\n}\r\n\r\n.cypd-href:hover {\r\n    color: var(--default-cyp-blue-light);\r\n    text-decoration: underline;\r\n}\r\n\r\n\r\n/* cypd input */\r\n\r\n.cypd-input {\r\n    width: 60px;\r\n    height: 32px;\r\n    position: relative;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    text-align: left;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-input::placeholder {\r\n    color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-input:hover {\r\n    /* border: 1px solid var(---default-cyp-blue-hover); */\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-input:focus {\r\n    cursor: text;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd select */\r\n\r\n.cypd-select-wrapper {\r\n    position: relative;\r\n    display: inline-block;\r\n    text-align: left;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select {\r\n    padding: 0px 10px 0px 10px;\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    cursor: pointer;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2333a8c0' fill='%2333a8c0' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:hover {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:disabled {\r\n    cursor: not-allowed;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='rgb(160,160,160)' fill='rgb(160,160,160)' /></svg>\");\r\n    background-color: var(--default-disabled-background);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select.focus {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2300839E' fill='%2300839E' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select::placeholder {\r\n    color: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-options-container {\r\n    position: absolute;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    border-radius: 3px;\r\n    transform: scaleY(1) translateY(1px);\r\n    transform-origin: top;\r\n    opacity: 1;\r\n    z-index: 21;\r\n    box-shadow: 0px 0px 4px var(--default-cyp-blue-active);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 50ms;\r\n}\r\n\r\n.cypd-options-container.extend-top {\r\n    transform: scaleY(1) translateY(calc(-100% - var(--default-select-normal-height) - 2px));\r\n    transform-origin: bottom;\r\n}\r\n\r\n.cypd-options-container.limit-height {\r\n    height: var(--default-select-dropdown-height);\r\n}\r\n\r\n.cypd-options-container.collapsed {\r\n    opacity: 0;\r\n    height: 0;\r\n    transform: scaleY(0);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 150ms;\r\n}\r\n\r\n.cypd-options-wrapper {\r\n    position: relative;\r\n    width: 100%;\r\n    max-height: 100%;\r\n    scrollbar-color: #7fbeca white;\r\n    overflow-y: auto;\r\n}\r\n\r\n.cypd-options-wrapper::-webkit-scrollbar-track {\r\n    background: white;\r\n}\r\n\r\n.cypd-options-wrapper .cypd-option {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-option input[type=\"radio\"] {\r\n    position: absolute;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-option label {\r\n    position: relative;\r\n    display: block;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration), color var(--default-transition-duration);\r\n    color: black;\r\n    background-color: white;\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-option label {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n.cypd-option input[type=\"radio\"]:checked~label,\r\n.cypd-option label:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    color: white;\r\n}\r\n\r\n\r\n/* cypd icon */\r\n\r\n.cypd-icon-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable {\r\n    cursor: pointer;\r\n    pointer-events: all;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable:active {\r\n    opacity: 0.5;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable svg.cypd-icon * {\r\n    /* if not disable pointer event, parent onclick will not triggered sometimes */\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon:not(.senario) {\r\n    overflow: visible;\r\n    max-width: 16px;\r\n    max-height: 16px;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.fc-loading {\r\n    animation: rotateLoad 1s linear infinite;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.senario {\r\n    overflow: visible;\r\n    top: 0;\r\n    left: 0;\r\n    min-height: 100%;\r\n    min-width: 250px;\r\n    opacity: 0.3;\r\n}\r\n\r\nsvg.cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n    stroke-linejoin: round;\r\n    stroke-linecap: round;\r\n}\r\n\r\n@keyframes rotateLoad {\r\n    0% {\r\n        transform: rotate(0);\r\n    }\r\n    100% {\r\n        transform: rotate(1turn);\r\n    }\r\n}\r\n\r\n\r\n/* cypd button */\r\n\r\n.cypd-button {\r\n    box-sizing: border-box;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: relative;\r\n    padding: 0px 5px 0px 5px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    transition: color var(--default-transition-duration) ease-in-out 50ms, border var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-button.round {\r\n    border-radius: calc(var(--default-select-normal-height) / 2);\r\n}\r\n\r\n.cypd-button.small.round {\r\n    border-radius: calc(var(--default-select-small-height) / 2);\r\n}\r\n\r\n.cypd-button.small {\r\n    padding: 1px 5px 0px 5px;\r\n}\r\n\r\n.cypd-button.no-content {\r\n    width: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-button.small.no-content {\r\n    width: var(--default-select-small-height);\r\n}\r\n\r\n.cypd-button.primary {\r\n    color: white;\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.primary:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.primary:active {\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.danger {\r\n    color: white;\r\n    background-color: var(--default-red-color);\r\n}\r\n\r\n.cypd-button.danger:hover {\r\n    background-color: var(--default-red-hover-color);\r\n}\r\n\r\n.cypd-button.danger:active {\r\n    background-color: var(--default-red-active-color);\r\n}\r\n\r\n.cypd-button.default {\r\n    background-color: white;\r\n    color: var(--default-deepgray-color);\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.cypd-button.default:hover {\r\n    color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active {\r\n    color: var(--default-cyp-blue-active);\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.default .cypd-icon:not([class*='fc-']) * {\r\n    transition: stroke var(--default-transition-duration) ease-in-out 50ms;\r\n}\r\n\r\n.cypd-button.disabled {\r\n    background-color: var(--default-disabled-background);\r\n    color: var(--default-disabled-color);\r\n    border: 1px solid var(--default-disabled-color);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-button span {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-button.small span {\r\n    font-weight: 500;\r\n}\r\n\r\n.cypd-button span>* {\r\n    margin-right: 5px;\r\n}\r\n\r\n.cypd-button.small {\r\n    border-radius: 3px;\r\n}\r\n\r\n.cypd-button.no-content span>* {\r\n    margin-right: 0px;\r\n}\r\n\r\n.cypd-button:not(.no-content) span.hasicon {\r\n    margin-right: 3px;\r\n}\r\n\r\n.cypd-button .cypd-icon-wrapper {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-button.primary .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) *,\r\n.cypd-button.danger .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-button.default .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(139, 139, 139);\r\n}\r\n\r\n.cypd-button.default:hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(163, 163, 163);\r\n}\r\n\r\n\r\n/* cypd checkbox */\r\n\r\n.cypd-checkbox-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    position: relative;\r\n    width: auto;\r\n    height: var(--default-normal-height);\r\n    line-height: var(--default-normal-height);\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-checkbox-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-checkbox-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-checkbox-wrapper .cypd-checkbox {\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 3px;\r\n    background-color: white;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='white' stroke-width='2' fill='none' /></svg>\");\r\n    transition: border var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-checkbox-wrapper:hover .cypd-checkbox {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:checked~.cypd-checkbox {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:disabled~.cypd-checkbox {\r\n    background-color: gray;\r\n    border: 1px solid gray;\r\n}\r\n\r\n.cypd-checkbox-wrapper span {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    margin-left: 5px;\r\n}\r\n\r\n\r\n/* cypd radio group */\r\n\r\n.cypd-radio-group-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical {\r\n    flex-direction: column;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical .cypd-radio-wrapper {\r\n    margin-top: 2.5px;\r\n    margin-bottom: 2.5px;\r\n}\r\n\r\n.cypd-radio-wrapper input {\r\n    position: absolute;\r\n    visibility: hidden;\r\n    height: 0;\r\n    width: 0;\r\n}\r\n\r\n.cypd-radio-wrapper {\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    margin-left: 5px;\r\n}\r\n\r\n.cypd-radio-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    transition: border-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper:hover .cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio::after {\r\n    content: '';\r\n    width: 10px;\r\n    height: 10px;\r\n    border-radius: 50%;\r\n    background-color: var(--default-cyp-blue-hover);\r\n    transform: scale(0);\r\n    transition: transform var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio::after {\r\n    transform: scale(1);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n    border: 1px solid rgb(163, 163, 163);\r\n    box-shadow: none;\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio::after {\r\n    background-color: rgb(163, 163, 163) !important;\r\n}\r\n\r\n.cypd-radio-wrapper span {\r\n    height: 20px;\r\n    line-height: 20px;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n\r\n/* cypd switch button */\r\n\r\n.cypd-switchbutton-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-switchbutton {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 30px;\r\n    height: 7px;\r\n    border-radius: 3.5px;\r\n    background-color: var(--default-gray-color);\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-switchbutton::after {\r\n    content: '';\r\n    position: absolute;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    box-shadow: 0px 1px 3px var(--default-deepgray-color);\r\n    transition: transform var(--default-transition-duration), background-color 80ms 70ms;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton {\r\n    background-color: #84abb4;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::after {\r\n    background-color: var(--default-cyp-blue-active);\r\n    transform: translateX(15px);\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton::after {\r\n    background-color: rgb(160, 160, 160) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 12px;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: transparent;\r\n}\r\n\r\n\r\n/* .cypd-switchbutton-wrapper.animated input:checked+.cypd-switchbutton::before {\r\n    animation: Ripple 350ms;\r\n    animation-delay: 130ms;\r\n    animation-iteration-count: 1;\r\n}\r\n\r\n@keyframes Ripple {\r\n    0% {\r\n        border: 3px solid var(--default-cyp-blue-opa-medium);\r\n        transform: scale3d(0.75, 0.75, 1);\r\n        opacity: 1;\r\n    }\r\n    100% {\r\n        border: none;\r\n        transform: scale3d(1.5, 1.5, 1);\r\n        opacity: 0;\r\n    }\r\n} */\r\n\r\n\r\n/* cypd spin */\r\n\r\n.cypd-spin-wrapper {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    background: white;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal {\r\n    flex-direction: row;\r\n}\r\n\r\n.cypd-spin-wrapper.visible {\r\n    z-index: 31;\r\n    visibility: visible;\r\n}\r\n\r\n.cypd-spin-wrapper>* {\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal>* {\r\n    margin-bottom: 0px;\r\n    margin-right: 12px;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin {\r\n    transform: scale(1.5);\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg {\r\n    letter-spacing: 1px;\r\n    color: var(--default-cyp-blue-active);\r\n    font-weight: normal;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg::after {\r\n    content: ' ...';\r\n}\r\n\r\n@keyframes FadeIn {\r\n    0% {\r\n        opacity: 0;\r\n    }\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n@keyframes FadeOut {\r\n    0% {\r\n        opacity: 1;\r\n    }\r\n    100% {\r\n        opacity: 0;\r\n    }\r\n}\r\n\r\n\r\n/* cypd tree */\r\n\r\n.cypd-tree-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    text-align: left;\r\n    padding: 10px;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-tree-element .children,\r\n.cypd-tree-element {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding-left: 13px;\r\n    width: 100%;\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-tree-element.hide .children {\r\n    display: none;\r\n}\r\n\r\n.cypd-tree-element .self {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    padding-left: 5px;\r\n    cursor: pointer;\r\n    color: rgba(255, 255, 255, 0.883);\r\n    transition: color var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self {\r\n    color: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: rgba(255, 255, 255, 0.883);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self:hover {\r\n    background-color: var(--default-lightblack-color);\r\n    color: white;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self:hover {\r\n    background-color: rgba(128, 128, 128, 0.3);\r\n    color: rgb(109, 109, 109);\r\n}\r\n\r\n.cypd-tree-element .self:hover .cypd-icon-wrapper svg * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-tree-element .self>* {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-tree-element .self .label {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-icon-expand,\r\n.cypd-tree-inline-icon {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container {\r\n    position: relative;\r\n    flex-direction: row;\r\n    padding: 0;\r\n    background: transparent;\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container>.cypd-tree-element:not(:last-child) {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element {\r\n    padding-left: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self {\r\n    width: 120px;\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>* {\r\n    margin-right: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>.label {\r\n    text-align: center;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .children {\r\n    visibility: hidden;\r\n}\r\n\r\n\r\n/* cypd tooltip */\r\n\r\n\r\n/* .cypd-tooltip-wrapper {\r\n    position: relative;\r\n} */\r\n\r\n.cypd-tooltip {\r\n    position: absolute;\r\n    max-width: var(--default-tooltip-width);\r\n    height: auto;\r\n    color: white;\r\n    background-color: var(--default-cyp-blue-active);\r\n    padding: 10px;\r\n    border-radius: 3px;\r\n    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);\r\n    opacity: 0;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tooltip.active {\r\n    opacity: 1;\r\n}\r\n\r\n.cypd-tooltip.hide {\r\n    opacity: 0;\r\n}\r\n\r\n.cypd-tooltip::after,\r\n.cypd-tooltip::before {\r\n    content: ' ';\r\n    position: absolute;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n\r\n.cypd-tooltip.left {\r\n    transform: translate(calc(-100% - 10px), -50%);\r\n}\r\n\r\n.cypd-tooltip.right {\r\n    transform: translate(10px, -50%);\r\n}\r\n\r\n.cypd-tooltip.top {\r\n    transform: translate(-50%, calc(-100% - 10px));\r\n}\r\n\r\n.cypd-tooltip.bottom {\r\n    transform: translate(-50%, 10px);\r\n}\r\n\r\n.cypd-tooltip.top::before {\r\n    bottom: -10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 10 0 5 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.bottom::before {\r\n    top: -10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M5 0 0 10 10 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.left::before {\r\n    right: -10px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 0 10 10 5 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.right::before {\r\n    left: -10px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 5 10 0 10 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n\r\n/* cypd slider */\r\n\r\n.cypd-slider-container {\r\n    position: relative;\r\n    height: var(--default-large-height);\r\n    padding: 5px;\r\n    flex-grow: 1;\r\n    /* background-color: var(--default-cyp-blue-opa-deep); */\r\n}\r\n\r\n.cypd-slider-container.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-slider-track {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 5px;\r\n    width: 100%;\r\n    border-radius: 2.5px;\r\n    background-color: var(--default-disabled-color);\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-track {\r\n    background-color: rgb(163, 163, 163, 0.6);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-track.active,\r\n.cypd-slider-track:hover {\r\n    background-color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-slider-point.drag {\r\n    position: absolute;\r\n    height: var(--default-slider-drag-width);\r\n    width: var(--default-slider-drag-width);\r\n    background-color: white;\r\n    border: 3px solid var(--default-cyp-blue-hover);\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n    z-index: 1;\r\n    transform: translateX(calc(-1 * var(--default-slider-drag-width) / 2));\r\n    transition: border-color var(--default-transition-duration), box-shadow var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-point.drag.active {\r\n    border-color: var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 5px var(--default-cyp-blue-opa-medium);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-point.drag {\r\n    border-color: rgb(160, 160, 160) !important;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip-wrapper {\r\n    display: flex !important;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip {\r\n    width: auto;\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.cypd-slider-range {\r\n    position: absolute;\r\n    overflow: visible;\r\n    height: 5px;\r\n}\r\n\r\n.cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-light);\r\n    stroke-width: 5px;\r\n    stroke-linecap: round;\r\n    transition: stroke var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-track.active .cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-range path {\r\n    stroke: rgb(160, 160, 160) !important;\r\n}\r\n\r\n\r\n/* cypd form */\r\n\r\n.cypd-formitem-wrapper {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    text-align: left;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper.vertical {\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n}\r\n\r\n.cypd-formitem-wrapper>* {\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper>*:not(.cypd-formitem-label) {\r\n    flex-grow: 10;\r\n}\r\n\r\n.cypd-formitem-wrapper>.help {\r\n    color: var(--default-red-active-color);\r\n    position: absolute;\r\n    right: 0;\r\n    bottom: -13px;\r\n}\r\n\r\n.cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {\r\n    content: ':';\r\n    display: inline;\r\n}\r\n\r\n.cypd-formitem-wrapper.error {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.cypd-formitem-wrapper.error>.cypd-select-wrapper,\r\n.cypd-formitem-wrapper.error>.cypd-input {\r\n    border-color: var(--default-red-color);\r\n}\r\n\r\n\r\n/* cypd calendar - overwrite react-calendar */\r\n\r\n#g__cypd_calendar_window {\r\n    z-index: 11;\r\n    height: 300px;\r\n    opacity: 0;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-picker-wrapper {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    height: var(--default-normal-height);\r\n    width: 150px;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    top: 6px;\r\n    right: 5px;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-input {\r\n    position: absolute;\r\n    cursor: text;\r\n    color: var(--default-gray-color);\r\n    width: 100%;\r\n}\r\n\r\n.cypd-picker-wrapper.hide .cypd-input:focus {\r\n    box-shadow: none;\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.react-calendar {\r\n    position: relative;\r\n    width: 250px;\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    padding: 5px;\r\n    margin-top: 2px;\r\n    margin-bottom: 2px;\r\n    background: white;\r\n    z-index: 11;\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.react-calendar button {\r\n    position: relative;\r\n    background-color: transparent;\r\n    color: var(--default-cyp-blue-active);\r\n    border: 0;\r\n    height: 30px;\r\n    cursor: pointer;\r\n    transition: background-color 50ms;\r\n}\r\n\r\n.react-calendar button abbr {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.react-calendar button.react-calendar__tile--active,\r\n.react-calendar button:focus,\r\n.react-calendar button::-moz-focus-inner {\r\n    border: none;\r\n}\r\n\r\n.react-calendar button.react-calendar__month-view__days__day.react-calendar__tile--active,\r\n.react-calendar button.react-calendar__month-view__days__day:focus,\r\n.react-calendar button.react-calendar__month-view__days__day::-moz-focus-inner {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\nbutton.react-calendar__month-view__days__day {\r\n    height: 0;\r\n    padding-top: calc(100% / 7);\r\n    border-radius: 50%;\r\n}\r\n\r\nbutton.react-calendar__century-view__decades__decade {\r\n    height: 40px;\r\n}\r\n\r\n.react-calendar button:hover {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\n.react-calendar__month-view__weekdays {\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: 30px;\r\n    line-height: 30px;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.react-calendar__month-view__weekdays__weekday abbr {\r\n    color: white;\r\n    font-weight: bold;\r\n    text-decoration: none;\r\n}\r\n\r\n.cypd-digital-clock-wrapper {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    width: 150px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input {\r\n    position: absolute;\r\n    width: 100%;\r\n    z-index: 1;\r\n    color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input:hover {\r\n    cursor: text;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper {\r\n    margin-right: -1px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select {\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-options-container {\r\n    margin-top: 1px;\r\n    box-shadow: none;\r\n    background-color: white;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container {\r\n    height: var(--default-select-dropdown-height);\r\n    transition-delay: 0s;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.hr .cypd-options-container {\r\n    border-radius: 3px 0 0 3px;\r\n    box-shadow: -1px 1px 2px 0px var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.hr .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.min .cypd-options-container {\r\n    border-radius: 0;\r\n    border-left: 1 solid var(--default-cyp-blue-active);\r\n    border-right: 1 solid var(--default-cyp-blue-active);\r\n    box-shadow: 1px 1px 2px 0px var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.sec .cypd-options-container {\r\n    border-radius: 0 3px 3px 0;\r\n    border-left: 1 solid var(--default-cyp-blue-active);\r\n    box-shadow: 1px 1px 2px 0px var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    width: 0;\r\n    top: 6px;\r\n    right: 20px;\r\n    z-index: 1;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n\r\n/* cypd notification */\r\n\r\n#g__cypd_notify_window {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-flow: column-reverse;\r\n    flex-direction: column-reverse;\r\n    margin-right: 10px;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 350px;\r\n    z-index: 9;\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper {\r\n    overflow: hidden;\r\n    margin-bottom: 10px;\r\n    max-height: 90px;\r\n    box-shadow: 0px 0px 12px -2px var(--default-deepgray-color);\r\n    transition: max-height .2s cubic-bezier(0.215, 0.610, 0.355, 1), margin-bottom 0s cubic-bezier(0.215, 0.610, 0.355, 1) .1s;\r\n    animation: PushIn 500ms cubic-bezier(0.215, 0.610, 0.355, 1);\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper.hide {\r\n    margin-bottom: 0px;\r\n    max-height: 0px;\r\n}\r\n\r\n@keyframes PushIn {\r\n    0% {\r\n        transform: translateX(150%);\r\n    }\r\n    100% {\r\n        transform: none;\r\n    }\r\n}\r\n\r\n@keyframes PushOut {\r\n    0% {\r\n        transform: scaleY(1);\r\n    }\r\n    100% {\r\n        transform: scaleY(0);\r\n    }\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 100%;\r\n    padding: 10px 10px 10px 15px;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info {\r\n    border-left: 5px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success {\r\n    border-left: 5px solid #2fdc17;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning {\r\n    border-left: 5px solid #ff9b02;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error {\r\n    border-left: 5px solid var(--default-red-active-color);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .icon {\r\n    overflow: visible;\r\n    min-width: 25px;\r\n    height: 25px;\r\n    left: 15px;\r\n    border-radius: 50%;\r\n    background-position-y: center;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info .icon {\r\n    background-color: var(--default-cyp-blue-active);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><circle cx='12.5' cy='8' r='2' stroke='none' fill='white'/><path d='M9.5 12.5 14.5 12.5 14.5 18.5 16.5 19.5 9.5 19.5 11.5 18.5 11.5 14.5 Z' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success .icon {\r\n    background-color: #2fdc17;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M5 13 11 17 18 7' stroke='white' stroke-width='3' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning .icon {\r\n    background-color: white;\r\n    border-radius: 0px;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M12.5 2 22.026 20 2.974 20 Z' stroke='%23ff9b02' stroke-width='3' stroke-linejoin='round' fill='%23ff9b02'/><path d='M11.1 7 13.9 7 12.5 15 Z' stroke='none' fill='white' /><circle cx='12.5' cy='17.4' r='1.4' stroke='none' fill='white'/><circle cx='12.5' cy='7' r='1.4' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error .icon {\r\n    background-color: var(--default-red-active-color);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M7.5 7.5 17.5 17.5 M17.5 7.5 7.5 17.5' stroke='white' stroke-width='4' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content {\r\n    height: 80%;\r\n    flex-grow: 10;\r\n    margin-left: 20px;\r\n    margin-right: 15px;\r\n    min-width: 240px;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .title {\r\n    font-weight: bold;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .message {\r\n    margin-top: 5px;\r\n    white-space: pre-wrap;\r\n    word-wrap: break-word;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .remove {\r\n    overflow: visible;\r\n    min-width: 20px;\r\n    height: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\nhtml {\r\n    visibility: visible;\r\n}";
 styleInject(css);
 
 /*! *****************************************************************************
@@ -2718,12 +2718,12 @@ var Input = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Input.prototype.render = function () {
-        var _a = this.props, size = _a.size, className = _a.className, others = __rest(_a, ["size", "className"]);
+        var _a = this.props, size = _a.size, className = _a.className, instance = _a.instance, others = __rest(_a, ["size", "className", "instance"]);
         var inputClass = 'cypd-input';
         inputClass += (size) ? " " + size : '';
         if (className)
             inputClass += " " + className;
-        return (react.createElement("input", __assign({ className: inputClass }, others)));
+        return (react.createElement("input", __assign({ className: inputClass }, others, { ref: instance })));
     };
     return Input;
 }(react.Component));
@@ -2865,13 +2865,15 @@ var Sider = /** @class */ (function (_super) {
     }
     Sider.prototype.render = function () {
         var _this = this;
+        var _a = this.props, visible = _a.visible, onCollapse = _a.onCollapse;
         var direction = this.props.direction ? this.props.direction : 'left';
         if (direction === 'left')
-            window.layout.leftSideStatus = (this.props.visible) ? 'extend' : 'collapsed';
+            window.layout.leftSideStatus = (visible) ? 'extend' : 'collapsed';
         else
-            window.layout.rightSideStatus = (this.props.visible) ? 'extend' : 'collapsed';
-        return (react.createElement("div", { className: 'column ' + direction + (this.props.visible ? ' visible' : ''), ref: function (e) { _this.container = e; } },
-            this.props.onCollapse ? react.createElement("div", { className: 'collapser', onClick: this.props.onCollapse }) : undefined,
+            window.layout.rightSideStatus = (visible) ? 'extend' : 'collapsed';
+        return (react.createElement("div", { className: 'column ' + direction + (visible ? ' visible' : ''), ref: function (e) { _this.container = e; } },
+            onCollapse ? react.createElement("label", { className: 'collapser' },
+                react.createElement("input", { style: { visibility: 'hidden' }, type: 'checkbox', checked: (typeof visible === 'undefined' || visible), onChange: function (e) { onCollapse(e.target.checked); } })) : undefined,
             react.createElement("div", { className: 'cypd-layout-column-wrapper' }, this.props.children)));
     };
     return Sider;
@@ -2882,7 +2884,7 @@ var Center = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Center.prototype.render = function () {
-        return (react.createElement("div", { className: 'column middle ' + this.props.extend }, this.props.children));
+        return (react.createElement("div", { className: 'column middle' }, this.props.children));
     };
     return Center;
 }(react.Component));
@@ -2963,7 +2965,7 @@ var Node = /** @class */ (function (_super) {
                 _this.props.onClick(e);
             } } },
             react.createElement("div", { className: 'self' },
-                (this.props.children) ? react.createElement(Icon, { className: 'cypd-tree-icon-expand', type: this.state.collapsed ? 'square-plus' : 'square-minus', onClick: this.onCollapse }) : ((this.props.icon) ? react.createElement(Icon, { className: 'cypd-tree-inline-icon', type: this.props.icon }) : undefined),
+                (this.props.children && this.props.collapsable) ? react.createElement(Icon, { className: 'cypd-tree-icon-expand', type: this.state.collapsed ? 'square-plus' : 'square-minus', onClick: this.onCollapse }) : ((this.props.icon) ? react.createElement(Icon, { className: 'cypd-tree-inline-icon', type: this.props.icon }) : undefined),
                 react.createElement("span", { className: 'label' }, this.props.label)),
             react.createElement("div", { className: 'children', style: { display: ((childrenCount > 0) ? undefined : 'none') } }, react.Children.map(this.props.children, function (child, idx) {
                 var childClass = '';
@@ -2972,7 +2974,7 @@ var Node = /** @class */ (function (_super) {
                 if (idx === childrenCount - 1)
                     childClass += ' last';
                 if (react.isValidElement(child))
-                    return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : '') });
+                    return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : ''), collapsable: _this.props.collapsable });
                 else
                     return child;
             }))));
@@ -2985,6 +2987,7 @@ var Tree = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tree.prototype.render = function () {
+        var _this = this;
         var childrenCount = react.Children.toArray(this.props.children).length;
         var containerClass = 'cypd-tree-container';
         if (this.props.collapsable)
@@ -2998,7 +3001,7 @@ var Tree = /** @class */ (function (_super) {
             if (idx === childrenCount - 1)
                 childClass += ' last';
             if (react.isValidElement(child))
-                return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : '') });
+                return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : ''), collapsable: _this.props.collapsable });
             else
                 return child;
         })));
@@ -3010,22 +3013,55 @@ var component$1 = { Tree: Tree, Node: Node };
 var Tooltip = /** @class */ (function (_super) {
     __extends(Tooltip, _super);
     function Tooltip() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.tooltipId = Math.random().toString().slice(2);
+        _this.create = function () {
+            var container = document.getElementById(_this.tooltipId);
+            if (!container && _this.wrapperRef) {
+                var rect = _this.wrapperRef.getBoundingClientRect();
+                var direction = _this.props.direction;
+                container = document.createElement('div');
+                container.id = _this.tooltipId;
+                container.classList.add('cypd-tooltip');
+                container.classList.add((_this.props.direction) ? _this.props.direction : 'bottom');
+                container.innerText = _this.props.text;
+                if (direction === 'left') {
+                    container.style.left = window.pageXOffset + rect.left + "px";
+                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
+                }
+                else if (direction === 'right') {
+                    container.style.left = window.pageXOffset + rect.right + "px";
+                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
+                }
+                else if (direction === 'top') {
+                    container.style.left = window.pageYOffset + rect.left + (rect.width / 2) + "px";
+                    container.style.top = window.pageYOffset + rect.top + "px";
+                }
+                else {
+                    container.style.left = window.pageXOffset + rect.left + (rect.width / 2) + "px";
+                    container.style.top = window.pageYOffset + rect.bottom + "px";
+                }
+                document.body.appendChild(container);
+                setTimeout(function () { if (container)
+                    container.classList.add('active'); }, 1000);
+            }
+        };
+        _this.delete = function () {
+            var container = document.getElementById(_this.tooltipId);
+            if (container) {
+                container.classList.add('hide');
+                setTimeout(function () { if (container)
+                    document.body.removeChild(container); }, 150);
+            }
+        };
+        return _this;
     }
     Tooltip.prototype.render = function () {
+        var _this = this;
         var wrapperClass = 'cypd-tooltip-wrapper';
-        var tipClass = 'cypd-tooltip';
         if (this.props.className)
             wrapperClass += " " + this.props.className;
-        if (this.props.open)
-            wrapperClass += " open";
-        if (this.props.direction)
-            tipClass += " " + this.props.direction;
-        else
-            tipClass += ' bottom';
-        return react.createElement("div", { className: wrapperClass },
-            this.props.children,
-            react.createElement("div", { className: tipClass }, this.props.text));
+        return (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete }, this.props.children));
     };
     return Tooltip;
 }(react.Component));
@@ -3142,24 +3178,13 @@ var Slider = /** @class */ (function (_super) {
     };
     Slider.prototype.render = function () {
         var _this = this;
-        var _a = this.state, value = _a.value, min = _a.min, max = _a.max, pressSta = _a.pressSta;
+        var _a = this.state, value = _a.value, min = _a.min, max = _a.max, pressSta = _a.pressSta, hoverSta = _a.hoverSta;
         var containerClass = 'cypd-slider-container';
         var wrapperClass = 'cypd-slider-wrapper';
         var trackClass = 'cypd-slider-track';
         var pointClass = 'cypd-slider-point';
         var rangeClass = 'cypd-slider-range';
         var draw, offset_p = 0;
-        // var offset_bound_p = 0;
-        // if (this.trackElem) {
-        //     const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
-        //     const track_w = this.trackElem.offsetWidth ? this.trackElem.offsetWidth : 1; // avoid zero divide
-        //     offset_bound_p = 100 - (drag_w_px * 100 / track_w);
-        //     offset_p = ((value - min) * offset_bound_p) / (max - min);
-        //     draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
-        //         <path d={`M0 ${drag_w_px / 2} H 3000`}/>
-        //     </svg>);
-        // }
-        // const drag_w_px = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
         offset_p = ((value - min) * 100) / (max - min);
         draw = (react.createElement("svg", { className: rangeClass, style: { width: offset_p + "%", overflow: 'hidden' } },
             react.createElement("path", { d: "M2.5 2.5 H 3000" })));
@@ -3177,9 +3202,8 @@ var Slider = /** @class */ (function (_super) {
                         _this.trackElem = node; }, onMouseDown: this.handleTrackMouseDown },
                     draw,
                     react.createElement("div", { ref: function (node) { if (node)
-                            _this.dragElem = node; }, className: pointClass + ' drag', style: { left: offset_p + "%" }, onMouseDown: this.handleDragMouseDown },
-                        react.createElement(Tooltip, { text: value.toString(), direction: 'top', open: !!pressSta },
-                            react.createElement("div", { style: { width: cssDragWidth + "px", height: cssDragWidth + "px" } })))))));
+                            _this.dragElem = node; }, className: pointClass + ' drag', style: { left: offset_p + "%" }, onMouseDown: this.handleDragMouseDown, onMouseEnter: function () { _this.setState({ hoverSta: true }); }, onMouseLeave: function () { _this.setState({ hoverSta: false }); } },
+                        react.createElement("div", { className: "cypd-tooltip top " + ((pressSta || hoverSta) ? 'active' : 'hide'), style: { marginLeft: '6px', visibility: (pressSta || hoverSta) ? 'visible' : 'hidden' } }, value))))));
     };
     return Slider;
 }(react.Component));
@@ -3216,4977 +3240,6 @@ var Item = /** @class */ (function (_super) {
     return Item;
 }(react.Component));
 var form = { Item: Item };
-
-var reactIs_production_min = createCommonjsModule(function (module, exports) {
-Object.defineProperty(exports,"__esModule",{value:!0});
-var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?Symbol.for("react.suspense_list"):
-60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.fundamental"):60117,w=b?Symbol.for("react.responder"):60118,x=b?Symbol.for("react.scope"):60119;function y(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function z(a){return y(a)===m}
-exports.typeOf=y;exports.AsyncMode=l;exports.ConcurrentMode=m;exports.ContextConsumer=k;exports.ContextProvider=h;exports.Element=c;exports.ForwardRef=n;exports.Fragment=e;exports.Lazy=t;exports.Memo=r;exports.Portal=d;exports.Profiler=g;exports.StrictMode=f;exports.Suspense=p;
-exports.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===v||a.$$typeof===w||a.$$typeof===x)};exports.isAsyncMode=function(a){return z(a)||y(a)===l};exports.isConcurrentMode=z;exports.isContextConsumer=function(a){return y(a)===k};exports.isContextProvider=function(a){return y(a)===h};
-exports.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return y(a)===n};exports.isFragment=function(a){return y(a)===e};exports.isLazy=function(a){return y(a)===t};exports.isMemo=function(a){return y(a)===r};exports.isPortal=function(a){return y(a)===d};exports.isProfiler=function(a){return y(a)===g};exports.isStrictMode=function(a){return y(a)===f};exports.isSuspense=function(a){return y(a)===p};
-});
-
-unwrapExports(reactIs_production_min);
-var reactIs_production_min_1 = reactIs_production_min.typeOf;
-var reactIs_production_min_2 = reactIs_production_min.AsyncMode;
-var reactIs_production_min_3 = reactIs_production_min.ConcurrentMode;
-var reactIs_production_min_4 = reactIs_production_min.ContextConsumer;
-var reactIs_production_min_5 = reactIs_production_min.ContextProvider;
-var reactIs_production_min_6 = reactIs_production_min.Element;
-var reactIs_production_min_7 = reactIs_production_min.ForwardRef;
-var reactIs_production_min_8 = reactIs_production_min.Fragment;
-var reactIs_production_min_9 = reactIs_production_min.Lazy;
-var reactIs_production_min_10 = reactIs_production_min.Memo;
-var reactIs_production_min_11 = reactIs_production_min.Portal;
-var reactIs_production_min_12 = reactIs_production_min.Profiler;
-var reactIs_production_min_13 = reactIs_production_min.StrictMode;
-var reactIs_production_min_14 = reactIs_production_min.Suspense;
-var reactIs_production_min_15 = reactIs_production_min.isValidElementType;
-var reactIs_production_min_16 = reactIs_production_min.isAsyncMode;
-var reactIs_production_min_17 = reactIs_production_min.isConcurrentMode;
-var reactIs_production_min_18 = reactIs_production_min.isContextConsumer;
-var reactIs_production_min_19 = reactIs_production_min.isContextProvider;
-var reactIs_production_min_20 = reactIs_production_min.isElement;
-var reactIs_production_min_21 = reactIs_production_min.isForwardRef;
-var reactIs_production_min_22 = reactIs_production_min.isFragment;
-var reactIs_production_min_23 = reactIs_production_min.isLazy;
-var reactIs_production_min_24 = reactIs_production_min.isMemo;
-var reactIs_production_min_25 = reactIs_production_min.isPortal;
-var reactIs_production_min_26 = reactIs_production_min.isProfiler;
-var reactIs_production_min_27 = reactIs_production_min.isStrictMode;
-var reactIs_production_min_28 = reactIs_production_min.isSuspense;
-
-var reactIs_development = createCommonjsModule(function (module, exports) {
-
-
-
-if (process.env.NODE_ENV !== "production") {
-  (function() {
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
-// nor polyfill, then a plain number is used for performance.
-var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
-var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
-var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
-var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
-var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
-var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
-// (unstable) APIs that have been removed. Can we remove the symbols?
-
-var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
-var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
-var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
-var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
-var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
-var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
-var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
-var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
-var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
-
-function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);
-}
-
-/**
- * Forked from fbjs/warning:
- * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
- *
- * Only change is we use console.warn instead of console.error,
- * and do nothing when 'console' is not supported.
- * This really simplifies the code.
- * ---
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-var lowPriorityWarningWithoutStack = function () {};
-
-{
-  var printWarning = function (format) {
-    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-
-    if (typeof console !== 'undefined') {
-      console.warn(message);
-    }
-
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  lowPriorityWarningWithoutStack = function (condition, format) {
-    if (format === undefined) {
-      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(void 0, [format].concat(args));
-    }
-  };
-}
-
-var lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;
-
-function typeOf(object) {
-  if (typeof object === 'object' && object !== null) {
-    var $$typeof = object.$$typeof;
-
-    switch ($$typeof) {
-      case REACT_ELEMENT_TYPE:
-        var type = object.type;
-
-        switch (type) {
-          case REACT_ASYNC_MODE_TYPE:
-          case REACT_CONCURRENT_MODE_TYPE:
-          case REACT_FRAGMENT_TYPE:
-          case REACT_PROFILER_TYPE:
-          case REACT_STRICT_MODE_TYPE:
-          case REACT_SUSPENSE_TYPE:
-            return type;
-
-          default:
-            var $$typeofType = type && type.$$typeof;
-
-            switch ($$typeofType) {
-              case REACT_CONTEXT_TYPE:
-              case REACT_FORWARD_REF_TYPE:
-              case REACT_LAZY_TYPE:
-              case REACT_MEMO_TYPE:
-              case REACT_PROVIDER_TYPE:
-                return $$typeofType;
-
-              default:
-                return $$typeof;
-            }
-
-        }
-
-      case REACT_PORTAL_TYPE:
-        return $$typeof;
-    }
-  }
-
-  return undefined;
-} // AsyncMode is deprecated along with isAsyncMode
-
-var AsyncMode = REACT_ASYNC_MODE_TYPE;
-var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-var ContextConsumer = REACT_CONTEXT_TYPE;
-var ContextProvider = REACT_PROVIDER_TYPE;
-var Element = REACT_ELEMENT_TYPE;
-var ForwardRef = REACT_FORWARD_REF_TYPE;
-var Fragment = REACT_FRAGMENT_TYPE;
-var Lazy = REACT_LAZY_TYPE;
-var Memo = REACT_MEMO_TYPE;
-var Portal = REACT_PORTAL_TYPE;
-var Profiler = REACT_PROFILER_TYPE;
-var StrictMode = REACT_STRICT_MODE_TYPE;
-var Suspense = REACT_SUSPENSE_TYPE;
-var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
-
-function isAsyncMode(object) {
-  {
-    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-      hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarningWithoutStack$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
-    }
-  }
-
-  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
-}
-function isConcurrentMode(object) {
-  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
-}
-function isContextConsumer(object) {
-  return typeOf(object) === REACT_CONTEXT_TYPE;
-}
-function isContextProvider(object) {
-  return typeOf(object) === REACT_PROVIDER_TYPE;
-}
-function isElement(object) {
-  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-}
-function isForwardRef(object) {
-  return typeOf(object) === REACT_FORWARD_REF_TYPE;
-}
-function isFragment(object) {
-  return typeOf(object) === REACT_FRAGMENT_TYPE;
-}
-function isLazy(object) {
-  return typeOf(object) === REACT_LAZY_TYPE;
-}
-function isMemo(object) {
-  return typeOf(object) === REACT_MEMO_TYPE;
-}
-function isPortal(object) {
-  return typeOf(object) === REACT_PORTAL_TYPE;
-}
-function isProfiler(object) {
-  return typeOf(object) === REACT_PROFILER_TYPE;
-}
-function isStrictMode(object) {
-  return typeOf(object) === REACT_STRICT_MODE_TYPE;
-}
-function isSuspense(object) {
-  return typeOf(object) === REACT_SUSPENSE_TYPE;
-}
-
-exports.typeOf = typeOf;
-exports.AsyncMode = AsyncMode;
-exports.ConcurrentMode = ConcurrentMode;
-exports.ContextConsumer = ContextConsumer;
-exports.ContextProvider = ContextProvider;
-exports.Element = Element;
-exports.ForwardRef = ForwardRef;
-exports.Fragment = Fragment;
-exports.Lazy = Lazy;
-exports.Memo = Memo;
-exports.Portal = Portal;
-exports.Profiler = Profiler;
-exports.StrictMode = StrictMode;
-exports.Suspense = Suspense;
-exports.isValidElementType = isValidElementType;
-exports.isAsyncMode = isAsyncMode;
-exports.isConcurrentMode = isConcurrentMode;
-exports.isContextConsumer = isContextConsumer;
-exports.isContextProvider = isContextProvider;
-exports.isElement = isElement;
-exports.isForwardRef = isForwardRef;
-exports.isFragment = isFragment;
-exports.isLazy = isLazy;
-exports.isMemo = isMemo;
-exports.isPortal = isPortal;
-exports.isProfiler = isProfiler;
-exports.isStrictMode = isStrictMode;
-exports.isSuspense = isSuspense;
-  })();
-}
-});
-
-unwrapExports(reactIs_development);
-var reactIs_development_1 = reactIs_development.typeOf;
-var reactIs_development_2 = reactIs_development.AsyncMode;
-var reactIs_development_3 = reactIs_development.ConcurrentMode;
-var reactIs_development_4 = reactIs_development.ContextConsumer;
-var reactIs_development_5 = reactIs_development.ContextProvider;
-var reactIs_development_6 = reactIs_development.Element;
-var reactIs_development_7 = reactIs_development.ForwardRef;
-var reactIs_development_8 = reactIs_development.Fragment;
-var reactIs_development_9 = reactIs_development.Lazy;
-var reactIs_development_10 = reactIs_development.Memo;
-var reactIs_development_11 = reactIs_development.Portal;
-var reactIs_development_12 = reactIs_development.Profiler;
-var reactIs_development_13 = reactIs_development.StrictMode;
-var reactIs_development_14 = reactIs_development.Suspense;
-var reactIs_development_15 = reactIs_development.isValidElementType;
-var reactIs_development_16 = reactIs_development.isAsyncMode;
-var reactIs_development_17 = reactIs_development.isConcurrentMode;
-var reactIs_development_18 = reactIs_development.isContextConsumer;
-var reactIs_development_19 = reactIs_development.isContextProvider;
-var reactIs_development_20 = reactIs_development.isElement;
-var reactIs_development_21 = reactIs_development.isForwardRef;
-var reactIs_development_22 = reactIs_development.isFragment;
-var reactIs_development_23 = reactIs_development.isLazy;
-var reactIs_development_24 = reactIs_development.isMemo;
-var reactIs_development_25 = reactIs_development.isPortal;
-var reactIs_development_26 = reactIs_development.isProfiler;
-var reactIs_development_27 = reactIs_development.isStrictMode;
-var reactIs_development_28 = reactIs_development.isSuspense;
-
-var reactIs = createCommonjsModule(function (module) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = reactIs_production_min;
-} else {
-  module.exports = reactIs_development;
-}
-});
-var reactIs_1 = reactIs.isValidElementType;
-
-var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
-var printWarning$1 = function() {};
-
-if (process.env.NODE_ENV !== 'production') {
-  printWarning$1 = function(text) {
-    var message = 'Warning: ' + text;
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-}
-
-function emptyFunctionThatReturnsNull() {
-  return null;
-}
-
-var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
-  /* global Symbol */
-  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
-  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
-
-  /**
-   * Returns the iterator method function contained on the iterable object.
-   *
-   * Be sure to invoke the function with the iterable as context:
-   *
-   *     var iteratorFn = getIteratorFn(myIterable);
-   *     if (iteratorFn) {
-   *       var iterator = iteratorFn.call(myIterable);
-   *       ...
-   *     }
-   *
-   * @param {?object} maybeIterable
-   * @return {?function}
-   */
-  function getIteratorFn(maybeIterable) {
-    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-    if (typeof iteratorFn === 'function') {
-      return iteratorFn;
-    }
-  }
-
-  /**
-   * Collection of methods that allow declaration and validation of props that are
-   * supplied to React components. Example usage:
-   *
-   *   var Props = require('ReactPropTypes');
-   *   var MyArticle = React.createClass({
-   *     propTypes: {
-   *       // An optional string prop named "description".
-   *       description: Props.string,
-   *
-   *       // A required enum prop named "category".
-   *       category: Props.oneOf(['News','Photos']).isRequired,
-   *
-   *       // A prop named "dialog" that requires an instance of Dialog.
-   *       dialog: Props.instanceOf(Dialog).isRequired
-   *     },
-   *     render: function() { ... }
-   *   });
-   *
-   * A more formal specification of how these methods are used:
-   *
-   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
-   *   decl := ReactPropTypes.{type}(.isRequired)?
-   *
-   * Each and every declaration produces a function with the same signature. This
-   * allows the creation of custom validation functions. For example:
-   *
-   *  var MyLink = React.createClass({
-   *    propTypes: {
-   *      // An optional string or URI prop named "href".
-   *      href: function(props, propName, componentName) {
-   *        var propValue = props[propName];
-   *        if (propValue != null && typeof propValue !== 'string' &&
-   *            !(propValue instanceof URI)) {
-   *          return new Error(
-   *            'Expected a string or an URI for ' + propName + ' in ' +
-   *            componentName
-   *          );
-   *        }
-   *      }
-   *    },
-   *    render: function() {...}
-   *  });
-   *
-   * @internal
-   */
-
-  var ANONYMOUS = '<<anonymous>>';
-
-  // Important!
-  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
-  var ReactPropTypes = {
-    array: createPrimitiveTypeChecker('array'),
-    bool: createPrimitiveTypeChecker('boolean'),
-    func: createPrimitiveTypeChecker('function'),
-    number: createPrimitiveTypeChecker('number'),
-    object: createPrimitiveTypeChecker('object'),
-    string: createPrimitiveTypeChecker('string'),
-    symbol: createPrimitiveTypeChecker('symbol'),
-
-    any: createAnyTypeChecker(),
-    arrayOf: createArrayOfTypeChecker,
-    element: createElementTypeChecker(),
-    elementType: createElementTypeTypeChecker(),
-    instanceOf: createInstanceTypeChecker,
-    node: createNodeChecker(),
-    objectOf: createObjectOfTypeChecker,
-    oneOf: createEnumTypeChecker,
-    oneOfType: createUnionTypeChecker,
-    shape: createShapeTypeChecker,
-    exact: createStrictShapeTypeChecker,
-  };
-
-  /**
-   * inlined Object.is polyfill to avoid requiring consumers ship their own
-   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-   */
-  /*eslint-disable no-self-compare*/
-  function is(x, y) {
-    // SameValue algorithm
-    if (x === y) {
-      // Steps 1-5, 7-10
-      // Steps 6.b-6.e: +0 != -0
-      return x !== 0 || 1 / x === 1 / y;
-    } else {
-      // Step 6.a: NaN == NaN
-      return x !== x && y !== y;
-    }
-  }
-  /*eslint-enable no-self-compare*/
-
-  /**
-   * We use an Error-like object for backward compatibility as people may call
-   * PropTypes directly and inspect their output. However, we don't use real
-   * Errors anymore. We don't inspect their stack anyway, and creating them
-   * is prohibitively expensive if they are created too often, such as what
-   * happens in oneOfType() for any type before the one that matched.
-   */
-  function PropTypeError(message) {
-    this.message = message;
-    this.stack = '';
-  }
-  // Make `instanceof Error` still work for returned errors.
-  PropTypeError.prototype = Error.prototype;
-
-  function createChainableTypeChecker(validate) {
-    if (process.env.NODE_ENV !== 'production') {
-      var manualPropTypeCallCache = {};
-      var manualPropTypeWarningCount = 0;
-    }
-    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-      componentName = componentName || ANONYMOUS;
-      propFullName = propFullName || propName;
-
-      if (secret !== ReactPropTypesSecret_1) {
-        if (throwOnDirectAccess) {
-          // New behavior only for users of `prop-types` package
-          var err = new Error(
-            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-            'Use `PropTypes.checkPropTypes()` to call them. ' +
-            'Read more at http://fb.me/use-check-prop-types'
-          );
-          err.name = 'Invariant Violation';
-          throw err;
-        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
-          // Old behavior for people using React.PropTypes
-          var cacheKey = componentName + ':' + propName;
-          if (
-            !manualPropTypeCallCache[cacheKey] &&
-            // Avoid spamming the console because they are often not actionable except for lib authors
-            manualPropTypeWarningCount < 3
-          ) {
-            printWarning$1(
-              'You are manually calling a React.PropTypes validation ' +
-              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
-              'and will throw in the standalone `prop-types` package. ' +
-              'You may be seeing this warning due to a third-party PropTypes ' +
-              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
-            );
-            manualPropTypeCallCache[cacheKey] = true;
-            manualPropTypeWarningCount++;
-          }
-        }
-      }
-      if (props[propName] == null) {
-        if (isRequired) {
-          if (props[propName] === null) {
-            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
-          }
-          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
-        }
-        return null;
-      } else {
-        return validate(props, propName, componentName, location, propFullName);
-      }
-    }
-
-    var chainedCheckType = checkType.bind(null, false);
-    chainedCheckType.isRequired = checkType.bind(null, true);
-
-    return chainedCheckType;
-  }
-
-  function createPrimitiveTypeChecker(expectedType) {
-    function validate(props, propName, componentName, location, propFullName, secret) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== expectedType) {
-        // `propValue` being instance of, say, date/regexp, pass the 'object'
-        // check, but we can offer a more precise error message here rather than
-        // 'of type `object`'.
-        var preciseType = getPreciseType(propValue);
-
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createAnyTypeChecker() {
-    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-  }
-
-  function createArrayOfTypeChecker(typeChecker) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (typeof typeChecker !== 'function') {
-        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
-      }
-      var propValue = props[propName];
-      if (!Array.isArray(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
-      }
-      for (var i = 0; i < propValue.length; i++) {
-        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret_1);
-        if (error instanceof Error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createElementTypeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      if (!isValidElement(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createElementTypeTypeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      if (!reactIs.isValidElementType(propValue)) {
-        var propType = getPropType(propValue);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createInstanceTypeChecker(expectedClass) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (!(props[propName] instanceof expectedClass)) {
-        var expectedClassName = expectedClass.name || ANONYMOUS;
-        var actualClassName = getClassName(props[propName]);
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createEnumTypeChecker(expectedValues) {
-    if (!Array.isArray(expectedValues)) {
-      if (process.env.NODE_ENV !== 'production') {
-        if (arguments.length > 1) {
-          printWarning$1(
-            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
-            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
-          );
-        } else {
-          printWarning$1('Invalid argument supplied to oneOf, expected an array.');
-        }
-      }
-      return emptyFunctionThatReturnsNull;
-    }
-
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      for (var i = 0; i < expectedValues.length; i++) {
-        if (is(propValue, expectedValues[i])) {
-          return null;
-        }
-      }
-
-      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-        var type = getPreciseType(value);
-        if (type === 'symbol') {
-          return String(value);
-        }
-        return value;
-      });
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createObjectOfTypeChecker(typeChecker) {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (typeof typeChecker !== 'function') {
-        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
-      }
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
-      }
-      for (var key in propValue) {
-        if (has$1(propValue, key)) {
-          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
-          if (error instanceof Error) {
-            return error;
-          }
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createUnionTypeChecker(arrayOfTypeCheckers) {
-    if (!Array.isArray(arrayOfTypeCheckers)) {
-      process.env.NODE_ENV !== 'production' ? printWarning$1('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
-      return emptyFunctionThatReturnsNull;
-    }
-
-    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-      var checker = arrayOfTypeCheckers[i];
-      if (typeof checker !== 'function') {
-        printWarning$1(
-          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
-          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
-        );
-        return emptyFunctionThatReturnsNull;
-      }
-    }
-
-    function validate(props, propName, componentName, location, propFullName) {
-      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
-        var checker = arrayOfTypeCheckers[i];
-        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret_1) == null) {
-          return null;
-        }
-      }
-
-      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createNodeChecker() {
-    function validate(props, propName, componentName, location, propFullName) {
-      if (!isNode(props[propName])) {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createShapeTypeChecker(shapeTypes) {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-      }
-      for (var key in shapeTypes) {
-        var checker = shapeTypes[key];
-        if (!checker) {
-          continue;
-        }
-        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
-        if (error) {
-          return error;
-        }
-      }
-      return null;
-    }
-    return createChainableTypeChecker(validate);
-  }
-
-  function createStrictShapeTypeChecker(shapeTypes) {
-    function validate(props, propName, componentName, location, propFullName) {
-      var propValue = props[propName];
-      var propType = getPropType(propValue);
-      if (propType !== 'object') {
-        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
-      }
-      // We need to check all keys in case some are required but missing from
-      // props.
-      var allKeys = objectAssign({}, props[propName], shapeTypes);
-      for (var key in allKeys) {
-        var checker = shapeTypes[key];
-        if (!checker) {
-          return new PropTypeError(
-            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
-            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
-            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
-          );
-        }
-        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
-        if (error) {
-          return error;
-        }
-      }
-      return null;
-    }
-
-    return createChainableTypeChecker(validate);
-  }
-
-  function isNode(propValue) {
-    switch (typeof propValue) {
-      case 'number':
-      case 'string':
-      case 'undefined':
-        return true;
-      case 'boolean':
-        return !propValue;
-      case 'object':
-        if (Array.isArray(propValue)) {
-          return propValue.every(isNode);
-        }
-        if (propValue === null || isValidElement(propValue)) {
-          return true;
-        }
-
-        var iteratorFn = getIteratorFn(propValue);
-        if (iteratorFn) {
-          var iterator = iteratorFn.call(propValue);
-          var step;
-          if (iteratorFn !== propValue.entries) {
-            while (!(step = iterator.next()).done) {
-              if (!isNode(step.value)) {
-                return false;
-              }
-            }
-          } else {
-            // Iterator will provide entry [k,v] tuples rather than values.
-            while (!(step = iterator.next()).done) {
-              var entry = step.value;
-              if (entry) {
-                if (!isNode(entry[1])) {
-                  return false;
-                }
-              }
-            }
-          }
-        } else {
-          return false;
-        }
-
-        return true;
-      default:
-        return false;
-    }
-  }
-
-  function isSymbol(propType, propValue) {
-    // Native Symbol.
-    if (propType === 'symbol') {
-      return true;
-    }
-
-    // falsy value can't be a Symbol
-    if (!propValue) {
-      return false;
-    }
-
-    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
-    if (propValue['@@toStringTag'] === 'Symbol') {
-      return true;
-    }
-
-    // Fallback for non-spec compliant Symbols which are polyfilled.
-    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
-      return true;
-    }
-
-    return false;
-  }
-
-  // Equivalent of `typeof` but with special handling for array and regexp.
-  function getPropType(propValue) {
-    var propType = typeof propValue;
-    if (Array.isArray(propValue)) {
-      return 'array';
-    }
-    if (propValue instanceof RegExp) {
-      // Old webkits (at least until Android 4.0) return 'function' rather than
-      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
-      // passes PropTypes.object.
-      return 'object';
-    }
-    if (isSymbol(propType, propValue)) {
-      return 'symbol';
-    }
-    return propType;
-  }
-
-  // This handles more types than `getPropType`. Only used for error messages.
-  // See `createPrimitiveTypeChecker`.
-  function getPreciseType(propValue) {
-    if (typeof propValue === 'undefined' || propValue === null) {
-      return '' + propValue;
-    }
-    var propType = getPropType(propValue);
-    if (propType === 'object') {
-      if (propValue instanceof Date) {
-        return 'date';
-      } else if (propValue instanceof RegExp) {
-        return 'regexp';
-      }
-    }
-    return propType;
-  }
-
-  // Returns a string that is postfixed to a warning about an invalid type.
-  // For example, "undefined" or "of type array"
-  function getPostfixForTypeWarning(value) {
-    var type = getPreciseType(value);
-    switch (type) {
-      case 'array':
-      case 'object':
-        return 'an ' + type;
-      case 'boolean':
-      case 'date':
-      case 'regexp':
-        return 'a ' + type;
-      default:
-        return type;
-    }
-  }
-
-  // Returns class name of the object, if any.
-  function getClassName(propValue) {
-    if (!propValue.constructor || !propValue.constructor.name) {
-      return ANONYMOUS;
-    }
-    return propValue.constructor.name;
-  }
-
-  ReactPropTypes.checkPropTypes = checkPropTypes_1;
-  ReactPropTypes.resetWarningCache = checkPropTypes_1.resetWarningCache;
-  ReactPropTypes.PropTypes = ReactPropTypes;
-
-  return ReactPropTypes;
-};
-
-function emptyFunction() {}
-function emptyFunctionWithReset() {}
-emptyFunctionWithReset.resetWarningCache = emptyFunction;
-
-var factoryWithThrowingShims = function() {
-  function shim(props, propName, componentName, location, propFullName, secret) {
-    if (secret === ReactPropTypesSecret_1) {
-      // It is still safe when called from React.
-      return;
-    }
-    var err = new Error(
-      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
-      'Use PropTypes.checkPropTypes() to call them. ' +
-      'Read more at http://fb.me/use-check-prop-types'
-    );
-    err.name = 'Invariant Violation';
-    throw err;
-  }  shim.isRequired = shim;
-  function getShim() {
-    return shim;
-  }  // Important!
-  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
-  var ReactPropTypes = {
-    array: shim,
-    bool: shim,
-    func: shim,
-    number: shim,
-    object: shim,
-    string: shim,
-    symbol: shim,
-
-    any: shim,
-    arrayOf: getShim,
-    element: shim,
-    elementType: shim,
-    instanceOf: getShim,
-    node: shim,
-    objectOf: getShim,
-    oneOf: getShim,
-    oneOfType: getShim,
-    shape: getShim,
-    exact: getShim,
-
-    checkPropTypes: emptyFunctionWithReset,
-    resetWarningCache: emptyFunction
-  };
-
-  ReactPropTypes.PropTypes = ReactPropTypes;
-
-  return ReactPropTypes;
-};
-
-var propTypes = createCommonjsModule(function (module) {
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var ReactIs = reactIs;
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = factoryWithTypeCheckers(ReactIs.isElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = factoryWithThrowingShims();
-}
-});
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-function componentWillMount() {
-  // Call this.constructor.gDSFP to support sub-classes.
-  var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
-  if (state !== null && state !== undefined) {
-    this.setState(state);
-  }
-}
-
-function componentWillReceiveProps(nextProps) {
-  // Call this.constructor.gDSFP to support sub-classes.
-  // Use the setState() updater to ensure state isn't stale in certain edge cases.
-  function updater(prevState) {
-    var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
-    return state !== null && state !== undefined ? state : null;
-  }
-  // Binding "this" is important for shallow renderer support.
-  this.setState(updater.bind(this));
-}
-
-function componentWillUpdate(nextProps, nextState) {
-  try {
-    var prevProps = this.props;
-    var prevState = this.state;
-    this.props = nextProps;
-    this.state = nextState;
-    this.__reactInternalSnapshotFlag = true;
-    this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(
-      prevProps,
-      prevState
-    );
-  } finally {
-    this.props = prevProps;
-    this.state = prevState;
-  }
-}
-
-// React may warn about cWM/cWRP/cWU methods being deprecated.
-// Add a flag to suppress these warnings for this special case.
-componentWillMount.__suppressDeprecationWarning = true;
-componentWillReceiveProps.__suppressDeprecationWarning = true;
-componentWillUpdate.__suppressDeprecationWarning = true;
-
-function polyfill(Component) {
-  var prototype = Component.prototype;
-
-  if (!prototype || !prototype.isReactComponent) {
-    throw new Error('Can only polyfill class components');
-  }
-
-  if (
-    typeof Component.getDerivedStateFromProps !== 'function' &&
-    typeof prototype.getSnapshotBeforeUpdate !== 'function'
-  ) {
-    return Component;
-  }
-
-  // If new component APIs are defined, "unsafe" lifecycles won't be called.
-  // Error if any of these lifecycles are present,
-  // Because they would work differently between older and newer (16.3+) versions of React.
-  var foundWillMountName = null;
-  var foundWillReceivePropsName = null;
-  var foundWillUpdateName = null;
-  if (typeof prototype.componentWillMount === 'function') {
-    foundWillMountName = 'componentWillMount';
-  } else if (typeof prototype.UNSAFE_componentWillMount === 'function') {
-    foundWillMountName = 'UNSAFE_componentWillMount';
-  }
-  if (typeof prototype.componentWillReceiveProps === 'function') {
-    foundWillReceivePropsName = 'componentWillReceiveProps';
-  } else if (typeof prototype.UNSAFE_componentWillReceiveProps === 'function') {
-    foundWillReceivePropsName = 'UNSAFE_componentWillReceiveProps';
-  }
-  if (typeof prototype.componentWillUpdate === 'function') {
-    foundWillUpdateName = 'componentWillUpdate';
-  } else if (typeof prototype.UNSAFE_componentWillUpdate === 'function') {
-    foundWillUpdateName = 'UNSAFE_componentWillUpdate';
-  }
-  if (
-    foundWillMountName !== null ||
-    foundWillReceivePropsName !== null ||
-    foundWillUpdateName !== null
-  ) {
-    var componentName = Component.displayName || Component.name;
-    var newApiName =
-      typeof Component.getDerivedStateFromProps === 'function'
-        ? 'getDerivedStateFromProps()'
-        : 'getSnapshotBeforeUpdate()';
-
-    throw Error(
-      'Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n' +
-        componentName +
-        ' uses ' +
-        newApiName +
-        ' but also contains the following legacy lifecycles:' +
-        (foundWillMountName !== null ? '\n  ' + foundWillMountName : '') +
-        (foundWillReceivePropsName !== null
-          ? '\n  ' + foundWillReceivePropsName
-          : '') +
-        (foundWillUpdateName !== null ? '\n  ' + foundWillUpdateName : '') +
-        '\n\nThe above lifecycles should be removed. Learn more about this warning here:\n' +
-        'https://fb.me/react-async-component-lifecycle-hooks'
-    );
-  }
-
-  // React <= 16.2 does not support static getDerivedStateFromProps.
-  // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
-  // Newer versions of React will ignore these lifecycles if gDSFP exists.
-  if (typeof Component.getDerivedStateFromProps === 'function') {
-    prototype.componentWillMount = componentWillMount;
-    prototype.componentWillReceiveProps = componentWillReceiveProps;
-  }
-
-  // React <= 16.2 does not support getSnapshotBeforeUpdate.
-  // As a workaround, use cWU to invoke the new lifecycle.
-  // Newer versions of React will ignore that lifecycle if gSBU exists.
-  if (typeof prototype.getSnapshotBeforeUpdate === 'function') {
-    if (typeof prototype.componentDidUpdate !== 'function') {
-      throw new Error(
-        'Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype'
-      );
-    }
-
-    prototype.componentWillUpdate = componentWillUpdate;
-
-    var componentDidUpdate = prototype.componentDidUpdate;
-
-    prototype.componentDidUpdate = function componentDidUpdatePolyfill(
-      prevProps,
-      prevState,
-      maybeSnapshot
-    ) {
-      // 16.3+ will not execute our will-update method;
-      // It will pass a snapshot value to did-update though.
-      // Older versions will require our polyfilled will-update value.
-      // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
-      // Because for <= 15.x versions this might be a "prevContext" object.
-      // We also can't just check "__reactInternalSnapshot",
-      // Because get-snapshot might return a falsy value.
-      // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
-      var snapshot = this.__reactInternalSnapshotFlag
-        ? this.__reactInternalSnapshot
-        : maybeSnapshot;
-
-      componentDidUpdate.call(this, prevProps, prevState, snapshot);
-    };
-  }
-
-  return Component;
-}
-
-var reactLifecyclesCompat_es = /*#__PURE__*/Object.freeze({
-  __proto__: null,
-  polyfill: polyfill
-});
-
-function mergeClassNames() {
-  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-    args[_key] = arguments[_key];
-  }
-
-  return args.reduce(function (classList, arg) {
-    return typeof arg === 'string' || arg instanceof Array ? classList.concat(arg) : classList;
-  }, []).filter(Boolean).join(' ');
-}
-
-var dates = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getYear = getYear;
-exports.getMonth = getMonth;
-exports.getMonthIndex = getMonthIndex;
-exports.getDay = getDay;
-exports.getDayOfWeek = getDayOfWeek;
-exports.getBeginOfCenturyYear = getBeginOfCenturyYear;
-exports.getBeginOfCentury = getBeginOfCentury;
-exports.getEndOfCentury = getEndOfCentury;
-exports.getCenturyRange = getCenturyRange;
-exports.getBeginOfPreviousCentury = getBeginOfPreviousCentury;
-exports.getEndOfPreviousCentury = getEndOfPreviousCentury;
-exports.getBeginOfNextCentury = getBeginOfNextCentury;
-exports.getBeginOfDecadeYear = getBeginOfDecadeYear;
-exports.getBeginOfDecade = getBeginOfDecade;
-exports.getEndOfDecade = getEndOfDecade;
-exports.getDecadeRange = getDecadeRange;
-exports.getBeginOfPreviousDecade = getBeginOfPreviousDecade;
-exports.getEndOfPreviousDecade = getEndOfPreviousDecade;
-exports.getBeginOfNextDecade = getBeginOfNextDecade;
-exports.getBeginOfYear = getBeginOfYear;
-exports.getEndOfYear = getEndOfYear;
-exports.getYearRange = getYearRange;
-exports.getBeginOfPreviousYear = getBeginOfPreviousYear;
-exports.getEndOfPreviousYear = getEndOfPreviousYear;
-exports.getBeginOfNextYear = getBeginOfNextYear;
-exports.getBeginOfMonth = getBeginOfMonth;
-exports.getEndOfMonth = getEndOfMonth;
-exports.getBeginOfWeek = getBeginOfWeek;
-exports.getMonthRange = getMonthRange;
-exports.getBeginOfPreviousMonth = getBeginOfPreviousMonth;
-exports.getEndOfPreviousMonth = getEndOfPreviousMonth;
-exports.getBeginOfNextMonth = getBeginOfNextMonth;
-exports.getBeginOfDay = getBeginOfDay;
-exports.getEndOfDay = getEndOfDay;
-exports.getDayRange = getDayRange;
-exports.getWeekNumber = getWeekNumber;
-exports.getBegin = getBegin;
-exports.getBeginPrevious = getBeginPrevious;
-exports.getBeginNext = getBeginNext;
-exports.getEnd = getEnd;
-exports.getEndPrevious = getEndPrevious;
-exports.getRange = getRange;
-exports.getValueRange = getValueRange;
-exports.getDaysInMonth = getDaysInMonth;
-exports.getCenturyLabel = getCenturyLabel;
-exports.getDecadeLabel = getDecadeLabel;
-exports.isWeekend = isWeekend;
-exports.getISOLocalMonth = getISOLocalMonth;
-exports.getISOLocalDate = getISOLocalDate;
-exports.getEndPrevious2 = exports.getBeginNext2 = exports.getBeginPrevious2 = void 0;
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
-
-function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-var _map = _toConsumableArray(Array(7)).map(function (el, index) {
-  return index;
-}),
-    _map2 = _slicedToArray(_map, 7),
-    // eslint-disable-next-line no-unused-vars
-SUNDAY = _map2[0],
-    MONDAY = _map2[1],
-    TUESDAY = _map2[2],
-    WEDNESDAY = _map2[3],
-    THURSDAY = _map2[4],
-    FRIDAY = _map2[5],
-    SATURDAY = _map2[6];
-/* Simple getters - getting a property of a given point in time */
-
-
-function getYear(date) {
-  if (date instanceof Date) {
-    return date.getFullYear();
-  }
-
-  if (typeof date === 'number') {
-    return date;
-  }
-
-  var year = parseInt(date, 10);
-
-  if (typeof date === 'string' && !isNaN(year)) {
-    return year;
-  }
-
-  throw new Error("Failed to get year from date: ".concat(date, "."));
-}
-
-function getMonth(date) {
-  return date.getMonth() + 1;
-}
-
-function getMonthIndex(date) {
-  return date.getMonth();
-}
-
-function getDay(date) {
-  return date.getDate();
-}
-
-function getDayOfWeek(date) {
-  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
-  var weekday = date.getDay();
-
-  switch (calendarType) {
-    case 'ISO 8601':
-      // Shifts days of the week so that Monday is 0, Sunday is 6
-      return (weekday + 6) % 7;
-
-    case 'Arabic':
-      return (weekday + 1) % 7;
-
-    case 'Hebrew':
-    case 'US':
-      return weekday;
-
-    default:
-      throw new Error('Unsupported calendar type.');
-  }
-}
-/* Complex getters - getting a property somehow related to a given point in time */
-
-
-function getBeginOfCenturyYear(date) {
-  var year = getYear(date) - 1;
-  return year + -year % 100 + 1;
-}
-
-function getBeginOfCentury(date) {
-  var beginOfCenturyYear = getBeginOfCenturyYear(date);
-  return new Date(beginOfCenturyYear, 0, 1);
-}
-
-function getEndOfCentury(date) {
-  var beginOfCenturyYear = getBeginOfCenturyYear(date);
-  return new Date(beginOfCenturyYear + 100, 0, 1, 0, 0, 0, -1);
-}
-
-function getCenturyRange(date) {
-  return [getBeginOfCentury(date), getEndOfCentury(date)];
-}
-
-function getBeginOfPreviousCentury(date) {
-  var previousCenturyYear = getYear(date) - 100;
-  return getBeginOfCentury(previousCenturyYear);
-}
-
-function getEndOfPreviousCentury(date) {
-  var previousCenturyYear = getYear(date) - 100;
-  return getEndOfCentury(previousCenturyYear);
-}
-
-function getBeginOfNextCentury(date) {
-  var nextCenturyYear = getYear(date) + 100;
-  return getBeginOfCentury(nextCenturyYear);
-}
-
-function getBeginOfDecadeYear(date) {
-  var year = getYear(date) - 1;
-  return year + -year % 10 + 1;
-}
-
-function getBeginOfDecade(date) {
-  var beginOfDecadeYear = getBeginOfDecadeYear(date);
-  return new Date(beginOfDecadeYear, 0, 1);
-}
-
-function getEndOfDecade(date) {
-  var beginOfDecadeYear = getBeginOfDecadeYear(date);
-  return new Date(beginOfDecadeYear + 10, 0, 1, 0, 0, 0, -1);
-}
-
-function getDecadeRange(date) {
-  return [getBeginOfDecade(date), getEndOfDecade(date)];
-}
-
-function getBeginOfPreviousDecade(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-  var previousDecadeYear = getBeginOfDecadeYear(date) - offset;
-  return getBeginOfDecade(previousDecadeYear);
-}
-
-function getEndOfPreviousDecade(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-  var previousDecadeYear = getBeginOfDecadeYear(date) - offset;
-  return getEndOfDecade(previousDecadeYear);
-}
-
-function getBeginOfNextDecade(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-  var nextDecadeYear = getBeginOfDecadeYear(date) + offset;
-  return getBeginOfDecade(nextDecadeYear);
-}
-/**
- * Returns the beginning of a given year.
- *
- * @param {Date} date Date.
- */
-
-
-function getBeginOfYear(date) {
-  var year = getYear(date);
-  return new Date(year, 0, 1);
-}
-/**
- * Returns the end of a given year.
- *
- * @param {Date} date Date.
- */
-
-
-function getEndOfYear(date) {
-  var year = getYear(date);
-  return new Date(year + 1, 0, 1, 0, 0, 0, -1);
-}
-/**
- * Returns an array with the beginning and the end of a given year.
- *
- * @param {Date} date Date.
- */
-
-
-function getYearRange(date) {
-  return [getBeginOfYear(date), getEndOfYear(date)];
-}
-
-function getBeginOfPreviousYear(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var previousYear = getYear(date) - offset;
-  return getBeginOfYear(previousYear);
-}
-
-function getEndOfPreviousYear(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var previousYear = getYear(date) - offset;
-  return getEndOfYear(previousYear);
-}
-
-function getBeginOfNextYear(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var nextYear = getYear(date) + offset;
-  return getBeginOfYear(nextYear);
-}
-/**
- * Returns the beginning of a given month.
- *
- * @param {Date} date Date.
- */
-
-
-function getBeginOfMonth(date) {
-  var year = getYear(date);
-  var monthIndex = getMonthIndex(date);
-  return new Date(year, monthIndex, 1);
-}
-/**
- * Returns the end of a given month.
- *
- * @param {Date} date Date.
- */
-
-
-function getEndOfMonth(date) {
-  var year = getYear(date);
-  var monthIndex = getMonthIndex(date);
-  return new Date(year, monthIndex + 1, 1, 0, 0, 0, -1);
-}
-/**
- * Returns the beginning of a given week.
- *
- * @param {Date} date Date.
- * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
- */
-
-
-function getBeginOfWeek(date) {
-  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
-  var year = getYear(date);
-  var monthIndex = getMonthIndex(date);
-  var day = date.getDate() - getDayOfWeek(date, calendarType);
-  return new Date(year, monthIndex, day);
-}
-/**
- * Returns an array with the beginning and the end of a given month.
- *
- * @param {Date} date Date.
- */
-
-
-function getMonthRange(date) {
-  return [getBeginOfMonth(date), getEndOfMonth(date)];
-}
-
-function getDifferentMonth(date, offset) {
-  var year = getYear(date);
-  var previousMonthIndex = getMonthIndex(date) + offset;
-  return new Date(year, previousMonthIndex, 1);
-}
-
-function getBeginOfPreviousMonth(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var previousMonth = getDifferentMonth(date, -offset);
-  return getBeginOfMonth(previousMonth);
-}
-
-function getEndOfPreviousMonth(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var previousMonth = getDifferentMonth(date, -offset);
-  return getEndOfMonth(previousMonth);
-}
-
-function getBeginOfNextMonth(date) {
-  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
-  var nextMonth = getDifferentMonth(date, offset);
-  return getBeginOfMonth(nextMonth);
-}
-
-function getBeginOfDay(date) {
-  var year = getYear(date);
-  var monthIndex = getMonthIndex(date);
-  var day = getDay(date);
-  return new Date(year, monthIndex, day);
-}
-
-function getEndOfDay(date) {
-  var year = getYear(date);
-  var monthIndex = getMonthIndex(date);
-  var day = getDay(date);
-  return new Date(year, monthIndex, day + 1, 0, 0, 0, -1);
-}
-/**
- * Returns an array with the beginning and the end of a given day.
- *
- * @param {Date} date Date.
- */
-
-
-function getDayRange(date) {
-  return [getBeginOfDay(date), getEndOfDay(date)];
-}
-/**
- * Gets week number according to ISO 8601 or US standard.
- * In ISO 8601, Arabic and Hebrew week 1 is the one with January 4.
- * In US calendar week 1 is the one with January 1.
- *
- * @param {Date} date Date.
- * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
- */
-
-
-function getWeekNumber(date) {
-  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
-  var calendarTypeForWeekNumber = calendarType === 'US' ? 'US' : 'ISO 8601';
-  var beginOfWeek = getBeginOfWeek(date, calendarTypeForWeekNumber);
-  var year = getYear(date) + 1;
-  var dayInWeekOne;
-  var beginOfFirstWeek; // Look for the first week one that does not come after a given date
-
-  do {
-    dayInWeekOne = new Date(year, 0, calendarTypeForWeekNumber === 'ISO 8601' ? 4 : 1);
-    beginOfFirstWeek = getBeginOfWeek(dayInWeekOne, calendarTypeForWeekNumber);
-    year -= 1;
-  } while (date - beginOfFirstWeek < 0);
-
-  return Math.round((beginOfWeek - beginOfFirstWeek) / (8.64e7 * 7)) + 1;
-}
-/**
- * Returns the beginning of a given range.
- *
- * @param {String} rangeType Range type (e.g. 'day')
- * @param {Date} date Date.
- */
-
-
-function getBegin(rangeType, date) {
-  switch (rangeType) {
-    case 'century':
-      return getBeginOfCentury(date);
-
-    case 'decade':
-      return getBeginOfDecade(date);
-
-    case 'year':
-      return getBeginOfYear(date);
-
-    case 'month':
-      return getBeginOfMonth(date);
-
-    case 'day':
-      return getBeginOfDay(date);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-}
-
-function getBeginPrevious(rangeType, date) {
-  switch (rangeType) {
-    case 'century':
-      return getBeginOfPreviousCentury(date);
-
-    case 'decade':
-      return getBeginOfPreviousDecade(date);
-
-    case 'year':
-      return getBeginOfPreviousYear(date);
-
-    case 'month':
-      return getBeginOfPreviousMonth(date);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-}
-
-function getBeginNext(rangeType, date) {
-  switch (rangeType) {
-    case 'century':
-      return getBeginOfNextCentury(date);
-
-    case 'decade':
-      return getBeginOfNextDecade(date);
-
-    case 'year':
-      return getBeginOfNextYear(date);
-
-    case 'month':
-      return getBeginOfNextMonth(date);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-}
-
-var getBeginPrevious2 = function getBeginPrevious2(rangeType, date) {
-  switch (rangeType) {
-    case 'decade':
-      return getBeginOfPreviousDecade(date, 100);
-
-    case 'year':
-      return getBeginOfPreviousYear(date, 10);
-
-    case 'month':
-      return getBeginOfPreviousMonth(date, 12);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-};
-
-exports.getBeginPrevious2 = getBeginPrevious2;
-
-var getBeginNext2 = function getBeginNext2(rangeType, date) {
-  switch (rangeType) {
-    case 'decade':
-      return getBeginOfNextDecade(date, 100);
-
-    case 'year':
-      return getBeginOfNextYear(date, 10);
-
-    case 'month':
-      return getBeginOfNextMonth(date, 12);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-};
-/**
- * Returns the end of a given range.
- *
- * @param {String} rangeType Range type (e.g. 'day')
- * @param {Date} date Date.
- */
-
-
-exports.getBeginNext2 = getBeginNext2;
-
-function getEnd(rangeType, date) {
-  switch (rangeType) {
-    case 'century':
-      return getEndOfCentury(date);
-
-    case 'decade':
-      return getEndOfDecade(date);
-
-    case 'year':
-      return getEndOfYear(date);
-
-    case 'month':
-      return getEndOfMonth(date);
-
-    case 'day':
-      return getEndOfDay(date);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-}
-
-function getEndPrevious(rangeType, date) {
-  switch (rangeType) {
-    case 'century':
-      return getEndOfPreviousCentury(date);
-
-    case 'decade':
-      return getEndOfPreviousDecade(date);
-
-    case 'year':
-      return getEndOfPreviousYear(date);
-
-    case 'month':
-      return getEndOfPreviousMonth(date);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-}
-
-var getEndPrevious2 = function getEndPrevious2(rangeType, date) {
-  switch (rangeType) {
-    case 'decade':
-      return getEndOfPreviousDecade(date, 100);
-
-    case 'year':
-      return getEndOfPreviousYear(date, 10);
-
-    case 'month':
-      return getEndOfPreviousMonth(date, 12);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-};
-/**
- * Returns an array with the beginning and the end of a given range.
- *
- * @param {String} rangeType Range type (e.g. 'day')
- * @param {Date} date Date.
- */
-
-
-exports.getEndPrevious2 = getEndPrevious2;
-
-function getRange(rangeType, date) {
-  switch (rangeType) {
-    case 'century':
-      return getCenturyRange(date);
-
-    case 'decade':
-      return getDecadeRange(date);
-
-    case 'year':
-      return getYearRange(date);
-
-    case 'month':
-      return getMonthRange(date);
-
-    case 'day':
-      return getDayRange(date);
-
-    default:
-      throw new Error("Invalid rangeType: ".concat(rangeType));
-  }
-}
-/**
- * Creates a range out of two values, ensuring they are in order and covering entire period ranges.
- *
- * @param {String} rangeType Range type (e.g. 'day')
- * @param {Date} date1 First date.
- * @param {Date} date2 Second date.
- */
-
-
-function getValueRange(rangeType, date1, date2) {
-  var rawNextValue = [date1, date2].sort(function (a, b) {
-    return a - b;
-  });
-  return [getBegin(rangeType, rawNextValue[0]), getEnd(rangeType, rawNextValue[1])];
-}
-/**
- * Returns a number of days in a month of a given date.
- *
- * @param {Date} date Date.
- */
-
-
-function getDaysInMonth(date) {
-  var year = getYear(date);
-  var monthIndex = getMonthIndex(date);
-  return new Date(year, monthIndex + 1, 0).getDate();
-}
-
-function toYearLabel(_ref) {
-  var _ref2 = _slicedToArray(_ref, 2),
-      start = _ref2[0],
-      end = _ref2[1];
-
-  return "".concat(getYear(start), " \u2013 ").concat(getYear(end));
-}
-/**
- * Returns a string labelling a century of a given date.
- * For example, for 2017 it will return 2001-2100.
- *
- * @param {Date|String|Number} date Date or a year as a string or as a number.
- */
-
-
-function getCenturyLabel(date) {
-  return toYearLabel(getCenturyRange(date));
-}
-/**
- * Returns a string labelling a century of a given date.
- * For example, for 2017 it will return 2011-2020.
- *
- * @param {Date|String|Number} date Date or a year as a string or as a number.
- */
-
-
-function getDecadeLabel(date) {
-  return toYearLabel(getDecadeRange(date));
-}
-/**
- * Returns a boolean determining whether a given date is on Saturday or Sunday.
- *
- * @param {Date} date Date.
- */
-
-
-function isWeekend(date) {
-  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
-  var weekday = date.getDay();
-
-  switch (calendarType) {
-    case 'Arabic':
-    case 'Hebrew':
-      return weekday === FRIDAY || weekday === SATURDAY;
-
-    case 'ISO 8601':
-    case 'US':
-      return weekday === SATURDAY || weekday === SUNDAY;
-
-    default:
-      throw new Error('Unsupported calendar type.');
-  }
-}
-/**
- * Returns local month in ISO-like format (YYYY-MM).
- */
-
-
-function getISOLocalMonth(value) {
-  if (!value) {
-    return value;
-  }
-
-  var date = new Date(value);
-
-  if (isNaN(date.getTime())) {
-    throw new Error("Invalid date: ".concat(value));
-  }
-
-  var year = getYear(date);
-  var month = "0".concat(getMonth(date)).slice(-2);
-  return "".concat(year, "-").concat(month);
-}
-/**
- * Returns local date in ISO-like format (YYYY-MM-DD).
- */
-
-
-function getISOLocalDate(value) {
-  if (!value) {
-    return value;
-  }
-
-  var date = new Date(value);
-
-  if (isNaN(date.getTime())) {
-    throw new Error("Invalid date: ".concat(value));
-  }
-
-  var year = getYear(date);
-  var month = "0".concat(getMonth(date)).slice(-2);
-  var day = "0".concat(getDay(date)).slice(-2);
-  return "".concat(year, "-").concat(month, "-").concat(day);
-}
-});
-
-unwrapExports(dates);
-var dates_1 = dates.getYear;
-var dates_2 = dates.getMonth;
-var dates_3 = dates.getMonthIndex;
-var dates_4 = dates.getDay;
-var dates_5 = dates.getDayOfWeek;
-var dates_6 = dates.getBeginOfCenturyYear;
-var dates_7 = dates.getBeginOfCentury;
-var dates_8 = dates.getEndOfCentury;
-var dates_9 = dates.getCenturyRange;
-var dates_10 = dates.getBeginOfPreviousCentury;
-var dates_11 = dates.getEndOfPreviousCentury;
-var dates_12 = dates.getBeginOfNextCentury;
-var dates_13 = dates.getBeginOfDecadeYear;
-var dates_14 = dates.getBeginOfDecade;
-var dates_15 = dates.getEndOfDecade;
-var dates_16 = dates.getDecadeRange;
-var dates_17 = dates.getBeginOfPreviousDecade;
-var dates_18 = dates.getEndOfPreviousDecade;
-var dates_19 = dates.getBeginOfNextDecade;
-var dates_20 = dates.getBeginOfYear;
-var dates_21 = dates.getEndOfYear;
-var dates_22 = dates.getYearRange;
-var dates_23 = dates.getBeginOfPreviousYear;
-var dates_24 = dates.getEndOfPreviousYear;
-var dates_25 = dates.getBeginOfNextYear;
-var dates_26 = dates.getBeginOfMonth;
-var dates_27 = dates.getEndOfMonth;
-var dates_28 = dates.getBeginOfWeek;
-var dates_29 = dates.getMonthRange;
-var dates_30 = dates.getBeginOfPreviousMonth;
-var dates_31 = dates.getEndOfPreviousMonth;
-var dates_32 = dates.getBeginOfNextMonth;
-var dates_33 = dates.getBeginOfDay;
-var dates_34 = dates.getEndOfDay;
-var dates_35 = dates.getDayRange;
-var dates_36 = dates.getWeekNumber;
-var dates_37 = dates.getBegin;
-var dates_38 = dates.getBeginPrevious;
-var dates_39 = dates.getBeginNext;
-var dates_40 = dates.getEnd;
-var dates_41 = dates.getEndPrevious;
-var dates_42 = dates.getRange;
-var dates_43 = dates.getValueRange;
-var dates_44 = dates.getDaysInMonth;
-var dates_45 = dates.getCenturyLabel;
-var dates_46 = dates.getDecadeLabel;
-var dates_47 = dates.isWeekend;
-var dates_48 = dates.getISOLocalMonth;
-var dates_49 = dates.getISOLocalDate;
-var dates_50 = dates.getEndPrevious2;
-var dates_51 = dates.getBeginNext2;
-var dates_52 = dates.getBeginPrevious2;
-
-/**
- * lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright jQuery Foundation and other contributors <https://jquery.org/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- */
-
-/** Used as the `TypeError` message for "Functions" methods. */
-var FUNC_ERROR_TEXT = 'Expected a function';
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0,
-    MAX_INTEGER = 1.7976931348623157e+308,
-    NAN = 0 / 0;
-
-/** `Object#toString` result references. */
-var symbolTag = '[object Symbol]';
-
-/** Used to match leading and trailing whitespace. */
-var reTrim = /^\s+|\s+$/g;
-
-/** Used to detect bad signed hexadecimal string values. */
-var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
-/** Used to detect binary string values. */
-var reIsBinary = /^0b[01]+$/i;
-
-/** Used to detect octal string values. */
-var reIsOctal = /^0o[0-7]+$/i;
-
-/** Built-in method references without a dependency on `root`. */
-var freeParseInt = parseInt;
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Creates a function that invokes `func`, with the `this` binding and arguments
- * of the created function, while it's called less than `n` times. Subsequent
- * calls to the created function return the result of the last `func` invocation.
- *
- * @static
- * @memberOf _
- * @since 3.0.0
- * @category Function
- * @param {number} n The number of calls at which `func` is no longer invoked.
- * @param {Function} func The function to restrict.
- * @returns {Function} Returns the new restricted function.
- * @example
- *
- * jQuery(element).on('click', _.before(5, addContactToList));
- * // => Allows adding up to 4 contacts to the list.
- */
-function before(n, func) {
-  var result;
-  if (typeof func != 'function') {
-    throw new TypeError(FUNC_ERROR_TEXT);
-  }
-  n = toInteger(n);
-  return function() {
-    if (--n > 0) {
-      result = func.apply(this, arguments);
-    }
-    if (n <= 1) {
-      func = undefined;
-    }
-    return result;
-  };
-}
-
-/**
- * Creates a function that is restricted to invoking `func` once. Repeat calls
- * to the function return the value of the first invocation. The `func` is
- * invoked with the `this` binding and arguments of the created function.
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Function
- * @param {Function} func The function to restrict.
- * @returns {Function} Returns the new restricted function.
- * @example
- *
- * var initialize = _.once(createApplication);
- * initialize();
- * initialize();
- * // => `createApplication` is invoked once
- */
-function once(func) {
-  return before(2, func);
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Symbol` primitive or object.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
- * @example
- *
- * _.isSymbol(Symbol.iterator);
- * // => true
- *
- * _.isSymbol('abc');
- * // => false
- */
-function isSymbol(value) {
-  return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-}
-
-/**
- * Converts `value` to a finite number.
- *
- * @static
- * @memberOf _
- * @since 4.12.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted number.
- * @example
- *
- * _.toFinite(3.2);
- * // => 3.2
- *
- * _.toFinite(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toFinite(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toFinite('3.2');
- * // => 3.2
- */
-function toFinite(value) {
-  if (!value) {
-    return value === 0 ? value : 0;
-  }
-  value = toNumber(value);
-  if (value === INFINITY || value === -INFINITY) {
-    var sign = (value < 0 ? -1 : 1);
-    return sign * MAX_INTEGER;
-  }
-  return value === value ? value : 0;
-}
-
-/**
- * Converts `value` to an integer.
- *
- * **Note:** This method is loosely based on
- * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to convert.
- * @returns {number} Returns the converted integer.
- * @example
- *
- * _.toInteger(3.2);
- * // => 3
- *
- * _.toInteger(Number.MIN_VALUE);
- * // => 0
- *
- * _.toInteger(Infinity);
- * // => 1.7976931348623157e+308
- *
- * _.toInteger('3.2');
- * // => 3
- */
-function toInteger(value) {
-  var result = toFinite(value),
-      remainder = result % 1;
-
-  return result === result ? (remainder ? result - remainder : result) : 0;
-}
-
-/**
- * Converts `value` to a number.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to process.
- * @returns {number} Returns the number.
- * @example
- *
- * _.toNumber(3.2);
- * // => 3.2
- *
- * _.toNumber(Number.MIN_VALUE);
- * // => 5e-324
- *
- * _.toNumber(Infinity);
- * // => Infinity
- *
- * _.toNumber('3.2');
- * // => 3.2
- */
-function toNumber(value) {
-  if (typeof value == 'number') {
-    return value;
-  }
-  if (isSymbol(value)) {
-    return NAN;
-  }
-  if (isObject(value)) {
-    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
-    value = isObject(other) ? (other + '') : other;
-  }
-  if (typeof value != 'string') {
-    return value === 0 ? value : +value;
-  }
-  value = value.replace(reTrim, '');
-  var isBinary = reIsBinary.test(value);
-  return (isBinary || reIsOctal.test(value))
-    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
-    : (reIsBadHex.test(value) ? NAN : +value);
-}
-
-var lodash_once = once;
-
-function filterDuplicates(arr) {
-  return arr.filter(function (el, index, self) {
-    return self.indexOf(el) === index;
-  });
-}
-
-function fixLowercaseProperties(arr) {
-  return arr.map(function (el) {
-    if (!el || el.indexOf('-') === -1 || el.toLowerCase() !== el) {
-      return el;
-    }
-
-    var splitEl = el.split('-');
-    return "".concat(splitEl[0], "-").concat(splitEl[1].toUpperCase());
-  });
-}
-
-function getUserLocalesInternal() {
-  var languageList = [];
-
-  if (typeof window !== 'undefined') {
-    if (window.navigator.languages) {
-      languageList = languageList.concat(window.navigator.languages);
-    }
-
-    if (window.navigator.language) {
-      languageList.push(window.navigator.language);
-    }
-
-    if (window.navigator.userLanguage) {
-      languageList.push(window.navigator.userLanguage);
-    }
-
-    if (window.navigator.browserLanguage) {
-      languageList.push(window.navigator.browserLanguage);
-    }
-
-    if (window.navigator.systemLanguage) {
-      languageList.push(window.navigator.systemLanguage);
-    }
-  }
-
-  languageList.push('en-US'); // Fallback
-
-  return fixLowercaseProperties(filterDuplicates(languageList));
-}
-
-var getUserLocales = lodash_once(getUserLocalesInternal);
-
-function getUserLocaleInternal() {
-  return getUserLocales()[0];
-}
-
-var getUserLocale = lodash_once(getUserLocaleInternal);
-
-var dateFormatter = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.formatShortWeekday = exports.formatWeekday = exports.formatMonth = exports.formatMonthYear = exports.formatLongDate = exports.formatDate = void 0;
-
-var _getUserLocale = _interopRequireDefault(getUserLocale);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function getFormatter(options) {
-  return function (locale, date) {
-    return date.toLocaleString(locale || (0, _getUserLocale["default"])(), options);
-  };
-}
-/**
- * Changes the hour in a Date to ensure right date formatting even if DST is messed up.
- * Workaround for bug in WebKit and Firefox with historical dates.
- * For more details, see:
- * https://bugs.chromium.org/p/chromium/issues/detail?id=750465
- * https://bugzilla.mozilla.org/show_bug.cgi?id=1385643
- *
- * @param {Date} date Date.
- */
-
-
-function toSafeHour(date) {
-  var safeDate = new Date(date);
-  return new Date(safeDate.setHours(12));
-}
-
-function getSafeFormatter(options) {
-  return function (locale, date) {
-    return getFormatter(options)(locale, toSafeHour(date));
-  };
-}
-
-var formatDateOptions = {
-  day: 'numeric',
-  month: 'numeric',
-  year: 'numeric'
-};
-var formatLongDateOptions = {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric'
-};
-var formatMonthYearOptions = {
-  month: 'long',
-  year: 'numeric'
-};
-var formatMonthOptions = {
-  month: 'long'
-};
-var formatWeekdayOptions = {
-  weekday: 'long'
-};
-var formatShortWeekdayOptions = {
-  weekday: 'short'
-};
-var formatDate = getSafeFormatter(formatDateOptions);
-exports.formatDate = formatDate;
-var formatLongDate = getSafeFormatter(formatLongDateOptions);
-exports.formatLongDate = formatLongDate;
-var formatMonthYear = getSafeFormatter(formatMonthYearOptions);
-exports.formatMonthYear = formatMonthYear;
-var formatMonth = getSafeFormatter(formatMonthOptions);
-exports.formatMonth = formatMonth;
-var formatWeekday = getSafeFormatter(formatWeekdayOptions);
-exports.formatWeekday = formatWeekday;
-var formatShortWeekday = getSafeFormatter(formatShortWeekdayOptions);
-exports.formatShortWeekday = formatShortWeekday;
-});
-
-unwrapExports(dateFormatter);
-var dateFormatter_1 = dateFormatter.formatShortWeekday;
-var dateFormatter_2 = dateFormatter.formatWeekday;
-var dateFormatter_3 = dateFormatter.formatMonth;
-var dateFormatter_4 = dateFormatter.formatMonthYear;
-var dateFormatter_5 = dateFormatter.formatLongDate;
-var dateFormatter_6 = dateFormatter.formatDate;
-
-var propTypes$1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.tileProps = exports.tileGroupProps = exports.isView = exports.isClassName = exports.isViews = exports.isValue = exports.isMaxDate = exports.isMinDate = exports.isCalendarType = void 0;
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var calendarTypes = ['ISO 8601', 'US', 'Arabic', 'Hebrew'];
-var allViews = ['century', 'decade', 'year', 'month'];
-
-var isCalendarType = _propTypes["default"].oneOf(calendarTypes);
-
-exports.isCalendarType = isCalendarType;
-
-var isMinDate = function isMinDate(props, propName, componentName) {
-  var minDate = props[propName];
-
-  if (minDate) {
-    if (!(minDate instanceof Date)) {
-      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
-    }
-
-    var maxDate = props.maxDate;
-
-    if (maxDate && minDate > maxDate) {
-      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, minDate cannot be larger than maxDate."));
-    }
-  } // Everything is fine
-
-
-  return null;
-};
-
-exports.isMinDate = isMinDate;
-
-var isMaxDate = function isMaxDate(props, propName, componentName) {
-  var maxDate = props[propName];
-
-  if (maxDate) {
-    if (!(maxDate instanceof Date)) {
-      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
-    }
-
-    var minDate = props.minDate;
-
-    if (minDate && maxDate < minDate) {
-      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, maxDate cannot be smaller than minDate."));
-    }
-  } // Everything is fine
-
-
-  return null;
-};
-
-exports.isMaxDate = isMaxDate;
-
-var isValue = _propTypes["default"].oneOfType([_propTypes["default"].instanceOf(Date), _propTypes["default"].arrayOf(_propTypes["default"].instanceOf(Date))]);
-
-exports.isValue = isValue;
-
-var isViews = _propTypes["default"].arrayOf(_propTypes["default"].oneOf(allViews));
-
-exports.isViews = isViews;
-
-var isClassName = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)]);
-
-exports.isClassName = isClassName;
-
-var isView = function isView(props, propName, componentName) {
-  var view = props[propName];
-  var views = props.views;
-  var allowedViews = views || allViews;
-
-  if (view !== undefined && allowedViews.indexOf(view) === -1) {
-    return new Error("Invalid prop `".concat(propName, "` of value `").concat(view, "` supplied to `").concat(componentName, "`, expected one of [").concat(allowedViews.map(function (a) {
-      return "\"".concat(a, "\"");
-    }).join(', '), "]."));
-  } // Everything is fine
-
-
-  return null;
-};
-
-exports.isView = isView;
-
-isView.isRequired = function (props, propName, componentName) {
-  var view = props[propName];
-
-  if (!view) {
-    return new Error("The prop `".concat(propName, "` is marked as required in `").concat(componentName, "`, but its value is `").concat(view, "`."));
-  }
-
-  return isView(props, propName, componentName);
-};
-
-var tileGroupProps = {
-  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
-  hover: _propTypes["default"].instanceOf(Date),
-  locale: _propTypes["default"].string,
-  maxDate: isMaxDate,
-  minDate: isMinDate,
-  onClick: _propTypes["default"].func,
-  onMouseOver: _propTypes["default"].func,
-  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, isClassName]),
-  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
-  value: isValue,
-  valueType: _propTypes["default"].string
-};
-exports.tileGroupProps = tileGroupProps;
-var tileProps = {
-  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
-  classes: _propTypes["default"].arrayOf(_propTypes["default"].string).isRequired,
-  date: _propTypes["default"].instanceOf(Date).isRequired,
-  locale: _propTypes["default"].string,
-  maxDate: isMaxDate,
-  minDate: isMinDate,
-  onClick: _propTypes["default"].func,
-  onMouseOver: _propTypes["default"].func,
-  style: _propTypes["default"].objectOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
-  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, isClassName]),
-  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
-  tileDisabled: _propTypes["default"].func
-};
-exports.tileProps = tileProps;
-});
-
-unwrapExports(propTypes$1);
-var propTypes_1 = propTypes$1.tileProps;
-var propTypes_2 = propTypes$1.tileGroupProps;
-var propTypes_3 = propTypes$1.isView;
-var propTypes_4 = propTypes$1.isClassName;
-var propTypes_5 = propTypes$1.isViews;
-var propTypes_6 = propTypes$1.isValue;
-var propTypes_7 = propTypes$1.isMaxDate;
-var propTypes_8 = propTypes$1.isMinDate;
-var propTypes_9 = propTypes$1.isCalendarType;
-
-var Navigation_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Navigation;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var className = 'react-calendar__navigation';
-
-function Navigation(_ref) {
-  var date = _ref.activeStartDate,
-      drillUp = _ref.drillUp,
-      formatMonthYear = _ref.formatMonthYear,
-      locale = _ref.locale,
-      maxDate = _ref.maxDate,
-      minDate = _ref.minDate,
-      navigationAriaLabel = _ref.navigationAriaLabel,
-      navigationLabel = _ref.navigationLabel,
-      next2AriaLabel = _ref.next2AriaLabel,
-      next2Label = _ref.next2Label,
-      nextAriaLabel = _ref.nextAriaLabel,
-      nextLabel = _ref.nextLabel,
-      prev2AriaLabel = _ref.prev2AriaLabel,
-      prev2Label = _ref.prev2Label,
-      prevAriaLabel = _ref.prevAriaLabel,
-      prevLabel = _ref.prevLabel,
-      setActiveStartDate = _ref.setActiveStartDate,
-      view = _ref.view,
-      views = _ref.views;
-  var drillUpAvailable = views.indexOf(view) > 0;
-  var shouldShowPrevNext2Buttons = view !== 'century';
-  var previousActiveStartDate = (0, dates.getBeginPrevious)(view, date);
-  var previousActiveStartDate2 = shouldShowPrevNext2Buttons && (0, dates.getBeginPrevious2)(view, date);
-  var nextActiveStartDate = (0, dates.getBeginNext)(view, date);
-  var nextActiveStartDate2 = shouldShowPrevNext2Buttons && (0, dates.getBeginNext2)(view, date);
-
-  var prevButtonDisabled = function () {
-    if (previousActiveStartDate.getFullYear() < 1000) {
-      return true;
-    }
-
-    var previousActiveEndDate = (0, dates.getEndPrevious)(view, date);
-    return minDate && minDate >= previousActiveEndDate;
-  }();
-
-  var prev2ButtonDisabled = shouldShowPrevNext2Buttons && function () {
-    if (previousActiveStartDate2.getFullYear() < 1000) {
-      return true;
-    }
-
-    var previousActiveEndDate = (0, dates.getEndPrevious2)(view, date);
-    return minDate && minDate >= previousActiveEndDate;
-  }();
-
-  var nextButtonDisabled = maxDate && maxDate <= nextActiveStartDate;
-  var next2ButtonDisabled = shouldShowPrevNext2Buttons && maxDate && maxDate <= nextActiveStartDate2;
-
-  function onClickPrevious() {
-    setActiveStartDate(previousActiveStartDate);
-  }
-
-  function onClickPrevious2() {
-    setActiveStartDate(previousActiveStartDate2);
-  }
-
-  function onClickNext() {
-    setActiveStartDate(nextActiveStartDate);
-  }
-
-  function onClickNext2() {
-    setActiveStartDate(nextActiveStartDate2);
-  }
-
-  var label = function () {
-    switch (view) {
-      case 'century':
-        return (0, dates.getCenturyLabel)(date);
-
-      case 'decade':
-        return (0, dates.getDecadeLabel)(date);
-
-      case 'year':
-        return (0, dates.getYear)(date);
-
-      case 'month':
-        return formatMonthYear(locale, date);
-
-      default:
-        throw new Error("Invalid view: ".concat(view, "."));
-    }
-  }();
-
-  return _react["default"].createElement("div", {
-    className: className,
-    style: {
-      display: 'flex'
-    }
-  }, prev2Label !== null && shouldShowPrevNext2Buttons && _react["default"].createElement("button", {
-    "aria-label": prev2AriaLabel,
-    className: "".concat(className, "__arrow ").concat(className, "__prev2-button"),
-    disabled: prev2ButtonDisabled,
-    onClick: onClickPrevious2,
-    type: "button"
-  }, prev2Label), _react["default"].createElement("button", {
-    "aria-label": prevAriaLabel,
-    className: "".concat(className, "__arrow ").concat(className, "__prev-button"),
-    disabled: prevButtonDisabled,
-    onClick: onClickPrevious,
-    type: "button"
-  }, prevLabel), _react["default"].createElement("button", {
-    "aria-label": navigationAriaLabel,
-    className: "react-calendar__navigation__label",
-    disabled: !drillUpAvailable,
-    onClick: drillUp,
-    style: {
-      flexGrow: 1
-    },
-    type: "button"
-  }, navigationLabel ? navigationLabel({
-    date: date,
-    view: view,
-    label: label
-  }) : label), _react["default"].createElement("button", {
-    "aria-label": nextAriaLabel,
-    className: "".concat(className, "__arrow ").concat(className, "__next-button"),
-    disabled: nextButtonDisabled,
-    onClick: onClickNext,
-    type: "button"
-  }, nextLabel), next2Label !== null && shouldShowPrevNext2Buttons && _react["default"].createElement("button", {
-    "aria-label": next2AriaLabel,
-    className: "".concat(className, "__arrow ").concat(className, "__next2-button"),
-    disabled: next2ButtonDisabled,
-    onClick: onClickNext2,
-    type: "button"
-  }, next2Label));
-}
-
-Navigation.defaultProps = {
-  formatMonthYear: dateFormatter.formatMonthYear,
-  navigationAriaLabel: '',
-  next2AriaLabel: '',
-  next2Label: '»',
-  nextAriaLabel: '',
-  nextLabel: '›',
-  prev2AriaLabel: '',
-  prev2Label: '«',
-  prevAriaLabel: '',
-  prevLabel: '‹'
-};
-Navigation.propTypes = {
-  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
-  drillUp: _propTypes["default"].func.isRequired,
-  formatMonthYear: _propTypes["default"].func,
-  locale: _propTypes["default"].string,
-  maxDate: _propTypes["default"].instanceOf(Date),
-  minDate: _propTypes["default"].instanceOf(Date),
-  navigationAriaLabel: _propTypes["default"].string,
-  navigationLabel: _propTypes["default"].func,
-  next2AriaLabel: _propTypes["default"].string,
-  next2Label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
-  nextAriaLabel: _propTypes["default"].string,
-  nextLabel: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
-  prev2AriaLabel: _propTypes["default"].string,
-  prev2Label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
-  prevAriaLabel: _propTypes["default"].string,
-  prevLabel: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
-  setActiveStartDate: _propTypes["default"].func.isRequired,
-  view: propTypes$1.isView.isRequired,
-  views: propTypes$1.isViews.isRequired
-};
-});
-
-unwrapExports(Navigation_1);
-
-var Flex_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Flex;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function toPercent(num) {
-  return "".concat(num, "%");
-}
-
-function Flex(_ref) {
-  var children = _ref.children,
-      className = _ref.className,
-      direction = _ref.direction,
-      count = _ref.count,
-      offset = _ref.offset,
-      style = _ref.style,
-      wrap = _ref.wrap,
-      otherProps = _objectWithoutProperties(_ref, ["children", "className", "direction", "count", "offset", "style", "wrap"]);
-
-  return _react["default"].createElement("div", _extends({
-    className: className,
-    style: _objectSpread({
-      display: 'flex',
-      flexDirection: direction,
-      flexWrap: wrap ? 'wrap' : 'no-wrap'
-    }, style)
-  }, otherProps), _react["default"].Children.map(children, function (child, index) {
-    return _react["default"].cloneElement(child, _objectSpread({}, child.props, {
-      style: {
-        flexBasis: toPercent(100 / count),
-        maxWidth: toPercent(100 / count),
-        overflow: 'hidden',
-        marginLeft: offset && index === 0 ? toPercent(100 * offset / count) : null
-      }
-    }));
-  }));
-}
-
-Flex.propTypes = {
-  children: _propTypes["default"].node,
-  className: _propTypes["default"].string,
-  count: _propTypes["default"].number.isRequired,
-  direction: _propTypes["default"].string,
-  offset: _propTypes["default"].number,
-  style: _propTypes["default"].objectOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
-  wrap: _propTypes["default"].bool
-};
-});
-
-unwrapExports(Flex_1);
-
-var utils = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getTileClasses = exports.between = exports.doRangesOverlap = exports.isRangeWithinRange = exports.isValueWithinRange = exports.callIfDefined = exports.mergeFunctions = void 0;
-
-
-
-/**
- * Returns a function that, when called, calls all the functions
- * passed to it, applying its arguments to them.
- *
- * @param {Function[]} functions
- */
-var mergeFunctions = function mergeFunctions() {
-  for (var _len = arguments.length, functions = new Array(_len), _key = 0; _key < _len; _key++) {
-    functions[_key] = arguments[_key];
-  }
-
-  return function () {
-    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-      args[_key2] = arguments[_key2];
-    }
-
-    return functions.filter(Boolean).forEach(function (f) {
-      return f.apply(void 0, args);
-    });
-  };
-};
-/**
- * Calls a function, if it's defined, with specified arguments
- * @param {Function} fn
- * @param {Object} args
- */
-
-
-exports.mergeFunctions = mergeFunctions;
-
-var callIfDefined = function callIfDefined(fn) {
-  if (fn && typeof fn === 'function') {
-    for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
-      args[_key3 - 1] = arguments[_key3];
-    }
-
-    fn.apply(void 0, args);
-  }
-};
-
-exports.callIfDefined = callIfDefined;
-
-var isValueWithinRange = function isValueWithinRange(value, range) {
-  return range[0] <= value && range[1] >= value;
-};
-
-exports.isValueWithinRange = isValueWithinRange;
-
-var isRangeWithinRange = function isRangeWithinRange(greaterRange, smallerRange) {
-  return greaterRange[0] <= smallerRange[0] && greaterRange[1] >= smallerRange[1];
-};
-
-exports.isRangeWithinRange = isRangeWithinRange;
-
-var doRangesOverlap = function doRangesOverlap(range1, range2) {
-  return isValueWithinRange(range1[0], range2) || isValueWithinRange(range1[1], range2);
-};
-/**
- * Returns a value no smaller than min and no larger than max.
- *
- * @param {*} value Value to return.
- * @param {*} min Minimum return value.
- * @param {*} max Maximum return value.
- */
-
-
-exports.doRangesOverlap = doRangesOverlap;
-
-var between = function between(value, min, max) {
-  if (min && min > value) {
-    return min;
-  }
-
-  if (max && max < value) {
-    return max;
-  }
-
-  return value;
-};
-
-exports.between = between;
-
-var getTileClasses = function getTileClasses() {
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      value = _ref.value,
-      valueType = _ref.valueType,
-      date = _ref.date,
-      dateType = _ref.dateType,
-      hover = _ref.hover;
-
-  var className = 'react-calendar__tile';
-  var classes = [className];
-
-  if (!date) {
-    return classes;
-  }
-
-  if (!(date instanceof Array) && !dateType) {
-    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
-  }
-
-  var now = new Date();
-  var dateRange = date instanceof Array ? date : (0, dates.getRange)(dateType, date);
-
-  if (isValueWithinRange(now, dateRange)) {
-    classes.push("".concat(className, "--now"));
-  }
-
-  if (!value) {
-    return classes;
-  }
-
-  if (!(value instanceof Array) && !valueType) {
-    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
-  }
-
-  var valueRange = value instanceof Array ? value : (0, dates.getRange)(valueType, value);
-
-  if (isRangeWithinRange(valueRange, dateRange)) {
-    classes.push("".concat(className, "--active"));
-  } else if (doRangesOverlap(valueRange, dateRange)) {
-    classes.push("".concat(className, "--hasActive"));
-  } else if (hover && ( // Date before value
-  dateRange[1] < valueRange[0] && doRangesOverlap(dateRange, [hover, valueRange[0]]) || // Date after value
-  dateRange[0] > valueRange[1] && doRangesOverlap(dateRange, [valueRange[1], hover]))) {
-    classes.push("".concat(className, "--hover"));
-  }
-
-  var isRangeStart = isValueWithinRange(valueRange[0], dateRange);
-  var isRangeEnd = isValueWithinRange(valueRange[1], dateRange);
-
-  if (isRangeStart) {
-    classes.push("".concat(className, "--rangeStart"));
-  }
-
-  if (isRangeEnd) {
-    classes.push("".concat(className, "--rangeEnd"));
-  }
-
-  if (isRangeStart && isRangeEnd) {
-    classes.push("".concat(className, "--rangeBothEnds"));
-  }
-
-  return classes;
-};
-
-exports.getTileClasses = getTileClasses;
-});
-
-unwrapExports(utils);
-var utils_1 = utils.getTileClasses;
-var utils_2 = utils.between;
-var utils_3 = utils.doRangesOverlap;
-var utils_4 = utils.isRangeWithinRange;
-var utils_5 = utils.isValueWithinRange;
-var utils_6 = utils.callIfDefined;
-var utils_7 = utils.mergeFunctions;
-
-var TileGroup_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = TileGroup;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Flex = _interopRequireDefault(Flex_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function TileGroup(_ref) {
-  var className = _ref.className,
-      count = _ref.count,
-      dateTransform = _ref.dateTransform,
-      dateType = _ref.dateType,
-      end = _ref.end,
-      hover = _ref.hover,
-      offset = _ref.offset,
-      start = _ref.start,
-      step = _ref.step,
-      Tile = _ref.tile,
-      value = _ref.value,
-      valueType = _ref.valueType,
-      tileProps = _objectWithoutProperties(_ref, ["className", "count", "dateTransform", "dateType", "end", "hover", "offset", "start", "step", "tile", "value", "valueType"]);
-
-  var tiles = [];
-
-  for (var point = start; point <= end; point += step) {
-    var date = dateTransform(point);
-    tiles.push(_react["default"].createElement(Tile, _extends({
-      key: date.getTime(),
-      classes: (0, utils.getTileClasses)({
-        value: value,
-        valueType: valueType,
-        date: date,
-        dateType: dateType,
-        hover: hover
-      }),
-      date: date,
-      point: point
-    }, tileProps)));
-  }
-
-  return _react["default"].createElement(_Flex["default"], {
-    className: className,
-    count: count,
-    offset: offset,
-    wrap: true
-  }, tiles);
-}
-
-TileGroup.propTypes = _objectSpread({}, propTypes$1.tileGroupProps, {
-  activeStartDate: _propTypes["default"].instanceOf(Date),
-  count: _propTypes["default"].number,
-  dateTransform: _propTypes["default"].func.isRequired,
-  offset: _propTypes["default"].number,
-  step: _propTypes["default"].number,
-  tile: _propTypes["default"].func.isRequired
-});
-TileGroup.defaultProps = {
-  count: 3,
-  step: 1
-};
-});
-
-unwrapExports(TileGroup_1);
-
-var Tile_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _react = _interopRequireWildcard(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _mergeClassNames = _interopRequireDefault(mergeClassNames);
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var Tile =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Tile, _Component);
-
-  function Tile() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, Tile);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Tile)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    return _this;
-  }
-
-  _createClass(Tile, [{
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          activeStartDate = _this$props.activeStartDate,
-          children = _this$props.children,
-          classes = _this$props.classes,
-          date = _this$props.date,
-          formatAbbr = _this$props.formatAbbr,
-          locale = _this$props.locale,
-          maxDate = _this$props.maxDate,
-          maxDateTransform = _this$props.maxDateTransform,
-          minDate = _this$props.minDate,
-          minDateTransform = _this$props.minDateTransform,
-          onClick = _this$props.onClick,
-          onMouseOver = _this$props.onMouseOver,
-          style = _this$props.style,
-          tileDisabled = _this$props.tileDisabled,
-          view = _this$props.view;
-      var _this$state = this.state,
-          tileClassName = _this$state.tileClassName,
-          tileContent = _this$state.tileContent;
-      return _react["default"].createElement("button", {
-        className: (0, _mergeClassNames["default"])(classes, tileClassName),
-        disabled: minDate && minDateTransform(minDate) > date || maxDate && maxDateTransform(maxDate) < date || tileDisabled && tileDisabled({
-          activeStartDate: activeStartDate,
-          date: date,
-          view: view
-        }),
-        onClick: onClick && function () {
-          return onClick(date);
-        },
-        onFocus: onMouseOver && function () {
-          return onMouseOver(date);
-        },
-        onMouseOver: onMouseOver && function () {
-          return onMouseOver(date);
-        },
-        style: style,
-        type: "button"
-      }, formatAbbr ? _react["default"].createElement("abbr", {
-        "aria-label": formatAbbr(locale, date)
-      }, children) : children, tileContent);
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(nextProps, prevState) {
-      var date = nextProps.date,
-          tileClassName = nextProps.tileClassName,
-          tileContent = nextProps.tileContent,
-          view = nextProps.view;
-      var nextState = {};
-
-      if (tileClassName !== prevState.tileClassNameProps) {
-        nextState.tileClassName = typeof tileClassName === 'function' ? tileClassName({
-          date: date,
-          view: view
-        }) : tileClassName;
-        nextState.tileClassNameProps = tileClassName;
-      }
-
-      if (tileContent !== prevState.tileContentProps) {
-        nextState.tileContent = typeof tileContent === 'function' ? tileContent({
-          date: date,
-          view: view
-        }) : tileContent;
-        nextState.tileContentProps = tileContent;
-      }
-
-      return nextState;
-    }
-  }]);
-
-  return Tile;
-}(_react.Component);
-
-exports["default"] = Tile;
-Tile.propTypes = _objectSpread({}, propTypes$1.tileProps, {
-  children: _propTypes["default"].node.isRequired,
-  formatAbbr: _propTypes["default"].func,
-  maxDateTransform: _propTypes["default"].func.isRequired,
-  minDateTransform: _propTypes["default"].func.isRequired
-});
-});
-
-unwrapExports(Tile_1);
-
-var Decade_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Decade;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Tile = _interopRequireDefault(Tile_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-var className = 'react-calendar__century-view__decades__decade';
-
-function Decade(_ref) {
-  var classes = _ref.classes,
-      point = _ref.point,
-      otherProps = _objectWithoutProperties(_ref, ["classes", "point"]);
-
-  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
-    classes: [].concat(classes, className),
-    maxDateTransform: dates.getEndOfDecade,
-    minDateTransform: dates.getBeginOfDecade,
-    view: "century"
-  }), (0, dates.getDecadeLabel)(point));
-}
-
-Decade.propTypes = _objectSpread({}, propTypes$1.tileProps, {
-  point: _propTypes["default"].number.isRequired
-});
-});
-
-unwrapExports(Decade_1);
-
-var Decades_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Decades;
-
-var _react = _interopRequireDefault(react);
-
-var _TileGroup = _interopRequireDefault(TileGroup_1);
-
-var _Decade = _interopRequireDefault(Decade_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function Decades(props) {
-  var activeStartDate = props.activeStartDate;
-  var start = (0, dates.getBeginOfCenturyYear)(activeStartDate);
-  var end = start + 99;
-  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
-    className: "react-calendar__century-view__decades",
-    dateTransform: dates.getBeginOfDecade,
-    dateType: "decade",
-    end: end,
-    start: start,
-    step: 10,
-    tile: _Decade["default"]
-  }));
-}
-
-Decades.propTypes = _objectSpread({}, propTypes$1.tileGroupProps);
-});
-
-unwrapExports(Decades_1);
-
-var CenturyView_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = CenturyView;
-
-var _react = _interopRequireDefault(react);
-
-var _Decades = _interopRequireDefault(Decades_1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function CenturyView(props) {
-  function renderDecades() {
-    return _react["default"].createElement(_Decades["default"], props);
-  }
-
-  return _react["default"].createElement("div", {
-    className: "react-calendar__century-view"
-  }, renderDecades());
-}
-});
-
-unwrapExports(CenturyView_1);
-
-var Year_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Year;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Tile = _interopRequireDefault(Tile_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-var className = 'react-calendar__decade-view__years__year';
-
-function Year(_ref) {
-  var classes = _ref.classes,
-      point = _ref.point,
-      otherProps = _objectWithoutProperties(_ref, ["classes", "point"]);
-
-  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
-    classes: [].concat(classes, className),
-    maxDateTransform: dates.getEndOfYear,
-    minDateTransform: dates.getBeginOfYear,
-    view: "decade"
-  }), point);
-}
-
-Year.propTypes = _objectSpread({}, propTypes$1.tileProps, {
-  point: _propTypes["default"].number.isRequired
-});
-});
-
-unwrapExports(Year_1);
-
-var Years_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Years;
-
-var _react = _interopRequireDefault(react);
-
-var _TileGroup = _interopRequireDefault(TileGroup_1);
-
-var _Year = _interopRequireDefault(Year_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function Years(props) {
-  var activeStartDate = props.activeStartDate;
-  var start = (0, dates.getBeginOfDecadeYear)(activeStartDate);
-  var end = start + 9;
-  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
-    className: "react-calendar__decade-view__years",
-    dateTransform: function dateTransform(year) {
-      return new Date(year, 0, 1);
-    },
-    dateType: "year",
-    end: end,
-    start: start,
-    tile: _Year["default"]
-  }));
-}
-
-Years.propTypes = _objectSpread({}, propTypes$1.tileGroupProps);
-});
-
-unwrapExports(Years_1);
-
-var DecadeView_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = DecadeView;
-
-var _react = _interopRequireDefault(react);
-
-var _Years = _interopRequireDefault(Years_1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function DecadeView(props) {
-  function renderYears() {
-    return _react["default"].createElement(_Years["default"], props);
-  }
-
-  return _react["default"].createElement("div", {
-    className: "react-calendar__decade-view"
-  }, renderYears());
-}
-});
-
-unwrapExports(DecadeView_1);
-
-var Month_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Month;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Tile = _interopRequireDefault(Tile_1);
-
-
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-var className = 'react-calendar__year-view__months__month';
-
-function Month(_ref) {
-  var classes = _ref.classes,
-      date = _ref.date,
-      formatMonth = _ref.formatMonth,
-      locale = _ref.locale,
-      otherProps = _objectWithoutProperties(_ref, ["classes", "date", "formatMonth", "locale"]);
-
-  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
-    classes: [].concat(classes, className),
-    date: date,
-    formatAbbr: dateFormatter.formatMonthYear,
-    locale: locale,
-    maxDateTransform: dates.getEndOfMonth,
-    minDateTransform: dates.getBeginOfMonth,
-    view: "year"
-  }), formatMonth(locale, date));
-}
-
-Month.defaultProps = {
-  formatMonth: dateFormatter.formatMonth
-};
-Month.propTypes = _objectSpread({}, propTypes$1.tileProps, {
-  formatMonth: _propTypes["default"].func
-});
-});
-
-unwrapExports(Month_1);
-
-var Months_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Months;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _TileGroup = _interopRequireDefault(TileGroup_1);
-
-var _Month = _interopRequireDefault(Month_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function Months(props) {
-  var activeStartDate = props.activeStartDate;
-  var start = 0;
-  var end = 11;
-  var year = (0, dates.getYear)(activeStartDate);
-  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
-    className: "react-calendar__year-view__months",
-    dateTransform: function dateTransform(monthIndex) {
-      return new Date(year, monthIndex, 1);
-    },
-    dateType: "month",
-    end: end,
-    start: start,
-    tile: _Month["default"]
-  }));
-}
-
-Months.propTypes = _objectSpread({}, propTypes$1.tileGroupProps, {
-  locale: _propTypes["default"].string
-});
-});
-
-unwrapExports(Months_1);
-
-var YearView_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = YearView;
-
-var _react = _interopRequireDefault(react);
-
-var _Months = _interopRequireDefault(Months_1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function YearView(props) {
-  function renderMonths() {
-    return _react["default"].createElement(_Months["default"], props);
-  }
-
-  return _react["default"].createElement("div", {
-    className: "react-calendar__year-view"
-  }, renderMonths());
-}
-});
-
-unwrapExports(YearView_1);
-
-var Day_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Day;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Tile = _interopRequireDefault(Tile_1);
-
-
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-var className = 'react-calendar__month-view__days__day';
-
-function Day(_ref) {
-  var calendarType = _ref.calendarType,
-      classes = _ref.classes,
-      currentMonthIndex = _ref.currentMonthIndex,
-      date = _ref.date,
-      otherProps = _objectWithoutProperties(_ref, ["calendarType", "classes", "currentMonthIndex", "date"]);
-
-  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
-    classes: [].concat(classes, className, (0, dates.isWeekend)(date, calendarType) ? "".concat(className, "--weekend") : null, date.getMonth() !== currentMonthIndex ? "".concat(className, "--neighboringMonth") : null),
-    date: date,
-    formatAbbr: dateFormatter.formatLongDate,
-    maxDateTransform: dates.getEndOfDay,
-    minDateTransform: dates.getBeginOfDay,
-    view: "month"
-  }), (0, dates.getDay)(date));
-}
-
-Day.propTypes = _objectSpread({}, propTypes$1.tileProps, {
-  currentMonthIndex: _propTypes["default"].number.isRequired
-});
-});
-
-unwrapExports(Day_1);
-
-var Days_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Days;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _TileGroup = _interopRequireDefault(TileGroup_1);
-
-var _Day = _interopRequireDefault(Day_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function Days(props) {
-  var activeStartDate = props.activeStartDate,
-      calendarType = props.calendarType;
-
-  var showFixedNumberOfWeeks = props.showFixedNumberOfWeeks,
-      showNeighboringMonth = props.showNeighboringMonth,
-      otherProps = _objectWithoutProperties(props, ["showFixedNumberOfWeeks", "showNeighboringMonth"]);
-
-  var year = (0, dates.getYear)(activeStartDate);
-  var monthIndex = (0, dates.getMonthIndex)(activeStartDate);
-  var hasFixedNumberOfWeeks = showFixedNumberOfWeeks || showNeighboringMonth;
-  var dayOfWeek = (0, dates.getDayOfWeek)(activeStartDate, calendarType);
-  var offset = hasFixedNumberOfWeeks ? 0 : dayOfWeek;
-  /**
-   * Defines on which day of the month the grid shall start. If we simply show current
-   * month, we obviously start on day one, but if showNeighboringMonth is set to
-   * true, we need to find the beginning of the week the first day of the month is in.
-   */
-
-  var start = (hasFixedNumberOfWeeks ? -dayOfWeek : 0) + 1;
-  /**
-   * Defines on which day of the month the grid shall end. If we simply show current
-   * month, we need to stop on the last day of the month, but if showNeighboringMonth
-   * is set to true, we need to find the end of the week the last day of the month is in.
-   */
-
-  var end = function () {
-    if (showFixedNumberOfWeeks) {
-      // Always show 6 weeks
-      return start + 6 * 7 - 1;
-    }
-
-    var daysInMonth = (0, dates.getDaysInMonth)(activeStartDate);
-
-    if (showNeighboringMonth) {
-      var activeEndDate = new Date(year, monthIndex, daysInMonth);
-      return daysInMonth + (7 - (0, dates.getDayOfWeek)(activeEndDate, calendarType) - 1);
-    }
-
-    return daysInMonth;
-  }();
-
-  return _react["default"].createElement(_TileGroup["default"], _extends({}, otherProps, {
-    className: "react-calendar__month-view__days",
-    count: 7,
-    currentMonthIndex: monthIndex,
-    dateTransform: function dateTransform(day) {
-      return new Date(year, monthIndex, day);
-    },
-    dateType: "day",
-    end: end,
-    offset: offset,
-    start: start,
-    tile: _Day["default"]
-  }));
-}
-
-Days.propTypes = _objectSpread({
-  calendarType: propTypes$1.isCalendarType.isRequired,
-  showFixedNumberOfWeeks: _propTypes["default"].bool,
-  showNeighboringMonth: _propTypes["default"].bool
-}, propTypes$1.tileGroupProps);
-});
-
-unwrapExports(Days_1);
-
-var Weekdays_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Weekdays;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Flex = _interopRequireDefault(Flex_1);
-
-
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function Weekdays(props) {
-  var calendarType = props.calendarType,
-      formatShortWeekday = props.formatShortWeekday,
-      locale = props.locale,
-      onMouseLeave = props.onMouseLeave;
-  var anyDate = new Date();
-  var beginOfMonth = (0, dates.getBeginOfMonth)(anyDate);
-  var year = (0, dates.getYear)(beginOfMonth);
-  var monthIndex = (0, dates.getMonthIndex)(beginOfMonth);
-  var weekdays = [];
-
-  for (var weekday = 1; weekday <= 7; weekday += 1) {
-    var weekdayDate = new Date(year, monthIndex, weekday - (0, dates.getDayOfWeek)(beginOfMonth, calendarType));
-    var abbr = (0, dateFormatter.formatWeekday)(locale, weekdayDate);
-    weekdays.push(_react["default"].createElement("div", {
-      key: weekday,
-      className: "react-calendar__month-view__weekdays__weekday"
-    }, _react["default"].createElement("abbr", {
-      "aria-label": abbr,
-      title: abbr
-    }, formatShortWeekday(locale, weekdayDate).replace('.', ''))));
-  }
-
-  return _react["default"].createElement(_Flex["default"], {
-    className: "react-calendar__month-view__weekdays",
-    count: 7,
-    onFocus: onMouseLeave,
-    onMouseOver: onMouseLeave
-  }, weekdays);
-}
-
-Weekdays.defaultProps = {
-  formatShortWeekday: dateFormatter.formatShortWeekday
-};
-Weekdays.propTypes = {
-  calendarType: propTypes$1.isCalendarType.isRequired,
-  formatShortWeekday: _propTypes["default"].func,
-  locale: _propTypes["default"].string,
-  onMouseLeave: _propTypes["default"].func
-};
-});
-
-unwrapExports(Weekdays_1);
-
-var WeekNumber_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = WeekNumber;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function WeekNumber(_ref) {
-  var date = _ref.date,
-      onClickWeekNumber = _ref.onClickWeekNumber,
-      weekNumber = _ref.weekNumber;
-  return onClickWeekNumber ? _react["default"].createElement("button", {
-    className: "react-calendar__tile",
-    onClick: function onClick() {
-      return onClickWeekNumber(weekNumber, date);
-    },
-    style: {
-      flexGrow: 1
-    },
-    type: "button"
-  }, _react["default"].createElement("span", null, weekNumber)) : _react["default"].createElement("div", {
-    className: "react-calendar__tile",
-    style: {
-      flexGrow: 1
-    }
-  }, _react["default"].createElement("span", null, weekNumber));
-}
-
-WeekNumber.propTypes = {
-  date: _propTypes["default"].instanceOf(Date).isRequired,
-  onClickWeekNumber: _propTypes["default"].func,
-  weekNumber: _propTypes["default"].number.isRequired
-};
-});
-
-unwrapExports(WeekNumber_1);
-
-var WeekNumbers_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = WeekNumbers;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _WeekNumber = _interopRequireDefault(WeekNumber_1);
-
-var _Flex = _interopRequireDefault(Flex_1);
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function WeekNumbers(props) {
-  var activeStartDate = props.activeStartDate,
-      calendarType = props.calendarType,
-      onClickWeekNumber = props.onClickWeekNumber,
-      onMouseLeave = props.onMouseLeave,
-      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
-
-  var numberOfWeeks = function () {
-    if (showFixedNumberOfWeeks) {
-      return 6;
-    }
-
-    var numberOfDays = (0, dates.getDaysInMonth)(activeStartDate);
-    var startWeekday = (0, dates.getDayOfWeek)(activeStartDate, calendarType);
-    var days = numberOfDays - (7 - startWeekday);
-    return 1 + Math.ceil(days / 7);
-  }();
-
-  var dates$1 = function () {
-    var year = (0, dates.getYear)(activeStartDate);
-    var monthIndex = (0, dates.getMonthIndex)(activeStartDate);
-    var day = (0, dates.getDay)(activeStartDate);
-    var result = [];
-
-    for (var index = 0; index < numberOfWeeks; index += 1) {
-      result.push((0, dates.getBeginOfWeek)(new Date(year, monthIndex, day + index * 7), calendarType));
-    }
-
-    return result;
-  }();
-
-  var weekNumbers = dates$1.map(function (date) {
-    return (0, dates.getWeekNumber)(date, calendarType);
-  });
-  return _react["default"].createElement(_Flex["default"], {
-    className: "react-calendar__month-view__weekNumbers",
-    count: numberOfWeeks,
-    direction: "column",
-    onFocus: onMouseLeave,
-    onMouseOver: onMouseLeave,
-    style: {
-      flexBasis: 'calc(100% * (1 / 8)',
-      flexShrink: 0
-    }
-  }, weekNumbers.map(function (weekNumber, weekIndex) {
-    return _react["default"].createElement(_WeekNumber["default"], {
-      key: weekNumber,
-      date: dates$1[weekIndex],
-      onClickWeekNumber: onClickWeekNumber,
-      weekNumber: weekNumber
-    });
-  }));
-}
-
-WeekNumbers.propTypes = {
-  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
-  calendarType: propTypes$1.isCalendarType.isRequired,
-  onClickWeekNumber: _propTypes["default"].func,
-  onMouseLeave: _propTypes["default"].func,
-  showFixedNumberOfWeeks: _propTypes["default"].bool
-};
-});
-
-unwrapExports(WeekNumbers_1);
-
-var MonthView_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = MonthView;
-
-var _react = _interopRequireDefault(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-var _Days = _interopRequireDefault(Days_1);
-
-var _Weekdays = _interopRequireDefault(Weekdays_1);
-
-var _WeekNumbers = _interopRequireDefault(WeekNumbers_1);
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-function MonthView(props) {
-  var activeStartDate = props.activeStartDate,
-      locale = props.locale,
-      onMouseLeave = props.onMouseLeave,
-      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
-
-  var calendarTypeProps = props.calendarType,
-      formatShortWeekday = props.formatShortWeekday,
-      onClickWeekNumber = props.onClickWeekNumber,
-      showWeekNumbers = props.showWeekNumbers,
-      childProps = _objectWithoutProperties(props, ["calendarType", "formatShortWeekday", "onClickWeekNumber", "showWeekNumbers"]);
-
-  var calendarType = function () {
-    if (calendarTypeProps) {
-      return calendarTypeProps;
-    }
-
-    switch (locale) {
-      case 'en-CA':
-      case 'en-US':
-      case 'es-AR':
-      case 'es-BO':
-      case 'es-CL':
-      case 'es-CO':
-      case 'es-CR':
-      case 'es-DO':
-      case 'es-EC':
-      case 'es-GT':
-      case 'es-HN':
-      case 'es-MX':
-      case 'es-NI':
-      case 'es-PA':
-      case 'es-PE':
-      case 'es-PR':
-      case 'es-SV':
-      case 'es-VE':
-      case 'pt-BR':
-        return 'US';
-      // ar-LB, ar-MA intentionally missing
-
-      case 'ar':
-      case 'ar-AE':
-      case 'ar-BH':
-      case 'ar-DZ':
-      case 'ar-EG':
-      case 'ar-IQ':
-      case 'ar-JO':
-      case 'ar-KW':
-      case 'ar-LY':
-      case 'ar-OM':
-      case 'ar-QA':
-      case 'ar-SA':
-      case 'ar-SD':
-      case 'ar-SY':
-      case 'ar-YE':
-      case 'dv':
-      case 'dv-MV':
-      case 'ps':
-      case 'ps-AR':
-        return 'Arabic';
-
-      case 'he':
-      case 'he-IL':
-        return 'Hebrew';
-
-      default:
-        return 'ISO 8601';
-    }
-  }();
-
-  function renderWeekdays() {
-    return _react["default"].createElement(_Weekdays["default"], {
-      calendarType: calendarType,
-      formatShortWeekday: formatShortWeekday,
-      locale: locale,
-      onMouseLeave: onMouseLeave
-    });
-  }
-
-  function renderWeekNumbers() {
-    if (!showWeekNumbers) {
-      return null;
-    }
-
-    return _react["default"].createElement(_WeekNumbers["default"], {
-      activeStartDate: activeStartDate,
-      calendarType: calendarType,
-      onClickWeekNumber: onClickWeekNumber,
-      onMouseLeave: onMouseLeave,
-      showFixedNumberOfWeeks: showFixedNumberOfWeeks
-    });
-  }
-
-  function renderDays() {
-    return _react["default"].createElement(_Days["default"], _extends({
-      calendarType: calendarType
-    }, childProps));
-  }
-
-  var className = 'react-calendar__month-view';
-  return _react["default"].createElement("div", {
-    className: [className, showWeekNumbers ? "".concat(className, "--weekNumbers") : ''].join(' ')
-  }, _react["default"].createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'flex-end'
-    }
-  }, renderWeekNumbers(), _react["default"].createElement("div", {
-    style: {
-      flexGrow: 1,
-      width: '100%'
-    }
-  }, renderWeekdays(), renderDays())));
-}
-
-MonthView.propTypes = {
-  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
-  calendarType: propTypes$1.isCalendarType,
-  formatShortWeekday: _propTypes["default"].func,
-  locale: _propTypes["default"].string,
-  maxDate: propTypes$1.isMaxDate,
-  minDate: propTypes$1.isMinDate,
-  onChange: _propTypes["default"].func,
-  onClickWeekNumber: _propTypes["default"].func,
-  onMouseLeave: _propTypes["default"].func,
-  setActiveRange: _propTypes["default"].func,
-  showFixedNumberOfWeeks: _propTypes["default"].bool,
-  showNeighboringMonth: _propTypes["default"].bool,
-  showWeekNumbers: _propTypes["default"].bool,
-  value: propTypes$1.isValue,
-  valueType: _propTypes["default"].string
-};
-});
-
-unwrapExports(MonthView_1);
-
-var Calendar_1 = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _react = _interopRequireWildcard(react);
-
-var _propTypes = _interopRequireDefault(propTypes);
-
-
-
-var _mergeClassNames = _interopRequireDefault(mergeClassNames);
-
-var _Navigation = _interopRequireDefault(Navigation_1);
-
-var _CenturyView = _interopRequireDefault(CenturyView_1);
-
-var _DecadeView = _interopRequireDefault(DecadeView_1);
-
-var _YearView = _interopRequireDefault(YearView_1);
-
-var _MonthView = _interopRequireDefault(MonthView_1);
-
-
-
-
-
-
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-var baseClassName = 'react-calendar';
-var allViews = ['century', 'decade', 'year', 'month'];
-var allValueTypes = [].concat(_toConsumableArray(allViews.slice(1)), ['day']);
-
-var datesAreDifferent = function datesAreDifferent(date1, date2) {
-  return date1 && !date2 || !date1 && date2 || date1 && date2 && date1.getTime() !== date2.getTime();
-};
-/**
- * Returns views array with disallowed values cut off.
- */
-
-
-var getLimitedViews = function getLimitedViews(minDetail, maxDetail) {
-  return allViews.slice(allViews.indexOf(minDetail), allViews.indexOf(maxDetail) + 1);
-};
-/**
- * Determines whether a given view is allowed with currently applied settings.
- */
-
-
-var isViewAllowed = function isViewAllowed(view, minDetail, maxDetail) {
-  var views = getLimitedViews(minDetail, maxDetail);
-  return views.indexOf(view) !== -1;
-};
-/**
- * Gets either provided view if allowed by minDetail and maxDetail, or gets
- * the default view if not allowed.
- */
-
-
-var getView = function getView(view, minDetail, maxDetail) {
-  if (isViewAllowed(view, minDetail, maxDetail)) {
-    return view;
-  }
-
-  return getLimitedViews(minDetail, maxDetail).pop();
-};
-/**
- * Returns value type that can be returned with currently applied settings.
- */
-
-
-var getValueType = function getValueType(maxDetail) {
-  return allValueTypes[allViews.indexOf(maxDetail)];
-};
-
-var getValueFrom = function getValueFrom(value) {
-  if (!value) {
-    return null;
-  }
-
-  var rawValueFrom = value instanceof Array && value.length === 2 ? value[0] : value;
-
-  if (!rawValueFrom) {
-    return null;
-  }
-
-  var valueFromDate = new Date(rawValueFrom);
-
-  if (isNaN(valueFromDate.getTime())) {
-    throw new Error("Invalid date: ".concat(value));
-  }
-
-  return valueFromDate;
-};
-
-var getDetailValueFrom = function getDetailValueFrom(value, minDate, maxDate, maxDetail) {
-  var valueFrom = getValueFrom(value);
-
-  if (!valueFrom) {
-    return null;
-  }
-
-  var detailValueFrom = (0, dates.getBegin)(getValueType(maxDetail), valueFrom);
-  return (0, utils.between)(detailValueFrom, minDate, maxDate);
-};
-
-var getValueTo = function getValueTo(value) {
-  if (!value) {
-    return null;
-  }
-
-  var rawValueTo = value instanceof Array && value.length === 2 ? value[1] : value;
-
-  if (!rawValueTo) {
-    return null;
-  }
-
-  var valueToDate = new Date(rawValueTo);
-
-  if (isNaN(valueToDate.getTime())) {
-    throw new Error("Invalid date: ".concat(value));
-  }
-
-  return valueToDate;
-};
-
-var getDetailValueTo = function getDetailValueTo(value, minDate, maxDate, maxDetail) {
-  var valueTo = getValueTo(value);
-
-  if (!valueTo) {
-    return null;
-  }
-
-  var detailValueTo = (0, dates.getEnd)(getValueType(maxDetail), valueTo);
-  return (0, utils.between)(detailValueTo, minDate, maxDate);
-};
-
-var getDetailValueArray = function getDetailValueArray(value, minDate, maxDate, maxDetail) {
-  if (value instanceof Array) {
-    return value;
-  }
-
-  return [getDetailValueFrom(value, minDate, maxDate, maxDetail), getDetailValueTo(value, minDate, maxDate, maxDetail)];
-};
-
-var getActiveStartDate = function getActiveStartDate(props) {
-  var activeStartDate = props.activeStartDate,
-      maxDate = props.maxDate,
-      maxDetail = props.maxDetail,
-      minDate = props.minDate,
-      minDetail = props.minDetail,
-      value = props.value,
-      view = props.view;
-  var rangeType = getView(view, minDetail, maxDetail);
-  var valueFrom = getDetailValueFrom(value, minDate, maxDate, maxDetail) || activeStartDate || new Date();
-  return (0, dates.getBegin)(rangeType, valueFrom);
-};
-
-var Calendar =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Calendar, _Component);
-
-  function Calendar() {
-    var _getPrototypeOf2;
-
-    var _this;
-
-    _classCallCheck(this, Calendar);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Calendar)).call.apply(_getPrototypeOf2, [this].concat(args)));
-
-    _defineProperty(_assertThisInitialized(_this), "state", {});
-
-    _defineProperty(_assertThisInitialized(_this), "setActiveStartDate", function (activeStartDate) {
-      var onActiveDateChange = _this.props.onActiveDateChange;
-
-      _this.setState({
-        activeStartDate: activeStartDate
-      }, function () {
-        var view = _this.state.view;
-        (0, utils.callIfDefined)(onActiveDateChange, {
-          activeStartDate: activeStartDate,
-          view: view
-        });
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "drillDown", function (activeStartDate) {
-      if (!_this.drillDownAvailable) {
-        return;
-      }
-
-      var _this$props = _this.props,
-          maxDetail = _this$props.maxDetail,
-          minDetail = _this$props.minDetail,
-          onDrillDown = _this$props.onDrillDown;
-      var views = getLimitedViews(minDetail, maxDetail);
-
-      _this.setState(function (prevState) {
-        var nextView = views[views.indexOf(prevState.view) + 1];
-        return {
-          activeStartDate: activeStartDate,
-          view: nextView
-        };
-      }, function () {
-        var view = _this.state.view;
-        (0, utils.callIfDefined)(onDrillDown, {
-          activeStartDate: activeStartDate,
-          view: view
-        });
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "drillUp", function () {
-      if (!_this.drillUpAvailable) {
-        return;
-      }
-
-      var _this$props2 = _this.props,
-          maxDetail = _this$props2.maxDetail,
-          minDetail = _this$props2.minDetail,
-          onDrillUp = _this$props2.onDrillUp;
-      var views = getLimitedViews(minDetail, maxDetail);
-
-      _this.setState(function (prevState) {
-        var nextView = views[views.indexOf(prevState.view) - 1];
-        var activeStartDate = (0, dates.getBegin)(nextView, prevState.activeStartDate);
-        return {
-          activeStartDate: activeStartDate,
-          view: nextView
-        };
-      }, function () {
-        var _this$state = _this.state,
-            activeStartDate = _this$state.activeStartDate,
-            view = _this$state.view;
-        (0, utils.callIfDefined)(onDrillUp, {
-          activeStartDate: activeStartDate,
-          view: view
-        });
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onChange", function (value) {
-      var _this$props3 = _this.props,
-          onChange = _this$props3.onChange,
-          selectRange = _this$props3.selectRange;
-      var nextValue;
-      var callback;
-
-      if (selectRange) {
-        var previousValue = _this.state.value; // Range selection turned on
-
-        if (!previousValue || [].concat(previousValue).length !== 1 // 0 or 2 - either way we're starting a new array
-        ) {
-            // First value
-            nextValue = (0, dates.getBegin)(_this.valueType, value);
-          } else {
-          // Second value
-          nextValue = (0, dates.getValueRange)(_this.valueType, previousValue, value);
-
-          callback = function callback() {
-            return (0, utils.callIfDefined)(onChange, nextValue);
-          };
-        }
-      } else {
-        // Range selection turned off
-        nextValue = _this.getProcessedValue(value);
-
-        callback = function callback() {
-          return (0, utils.callIfDefined)(onChange, nextValue);
-        };
-      }
-
-      _this.setState({
-        value: nextValue
-      }, callback);
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function (value) {
-      _this.setState(function (prevState) {
-        if (prevState.hover && prevState.hover.getTime() === value.getTime()) {
-          return null;
-        }
-
-        return {
-          hover: value
-        };
-      });
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onMouseLeave", function () {
-      _this.setState({
-        hover: null
-      });
-    });
-
-    return _this;
-  }
-
-  _createClass(Calendar, [{
-    key: "getProcessedValue",
-
-    /**
-     * Gets current value in a desired format.
-     */
-    value: function getProcessedValue(value) {
-      var _this$props4 = this.props,
-          minDate = _this$props4.minDate,
-          maxDate = _this$props4.maxDate,
-          maxDetail = _this$props4.maxDetail,
-          returnValue = _this$props4.returnValue;
-
-      var processFunction = function () {
-        switch (returnValue) {
-          case 'start':
-            return getDetailValueFrom;
-
-          case 'end':
-            return getDetailValueTo;
-
-          case 'range':
-            return getDetailValueArray;
-
-          default:
-            throw new Error('Invalid returnValue.');
-        }
-      }();
-
-      return processFunction(value, minDate, maxDate, maxDetail);
-    }
-    /**
-     * Called when the user uses navigation buttons.
-     */
-
-  }, {
-    key: "renderContent",
-    value: function renderContent() {
-      var _this$props5 = this.props,
-          calendarType = _this$props5.calendarType,
-          locale = _this$props5.locale,
-          maxDate = _this$props5.maxDate,
-          minDate = _this$props5.minDate,
-          renderChildren = _this$props5.renderChildren,
-          selectRange = _this$props5.selectRange,
-          tileClassName = _this$props5.tileClassName,
-          tileContent = _this$props5.tileContent,
-          tileDisabled = _this$props5.tileDisabled;
-      var _this$state2 = this.state,
-          activeStartDate = _this$state2.activeStartDate,
-          hover = _this$state2.hover,
-          value = _this$state2.value,
-          view = _this$state2.view;
-      var onMouseOver = this.onMouseOver,
-          valueType = this.valueType;
-      var commonProps = {
-        activeStartDate: activeStartDate,
-        hover: hover,
-        locale: locale,
-        maxDate: maxDate,
-        minDate: minDate,
-        onMouseOver: selectRange ? onMouseOver : null,
-        tileClassName: tileClassName,
-        tileContent: tileContent || renderChildren,
-        // For backwards compatibility
-        tileDisabled: tileDisabled,
-        value: value,
-        valueType: valueType
-      };
-      var clickAction = this.drillDownAvailable ? this.drillDown : this.onChange;
-
-      switch (view) {
-        case 'century':
-          {
-            var onClickDecade = this.props.onClickDecade;
-            return _react["default"].createElement(_CenturyView["default"], _extends({
-              onClick: (0, utils.mergeFunctions)(clickAction, onClickDecade)
-            }, commonProps));
-          }
-
-        case 'decade':
-          {
-            var onClickYear = this.props.onClickYear;
-            return _react["default"].createElement(_DecadeView["default"], _extends({
-              onClick: (0, utils.mergeFunctions)(clickAction, onClickYear)
-            }, commonProps));
-          }
-
-        case 'year':
-          {
-            var _this$props6 = this.props,
-                formatMonth = _this$props6.formatMonth,
-                onClickMonth = _this$props6.onClickMonth;
-            return _react["default"].createElement(_YearView["default"], _extends({
-              formatMonth: formatMonth,
-              onClick: (0, utils.mergeFunctions)(clickAction, onClickMonth)
-            }, commonProps));
-          }
-
-        case 'month':
-          {
-            var _this$props7 = this.props,
-                formatShortWeekday = _this$props7.formatShortWeekday,
-                onClickDay = _this$props7.onClickDay,
-                onClickWeekNumber = _this$props7.onClickWeekNumber,
-                showFixedNumberOfWeeks = _this$props7.showFixedNumberOfWeeks,
-                showNeighboringMonth = _this$props7.showNeighboringMonth,
-                showWeekNumbers = _this$props7.showWeekNumbers;
-            var onMouseLeave = this.onMouseLeave;
-            return _react["default"].createElement(_MonthView["default"], _extends({
-              calendarType: calendarType,
-              formatShortWeekday: formatShortWeekday,
-              onClick: (0, utils.mergeFunctions)(clickAction, onClickDay),
-              onClickWeekNumber: onClickWeekNumber,
-              onMouseLeave: onMouseLeave,
-              showFixedNumberOfWeeks: showFixedNumberOfWeeks,
-              showNeighboringMonth: showNeighboringMonth,
-              showWeekNumbers: showWeekNumbers
-            }, commonProps));
-          }
-
-        default:
-          throw new Error("Invalid view: ".concat(view, "."));
-      }
-    }
-  }, {
-    key: "renderNavigation",
-    value: function renderNavigation() {
-      var showNavigation = this.props.showNavigation;
-
-      if (!showNavigation) {
-        return null;
-      }
-
-      var _this$props8 = this.props,
-          formatMonthYear = _this$props8.formatMonthYear,
-          locale = _this$props8.locale,
-          maxDate = _this$props8.maxDate,
-          maxDetail = _this$props8.maxDetail,
-          minDate = _this$props8.minDate,
-          minDetail = _this$props8.minDetail,
-          navigationAriaLabel = _this$props8.navigationAriaLabel,
-          navigationLabel = _this$props8.navigationLabel,
-          next2AriaLabel = _this$props8.next2AriaLabel,
-          next2Label = _this$props8.next2Label,
-          nextAriaLabel = _this$props8.nextAriaLabel,
-          nextLabel = _this$props8.nextLabel,
-          prev2AriaLabel = _this$props8.prev2AriaLabel,
-          prev2Label = _this$props8.prev2Label,
-          prevAriaLabel = _this$props8.prevAriaLabel,
-          prevLabel = _this$props8.prevLabel;
-      var _this$state3 = this.state,
-          activeStartDate = _this$state3.activeStartDate,
-          view = _this$state3.view;
-      return _react["default"].createElement(_Navigation["default"], {
-        activeStartDate: activeStartDate,
-        drillUp: this.drillUp,
-        formatMonthYear: formatMonthYear,
-        locale: locale,
-        maxDate: maxDate,
-        minDate: minDate,
-        navigationAriaLabel: navigationAriaLabel,
-        navigationLabel: navigationLabel,
-        next2AriaLabel: next2AriaLabel,
-        next2Label: next2Label,
-        nextAriaLabel: nextAriaLabel,
-        nextLabel: nextLabel,
-        prev2AriaLabel: prev2AriaLabel,
-        prev2Label: prev2Label,
-        prevAriaLabel: prevAriaLabel,
-        prevLabel: prevLabel,
-        setActiveStartDate: this.setActiveStartDate,
-        view: view,
-        views: getLimitedViews(minDetail, maxDetail)
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$props9 = this.props,
-          className = _this$props9.className,
-          selectRange = _this$props9.selectRange;
-      var value = this.state.value;
-      var onMouseLeave = this.onMouseLeave;
-      var valueArray = [].concat(value);
-      return _react["default"].createElement("div", {
-        className: (0, _mergeClassNames["default"])(baseClassName, selectRange && valueArray.length === 1 && "".concat(baseClassName, "--selectRange"), className)
-      }, this.renderNavigation(), _react["default"].createElement("div", {
-        className: "".concat(baseClassName, "__viewContainer"),
-        onBlur: selectRange ? onMouseLeave : null,
-        onMouseLeave: selectRange ? onMouseLeave : null
-      }, this.renderContent()));
-    }
-  }, {
-    key: "drillDownAvailable",
-    get: function get() {
-      var _this$props10 = this.props,
-          maxDetail = _this$props10.maxDetail,
-          minDetail = _this$props10.minDetail;
-      var view = this.state.view;
-      var views = getLimitedViews(minDetail, maxDetail);
-      return views.indexOf(view) < views.length - 1;
-    }
-  }, {
-    key: "drillUpAvailable",
-    get: function get() {
-      var _this$props11 = this.props,
-          maxDetail = _this$props11.maxDetail,
-          minDetail = _this$props11.minDetail;
-      var view = this.state.view;
-      var views = getLimitedViews(minDetail, maxDetail);
-      return views.indexOf(view) > 0;
-    }
-  }, {
-    key: "valueType",
-    get: function get() {
-      var maxDetail = this.props.maxDetail;
-      return getValueType(maxDetail);
-    }
-  }], [{
-    key: "getDerivedStateFromProps",
-    value: function getDerivedStateFromProps(nextProps, prevState) {
-      var minDate = nextProps.minDate,
-          maxDate = nextProps.maxDate,
-          minDetail = nextProps.minDetail,
-          maxDetail = nextProps.maxDetail;
-      var nextState = {};
-      /**
-       * If the next activeStartDate is different from the current one, update
-       * activeStartDate (for display) and activeStartDateProps (for future comparisons)
-       */
-
-      var nextActiveStartDate = getActiveStartDate(nextProps);
-
-      if (datesAreDifferent(nextActiveStartDate, prevState.activeStartDateProps)) {
-        nextState.activeStartDate = nextActiveStartDate;
-        nextState.activeStartDateProps = nextActiveStartDate;
-      }
-      /**
-       * If the next view is different from the current one, and the previously set view is not
-       * valid based on minDetail and maxDetail, get a new one.
-       */
-
-
-      var nextView = getView(nextProps.view, minDetail, maxDetail);
-
-      if (nextView !== prevState.viewProps && !isViewAllowed(prevState.view, minDetail, maxDetail)) {
-        nextState.view = nextView;
-        nextState.viewProps = nextView;
-      }
-      /**
-       * If the next value is different from the current one (with an exception of situation in
-       * which values provided are limited by minDate and maxDate so that the dates are the same),
-       * get a new one.
-       */
-
-
-      var values = [nextProps.value, prevState.valueProps];
-
-      if (nextState.view // Allowed view changed
-      || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
-        return getValueFrom(value);
-      }))) || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
-        return getValueTo(value);
-      })))) {
-        nextState.value = nextProps.value;
-        nextState.valueProps = nextProps.value;
-      }
-
-      if (!nextProps.selectRange && prevState.hover) {
-        nextState.hover = null;
-      }
-
-      return nextState;
-    }
-  }]);
-
-  return Calendar;
-}(_react.Component);
-
-exports["default"] = Calendar;
-Calendar.defaultProps = {
-  maxDetail: 'month',
-  minDetail: 'century',
-  returnValue: 'start',
-  showNavigation: true,
-  showNeighboringMonth: true,
-  view: 'month'
-};
-Calendar.propTypes = {
-  activeStartDate: _propTypes["default"].instanceOf(Date),
-  calendarType: propTypes$1.isCalendarType,
-  className: propTypes$1.isClassName,
-  formatMonth: _propTypes["default"].func,
-  formatMonthYear: _propTypes["default"].func,
-  formatShortWeekday: _propTypes["default"].func,
-  locale: _propTypes["default"].string,
-  maxDate: propTypes$1.isMaxDate,
-  maxDetail: _propTypes["default"].oneOf(allViews),
-  minDate: propTypes$1.isMinDate,
-  minDetail: _propTypes["default"].oneOf(allViews),
-  navigationAriaLabel: _propTypes["default"].string,
-  navigationLabel: _propTypes["default"].func,
-  next2AriaLabel: _propTypes["default"].string,
-  next2Label: _propTypes["default"].node,
-  nextAriaLabel: _propTypes["default"].string,
-  nextLabel: _propTypes["default"].node,
-  onActiveDateChange: _propTypes["default"].func,
-  onChange: _propTypes["default"].func,
-  onClickDay: _propTypes["default"].func,
-  onClickDecade: _propTypes["default"].func,
-  onClickMonth: _propTypes["default"].func,
-  onClickWeekNumber: _propTypes["default"].func,
-  onClickYear: _propTypes["default"].func,
-  onDrillDown: _propTypes["default"].func,
-  onDrillUp: _propTypes["default"].func,
-  prev2AriaLabel: _propTypes["default"].string,
-  prev2Label: _propTypes["default"].node,
-  prevAriaLabel: _propTypes["default"].string,
-  prevLabel: _propTypes["default"].node,
-  renderChildren: _propTypes["default"].func,
-  // For backwards compatibility
-  returnValue: _propTypes["default"].oneOf(['start', 'end', 'range']),
-  selectRange: _propTypes["default"].bool,
-  showFixedNumberOfWeeks: _propTypes["default"].bool,
-  showNavigation: _propTypes["default"].bool,
-  showNeighboringMonth: _propTypes["default"].bool,
-  showWeekNumbers: _propTypes["default"].bool,
-  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, propTypes$1.isClassName]),
-  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
-  tileDisabled: _propTypes["default"].func,
-  value: _propTypes["default"].oneOfType([_propTypes["default"].string, propTypes$1.isValue]),
-  view: _propTypes["default"].oneOf(allViews)
-};
-(0, reactLifecyclesCompat_es.polyfill)(Calendar);
-});
-
-unwrapExports(Calendar_1);
-
-var entry_nostyle = createCommonjsModule(function (module, exports) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Calendar", {
-  enumerable: true,
-  get: function get() {
-    return _Calendar["default"];
-  }
-});
-Object.defineProperty(exports, "CenturyView", {
-  enumerable: true,
-  get: function get() {
-    return _CenturyView["default"];
-  }
-});
-Object.defineProperty(exports, "DecadeView", {
-  enumerable: true,
-  get: function get() {
-    return _DecadeView["default"];
-  }
-});
-Object.defineProperty(exports, "YearView", {
-  enumerable: true,
-  get: function get() {
-    return _YearView["default"];
-  }
-});
-Object.defineProperty(exports, "MonthView", {
-  enumerable: true,
-  get: function get() {
-    return _MonthView["default"];
-  }
-});
-exports["default"] = void 0;
-
-var _Calendar = _interopRequireDefault(Calendar_1);
-
-var _CenturyView = _interopRequireDefault(CenturyView_1);
-
-var _DecadeView = _interopRequireDefault(DecadeView_1);
-
-var _YearView = _interopRequireDefault(YearView_1);
-
-var _MonthView = _interopRequireDefault(MonthView_1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _default = _Calendar["default"];
-exports["default"] = _default;
-});
-
-var Calendar = unwrapExports(entry_nostyle);
-
-var toIntegerFixed = function (v, len) {
-    var ret = v.toString();
-    while (ret.length < len)
-        ret = "0" + ret;
-    return ret;
-};
-var FormatDateTime = function (date, format, clockSystem) {
-    var r = (clockSystem === '12-hour') ? ((date.getHours() < 12) ? 'AM ' : 'PM ') : '';
-    r += format ? format.slice() : 'YYYY-MM-DD HH:mm:ss';
-    r = r.replace('YYYY', toIntegerFixed(date.getFullYear(), 4).toString());
-    r = r.replace('MM', toIntegerFixed(date.getMonth() + 1, 2).toString());
-    r = r.replace('DD', toIntegerFixed(date.getDate(), 2).toString());
-    r = r.replace('mm', toIntegerFixed(date.getMinutes(), 2).toString());
-    r = r.replace('sss', toIntegerFixed(date.getMilliseconds(), 3).toString());
-    r = r.replace('ss', toIntegerFixed(date.getSeconds(), 2).toString());
-    if (clockSystem === '12-hour') {
-        r = r.replace('HH', toIntegerFixed((date.getHours() < 12) ? date.getHours() : (date.getHours() - 12), 2).toString());
-    }
-    else {
-        r = r.replace('HH', toIntegerFixed(date.getHours(), 2).toString());
-    }
-    return r;
-};
-var TimePicker = /** @class */ (function (_super) {
-    __extends(TimePicker, _super);
-    function TimePicker(props) {
-        var _this = _super.call(this, props) || this;
-        _this.initTime = new Date();
-        _this.onCollapseSelect = function () { _this.setState({ visible: false }); };
-        _this.onMouseDown = function () { _this.setState(function (prevState) { return ({ visible: !prevState.visible }); }); };
-        _this.onMouseLeave = function () { document.addEventListener('mousedown', _this.onCollapseSelect, false); };
-        _this.onMouseEnter = function () { document.removeEventListener('mousedown', _this.onCollapseSelect, false); };
-        _this.onMeridiemChange = function (meridiem) {
-            if (_this.props.onChange) {
-                var ret = (_this.props.value) ? _this.props.value : _this.initTime;
-                _this.props.onChange(new Date(ret.setHours(ret.getHours() + ((meridiem === 'ante') ? (-12) : (12)))));
-            }
-        };
-        _this.onHourChange = function (hr) { if (_this.props.onChange)
-            _this.props.onChange(new Date((_this.props.value ? _this.props.value : _this.initTime).setHours(parseInt(hr)))); };
-        _this.onMinuteChange = function (min) { if (_this.props.onChange)
-            _this.props.onChange(new Date((_this.props.value ? _this.props.value : _this.initTime).setMinutes(parseInt(min)))); };
-        _this.onSecondChange = function (sec) { if (_this.props.onChange)
-            _this.props.onChange(new Date((_this.props.value ? _this.props.value : _this.initTime).setSeconds(parseInt(sec)))); };
-        var value = props.value;
-        var meridiem;
-        value = value ? value : new Date();
-        meridiem = (value.getHours() < 12) ? 'ante' : 'post';
-        _this.state = {
-            visible: false,
-            meridiem: meridiem,
-            prevProps: props,
-        };
-        return _this;
-    }
-    TimePicker.prototype.componentWillUnmount = function () { this.setState = function () { }; };
-    TimePicker.prototype.render = function () {
-        var _this = this;
-        var wrapperClass = 'cypd-digital-clock-wrapper';
-        var default_time_format = (this.props.format) ? this.props.format : 'HH:mm:ss';
-        var _a = this.state, visible = _a.visible, meridiem = _a.meridiem;
-        var time = this.props.value ? this.props.value : this.initTime;
-        var showValue = FormatDateTime(time, default_time_format, this.props.clockSystem);
-        var hr_v = ((this.props.clockSystem === '12-hour' && time.getHours() >= 12) ? (time.getHours() - 12) : time.getHours()).toString();
-        var min_v = time.getMinutes().toString();
-        var sec_v = time.getSeconds().toString();
-        var meridiem_select = (this.props.clockSystem) ? react.createElement(Select, { className: 'meridiem', value: meridiem, onChange: function (v) {
-                if (v === 'ante' || v === 'post')
-                    _this.onMeridiemChange(v);
-                else
-                    _this.onMeridiemChange('ante');
-            }, collapsed: !visible },
-            react.createElement(Option, { value: 'ante' }, "AM"),
-            react.createElement(Option, { value: 'post' }, "PM")) : undefined;
-        if (this.props.clockSystem === '12-hour')
-            wrapperClass += ' clock-system';
-        if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        return (react.createElement("div", { className: wrapperClass, onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter },
-            react.createElement(Input, { readOnly: true, placeholder: 'Select time', onMouseDown: this.onMouseDown, value: showValue, disabled: this.props.disabled }),
-            meridiem_select,
-            react.createElement(Select, { className: 'hr', value: hr_v, onChange: this.onHourChange, collapsed: !visible }, Array.from(Array((this.props.clockSystem === '12-hour') ? 12 : 24).keys()).map(function (v) { return react.createElement(Option, { key: Math.random(), value: v.toString() }, v); })),
-            react.createElement(Select, { className: 'min', value: min_v, onChange: this.onMinuteChange, collapsed: !visible }, Array.from(Array(60).keys()).map(function (v) { return react.createElement(Option, { key: Math.random(), value: v.toString() }, v); })),
-            react.createElement(Select, { className: 'sec', value: sec_v, onChange: this.onSecondChange, collapsed: !visible }, Array.from(Array(60).keys()).map(function (v) { return react.createElement(Option, { key: Math.random(), value: v.toString() }, v); })),
-            react.createElement(Icon, { type: 'clock' })));
-    };
-    return TimePicker;
-}(react.Component));
-var DatePicker = /** @class */ (function (_super) {
-    __extends(DatePicker, _super);
-    function DatePicker(props) {
-        var _this = _super.call(this, props) || this;
-        _this.initTime = new Date();
-        _this.onChange = function (date) { if (_this.props.onChange)
-            _this.props.onChange(date); };
-        _this.onCollapseCalendar = function () { _this.setState({ visible: false }); };
-        _this.onMouseDown = function () { _this.setState(function (prevState) { return ({ visible: !prevState.visible }); }); };
-        _this.onMouseLeave = function () { document.addEventListener('mousedown', _this.onCollapseCalendar, false); };
-        _this.onMouseEnter = function () { document.removeEventListener('mousedown', _this.onCollapseCalendar, false); };
-        _this.state = { visible: false, prevProps: props };
-        return _this;
-    }
-    DatePicker.prototype.componentWillUnmount = function () { this.setState = function () { }; };
-    DatePicker.prototype.render = function () {
-        var default_date_format = (this.props.format) ? this.props.format : 'YYYY-MM-DD';
-        var date = (this.props.value) ? this.props.value : this.initTime;
-        var wrapperClass = 'cypd-picker-wrapper';
-        if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        if (!this.state.visible)
-            wrapperClass += ' hide';
-        return (react.createElement("div", { className: wrapperClass, style: this.props.style, onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter },
-            react.createElement(Calendar, { onChange: this.onChange, value: date }),
-            react.createElement(Input, { readOnly: true, onMouseDown: this.onMouseDown, placeholder: 'Select date', value: FormatDateTime(date, default_date_format), disabled: this.props.disabled }),
-            react.createElement(Icon, { type: 'calendar' })));
-    };
-    return DatePicker;
-}(react.Component));
-var datetimepicker = { DatePicker: DatePicker, FormatDateTime: FormatDateTime, TimePicker: TimePicker };
-
-var CheckBox = /** @class */ (function (_super) {
-    __extends(CheckBox, _super);
-    function CheckBox() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    CheckBox.prototype.render = function () {
-        var wrapperClass = 'cypd-checkbox-wrapper';
-        if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        if (this.props.disabled)
-            wrapperClass += " disabled";
-        return (react.createElement("label", { className: wrapperClass, style: this.props.style },
-            react.createElement("input", { type: 'checkbox', checked: this.props.checked, disabled: this.props.disabled, onChange: this.props.onChange, readOnly: this.props.readOnly }),
-            react.createElement("span", { className: 'cypd-checkbox' }),
-            react.createElement("span", null, this.props.label)));
-    };
-    return CheckBox;
-}(react.Component));
-
-var SwitchButton = /** @class */ (function (_super) {
-    __extends(SwitchButton, _super);
-    function SwitchButton() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    SwitchButton.prototype.render = function () {
-        var wrapperClass = 'cypd-switchbutton-wrapper';
-        if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        if (this.props.disabled)
-            wrapperClass += " disabled";
-        return (react.createElement("label", { className: wrapperClass, style: this.props.style },
-            react.createElement("input", { type: 'checkbox', disabled: this.props.disabled, checked: this.props.checked, onChange: this.props.onChange, readOnly: this.props.readOnly }),
-            react.createElement("div", { className: 'cypd-switchbutton' })));
-    };
-    return SwitchButton;
-}(react.Component));
-
-var Radio = /** @class */ (function (_super) {
-    __extends(Radio, _super);
-    function Radio() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Radio.prototype.render = function () {
-        var wrapperClass = 'cypd-radio-wrapper';
-        if (this.props.option.disabled)
-            wrapperClass += " disabled";
-        return (react.createElement("label", { className: wrapperClass, style: this.props.style },
-            react.createElement("input", { type: 'radio', name: this.props.name, value: this.props.option.value, disabled: this.props.option.disabled, onChange: this.props.onChange, checked: this.props.checked }),
-            react.createElement("div", { className: 'cypd-radio' }),
-            react.createElement("span", null, this.props.option.label)));
-    };
-    return Radio;
-}(react.Component));
-var RadioGroup = /** @class */ (function (_super) {
-    __extends(RadioGroup, _super);
-    function RadioGroup() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.name = Math.random().toString().slice(2);
-        _this.onRadioChecked = function (event) { if (_this.props.onChange)
-            _this.props.onChange(event.target.value); };
-        return _this;
-    }
-    RadioGroup.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, className = _a.className, value = _a.value, options = _a.options, style = _a.style, layout = _a.layout;
-        var wrapperClass = 'cypd-radio-group-wrapper';
-        if (className)
-            wrapperClass += " " + className;
-        if (layout)
-            wrapperClass += " " + layout;
-        return (react.createElement("div", { className: wrapperClass, style: style }, options.map(function (option) {
-            return react.createElement(Radio, { option: option, key: Math.random(), name: _this.name, checked: (typeof value === 'undefined') ? undefined : (_this.props.value === option.value), onChange: _this.onRadioChecked });
-        })));
-    };
-    return RadioGroup;
-}(react.Component));
 
 var scheduler_production_min = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports,"__esModule",{value:!0});var f,g,h,k,l;
@@ -34634,6 +29687,5011 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 var reactDom_1 = reactDom.render;
+
+var reactIs_production_min = createCommonjsModule(function (module, exports) {
+Object.defineProperty(exports,"__esModule",{value:!0});
+var b="function"===typeof Symbol&&Symbol.for,c=b?Symbol.for("react.element"):60103,d=b?Symbol.for("react.portal"):60106,e=b?Symbol.for("react.fragment"):60107,f=b?Symbol.for("react.strict_mode"):60108,g=b?Symbol.for("react.profiler"):60114,h=b?Symbol.for("react.provider"):60109,k=b?Symbol.for("react.context"):60110,l=b?Symbol.for("react.async_mode"):60111,m=b?Symbol.for("react.concurrent_mode"):60111,n=b?Symbol.for("react.forward_ref"):60112,p=b?Symbol.for("react.suspense"):60113,q=b?Symbol.for("react.suspense_list"):
+60120,r=b?Symbol.for("react.memo"):60115,t=b?Symbol.for("react.lazy"):60116,v=b?Symbol.for("react.fundamental"):60117,w=b?Symbol.for("react.responder"):60118,x=b?Symbol.for("react.scope"):60119;function y(a){if("object"===typeof a&&null!==a){var u=a.$$typeof;switch(u){case c:switch(a=a.type,a){case l:case m:case e:case g:case f:case p:return a;default:switch(a=a&&a.$$typeof,a){case k:case n:case t:case r:case h:return a;default:return u}}case d:return u}}}function z(a){return y(a)===m}
+exports.typeOf=y;exports.AsyncMode=l;exports.ConcurrentMode=m;exports.ContextConsumer=k;exports.ContextProvider=h;exports.Element=c;exports.ForwardRef=n;exports.Fragment=e;exports.Lazy=t;exports.Memo=r;exports.Portal=d;exports.Profiler=g;exports.StrictMode=f;exports.Suspense=p;
+exports.isValidElementType=function(a){return "string"===typeof a||"function"===typeof a||a===e||a===m||a===g||a===f||a===p||a===q||"object"===typeof a&&null!==a&&(a.$$typeof===t||a.$$typeof===r||a.$$typeof===h||a.$$typeof===k||a.$$typeof===n||a.$$typeof===v||a.$$typeof===w||a.$$typeof===x)};exports.isAsyncMode=function(a){return z(a)||y(a)===l};exports.isConcurrentMode=z;exports.isContextConsumer=function(a){return y(a)===k};exports.isContextProvider=function(a){return y(a)===h};
+exports.isElement=function(a){return "object"===typeof a&&null!==a&&a.$$typeof===c};exports.isForwardRef=function(a){return y(a)===n};exports.isFragment=function(a){return y(a)===e};exports.isLazy=function(a){return y(a)===t};exports.isMemo=function(a){return y(a)===r};exports.isPortal=function(a){return y(a)===d};exports.isProfiler=function(a){return y(a)===g};exports.isStrictMode=function(a){return y(a)===f};exports.isSuspense=function(a){return y(a)===p};
+});
+
+unwrapExports(reactIs_production_min);
+var reactIs_production_min_1 = reactIs_production_min.typeOf;
+var reactIs_production_min_2 = reactIs_production_min.AsyncMode;
+var reactIs_production_min_3 = reactIs_production_min.ConcurrentMode;
+var reactIs_production_min_4 = reactIs_production_min.ContextConsumer;
+var reactIs_production_min_5 = reactIs_production_min.ContextProvider;
+var reactIs_production_min_6 = reactIs_production_min.Element;
+var reactIs_production_min_7 = reactIs_production_min.ForwardRef;
+var reactIs_production_min_8 = reactIs_production_min.Fragment;
+var reactIs_production_min_9 = reactIs_production_min.Lazy;
+var reactIs_production_min_10 = reactIs_production_min.Memo;
+var reactIs_production_min_11 = reactIs_production_min.Portal;
+var reactIs_production_min_12 = reactIs_production_min.Profiler;
+var reactIs_production_min_13 = reactIs_production_min.StrictMode;
+var reactIs_production_min_14 = reactIs_production_min.Suspense;
+var reactIs_production_min_15 = reactIs_production_min.isValidElementType;
+var reactIs_production_min_16 = reactIs_production_min.isAsyncMode;
+var reactIs_production_min_17 = reactIs_production_min.isConcurrentMode;
+var reactIs_production_min_18 = reactIs_production_min.isContextConsumer;
+var reactIs_production_min_19 = reactIs_production_min.isContextProvider;
+var reactIs_production_min_20 = reactIs_production_min.isElement;
+var reactIs_production_min_21 = reactIs_production_min.isForwardRef;
+var reactIs_production_min_22 = reactIs_production_min.isFragment;
+var reactIs_production_min_23 = reactIs_production_min.isLazy;
+var reactIs_production_min_24 = reactIs_production_min.isMemo;
+var reactIs_production_min_25 = reactIs_production_min.isPortal;
+var reactIs_production_min_26 = reactIs_production_min.isProfiler;
+var reactIs_production_min_27 = reactIs_production_min.isStrictMode;
+var reactIs_production_min_28 = reactIs_production_min.isSuspense;
+
+var reactIs_development = createCommonjsModule(function (module, exports) {
+
+
+
+if (process.env.NODE_ENV !== "production") {
+  (function() {
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+// The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+// nor polyfill, then a plain number is used for performance.
+var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+// (unstable) APIs that have been removed. Can we remove the symbols?
+
+var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+function isValidElementType(type) {
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);
+}
+
+/**
+ * Forked from fbjs/warning:
+ * https://github.com/facebook/fbjs/blob/e66ba20ad5be433eb54423f2b097d829324d9de6/packages/fbjs/src/__forks__/warning.js
+ *
+ * Only change is we use console.warn instead of console.error,
+ * and do nothing when 'console' is not supported.
+ * This really simplifies the code.
+ * ---
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+var lowPriorityWarningWithoutStack = function () {};
+
+{
+  var printWarning = function (format) {
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    var argIndex = 0;
+    var message = 'Warning: ' + format.replace(/%s/g, function () {
+      return args[argIndex++];
+    });
+
+    if (typeof console !== 'undefined') {
+      console.warn(message);
+    }
+
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+
+  lowPriorityWarningWithoutStack = function (condition, format) {
+    if (format === undefined) {
+      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+
+    if (!condition) {
+      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+        args[_key2 - 2] = arguments[_key2];
+      }
+
+      printWarning.apply(void 0, [format].concat(args));
+    }
+  };
+}
+
+var lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;
+
+function typeOf(object) {
+  if (typeof object === 'object' && object !== null) {
+    var $$typeof = object.$$typeof;
+
+    switch ($$typeof) {
+      case REACT_ELEMENT_TYPE:
+        var type = object.type;
+
+        switch (type) {
+          case REACT_ASYNC_MODE_TYPE:
+          case REACT_CONCURRENT_MODE_TYPE:
+          case REACT_FRAGMENT_TYPE:
+          case REACT_PROFILER_TYPE:
+          case REACT_STRICT_MODE_TYPE:
+          case REACT_SUSPENSE_TYPE:
+            return type;
+
+          default:
+            var $$typeofType = type && type.$$typeof;
+
+            switch ($$typeofType) {
+              case REACT_CONTEXT_TYPE:
+              case REACT_FORWARD_REF_TYPE:
+              case REACT_LAZY_TYPE:
+              case REACT_MEMO_TYPE:
+              case REACT_PROVIDER_TYPE:
+                return $$typeofType;
+
+              default:
+                return $$typeof;
+            }
+
+        }
+
+      case REACT_PORTAL_TYPE:
+        return $$typeof;
+    }
+  }
+
+  return undefined;
+} // AsyncMode is deprecated along with isAsyncMode
+
+var AsyncMode = REACT_ASYNC_MODE_TYPE;
+var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+var ContextConsumer = REACT_CONTEXT_TYPE;
+var ContextProvider = REACT_PROVIDER_TYPE;
+var Element = REACT_ELEMENT_TYPE;
+var ForwardRef = REACT_FORWARD_REF_TYPE;
+var Fragment = REACT_FRAGMENT_TYPE;
+var Lazy = REACT_LAZY_TYPE;
+var Memo = REACT_MEMO_TYPE;
+var Portal = REACT_PORTAL_TYPE;
+var Profiler = REACT_PROFILER_TYPE;
+var StrictMode = REACT_STRICT_MODE_TYPE;
+var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+
+function isAsyncMode(object) {
+  {
+    if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+      hasWarnedAboutDeprecatedIsAsyncMode = true;
+      lowPriorityWarningWithoutStack$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+    }
+  }
+
+  return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+}
+function isConcurrentMode(object) {
+  return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+}
+function isContextConsumer(object) {
+  return typeOf(object) === REACT_CONTEXT_TYPE;
+}
+function isContextProvider(object) {
+  return typeOf(object) === REACT_PROVIDER_TYPE;
+}
+function isElement(object) {
+  return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+}
+function isForwardRef(object) {
+  return typeOf(object) === REACT_FORWARD_REF_TYPE;
+}
+function isFragment(object) {
+  return typeOf(object) === REACT_FRAGMENT_TYPE;
+}
+function isLazy(object) {
+  return typeOf(object) === REACT_LAZY_TYPE;
+}
+function isMemo(object) {
+  return typeOf(object) === REACT_MEMO_TYPE;
+}
+function isPortal(object) {
+  return typeOf(object) === REACT_PORTAL_TYPE;
+}
+function isProfiler(object) {
+  return typeOf(object) === REACT_PROFILER_TYPE;
+}
+function isStrictMode(object) {
+  return typeOf(object) === REACT_STRICT_MODE_TYPE;
+}
+function isSuspense(object) {
+  return typeOf(object) === REACT_SUSPENSE_TYPE;
+}
+
+exports.typeOf = typeOf;
+exports.AsyncMode = AsyncMode;
+exports.ConcurrentMode = ConcurrentMode;
+exports.ContextConsumer = ContextConsumer;
+exports.ContextProvider = ContextProvider;
+exports.Element = Element;
+exports.ForwardRef = ForwardRef;
+exports.Fragment = Fragment;
+exports.Lazy = Lazy;
+exports.Memo = Memo;
+exports.Portal = Portal;
+exports.Profiler = Profiler;
+exports.StrictMode = StrictMode;
+exports.Suspense = Suspense;
+exports.isValidElementType = isValidElementType;
+exports.isAsyncMode = isAsyncMode;
+exports.isConcurrentMode = isConcurrentMode;
+exports.isContextConsumer = isContextConsumer;
+exports.isContextProvider = isContextProvider;
+exports.isElement = isElement;
+exports.isForwardRef = isForwardRef;
+exports.isFragment = isFragment;
+exports.isLazy = isLazy;
+exports.isMemo = isMemo;
+exports.isPortal = isPortal;
+exports.isProfiler = isProfiler;
+exports.isStrictMode = isStrictMode;
+exports.isSuspense = isSuspense;
+  })();
+}
+});
+
+unwrapExports(reactIs_development);
+var reactIs_development_1 = reactIs_development.typeOf;
+var reactIs_development_2 = reactIs_development.AsyncMode;
+var reactIs_development_3 = reactIs_development.ConcurrentMode;
+var reactIs_development_4 = reactIs_development.ContextConsumer;
+var reactIs_development_5 = reactIs_development.ContextProvider;
+var reactIs_development_6 = reactIs_development.Element;
+var reactIs_development_7 = reactIs_development.ForwardRef;
+var reactIs_development_8 = reactIs_development.Fragment;
+var reactIs_development_9 = reactIs_development.Lazy;
+var reactIs_development_10 = reactIs_development.Memo;
+var reactIs_development_11 = reactIs_development.Portal;
+var reactIs_development_12 = reactIs_development.Profiler;
+var reactIs_development_13 = reactIs_development.StrictMode;
+var reactIs_development_14 = reactIs_development.Suspense;
+var reactIs_development_15 = reactIs_development.isValidElementType;
+var reactIs_development_16 = reactIs_development.isAsyncMode;
+var reactIs_development_17 = reactIs_development.isConcurrentMode;
+var reactIs_development_18 = reactIs_development.isContextConsumer;
+var reactIs_development_19 = reactIs_development.isContextProvider;
+var reactIs_development_20 = reactIs_development.isElement;
+var reactIs_development_21 = reactIs_development.isForwardRef;
+var reactIs_development_22 = reactIs_development.isFragment;
+var reactIs_development_23 = reactIs_development.isLazy;
+var reactIs_development_24 = reactIs_development.isMemo;
+var reactIs_development_25 = reactIs_development.isPortal;
+var reactIs_development_26 = reactIs_development.isProfiler;
+var reactIs_development_27 = reactIs_development.isStrictMode;
+var reactIs_development_28 = reactIs_development.isSuspense;
+
+var reactIs = createCommonjsModule(function (module) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = reactIs_production_min;
+} else {
+  module.exports = reactIs_development;
+}
+});
+var reactIs_1 = reactIs.isValidElementType;
+
+var has$1 = Function.call.bind(Object.prototype.hasOwnProperty);
+var printWarning$1 = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  printWarning$1 = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+var factoryWithTypeCheckers = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    elementType: createElementTypeTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (process.env.NODE_ENV !== 'production') {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret_1) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning$1(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret_1);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!reactIs.isValidElementType(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement type.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      if (process.env.NODE_ENV !== 'production') {
+        if (arguments.length > 1) {
+          printWarning$1(
+            'Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' +
+            'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).'
+          );
+        } else {
+          printWarning$1('Invalid argument supplied to oneOf, expected an array.');
+        }
+      }
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+        var type = getPreciseType(value);
+        if (type === 'symbol') {
+          return String(value);
+        }
+        return value;
+      });
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + String(propValue) + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (has$1(propValue, key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+      process.env.NODE_ENV !== 'production' ? printWarning$1('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning$1(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret_1) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = objectAssign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret_1);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // falsy value can't be a Symbol
+    if (!propValue) {
+      return false;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes_1;
+  ReactPropTypes.resetWarningCache = checkPropTypes_1.resetWarningCache;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+function emptyFunction() {}
+function emptyFunctionWithReset() {}
+emptyFunctionWithReset.resetWarningCache = emptyFunction;
+
+var factoryWithThrowingShims = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret_1) {
+      // It is still safe when called from React.
+      return;
+    }
+    var err = new Error(
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+    err.name = 'Invariant Violation';
+    throw err;
+  }  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  }  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    elementType: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim,
+
+    checkPropTypes: emptyFunctionWithReset,
+    resetWarningCache: emptyFunction
+  };
+
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+var propTypes = createCommonjsModule(function (module) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var ReactIs = reactIs;
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = factoryWithTypeCheckers(ReactIs.isElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = factoryWithThrowingShims();
+}
+});
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+function componentWillMount() {
+  // Call this.constructor.gDSFP to support sub-classes.
+  var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
+  if (state !== null && state !== undefined) {
+    this.setState(state);
+  }
+}
+
+function componentWillReceiveProps(nextProps) {
+  // Call this.constructor.gDSFP to support sub-classes.
+  // Use the setState() updater to ensure state isn't stale in certain edge cases.
+  function updater(prevState) {
+    var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
+    return state !== null && state !== undefined ? state : null;
+  }
+  // Binding "this" is important for shallow renderer support.
+  this.setState(updater.bind(this));
+}
+
+function componentWillUpdate(nextProps, nextState) {
+  try {
+    var prevProps = this.props;
+    var prevState = this.state;
+    this.props = nextProps;
+    this.state = nextState;
+    this.__reactInternalSnapshotFlag = true;
+    this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(
+      prevProps,
+      prevState
+    );
+  } finally {
+    this.props = prevProps;
+    this.state = prevState;
+  }
+}
+
+// React may warn about cWM/cWRP/cWU methods being deprecated.
+// Add a flag to suppress these warnings for this special case.
+componentWillMount.__suppressDeprecationWarning = true;
+componentWillReceiveProps.__suppressDeprecationWarning = true;
+componentWillUpdate.__suppressDeprecationWarning = true;
+
+function polyfill(Component) {
+  var prototype = Component.prototype;
+
+  if (!prototype || !prototype.isReactComponent) {
+    throw new Error('Can only polyfill class components');
+  }
+
+  if (
+    typeof Component.getDerivedStateFromProps !== 'function' &&
+    typeof prototype.getSnapshotBeforeUpdate !== 'function'
+  ) {
+    return Component;
+  }
+
+  // If new component APIs are defined, "unsafe" lifecycles won't be called.
+  // Error if any of these lifecycles are present,
+  // Because they would work differently between older and newer (16.3+) versions of React.
+  var foundWillMountName = null;
+  var foundWillReceivePropsName = null;
+  var foundWillUpdateName = null;
+  if (typeof prototype.componentWillMount === 'function') {
+    foundWillMountName = 'componentWillMount';
+  } else if (typeof prototype.UNSAFE_componentWillMount === 'function') {
+    foundWillMountName = 'UNSAFE_componentWillMount';
+  }
+  if (typeof prototype.componentWillReceiveProps === 'function') {
+    foundWillReceivePropsName = 'componentWillReceiveProps';
+  } else if (typeof prototype.UNSAFE_componentWillReceiveProps === 'function') {
+    foundWillReceivePropsName = 'UNSAFE_componentWillReceiveProps';
+  }
+  if (typeof prototype.componentWillUpdate === 'function') {
+    foundWillUpdateName = 'componentWillUpdate';
+  } else if (typeof prototype.UNSAFE_componentWillUpdate === 'function') {
+    foundWillUpdateName = 'UNSAFE_componentWillUpdate';
+  }
+  if (
+    foundWillMountName !== null ||
+    foundWillReceivePropsName !== null ||
+    foundWillUpdateName !== null
+  ) {
+    var componentName = Component.displayName || Component.name;
+    var newApiName =
+      typeof Component.getDerivedStateFromProps === 'function'
+        ? 'getDerivedStateFromProps()'
+        : 'getSnapshotBeforeUpdate()';
+
+    throw Error(
+      'Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n' +
+        componentName +
+        ' uses ' +
+        newApiName +
+        ' but also contains the following legacy lifecycles:' +
+        (foundWillMountName !== null ? '\n  ' + foundWillMountName : '') +
+        (foundWillReceivePropsName !== null
+          ? '\n  ' + foundWillReceivePropsName
+          : '') +
+        (foundWillUpdateName !== null ? '\n  ' + foundWillUpdateName : '') +
+        '\n\nThe above lifecycles should be removed. Learn more about this warning here:\n' +
+        'https://fb.me/react-async-component-lifecycle-hooks'
+    );
+  }
+
+  // React <= 16.2 does not support static getDerivedStateFromProps.
+  // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
+  // Newer versions of React will ignore these lifecycles if gDSFP exists.
+  if (typeof Component.getDerivedStateFromProps === 'function') {
+    prototype.componentWillMount = componentWillMount;
+    prototype.componentWillReceiveProps = componentWillReceiveProps;
+  }
+
+  // React <= 16.2 does not support getSnapshotBeforeUpdate.
+  // As a workaround, use cWU to invoke the new lifecycle.
+  // Newer versions of React will ignore that lifecycle if gSBU exists.
+  if (typeof prototype.getSnapshotBeforeUpdate === 'function') {
+    if (typeof prototype.componentDidUpdate !== 'function') {
+      throw new Error(
+        'Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype'
+      );
+    }
+
+    prototype.componentWillUpdate = componentWillUpdate;
+
+    var componentDidUpdate = prototype.componentDidUpdate;
+
+    prototype.componentDidUpdate = function componentDidUpdatePolyfill(
+      prevProps,
+      prevState,
+      maybeSnapshot
+    ) {
+      // 16.3+ will not execute our will-update method;
+      // It will pass a snapshot value to did-update though.
+      // Older versions will require our polyfilled will-update value.
+      // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
+      // Because for <= 15.x versions this might be a "prevContext" object.
+      // We also can't just check "__reactInternalSnapshot",
+      // Because get-snapshot might return a falsy value.
+      // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
+      var snapshot = this.__reactInternalSnapshotFlag
+        ? this.__reactInternalSnapshot
+        : maybeSnapshot;
+
+      componentDidUpdate.call(this, prevProps, prevState, snapshot);
+    };
+  }
+
+  return Component;
+}
+
+var reactLifecyclesCompat_es = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  polyfill: polyfill
+});
+
+function mergeClassNames() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return args.reduce(function (classList, arg) {
+    return typeof arg === 'string' || arg instanceof Array ? classList.concat(arg) : classList;
+  }, []).filter(Boolean).join(' ');
+}
+
+var dates = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getYear = getYear;
+exports.getMonth = getMonth;
+exports.getMonthIndex = getMonthIndex;
+exports.getDay = getDay;
+exports.getDayOfWeek = getDayOfWeek;
+exports.getBeginOfCenturyYear = getBeginOfCenturyYear;
+exports.getBeginOfCentury = getBeginOfCentury;
+exports.getEndOfCentury = getEndOfCentury;
+exports.getCenturyRange = getCenturyRange;
+exports.getBeginOfPreviousCentury = getBeginOfPreviousCentury;
+exports.getEndOfPreviousCentury = getEndOfPreviousCentury;
+exports.getBeginOfNextCentury = getBeginOfNextCentury;
+exports.getBeginOfDecadeYear = getBeginOfDecadeYear;
+exports.getBeginOfDecade = getBeginOfDecade;
+exports.getEndOfDecade = getEndOfDecade;
+exports.getDecadeRange = getDecadeRange;
+exports.getBeginOfPreviousDecade = getBeginOfPreviousDecade;
+exports.getEndOfPreviousDecade = getEndOfPreviousDecade;
+exports.getBeginOfNextDecade = getBeginOfNextDecade;
+exports.getBeginOfYear = getBeginOfYear;
+exports.getEndOfYear = getEndOfYear;
+exports.getYearRange = getYearRange;
+exports.getBeginOfPreviousYear = getBeginOfPreviousYear;
+exports.getEndOfPreviousYear = getEndOfPreviousYear;
+exports.getBeginOfNextYear = getBeginOfNextYear;
+exports.getBeginOfMonth = getBeginOfMonth;
+exports.getEndOfMonth = getEndOfMonth;
+exports.getBeginOfWeek = getBeginOfWeek;
+exports.getMonthRange = getMonthRange;
+exports.getBeginOfPreviousMonth = getBeginOfPreviousMonth;
+exports.getEndOfPreviousMonth = getEndOfPreviousMonth;
+exports.getBeginOfNextMonth = getBeginOfNextMonth;
+exports.getBeginOfDay = getBeginOfDay;
+exports.getEndOfDay = getEndOfDay;
+exports.getDayRange = getDayRange;
+exports.getWeekNumber = getWeekNumber;
+exports.getBegin = getBegin;
+exports.getBeginPrevious = getBeginPrevious;
+exports.getBeginNext = getBeginNext;
+exports.getEnd = getEnd;
+exports.getEndPrevious = getEndPrevious;
+exports.getRange = getRange;
+exports.getValueRange = getValueRange;
+exports.getDaysInMonth = getDaysInMonth;
+exports.getCenturyLabel = getCenturyLabel;
+exports.getDecadeLabel = getDecadeLabel;
+exports.isWeekend = isWeekend;
+exports.getISOLocalMonth = getISOLocalMonth;
+exports.getISOLocalDate = getISOLocalDate;
+exports.getEndPrevious2 = exports.getBeginNext2 = exports.getBeginPrevious2 = void 0;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var _map = _toConsumableArray(Array(7)).map(function (el, index) {
+  return index;
+}),
+    _map2 = _slicedToArray(_map, 7),
+    // eslint-disable-next-line no-unused-vars
+SUNDAY = _map2[0],
+    MONDAY = _map2[1],
+    TUESDAY = _map2[2],
+    WEDNESDAY = _map2[3],
+    THURSDAY = _map2[4],
+    FRIDAY = _map2[5],
+    SATURDAY = _map2[6];
+/* Simple getters - getting a property of a given point in time */
+
+
+function getYear(date) {
+  if (date instanceof Date) {
+    return date.getFullYear();
+  }
+
+  if (typeof date === 'number') {
+    return date;
+  }
+
+  var year = parseInt(date, 10);
+
+  if (typeof date === 'string' && !isNaN(year)) {
+    return year;
+  }
+
+  throw new Error("Failed to get year from date: ".concat(date, "."));
+}
+
+function getMonth(date) {
+  return date.getMonth() + 1;
+}
+
+function getMonthIndex(date) {
+  return date.getMonth();
+}
+
+function getDay(date) {
+  return date.getDate();
+}
+
+function getDayOfWeek(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var weekday = date.getDay();
+
+  switch (calendarType) {
+    case 'ISO 8601':
+      // Shifts days of the week so that Monday is 0, Sunday is 6
+      return (weekday + 6) % 7;
+
+    case 'Arabic':
+      return (weekday + 1) % 7;
+
+    case 'Hebrew':
+    case 'US':
+      return weekday;
+
+    default:
+      throw new Error('Unsupported calendar type.');
+  }
+}
+/* Complex getters - getting a property somehow related to a given point in time */
+
+
+function getBeginOfCenturyYear(date) {
+  var year = getYear(date) - 1;
+  return year + -year % 100 + 1;
+}
+
+function getBeginOfCentury(date) {
+  var beginOfCenturyYear = getBeginOfCenturyYear(date);
+  return new Date(beginOfCenturyYear, 0, 1);
+}
+
+function getEndOfCentury(date) {
+  var beginOfCenturyYear = getBeginOfCenturyYear(date);
+  return new Date(beginOfCenturyYear + 100, 0, 1, 0, 0, 0, -1);
+}
+
+function getCenturyRange(date) {
+  return [getBeginOfCentury(date), getEndOfCentury(date)];
+}
+
+function getBeginOfPreviousCentury(date) {
+  var previousCenturyYear = getYear(date) - 100;
+  return getBeginOfCentury(previousCenturyYear);
+}
+
+function getEndOfPreviousCentury(date) {
+  var previousCenturyYear = getYear(date) - 100;
+  return getEndOfCentury(previousCenturyYear);
+}
+
+function getBeginOfNextCentury(date) {
+  var nextCenturyYear = getYear(date) + 100;
+  return getBeginOfCentury(nextCenturyYear);
+}
+
+function getBeginOfDecadeYear(date) {
+  var year = getYear(date) - 1;
+  return year + -year % 10 + 1;
+}
+
+function getBeginOfDecade(date) {
+  var beginOfDecadeYear = getBeginOfDecadeYear(date);
+  return new Date(beginOfDecadeYear, 0, 1);
+}
+
+function getEndOfDecade(date) {
+  var beginOfDecadeYear = getBeginOfDecadeYear(date);
+  return new Date(beginOfDecadeYear + 10, 0, 1, 0, 0, 0, -1);
+}
+
+function getDecadeRange(date) {
+  return [getBeginOfDecade(date), getEndOfDecade(date)];
+}
+
+function getBeginOfPreviousDecade(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var previousDecadeYear = getBeginOfDecadeYear(date) - offset;
+  return getBeginOfDecade(previousDecadeYear);
+}
+
+function getEndOfPreviousDecade(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var previousDecadeYear = getBeginOfDecadeYear(date) - offset;
+  return getEndOfDecade(previousDecadeYear);
+}
+
+function getBeginOfNextDecade(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
+  var nextDecadeYear = getBeginOfDecadeYear(date) + offset;
+  return getBeginOfDecade(nextDecadeYear);
+}
+/**
+ * Returns the beginning of a given year.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getBeginOfYear(date) {
+  var year = getYear(date);
+  return new Date(year, 0, 1);
+}
+/**
+ * Returns the end of a given year.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getEndOfYear(date) {
+  var year = getYear(date);
+  return new Date(year + 1, 0, 1, 0, 0, 0, -1);
+}
+/**
+ * Returns an array with the beginning and the end of a given year.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getYearRange(date) {
+  return [getBeginOfYear(date), getEndOfYear(date)];
+}
+
+function getBeginOfPreviousYear(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousYear = getYear(date) - offset;
+  return getBeginOfYear(previousYear);
+}
+
+function getEndOfPreviousYear(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousYear = getYear(date) - offset;
+  return getEndOfYear(previousYear);
+}
+
+function getBeginOfNextYear(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var nextYear = getYear(date) + offset;
+  return getBeginOfYear(nextYear);
+}
+/**
+ * Returns the beginning of a given month.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getBeginOfMonth(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  return new Date(year, monthIndex, 1);
+}
+/**
+ * Returns the end of a given month.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getEndOfMonth(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  return new Date(year, monthIndex + 1, 1, 0, 0, 0, -1);
+}
+/**
+ * Returns the beginning of a given week.
+ *
+ * @param {Date} date Date.
+ * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
+ */
+
+
+function getBeginOfWeek(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  var day = date.getDate() - getDayOfWeek(date, calendarType);
+  return new Date(year, monthIndex, day);
+}
+/**
+ * Returns an array with the beginning and the end of a given month.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getMonthRange(date) {
+  return [getBeginOfMonth(date), getEndOfMonth(date)];
+}
+
+function getDifferentMonth(date, offset) {
+  var year = getYear(date);
+  var previousMonthIndex = getMonthIndex(date) + offset;
+  return new Date(year, previousMonthIndex, 1);
+}
+
+function getBeginOfPreviousMonth(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousMonth = getDifferentMonth(date, -offset);
+  return getBeginOfMonth(previousMonth);
+}
+
+function getEndOfPreviousMonth(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var previousMonth = getDifferentMonth(date, -offset);
+  return getEndOfMonth(previousMonth);
+}
+
+function getBeginOfNextMonth(date) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var nextMonth = getDifferentMonth(date, offset);
+  return getBeginOfMonth(nextMonth);
+}
+
+function getBeginOfDay(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  var day = getDay(date);
+  return new Date(year, monthIndex, day);
+}
+
+function getEndOfDay(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  var day = getDay(date);
+  return new Date(year, monthIndex, day + 1, 0, 0, 0, -1);
+}
+/**
+ * Returns an array with the beginning and the end of a given day.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getDayRange(date) {
+  return [getBeginOfDay(date), getEndOfDay(date)];
+}
+/**
+ * Gets week number according to ISO 8601 or US standard.
+ * In ISO 8601, Arabic and Hebrew week 1 is the one with January 4.
+ * In US calendar week 1 is the one with January 1.
+ *
+ * @param {Date} date Date.
+ * @param {String} calendarType Calendar type. Can be ISO 8601 or US.
+ */
+
+
+function getWeekNumber(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var calendarTypeForWeekNumber = calendarType === 'US' ? 'US' : 'ISO 8601';
+  var beginOfWeek = getBeginOfWeek(date, calendarTypeForWeekNumber);
+  var year = getYear(date) + 1;
+  var dayInWeekOne;
+  var beginOfFirstWeek; // Look for the first week one that does not come after a given date
+
+  do {
+    dayInWeekOne = new Date(year, 0, calendarTypeForWeekNumber === 'ISO 8601' ? 4 : 1);
+    beginOfFirstWeek = getBeginOfWeek(dayInWeekOne, calendarTypeForWeekNumber);
+    year -= 1;
+  } while (date - beginOfFirstWeek < 0);
+
+  return Math.round((beginOfWeek - beginOfFirstWeek) / (8.64e7 * 7)) + 1;
+}
+/**
+ * Returns the beginning of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+function getBegin(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getBeginOfCentury(date);
+
+    case 'decade':
+      return getBeginOfDecade(date);
+
+    case 'year':
+      return getBeginOfYear(date);
+
+    case 'month':
+      return getBeginOfMonth(date);
+
+    case 'day':
+      return getBeginOfDay(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+function getBeginPrevious(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getBeginOfPreviousCentury(date);
+
+    case 'decade':
+      return getBeginOfPreviousDecade(date);
+
+    case 'year':
+      return getBeginOfPreviousYear(date);
+
+    case 'month':
+      return getBeginOfPreviousMonth(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+function getBeginNext(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getBeginOfNextCentury(date);
+
+    case 'decade':
+      return getBeginOfNextDecade(date);
+
+    case 'year':
+      return getBeginOfNextYear(date);
+
+    case 'month':
+      return getBeginOfNextMonth(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+var getBeginPrevious2 = function getBeginPrevious2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return getBeginOfPreviousDecade(date, 100);
+
+    case 'year':
+      return getBeginOfPreviousYear(date, 10);
+
+    case 'month':
+      return getBeginOfPreviousMonth(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+
+exports.getBeginPrevious2 = getBeginPrevious2;
+
+var getBeginNext2 = function getBeginNext2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return getBeginOfNextDecade(date, 100);
+
+    case 'year':
+      return getBeginOfNextYear(date, 10);
+
+    case 'month':
+      return getBeginOfNextMonth(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+/**
+ * Returns the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+exports.getBeginNext2 = getBeginNext2;
+
+function getEnd(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getEndOfCentury(date);
+
+    case 'decade':
+      return getEndOfDecade(date);
+
+    case 'year':
+      return getEndOfYear(date);
+
+    case 'month':
+      return getEndOfMonth(date);
+
+    case 'day':
+      return getEndOfDay(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+function getEndPrevious(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getEndOfPreviousCentury(date);
+
+    case 'decade':
+      return getEndOfPreviousDecade(date);
+
+    case 'year':
+      return getEndOfPreviousYear(date);
+
+    case 'month':
+      return getEndOfPreviousMonth(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+
+var getEndPrevious2 = function getEndPrevious2(rangeType, date) {
+  switch (rangeType) {
+    case 'decade':
+      return getEndOfPreviousDecade(date, 100);
+
+    case 'year':
+      return getEndOfPreviousYear(date, 10);
+
+    case 'month':
+      return getEndOfPreviousMonth(date, 12);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+};
+/**
+ * Returns an array with the beginning and the end of a given range.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date Date.
+ */
+
+
+exports.getEndPrevious2 = getEndPrevious2;
+
+function getRange(rangeType, date) {
+  switch (rangeType) {
+    case 'century':
+      return getCenturyRange(date);
+
+    case 'decade':
+      return getDecadeRange(date);
+
+    case 'year':
+      return getYearRange(date);
+
+    case 'month':
+      return getMonthRange(date);
+
+    case 'day':
+      return getDayRange(date);
+
+    default:
+      throw new Error("Invalid rangeType: ".concat(rangeType));
+  }
+}
+/**
+ * Creates a range out of two values, ensuring they are in order and covering entire period ranges.
+ *
+ * @param {String} rangeType Range type (e.g. 'day')
+ * @param {Date} date1 First date.
+ * @param {Date} date2 Second date.
+ */
+
+
+function getValueRange(rangeType, date1, date2) {
+  var rawNextValue = [date1, date2].sort(function (a, b) {
+    return a - b;
+  });
+  return [getBegin(rangeType, rawNextValue[0]), getEnd(rangeType, rawNextValue[1])];
+}
+/**
+ * Returns a number of days in a month of a given date.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function getDaysInMonth(date) {
+  var year = getYear(date);
+  var monthIndex = getMonthIndex(date);
+  return new Date(year, monthIndex + 1, 0).getDate();
+}
+
+function toYearLabel(_ref) {
+  var _ref2 = _slicedToArray(_ref, 2),
+      start = _ref2[0],
+      end = _ref2[1];
+
+  return "".concat(getYear(start), " \u2013 ").concat(getYear(end));
+}
+/**
+ * Returns a string labelling a century of a given date.
+ * For example, for 2017 it will return 2001-2100.
+ *
+ * @param {Date|String|Number} date Date or a year as a string or as a number.
+ */
+
+
+function getCenturyLabel(date) {
+  return toYearLabel(getCenturyRange(date));
+}
+/**
+ * Returns a string labelling a century of a given date.
+ * For example, for 2017 it will return 2011-2020.
+ *
+ * @param {Date|String|Number} date Date or a year as a string or as a number.
+ */
+
+
+function getDecadeLabel(date) {
+  return toYearLabel(getDecadeRange(date));
+}
+/**
+ * Returns a boolean determining whether a given date is on Saturday or Sunday.
+ *
+ * @param {Date} date Date.
+ */
+
+
+function isWeekend(date) {
+  var calendarType = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'ISO 8601';
+  var weekday = date.getDay();
+
+  switch (calendarType) {
+    case 'Arabic':
+    case 'Hebrew':
+      return weekday === FRIDAY || weekday === SATURDAY;
+
+    case 'ISO 8601':
+    case 'US':
+      return weekday === SATURDAY || weekday === SUNDAY;
+
+    default:
+      throw new Error('Unsupported calendar type.');
+  }
+}
+/**
+ * Returns local month in ISO-like format (YYYY-MM).
+ */
+
+
+function getISOLocalMonth(value) {
+  if (!value) {
+    return value;
+  }
+
+  var date = new Date(value);
+
+  if (isNaN(date.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  var year = getYear(date);
+  var month = "0".concat(getMonth(date)).slice(-2);
+  return "".concat(year, "-").concat(month);
+}
+/**
+ * Returns local date in ISO-like format (YYYY-MM-DD).
+ */
+
+
+function getISOLocalDate(value) {
+  if (!value) {
+    return value;
+  }
+
+  var date = new Date(value);
+
+  if (isNaN(date.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  var year = getYear(date);
+  var month = "0".concat(getMonth(date)).slice(-2);
+  var day = "0".concat(getDay(date)).slice(-2);
+  return "".concat(year, "-").concat(month, "-").concat(day);
+}
+});
+
+unwrapExports(dates);
+var dates_1 = dates.getYear;
+var dates_2 = dates.getMonth;
+var dates_3 = dates.getMonthIndex;
+var dates_4 = dates.getDay;
+var dates_5 = dates.getDayOfWeek;
+var dates_6 = dates.getBeginOfCenturyYear;
+var dates_7 = dates.getBeginOfCentury;
+var dates_8 = dates.getEndOfCentury;
+var dates_9 = dates.getCenturyRange;
+var dates_10 = dates.getBeginOfPreviousCentury;
+var dates_11 = dates.getEndOfPreviousCentury;
+var dates_12 = dates.getBeginOfNextCentury;
+var dates_13 = dates.getBeginOfDecadeYear;
+var dates_14 = dates.getBeginOfDecade;
+var dates_15 = dates.getEndOfDecade;
+var dates_16 = dates.getDecadeRange;
+var dates_17 = dates.getBeginOfPreviousDecade;
+var dates_18 = dates.getEndOfPreviousDecade;
+var dates_19 = dates.getBeginOfNextDecade;
+var dates_20 = dates.getBeginOfYear;
+var dates_21 = dates.getEndOfYear;
+var dates_22 = dates.getYearRange;
+var dates_23 = dates.getBeginOfPreviousYear;
+var dates_24 = dates.getEndOfPreviousYear;
+var dates_25 = dates.getBeginOfNextYear;
+var dates_26 = dates.getBeginOfMonth;
+var dates_27 = dates.getEndOfMonth;
+var dates_28 = dates.getBeginOfWeek;
+var dates_29 = dates.getMonthRange;
+var dates_30 = dates.getBeginOfPreviousMonth;
+var dates_31 = dates.getEndOfPreviousMonth;
+var dates_32 = dates.getBeginOfNextMonth;
+var dates_33 = dates.getBeginOfDay;
+var dates_34 = dates.getEndOfDay;
+var dates_35 = dates.getDayRange;
+var dates_36 = dates.getWeekNumber;
+var dates_37 = dates.getBegin;
+var dates_38 = dates.getBeginPrevious;
+var dates_39 = dates.getBeginNext;
+var dates_40 = dates.getEnd;
+var dates_41 = dates.getEndPrevious;
+var dates_42 = dates.getRange;
+var dates_43 = dates.getValueRange;
+var dates_44 = dates.getDaysInMonth;
+var dates_45 = dates.getCenturyLabel;
+var dates_46 = dates.getDecadeLabel;
+var dates_47 = dates.isWeekend;
+var dates_48 = dates.getISOLocalMonth;
+var dates_49 = dates.getISOLocalDate;
+var dates_50 = dates.getEndPrevious2;
+var dates_51 = dates.getBeginNext2;
+var dates_52 = dates.getBeginPrevious2;
+
+/**
+ * lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash modularize exports="npm" -o ./`
+ * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ */
+
+/** Used as the `TypeError` message for "Functions" methods. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0,
+    MAX_INTEGER = 1.7976931348623157e+308,
+    NAN = 0 / 0;
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/** Used to match leading and trailing whitespace. */
+var reTrim = /^\s+|\s+$/g;
+
+/** Used to detect bad signed hexadecimal string values. */
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+/** Used to detect binary string values. */
+var reIsBinary = /^0b[01]+$/i;
+
+/** Used to detect octal string values. */
+var reIsOctal = /^0o[0-7]+$/i;
+
+/** Built-in method references without a dependency on `root`. */
+var freeParseInt = parseInt;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var objectToString = objectProto.toString;
+
+/**
+ * Creates a function that invokes `func`, with the `this` binding and arguments
+ * of the created function, while it's called less than `n` times. Subsequent
+ * calls to the created function return the result of the last `func` invocation.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Function
+ * @param {number} n The number of calls at which `func` is no longer invoked.
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new restricted function.
+ * @example
+ *
+ * jQuery(element).on('click', _.before(5, addContactToList));
+ * // => Allows adding up to 4 contacts to the list.
+ */
+function before(n, func) {
+  var result;
+  if (typeof func != 'function') {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  n = toInteger(n);
+  return function() {
+    if (--n > 0) {
+      result = func.apply(this, arguments);
+    }
+    if (n <= 1) {
+      func = undefined;
+    }
+    return result;
+  };
+}
+
+/**
+ * Creates a function that is restricted to invoking `func` once. Repeat calls
+ * to the function return the value of the first invocation. The `func` is
+ * invoked with the `this` binding and arguments of the created function.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to restrict.
+ * @returns {Function} Returns the new restricted function.
+ * @example
+ *
+ * var initialize = _.once(createApplication);
+ * initialize();
+ * initialize();
+ * // => `createApplication` is invoked once
+ */
+function once(func) {
+  return before(2, func);
+}
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return !!value && (type == 'object' || type == 'function');
+}
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return !!value && typeof value == 'object';
+}
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+/**
+ * Converts `value` to a finite number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.12.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted number.
+ * @example
+ *
+ * _.toFinite(3.2);
+ * // => 3.2
+ *
+ * _.toFinite(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toFinite(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toFinite('3.2');
+ * // => 3.2
+ */
+function toFinite(value) {
+  if (!value) {
+    return value === 0 ? value : 0;
+  }
+  value = toNumber(value);
+  if (value === INFINITY || value === -INFINITY) {
+    var sign = (value < 0 ? -1 : 1);
+    return sign * MAX_INTEGER;
+  }
+  return value === value ? value : 0;
+}
+
+/**
+ * Converts `value` to an integer.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {number} Returns the converted integer.
+ * @example
+ *
+ * _.toInteger(3.2);
+ * // => 3
+ *
+ * _.toInteger(Number.MIN_VALUE);
+ * // => 0
+ *
+ * _.toInteger(Infinity);
+ * // => 1.7976931348623157e+308
+ *
+ * _.toInteger('3.2');
+ * // => 3
+ */
+function toInteger(value) {
+  var result = toFinite(value),
+      remainder = result % 1;
+
+  return result === result ? (remainder ? result - remainder : result) : 0;
+}
+
+/**
+ * Converts `value` to a number.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to process.
+ * @returns {number} Returns the number.
+ * @example
+ *
+ * _.toNumber(3.2);
+ * // => 3.2
+ *
+ * _.toNumber(Number.MIN_VALUE);
+ * // => 5e-324
+ *
+ * _.toNumber(Infinity);
+ * // => Infinity
+ *
+ * _.toNumber('3.2');
+ * // => 3.2
+ */
+function toNumber(value) {
+  if (typeof value == 'number') {
+    return value;
+  }
+  if (isSymbol(value)) {
+    return NAN;
+  }
+  if (isObject(value)) {
+    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+    value = isObject(other) ? (other + '') : other;
+  }
+  if (typeof value != 'string') {
+    return value === 0 ? value : +value;
+  }
+  value = value.replace(reTrim, '');
+  var isBinary = reIsBinary.test(value);
+  return (isBinary || reIsOctal.test(value))
+    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+    : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+var lodash_once = once;
+
+function filterDuplicates(arr) {
+  return arr.filter(function (el, index, self) {
+    return self.indexOf(el) === index;
+  });
+}
+
+function fixLowercaseProperties(arr) {
+  return arr.map(function (el) {
+    if (!el || el.indexOf('-') === -1 || el.toLowerCase() !== el) {
+      return el;
+    }
+
+    var splitEl = el.split('-');
+    return "".concat(splitEl[0], "-").concat(splitEl[1].toUpperCase());
+  });
+}
+
+function getUserLocalesInternal() {
+  var languageList = [];
+
+  if (typeof window !== 'undefined') {
+    if (window.navigator.languages) {
+      languageList = languageList.concat(window.navigator.languages);
+    }
+
+    if (window.navigator.language) {
+      languageList.push(window.navigator.language);
+    }
+
+    if (window.navigator.userLanguage) {
+      languageList.push(window.navigator.userLanguage);
+    }
+
+    if (window.navigator.browserLanguage) {
+      languageList.push(window.navigator.browserLanguage);
+    }
+
+    if (window.navigator.systemLanguage) {
+      languageList.push(window.navigator.systemLanguage);
+    }
+  }
+
+  languageList.push('en-US'); // Fallback
+
+  return fixLowercaseProperties(filterDuplicates(languageList));
+}
+
+var getUserLocales = lodash_once(getUserLocalesInternal);
+
+function getUserLocaleInternal() {
+  return getUserLocales()[0];
+}
+
+var getUserLocale = lodash_once(getUserLocaleInternal);
+
+var dateFormatter = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.formatShortWeekday = exports.formatWeekday = exports.formatMonth = exports.formatMonthYear = exports.formatLongDate = exports.formatDate = void 0;
+
+var _getUserLocale = _interopRequireDefault(getUserLocale);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function getFormatter(options) {
+  return function (locale, date) {
+    return date.toLocaleString(locale || (0, _getUserLocale["default"])(), options);
+  };
+}
+/**
+ * Changes the hour in a Date to ensure right date formatting even if DST is messed up.
+ * Workaround for bug in WebKit and Firefox with historical dates.
+ * For more details, see:
+ * https://bugs.chromium.org/p/chromium/issues/detail?id=750465
+ * https://bugzilla.mozilla.org/show_bug.cgi?id=1385643
+ *
+ * @param {Date} date Date.
+ */
+
+
+function toSafeHour(date) {
+  var safeDate = new Date(date);
+  return new Date(safeDate.setHours(12));
+}
+
+function getSafeFormatter(options) {
+  return function (locale, date) {
+    return getFormatter(options)(locale, toSafeHour(date));
+  };
+}
+
+var formatDateOptions = {
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric'
+};
+var formatLongDateOptions = {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+};
+var formatMonthYearOptions = {
+  month: 'long',
+  year: 'numeric'
+};
+var formatMonthOptions = {
+  month: 'long'
+};
+var formatWeekdayOptions = {
+  weekday: 'long'
+};
+var formatShortWeekdayOptions = {
+  weekday: 'short'
+};
+var formatDate = getSafeFormatter(formatDateOptions);
+exports.formatDate = formatDate;
+var formatLongDate = getSafeFormatter(formatLongDateOptions);
+exports.formatLongDate = formatLongDate;
+var formatMonthYear = getSafeFormatter(formatMonthYearOptions);
+exports.formatMonthYear = formatMonthYear;
+var formatMonth = getSafeFormatter(formatMonthOptions);
+exports.formatMonth = formatMonth;
+var formatWeekday = getSafeFormatter(formatWeekdayOptions);
+exports.formatWeekday = formatWeekday;
+var formatShortWeekday = getSafeFormatter(formatShortWeekdayOptions);
+exports.formatShortWeekday = formatShortWeekday;
+});
+
+unwrapExports(dateFormatter);
+var dateFormatter_1 = dateFormatter.formatShortWeekday;
+var dateFormatter_2 = dateFormatter.formatWeekday;
+var dateFormatter_3 = dateFormatter.formatMonth;
+var dateFormatter_4 = dateFormatter.formatMonthYear;
+var dateFormatter_5 = dateFormatter.formatLongDate;
+var dateFormatter_6 = dateFormatter.formatDate;
+
+var propTypes$1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.tileProps = exports.tileGroupProps = exports.isView = exports.isClassName = exports.isViews = exports.isValue = exports.isMaxDate = exports.isMinDate = exports.isCalendarType = void 0;
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var calendarTypes = ['ISO 8601', 'US', 'Arabic', 'Hebrew'];
+var allViews = ['century', 'decade', 'year', 'month'];
+
+var isCalendarType = _propTypes["default"].oneOf(calendarTypes);
+
+exports.isCalendarType = isCalendarType;
+
+var isMinDate = function isMinDate(props, propName, componentName) {
+  var minDate = props[propName];
+
+  if (minDate) {
+    if (!(minDate instanceof Date)) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+    }
+
+    var maxDate = props.maxDate;
+
+    if (maxDate && minDate > maxDate) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(minDate), "` supplied to `").concat(componentName, "`, minDate cannot be larger than maxDate."));
+    }
+  } // Everything is fine
+
+
+  return null;
+};
+
+exports.isMinDate = isMinDate;
+
+var isMaxDate = function isMaxDate(props, propName, componentName) {
+  var maxDate = props[propName];
+
+  if (maxDate) {
+    if (!(maxDate instanceof Date)) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, expected instance of `Date`."));
+    }
+
+    var minDate = props.minDate;
+
+    if (minDate && maxDate < minDate) {
+      return new Error("Invalid prop `".concat(propName, "` of type `").concat(_typeof(maxDate), "` supplied to `").concat(componentName, "`, maxDate cannot be smaller than minDate."));
+    }
+  } // Everything is fine
+
+
+  return null;
+};
+
+exports.isMaxDate = isMaxDate;
+
+var isValue = _propTypes["default"].oneOfType([_propTypes["default"].instanceOf(Date), _propTypes["default"].arrayOf(_propTypes["default"].instanceOf(Date))]);
+
+exports.isValue = isValue;
+
+var isViews = _propTypes["default"].arrayOf(_propTypes["default"].oneOf(allViews));
+
+exports.isViews = isViews;
+
+var isClassName = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string)]);
+
+exports.isClassName = isClassName;
+
+var isView = function isView(props, propName, componentName) {
+  var view = props[propName];
+  var views = props.views;
+  var allowedViews = views || allViews;
+
+  if (view !== undefined && allowedViews.indexOf(view) === -1) {
+    return new Error("Invalid prop `".concat(propName, "` of value `").concat(view, "` supplied to `").concat(componentName, "`, expected one of [").concat(allowedViews.map(function (a) {
+      return "\"".concat(a, "\"");
+    }).join(', '), "]."));
+  } // Everything is fine
+
+
+  return null;
+};
+
+exports.isView = isView;
+
+isView.isRequired = function (props, propName, componentName) {
+  var view = props[propName];
+
+  if (!view) {
+    return new Error("The prop `".concat(propName, "` is marked as required in `").concat(componentName, "`, but its value is `").concat(view, "`."));
+  }
+
+  return isView(props, propName, componentName);
+};
+
+var tileGroupProps = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  hover: _propTypes["default"].instanceOf(Date),
+  locale: _propTypes["default"].string,
+  maxDate: isMaxDate,
+  minDate: isMinDate,
+  onClick: _propTypes["default"].func,
+  onMouseOver: _propTypes["default"].func,
+  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, isClassName]),
+  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
+  value: isValue,
+  valueType: _propTypes["default"].string
+};
+exports.tileGroupProps = tileGroupProps;
+var tileProps = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  classes: _propTypes["default"].arrayOf(_propTypes["default"].string).isRequired,
+  date: _propTypes["default"].instanceOf(Date).isRequired,
+  locale: _propTypes["default"].string,
+  maxDate: isMaxDate,
+  minDate: isMinDate,
+  onClick: _propTypes["default"].func,
+  onMouseOver: _propTypes["default"].func,
+  style: _propTypes["default"].objectOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, isClassName]),
+  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
+  tileDisabled: _propTypes["default"].func
+};
+exports.tileProps = tileProps;
+});
+
+unwrapExports(propTypes$1);
+var propTypes_1 = propTypes$1.tileProps;
+var propTypes_2 = propTypes$1.tileGroupProps;
+var propTypes_3 = propTypes$1.isView;
+var propTypes_4 = propTypes$1.isClassName;
+var propTypes_5 = propTypes$1.isViews;
+var propTypes_6 = propTypes$1.isValue;
+var propTypes_7 = propTypes$1.isMaxDate;
+var propTypes_8 = propTypes$1.isMinDate;
+var propTypes_9 = propTypes$1.isCalendarType;
+
+var Navigation_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Navigation;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var className = 'react-calendar__navigation';
+
+function Navigation(_ref) {
+  var date = _ref.activeStartDate,
+      drillUp = _ref.drillUp,
+      formatMonthYear = _ref.formatMonthYear,
+      locale = _ref.locale,
+      maxDate = _ref.maxDate,
+      minDate = _ref.minDate,
+      navigationAriaLabel = _ref.navigationAriaLabel,
+      navigationLabel = _ref.navigationLabel,
+      next2AriaLabel = _ref.next2AriaLabel,
+      next2Label = _ref.next2Label,
+      nextAriaLabel = _ref.nextAriaLabel,
+      nextLabel = _ref.nextLabel,
+      prev2AriaLabel = _ref.prev2AriaLabel,
+      prev2Label = _ref.prev2Label,
+      prevAriaLabel = _ref.prevAriaLabel,
+      prevLabel = _ref.prevLabel,
+      setActiveStartDate = _ref.setActiveStartDate,
+      view = _ref.view,
+      views = _ref.views;
+  var drillUpAvailable = views.indexOf(view) > 0;
+  var shouldShowPrevNext2Buttons = view !== 'century';
+  var previousActiveStartDate = (0, dates.getBeginPrevious)(view, date);
+  var previousActiveStartDate2 = shouldShowPrevNext2Buttons && (0, dates.getBeginPrevious2)(view, date);
+  var nextActiveStartDate = (0, dates.getBeginNext)(view, date);
+  var nextActiveStartDate2 = shouldShowPrevNext2Buttons && (0, dates.getBeginNext2)(view, date);
+
+  var prevButtonDisabled = function () {
+    if (previousActiveStartDate.getFullYear() < 1000) {
+      return true;
+    }
+
+    var previousActiveEndDate = (0, dates.getEndPrevious)(view, date);
+    return minDate && minDate >= previousActiveEndDate;
+  }();
+
+  var prev2ButtonDisabled = shouldShowPrevNext2Buttons && function () {
+    if (previousActiveStartDate2.getFullYear() < 1000) {
+      return true;
+    }
+
+    var previousActiveEndDate = (0, dates.getEndPrevious2)(view, date);
+    return minDate && minDate >= previousActiveEndDate;
+  }();
+
+  var nextButtonDisabled = maxDate && maxDate <= nextActiveStartDate;
+  var next2ButtonDisabled = shouldShowPrevNext2Buttons && maxDate && maxDate <= nextActiveStartDate2;
+
+  function onClickPrevious() {
+    setActiveStartDate(previousActiveStartDate);
+  }
+
+  function onClickPrevious2() {
+    setActiveStartDate(previousActiveStartDate2);
+  }
+
+  function onClickNext() {
+    setActiveStartDate(nextActiveStartDate);
+  }
+
+  function onClickNext2() {
+    setActiveStartDate(nextActiveStartDate2);
+  }
+
+  var label = function () {
+    switch (view) {
+      case 'century':
+        return (0, dates.getCenturyLabel)(date);
+
+      case 'decade':
+        return (0, dates.getDecadeLabel)(date);
+
+      case 'year':
+        return (0, dates.getYear)(date);
+
+      case 'month':
+        return formatMonthYear(locale, date);
+
+      default:
+        throw new Error("Invalid view: ".concat(view, "."));
+    }
+  }();
+
+  return _react["default"].createElement("div", {
+    className: className,
+    style: {
+      display: 'flex'
+    }
+  }, prev2Label !== null && shouldShowPrevNext2Buttons && _react["default"].createElement("button", {
+    "aria-label": prev2AriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__prev2-button"),
+    disabled: prev2ButtonDisabled,
+    onClick: onClickPrevious2,
+    type: "button"
+  }, prev2Label), _react["default"].createElement("button", {
+    "aria-label": prevAriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__prev-button"),
+    disabled: prevButtonDisabled,
+    onClick: onClickPrevious,
+    type: "button"
+  }, prevLabel), _react["default"].createElement("button", {
+    "aria-label": navigationAriaLabel,
+    className: "react-calendar__navigation__label",
+    disabled: !drillUpAvailable,
+    onClick: drillUp,
+    style: {
+      flexGrow: 1
+    },
+    type: "button"
+  }, navigationLabel ? navigationLabel({
+    date: date,
+    view: view,
+    label: label
+  }) : label), _react["default"].createElement("button", {
+    "aria-label": nextAriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__next-button"),
+    disabled: nextButtonDisabled,
+    onClick: onClickNext,
+    type: "button"
+  }, nextLabel), next2Label !== null && shouldShowPrevNext2Buttons && _react["default"].createElement("button", {
+    "aria-label": next2AriaLabel,
+    className: "".concat(className, "__arrow ").concat(className, "__next2-button"),
+    disabled: next2ButtonDisabled,
+    onClick: onClickNext2,
+    type: "button"
+  }, next2Label));
+}
+
+Navigation.defaultProps = {
+  formatMonthYear: dateFormatter.formatMonthYear,
+  navigationAriaLabel: '',
+  next2AriaLabel: '',
+  next2Label: '»',
+  nextAriaLabel: '',
+  nextLabel: '›',
+  prev2AriaLabel: '',
+  prev2Label: '«',
+  prevAriaLabel: '',
+  prevLabel: '‹'
+};
+Navigation.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  drillUp: _propTypes["default"].func.isRequired,
+  formatMonthYear: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: _propTypes["default"].instanceOf(Date),
+  minDate: _propTypes["default"].instanceOf(Date),
+  navigationAriaLabel: _propTypes["default"].string,
+  navigationLabel: _propTypes["default"].func,
+  next2AriaLabel: _propTypes["default"].string,
+  next2Label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  nextAriaLabel: _propTypes["default"].string,
+  nextLabel: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  prev2AriaLabel: _propTypes["default"].string,
+  prev2Label: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  prevAriaLabel: _propTypes["default"].string,
+  prevLabel: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].node]),
+  setActiveStartDate: _propTypes["default"].func.isRequired,
+  view: propTypes$1.isView.isRequired,
+  views: propTypes$1.isViews.isRequired
+};
+});
+
+unwrapExports(Navigation_1);
+
+var Flex_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Flex;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function toPercent(num) {
+  return "".concat(num, "%");
+}
+
+function Flex(_ref) {
+  var children = _ref.children,
+      className = _ref.className,
+      direction = _ref.direction,
+      count = _ref.count,
+      offset = _ref.offset,
+      style = _ref.style,
+      wrap = _ref.wrap,
+      otherProps = _objectWithoutProperties(_ref, ["children", "className", "direction", "count", "offset", "style", "wrap"]);
+
+  return _react["default"].createElement("div", _extends({
+    className: className,
+    style: _objectSpread({
+      display: 'flex',
+      flexDirection: direction,
+      flexWrap: wrap ? 'wrap' : 'no-wrap'
+    }, style)
+  }, otherProps), _react["default"].Children.map(children, function (child, index) {
+    return _react["default"].cloneElement(child, _objectSpread({}, child.props, {
+      style: {
+        flexBasis: toPercent(100 / count),
+        maxWidth: toPercent(100 / count),
+        overflow: 'hidden',
+        marginLeft: offset && index === 0 ? toPercent(100 * offset / count) : null
+      }
+    }));
+  }));
+}
+
+Flex.propTypes = {
+  children: _propTypes["default"].node,
+  className: _propTypes["default"].string,
+  count: _propTypes["default"].number.isRequired,
+  direction: _propTypes["default"].string,
+  offset: _propTypes["default"].number,
+  style: _propTypes["default"].objectOf(_propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number])),
+  wrap: _propTypes["default"].bool
+};
+});
+
+unwrapExports(Flex_1);
+
+var utils = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getTileClasses = exports.between = exports.doRangesOverlap = exports.isRangeWithinRange = exports.isValueWithinRange = exports.callIfDefined = exports.mergeFunctions = void 0;
+
+
+
+/**
+ * Returns a function that, when called, calls all the functions
+ * passed to it, applying its arguments to them.
+ *
+ * @param {Function[]} functions
+ */
+var mergeFunctions = function mergeFunctions() {
+  for (var _len = arguments.length, functions = new Array(_len), _key = 0; _key < _len; _key++) {
+    functions[_key] = arguments[_key];
+  }
+
+  return function () {
+    for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+      args[_key2] = arguments[_key2];
+    }
+
+    return functions.filter(Boolean).forEach(function (f) {
+      return f.apply(void 0, args);
+    });
+  };
+};
+/**
+ * Calls a function, if it's defined, with specified arguments
+ * @param {Function} fn
+ * @param {Object} args
+ */
+
+
+exports.mergeFunctions = mergeFunctions;
+
+var callIfDefined = function callIfDefined(fn) {
+  if (fn && typeof fn === 'function') {
+    for (var _len3 = arguments.length, args = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+      args[_key3 - 1] = arguments[_key3];
+    }
+
+    fn.apply(void 0, args);
+  }
+};
+
+exports.callIfDefined = callIfDefined;
+
+var isValueWithinRange = function isValueWithinRange(value, range) {
+  return range[0] <= value && range[1] >= value;
+};
+
+exports.isValueWithinRange = isValueWithinRange;
+
+var isRangeWithinRange = function isRangeWithinRange(greaterRange, smallerRange) {
+  return greaterRange[0] <= smallerRange[0] && greaterRange[1] >= smallerRange[1];
+};
+
+exports.isRangeWithinRange = isRangeWithinRange;
+
+var doRangesOverlap = function doRangesOverlap(range1, range2) {
+  return isValueWithinRange(range1[0], range2) || isValueWithinRange(range1[1], range2);
+};
+/**
+ * Returns a value no smaller than min and no larger than max.
+ *
+ * @param {*} value Value to return.
+ * @param {*} min Minimum return value.
+ * @param {*} max Maximum return value.
+ */
+
+
+exports.doRangesOverlap = doRangesOverlap;
+
+var between = function between(value, min, max) {
+  if (min && min > value) {
+    return min;
+  }
+
+  if (max && max < value) {
+    return max;
+  }
+
+  return value;
+};
+
+exports.between = between;
+
+var getTileClasses = function getTileClasses() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      value = _ref.value,
+      valueType = _ref.valueType,
+      date = _ref.date,
+      dateType = _ref.dateType,
+      hover = _ref.hover;
+
+  var className = 'react-calendar__tile';
+  var classes = [className];
+
+  if (!date) {
+    return classes;
+  }
+
+  if (!(date instanceof Array) && !dateType) {
+    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
+  }
+
+  var now = new Date();
+  var dateRange = date instanceof Array ? date : (0, dates.getRange)(dateType, date);
+
+  if (isValueWithinRange(now, dateRange)) {
+    classes.push("".concat(className, "--now"));
+  }
+
+  if (!value) {
+    return classes;
+  }
+
+  if (!(value instanceof Array) && !valueType) {
+    throw new Error('getTileClasses(): Unable to get tile activity classes because one or more required arguments were not passed.');
+  }
+
+  var valueRange = value instanceof Array ? value : (0, dates.getRange)(valueType, value);
+
+  if (isRangeWithinRange(valueRange, dateRange)) {
+    classes.push("".concat(className, "--active"));
+  } else if (doRangesOverlap(valueRange, dateRange)) {
+    classes.push("".concat(className, "--hasActive"));
+  } else if (hover && ( // Date before value
+  dateRange[1] < valueRange[0] && doRangesOverlap(dateRange, [hover, valueRange[0]]) || // Date after value
+  dateRange[0] > valueRange[1] && doRangesOverlap(dateRange, [valueRange[1], hover]))) {
+    classes.push("".concat(className, "--hover"));
+  }
+
+  var isRangeStart = isValueWithinRange(valueRange[0], dateRange);
+  var isRangeEnd = isValueWithinRange(valueRange[1], dateRange);
+
+  if (isRangeStart) {
+    classes.push("".concat(className, "--rangeStart"));
+  }
+
+  if (isRangeEnd) {
+    classes.push("".concat(className, "--rangeEnd"));
+  }
+
+  if (isRangeStart && isRangeEnd) {
+    classes.push("".concat(className, "--rangeBothEnds"));
+  }
+
+  return classes;
+};
+
+exports.getTileClasses = getTileClasses;
+});
+
+unwrapExports(utils);
+var utils_1 = utils.getTileClasses;
+var utils_2 = utils.between;
+var utils_3 = utils.doRangesOverlap;
+var utils_4 = utils.isRangeWithinRange;
+var utils_5 = utils.isValueWithinRange;
+var utils_6 = utils.callIfDefined;
+var utils_7 = utils.mergeFunctions;
+
+var TileGroup_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = TileGroup;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Flex = _interopRequireDefault(Flex_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function TileGroup(_ref) {
+  var className = _ref.className,
+      count = _ref.count,
+      dateTransform = _ref.dateTransform,
+      dateType = _ref.dateType,
+      end = _ref.end,
+      hover = _ref.hover,
+      offset = _ref.offset,
+      start = _ref.start,
+      step = _ref.step,
+      Tile = _ref.tile,
+      value = _ref.value,
+      valueType = _ref.valueType,
+      tileProps = _objectWithoutProperties(_ref, ["className", "count", "dateTransform", "dateType", "end", "hover", "offset", "start", "step", "tile", "value", "valueType"]);
+
+  var tiles = [];
+
+  for (var point = start; point <= end; point += step) {
+    var date = dateTransform(point);
+    tiles.push(_react["default"].createElement(Tile, _extends({
+      key: date.getTime(),
+      classes: (0, utils.getTileClasses)({
+        value: value,
+        valueType: valueType,
+        date: date,
+        dateType: dateType,
+        hover: hover
+      }),
+      date: date,
+      point: point
+    }, tileProps)));
+  }
+
+  return _react["default"].createElement(_Flex["default"], {
+    className: className,
+    count: count,
+    offset: offset,
+    wrap: true
+  }, tiles);
+}
+
+TileGroup.propTypes = _objectSpread({}, propTypes$1.tileGroupProps, {
+  activeStartDate: _propTypes["default"].instanceOf(Date),
+  count: _propTypes["default"].number,
+  dateTransform: _propTypes["default"].func.isRequired,
+  offset: _propTypes["default"].number,
+  step: _propTypes["default"].number,
+  tile: _propTypes["default"].func.isRequired
+});
+TileGroup.defaultProps = {
+  count: 3,
+  step: 1
+};
+});
+
+unwrapExports(TileGroup_1);
+
+var Tile_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _mergeClassNames = _interopRequireDefault(mergeClassNames);
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Tile =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Tile, _Component);
+
+  function Tile() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Tile);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Tile)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    return _this;
+  }
+
+  _createClass(Tile, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          activeStartDate = _this$props.activeStartDate,
+          children = _this$props.children,
+          classes = _this$props.classes,
+          date = _this$props.date,
+          formatAbbr = _this$props.formatAbbr,
+          locale = _this$props.locale,
+          maxDate = _this$props.maxDate,
+          maxDateTransform = _this$props.maxDateTransform,
+          minDate = _this$props.minDate,
+          minDateTransform = _this$props.minDateTransform,
+          onClick = _this$props.onClick,
+          onMouseOver = _this$props.onMouseOver,
+          style = _this$props.style,
+          tileDisabled = _this$props.tileDisabled,
+          view = _this$props.view;
+      var _this$state = this.state,
+          tileClassName = _this$state.tileClassName,
+          tileContent = _this$state.tileContent;
+      return _react["default"].createElement("button", {
+        className: (0, _mergeClassNames["default"])(classes, tileClassName),
+        disabled: minDate && minDateTransform(minDate) > date || maxDate && maxDateTransform(maxDate) < date || tileDisabled && tileDisabled({
+          activeStartDate: activeStartDate,
+          date: date,
+          view: view
+        }),
+        onClick: onClick && function () {
+          return onClick(date);
+        },
+        onFocus: onMouseOver && function () {
+          return onMouseOver(date);
+        },
+        onMouseOver: onMouseOver && function () {
+          return onMouseOver(date);
+        },
+        style: style,
+        type: "button"
+      }, formatAbbr ? _react["default"].createElement("abbr", {
+        "aria-label": formatAbbr(locale, date)
+      }, children) : children, tileContent);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      var date = nextProps.date,
+          tileClassName = nextProps.tileClassName,
+          tileContent = nextProps.tileContent,
+          view = nextProps.view;
+      var nextState = {};
+
+      if (tileClassName !== prevState.tileClassNameProps) {
+        nextState.tileClassName = typeof tileClassName === 'function' ? tileClassName({
+          date: date,
+          view: view
+        }) : tileClassName;
+        nextState.tileClassNameProps = tileClassName;
+      }
+
+      if (tileContent !== prevState.tileContentProps) {
+        nextState.tileContent = typeof tileContent === 'function' ? tileContent({
+          date: date,
+          view: view
+        }) : tileContent;
+        nextState.tileContentProps = tileContent;
+      }
+
+      return nextState;
+    }
+  }]);
+
+  return Tile;
+}(_react.Component);
+
+exports["default"] = Tile;
+Tile.propTypes = _objectSpread({}, propTypes$1.tileProps, {
+  children: _propTypes["default"].node.isRequired,
+  formatAbbr: _propTypes["default"].func,
+  maxDateTransform: _propTypes["default"].func.isRequired,
+  minDateTransform: _propTypes["default"].func.isRequired
+});
+});
+
+unwrapExports(Tile_1);
+
+var Decade_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Decade;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Tile = _interopRequireDefault(Tile_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var className = 'react-calendar__century-view__decades__decade';
+
+function Decade(_ref) {
+  var classes = _ref.classes,
+      point = _ref.point,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "point"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    maxDateTransform: dates.getEndOfDecade,
+    minDateTransform: dates.getBeginOfDecade,
+    view: "century"
+  }), (0, dates.getDecadeLabel)(point));
+}
+
+Decade.propTypes = _objectSpread({}, propTypes$1.tileProps, {
+  point: _propTypes["default"].number.isRequired
+});
+});
+
+unwrapExports(Decade_1);
+
+var Decades_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Decades;
+
+var _react = _interopRequireDefault(react);
+
+var _TileGroup = _interopRequireDefault(TileGroup_1);
+
+var _Decade = _interopRequireDefault(Decade_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function Decades(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = (0, dates.getBeginOfCenturyYear)(activeStartDate);
+  var end = start + 99;
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
+    className: "react-calendar__century-view__decades",
+    dateTransform: dates.getBeginOfDecade,
+    dateType: "decade",
+    end: end,
+    start: start,
+    step: 10,
+    tile: _Decade["default"]
+  }));
+}
+
+Decades.propTypes = _objectSpread({}, propTypes$1.tileGroupProps);
+});
+
+unwrapExports(Decades_1);
+
+var CenturyView_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = CenturyView;
+
+var _react = _interopRequireDefault(react);
+
+var _Decades = _interopRequireDefault(Decades_1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function CenturyView(props) {
+  function renderDecades() {
+    return _react["default"].createElement(_Decades["default"], props);
+  }
+
+  return _react["default"].createElement("div", {
+    className: "react-calendar__century-view"
+  }, renderDecades());
+}
+});
+
+unwrapExports(CenturyView_1);
+
+var Year_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Year;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Tile = _interopRequireDefault(Tile_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var className = 'react-calendar__decade-view__years__year';
+
+function Year(_ref) {
+  var classes = _ref.classes,
+      point = _ref.point,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "point"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    maxDateTransform: dates.getEndOfYear,
+    minDateTransform: dates.getBeginOfYear,
+    view: "decade"
+  }), point);
+}
+
+Year.propTypes = _objectSpread({}, propTypes$1.tileProps, {
+  point: _propTypes["default"].number.isRequired
+});
+});
+
+unwrapExports(Year_1);
+
+var Years_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Years;
+
+var _react = _interopRequireDefault(react);
+
+var _TileGroup = _interopRequireDefault(TileGroup_1);
+
+var _Year = _interopRequireDefault(Year_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function Years(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = (0, dates.getBeginOfDecadeYear)(activeStartDate);
+  var end = start + 9;
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
+    className: "react-calendar__decade-view__years",
+    dateTransform: function dateTransform(year) {
+      return new Date(year, 0, 1);
+    },
+    dateType: "year",
+    end: end,
+    start: start,
+    tile: _Year["default"]
+  }));
+}
+
+Years.propTypes = _objectSpread({}, propTypes$1.tileGroupProps);
+});
+
+unwrapExports(Years_1);
+
+var DecadeView_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = DecadeView;
+
+var _react = _interopRequireDefault(react);
+
+var _Years = _interopRequireDefault(Years_1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function DecadeView(props) {
+  function renderYears() {
+    return _react["default"].createElement(_Years["default"], props);
+  }
+
+  return _react["default"].createElement("div", {
+    className: "react-calendar__decade-view"
+  }, renderYears());
+}
+});
+
+unwrapExports(DecadeView_1);
+
+var Month_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Month;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Tile = _interopRequireDefault(Tile_1);
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var className = 'react-calendar__year-view__months__month';
+
+function Month(_ref) {
+  var classes = _ref.classes,
+      date = _ref.date,
+      formatMonth = _ref.formatMonth,
+      locale = _ref.locale,
+      otherProps = _objectWithoutProperties(_ref, ["classes", "date", "formatMonth", "locale"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className),
+    date: date,
+    formatAbbr: dateFormatter.formatMonthYear,
+    locale: locale,
+    maxDateTransform: dates.getEndOfMonth,
+    minDateTransform: dates.getBeginOfMonth,
+    view: "year"
+  }), formatMonth(locale, date));
+}
+
+Month.defaultProps = {
+  formatMonth: dateFormatter.formatMonth
+};
+Month.propTypes = _objectSpread({}, propTypes$1.tileProps, {
+  formatMonth: _propTypes["default"].func
+});
+});
+
+unwrapExports(Month_1);
+
+var Months_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Months;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _TileGroup = _interopRequireDefault(TileGroup_1);
+
+var _Month = _interopRequireDefault(Month_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function Months(props) {
+  var activeStartDate = props.activeStartDate;
+  var start = 0;
+  var end = 11;
+  var year = (0, dates.getYear)(activeStartDate);
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, props, {
+    className: "react-calendar__year-view__months",
+    dateTransform: function dateTransform(monthIndex) {
+      return new Date(year, monthIndex, 1);
+    },
+    dateType: "month",
+    end: end,
+    start: start,
+    tile: _Month["default"]
+  }));
+}
+
+Months.propTypes = _objectSpread({}, propTypes$1.tileGroupProps, {
+  locale: _propTypes["default"].string
+});
+});
+
+unwrapExports(Months_1);
+
+var YearView_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = YearView;
+
+var _react = _interopRequireDefault(react);
+
+var _Months = _interopRequireDefault(Months_1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function YearView(props) {
+  function renderMonths() {
+    return _react["default"].createElement(_Months["default"], props);
+  }
+
+  return _react["default"].createElement("div", {
+    className: "react-calendar__year-view"
+  }, renderMonths());
+}
+});
+
+unwrapExports(YearView_1);
+
+var Day_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Day;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Tile = _interopRequireDefault(Tile_1);
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var className = 'react-calendar__month-view__days__day';
+
+function Day(_ref) {
+  var calendarType = _ref.calendarType,
+      classes = _ref.classes,
+      currentMonthIndex = _ref.currentMonthIndex,
+      date = _ref.date,
+      otherProps = _objectWithoutProperties(_ref, ["calendarType", "classes", "currentMonthIndex", "date"]);
+
+  return _react["default"].createElement(_Tile["default"], _extends({}, otherProps, {
+    classes: [].concat(classes, className, (0, dates.isWeekend)(date, calendarType) ? "".concat(className, "--weekend") : null, date.getMonth() !== currentMonthIndex ? "".concat(className, "--neighboringMonth") : null),
+    date: date,
+    formatAbbr: dateFormatter.formatLongDate,
+    maxDateTransform: dates.getEndOfDay,
+    minDateTransform: dates.getBeginOfDay,
+    view: "month"
+  }), (0, dates.getDay)(date));
+}
+
+Day.propTypes = _objectSpread({}, propTypes$1.tileProps, {
+  currentMonthIndex: _propTypes["default"].number.isRequired
+});
+});
+
+unwrapExports(Day_1);
+
+var Days_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Days;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _TileGroup = _interopRequireDefault(TileGroup_1);
+
+var _Day = _interopRequireDefault(Day_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Days(props) {
+  var activeStartDate = props.activeStartDate,
+      calendarType = props.calendarType;
+
+  var showFixedNumberOfWeeks = props.showFixedNumberOfWeeks,
+      showNeighboringMonth = props.showNeighboringMonth,
+      otherProps = _objectWithoutProperties(props, ["showFixedNumberOfWeeks", "showNeighboringMonth"]);
+
+  var year = (0, dates.getYear)(activeStartDate);
+  var monthIndex = (0, dates.getMonthIndex)(activeStartDate);
+  var hasFixedNumberOfWeeks = showFixedNumberOfWeeks || showNeighboringMonth;
+  var dayOfWeek = (0, dates.getDayOfWeek)(activeStartDate, calendarType);
+  var offset = hasFixedNumberOfWeeks ? 0 : dayOfWeek;
+  /**
+   * Defines on which day of the month the grid shall start. If we simply show current
+   * month, we obviously start on day one, but if showNeighboringMonth is set to
+   * true, we need to find the beginning of the week the first day of the month is in.
+   */
+
+  var start = (hasFixedNumberOfWeeks ? -dayOfWeek : 0) + 1;
+  /**
+   * Defines on which day of the month the grid shall end. If we simply show current
+   * month, we need to stop on the last day of the month, but if showNeighboringMonth
+   * is set to true, we need to find the end of the week the last day of the month is in.
+   */
+
+  var end = function () {
+    if (showFixedNumberOfWeeks) {
+      // Always show 6 weeks
+      return start + 6 * 7 - 1;
+    }
+
+    var daysInMonth = (0, dates.getDaysInMonth)(activeStartDate);
+
+    if (showNeighboringMonth) {
+      var activeEndDate = new Date(year, monthIndex, daysInMonth);
+      return daysInMonth + (7 - (0, dates.getDayOfWeek)(activeEndDate, calendarType) - 1);
+    }
+
+    return daysInMonth;
+  }();
+
+  return _react["default"].createElement(_TileGroup["default"], _extends({}, otherProps, {
+    className: "react-calendar__month-view__days",
+    count: 7,
+    currentMonthIndex: monthIndex,
+    dateTransform: function dateTransform(day) {
+      return new Date(year, monthIndex, day);
+    },
+    dateType: "day",
+    end: end,
+    offset: offset,
+    start: start,
+    tile: _Day["default"]
+  }));
+}
+
+Days.propTypes = _objectSpread({
+  calendarType: propTypes$1.isCalendarType.isRequired,
+  showFixedNumberOfWeeks: _propTypes["default"].bool,
+  showNeighboringMonth: _propTypes["default"].bool
+}, propTypes$1.tileGroupProps);
+});
+
+unwrapExports(Days_1);
+
+var Weekdays_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = Weekdays;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Flex = _interopRequireDefault(Flex_1);
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function Weekdays(props) {
+  var calendarType = props.calendarType,
+      formatShortWeekday = props.formatShortWeekday,
+      locale = props.locale,
+      onMouseLeave = props.onMouseLeave;
+  var anyDate = new Date();
+  var beginOfMonth = (0, dates.getBeginOfMonth)(anyDate);
+  var year = (0, dates.getYear)(beginOfMonth);
+  var monthIndex = (0, dates.getMonthIndex)(beginOfMonth);
+  var weekdays = [];
+
+  for (var weekday = 1; weekday <= 7; weekday += 1) {
+    var weekdayDate = new Date(year, monthIndex, weekday - (0, dates.getDayOfWeek)(beginOfMonth, calendarType));
+    var abbr = (0, dateFormatter.formatWeekday)(locale, weekdayDate);
+    weekdays.push(_react["default"].createElement("div", {
+      key: weekday,
+      className: "react-calendar__month-view__weekdays__weekday"
+    }, _react["default"].createElement("abbr", {
+      "aria-label": abbr,
+      title: abbr
+    }, formatShortWeekday(locale, weekdayDate).replace('.', ''))));
+  }
+
+  return _react["default"].createElement(_Flex["default"], {
+    className: "react-calendar__month-view__weekdays",
+    count: 7,
+    onFocus: onMouseLeave,
+    onMouseOver: onMouseLeave
+  }, weekdays);
+}
+
+Weekdays.defaultProps = {
+  formatShortWeekday: dateFormatter.formatShortWeekday
+};
+Weekdays.propTypes = {
+  calendarType: propTypes$1.isCalendarType.isRequired,
+  formatShortWeekday: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  onMouseLeave: _propTypes["default"].func
+};
+});
+
+unwrapExports(Weekdays_1);
+
+var WeekNumber_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = WeekNumber;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function WeekNumber(_ref) {
+  var date = _ref.date,
+      onClickWeekNumber = _ref.onClickWeekNumber,
+      weekNumber = _ref.weekNumber;
+  return onClickWeekNumber ? _react["default"].createElement("button", {
+    className: "react-calendar__tile",
+    onClick: function onClick() {
+      return onClickWeekNumber(weekNumber, date);
+    },
+    style: {
+      flexGrow: 1
+    },
+    type: "button"
+  }, _react["default"].createElement("span", null, weekNumber)) : _react["default"].createElement("div", {
+    className: "react-calendar__tile",
+    style: {
+      flexGrow: 1
+    }
+  }, _react["default"].createElement("span", null, weekNumber));
+}
+
+WeekNumber.propTypes = {
+  date: _propTypes["default"].instanceOf(Date).isRequired,
+  onClickWeekNumber: _propTypes["default"].func,
+  weekNumber: _propTypes["default"].number.isRequired
+};
+});
+
+unwrapExports(WeekNumber_1);
+
+var WeekNumbers_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = WeekNumbers;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _WeekNumber = _interopRequireDefault(WeekNumber_1);
+
+var _Flex = _interopRequireDefault(Flex_1);
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function WeekNumbers(props) {
+  var activeStartDate = props.activeStartDate,
+      calendarType = props.calendarType,
+      onClickWeekNumber = props.onClickWeekNumber,
+      onMouseLeave = props.onMouseLeave,
+      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
+
+  var numberOfWeeks = function () {
+    if (showFixedNumberOfWeeks) {
+      return 6;
+    }
+
+    var numberOfDays = (0, dates.getDaysInMonth)(activeStartDate);
+    var startWeekday = (0, dates.getDayOfWeek)(activeStartDate, calendarType);
+    var days = numberOfDays - (7 - startWeekday);
+    return 1 + Math.ceil(days / 7);
+  }();
+
+  var dates$1 = function () {
+    var year = (0, dates.getYear)(activeStartDate);
+    var monthIndex = (0, dates.getMonthIndex)(activeStartDate);
+    var day = (0, dates.getDay)(activeStartDate);
+    var result = [];
+
+    for (var index = 0; index < numberOfWeeks; index += 1) {
+      result.push((0, dates.getBeginOfWeek)(new Date(year, monthIndex, day + index * 7), calendarType));
+    }
+
+    return result;
+  }();
+
+  var weekNumbers = dates$1.map(function (date) {
+    return (0, dates.getWeekNumber)(date, calendarType);
+  });
+  return _react["default"].createElement(_Flex["default"], {
+    className: "react-calendar__month-view__weekNumbers",
+    count: numberOfWeeks,
+    direction: "column",
+    onFocus: onMouseLeave,
+    onMouseOver: onMouseLeave,
+    style: {
+      flexBasis: 'calc(100% * (1 / 8)',
+      flexShrink: 0
+    }
+  }, weekNumbers.map(function (weekNumber, weekIndex) {
+    return _react["default"].createElement(_WeekNumber["default"], {
+      key: weekNumber,
+      date: dates$1[weekIndex],
+      onClickWeekNumber: onClickWeekNumber,
+      weekNumber: weekNumber
+    });
+  }));
+}
+
+WeekNumbers.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  calendarType: propTypes$1.isCalendarType.isRequired,
+  onClickWeekNumber: _propTypes["default"].func,
+  onMouseLeave: _propTypes["default"].func,
+  showFixedNumberOfWeeks: _propTypes["default"].bool
+};
+});
+
+unwrapExports(WeekNumbers_1);
+
+var MonthView_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = MonthView;
+
+var _react = _interopRequireDefault(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+var _Days = _interopRequireDefault(Days_1);
+
+var _Weekdays = _interopRequireDefault(Weekdays_1);
+
+var _WeekNumbers = _interopRequireDefault(WeekNumbers_1);
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function MonthView(props) {
+  var activeStartDate = props.activeStartDate,
+      locale = props.locale,
+      onMouseLeave = props.onMouseLeave,
+      showFixedNumberOfWeeks = props.showFixedNumberOfWeeks;
+
+  var calendarTypeProps = props.calendarType,
+      formatShortWeekday = props.formatShortWeekday,
+      onClickWeekNumber = props.onClickWeekNumber,
+      showWeekNumbers = props.showWeekNumbers,
+      childProps = _objectWithoutProperties(props, ["calendarType", "formatShortWeekday", "onClickWeekNumber", "showWeekNumbers"]);
+
+  var calendarType = function () {
+    if (calendarTypeProps) {
+      return calendarTypeProps;
+    }
+
+    switch (locale) {
+      case 'en-CA':
+      case 'en-US':
+      case 'es-AR':
+      case 'es-BO':
+      case 'es-CL':
+      case 'es-CO':
+      case 'es-CR':
+      case 'es-DO':
+      case 'es-EC':
+      case 'es-GT':
+      case 'es-HN':
+      case 'es-MX':
+      case 'es-NI':
+      case 'es-PA':
+      case 'es-PE':
+      case 'es-PR':
+      case 'es-SV':
+      case 'es-VE':
+      case 'pt-BR':
+        return 'US';
+      // ar-LB, ar-MA intentionally missing
+
+      case 'ar':
+      case 'ar-AE':
+      case 'ar-BH':
+      case 'ar-DZ':
+      case 'ar-EG':
+      case 'ar-IQ':
+      case 'ar-JO':
+      case 'ar-KW':
+      case 'ar-LY':
+      case 'ar-OM':
+      case 'ar-QA':
+      case 'ar-SA':
+      case 'ar-SD':
+      case 'ar-SY':
+      case 'ar-YE':
+      case 'dv':
+      case 'dv-MV':
+      case 'ps':
+      case 'ps-AR':
+        return 'Arabic';
+
+      case 'he':
+      case 'he-IL':
+        return 'Hebrew';
+
+      default:
+        return 'ISO 8601';
+    }
+  }();
+
+  function renderWeekdays() {
+    return _react["default"].createElement(_Weekdays["default"], {
+      calendarType: calendarType,
+      formatShortWeekday: formatShortWeekday,
+      locale: locale,
+      onMouseLeave: onMouseLeave
+    });
+  }
+
+  function renderWeekNumbers() {
+    if (!showWeekNumbers) {
+      return null;
+    }
+
+    return _react["default"].createElement(_WeekNumbers["default"], {
+      activeStartDate: activeStartDate,
+      calendarType: calendarType,
+      onClickWeekNumber: onClickWeekNumber,
+      onMouseLeave: onMouseLeave,
+      showFixedNumberOfWeeks: showFixedNumberOfWeeks
+    });
+  }
+
+  function renderDays() {
+    return _react["default"].createElement(_Days["default"], _extends({
+      calendarType: calendarType
+    }, childProps));
+  }
+
+  var className = 'react-calendar__month-view';
+  return _react["default"].createElement("div", {
+    className: [className, showWeekNumbers ? "".concat(className, "--weekNumbers") : ''].join(' ')
+  }, _react["default"].createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'flex-end'
+    }
+  }, renderWeekNumbers(), _react["default"].createElement("div", {
+    style: {
+      flexGrow: 1,
+      width: '100%'
+    }
+  }, renderWeekdays(), renderDays())));
+}
+
+MonthView.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date).isRequired,
+  calendarType: propTypes$1.isCalendarType,
+  formatShortWeekday: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: propTypes$1.isMaxDate,
+  minDate: propTypes$1.isMinDate,
+  onChange: _propTypes["default"].func,
+  onClickWeekNumber: _propTypes["default"].func,
+  onMouseLeave: _propTypes["default"].func,
+  setActiveRange: _propTypes["default"].func,
+  showFixedNumberOfWeeks: _propTypes["default"].bool,
+  showNeighboringMonth: _propTypes["default"].bool,
+  showWeekNumbers: _propTypes["default"].bool,
+  value: propTypes$1.isValue,
+  valueType: _propTypes["default"].string
+};
+});
+
+unwrapExports(MonthView_1);
+
+var Calendar_1 = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(react);
+
+var _propTypes = _interopRequireDefault(propTypes);
+
+
+
+var _mergeClassNames = _interopRequireDefault(mergeClassNames);
+
+var _Navigation = _interopRequireDefault(Navigation_1);
+
+var _CenturyView = _interopRequireDefault(CenturyView_1);
+
+var _DecadeView = _interopRequireDefault(DecadeView_1);
+
+var _YearView = _interopRequireDefault(YearView_1);
+
+var _MonthView = _interopRequireDefault(MonthView_1);
+
+
+
+
+
+
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj["default"] = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+var baseClassName = 'react-calendar';
+var allViews = ['century', 'decade', 'year', 'month'];
+var allValueTypes = [].concat(_toConsumableArray(allViews.slice(1)), ['day']);
+
+var datesAreDifferent = function datesAreDifferent(date1, date2) {
+  return date1 && !date2 || !date1 && date2 || date1 && date2 && date1.getTime() !== date2.getTime();
+};
+/**
+ * Returns views array with disallowed values cut off.
+ */
+
+
+var getLimitedViews = function getLimitedViews(minDetail, maxDetail) {
+  return allViews.slice(allViews.indexOf(minDetail), allViews.indexOf(maxDetail) + 1);
+};
+/**
+ * Determines whether a given view is allowed with currently applied settings.
+ */
+
+
+var isViewAllowed = function isViewAllowed(view, minDetail, maxDetail) {
+  var views = getLimitedViews(minDetail, maxDetail);
+  return views.indexOf(view) !== -1;
+};
+/**
+ * Gets either provided view if allowed by minDetail and maxDetail, or gets
+ * the default view if not allowed.
+ */
+
+
+var getView = function getView(view, minDetail, maxDetail) {
+  if (isViewAllowed(view, minDetail, maxDetail)) {
+    return view;
+  }
+
+  return getLimitedViews(minDetail, maxDetail).pop();
+};
+/**
+ * Returns value type that can be returned with currently applied settings.
+ */
+
+
+var getValueType = function getValueType(maxDetail) {
+  return allValueTypes[allViews.indexOf(maxDetail)];
+};
+
+var getValueFrom = function getValueFrom(value) {
+  if (!value) {
+    return null;
+  }
+
+  var rawValueFrom = value instanceof Array && value.length === 2 ? value[0] : value;
+
+  if (!rawValueFrom) {
+    return null;
+  }
+
+  var valueFromDate = new Date(rawValueFrom);
+
+  if (isNaN(valueFromDate.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  return valueFromDate;
+};
+
+var getDetailValueFrom = function getDetailValueFrom(value, minDate, maxDate, maxDetail) {
+  var valueFrom = getValueFrom(value);
+
+  if (!valueFrom) {
+    return null;
+  }
+
+  var detailValueFrom = (0, dates.getBegin)(getValueType(maxDetail), valueFrom);
+  return (0, utils.between)(detailValueFrom, minDate, maxDate);
+};
+
+var getValueTo = function getValueTo(value) {
+  if (!value) {
+    return null;
+  }
+
+  var rawValueTo = value instanceof Array && value.length === 2 ? value[1] : value;
+
+  if (!rawValueTo) {
+    return null;
+  }
+
+  var valueToDate = new Date(rawValueTo);
+
+  if (isNaN(valueToDate.getTime())) {
+    throw new Error("Invalid date: ".concat(value));
+  }
+
+  return valueToDate;
+};
+
+var getDetailValueTo = function getDetailValueTo(value, minDate, maxDate, maxDetail) {
+  var valueTo = getValueTo(value);
+
+  if (!valueTo) {
+    return null;
+  }
+
+  var detailValueTo = (0, dates.getEnd)(getValueType(maxDetail), valueTo);
+  return (0, utils.between)(detailValueTo, minDate, maxDate);
+};
+
+var getDetailValueArray = function getDetailValueArray(value, minDate, maxDate, maxDetail) {
+  if (value instanceof Array) {
+    return value;
+  }
+
+  return [getDetailValueFrom(value, minDate, maxDate, maxDetail), getDetailValueTo(value, minDate, maxDate, maxDetail)];
+};
+
+var getActiveStartDate = function getActiveStartDate(props) {
+  var activeStartDate = props.activeStartDate,
+      maxDate = props.maxDate,
+      maxDetail = props.maxDetail,
+      minDate = props.minDate,
+      minDetail = props.minDetail,
+      value = props.value,
+      view = props.view;
+  var rangeType = getView(view, minDetail, maxDetail);
+  var valueFrom = getDetailValueFrom(value, minDate, maxDate, maxDetail) || activeStartDate || new Date();
+  return (0, dates.getBegin)(rangeType, valueFrom);
+};
+
+var Calendar =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Calendar, _Component);
+
+  function Calendar() {
+    var _getPrototypeOf2;
+
+    var _this;
+
+    _classCallCheck(this, Calendar);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Calendar)).call.apply(_getPrototypeOf2, [this].concat(args)));
+
+    _defineProperty(_assertThisInitialized(_this), "state", {});
+
+    _defineProperty(_assertThisInitialized(_this), "setActiveStartDate", function (activeStartDate) {
+      var onActiveDateChange = _this.props.onActiveDateChange;
+
+      _this.setState({
+        activeStartDate: activeStartDate
+      }, function () {
+        var view = _this.state.view;
+        (0, utils.callIfDefined)(onActiveDateChange, {
+          activeStartDate: activeStartDate,
+          view: view
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "drillDown", function (activeStartDate) {
+      if (!_this.drillDownAvailable) {
+        return;
+      }
+
+      var _this$props = _this.props,
+          maxDetail = _this$props.maxDetail,
+          minDetail = _this$props.minDetail,
+          onDrillDown = _this$props.onDrillDown;
+      var views = getLimitedViews(minDetail, maxDetail);
+
+      _this.setState(function (prevState) {
+        var nextView = views[views.indexOf(prevState.view) + 1];
+        return {
+          activeStartDate: activeStartDate,
+          view: nextView
+        };
+      }, function () {
+        var view = _this.state.view;
+        (0, utils.callIfDefined)(onDrillDown, {
+          activeStartDate: activeStartDate,
+          view: view
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "drillUp", function () {
+      if (!_this.drillUpAvailable) {
+        return;
+      }
+
+      var _this$props2 = _this.props,
+          maxDetail = _this$props2.maxDetail,
+          minDetail = _this$props2.minDetail,
+          onDrillUp = _this$props2.onDrillUp;
+      var views = getLimitedViews(minDetail, maxDetail);
+
+      _this.setState(function (prevState) {
+        var nextView = views[views.indexOf(prevState.view) - 1];
+        var activeStartDate = (0, dates.getBegin)(nextView, prevState.activeStartDate);
+        return {
+          activeStartDate: activeStartDate,
+          view: nextView
+        };
+      }, function () {
+        var _this$state = _this.state,
+            activeStartDate = _this$state.activeStartDate,
+            view = _this$state.view;
+        (0, utils.callIfDefined)(onDrillUp, {
+          activeStartDate: activeStartDate,
+          view: view
+        });
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onChange", function (value) {
+      var _this$props3 = _this.props,
+          onChange = _this$props3.onChange,
+          selectRange = _this$props3.selectRange;
+      var nextValue;
+      var callback;
+
+      if (selectRange) {
+        var previousValue = _this.state.value; // Range selection turned on
+
+        if (!previousValue || [].concat(previousValue).length !== 1 // 0 or 2 - either way we're starting a new array
+        ) {
+            // First value
+            nextValue = (0, dates.getBegin)(_this.valueType, value);
+          } else {
+          // Second value
+          nextValue = (0, dates.getValueRange)(_this.valueType, previousValue, value);
+
+          callback = function callback() {
+            return (0, utils.callIfDefined)(onChange, nextValue);
+          };
+        }
+      } else {
+        // Range selection turned off
+        nextValue = _this.getProcessedValue(value);
+
+        callback = function callback() {
+          return (0, utils.callIfDefined)(onChange, nextValue);
+        };
+      }
+
+      _this.setState({
+        value: nextValue
+      }, callback);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onMouseOver", function (value) {
+      _this.setState(function (prevState) {
+        if (prevState.hover && prevState.hover.getTime() === value.getTime()) {
+          return null;
+        }
+
+        return {
+          hover: value
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "onMouseLeave", function () {
+      _this.setState({
+        hover: null
+      });
+    });
+
+    return _this;
+  }
+
+  _createClass(Calendar, [{
+    key: "getProcessedValue",
+
+    /**
+     * Gets current value in a desired format.
+     */
+    value: function getProcessedValue(value) {
+      var _this$props4 = this.props,
+          minDate = _this$props4.minDate,
+          maxDate = _this$props4.maxDate,
+          maxDetail = _this$props4.maxDetail,
+          returnValue = _this$props4.returnValue;
+
+      var processFunction = function () {
+        switch (returnValue) {
+          case 'start':
+            return getDetailValueFrom;
+
+          case 'end':
+            return getDetailValueTo;
+
+          case 'range':
+            return getDetailValueArray;
+
+          default:
+            throw new Error('Invalid returnValue.');
+        }
+      }();
+
+      return processFunction(value, minDate, maxDate, maxDetail);
+    }
+    /**
+     * Called when the user uses navigation buttons.
+     */
+
+  }, {
+    key: "renderContent",
+    value: function renderContent() {
+      var _this$props5 = this.props,
+          calendarType = _this$props5.calendarType,
+          locale = _this$props5.locale,
+          maxDate = _this$props5.maxDate,
+          minDate = _this$props5.minDate,
+          renderChildren = _this$props5.renderChildren,
+          selectRange = _this$props5.selectRange,
+          tileClassName = _this$props5.tileClassName,
+          tileContent = _this$props5.tileContent,
+          tileDisabled = _this$props5.tileDisabled;
+      var _this$state2 = this.state,
+          activeStartDate = _this$state2.activeStartDate,
+          hover = _this$state2.hover,
+          value = _this$state2.value,
+          view = _this$state2.view;
+      var onMouseOver = this.onMouseOver,
+          valueType = this.valueType;
+      var commonProps = {
+        activeStartDate: activeStartDate,
+        hover: hover,
+        locale: locale,
+        maxDate: maxDate,
+        minDate: minDate,
+        onMouseOver: selectRange ? onMouseOver : null,
+        tileClassName: tileClassName,
+        tileContent: tileContent || renderChildren,
+        // For backwards compatibility
+        tileDisabled: tileDisabled,
+        value: value,
+        valueType: valueType
+      };
+      var clickAction = this.drillDownAvailable ? this.drillDown : this.onChange;
+
+      switch (view) {
+        case 'century':
+          {
+            var onClickDecade = this.props.onClickDecade;
+            return _react["default"].createElement(_CenturyView["default"], _extends({
+              onClick: (0, utils.mergeFunctions)(clickAction, onClickDecade)
+            }, commonProps));
+          }
+
+        case 'decade':
+          {
+            var onClickYear = this.props.onClickYear;
+            return _react["default"].createElement(_DecadeView["default"], _extends({
+              onClick: (0, utils.mergeFunctions)(clickAction, onClickYear)
+            }, commonProps));
+          }
+
+        case 'year':
+          {
+            var _this$props6 = this.props,
+                formatMonth = _this$props6.formatMonth,
+                onClickMonth = _this$props6.onClickMonth;
+            return _react["default"].createElement(_YearView["default"], _extends({
+              formatMonth: formatMonth,
+              onClick: (0, utils.mergeFunctions)(clickAction, onClickMonth)
+            }, commonProps));
+          }
+
+        case 'month':
+          {
+            var _this$props7 = this.props,
+                formatShortWeekday = _this$props7.formatShortWeekday,
+                onClickDay = _this$props7.onClickDay,
+                onClickWeekNumber = _this$props7.onClickWeekNumber,
+                showFixedNumberOfWeeks = _this$props7.showFixedNumberOfWeeks,
+                showNeighboringMonth = _this$props7.showNeighboringMonth,
+                showWeekNumbers = _this$props7.showWeekNumbers;
+            var onMouseLeave = this.onMouseLeave;
+            return _react["default"].createElement(_MonthView["default"], _extends({
+              calendarType: calendarType,
+              formatShortWeekday: formatShortWeekday,
+              onClick: (0, utils.mergeFunctions)(clickAction, onClickDay),
+              onClickWeekNumber: onClickWeekNumber,
+              onMouseLeave: onMouseLeave,
+              showFixedNumberOfWeeks: showFixedNumberOfWeeks,
+              showNeighboringMonth: showNeighboringMonth,
+              showWeekNumbers: showWeekNumbers
+            }, commonProps));
+          }
+
+        default:
+          throw new Error("Invalid view: ".concat(view, "."));
+      }
+    }
+  }, {
+    key: "renderNavigation",
+    value: function renderNavigation() {
+      var showNavigation = this.props.showNavigation;
+
+      if (!showNavigation) {
+        return null;
+      }
+
+      var _this$props8 = this.props,
+          formatMonthYear = _this$props8.formatMonthYear,
+          locale = _this$props8.locale,
+          maxDate = _this$props8.maxDate,
+          maxDetail = _this$props8.maxDetail,
+          minDate = _this$props8.minDate,
+          minDetail = _this$props8.minDetail,
+          navigationAriaLabel = _this$props8.navigationAriaLabel,
+          navigationLabel = _this$props8.navigationLabel,
+          next2AriaLabel = _this$props8.next2AriaLabel,
+          next2Label = _this$props8.next2Label,
+          nextAriaLabel = _this$props8.nextAriaLabel,
+          nextLabel = _this$props8.nextLabel,
+          prev2AriaLabel = _this$props8.prev2AriaLabel,
+          prev2Label = _this$props8.prev2Label,
+          prevAriaLabel = _this$props8.prevAriaLabel,
+          prevLabel = _this$props8.prevLabel;
+      var _this$state3 = this.state,
+          activeStartDate = _this$state3.activeStartDate,
+          view = _this$state3.view;
+      return _react["default"].createElement(_Navigation["default"], {
+        activeStartDate: activeStartDate,
+        drillUp: this.drillUp,
+        formatMonthYear: formatMonthYear,
+        locale: locale,
+        maxDate: maxDate,
+        minDate: minDate,
+        navigationAriaLabel: navigationAriaLabel,
+        navigationLabel: navigationLabel,
+        next2AriaLabel: next2AriaLabel,
+        next2Label: next2Label,
+        nextAriaLabel: nextAriaLabel,
+        nextLabel: nextLabel,
+        prev2AriaLabel: prev2AriaLabel,
+        prev2Label: prev2Label,
+        prevAriaLabel: prevAriaLabel,
+        prevLabel: prevLabel,
+        setActiveStartDate: this.setActiveStartDate,
+        view: view,
+        views: getLimitedViews(minDetail, maxDetail)
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props9 = this.props,
+          className = _this$props9.className,
+          selectRange = _this$props9.selectRange;
+      var value = this.state.value;
+      var onMouseLeave = this.onMouseLeave;
+      var valueArray = [].concat(value);
+      return _react["default"].createElement("div", {
+        className: (0, _mergeClassNames["default"])(baseClassName, selectRange && valueArray.length === 1 && "".concat(baseClassName, "--selectRange"), className)
+      }, this.renderNavigation(), _react["default"].createElement("div", {
+        className: "".concat(baseClassName, "__viewContainer"),
+        onBlur: selectRange ? onMouseLeave : null,
+        onMouseLeave: selectRange ? onMouseLeave : null
+      }, this.renderContent()));
+    }
+  }, {
+    key: "drillDownAvailable",
+    get: function get() {
+      var _this$props10 = this.props,
+          maxDetail = _this$props10.maxDetail,
+          minDetail = _this$props10.minDetail;
+      var view = this.state.view;
+      var views = getLimitedViews(minDetail, maxDetail);
+      return views.indexOf(view) < views.length - 1;
+    }
+  }, {
+    key: "drillUpAvailable",
+    get: function get() {
+      var _this$props11 = this.props,
+          maxDetail = _this$props11.maxDetail,
+          minDetail = _this$props11.minDetail;
+      var view = this.state.view;
+      var views = getLimitedViews(minDetail, maxDetail);
+      return views.indexOf(view) > 0;
+    }
+  }, {
+    key: "valueType",
+    get: function get() {
+      var maxDetail = this.props.maxDetail;
+      return getValueType(maxDetail);
+    }
+  }], [{
+    key: "getDerivedStateFromProps",
+    value: function getDerivedStateFromProps(nextProps, prevState) {
+      var minDate = nextProps.minDate,
+          maxDate = nextProps.maxDate,
+          minDetail = nextProps.minDetail,
+          maxDetail = nextProps.maxDetail;
+      var nextState = {};
+      /**
+       * If the next activeStartDate is different from the current one, update
+       * activeStartDate (for display) and activeStartDateProps (for future comparisons)
+       */
+
+      var nextActiveStartDate = getActiveStartDate(nextProps);
+
+      if (datesAreDifferent(nextActiveStartDate, prevState.activeStartDateProps)) {
+        nextState.activeStartDate = nextActiveStartDate;
+        nextState.activeStartDateProps = nextActiveStartDate;
+      }
+      /**
+       * If the next view is different from the current one, and the previously set view is not
+       * valid based on minDetail and maxDetail, get a new one.
+       */
+
+
+      var nextView = getView(nextProps.view, minDetail, maxDetail);
+
+      if (nextView !== prevState.viewProps && !isViewAllowed(prevState.view, minDetail, maxDetail)) {
+        nextState.view = nextView;
+        nextState.viewProps = nextView;
+      }
+      /**
+       * If the next value is different from the current one (with an exception of situation in
+       * which values provided are limited by minDate and maxDate so that the dates are the same),
+       * get a new one.
+       */
+
+
+      var values = [nextProps.value, prevState.valueProps];
+
+      if (nextState.view // Allowed view changed
+      || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
+        return getValueFrom(value);
+      }))) || datesAreDifferent.apply(void 0, _toConsumableArray(values.map(function (value) {
+        return getValueTo(value);
+      })))) {
+        nextState.value = nextProps.value;
+        nextState.valueProps = nextProps.value;
+      }
+
+      if (!nextProps.selectRange && prevState.hover) {
+        nextState.hover = null;
+      }
+
+      return nextState;
+    }
+  }]);
+
+  return Calendar;
+}(_react.Component);
+
+exports["default"] = Calendar;
+Calendar.defaultProps = {
+  maxDetail: 'month',
+  minDetail: 'century',
+  returnValue: 'start',
+  showNavigation: true,
+  showNeighboringMonth: true,
+  view: 'month'
+};
+Calendar.propTypes = {
+  activeStartDate: _propTypes["default"].instanceOf(Date),
+  calendarType: propTypes$1.isCalendarType,
+  className: propTypes$1.isClassName,
+  formatMonth: _propTypes["default"].func,
+  formatMonthYear: _propTypes["default"].func,
+  formatShortWeekday: _propTypes["default"].func,
+  locale: _propTypes["default"].string,
+  maxDate: propTypes$1.isMaxDate,
+  maxDetail: _propTypes["default"].oneOf(allViews),
+  minDate: propTypes$1.isMinDate,
+  minDetail: _propTypes["default"].oneOf(allViews),
+  navigationAriaLabel: _propTypes["default"].string,
+  navigationLabel: _propTypes["default"].func,
+  next2AriaLabel: _propTypes["default"].string,
+  next2Label: _propTypes["default"].node,
+  nextAriaLabel: _propTypes["default"].string,
+  nextLabel: _propTypes["default"].node,
+  onActiveDateChange: _propTypes["default"].func,
+  onChange: _propTypes["default"].func,
+  onClickDay: _propTypes["default"].func,
+  onClickDecade: _propTypes["default"].func,
+  onClickMonth: _propTypes["default"].func,
+  onClickWeekNumber: _propTypes["default"].func,
+  onClickYear: _propTypes["default"].func,
+  onDrillDown: _propTypes["default"].func,
+  onDrillUp: _propTypes["default"].func,
+  prev2AriaLabel: _propTypes["default"].string,
+  prev2Label: _propTypes["default"].node,
+  prevAriaLabel: _propTypes["default"].string,
+  prevLabel: _propTypes["default"].node,
+  renderChildren: _propTypes["default"].func,
+  // For backwards compatibility
+  returnValue: _propTypes["default"].oneOf(['start', 'end', 'range']),
+  selectRange: _propTypes["default"].bool,
+  showFixedNumberOfWeeks: _propTypes["default"].bool,
+  showNavigation: _propTypes["default"].bool,
+  showNeighboringMonth: _propTypes["default"].bool,
+  showWeekNumbers: _propTypes["default"].bool,
+  tileClassName: _propTypes["default"].oneOfType([_propTypes["default"].func, propTypes$1.isClassName]),
+  tileContent: _propTypes["default"].oneOfType([_propTypes["default"].func, _propTypes["default"].node]),
+  tileDisabled: _propTypes["default"].func,
+  value: _propTypes["default"].oneOfType([_propTypes["default"].string, propTypes$1.isValue]),
+  view: _propTypes["default"].oneOf(allViews)
+};
+(0, reactLifecyclesCompat_es.polyfill)(Calendar);
+});
+
+unwrapExports(Calendar_1);
+
+var entry_nostyle = createCommonjsModule(function (module, exports) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "Calendar", {
+  enumerable: true,
+  get: function get() {
+    return _Calendar["default"];
+  }
+});
+Object.defineProperty(exports, "CenturyView", {
+  enumerable: true,
+  get: function get() {
+    return _CenturyView["default"];
+  }
+});
+Object.defineProperty(exports, "DecadeView", {
+  enumerable: true,
+  get: function get() {
+    return _DecadeView["default"];
+  }
+});
+Object.defineProperty(exports, "YearView", {
+  enumerable: true,
+  get: function get() {
+    return _YearView["default"];
+  }
+});
+Object.defineProperty(exports, "MonthView", {
+  enumerable: true,
+  get: function get() {
+    return _MonthView["default"];
+  }
+});
+exports["default"] = void 0;
+
+var _Calendar = _interopRequireDefault(Calendar_1);
+
+var _CenturyView = _interopRequireDefault(CenturyView_1);
+
+var _DecadeView = _interopRequireDefault(DecadeView_1);
+
+var _YearView = _interopRequireDefault(YearView_1);
+
+var _MonthView = _interopRequireDefault(MonthView_1);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _default = _Calendar["default"];
+exports["default"] = _default;
+});
+
+var Calendar = unwrapExports(entry_nostyle);
+
+var toIntegerFixed = function (v, len) {
+    var ret = v.toString();
+    while (ret.length < len)
+        ret = "0" + ret;
+    return ret;
+};
+var FormatDateTime = function (date, format, clockSystem) {
+    var r = (clockSystem === '12-hour') ? ((date.getHours() < 12) ? 'AM ' : 'PM ') : '';
+    r += format ? format.slice() : 'YYYY-MM-DD HH:mm:ss';
+    r = r.replace('YYYY', toIntegerFixed(date.getFullYear(), 4).toString());
+    r = r.replace('MM', toIntegerFixed(date.getMonth() + 1, 2).toString());
+    r = r.replace('DD', toIntegerFixed(date.getDate(), 2).toString());
+    r = r.replace('mm', toIntegerFixed(date.getMinutes(), 2).toString());
+    r = r.replace('sss', toIntegerFixed(date.getMilliseconds(), 3).toString());
+    r = r.replace('ss', toIntegerFixed(date.getSeconds(), 2).toString());
+    if (clockSystem === '12-hour') {
+        r = r.replace('HH', toIntegerFixed((date.getHours() < 12) ? date.getHours() : (date.getHours() - 12), 2).toString());
+    }
+    else {
+        r = r.replace('HH', toIntegerFixed(date.getHours(), 2).toString());
+    }
+    return r;
+};
+var TimePicker = /** @class */ (function (_super) {
+    __extends(TimePicker, _super);
+    function TimePicker(props) {
+        var _this = _super.call(this, props) || this;
+        _this.initTime = new Date();
+        _this.onCollapseSelect = function () { _this.setState({ visible: false }); };
+        _this.onMouseDown = function () { _this.setState(function (prevState) { return ({ visible: !prevState.visible }); }); };
+        _this.onMouseLeave = function () { document.addEventListener('mousedown', _this.onCollapseSelect, false); };
+        _this.onMouseEnter = function () { document.removeEventListener('mousedown', _this.onCollapseSelect, false); };
+        _this.onMeridiemChange = function (meridiem) {
+            if (_this.props.onChange) {
+                var ret = (_this.props.value) ? _this.props.value : _this.initTime;
+                _this.props.onChange(new Date(ret.setHours(ret.getHours() + ((meridiem === 'ante') ? (-12) : (12)))));
+            }
+        };
+        _this.onHourChange = function (hr) { if (_this.props.onChange)
+            _this.props.onChange(new Date((_this.props.value ? _this.props.value : _this.initTime).setHours(parseInt(hr)))); };
+        _this.onMinuteChange = function (min) { if (_this.props.onChange)
+            _this.props.onChange(new Date((_this.props.value ? _this.props.value : _this.initTime).setMinutes(parseInt(min)))); };
+        _this.onSecondChange = function (sec) { if (_this.props.onChange)
+            _this.props.onChange(new Date((_this.props.value ? _this.props.value : _this.initTime).setSeconds(parseInt(sec)))); };
+        var value = props.value;
+        var meridiem;
+        value = value ? value : new Date();
+        meridiem = (value.getHours() < 12) ? 'ante' : 'post';
+        _this.state = {
+            visible: false,
+            meridiem: meridiem,
+            prevProps: props,
+        };
+        return _this;
+    }
+    TimePicker.prototype.componentWillUnmount = function () { this.setState = function () { }; };
+    TimePicker.prototype.render = function () {
+        var _this = this;
+        var wrapperClass = 'cypd-digital-clock-wrapper';
+        var default_time_format = (this.props.format) ? this.props.format : 'HH:mm:ss';
+        var _a = this.state, visible = _a.visible, meridiem = _a.meridiem;
+        var time = this.props.value ? this.props.value : this.initTime;
+        var showValue = FormatDateTime(time, default_time_format, this.props.clockSystem);
+        var hr_v = ((this.props.clockSystem === '12-hour' && time.getHours() >= 12) ? (time.getHours() - 12) : time.getHours()).toString();
+        var min_v = time.getMinutes().toString();
+        var sec_v = time.getSeconds().toString();
+        var meridiem_select = (this.props.clockSystem) ? react.createElement(Select, { className: 'meridiem', value: meridiem, onChange: function (v) {
+                if (v === 'ante' || v === 'post')
+                    _this.onMeridiemChange(v);
+                else
+                    _this.onMeridiemChange('ante');
+            }, collapsed: !visible },
+            react.createElement(Option, { value: 'ante' }, "AM"),
+            react.createElement(Option, { value: 'post' }, "PM")) : undefined;
+        if (this.props.clockSystem === '12-hour')
+            wrapperClass += ' clock-system';
+        if (this.props.className)
+            wrapperClass += " " + this.props.className;
+        return (react.createElement("div", { className: wrapperClass, onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter },
+            react.createElement(Input, { readOnly: true, placeholder: 'Select time', onMouseDown: this.onMouseDown, value: showValue, disabled: this.props.disabled }),
+            meridiem_select,
+            react.createElement(Select, { className: 'hr', value: hr_v, onChange: this.onHourChange, collapsed: !visible }, Array.from(Array((this.props.clockSystem === '12-hour') ? 12 : 24).keys()).map(function (v) { return react.createElement(Option, { key: Math.random(), value: v.toString() }, v); })),
+            react.createElement(Select, { className: 'min', value: min_v, onChange: this.onMinuteChange, collapsed: !visible }, Array.from(Array(60).keys()).map(function (v) { return react.createElement(Option, { key: Math.random(), value: v.toString() }, v); })),
+            react.createElement(Select, { className: 'sec', value: sec_v, onChange: this.onSecondChange, collapsed: !visible }, Array.from(Array(60).keys()).map(function (v) { return react.createElement(Option, { key: Math.random(), value: v.toString() }, v); })),
+            react.createElement(Icon, { type: 'clock' })));
+    };
+    return TimePicker;
+}(react.Component));
+var DatePicker = /** @class */ (function (_super) {
+    __extends(DatePicker, _super);
+    function DatePicker(props) {
+        var _this = _super.call(this, props) || this;
+        _this.initTime = new Date();
+        _this.onChange = function (date) {
+            if (_this.props.onChange)
+                _this.props.onChange(date);
+            _this.setState({ mouseOutside: true }, _this.onCollapseCalendar);
+        };
+        _this.onCollapseCalendar = function () {
+            var container = document.getElementById('g__cypd_calendar_window');
+            if (container && _this.state.mouseOutside)
+                document.body.removeChild(container);
+        };
+        _this.onMouseUp = function (e) {
+            var extendDir = (e.clientY < 300) ? 'extend-bottom' : "extend-top";
+            var container = document.getElementById('g__cypd_calendar_window');
+            if (container) {
+                document.body.removeChild(container);
+            }
+            else {
+                if (_this.wrapperRef) {
+                    _this.wrapperRef.focus();
+                    var rect = _this.wrapperRef.getBoundingClientRect();
+                    var date = (_this.props.value) ? _this.props.value : _this.initTime;
+                    container = document.createElement('div');
+                    container.id = 'g__cypd_calendar_window';
+                    container.style['position'] = 'absolute';
+                    container.style['width'] = '250px';
+                    container.style['left'] = window.pageXOffset + rect.left + "px";
+                    if (extendDir === 'extend-bottom')
+                        container.style['top'] = window.pageYOffset + rect.bottom + "px";
+                    else
+                        container.style['top'] = window.pageYOffset + rect.top - 290 + "px";
+                    container.addEventListener('mouseenter', _this.onMouseEnter, false);
+                    container.addEventListener('mouseleave', _this.onMouseLeave, false);
+                    document.body.appendChild(container);
+                    reactDom.render(react.createElement(Calendar, { onChange: _this.onChange, value: date }), container);
+                    setTimeout(function () { if (container)
+                        container.style.opacity = '1'; }, 50);
+                }
+            }
+        };
+        _this.onMouseLeave = function () { _this.setState({ mouseOutside: true }); };
+        _this.onMouseEnter = function () { _this.setState({ mouseOutside: false }); };
+        _this.state = { mouseOutside: true, prevProps: props, direction: 'extend-top' };
+        return _this;
+    }
+    DatePicker.prototype.componentWillUnmount = function () { this.setState = function () { }; };
+    DatePicker.prototype.render = function () {
+        var _this = this;
+        var default_date_format = (this.props.format) ? this.props.format : 'YYYY-MM-DD';
+        var date = (this.props.value) ? this.props.value : this.initTime;
+        var wrapperClass = 'cypd-picker-wrapper';
+        wrapperClass += " " + this.state.direction;
+        if (this.props.className)
+            wrapperClass += " " + this.props.className;
+        return (react.createElement("div", { className: wrapperClass, style: this.props.style },
+            react.createElement(Input, { instance: function (inst) { _this.wrapperRef = inst; }, readOnly: true, onMouseUp: this.onMouseUp, placeholder: 'Select date', value: FormatDateTime(date, default_date_format), disabled: this.props.disabled, onBlur: this.onCollapseCalendar }),
+            react.createElement(Icon, { type: 'calendar' })));
+    };
+    return DatePicker;
+}(react.Component));
+var datetimepicker = { DatePicker: DatePicker, FormatDateTime: FormatDateTime, TimePicker: TimePicker };
+
+var CheckBox = /** @class */ (function (_super) {
+    __extends(CheckBox, _super);
+    function CheckBox() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    CheckBox.prototype.render = function () {
+        var wrapperClass = 'cypd-checkbox-wrapper';
+        if (this.props.className)
+            wrapperClass += " " + this.props.className;
+        if (this.props.disabled)
+            wrapperClass += " disabled";
+        return (react.createElement("label", { className: wrapperClass, style: this.props.style },
+            react.createElement("input", { type: 'checkbox', checked: this.props.checked, disabled: this.props.disabled, onChange: this.props.onChange, readOnly: this.props.readOnly }),
+            react.createElement("span", { className: 'cypd-checkbox' }),
+            react.createElement("span", null, this.props.label)));
+    };
+    return CheckBox;
+}(react.Component));
+
+var SwitchButton = /** @class */ (function (_super) {
+    __extends(SwitchButton, _super);
+    function SwitchButton() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    SwitchButton.prototype.render = function () {
+        var wrapperClass = 'cypd-switchbutton-wrapper';
+        if (this.props.className)
+            wrapperClass += " " + this.props.className;
+        if (this.props.disabled)
+            wrapperClass += " disabled";
+        return (react.createElement("label", { className: wrapperClass, style: this.props.style },
+            react.createElement("input", { type: 'checkbox', disabled: this.props.disabled, checked: this.props.checked, onChange: this.props.onChange, readOnly: this.props.readOnly }),
+            react.createElement("div", { className: 'cypd-switchbutton' })));
+    };
+    return SwitchButton;
+}(react.Component));
+
+var Radio = /** @class */ (function (_super) {
+    __extends(Radio, _super);
+    function Radio() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Radio.prototype.render = function () {
+        var wrapperClass = 'cypd-radio-wrapper';
+        if (this.props.option.disabled)
+            wrapperClass += " disabled";
+        return (react.createElement("label", { className: wrapperClass, style: this.props.style },
+            react.createElement("input", { type: 'radio', name: this.props.name, value: this.props.option.value, disabled: this.props.option.disabled, onChange: this.props.onChange, checked: this.props.checked }),
+            react.createElement("div", { className: 'cypd-radio' }),
+            react.createElement("span", null, this.props.option.label)));
+    };
+    return Radio;
+}(react.Component));
+var RadioGroup = /** @class */ (function (_super) {
+    __extends(RadioGroup, _super);
+    function RadioGroup() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.name = Math.random().toString().slice(2);
+        _this.onRadioChecked = function (event) { if (_this.props.onChange)
+            _this.props.onChange(event.target.value); };
+        return _this;
+    }
+    RadioGroup.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, className = _a.className, value = _a.value, options = _a.options, style = _a.style, layout = _a.layout;
+        var wrapperClass = 'cypd-radio-group-wrapper';
+        if (className)
+            wrapperClass += " " + className;
+        if (layout)
+            wrapperClass += " " + layout;
+        return (react.createElement("div", { className: wrapperClass, style: style }, options.map(function (option) {
+            return react.createElement(Radio, { option: option, key: Math.random(), name: _this.name, checked: (typeof value === 'undefined') ? undefined : (_this.props.value === option.value), onChange: _this.onRadioChecked });
+        })));
+    };
+    return RadioGroup;
+}(react.Component));
 
 var Notification = /** @class */ (function (_super) {
     __extends(Notification, _super);

@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import ReactDOM from 'react-dom';
 import Calendar from 'react-calendar/dist/entry.nostyle';
 
 import Input from '../input/input';
@@ -131,39 +132,71 @@ type DatePickerProps = {
 }
 
 type PickerState = {
-    visible: boolean,
+    mouseOutside: boolean,
+    direction: 'extend-top' | 'extend-bottom',
     prevProps: Partial<DatePickerProps>,
 }
 
 class DatePicker extends React.Component<Partial<DatePickerProps>> {
     state: PickerState;
     initTime = new Date();
+    wrapperRef?: HTMLInputElement | null
     constructor(props: Partial<DatePickerProps>) {
         super(props);
-        this.state = { visible: false, prevProps: props };
+        this.state = { mouseOutside: true, prevProps: props, direction: 'extend-top' };
     }
     componentWillUnmount() { this.setState = () => {}; }
-    onChange = (date: Date | Date[]) => { if (this.props.onChange) this.props.onChange(date); }
-    onCollapseCalendar = () => { this.setState({ visible: false }) };
-    onMouseDown = () => { this.setState((prevState: PickerState): Partial<PickerState> => ({ visible: !prevState.visible })); }
-    onMouseLeave = () => { document.addEventListener('mousedown', this.onCollapseCalendar, false); }
-    onMouseEnter = () => { document.removeEventListener('mousedown', this.onCollapseCalendar, false); }
+    onChange = (date: Date | Date[]) => { 
+        if (this.props.onChange) this.props.onChange(date);
+        this.setState({ mouseOutside: true }, this.onCollapseCalendar);
+    }
+    onCollapseCalendar = () => {
+        const container = document.getElementById('g__cypd_calendar_window');
+        if (container && this.state.mouseOutside)
+            document.body.removeChild(container);
+    };
+    onMouseUp = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => { 
+        const extendDir = (e.clientY < 300) ? 'extend-bottom' : "extend-top";
+        var container = document.getElementById('g__cypd_calendar_window');
+        if (container) {
+            document.body.removeChild(container);
+        } else {
+            if (this.wrapperRef) {
+                this.wrapperRef.focus();
+                const rect = this.wrapperRef.getBoundingClientRect();
+                const date = (this.props.value) ? this.props.value : this.initTime;
+                container = document.createElement('div');
+                container.id = 'g__cypd_calendar_window';
+                container.style['position'] = 'absolute';
+                container.style['width'] = '250px';
+                container.style['left'] = `${window.pageXOffset + rect.left}px`
+                if (extendDir === 'extend-bottom')
+                    container.style['top'] = `${window.pageYOffset + rect.bottom}px`;
+                else
+                    container.style['top'] = `${window.pageYOffset + rect.top - 290}px`;
+                container.addEventListener('mouseenter', this.onMouseEnter, false);
+                container.addEventListener('mouseleave', this.onMouseLeave, false);
+                document.body.appendChild(container);
+                ReactDOM.render(<Calendar onChange={this.onChange} value={date} />, container);
+                setTimeout(() => { if (container) container.style.opacity = '1'; }, 50);
+            }
+        }
+    }
+    onMouseLeave = () => { this.setState({ mouseOutside: true }) }
+    onMouseEnter = () => { this.setState({ mouseOutside: false }); }
     render() {
         const default_date_format = (this.props.format) ? this.props.format : 'YYYY-MM-DD';
         const date = (this.props.value) ? this.props.value : this.initTime;
         var wrapperClass = 'cypd-picker-wrapper';
+        wrapperClass += ` ${this.state.direction}`;
         if (this.props.className)
             wrapperClass += ` ${this.props.className}`;
-        if (!this.state.visible)
-            wrapperClass += ' hide';
         return (
-            <div className={wrapperClass} style={this.props.style} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
-                <Calendar onChange={this.onChange} value={date} />
-                <Input readOnly onMouseDown={this.onMouseDown} placeholder='Select date' value={FormatDateTime(date, default_date_format)} disabled={this.props.disabled}/>
+            <div className={wrapperClass} style={this.props.style}>
+                <Input instance={(inst) => { this.wrapperRef = inst; }} readOnly onMouseUp={this.onMouseUp} placeholder='Select date' value={FormatDateTime(date, default_date_format)} disabled={this.props.disabled} onBlur={this.onCollapseCalendar}/>
                 <Icon type='calendar' />
             </div>
         );
     }
 };
-
 export default { DatePicker, FormatDateTime, TimePicker };
