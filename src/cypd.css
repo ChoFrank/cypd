@@ -1371,6 +1371,7 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-tooltip.active {
+    visibility: visible;
     opacity: 1;
 }
 
