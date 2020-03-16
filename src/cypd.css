@@ -691,6 +691,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     white-space: nowrap;
     transition: color var(--default-transition-duration) ease-in-out 50ms, border var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;
     user-select: none;
+    flex-shrink: 0;
 }
 
 .cypd-button.round {
@@ -849,12 +850,14 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-checkbox-wrapper .cypd-checkbox {
+    flex-shrink: 0;
     height: 20px;
     width: 20px;
     border: 1px solid var(--default-gray-color);
     border-radius: 3px;
     background-color: white;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='white' stroke-width='2' fill='none' /></svg>");
+    background-repeat: no-repeat;
     transition: border var(--default-transition-duration), background-color var(--default-transition-duration);
 }
 
@@ -875,7 +878,8 @@ svg.cypd-icon:not([class*='fc-']) * {
 .cypd-checkbox-wrapper span {
     height: var(--default-small-height);
     line-height: var(--default-small-height);
-    margin-left: 5px;
+    padding-left: 5px;
+    overflow: hidden;
 }
 
 
