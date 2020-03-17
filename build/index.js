@@ -3130,7 +3130,7 @@ var Slider = /** @class */ (function (_super) {
             document.removeEventListener('mousemove', _this.handleDrag, false);
             document.removeEventListener('mouseup', _this.handleDragMouseUp, false);
             document.removeEventListener('touchmove', _this.handleTouchDrag, false);
-            document.removeEventListener('touchcancel', _this.handleDragMouseUp, false);
+            document.removeEventListener('touchend', _this.handleDragMouseUp, false);
             _this.setState({ pressSta: false });
         };
         _this.handleDragPress = function (xpos) {
@@ -3147,30 +3147,16 @@ var Slider = /** @class */ (function (_super) {
             _this.setState({ pressSta: true });
         };
         _this.handleDragMouseDown = function (event) {
-            // if (this.props.disabled) { return; }
             event.stopPropagation();
-            // if (this.dragElem && this.dragElem.style.left) {
-            //     this.origX = event.clientX.toString();
-            //     this.origM = this.dragElem.style.left.replace('%', '');
-            // }
-            // document.body.style.userSelect = 'none';
             _this.handleDragPress(event.clientX);
             document.addEventListener('mousemove', _this.handleDrag, false);
             document.addEventListener('mouseup', _this.handleDragMouseUp, false);
-            // this.setState({ pressSta: true });
         };
         _this.handleDragTouchDown = function (event) {
-            // if (this.props.disabled) { return; }
             event.stopPropagation();
-            // if (this.dragElem && this.dragElem.style.left) {
-            //     this.origX = event.touches[0].clientX.toString();
-            //     this.origM = this.dragElem.style.left.replace('%', '');
-            // }
-            // document.body.style.userSelect = 'none';
             _this.handleDragPress(event.touches[0].clientX);
             document.addEventListener('touchmove', _this.handleTouchDrag, false);
-            document.addEventListener('touchcancel', _this.handleDragMouseUp, false);
-            // this.setState({ pressSta: true });
+            document.addEventListener('touchend', _this.handleDragMouseUp, false);
         };
         _this.handleTrackMouseDown = function (event) {
             if (_this.props.disabled) {

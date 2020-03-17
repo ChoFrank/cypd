@@ -109,7 +109,7 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         document.removeEventListener('mousemove', this.handleDrag, false);
         document.removeEventListener('mouseup', this.handleDragMouseUp, false);
         document.removeEventListener('touchmove', this.handleTouchDrag, false);
-        document.removeEventListener('touchcancel', this.handleDragMouseUp, false);
+        document.removeEventListener('touchend', this.handleDragMouseUp, false);
         this.setState({ pressSta: false });
     }
     handleDragPress = (xpos: number) => {
@@ -124,30 +124,16 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         this.setState({ pressSta: true });
     }
     handleDragMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        // if (this.props.disabled) { return; }
         event.stopPropagation();
-        // if (this.dragElem && this.dragElem.style.left) {
-        //     this.origX = event.clientX.toString();
-        //     this.origM = this.dragElem.style.left.replace('%', '');
-        // }
-        // document.body.style.userSelect = 'none';
         this.handleDragPress(event.clientX);
         document.addEventListener('mousemove', this.handleDrag, false);
         document.addEventListener('mouseup', this.handleDragMouseUp, false);
-        // this.setState({ pressSta: true });
     }
     handleDragTouchDown = (event: React.TouchEvent<HTMLDivElement>) => {
-        // if (this.props.disabled) { return; }
         event.stopPropagation();
-        // if (this.dragElem && this.dragElem.style.left) {
-        //     this.origX = event.touches[0].clientX.toString();
-        //     this.origM = this.dragElem.style.left.replace('%', '');
-        // }
-        // document.body.style.userSelect = 'none';
         this.handleDragPress(event.touches[0].clientX);
         document.addEventListener('touchmove', this.handleTouchDrag, false);
-        document.addEventListener('touchcancel', this.handleDragMouseUp, false);
-        // this.setState({ pressSta: true });
+        document.addEventListener('touchend', this.handleDragMouseUp, false);
     }
     handleTrackMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (this.props.disabled) { return; }
