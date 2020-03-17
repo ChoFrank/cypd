@@ -3087,14 +3087,14 @@ var Slider = /** @class */ (function (_super) {
             _this.origM = undefined;
             _this.tempR = undefined;
         };
-        _this.handleDrag = function (ev) {
+        _this.handleXMove = function (xpos) {
             var _a = _this.state, step = _a.step, max = _a.max, min = _a.min;
             if (_this.dragElem && _this.trackElem && _this.origX && _this.origM) {
                 var drag_w_p = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
                 var track_w = _this.trackElem.offsetWidth ? _this.trackElem.offsetWidth : 1; // avoid zero divide
                 var orig_px = parseInt(_this.origX);
                 var orig_p = parseFloat(_this.origM);
-                var dist_x = ev.clientX - orig_px;
+                var dist_x = xpos - orig_px;
                 var offset_bound_p = 100 - (drag_w_p * 100 / track_w);
                 var offset_x_p = (dist_x * offset_bound_p / track_w);
                 var offset_temp_p = orig_p + offset_x_p;
@@ -3116,6 +3116,12 @@ var Slider = /** @class */ (function (_super) {
                 }
             }
         };
+        _this.handleDrag = function (ev) {
+            _this.handleXMove(ev.clientX);
+        };
+        _this.handleTouchDrag = function (ev) {
+            _this.handleXMove(ev.touches[0].clientX);
+        };
         _this.handleDragMouseUp = function () {
             if (_this.props.onAfterChange && _this.tempR)
                 _this.props.onAfterChange(_this.tempR);
@@ -3123,21 +3129,48 @@ var Slider = /** @class */ (function (_super) {
             document.body.style.userSelect = 'auto';
             document.removeEventListener('mousemove', _this.handleDrag, false);
             document.removeEventListener('mouseup', _this.handleDragMouseUp, false);
+            document.removeEventListener('touchmove', _this.handleTouchDrag, false);
+            document.removeEventListener('touchcancel', _this.handleDragMouseUp, false);
             _this.setState({ pressSta: false });
         };
-        _this.handleDragMouseDown = function (event) {
+        _this.handleDragPress = function (xpos) {
             if (_this.props.disabled) {
                 return;
             }
-            event.stopPropagation();
             if (_this.dragElem && _this.dragElem.style.left) {
-                _this.origX = event.clientX.toString();
+                _this.origX = xpos.toString();
                 _this.origM = _this.dragElem.style.left.replace('%', '');
             }
             document.body.style.userSelect = 'none';
             document.addEventListener('mousemove', _this.handleDrag, false);
             document.addEventListener('mouseup', _this.handleDragMouseUp, false);
             _this.setState({ pressSta: true });
+        };
+        _this.handleDragMouseDown = function (event) {
+            // if (this.props.disabled) { return; }
+            event.stopPropagation();
+            // if (this.dragElem && this.dragElem.style.left) {
+            //     this.origX = event.clientX.toString();
+            //     this.origM = this.dragElem.style.left.replace('%', '');
+            // }
+            // document.body.style.userSelect = 'none';
+            _this.handleDragPress(event.clientX);
+            document.addEventListener('mousemove', _this.handleDrag, false);
+            document.addEventListener('mouseup', _this.handleDragMouseUp, false);
+            // this.setState({ pressSta: true });
+        };
+        _this.handleDragTouchDown = function (event) {
+            // if (this.props.disabled) { return; }
+            event.stopPropagation();
+            // if (this.dragElem && this.dragElem.style.left) {
+            //     this.origX = event.touches[0].clientX.toString();
+            //     this.origM = this.dragElem.style.left.replace('%', '');
+            // }
+            // document.body.style.userSelect = 'none';
+            _this.handleDragPress(event.touches[0].clientX);
+            document.addEventListener('touchmove', _this.handleTouchDrag, false);
+            document.addEventListener('touchcancel', _this.handleDragMouseUp, false);
+            // this.setState({ pressSta: true });
         };
         _this.handleTrackMouseDown = function (event) {
             if (_this.props.disabled) {
@@ -3203,7 +3236,7 @@ var Slider = /** @class */ (function (_super) {
                         _this.trackElem = node; }, onMouseDown: this.handleTrackMouseDown },
                     draw,
                     react.createElement("div", { ref: function (node) { if (node)
-                            _this.dragElem = node; }, className: pointClass + ' drag', style: { left: offset_p + "%" }, onMouseDown: this.handleDragMouseDown, onMouseEnter: function () { _this.setState({ hoverSta: true }); }, onMouseLeave: function () { _this.setState({ hoverSta: false }); } },
+                            _this.dragElem = node; }, className: pointClass + ' drag', style: { left: offset_p + "%" }, onMouseDown: this.handleDragMouseDown, onMouseEnter: function () { _this.setState({ hoverSta: true }); }, onMouseLeave: function () { _this.setState({ hoverSta: false }); }, onTouchStart: this.handleDragTouchDown },
                         react.createElement("div", { className: "cypd-tooltip top " + ((pressSta || hoverSta) ? 'active' : 'hide'), style: { marginLeft: '6px', visibility: (pressSta || hoverSta) ? 'visible' : 'hidden' } }, value))))));
     };
     return Slider;

@@ -31,9 +31,13 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
     componentDidMount(): void;
     static getDerivedStateFromProps(nextProps: Partial<SlideProps>, prevState: SlideState): SlideState | null;
     clearTemp: () => void;
+    handleXMove: (xpos: number) => void;
     handleDrag: (ev: MouseEvent) => void;
+    handleTouchDrag: (ev: TouchEvent) => void;
     handleDragMouseUp: () => void;
+    handleDragPress: (xpos: number) => void;
     handleDragMouseDown: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+    handleDragTouchDown: (event: React.TouchEvent<HTMLDivElement>) => void;
     handleTrackMouseDown: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
     render(): JSX.Element;
 }

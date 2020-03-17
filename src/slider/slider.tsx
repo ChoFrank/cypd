@@ -70,14 +70,14 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         this.origM = undefined;
         this.tempR = undefined;
     }
-    handleDrag = (ev: MouseEvent) => {
+    handleXMove = (xpos: number) => {
         const { step, max, min } = this.state;
         if (this.dragElem && this.trackElem && this.origX && this.origM) {
             const drag_w_p = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
             const track_w = this.trackElem.offsetWidth ? this.trackElem.offsetWidth : 1; // avoid zero divide
             const orig_px = parseInt(this.origX);
             const orig_p = parseFloat(this.origM);
-            const dist_x = ev.clientX - orig_px;
+            const dist_x = xpos - orig_px;
             const offset_bound_p = 100 - (drag_w_p * 100 / track_w);
             const offset_x_p = (dist_x * offset_bound_p / track_w);
             const offset_temp_p = orig_p + offset_x_p;
@@ -96,25 +96,58 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
             }
         }
     }
+    handleDrag = (ev: MouseEvent) => {
+        this.handleXMove(ev.clientX);
+    }
+    handleTouchDrag = (ev: TouchEvent) => {
+        this.handleXMove(ev.touches[0].clientX);
+    }
     handleDragMouseUp = () => {
         if (this.props.onAfterChange && this.tempR) this.props.onAfterChange(this.tempR);
         this.clearTemp();
         document.body.style.userSelect = 'auto';
         document.removeEventListener('mousemove', this.handleDrag, false);
         document.removeEventListener('mouseup', this.handleDragMouseUp, false);
+        document.removeEventListener('touchmove', this.handleTouchDrag, false);
+        document.removeEventListener('touchcancel', this.handleDragMouseUp, false);
         this.setState({ pressSta: false });
     }
-    handleDragMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    handleDragPress = (xpos: number) => {
         if (this.props.disabled) { return; }
-        event.stopPropagation();
         if (this.dragElem && this.dragElem.style.left) {
-            this.origX = event.clientX.toString();
+            this.origX = xpos.toString();
             this.origM = this.dragElem.style.left.replace('%', '');
         }
         document.body.style.userSelect = 'none';
         document.addEventListener('mousemove', this.handleDrag, false);
         document.addEventListener('mouseup', this.handleDragMouseUp, false);
         this.setState({ pressSta: true });
+    }
+    handleDragMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        // if (this.props.disabled) { return; }
+        event.stopPropagation();
+        // if (this.dragElem && this.dragElem.style.left) {
+        //     this.origX = event.clientX.toString();
+        //     this.origM = this.dragElem.style.left.replace('%', '');
+        // }
+        // document.body.style.userSelect = 'none';
+        this.handleDragPress(event.clientX);
+        document.addEventListener('mousemove', this.handleDrag, false);
+        document.addEventListener('mouseup', this.handleDragMouseUp, false);
+        // this.setState({ pressSta: true });
+    }
+    handleDragTouchDown = (event: React.TouchEvent<HTMLDivElement>) => {
+        // if (this.props.disabled) { return; }
+        event.stopPropagation();
+        // if (this.dragElem && this.dragElem.style.left) {
+        //     this.origX = event.touches[0].clientX.toString();
+        //     this.origM = this.dragElem.style.left.replace('%', '');
+        // }
+        // document.body.style.userSelect = 'none';
+        this.handleDragPress(event.touches[0].clientX);
+        document.addEventListener('touchmove', this.handleTouchDrag, false);
+        document.addEventListener('touchcancel', this.handleDragMouseUp, false);
+        // this.setState({ pressSta: true });
     }
     handleTrackMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (this.props.disabled) { return; }
@@ -162,6 +195,7 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
                             onMouseDown={this.handleDragMouseDown}
                             onMouseEnter={() => { this.setState({ hoverSta: true }); }}
                             onMouseLeave={() => { this.setState({ hoverSta: false }); }}
+                            onTouchStart={this.handleDragTouchDown}
                         >
                             <div className={`cypd-tooltip top ${(pressSta || hoverSta)?'active':'hide'}`} style={{ marginLeft: '6px', visibility: (pressSta || hoverSta)?'visible':'hidden' }}>{value}</div>
                         </div>
