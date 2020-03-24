@@ -57,7 +57,7 @@ class App extends React.Component {
                 [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
                 [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
                 [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
-                [<Icon type='loading' />, <Slider />, <Button icon='zoom-in' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
+                [<Icon type='loading' />, <Slider max={1} min={0} step={0.1}/>, <Button icon='zoom-in' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
                 ['', <Slider />, <DateTime.DatePicker />, <DateTime.TimePicker />],
             ]}
             pagination={true}
