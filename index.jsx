@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Form, Checkbox, Option, RadioGroup, SwitchButton, Tree, Notify, Spin, Layout, Slider, Modal, Tooltip } from './src';
+import { Table, Icon, Input, Button, Select, DateTime, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar } from './src';
 
 import './index.css'
 
@@ -25,9 +25,15 @@ const icon_container = (type) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false };
+        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false, progress: 0 };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
+        this.testProgress = setInterval(() => {
+            if (this.state.progress < 100)
+                this.setState((prevState) => ({ progress: prevState.progress + 2 }));
+            else
+                clearInterval(this.testProgress);
+        }, 100);
     }
     triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.........................................................................................', type: 'success', timeout: 1000000 }); }
     triggerWarningDemo() { Notify({ title: 'Warning', context: 'This is a Warning notification demo.', type: 'warning' }); }
@@ -58,7 +64,7 @@ class App extends React.Component {
                 [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
                 [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
                 [<Icon type='loading' />, <Slider max={1} min={0} step={0.1}/>, <Button icon='zoom-in' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
-                ['', <Slider />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+                ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress}/>, <DateTime.DatePicker />, <DateTime.TimePicker />],
             ]}
             pagination={true}
             rowLimit={11}

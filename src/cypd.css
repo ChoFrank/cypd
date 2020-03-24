@@ -1412,13 +1412,18 @@ svg.cypd-icon:not([class*='fc-']) * {
     transition: background-color var(--default-transition-duration);
 }
 
+.cypd-slider-track.progress-track {
+    overflow: hidden;
+    cursor: default;
+}
+
 .cypd-slider-container.disabled .cypd-slider-track {
     background-color: rgb(163, 163, 163, 0.6);
     cursor: not-allowed;
 }
 
-.cypd-slider-track.active,
-.cypd-slider-track:hover {
+.cypd-slider-track:not(.progress-track).active,
+.cypd-slider-track:not(.progress-track):hover {
     background-color: var(--default-gray-color);
 }
 
@@ -1473,6 +1478,16 @@ svg.cypd-icon:not([class*='fc-']) * {
 
 .cypd-slider-container.disabled .cypd-slider-range path {
     stroke: rgb(160, 160, 160) !important;
+}
+
+.cypd-progress-hint {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 5px;
+    font-size: 11px;
+    letter-spacing: 0;
+    user-select: none;
 }
 
 
