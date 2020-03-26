@@ -682,7 +682,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0px 5px 0px 5px;
+    padding: 0px 12px 0px 12px;
     border-radius: 4px;
     cursor: pointer;
     height: 32px;
@@ -703,7 +703,7 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-button.small {
-    padding: 1px 5px 0px 5px;
+    padding: 0px 12px 0px 12px;
 }
 
 .cypd-button.no-content {
