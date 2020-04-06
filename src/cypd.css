@@ -1276,6 +1276,7 @@ svg.cypd-icon:not([class*='fc-']) * {
 
 .cypd-layout-navigation .cypd-tree-element .self>.label {
     text-align: center;
+    white-space: nowrap;
 }
 
 .cypd-layout-navigation .cypd-tree-element .children {
