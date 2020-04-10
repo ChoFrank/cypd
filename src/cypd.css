@@ -257,9 +257,8 @@ body {
 /* cypd table */
 
 .cypd-table-container {
-    margin: 10px;
+    padding: 10px;
     width: 100%;
-    display: table;
 }
 
 .cypd-table-container .table-wrapper {
@@ -315,6 +314,7 @@ body {
     display: table-cell;
     vertical-align: middle;
     transition: transform 100ms ease-in-out;
+    text-align: center;
 }
 
 .cypd-table-container .cypd-table .cell .cell-wrapper {
