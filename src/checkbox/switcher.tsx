@@ -20,7 +20,14 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
             wrapperClass += ` disabled`;
         return (
             <label className={wrapperClass} style={this.props.style}>
-                <input type='checkbox' disabled={this.props.disabled} checked={this.props.checked} onChange={this.props.onChange} readOnly={this.props.readOnly}/>
+                <input 
+                    type='checkbox' 
+                    disabled={this.props.disabled} 
+                    checked={((typeof this.props.checked !== undefined) && this.props.onChange) ? this.props.checked : undefined} 
+                    defaultChecked={((typeof this.props.checked !== undefined) && !this.props.onChange) ? this.props.checked : undefined}
+                    onChange={this.props.onChange} 
+                    readOnly={this.props.readOnly}
+                />
                 <div className='cypd-switchbutton'/>
             </label>
         );

@@ -37,7 +37,11 @@ interface TableState {
  */
 export default class Table extends React.Component<TableProps> {
     state: TableState;
+    id: string;
+    colElement: Array<HTMLDivElement | null | undefined>;
+    colInitWidth: Array<number>;
     constructor(props: TableProps);
+    componentDidMount(): void;
     turnNext: () => void;
     turnPrev: () => void;
     onPageChange: (page: string) => void;

@@ -45,10 +45,14 @@ interface TableState {
  */
 export default class Table extends React.Component<TableProps> {
     state: TableState;
+    id: string = Math.random().toString().slice(2);
+    colElement: Array<HTMLDivElement | null | undefined> = [];
+    colInitWidth: Array<number> = [];
     constructor(props: TableProps) {
         super(props);
         this.state = { page: 1, tempPage: '1', mode: '' };
     }
+    componentDidMount() { this.colElement.forEach((col, col_idx) => { this.colInitWidth[col_idx] = (col) ? col.getBoundingClientRect().width : 0; }); }
     turnNext = () => {
         this.setState( (prevState: TableState): Partial<TableState> => {
             if (this.props.pagination) {
@@ -112,14 +116,30 @@ export default class Table extends React.Component<TableProps> {
         var wrapperClass = 'table-wrapper';
         if (showRows.length === 0)
             wrapperClass += ' show-empty';
+
+        const layout = (
+            <div className={wrapperClass}>
+                {headers.map((title, title_idx) => {
+                    const key_prefix = `table_${this.id}_col`;
+                    return <div 
+                        ref={inst => { this.colElement[title_idx] = inst; }} 
+                        className='column' 
+                        key={`${key_prefix}_${title_idx}`} 
+                        style={{ width: (this.colInitWidth[title_idx])?this.colInitWidth[title_idx]:'auto' }}
+                    >
+                        <div className='head' style={headerStyle}>{title}</div>
+                        {rows.map((row, row_idx) => {
+                            if (pagination && (row_idx < startRow || row_idx >= endRow))
+                                return null;
+                            return <div className='cell' key={`${key_prefix}_${title_idx}_${row_idx}`}>{row[title_idx]}</div>;
+                        }).filter(cell => cell)}
+                    </div>;
+                })}
+            </div>
+        );
         return (
-            <div className='cypd-table-container' style={bodyStyle}>
-                <div className={wrapperClass}>
-                    <div className={'cypd-table ' + this.state.mode}>
-                        <div className='row header' style={headerStyle}>{headers.map((elem, idx) => <div className='cell' key={'cth'+idx}>{elem}</div>)}</div>
-                        {showRows}
-                    </div>
-                </div>
+            <div className={'cypd-table-container ' + this.state.mode} style={bodyStyle}>
+                {layout}
                 <div className='footer' style={{display: (pagination?undefined:'none')}}>
                     <Button icon='arrow-right' onClick={this.turnNext}/>
                     <Input style={{width: '35px', marginRight: '10px'}} value={this.state.tempPage} onChange={(e) => { this.onPageChange(e.target.value); }} onBlur={this.onChangeBlur} onKeyPress={this.onChangeKeyPress} />

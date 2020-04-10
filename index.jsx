@@ -67,7 +67,7 @@ class App extends React.Component {
                 ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress}/>, <DateTime.DatePicker />, <DateTime.TimePicker />],
             ]}
             pagination={true}
-            rowLimit={11}
+            rowLimit={6}
         />;
         // const table = <Table
         //     headers={['Name', 'Gender', 'Email', 'Birthday']}
