@@ -2660,12 +2660,13 @@ var Modal = /** @class */ (function (_super) {
     Modal.prototype.render = function () {
         var props = this.props;
         var wrapperClass = 'cypd-modal-container';
+        var modalClass = 'cypd-modal';
         wrapperClass += props.visible ? ' active' : ' hide';
         if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        return (react.createElement("div", { className: wrapperClass, style: this.props.style },
+            modalClass += " " + this.props.className;
+        return (react.createElement("div", { className: wrapperClass },
             react.createElement("div", { className: 'cypd-modal-background', onClick: props.onClose },
-                react.createElement("div", { className: 'cypd-modal', onClick: function (e) { e.stopPropagation(); } },
+                react.createElement("div", { className: modalClass, style: this.props.style, onClick: function (e) { e.stopPropagation(); } },
                     (props.onClose) ? react.createElement("svg", { className: 'close-svg', onClick: props.onClose },
                         react.createElement("path", { d: 'M4 4 16 16 M4 16 16 4', stroke: 'black', strokeWidth: 3 })) : undefined,
                     props.title ? react.createElement("h3", { style: props.headerStyle }, props.title) : undefined,

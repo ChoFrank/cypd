@@ -16,12 +16,13 @@ export default class Modal extends React.Component<Partial<ModalProps>> {
     render() {
         const { props } = this;
         var wrapperClass = 'cypd-modal-container';
+        var modalClass = 'cypd-modal';
         wrapperClass += props.visible?' active':' hide';
-        if (this.props.className) wrapperClass += ` ${this.props.className}`;
+        if (this.props.className) modalClass += ` ${this.props.className}`;
         return (
-            <div className={wrapperClass} style={this.props.style}>
+            <div className={wrapperClass}>
                 <div className='cypd-modal-background' onClick={props.onClose}>
-                    <div className='cypd-modal' onClick={(e) => { e.stopPropagation(); }}>
+                    <div className={modalClass} style={this.props.style} onClick={(e) => { e.stopPropagation(); }}>
                         {(props.onClose) ? <svg className='close-svg' onClick={props.onClose}><path d='M4 4 16 16 M4 16 16 4' stroke='black' strokeWidth={3} /></svg> : undefined}
                         {props.title?<h3 style={props.headerStyle}>{props.title}</h3>:undefined}
                         <div className='content' style={props.bodyStyle}>{props.children}</div>
