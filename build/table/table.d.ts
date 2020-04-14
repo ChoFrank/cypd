@@ -6,6 +6,7 @@ declare type TableProps = {
     bodyStyle?: React.CSSProperties;
     pagination?: boolean;
     rowLimit?: number;
+    columnWidth?: Array<number>;
 };
 interface TableState {
     page: number;

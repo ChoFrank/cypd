@@ -13,6 +13,7 @@ type TableProps = {
     bodyStyle?: React.CSSProperties,
     pagination?: boolean,
     rowLimit?: number,
+    columnWidth?: Array<number>,
 }
 
 interface TableState {
@@ -52,7 +53,10 @@ export default class Table extends React.Component<TableProps> {
         super(props);
         this.state = { page: 1, tempPage: '1', mode: '' };
     }
-    componentDidMount() { this.colElement.forEach((col, col_idx) => { this.colInitWidth[col_idx] = (col) ? col.getBoundingClientRect().width : 0; }); }
+    componentDidMount() { 
+        if (typeof this.props.columnWidth === undefined)
+            this.colElement.forEach((col, col_idx) => { this.colInitWidth[col_idx] = (col) ? col.getBoundingClientRect().width : 0; });
+    }
     turnNext = () => {
         this.setState( (prevState: TableState): Partial<TableState> => {
             if (this.props.pagination) {
@@ -101,8 +105,9 @@ export default class Table extends React.Component<TableProps> {
         });
     }
     render() {
-        const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit } = this.props;
+        const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, columnWidth } = this.props;
         var startRow: number = 0, endRow: number = 0;
+        var col_width_sum = (columnWidth) ? 0 : 1; // calculate width should a column has
         if (pagination) {
             startRow = (rowLimit?rowLimit:DEFAULT_ROW_LIMIT) * (this.state.page - 1);
             endRow = (rowLimit?rowLimit:DEFAULT_ROW_LIMIT) * this.state.page;
@@ -116,16 +121,20 @@ export default class Table extends React.Component<TableProps> {
         var wrapperClass = 'table-wrapper';
         if (showRows.length === 0)
             wrapperClass += ' show-empty';
-
+        if (columnWidth)
+            columnWidth.forEach(v => { col_width_sum += v; });
         const layout = (
             <div className={wrapperClass}>
                 {headers.map((title, title_idx) => {
                     const key_prefix = `table_${this.id}_col`;
+                    var guess_width = (this.colInitWidth[title_idx]) ? `${this.colInitWidth[title_idx]}px`: 'auto';
+                    if (columnWidth)
+                        guess_width = `${(columnWidth[title_idx] * 100) / col_width_sum}%`;
                     return <div 
                         ref={inst => { this.colElement[title_idx] = inst; }} 
                         className='column' 
-                        key={`${key_prefix}_${title_idx}`} 
-                        style={{ width: (this.colInitWidth[title_idx])?this.colInitWidth[title_idx]:'auto' }}
+                        key={`${key_prefix}_${title_idx}`}
+                        style={{ width: guess_width }}
                     >
                         <div className='head' style={headerStyle}>{title}</div>
                         {rows.map((row, row_idx) => {

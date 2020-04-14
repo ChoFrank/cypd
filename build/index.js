@@ -2813,12 +2813,14 @@ var Table = /** @class */ (function (_super) {
     }
     Table.prototype.componentDidMount = function () {
         var _this = this;
-        this.colElement.forEach(function (col, col_idx) { _this.colInitWidth[col_idx] = (col) ? col.getBoundingClientRect().width : 0; });
+        if (typeof this.props.columnWidth === undefined)
+            this.colElement.forEach(function (col, col_idx) { _this.colInitWidth[col_idx] = (col) ? col.getBoundingClientRect().width : 0; });
     };
     Table.prototype.render = function () {
         var _this = this;
-        var _a = this.props, headers = _a.headers, rows = _a.rows, headerStyle = _a.headerStyle, bodyStyle = _a.bodyStyle, pagination = _a.pagination, rowLimit = _a.rowLimit;
+        var _a = this.props, headers = _a.headers, rows = _a.rows, headerStyle = _a.headerStyle, bodyStyle = _a.bodyStyle, pagination = _a.pagination, rowLimit = _a.rowLimit, columnWidth = _a.columnWidth;
         var startRow = 0, endRow = 0;
+        var col_width_sum = (columnWidth) ? 0 : 1; // calculate width should a column has
         if (pagination) {
             startRow = (rowLimit ? rowLimit : DEFAULT_ROW_LIMIT) * (this.state.page - 1);
             endRow = (rowLimit ? rowLimit : DEFAULT_ROW_LIMIT) * this.state.page;
@@ -2833,9 +2835,14 @@ var Table = /** @class */ (function (_super) {
         var wrapperClass = 'table-wrapper';
         if (showRows.length === 0)
             wrapperClass += ' show-empty';
+        if (columnWidth)
+            columnWidth.forEach(function (v) { col_width_sum += v; });
         var layout = (react.createElement("div", { className: wrapperClass }, headers.map(function (title, title_idx) {
             var key_prefix = "table_" + _this.id + "_col";
-            return react.createElement("div", { ref: function (inst) { _this.colElement[title_idx] = inst; }, className: 'column', key: key_prefix + "_" + title_idx, style: { width: (_this.colInitWidth[title_idx]) ? _this.colInitWidth[title_idx] : 'auto' } },
+            var guess_width = (_this.colInitWidth[title_idx]) ? _this.colInitWidth[title_idx] + "px" : 'auto';
+            if (columnWidth)
+                guess_width = (columnWidth[title_idx] * 100) / col_width_sum + "%";
+            return react.createElement("div", { ref: function (inst) { _this.colElement[title_idx] = inst; }, className: 'column', key: key_prefix + "_" + title_idx, style: { width: guess_width } },
                 react.createElement("div", { className: 'head', style: headerStyle }, title),
                 rows.map(function (row, row_idx) {
                     if (pagination && (row_idx < startRow || row_idx >= endRow))
