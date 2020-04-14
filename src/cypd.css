@@ -277,6 +277,7 @@ body {
 }
 
 .cypd-table-container>.table-wrapper>.column {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -285,11 +286,12 @@ body {
 
 .cypd-table-container>.table-wrapper>.column>.head,
 .cypd-table-container>.table-wrapper>.column>.cell {
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0px 20px 0px;
     display: inline-flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
 }
 
 .cypd-table-container>.table-wrapper>.column>.head {
