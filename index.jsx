@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar } from './src';
+import { Table, Icon, Input, Button, Select, DateTime, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
 
 import './index.css'
 
@@ -28,12 +28,12 @@ class App extends React.Component {
         this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false, progress: 0 };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
-        this.testProgress = setInterval(() => {
-            if (this.state.progress < 100)
-                this.setState((prevState) => ({ progress: prevState.progress + 2 }));
-            else
-                clearInterval(this.testProgress);
-        }, 100);
+        // this.testProgress = setInterval(() => {
+        //     if (this.state.progress < 100)
+        //         this.setState((prevState) => ({ progress: prevState.progress + 2 }));
+        //     else
+        //         clearInterval(this.testProgress);
+        // }, 100);
     }
     triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.........................................................................................', type: 'success', timeout: 1000000 }); }
     triggerWarningDemo() { Notify({ title: 'Warning', context: 'This is a Warning notification demo.', type: 'warning' }); }
@@ -112,6 +112,7 @@ class App extends React.Component {
                 <Layout.Header />
                 <Layout.Navigation />
                 <Layout.Body>
+                    <Spin type='linear' visible={true}/>
                     <Layout.Sider 
                         visible={this.state.visible}
                         onCollapse={(visible) => { this.setState({ visible }); }}

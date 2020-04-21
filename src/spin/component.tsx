@@ -9,6 +9,7 @@ type SpinProps = {
     layout: 'vertical' | 'horizontal'
     className: string,
     style: CSSProperties,
+    type?: 'linear'
 }
 
 export default class Spin extends React.Component<Partial<SpinProps>> {
@@ -18,11 +19,21 @@ export default class Spin extends React.Component<Partial<SpinProps>> {
             wrapperClass += ` visible`;
         if (this.props.layout)
             wrapperClass += ` ${this.props.layout}`;
-        return (
+        if (this.props.type)
+            wrapperClass += ` ${this.props.type}`;
+        let element = (
             <div className={wrapperClass} style={this.props.style}>
                 <Icon className='cypd-spin' type='loading'/>
                 <span className='cypd-spin-msg'>{this.props.message}</span>
             </div>
         );
+        if (this.props.type === 'linear') {
+            element = (
+                <div className={wrapperClass} style={this.props.style}>
+                    <div className='logo'><div className='c'/><div className='yp'/></div>
+                    <div className='container'><div /><div /><div /><div /></div></div>
+            );
+        }
+        return element;
     }
 };
