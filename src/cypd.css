@@ -1105,7 +1105,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     position: absolute;
     height: 100%;
     width: 100%;
-    animation: spin-cyp 2.4s linear infinite;
+    animation: spin-cyp 4s linear infinite;
 }
 
 .cypd-spin-wrapper.linear .logo>.c {
@@ -1170,9 +1170,10 @@ svg.cypd-icon:not([class*='fc-']) * {
     0% {
         opacity: 1;
     }
-    50% {
+    30% {
         opacity: 0.4;
     }
+    60%,
     100% {
         opacity: 1;
     }
