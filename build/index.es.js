@@ -34795,6 +34795,7 @@ var Notification = /** @class */ (function (_super) {
 }(react.Component));
 var notify = function (options) {
     var title = options.title, context = options.context, timeout = options.timeout, type = options.type;
+    var real_timeout = (typeof timeout === 'undefined') ? 5000 : timeout;
     var auto_timeout;
     var container = document.getElementById('g__cypd_notify_window');
     if (!container) {
@@ -34812,7 +34813,8 @@ var notify = function (options) {
             container.removeChild(e); }, 210);
     };
     reactDom.render(react.createElement(Notification, { title: title, context: context, type: type, onRemove: function () { removeBlock(block); } }), block);
-    auto_timeout = global.setTimeout(function () { removeBlock(block); }, (timeout ? timeout : 5000));
+    auto_timeout = global.setTimeout(function () { if (real_timeout)
+        removeBlock(block); }, real_timeout);
 };
 
 var Href = /** @class */ (function (_super) {

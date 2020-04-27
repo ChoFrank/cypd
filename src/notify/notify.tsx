@@ -40,6 +40,7 @@ class Notification extends React.Component<Partial<NotificationProps>> {
 
 const notify = (options: NotificationArgs) => {
     const { title, context, timeout, type } = options;
+    const real_timeout = (typeof timeout === 'undefined') ? 5000 : timeout;
     var auto_timeout: NodeJS.Timeout;
     var container = document.getElementById('g__cypd_notify_window');
     if (!container) {
@@ -63,7 +64,7 @@ const notify = (options: NotificationArgs) => {
             onRemove={() => { removeBlock(block); }}
         />
     , block);
-    auto_timeout = global.setTimeout(() => { removeBlock(block); }, (timeout?timeout:5000));
+    auto_timeout = global.setTimeout(() => { if (real_timeout) removeBlock(block); }, real_timeout);
 }
 
 export default notify;
