@@ -1779,7 +1779,7 @@ button.react-calendar__century-view__decades__decade {
     right: 0;
     bottom: 0;
     width: 350px;
-    z-index: 9;
+    z-index: 51;
 }
 
 #g__cypd_notify_window>.cypd-notify-wrapper {
