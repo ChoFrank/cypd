@@ -1133,7 +1133,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     width: 8px;
     border-radius: 50%;
     top: 11px;
-    animation: spin-linear 1.6s cubic-bezier(0, .89, 1, .12) infinite;
+    animation: spin-linear 3s cubic-bezier(0, .89, 1, .12) infinite;
     flex-grow: 0;
 }
 
@@ -1161,6 +1161,7 @@ svg.cypd-icon:not([class*='fc-']) * {
     0% {
         transform: translateX(120px);
     }
+    70%,
     100% {
         transform: translateX(-120px);
     }

@@ -8,6 +8,7 @@ type SwitchButtonProps = {
     className: string,
     style: CSSProperties,
     readOnly: boolean,
+    defaultChecked: boolean,
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -23,8 +24,8 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
                 <input 
                     type='checkbox' 
                     disabled={this.props.disabled} 
-                    checked={((typeof this.props.checked !== undefined) && this.props.onChange) ? this.props.checked : undefined} 
-                    defaultChecked={((typeof this.props.checked !== undefined) && !this.props.onChange) ? this.props.checked : undefined}
+                    checked={this.props.checked} 
+                    defaultChecked={this.props.defaultChecked}
                     onChange={this.props.onChange} 
                     readOnly={this.props.readOnly}
                 />
