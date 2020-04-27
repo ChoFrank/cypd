@@ -373,7 +373,7 @@ body {
     height: 100%;
     width: 100%;
     user-select: text;
-    z-index: 11;
+    z-index: 41;
 }
 
 .cypd-modal-container.active {
