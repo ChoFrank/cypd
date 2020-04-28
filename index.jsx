@@ -87,7 +87,8 @@ class App extends React.Component {
             <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>}>
                 <Input 
                     value={this.state.name} 
-                    onChange={(e) => { this.setState({ name: e.target.name }); }}
+                    type='password'
+                    onChange={(e) => { this.setState({ name: e.target.value }); }}
                 ></Input>
             </Form.Item>
             <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Gender</span>}>
@@ -112,7 +113,7 @@ class App extends React.Component {
                 <Layout.Header />
                 <Layout.Navigation />
                 <Layout.Body>
-                    <Spin type='linear' visible={true}/>
+                    <Spin type='linear' visible={false}/>
                     <Layout.Sider 
                         visible={this.state.visible}
                         onCollapse={(visible) => { this.setState({ visible }); }}

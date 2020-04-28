@@ -10,6 +10,7 @@ type InputProps = {
     className: string,
     style: React.CSSProperties,
     readOnly: boolean,
+    type: string,
     instance: (inst: HTMLInputElement | null) => void,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
     onBlur: (e: React.FocusEvent<HTMLInputElement>) => void,
