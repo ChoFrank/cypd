@@ -1896,6 +1896,59 @@ button.react-calendar__century-view__decades__decade {
     cursor: pointer;
 }
 
+.cypd-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.cypd-dropdown>.wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    background-color: white;
+    padding: 0px;
+    box-shadow: 0px 0px 2px gray;
+    z-index: 21;
+    transform: translateY(5px);
+    transition: opacity 150ms, max-height 0ms linear 150ms;
+}
+
+.cypd-dropdown>input:checked~.wrapper {
+    height: auto;
+    max-height: 2000px;
+    opacity: 1;
+    transition: opacity 150ms;
+}
+
+.cypd-dropdown>.wrapper>.cypd-dropdown-item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    height: 32px;
+    color: var(--default-cyp-blue);
+    transition: background-color 150ms, color 150ms, transform 150ms;
+}
+
+.cypd-dropdown>.wrapper>.cypd-dropdown-item:hover {
+    background-color: var(--default-cyp-blue-hover);
+    color: white;
+}
+
+.cypd-dropdown>.wrapper>.cypd-dropdown-item>*:not(:nth-child(1)) {
+    margin-left: 20px;
+}
+
+.cypd-dropdown-item>.prefix>img {
+    width: 24px;
+}
+
 html {
     visibility: visible;
 }
