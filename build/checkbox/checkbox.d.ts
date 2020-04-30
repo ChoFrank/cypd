@@ -1,6 +1,6 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, ReactNode } from 'react';
 declare type CheckBoxProps = {
-    label: string;
+    label: ReactNode;
     checked: boolean;
     disabled: boolean;
     className: string;
