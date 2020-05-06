@@ -37,7 +37,8 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
         classString += (this.props.size) ? ` ${this.props.size}` : '';
         return (
             <div className={classString} style={this.props.style} onClick={(this.props.disabled)?undefined:this.props.onClick}>
-                <span className={(this.props.icon)?'hasicon':''}>{icon}{this.props.children}</span>
+                <div className='wrap-icon'>{icon}</div>
+                <div className='context'>{this.props.children}</div>
             </div>
         );
     }
