@@ -771,6 +771,7 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-button:not(.no-content) .wrap-icon {
+    display: flex;
     margin-right: 3px;
 }
 
