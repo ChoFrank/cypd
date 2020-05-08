@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
+import { Table, Icon, Input, Button, Select, DateTime, Empty, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
 
 import './index.css'
 
@@ -121,7 +121,10 @@ class App extends React.Component {
                     <Layout.Center>
                         <div className='app_dashboard_container'>
                             {table}
-                            {icondemo}
+                            <div className='empty_demo_wrapper'><Empty /></div>
+                            <div className='icon_demo_wrapper'>
+                                {icondemo}
+                            </div>
                             {form}
                         </div>
                     </Layout.Center>

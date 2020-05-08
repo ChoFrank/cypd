@@ -1882,6 +1882,9 @@ button.react-calendar__century-view__decades__decade {
     cursor: pointer;
 }
 
+
+/* cypd-dropdown */
+
 .cypd-dropdown {
     position: relative;
     cursor: pointer;
@@ -1937,4 +1940,17 @@ button.react-calendar__century-view__decades__decade {
 
 html {
     visibility: visible;
+}
+
+
+/* cypd-empty */
+
+.cypd-empty-view {
+    min-height: 150px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' overflow='visible'><ellipse cx='45' cy='60' rx='25' ry='5' stroke='none' fill='rgba(170,170,170,0.5)' /><path d='M20 45 30 30 60 30 70 45' stroke='rgba(170,170,170,0.8)' fill='none' stroke-linejoin='round' /><path d='M70 45 55 45 53 50 37 50 35 45 20 45 20 60 70 60 Z' stroke='rgba(170,170,170,0.8)' fill='rgb(238,238,238)' stroke-linejoin='round' /><text x='45' y='85' font-family='Arial' fill='rgba(170,170,170,0.8)' text-anchor='middle'>No Data</text></svg>");
+    background-repeat: no-repeat;
+    background-position: center center;
 }

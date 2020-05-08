@@ -23,5 +23,6 @@ export { default as SwitchButton } from './checkbox/switcher';
 export { default as RadioGroup } from './radio/radio';
 export { default as Notify } from './notify/notify';
 export { default as Href } from './href/href';
+export { default as Empty } from './empty/empty';
 export { Select, Option };
 export { DropdownInstance as Dropdown };
