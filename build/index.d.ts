@@ -1,5 +1,6 @@
 import './cypd.css';
 import Select, { Option } from './select/component';
+import { Book, Page } from './story/story';
 import DropdownWrapper, { DropdownItem } from './dropdown/dropdown';
 declare const DropdownInstance: {
     Wrapper: typeof DropdownWrapper;
@@ -24,5 +25,5 @@ export { default as RadioGroup } from './radio/radio';
 export { default as Notify } from './notify/notify';
 export { default as Href } from './href/href';
 export { default as Empty } from './empty/empty';
-export { Select, Option };
+export { Select, Option, Book, Page };
 export { DropdownInstance as Dropdown };

@@ -1954,3 +1954,37 @@ html {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+
+/* cypd-book */
+
+.cypd-book {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.cypd-page {
+    width: 100%;
+    position: relative;
+    opacity: 1;
+    transform: translateX(0%);
+    transition: opacity 150ms, transform 150ms;
+}
+
+.cypd-page.history,
+.cypd-page.future {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+    transition: width 150ms linear 150ms;
+}
+
+.cypd-page.history {
+    transform: translate(-10px);
+}
+
+.cypd-page.future {
+    transform: translate(10px);
+}
