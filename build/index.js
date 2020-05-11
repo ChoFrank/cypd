@@ -34960,9 +34960,9 @@ var ListItem = /** @class */ (function (_super) {
         return _this;
     }
     ListItem.prototype.render = function () {
-        var _a = this.props, label = _a.label, description = _a.description, decoration = _a.decoration;
+        var _a = this.props, label = _a.label, description = _a.description, decoration = _a.decoration, mouseEvent = _a.mouseEvent;
         var list_id = Math.random().toString();
-        return (react.createElement("div", { className: 'cypd-listitem' },
+        return (react.createElement("div", __assign({ className: 'cypd-listitem' }, mouseEvent),
             react.createElement("input", { className: 'readmore-check', id: list_id, type: 'checkbox', onChange: this.onCheck }),
             react.createElement("div", { className: 'shorten' },
                 react.createElement("div", { className: 'label' }, label),
