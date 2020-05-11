@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Empty, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
+import { Table, Icon, Input, Button, Select, DateTime, Empty, List, Form, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
 
 import './index.css'
 
@@ -70,14 +70,15 @@ class App extends React.Component {
             pagination={true}
             rowLimit={6}
         />;
+        const email_example = [
+            ['David', 'Male', 'david.chang@example.com', '1987/5/31'],
+            ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1'],
+            ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9'],
+            ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
+        ];
         // const table = <Table
         //     headers={['Name', 'Gender', 'Email', 'Birthday']}
-        //     rows={[
-        //         ['David', 'Male', 'david.chang@example.com', '1987/5/31'],
-        //         ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1'],
-        //         ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9'],
-        //         ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
-        //     ]}
+        //     rows={email_example}
         //     pagination={true}
         //     rowLimit={10}
         //     columnWidth={[1, 1, 2, 1]}
@@ -125,6 +126,7 @@ class App extends React.Component {
                             <div className='icon_demo_wrapper'>
                                 {icondemo}
                             </div>
+                            <List items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))}/>
                             {form}
                         </div>
                     </Layout.Center>

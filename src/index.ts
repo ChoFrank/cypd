@@ -25,5 +25,6 @@ export { default as RadioGroup } from './radio/radio';
 export { default as Notify } from './notify/notify';
 export { default as Href } from './href/href';
 export { default as Empty } from './empty/empty';
+export { default as List } from './list/list';
 export { Select, Option, Book, Page };
 export { DropdownInstance as Dropdown };

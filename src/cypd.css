@@ -1988,3 +1988,101 @@ html {
 .cypd-page.future {
     transform: translate(10px);
 }
+
+
+/* cypd-list */
+
+.cypd-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.cypd-list>.cypd-listitem {
+    position: relative;
+    min-height: 50px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: border-color 150ms;
+    flex-shrink: 0;
+}
+
+.cypd-list>.cypd-listitem:hover {
+    border-color: #00839E;
+}
+
+.cypd-list>.cypd-listitem>.readmore-check {
+    display: none;
+}
+
+.cypd-list>.cypd-listitem>.shorten {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 50px;
+    text-align: start;
+    padding-left: 10px;
+}
+
+.cypd-list>.cypd-listitem>.shorten>.label {
+    font-weight: bold;
+    justify-self: flex-start;
+    margin-right: auto;
+}
+
+.cypd-list>.cypd-listitem>.shorten>.decoration {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.cypd-list>.cypd-listitem>.shorten>.decoration>* {
+    margin-left: 10px;
+}
+
+.cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label {
+    width: 40px;
+    user-select: none;
+    cursor: pointer;
+    color: #33a8c0;
+    font-size: 12px;
+    transition: color 150ms;
+}
+
+.cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {
+    color: #47bbd3;
+}
+
+.cypd-list>.cypd-listitem>.readmore-check~.detail {
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    height: 0;
+    text-indent: 40px;
+    text-align: start;
+    word-wrap: break-word;
+    border-top: 1px solid rgba(128, 128, 128, 0.414);
+    opacity: 0;
+    padding: 0px;
+    transition: opacity 150ms, padding 150ms, max-height 150ms linear 150ms;
+}
+
+.cypd-list>.cypd-listitem>.readmore-check:checked~.detail {
+    height: auto;
+    max-height: 70px;
+    padding: 10px;
+    opacity: 1;
+    transition: max-height 150ms, padding 150ms, opacity 150ms linear 150ms;
+}
