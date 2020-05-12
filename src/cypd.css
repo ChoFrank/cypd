@@ -2010,12 +2010,36 @@ html {
     min-height: 50px;
     border-radius: 10px;
     border: 2px solid transparent;
-    transition: border-color 150ms;
+    opacity: 1;
     flex-shrink: 0;
+    transition: border-color 150ms, opacity 150ms;
+}
+
+.cypd-list.draggable>.cypd-listitem {
+    cursor: move;
+}
+
+.cypd-list.draggable>.cypd-listitem.dragged {
+    user-select: none;
+    opacity: 0.5;
 }
 
 .cypd-list>.cypd-listitem:hover {
     border-color: #00839E;
+}
+
+.cypd-list.dragging>.cypd-listitem,
+.cypd-list.dragging>.cypd-listitem:hover {
+    border-color: transparent;
+    border-radius: 0;
+}
+
+.cypd-list.dragging>.cypd-listitem.hover-top:hover {
+    border-top: 2px solid #00839E;
+}
+
+.cypd-list.dragging>.cypd-listitem.hover-bottom:hover {
+    border-bottom: 2px solid #00839E;
 }
 
 .cypd-list>.cypd-listitem>.readmore-check {

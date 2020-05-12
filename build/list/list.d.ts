@@ -1,23 +1,43 @@
 import React, { CSSProperties } from 'react';
+declare type CypdListDragManagement = {
+    onHover: (item_id?: number) => void;
+    onDragStart: (drag_order: number) => void;
+    onDrop: (drop_order: number) => void;
+    drag_order?: number;
+};
+declare global {
+    interface Window {
+        __cypd_list_drag_management: {
+            [s: string]: CypdListDragManagement;
+        };
+    }
+}
 declare type ListItemProperties = {
     label: React.ReactNode;
     description?: React.ReactNode;
     decoration?: React.ReactNode;
-    mouseEvent?: {
-        onMouseDown?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-        onMouseUp?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-        onMouseEnter?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-        onMouseLeave?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-        onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-    };
+    index?: string;
 };
 declare type ListProperties = {
     items: Array<ListItemProperties>;
     className?: string;
     style?: CSSProperties;
+    draggable?: boolean;
+    onAfterDrag?: (new_order: Array<string>) => void;
 };
 export default class List extends React.Component<ListProperties> {
+    state: {
+        item_flex_order: Array<number>;
+        animated_class: Array<string>;
+        dragging: boolean;
+    };
     private _id;
+    constructor(props: ListProperties);
+    componentDidMount(): void;
+    onDragStart: (drag_order: number) => void;
+    onHover: (item_id?: number | undefined) => void;
+    onDrop: (drop_order: number) => void;
+    releaseMouse: () => void;
     render(): JSX.Element;
 }
 export {};
