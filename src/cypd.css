@@ -2012,6 +2012,7 @@ html {
     border: 2px solid transparent;
     opacity: 1;
     flex-shrink: 0;
+    cursor: default;
     transition: border-color 150ms, opacity 150ms;
 }
 
