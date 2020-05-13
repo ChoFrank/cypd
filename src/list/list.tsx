@@ -143,11 +143,12 @@ export default class List extends React.Component<ListProperties> {
         window.__cypd_list_drag_management = (window.__cypd_list_drag_management) ? window.__cypd_list_drag_management : {};
     }
     static getDerivedStateFromProps(nextProps: ListProperties, prevState: ListState): Partial<ListState> | null { 
-        if (prevState.prevProps.draggable && !nextProps.draggable) {
-            return { item_flex_order: nextProps.items.map((_, idx) => idx), prevProps: { ...nextProps } };
-        } else {
-            return { prevProps: { ...nextProps } };
-        }
+        let new_state: Partial<ListState> = { prevProps: { ...nextProps } };
+        if (prevState.prevProps.draggable && !nextProps.draggable)
+            new_state.item_flex_order = nextProps.items.map((_, idx) => idx);
+        if (prevState.item_flex_order.length !== nextProps.items.length)
+            new_state.item_flex_order = nextProps.items.map((_, idx) => idx);
+        return new_state;
     }
     componentDidMount() {
         window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };

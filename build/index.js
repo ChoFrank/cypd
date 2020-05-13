@@ -35094,12 +35094,12 @@ var List = /** @class */ (function (_super) {
         return _this;
     }
     List.getDerivedStateFromProps = function (nextProps, prevState) {
-        if (prevState.prevProps.draggable && !nextProps.draggable) {
-            return { item_flex_order: nextProps.items.map(function (_, idx) { return idx; }), prevProps: __assign({}, nextProps) };
-        }
-        else {
-            return { prevProps: __assign({}, nextProps) };
-        }
+        var new_state = { prevProps: __assign({}, nextProps) };
+        if (prevState.prevProps.draggable && !nextProps.draggable)
+            new_state.item_flex_order = nextProps.items.map(function (_, idx) { return idx; });
+        if (prevState.item_flex_order.length !== nextProps.items.length)
+            new_state.item_flex_order = nextProps.items.map(function (_, idx) { return idx; });
+        return new_state;
     };
     List.prototype.componentDidMount = function () {
         window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };
