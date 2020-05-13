@@ -25,14 +25,17 @@ declare type ListProperties = {
     draggable?: boolean;
     onAfterDrag?: (new_order: Array<string>) => void;
 };
+declare type ListState = {
+    item_flex_order: Array<number>;
+    animated_class: Array<string>;
+    dragging: boolean;
+    prevProps: ListProperties;
+};
 export default class List extends React.Component<ListProperties> {
-    state: {
-        item_flex_order: Array<number>;
-        animated_class: Array<string>;
-        dragging: boolean;
-    };
+    state: ListState;
     private _id;
     constructor(props: ListProperties);
+    static getDerivedStateFromProps(nextProps: ListProperties, prevState: ListState): Partial<ListState> | null;
     componentDidMount(): void;
     onDragStart: (drag_order: number) => void;
     onHover: (item_id?: number | undefined) => void;

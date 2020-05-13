@@ -126,14 +126,28 @@ declare type ListProperties = {
     onAfterDrag?: (new_order: Array<string>) => void;
 }
 
+declare type ListState = { 
+    item_flex_order: Array<number>; 
+    animated_class: Array<string>;
+    dragging: boolean;
+    prevProps: ListProperties;
+}
+
 export default class List extends React.Component<ListProperties> {
-    state: { item_flex_order: Array<number>, animated_class: Array<string>, dragging: boolean };
+    state: ListState;
     private _id = Math.random().toString().slice(2);
     constructor(props: ListProperties) {
         super(props);
         const { items } = this.props;
-        this.state = { item_flex_order: items.map((_, idx) => idx), animated_class: items.map(_ => ''), dragging: false };
+        this.state = { item_flex_order: items.map((_, idx) => idx), animated_class: items.map(_ => ''), dragging: false, prevProps: { ...this.props } };
         window.__cypd_list_drag_management = (window.__cypd_list_drag_management) ? window.__cypd_list_drag_management : {};
+    }
+    static getDerivedStateFromProps(nextProps: ListProperties, prevState: ListState): Partial<ListState> | null { 
+        if (prevState.prevProps.draggable && !nextProps.draggable) {
+            return { item_flex_order: nextProps.items.map((_, idx) => idx), prevProps: { ...nextProps } };
+        } else {
+            return { prevProps: { ...nextProps } };
+        }
     }
     componentDidMount() {
         window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };

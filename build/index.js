@@ -35089,10 +35089,18 @@ var List = /** @class */ (function (_super) {
             _this.setState({ animated_class: _this.props.items.map(function (_) { return ''; }), dragging: false });
         };
         var items = _this.props.items;
-        _this.state = { item_flex_order: items.map(function (_, idx) { return idx; }), animated_class: items.map(function (_) { return ''; }), dragging: false };
+        _this.state = { item_flex_order: items.map(function (_, idx) { return idx; }), animated_class: items.map(function (_) { return ''; }), dragging: false, prevProps: __assign({}, _this.props) };
         window.__cypd_list_drag_management = (window.__cypd_list_drag_management) ? window.__cypd_list_drag_management : {};
         return _this;
     }
+    List.getDerivedStateFromProps = function (nextProps, prevState) {
+        if (prevState.prevProps.draggable && !nextProps.draggable) {
+            return { item_flex_order: nextProps.items.map(function (_, idx) { return idx; }), prevProps: __assign({}, nextProps) };
+        }
+        else {
+            return { prevProps: __assign({}, nextProps) };
+        }
+    };
     List.prototype.componentDidMount = function () {
         window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };
     };

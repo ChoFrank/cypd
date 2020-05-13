@@ -25,7 +25,7 @@ const icon_container = (type) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false, progress: 0 };
+        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false, progress: 0, list_draggable: false };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
         // this.testProgress = setInterval(() => {
@@ -126,7 +126,8 @@ class App extends React.Component {
                             <div className='icon_demo_wrapper'>
                                 {icondemo}
                             </div>
-                            <List draggable items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))}/>
+                            <SwitchButton defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }}/>
+                            <List draggable={this.state.list_draggable} items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))}/>
                             {form}
                         </div>
                     </Layout.Center>
