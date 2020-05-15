@@ -1942,6 +1942,10 @@ button.react-calendar__century-view__decades__decade {
     width: 24px;
 }
 
+.cypd-dropdown-item>.label {
+    white-space: nowrap;
+}
+
 html {
     visibility: visible;
 }

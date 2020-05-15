@@ -46,8 +46,14 @@ declare type DropdownProps = {
 export default class DropdownWrapper extends React.Component<DropdownProps> {
     checkbox?: HTMLInputElement | null
     forceClose = () => { if (this.checkbox) this.checkbox.checked = false; }
-    onMouseLeave = () => { document.addEventListener('click', this.forceClose, false); }
-    onMouseEnter = () => { document.removeEventListener('click', this.forceClose, false); }
+    onMouseLeave = () => { 
+        document.addEventListener('click', this.forceClose, false);
+        document.addEventListener('touchstart', this.forceClose, false);
+    }
+    onMouseEnter = () => {
+        document.removeEventListener('click', this.forceClose, false);
+        document.removeEventListener('touchstart', this.forceClose, false);
+    }
     render() {
         const { items, className, style } = this.props;
         let wrapperClass = 'cypd-dropdown';
