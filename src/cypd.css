@@ -282,7 +282,7 @@ body {
 }
 
 .cypd-table-container .table-wrapper tr.odd>td {
-    background-color: rgba(0, 132, 158, 0.074);
+    background-color: rgb(233, 243, 245);
 }
 
 .cypd-table-container .table-wrapper tr.even>td {
@@ -391,7 +391,7 @@ body {
 
 .cypd-table-container .table-wrapper tbody tr.even:last-child td:last-child,
 .cypd-table-container .table-wrapper tbody tr.even:last-child td:nth-child(1) {
-    border-color: rgba(0, 132, 158, 0.074);
+    border-color: rgb(233, 243, 245);
 }
 
 
