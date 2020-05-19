@@ -263,6 +263,7 @@ body {
 .cypd-table-container .table-wrapper table {
     border-collapse: separate;
     border-spacing: 0;
+    width: 100%;
 }
 
 .cypd-table-container .table-wrapper thead>tr {
@@ -279,20 +280,23 @@ body {
     height: 40px;
 }
 
-.cypd-table-container .table-wrapper tr.odd {
+.cypd-table-container .table-wrapper tr.odd>td {
     background-color: rgba(0, 132, 158, 0.074);
 }
 
+.cypd-table-container .table-wrapper th,
 .cypd-table-container .table-wrapper td {
     border: 0;
     padding-left: 10px;
     padding-right: 10px;
 }
 
+.cypd-table-container .table-wrapper th:nth-child(1),
 .cypd-table-container .table-wrapper td:nth-child(1) {
     padding-left: 20px;
 }
 
+.cypd-table-container .table-wrapper th:last-child,
 .cypd-table-container .table-wrapper td:last-child {
     padding-right: 20px;
 }
@@ -355,6 +359,14 @@ body {
 .cypd-table-container.transform .table-wrapper tr:nth-child(1) td:last-child,
 .cypd-table-container .table-wrapper thead>tr>th:last-child {
     border-top-right-radius: 5px;
+}
+
+.cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {
+    border-bottom-left-radius: 5px;
+}
+
+.cypd-table-container .table-wrapper tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 5px;
 }
 
 .cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {

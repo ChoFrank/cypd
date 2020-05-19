@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from '../button/button';
 import Input from '../input/input';
+import Empty from '../empty/empty';
 
 
 const DEFAULT_ROW_LIMIT = 10;
@@ -78,6 +79,7 @@ export default class Table2 extends React.Component<TableProps> {
         return (
             <div className={containerClass}><div className={wrapperClass} style={bodyStyle} ref={inst => { this.wrapperRef = inst; }}>
                 {table}
+                {(rows.length === 0)?<Empty />:undefined}
             </div></div>
         );
     }
