@@ -12,6 +12,17 @@ interface TableState {
     page: number;
     tempPage: string;
     mode: 'nextpage' | 'prevpage' | '';
+    responsive: 'no' | 'transform';
+}
+export default class Table2 extends React.Component<TableProps> {
+    state: TableState;
+    id: string;
+    wrapperRef: HTMLDivElement | null | undefined;
+    needWidth?: number;
+    constructor(props: TableProps);
+    componentDidMount(): void;
+    handleResize: () => void;
+    render(): JSX.Element;
 }
 /**
     <Table
@@ -36,11 +47,12 @@ interface TableState {
         rowLimit={10}
     />
  */
-export default class Table extends React.Component<TableProps> {
+export declare class Table extends React.Component<TableProps> {
     state: TableState;
     id: string;
     colElement: Array<HTMLDivElement | null | undefined>;
     colInitWidth: Array<number>;
+    wrapperRef: HTMLDivElement | null | undefined;
     constructor(props: TableProps);
     componentDidMount(): void;
     turnNext: () => void;

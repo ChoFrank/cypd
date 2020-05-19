@@ -19,8 +19,70 @@ type TableProps = {
 interface TableState {
     page: number,
     tempPage: string,
-    mode: 'nextpage' | 'prevpage' | ''
+    mode: 'nextpage' | 'prevpage' | '',
+    responsive: 'no' | 'transform',
 }
+
+export default class Table2 extends React.Component<TableProps> {
+    state: TableState;
+    id: string = Math.random().toString().slice(2);
+    wrapperRef: HTMLDivElement | null | undefined;
+    needWidth?: number;
+    constructor(props: TableProps) {
+        super(props);
+        this.state = { page: 1, tempPage: '1', mode: '', responsive: 'no' };
+        window.onresize = this.handleResize;
+    }
+    componentDidMount() { this.handleResize(); }
+    handleResize = () => {
+        if (this.wrapperRef) {
+            const rect = this.wrapperRef.getBoundingClientRect();
+            this.needWidth = (this.needWidth) ? this.needWidth : rect.width;
+            if (this.needWidth > window.innerWidth - 60)
+                this.setState({ responsive: 'transform' });
+            else 
+                this.setState({ responsive: 'no' });
+        }
+    }
+    render() {
+        const id = this.id;
+        const { responsive } =  this.state;
+        const { headers, rows, headerStyle, bodyStyle } = this.props;
+        let containerClass = 'cypd-table-container ' + responsive;
+        let wrapperClass = 'table-wrapper';
+        const thead = (
+            <thead style={headerStyle}><tr>
+                {headers.map((content, idx) => <th key={`table-${id}-th-${idx}`}>{content}</th>)}
+            </tr></thead>
+        );
+        let tbody = <tbody></tbody>;
+        if (responsive === 'no') {
+            tbody = (
+                <tbody>{rows.map((row, idx) => (
+                    <tr className={(idx%2)?'odd':'even'} key={`table-${id}-body-row-${idx}`}>{row.map((cell, cell_idx) => (
+                        <td key={`table-${id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td>
+                    ))}</tr>
+                ))}</tbody>
+            )
+        } else if (responsive === 'transform') {
+            tbody = (
+                <tbody>{rows.map((row, idx) => (headers.map((head, head_idx) => (
+                    <tr className={(idx%2)?'odd':'even'} key={`table-${id}-transform-row-${idx}-${head_idx}`}>
+                        <td><div>{head}</div></td>
+                        <td><div>{row[head_idx]}</div></td>
+                    </tr>
+                ))))}</tbody>
+            );
+        }
+        const table = <table>{thead}{tbody}</table>;
+        return (
+            <div className={containerClass}><div className={wrapperClass} style={bodyStyle} ref={inst => { this.wrapperRef = inst; }}>
+                {table}
+            </div></div>
+        );
+    }
+}
+
 /**
     <Table
         headers={['Full Name', 'Age', 'Job Title', 'Location']}
@@ -44,18 +106,25 @@ interface TableState {
         rowLimit={10}
     />
  */
-export default class Table extends React.Component<TableProps> {
+export class Table extends React.Component<TableProps> {
     state: TableState;
     id: string = Math.random().toString().slice(2);
     colElement: Array<HTMLDivElement | null | undefined> = [];
     colInitWidth: Array<number> = [];
+    wrapperRef: HTMLDivElement | null | undefined;
     constructor(props: TableProps) {
         super(props);
-        this.state = { page: 1, tempPage: '1', mode: '' };
+        this.state = { page: 1, tempPage: '1', mode: '', responsive: 'no' };
     }
     componentDidMount() { 
         if (typeof this.props.columnWidth === undefined)
             this.colElement.forEach((col, col_idx) => { this.colInitWidth[col_idx] = (col) ? col.getBoundingClientRect().width : 0; });
+        if (this.wrapperRef) {
+            const rect = this.wrapperRef.getBoundingClientRect();
+            if (rect.width >= (window.innerWidth - 40)) {
+                this.setState({ responsive: 'transform' });
+            }
+        }
     }
     turnNext = () => {
         this.setState( (prevState: TableState): Partial<TableState> => {
@@ -105,6 +174,7 @@ export default class Table extends React.Component<TableProps> {
         });
     }
     render() {
+        const { responsive } = this.state;
         const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, columnWidth } = this.props;
         var startRow: number = 0, endRow: number = 0;
         var col_width_sum = (columnWidth) ? 0 : 1; // calculate width should a column has
@@ -123,8 +193,10 @@ export default class Table extends React.Component<TableProps> {
             wrapperClass += ' show-empty';
         if (columnWidth)
             columnWidth.forEach(v => { col_width_sum += v; });
+        if (responsive === 'transform')
+            wrapperClass += ' transform';
         const layout = (
-            <div className={wrapperClass}>
+            <div className={wrapperClass} ref={inst => { this.wrapperRef = inst; }}>
                 {headers.map((title, title_idx) => {
                     const key_prefix = `table_${this.id}_col`;
                     var guess_width = (this.colInitWidth[title_idx]) ? `${this.colInitWidth[title_idx]}px`: 'auto';
@@ -140,7 +212,7 @@ export default class Table extends React.Component<TableProps> {
                         {rows.map((row, row_idx) => {
                             if (pagination && (row_idx < startRow || row_idx >= endRow))
                                 return null;
-                            return <div className='cell' key={`${key_prefix}_${title_idx}_${row_idx}`}>{row[title_idx]}</div>;
+                            return <div className={'cell ' + ((row_idx%2)?'odd':'even')} key={`${key_prefix}_${title_idx}_${row_idx}`}>{row[title_idx]}</div>;
                         }).filter(cell => cell)}
                     </div>;
                 })}
