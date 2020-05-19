@@ -74,7 +74,7 @@ class App extends React.Component {
             ['David', 'Male', 'david.chang@example.com', '1987/5/31'],
             ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1'],
             ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9'],
-            ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
+            // ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
         ];
         const table = <Table
             headers={['Name', 'Gender', 'Email', 'Birthday']}
