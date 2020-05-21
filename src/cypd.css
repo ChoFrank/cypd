@@ -244,6 +244,9 @@ body {
 @media(max-width: 500px) {
     .cypd-layout .column.left {
         width: 100%;
+        transition: max-height var(--default-transition-duration) !important;
+    }
+    .cypd-layout .column.left.visible {
         height: auto;
     }
     .cypd-layout .column.left .column-wrapper {

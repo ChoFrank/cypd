@@ -119,7 +119,30 @@ class App extends React.Component {
                     <Layout.Sider 
                         visible={this.state.visible}
                         onCollapse={(visible) => { this.setState({ visible }); }}
-                    >s1a2dc3asd</Layout.Sider>
+                    >
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                        <div>s1a2dc3asd</div>
+                    </Layout.Sider>
                     <Layout.Center>
                         <div className='app_dashboard_container'>
                             {table}
