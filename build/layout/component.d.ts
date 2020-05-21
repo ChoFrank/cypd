@@ -28,8 +28,11 @@ declare class Sider extends React.Component<SiderProps> {
     state: {
         visible: boolean;
     };
-    container?: HTMLDivElement | null;
+    toggler: HTMLInputElement | undefined | null;
     onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    triggerToggler: () => void;
+    onMouseLeave: () => void;
+    onMouseEnter: () => void;
     render(): JSX.Element;
 }
 declare class Center extends React.Component {

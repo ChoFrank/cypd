@@ -49,11 +49,20 @@ class Navigation extends React.Component {
 
 class Sider extends React.Component<SiderProps> {
     state = { visible: false };
-    container?: HTMLDivElement | null;
+    toggler: HTMLInputElement | undefined | null;
     onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (this.props.onCollapse)
             this.props.onCollapse(e.target.checked);
         this.setState({ visible: e.target.checked });
+    }
+    triggerToggler = () => { 
+        if (this.toggler && this.state.visible) this.toggler.click();
+    }
+    onMouseLeave = () => {
+        document.addEventListener('click', this.triggerToggler, false);
+    }
+    onMouseEnter = () => {
+        document.removeEventListener('click', this.triggerToggler, false);
     }
     render() {
         const { visible } = this.state;
@@ -66,9 +75,9 @@ class Sider extends React.Component<SiderProps> {
         if (visible)
             wrapperClass += ' visible';
         return (
-            <div className={wrapperClass} ref={(e) => { this.container = e; }}>
+            <div className={wrapperClass} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
                 <label className='toggle'>
-                    <input onChange={this.onToggle} type='checkbox'/>
+                    <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
                     <span/><span/><span/>
                 </label>
                 <div className='column-wrapper'>{this.props.children}</div>

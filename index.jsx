@@ -119,7 +119,7 @@ class App extends React.Component {
                     <Layout.Sider 
                         visible={this.state.visible}
                         onCollapse={(visible) => { this.setState({ visible }); }}
-                    ></Layout.Sider>
+                    >s1a2dc3asd</Layout.Sider>
                     <Layout.Center>
                         <div className='app_dashboard_container'>
                             {table}
