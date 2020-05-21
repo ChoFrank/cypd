@@ -266,6 +266,7 @@ body {
 
 .cypd-layout .column.middle {
     overflow: hidden;
+    flex-grow: 1;
 }
 
 
