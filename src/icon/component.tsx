@@ -157,12 +157,11 @@ const upload = (props: SVGProps) => ([
 ]);
 
 const clock = (props: SVGProps) => ([
-    <circle cx='8' cy='8' r='8' style={{ stroke: props.color }} strokeWidth={2} key={`1_${props.svgId}`} fill='none' />,
-    <path d='M8 0 8 16' style={{ stroke: props.color }} strokeWidth={1} key={`2_${props.svgId}`} fill='none' />,
-    // <path d='M12 1.0718 4 14.9282' style={{ stroke: props.color }} strokeWidth={1} key={`3_${props.svgId}`} fill='none' />,
-    <path d='M0 8 16 8' style={{ stroke: props.color }} strokeWidth={1} key={`4_${props.svgId}`} fill='none' />,
-    <circle cx='8' cy='8' r='5' style={{ stroke: props.color }} strokeWidth={0} key={`5_${props.svgId}`} fill='white' />,
-    <path d='M8 0 8 8 11 11' style={{ stroke: props.color }} strokeWidth={2} key={`6_${props.svgId}`} fill='none' />,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`1_${props.svgId}`} d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z"/>,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`2_${props.svgId}`} d="M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z"/>,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`3_${props.svgId}`} d="M409.6,221.867h-17.067c-9.426,0-17.067,7.641-17.067,17.067S383.108,256,392.533,256H409.6 c9.426,0,17.067-7.641,17.067-17.067S419.026,221.867,409.6,221.867z"/>,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`4_${props.svgId}`} d="M238.933,375.467c-9.426,0-17.067,7.641-17.067,17.067V409.6c0,9.426,7.641,17.067,17.067,17.067S256,419.026,256,409.6 v-17.067C256,383.108,248.359,375.467,238.933,375.467z"/>,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`5_${props.svgId}`} d="M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z"/>,
 ]);
 
 const ledGreen = (props: SVGProps) => ([
