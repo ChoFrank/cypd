@@ -110,15 +110,15 @@ class App extends React.Component {
             </Form.Item>
         </div>;
         return (
-            <div className='app'>
+            <Layout.Layout>
                 <Layout.Header />
                 <Layout.Navigation />
                 <Layout.Body>
                     <Spin type='linear' visible={false}/>
-                    {/* <Layout.Sider 
+                    <Layout.Sider 
                         visible={this.state.visible}
                         onCollapse={(visible) => { this.setState({ visible }); }}
-                    ></Layout.Sider> */}
+                    ></Layout.Sider>
                     <Layout.Center>
                         <div className='app_dashboard_container'>
                             {table}
@@ -139,7 +139,7 @@ class App extends React.Component {
                 >
                     This is a CYPD demostration.
                 </Modal>
-            </div>
+            </Layout.Layout>
         );
     }
 }

@@ -15,6 +15,9 @@ interface SiderProps {
     visible?: boolean;
     onCollapse?: (visible: boolean) => void;
 }
+declare class Layout extends React.Component {
+    render(): JSX.Element;
+}
 declare class Header extends React.Component {
     render(): JSX.Element;
 }
@@ -22,7 +25,11 @@ declare class Navigation extends React.Component {
     render(): JSX.Element;
 }
 declare class Sider extends React.Component<SiderProps> {
+    state: {
+        visible: boolean;
+    };
     container?: HTMLDivElement | null;
+    onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
     render(): JSX.Element;
 }
 declare class Center extends React.Component {
@@ -35,6 +42,7 @@ declare class Footer extends React.Component {
     render(): JSX.Element;
 }
 declare const _default: {
+    Layout: typeof Layout;
     Header: typeof Header;
     Navigation: typeof Navigation;
     Sider: typeof Sider;
