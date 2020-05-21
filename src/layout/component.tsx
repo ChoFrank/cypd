@@ -50,10 +50,13 @@ class Navigation extends React.Component {
 class Sider extends React.Component<SiderProps> {
     state = { visible: false };
     container?: HTMLDivElement | null;
-    onToggle = (e: React.ChangeEvent<HTMLInputElement>) => { this.setState({ visible: e.target.checked }); }
+    onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (this.props.onCollapse)
+            this.props.onCollapse(e.target.checked);
+        this.setState({ visible: e.target.checked });
+    }
     render() {
         const { visible } = this.state;
-        const { onCollapse } = this.props;
         const direction = this.props.direction ? this.props.direction : 'left';
         let wrapperClass = `column ${direction}`;
         if (direction === 'left')
@@ -64,10 +67,10 @@ class Sider extends React.Component<SiderProps> {
             wrapperClass += ' visible';
         return (
             <div className={wrapperClass} ref={(e) => { this.container = e; }}>
-                {onCollapse ? <label className='toggle'>
+                <label className='toggle'>
                     <input onChange={this.onToggle} type='checkbox'/>
                     <span/><span/><span/>
-                </label> : undefined}
+                </label>
                 <div className='column-wrapper'>{this.props.children}</div>
             </div>
         );

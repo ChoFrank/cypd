@@ -3068,13 +3068,16 @@ var Sider = /** @class */ (function (_super) {
     function Sider() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = { visible: false };
-        _this.onToggle = function (e) { _this.setState({ visible: e.target.checked }); };
+        _this.onToggle = function (e) {
+            if (_this.props.onCollapse)
+                _this.props.onCollapse(e.target.checked);
+            _this.setState({ visible: e.target.checked });
+        };
         return _this;
     }
     Sider.prototype.render = function () {
         var _this = this;
         var visible = this.state.visible;
-        var onCollapse = this.props.onCollapse;
         var direction = this.props.direction ? this.props.direction : 'left';
         var wrapperClass = "column " + direction;
         if (direction === 'left')
@@ -3084,11 +3087,11 @@ var Sider = /** @class */ (function (_super) {
         if (visible)
             wrapperClass += ' visible';
         return (react.createElement("div", { className: wrapperClass, ref: function (e) { _this.container = e; } },
-            onCollapse ? react.createElement("label", { className: 'toggle' },
+            react.createElement("label", { className: 'toggle' },
                 react.createElement("input", { onChange: this.onToggle, type: 'checkbox' }),
                 react.createElement("span", null),
                 react.createElement("span", null),
-                react.createElement("span", null)) : undefined,
+                react.createElement("span", null)),
             react.createElement("div", { className: 'column-wrapper' }, this.props.children)));
     };
     return Sider;
