@@ -151,6 +151,7 @@ body {
 .cypd-layout .content {
     height: var(--default-content-height);
     overflow-y: auto;
+    max-width: 100%;
 }
 
 
@@ -176,7 +177,14 @@ body {
     top: 0;
     width: var(--default-leftsider-width);
     height: 100%;
-    z-index: 11;
+    max-height: 0;
+    z-index: 21;
+    transition: max-height 0s linear var(--default-transition-duration);
+}
+
+.cypd-layout .column.left.visible {
+    max-height: 100%;
+    transition: max-height 0s;
 }
 
 .cypd-layout .column.left .toggle {
@@ -240,7 +248,7 @@ body {
 }
 
 .cypd-layout .column.middle {
-    flex: 0 0;
+    overflow: hidden;
 }
 
 
