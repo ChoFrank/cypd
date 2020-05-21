@@ -2644,7 +2644,7 @@ var scene = function (props) { return ([
     react.createElement("path", { transform: "scale(0.033) translate(-35 40)", d: "m149.332031 106.667969c0 23.5625-19.101562 42.664062-42.664062 42.664062-23.566407 0-42.667969-19.101562-42.667969-42.664062 0-23.566407 19.101562-42.667969 42.667969-42.667969 23.5625 0 42.664062 19.101562 42.664062 42.667969zm0 0", fill: props.color, key: "1_" + props.svgId }),
     react.createElement("path", { transform: "scale(0.033) translate(-35 40)", d: "m448 0h-384c-35.285156 0-64 28.714844-64 64v256c0 1.195312.296875 2.324219.363281 3.519531-.300781 2.558594-.171875 5.140625.765625 7.574219 5.269532 29.996094 31.382813 52.90625 62.871094 52.90625h384c35.285156 0 64-28.714844 64-64v-256c0-35.285156-28.714844-64-64-64zm-384 42.667969h384c11.753906 0 21.332031 9.578125 21.332031 21.332031v169.367188l-112.210937-112.214844c-14.59375-14.59375-38.335938-14.59375-52.90625 0l-101.546875 101.546875-26.882813-26.878907c-14.589844-14.59375-38.335937-14.59375-52.90625 0l-80.210937 80.210938v-212.03125c0-11.753906 9.578125-21.332031 21.332031-21.332031zm0 0", fill: props.color, key: "2_" + props.svgId })
 ]); };
-var Senario = function (props) { return ([
+var scenario = function (props) { return ([
     react.createElement("defs", { key: "1_" + props.svgId },
         react.createElement("radialGradient", { id: 'test1', cx: '0.5', cy: '0.5', r: '0.5' },
             react.createElement("stop", { offset: "0%", stopColor: "#FFFFFF" }),
@@ -2691,16 +2691,16 @@ var TYPE_ICON_DRAW_INDEX = {
     'led-gray': { className: 'fc-led-gray', generator: ledGray },
     'cyp-device': { className: 'document', generator: cypDevice },
     'cyplogo': { className: 'cyplogo', generator: cyplogo },
-    'senario': { className: 'senario', generator: Senario },
+    'scenario': { className: 'scenario', generator: scenario },
     'scissors': { className: 'scissors', generator: scissors },
     'cancel': { className: 'cancel', generator: cancel },
     'import': { className: 'import', generator: _import },
     'download': { className: 'download', generator: download },
-    'dashboard': { className: 'dashboard', generator: dashboard },
-    'device': { className: 'device', generator: device },
+    'dashboard': { className: 'fc-dashboard', generator: dashboard },
+    'device': { className: 'fc-device', generator: device },
     'update': { className: 'update', generator: update },
     'upload': { className: 'upload', generator: upload },
-    'setting': { className: 'setting', generator: setting },
+    'setting': { className: 'fc-setting', generator: setting },
     'scene': { className: 'scene', generator: scene },
 };
 var Icon = /** @class */ (function (_super) {

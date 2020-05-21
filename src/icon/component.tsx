@@ -274,7 +274,7 @@ const scene = (props: SVGProps) => ([
 ]);
 
 
-const Senario = (props: SVGProps) => ([
+const scenario = (props: SVGProps) => ([
     <defs key={`1_${props.svgId}`}>
         <radialGradient id='test1' cx='0.5' cy='0.5' r='0.5'>
             <stop offset="0%" stopColor="#FFFFFF" />
@@ -331,16 +331,16 @@ const TYPE_ICON_DRAW_INDEX: {
     'led-gray': { className: 'fc-led-gray', generator: ledGray },
     'cyp-device': { className: 'document', generator: cypDevice },
     'cyplogo': { className: 'cyplogo', generator: cyplogo },
-    'senario': { className: 'senario', generator: Senario },
+    'scenario': { className: 'scenario', generator: scenario },
     'scissors': { className: 'scissors', generator: scissors },
     'cancel': { className: 'cancel', generator: cancel },
     'import': { className: 'import', generator: _import },
     'download': { className: 'download', generator: download },
-    'dashboard': { className: 'dashboard', generator: dashboard },
-    'device': { className: 'device', generator: device },
+    'dashboard': { className: 'fc-dashboard', generator: dashboard },
+    'device': { className: 'fc-device', generator: device },
     'update': { className: 'update', generator: update },
     'upload': { className: 'upload', generator: upload },
-    'setting': { className: 'setting', generator: setting },
+    'setting': { className: 'fc-setting', generator: setting },
     'scene': { className: 'scene', generator: scene },
 }
 
