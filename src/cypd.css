@@ -139,6 +139,7 @@ body {
     height: var(--default-header-height);
     width: 100%;
     padding: 10px;
+    flex-shrink: 0;
 }
 
 .cypd-layout>.navigation {
@@ -149,6 +150,7 @@ body {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 
 .cypd-layout>.content {
@@ -192,7 +194,6 @@ body {
     width: 65px;
     flex-shrink: 0;
     cursor: pointer;
-    padding-top: 5px;
     user-select: none;
 }
 
