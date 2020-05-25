@@ -17,6 +17,8 @@
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    height: 100%;
+    overflow: auto;
 }
 
 .empty_demo_wrapper {
@@ -27,7 +29,7 @@
 .icon_demo_wrapper {
     display: flex;
     flex-direction: row;
-    max-width: 960px;
+    max-width: 840px;
     flex-wrap: wrap;
 }
 

@@ -157,23 +157,26 @@ const upload = (props: SVGProps) => ([
 ]);
 
 const clock = (props: SVGProps) => ([
-    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`1_${props.svgId}`} d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z"/>,
-    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`2_${props.svgId}`} d="M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z"/>,
-    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`3_${props.svgId}`} d="M409.6,221.867h-17.067c-9.426,0-17.067,7.641-17.067,17.067S383.108,256,392.533,256H409.6 c9.426,0,17.067-7.641,17.067-17.067S419.026,221.867,409.6,221.867z"/>,
-    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`4_${props.svgId}`} d="M238.933,375.467c-9.426,0-17.067,7.641-17.067,17.067V409.6c0,9.426,7.641,17.067,17.067,17.067S256,419.026,256,409.6 v-17.067C256,383.108,248.359,375.467,238.933,375.467z"/>,
-    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`5_${props.svgId}`} d="M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z"/>,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`1_${props.svgId}`} d="M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z" />,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`2_${props.svgId}`} d="M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z" />,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`3_${props.svgId}`} d="M409.6,221.867h-17.067c-9.426,0-17.067,7.641-17.067,17.067S383.108,256,392.533,256H409.6 c9.426,0,17.067-7.641,17.067-17.067S419.026,221.867,409.6,221.867z" />,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`4_${props.svgId}`} d="M238.933,375.467c-9.426,0-17.067,7.641-17.067,17.067V409.6c0,9.426,7.641,17.067,17.067,17.067S256,419.026,256,409.6 v-17.067C256,383.108,248.359,375.467,238.933,375.467z" />,
+    <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`5_${props.svgId}`} d="M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z" />,
 ]);
 
 const ledGreen = (props: SVGProps) => ([
     <radialGradient id='fc-led-green-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-        <stop offset="20%" stopColor="#abff7e" />
-        <stop offset="60%" stopColor="#84ff43" />
-        <stop offset="90%" stopColor='#57dd10' />
+        <stop offset="20%" stopColor="#e0f57b" />
+        <stop offset="30%" stopColor="#d8f157" />
+        <stop offset="90%" stopColor='#b8d330' />
+        {/* <stop offset="20%" stopColor="#abff7e" />
+        <stop offset="45%" stopColor="#84ff43" />
+        <stop offset="90%" stopColor='#57dd10' /> */}
     </radialGradient>,
     <filter id='led-green-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-        <feFlood floodColor='#abff7e' floodOpacity='1' result='offsetColor' />
+        <feFlood floodColor='#e0f57b' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-green-blur)' />,
@@ -182,18 +185,18 @@ const ledGreen = (props: SVGProps) => ([
 
 const ledYellow = (props: SVGProps) => ([
     <radialGradient id='fc-led-yellow-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-        <stop offset="20%" stopColor="#fbee8e">
+        <stop offset="20%" stopColor="#fad97f">
             {/* <animate dur='1.5s' attributeName='stop-color' values='#fbee8e; #e9d22a; #fbee8e' repeatCount='indefinite'/> */}
         </stop>
-        <stop offset="45%" stopColor="#fefc56">
+        <stop offset="40%" stopColor="#f8ce5c">
             {/* <animate dur='1.5s' attributeName='stop-color' values='#fefc56; #e9d22a; #fefc56' repeatCount='indefinite'/> */}
         </stop>
-        <stop offset="90%" stopColor='#e9d22a' />
+        <stop offset="90%" stopColor='#ffc629' />
     </radialGradient>,
     <filter id='led-yellow-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-        <feFlood floodColor='#fbee8e' floodOpacity='1' result='offsetColor' />
+        <feFlood floodColor='#fad97f' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-yellow-blur)' />,
@@ -202,18 +205,18 @@ const ledYellow = (props: SVGProps) => ([
 
 const ledRed = (props: SVGProps) => ([
     <radialGradient id='fc-led-red-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-        <stop offset="20%" stopColor="#ff8383">
+        <stop offset="20%" stopColor="#f1719a">
             {/* <animate dur='0.75s' attributeName='stop-color' values='#ff8383; #e01919; #ff8383' repeatCount='indefinite'/> */}
         </stop>
-        <stop offset="60%" stopColor="#ff3f3f">
+        <stop offset="40%" stopColor="#ff6193">
             {/* <animate dur='0.75s' attributeName='stop-color' values='#ff3f3f; #e01919; #ff3f3f' repeatCount='indefinite'/> */}
         </stop>
-        <stop offset="90%" stopColor='#e01919' />
+        <stop offset="90%" stopColor='#b92454' />
     </radialGradient>,
     <filter id='led-red-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-        <feFlood floodColor='#ff8383' floodOpacity='1' result='offsetColor' />
+        <feFlood floodColor='#f1719a' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-red-blur)' />,
@@ -264,12 +267,18 @@ const update = (props: SVGProps) => ([
 ]);
 
 const setting = (props: SVGProps) => ([
-    <path id="ic_settings_24px" d="M19.911,13.288a8.012,8.012,0,0,0,.072-1.007,8.012,8.012,0,0,0-.072-1.007l2.169-1.7a.519.519,0,0,0,.123-.658L20.148,5.362a.517.517,0,0,0-.627-.226l-2.56,1.028a7.511,7.511,0,0,0-1.737-1.007l-.391-2.724a.5.5,0,0,0-.5-.432H10.217a.5.5,0,0,0-.5.432L9.322,5.156A7.9,7.9,0,0,0,7.585,6.164L5.025,5.136a.5.5,0,0,0-.627.226L2.342,8.919a.507.507,0,0,0,.123.658l2.169,1.7a8.153,8.153,0,0,0-.072,1.007,8.153,8.153,0,0,0,.072,1.007l-2.169,1.7a.519.519,0,0,0-.123.658L4.4,19.2a.517.517,0,0,0,.627.226L7.585,18.4A7.511,7.511,0,0,0,9.322,19.4l.391,2.724a.5.5,0,0,0,.5.432h4.112a.5.5,0,0,0,.5-.432l.391-2.724A7.9,7.9,0,0,0,16.961,18.4l2.56,1.028a.5.5,0,0,0,.627-.226L22.2,15.642a.519.519,0,0,0-.123-.658Zm-7.638,2.591a3.6,3.6,0,1,1,3.6-3.6A3.6,3.6,0,0,1,12.273,15.879Z" transform="translate(-4 -3) scale(0.88)" fill={props.color} key={`1_${props.svgId}`} stroke='transparent'/>
+    <path id="ic_settings_24px" d="M19.911,13.288a8.012,8.012,0,0,0,.072-1.007,8.012,8.012,0,0,0-.072-1.007l2.169-1.7a.519.519,0,0,0,.123-.658L20.148,5.362a.517.517,0,0,0-.627-.226l-2.56,1.028a7.511,7.511,0,0,0-1.737-1.007l-.391-2.724a.5.5,0,0,0-.5-.432H10.217a.5.5,0,0,0-.5.432L9.322,5.156A7.9,7.9,0,0,0,7.585,6.164L5.025,5.136a.5.5,0,0,0-.627.226L2.342,8.919a.507.507,0,0,0,.123.658l2.169,1.7a8.153,8.153,0,0,0-.072,1.007,8.153,8.153,0,0,0,.072,1.007l-2.169,1.7a.519.519,0,0,0-.123.658L4.4,19.2a.517.517,0,0,0,.627.226L7.585,18.4A7.511,7.511,0,0,0,9.322,19.4l.391,2.724a.5.5,0,0,0,.5.432h4.112a.5.5,0,0,0,.5-.432l.391-2.724A7.9,7.9,0,0,0,16.961,18.4l2.56,1.028a.5.5,0,0,0,.627-.226L22.2,15.642a.519.519,0,0,0-.123-.658Zm-7.638,2.591a3.6,3.6,0,1,1,3.6-3.6A3.6,3.6,0,0,1,12.273,15.879Z" transform="translate(-4 -3) scale(0.88)" fill={props.color} key={`1_${props.svgId}`} stroke='transparent' />
 ]);
 
 const scene = (props: SVGProps) => ([
-    <path transform="scale(0.033) translate(-35 40)" d="m149.332031 106.667969c0 23.5625-19.101562 42.664062-42.664062 42.664062-23.566407 0-42.667969-19.101562-42.667969-42.664062 0-23.566407 19.101562-42.667969 42.667969-42.667969 23.5625 0 42.664062 19.101562 42.664062 42.667969zm0 0" fill={props.color} key={`1_${props.svgId}`} />, 
+    <path transform="scale(0.033) translate(-35 40)" d="m149.332031 106.667969c0 23.5625-19.101562 42.664062-42.664062 42.664062-23.566407 0-42.667969-19.101562-42.667969-42.664062 0-23.566407 19.101562-42.667969 42.667969-42.667969 23.5625 0 42.664062 19.101562 42.664062 42.667969zm0 0" fill={props.color} key={`1_${props.svgId}`} />,
     <path transform="scale(0.033) translate(-35 40)" d="m448 0h-384c-35.285156 0-64 28.714844-64 64v256c0 1.195312.296875 2.324219.363281 3.519531-.300781 2.558594-.171875 5.140625.765625 7.574219 5.269532 29.996094 31.382813 52.90625 62.871094 52.90625h384c35.285156 0 64-28.714844 64-64v-256c0-35.285156-28.714844-64-64-64zm-384 42.667969h384c11.753906 0 21.332031 9.578125 21.332031 21.332031v169.367188l-112.210937-112.214844c-14.59375-14.59375-38.335938-14.59375-52.90625 0l-101.546875 101.546875-26.882813-26.878907c-14.589844-14.59375-38.335937-14.59375-52.90625 0l-80.210937 80.210938v-212.03125c0-11.753906 9.578125-21.332031 21.332031-21.332031zm0 0" fill={props.color} key={`2_${props.svgId}`} />
+]);
+
+const volumn = (props: SVGProps) => ([
+    <path d="M206.896,0.874c-3.958-1.688-8.458-0.885-11.563,2.042L85.479,106.665H10.667C4.771,106.665,0,111.436,0,117.332v149.333 c0,5.896,4.771,10.667,10.667,10.667h74.813l109.854,103.75c2.021,1.917,4.667,2.917,7.333,2.917 c1.417,0,2.854-0.281,4.229-0.875c3.896-1.677,6.438-5.531,6.438-9.792V10.665C213.333,6.405,210.792,2.551,206.896,0.874z" transform="scale(0.038) translate(40 0)" fill={props.color} key={`1_${props.svgId}`} />,
+    <path d="M262.452,132.214l-15.199,15.199c-3.505,3.505-4.44,9.168-1.513,13.168c6.449,8.819,10.26,19.682,10.26,31.418 c0,11.736-3.811,22.599-10.26,31.417c-2.927,4-1.992,9.664,1.513,13.169l15.199,15.198c4.655,4.656,12.259,3.939,16.28-1.276 c12.495-16.208,19.935-36.505,19.935-58.508c0-22.004-7.44-42.301-19.935-58.509 C274.711,128.275,267.107,127.557,262.452,132.214z" transform="scale(0.038) translate(40 0)" fill={props.color} key={`2_${props.svgId}`} />,
+    <path d="M338.423,71.905c-4.01-4.53-11.151-4.512-15.428-0.234l-15.092,15.092c-4.043,4.042-4.005,10.395-0.27,14.721 c20.991,24.307,33.701,55.954,33.701,90.514c0,34.56-12.71,66.207-33.701,90.516c-3.736,4.326-3.772,10.677,0.27,14.719 l15.092,15.092c4.277,4.279,11.418,4.296,15.43-0.233C366.771,280.085,384,238.016,384,191.999 C384,145.981,366.771,103.912,338.423,71.905z" transform="scale(0.038) translate(40 0)" fill={props.color} key={`3_${props.svgId}`} />,
 ]);
 
 
@@ -341,6 +350,7 @@ const TYPE_ICON_DRAW_INDEX: {
     'upload': { className: 'upload', generator: upload },
     'setting': { className: 'fc-setting', generator: setting },
     'scene': { className: 'scene', generator: scene },
+    'volumn': { className: 'volumn', generator: volumn },
 }
 
 export default class Icon extends React.Component<IconProps> {

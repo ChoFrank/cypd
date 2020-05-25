@@ -60,9 +60,11 @@ class Sider extends React.Component<SiderProps> {
     }
     onMouseLeave = () => {
         document.addEventListener('click', this.triggerToggler, false);
+        document.addEventListener('touchstart', this.triggerToggler, false);
     }
     onMouseEnter = () => {
         document.removeEventListener('click', this.triggerToggler, false);
+        document.removeEventListener('touchstart', this.triggerToggler, false);
     }
     render() {
         const { visible } = this.state;
