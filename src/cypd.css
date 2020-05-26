@@ -2181,10 +2181,10 @@ html {
 
 .cypd-list.draggable>.cypd-listitem {
     cursor: move;
+    user-select: none;
 }
 
 .cypd-list.draggable>.cypd-listitem.dragged {
-    user-select: none;
     opacity: 0.5;
 }
 
