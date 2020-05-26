@@ -3344,6 +3344,7 @@ var Tooltip = /** @class */ (function (_super) {
         };
         return _this;
     }
+    Tooltip.prototype.componentWillUnmount = function () { this.delete(); };
     Tooltip.prototype.render = function () {
         var _this = this;
         var wrapperClass = 'cypd-tooltip-wrapper';

@@ -10,6 +10,7 @@ type TooltipProps = {
 export default class Tooltip extends React.Component<TooltipProps> {
     tooltipId: string = Math.random().toString().slice(2);
     wrapperRef?: HTMLDivElement | null;
+    componentWillUnmount() { this.delete(); }
     create = () => {
         var container = document.getElementById(this.tooltipId);
         if (!container && this.wrapperRef) {

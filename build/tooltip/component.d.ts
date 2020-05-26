@@ -7,6 +7,7 @@ declare type TooltipProps = {
 export default class Tooltip extends React.Component<TooltipProps> {
     tooltipId: string;
     wrapperRef?: HTMLDivElement | null;
+    componentWillUnmount(): void;
     create: () => void;
     delete: () => void;
     render(): JSX.Element;
