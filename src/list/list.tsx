@@ -153,6 +153,10 @@ export default class List extends React.Component<ListProperties> {
     componentDidMount() {
         window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };
     }
+    componentWillUnmount() { 
+        delete window.__cypd_list_drag_management[this._id];
+        this.setState = () => {}; 
+    }
     onDragStart = (drag_order: number) => {
         const { draggable } = this.props;
         if (draggable) {

@@ -35245,6 +35245,10 @@ var List = /** @class */ (function (_super) {
     List.prototype.componentDidMount = function () {
         window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };
     };
+    List.prototype.componentWillUnmount = function () {
+        delete window.__cypd_list_drag_management[this._id];
+        this.setState = function () { };
+    };
     List.prototype.render = function () {
         var _this = this;
         var _a = this.state, item_flex_order = _a.item_flex_order, animated_class = _a.animated_class, dragging = _a.dragging;

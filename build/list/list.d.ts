@@ -37,6 +37,7 @@ export default class List extends React.Component<ListProperties> {
     constructor(props: ListProperties);
     static getDerivedStateFromProps(nextProps: ListProperties, prevState: ListState): Partial<ListState> | null;
     componentDidMount(): void;
+    componentWillUnmount(): void;
     onDragStart: (drag_order: number) => void;
     onHover: (item_id?: number | undefined) => void;
     onDrop: (drop_order: number) => void;
