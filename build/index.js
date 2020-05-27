@@ -35182,7 +35182,7 @@ var List = /** @class */ (function (_super) {
         _this._id = Math.random().toString().slice(2);
         _this.onDragStart = function (drag_order) {
             var draggable = _this.props.draggable;
-            if (draggable) {
+            if (draggable && window.__cypd_list_drag_management[_this._id]) {
                 var _a = _this.state, item_flex_order = _a.item_flex_order, animated_class = _a.animated_class;
                 var drag_idx = item_flex_order.indexOf(drag_order);
                 window.__cypd_list_drag_management[_this._id].drag_order = drag_order;
@@ -35227,7 +35227,8 @@ var List = /** @class */ (function (_super) {
             }
         };
         _this.releaseMouse = function () {
-            window.__cypd_list_drag_management[_this._id].drag_order = undefined;
+            if (window.__cypd_list_drag_management[_this._id])
+                window.__cypd_list_drag_management[_this._id].drag_order = undefined;
             _this.setState({ animated_class: _this.props.items.map(function (_) { return ''; }), dragging: false });
         };
         var items = _this.props.items;

@@ -159,7 +159,7 @@ export default class List extends React.Component<ListProperties> {
     }
     onDragStart = (drag_order: number) => {
         const { draggable } = this.props;
-        if (draggable) {
+        if (draggable && window.__cypd_list_drag_management[this._id]) {
             const { item_flex_order, animated_class } = this.state;
             const drag_idx = item_flex_order.indexOf(drag_order);
             window.__cypd_list_drag_management[this._id].drag_order = drag_order;
@@ -204,7 +204,8 @@ export default class List extends React.Component<ListProperties> {
         }
     }
     releaseMouse = () => {
-        window.__cypd_list_drag_management[this._id].drag_order = undefined;
+        if (window.__cypd_list_drag_management[this._id])
+            window.__cypd_list_drag_management[this._id].drag_order = undefined;
         this.setState({ animated_class: this.props.items.map(_ => ''), dragging: false });
     }
     render() {
