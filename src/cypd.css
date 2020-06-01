@@ -2184,7 +2184,6 @@ html {
     opacity: 0;
     width: 0;
     overflow: hidden;
-    transition: width 150ms linear 150ms;
 }
 
 .cypd-page.history {
