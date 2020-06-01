@@ -48,7 +48,7 @@ class App extends React.Component {
             'setting', 'scene', 'volumn', 'idea', 
         ];
         const sampleOptions = [
-            <Option value='1' key={Math.random()}>John</Option>,
+            <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
             <Option value='2' key={Math.random()}>Mary</Option>,
             <Option value='3' key={Math.random()}>David</Option>,
             <Option value='4' key={Math.random()}>Chris</Option>,

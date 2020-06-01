@@ -166,9 +166,9 @@ const clock = (props: SVGProps) => ([
 
 const ledGreen = (props: SVGProps) => ([
     <radialGradient id='fc-led-green-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-        <stop offset="20%" stopColor="#e0f57b" />
-        <stop offset="30%" stopColor="#d8f157" />
-        <stop offset="90%" stopColor='#b8d330' />
+        <stop offset="20%" stopColor="#82ff61" />
+        <stop offset="50%" stopColor="#75ff50" />
+        <stop offset="90%" stopColor='#5bff2f' />
         {/* <stop offset="20%" stopColor="#abff7e" />
         <stop offset="45%" stopColor="#84ff43" />
         <stop offset="90%" stopColor='#57dd10' /> */}
@@ -176,7 +176,7 @@ const ledGreen = (props: SVGProps) => ([
     <filter id='led-green-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-        <feFlood floodColor='#e0f57b' floodOpacity='1' result='offsetColor' />
+        <feFlood floodColor='#82ff61' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-green-blur)' />,

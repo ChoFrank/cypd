@@ -173,7 +173,7 @@ class DatePicker extends React.Component<Partial<DatePickerProps>> {
                 if (extendDir === 'extend-bottom')
                     container.style['top'] = `${window.pageYOffset + rect.bottom}px`;
                 else
-                    container.style['top'] = `${window.pageYOffset + rect.top - 290}px`;
+                    container.style['top'] = `${window.pageYOffset + rect.top - 260}px`;
                 container.addEventListener('mouseenter', this.onMouseEnter, false);
                 container.addEventListener('mouseleave', this.onMouseLeave, false);
                 document.body.appendChild(container);
