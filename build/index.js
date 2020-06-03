@@ -29597,8 +29597,10 @@ var Sider = /** @class */ (function (_super) {
             react.createElement("div", null),
             react.createElement("div", null),
             react.createElement("div", null)));
-        var container = document.getElementById('__cypd_sider_toggler_container');
-        container = document.createElement('div');
+        var old_container = document.getElementById('__cypd_sider_toggler_container');
+        if (old_container)
+            document.removeChild(old_container);
+        var container = document.createElement('div');
         container.id = '__cypd_sider_toggler_container';
         container.style['position'] = 'fixed';
         container.style['top'] = '0';
