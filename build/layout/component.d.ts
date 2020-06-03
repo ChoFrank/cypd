@@ -30,11 +30,14 @@ declare class Sider extends React.Component<SiderProps> {
         visible: boolean;
     };
     toggler: HTMLInputElement | undefined | null;
+    mouseInToggleArea: boolean;
     componentDidMount(): void;
     onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    triggerToggler: () => void;
+    closeSider: () => void;
     onMouseLeave: () => void;
     onMouseEnter: () => void;
+    onMouseLeaveToggle: () => void;
+    onMouseEnterToggle: () => void;
     render(): JSX.Element;
 }
 declare class Center extends React.Component {

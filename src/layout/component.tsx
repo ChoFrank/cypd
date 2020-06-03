@@ -52,9 +52,10 @@ class Navigation extends React.Component {
 class Sider extends React.Component<SiderProps> {
     state = { visible: false };
     toggler: HTMLInputElement | undefined | null;
+    mouseInToggleArea: boolean = false;
     componentDidMount() {
         const toggler = (
-            <label className='toggle' onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
+            <label className='toggle' onMouseLeave={this.onMouseLeaveToggle} onMouseEnter={this.onMouseEnterToggle}>
                 <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
                 <div/><div/><div/>
             </label>
@@ -76,16 +77,22 @@ class Sider extends React.Component<SiderProps> {
             this.props.onCollapse(e.target.checked);
         this.setState({ visible: e.target.checked });
     }
-    triggerToggler = () => { 
-        if (this.toggler && this.state.visible) this.toggler.click();
+    closeSider = () => { 
+        if (this.toggler && this.state.visible && !this.mouseInToggleArea) this.toggler.click();
     }
     onMouseLeave = () => {
-        document.addEventListener('click', this.triggerToggler, false);
-        document.addEventListener('touchstart', this.triggerToggler, false);
+        document.addEventListener('click', this.closeSider, false);
+        document.addEventListener('touchstart', this.closeSider, false);
     }
     onMouseEnter = () => {
-        document.removeEventListener('click', this.triggerToggler, false);
-        document.removeEventListener('touchstart', this.triggerToggler, false);
+        document.removeEventListener('click', this.closeSider, false);
+        document.removeEventListener('touchstart', this.closeSider, false);
+    }
+    onMouseLeaveToggle = () => {
+        this.mouseInToggleArea = false;
+    }
+    onMouseEnterToggle = () => {
+        this.mouseInToggleArea = true;
     }
     render() {
         const { visible } = this.state;

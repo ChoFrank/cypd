@@ -29571,28 +29571,35 @@ var Sider = /** @class */ (function (_super) {
     function Sider() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = { visible: false };
+        _this.mouseInToggleArea = false;
         _this.onToggle = function (e) {
             if (_this.props.onCollapse)
                 _this.props.onCollapse(e.target.checked);
             _this.setState({ visible: e.target.checked });
         };
-        _this.triggerToggler = function () {
-            if (_this.toggler && _this.state.visible)
+        _this.closeSider = function () {
+            if (_this.toggler && _this.state.visible && !_this.mouseInToggleArea)
                 _this.toggler.click();
         };
         _this.onMouseLeave = function () {
-            document.addEventListener('click', _this.triggerToggler, false);
-            document.addEventListener('touchstart', _this.triggerToggler, false);
+            document.addEventListener('click', _this.closeSider, false);
+            document.addEventListener('touchstart', _this.closeSider, false);
         };
         _this.onMouseEnter = function () {
-            document.removeEventListener('click', _this.triggerToggler, false);
-            document.removeEventListener('touchstart', _this.triggerToggler, false);
+            document.removeEventListener('click', _this.closeSider, false);
+            document.removeEventListener('touchstart', _this.closeSider, false);
+        };
+        _this.onMouseLeaveToggle = function () {
+            _this.mouseInToggleArea = false;
+        };
+        _this.onMouseEnterToggle = function () {
+            _this.mouseInToggleArea = true;
         };
         return _this;
     }
     Sider.prototype.componentDidMount = function () {
         var _this = this;
-        var toggler = (react.createElement("label", { className: 'toggle', onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter },
+        var toggler = (react.createElement("label", { className: 'toggle', onMouseLeave: this.onMouseLeaveToggle, onMouseEnter: this.onMouseEnterToggle },
             react.createElement("input", { ref: function (inst) { _this.toggler = inst; }, onChange: this.onToggle, type: 'checkbox' }),
             react.createElement("div", null),
             react.createElement("div", null),
