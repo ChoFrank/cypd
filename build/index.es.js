@@ -29815,7 +29815,7 @@ var Tooltip = /** @class */ (function (_super) {
             if (container) {
                 container.classList.add('hide');
                 setTimeout(function () { if (container)
-                    document.body.removeChild(container); }, 150);
+                    container.remove(); }, 150);
             }
         };
         return _this;

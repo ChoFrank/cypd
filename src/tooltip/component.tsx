@@ -42,7 +42,7 @@ export default class Tooltip extends React.Component<TooltipProps> {
         const container = document.getElementById(this.tooltipId);
         if (container) {
             container.classList.add('hide');
-            setTimeout(() => { if (container) document.body.removeChild(container); }, 150);
+            setTimeout(() => { if (container) container.remove(); }, 150);
         }
     }
     render() {
