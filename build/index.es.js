@@ -29615,7 +29615,7 @@ var Sider = /** @class */ (function (_super) {
             window.layout.rightSideStatus = (visible) ? 'extend' : 'collapsed';
         if (visible)
             wrapperClass += ' visible';
-        return (react.createElement("div", { className: wrapperClass },
+        return (react.createElement("div", { className: wrapperClass, onMouseLeave: this.onMouseLeave, onMouseEnter: this.onMouseEnter },
             react.createElement("div", { className: 'column-wrapper' }, this.props.children)));
     };
     return Sider;

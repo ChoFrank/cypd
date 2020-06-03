@@ -98,7 +98,7 @@ class Sider extends React.Component<SiderProps> {
         if (visible)
             wrapperClass += ' visible';
         return (
-            <div className={wrapperClass}>
+            <div className={wrapperClass} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
                 <div className='column-wrapper'>{this.props.children}</div>
             </div>
         );
