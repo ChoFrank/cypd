@@ -13,6 +13,7 @@ declare global {
 interface SiderProps {
     direction?: 'left' | 'right';
     visible?: boolean;
+    customizedToggler?: React.ReactNode;
     onCollapse?: (visible: boolean) => void;
 }
 declare class Layout extends React.Component {
@@ -29,6 +30,7 @@ declare class Sider extends React.Component<SiderProps> {
         visible: boolean;
     };
     toggler: HTMLInputElement | undefined | null;
+    componentDidMount(): void;
     onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
     triggerToggler: () => void;
     onMouseLeave: () => void;

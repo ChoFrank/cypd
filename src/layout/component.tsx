@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 
 type CenterExtendType = 'extend-left' | 'extend-right' | 'extend-both' | 'collapsed';
@@ -18,6 +19,7 @@ window.layout = {};
 interface SiderProps {
     direction?: 'left' | 'right',
     visible?: boolean,
+    customizedToggler?: React.ReactNode,
     onCollapse?: (visible: boolean) => void,
 }
 
@@ -50,6 +52,23 @@ class Navigation extends React.Component {
 class Sider extends React.Component<SiderProps> {
     state = { visible: false };
     toggler: HTMLInputElement | undefined | null;
+    componentDidMount() {
+        const toggler = (
+            <label className='toggle' onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
+                <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
+                <div/><div/><div/>
+            </label>
+        );
+        let container = document.getElementById('__cypd_sider_toggler_container');
+        container = document.createElement('div');
+        container.id = '__cypd_sider_toggler_container';
+        container.style['position'] = 'fixed';
+        container.style['top'] = '0';
+        container.style['left'] = '0';
+        document.body.appendChild(container);
+        if (container)
+            ReactDOM.render(toggler, container);
+    }
     onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (this.props.onCollapse)
             this.props.onCollapse(e.target.checked);
@@ -77,11 +96,7 @@ class Sider extends React.Component<SiderProps> {
         if (visible)
             wrapperClass += ' visible';
         return (
-            <div className={wrapperClass} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
-                <label className='toggle'>
-                    <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
-                    <div/><div/><div/>
-                </label>
+            <div className={wrapperClass}>
                 <div className='column-wrapper'>{this.props.children}</div>
             </div>
         );

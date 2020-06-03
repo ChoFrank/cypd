@@ -186,7 +186,7 @@ body {
     width: var(--default-leftsider-width);
 }
 
-.cypd-layout .column.left .toggle {
+#__cypd_sider_toggler_container .toggle {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -200,7 +200,7 @@ body {
     user-select: none;
 }
 
-.cypd-layout .column.left .toggle>div {
+#__cypd_sider_toggler_container .toggle>div {
     position: relative;
     width: 29px;
     height: 3px;
@@ -211,11 +211,11 @@ body {
     transition: opacity var(--default-transition-duration), transform var(--default-transition-duration);
 }
 
-.cypd-layout .column.left .toggle>div:last-child {
+#__cypd_sider_toggler_container .toggle>div:last-child {
     margin-bottom: 0;
 }
 
-.cypd-layout .column.left .toggle>input {
+#__cypd_sider_toggler_container .toggle>input {
     height: 0;
     width: 0;
     visibility: hidden;
@@ -225,21 +225,21 @@ body {
 
 /* .cypd-layout .column.left:hover .toggle>span:nth-child(2), */
 
-.cypd-layout .column.left .toggle>input:checked~div:nth-child(2) {
+#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(2) {
     transform: rotate(45deg) translate(5px, 7px);
 }
 
 
 /* .cypd-layout .column.left:hover .toggle>span:nth-child(3), */
 
-.cypd-layout .column.left .toggle>input:checked~div:nth-child(3) {
+#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(3) {
     opacity: 0;
 }
 
 
 /* .cypd-layout .column.left:hover .toggle>span:nth-child(4), */
 
-.cypd-layout .column.left .toggle>input:checked~div:nth-child(4) {
+#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(4) {
     transform: rotate(-45deg) translate(4px, -6px);
 }
 
