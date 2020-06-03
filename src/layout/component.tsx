@@ -80,7 +80,7 @@ class Sider extends React.Component<SiderProps> {
             <div className={wrapperClass} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
                 <label className='toggle'>
                     <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
-                    <span/><span/><span/>
+                    <div/><div/><div/>
                 </label>
                 <div className='column-wrapper'>{this.props.children}</div>
             </div>
