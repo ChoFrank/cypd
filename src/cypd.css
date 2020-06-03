@@ -255,7 +255,13 @@ body {
         position: absolute;
         max-width: var(--default-leftsider-width);
         width: var(--default-leftsider-width);
+        overflow: visible;
+        z-index: 0;
+        transition: z-index 0s linear var(--default-transition-duration);
+    }
+    .cypd-layout .column.left.visible {
         z-index: 32;
+        transition: z-index 0s linear 0s;
     }
     .cypd-layout .column.left .column-wrapper {
         transform: translateX(-100%);
