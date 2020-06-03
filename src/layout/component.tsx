@@ -59,9 +59,9 @@ class Sider extends React.Component<SiderProps> {
                 <div/><div/><div/>
             </label>
         );
-        let old_container = document.getElementById('__cypd_sider_toggler_container');
+        const old_container = document.getElementById('__cypd_sider_toggler_container');
         if (old_container)
-            document.removeChild(old_container);
+            old_container.remove();
         const container = document.createElement('div');
         container.id = '__cypd_sider_toggler_container';
         container.style['position'] = 'fixed';
