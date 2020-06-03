@@ -47,8 +47,10 @@ export default class Table2 extends React.Component<TableProps> {
             const parent = this.wrapperRef.parentElement;
             const rect = this.wrapperRef.getBoundingClientRect();
             this.needWidth = (this.needWidth) ? this.needWidth : rect.width;
+            console.log('this.needWidth :>> ', this.needWidth);
             if (parent) {
                 const parent_rect = parent.getBoundingClientRect();
+                console.log('parent_rect.width :>> ', parent_rect.width);
                 if (parent && this.needWidth > parent_rect.width - 60) {
                     this.setState({ responsive: 'transform' });
                 } else {
