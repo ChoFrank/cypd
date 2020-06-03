@@ -207,6 +207,7 @@ body {
     margin-bottom: 5px;
     background: var(--default-cyp-blue-active);
     border-radius: 3px;
+    flex-shrink: 0;
     transition: opacity var(--default-transition-duration), transform var(--default-transition-duration);
 }
 
