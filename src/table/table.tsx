@@ -32,17 +32,29 @@ export default class Table2 extends React.Component<TableProps> {
     constructor(props: TableProps) {
         super(props);
         this.state = { page: 1, tempPage: '1', mode: '', responsive: 'no' };
-        window.onresize = this.handleResize;
     }
-    componentDidMount() { this.handleResize(); }
+    componentDidMount() { 
+        window.onresize = this.handleResize;
+        document.addEventListener('transitionend', this.handleResize, false);
+        this.handleResize(); 
+    }
+    componentWillUnmount() {
+        window.onresize = null;
+        document.removeEventListener('transitionend', this.handleResize, false);
+    }
     handleResize = () => {
         if (this.wrapperRef) {
+            const parent = this.wrapperRef.parentElement;
             const rect = this.wrapperRef.getBoundingClientRect();
             this.needWidth = (this.needWidth) ? this.needWidth : rect.width;
-            if (this.needWidth > window.innerWidth - 60)
-                this.setState({ responsive: 'transform' });
-            else 
-                this.setState({ responsive: 'no' });
+            if (parent) {
+                const parent_rect = parent.getBoundingClientRect();
+                if (parent && this.needWidth > parent_rect.width - 60) {
+                    this.setState({ responsive: 'transform' });
+                } else {
+                    this.setState({ responsive: 'no' });
+                }
+            }
         }
     }
     render() {
@@ -77,7 +89,7 @@ export default class Table2 extends React.Component<TableProps> {
         }
         const table = <table>{thead}{tbody}</table>;
         return (
-            <div className={containerClass}><div className={wrapperClass} style={bodyStyle} ref={inst => { this.wrapperRef = inst; }}>
+            <div className={containerClass} ref={inst => { this.wrapperRef = inst; }}><div className={wrapperClass} style={bodyStyle}>
                 {table}
                 {(rows.length === 0)?<Empty />:undefined}
             </div></div>
