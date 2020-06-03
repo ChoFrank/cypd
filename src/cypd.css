@@ -207,7 +207,8 @@ body {
     width: 29px;
     height: 3px;
     margin-bottom: 5px;
-    background: var(--default-cyp-blue-active);
+    background: black;
+    /* background: var(--default-cyp-blue-active); */
     border-radius: 3px;
     transition: opacity var(--default-transition-duration), transform var(--default-transition-duration);
 }
@@ -258,7 +259,6 @@ body {
         width: var(--default-leftsider-width);
         z-index: 32;
     }
-    .cypd-layout .column.left.visible {}
     .cypd-layout .column.left .column-wrapper {
         transform: translateX(-100%);
         transition: transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);
