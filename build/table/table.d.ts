@@ -21,6 +21,7 @@ export default class Table2 extends React.Component<TableProps> {
     needWidth?: number;
     constructor(props: TableProps);
     componentDidMount(): void;
+    componentWillUnmount(): void;
     handleResize: () => void;
     render(): JSX.Element;
 }
