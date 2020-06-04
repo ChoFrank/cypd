@@ -305,6 +305,7 @@ body {
 .cypd-table-container .table-wrapper thead>tr>th {
     background-color: var(--default-cyp-blue-active);
     border: 1px solid var(--default-cyp-blue-active);
+    white-space: nowrap;
 }
 
 .cypd-table-container .table-wrapper tbody>tr {
@@ -344,6 +345,7 @@ body {
     justify-content: center;
     align-items: center;
     color: rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
     transition: color var(--default-transition-duration);
 }
 
