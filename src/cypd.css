@@ -292,7 +292,7 @@ body {
 .cypd-table-container .table-wrapper table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .cypd-table-container .table-wrapper thead>tr {
