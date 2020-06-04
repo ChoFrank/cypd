@@ -52,7 +52,8 @@ export default class Table2 extends React.Component<TableProps> {
                 const parent_rect = parent.getBoundingClientRect();
                 console.log('parent_rect.width :>> ', parent_rect.width);
                 if (parent && this.needWidth > parent_rect.width - 60) {
-                    this.setState({ responsive: 'transform' });
+                    global.setTimeout(() => { this.setState({ responsive: 'transform' }); }, 10000); 
+                    // this.setState({ responsive: 'transform' });
                 } else {
                     this.setState({ responsive: 'no' });
                 }
@@ -75,8 +76,8 @@ export default class Table2 extends React.Component<TableProps> {
             tbody = (
                 <tbody>{rows.map((row, idx) => (
                     <tr className={(idx%2)?'odd':'even'} key={`table-${id}-body-row-${idx}`}>{row.map((cell, cell_idx) => (
-                        <td key={`table-${id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td>
-                    ))}</tr>
+                        (cell_idx < headers.length) ? <td key={`table-${id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td> : undefined
+                    )).filter(cell => (!!cell))}</tr>
                 ))}</tbody>
             )
         } else if (responsive === 'transform') {

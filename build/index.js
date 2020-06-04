@@ -2900,7 +2900,8 @@ var Table2 = /** @class */ (function (_super) {
                     var parent_rect = parent_1.getBoundingClientRect();
                     console.log('parent_rect.width :>> ', parent_rect.width);
                     if (parent_1 && _this.needWidth > parent_rect.width - 60) {
-                        _this.setState({ responsive: 'transform' });
+                        global.setTimeout(function () { _this.setState({ responsive: 'transform' }); }, 10000);
+                        // this.setState({ responsive: 'transform' });
                     }
                     else {
                         _this.setState({ responsive: 'no' });
@@ -2931,8 +2932,8 @@ var Table2 = /** @class */ (function (_super) {
             react.createElement("tr", null, headers.map(function (content, idx) { return react.createElement("th", { key: "table-" + id + "-th-" + idx }, content); }))));
         var tbody = react.createElement("tbody", null);
         if (responsive === 'no') {
-            tbody = (react.createElement("tbody", null, rows.map(function (row, idx) { return (react.createElement("tr", { className: (idx % 2) ? 'odd' : 'even', key: "table-" + id + "-body-row-" + idx }, row.map(function (cell, cell_idx) { return (react.createElement("td", { key: "table-" + id + "-body-cell-" + idx + "-" + cell_idx },
-                react.createElement("div", null, cell))); }))); })));
+            tbody = (react.createElement("tbody", null, rows.map(function (row, idx) { return (react.createElement("tr", { className: (idx % 2) ? 'odd' : 'even', key: "table-" + id + "-body-row-" + idx }, row.map(function (cell, cell_idx) { return ((cell_idx < headers.length) ? react.createElement("td", { key: "table-" + id + "-body-cell-" + idx + "-" + cell_idx },
+                react.createElement("div", null, cell)) : undefined); }).filter(function (cell) { return (!!cell); }))); })));
         }
         else if (responsive === 'transform') {
             tbody = (react.createElement("tbody", null, rows.map(function (row, idx) { return (headers.map(function (head, head_idx) { return (react.createElement("tr", { className: (idx % 2) ? 'odd' : 'even', key: "table-" + id + "-transform-row-" + idx + "-" + head_idx },
