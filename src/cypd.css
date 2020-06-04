@@ -282,11 +282,13 @@ body {
 
 .cypd-table-container {
     max-width: 100%;
+    width: min-content;
 }
 
 .cypd-table-container .table-wrapper {
     border-radius: 5px;
     box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.3);
+    width: min-content;
 }
 
 .cypd-table-container .table-wrapper table {
