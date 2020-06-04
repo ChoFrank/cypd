@@ -65,25 +65,25 @@ class App extends React.Component {
             [<Icon type='loading' />, <Slider max={1} min={0} step={0.1}/>, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
             ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress}/>, <DateTime.DatePicker />, <DateTime.TimePicker />],
         ];
-        // const table = <Table
-        //     headers={['1', '2', '3', '4']}
-        //     rows={rows}
-        //     pagination={true}
-        //     rowLimit={6}
-        // />;
+        const table = <Table
+            headers={['1', '2', '3', '4']}
+            rows={rows}
+            pagination={true}
+            rowLimit={6}
+        />;
         const email_example = [
             ['David', 'Male', 'david.chang@example.com', '1987/5/31'],
             ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1'],
             ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9'],
             // ['Mary', 'Female', 'mary.su@example.com', '1983/10/22'],
         ];
-        const table = <Table
-            headers={['Name', 'Gender', 'Email', 'Birthday']}
-            rows={email_example}
-            pagination={true}
-            rowLimit={10}
-            columnWidth={[1, 1, 2, 1]}
-        ></Table>;
+        // const table = <Table
+        //     headers={['Name', 'Gender', 'Email', 'Birthday']}
+        //     rows={email_example}
+        //     pagination={true}
+        //     rowLimit={10}
+        //     columnWidth={[1, 1, 2, 1]}
+        // ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <div style={{ width: '300px' }}>
             <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>}>
