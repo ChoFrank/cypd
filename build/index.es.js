@@ -2891,10 +2891,8 @@ var Table2 = /** @class */ (function (_super) {
                 var parent_1 = _this.wrapperRef.parentElement;
                 var rect = _this.wrapperRef.getBoundingClientRect();
                 _this.needWidth = (_this.needWidth) ? _this.needWidth : rect.width;
-                console.log('this.needWidth :>> ', _this.needWidth);
                 if (parent_1) {
                     var parent_rect = parent_1.getBoundingClientRect();
-                    console.log('parent_rect.width :>> ', parent_rect.width);
                     if (parent_1 && _this.needWidth > parent_rect.width - 60) {
                         // global.setTimeout(() => { this.setState({ responsive: 'transform' }); }, 10000); 
                         _this.setState({ responsive: 'transform' });
