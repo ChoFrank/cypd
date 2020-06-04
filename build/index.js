@@ -30041,7 +30041,6 @@ var Item = /** @class */ (function (_super) {
             labelClass += " no-colon";
         if (this.props.error && this.props.error.length > 0)
             wrapperClass += ' error';
-        console.log('this.props.error :>> ', this.props.error);
         return (react.createElement("div", { className: wrapperClass, style: this.props.style },
             (this.props.label) ? react.createElement("div", { className: labelClass }, this.props.label) : undefined,
             react.Children.map(this.props.children, function (child) {

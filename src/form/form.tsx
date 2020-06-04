@@ -23,7 +23,6 @@ class Item extends React.Component<Partial<ItemProps>> {
             labelClass += ` no-colon`;
         if (this.props.error && this.props.error.length > 0)
             wrapperClass += ' error';
-        console.log('this.props.error :>> ', this.props.error);
         return (
             <div className={wrapperClass} style={this.props.style}>
                 {(this.props.label)?<div className={labelClass}>{this.props.label}</div>:undefined}
