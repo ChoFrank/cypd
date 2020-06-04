@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 declare type CenterExtendType = 'extend-left' | 'extend-right' | 'extend-both' | 'collapsed';
 declare type SideExtendType = 'extend' | 'collapsed';
 declare global {
@@ -14,6 +14,10 @@ interface SiderProps {
     direction?: 'left' | 'right';
     visible?: boolean;
     customizedToggler?: React.ReactNode;
+    className?: string;
+    style?: CSSProperties;
+    toggleClass?: string;
+    toggleStyle?: CSSProperties;
     onCollapse?: (visible: boolean) => void;
 }
 declare class Layout extends React.Component {
@@ -30,14 +34,10 @@ declare class Sider extends React.Component<SiderProps> {
         visible: boolean;
     };
     toggler: HTMLInputElement | undefined | null;
-    mouseInToggleArea: boolean;
     componentDidMount(): void;
+    componentWillUnmount(): void;
     onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
     closeSider: () => void;
-    onMouseLeave: () => void;
-    onMouseEnter: () => void;
-    onMouseLeaveToggle: () => void;
-    onMouseEnterToggle: () => void;
     render(): JSX.Element;
 }
 declare class Center extends React.Component {

@@ -86,7 +86,7 @@ class App extends React.Component {
         // ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <div style={{ width: '300px' }}>
-            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>}>
+            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>} error='Name cannot be null'>
                 <Input 
                     value={this.state.name} 
                     type='password'

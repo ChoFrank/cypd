@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import ReactDOM from 'react-dom';
 
 
@@ -20,6 +20,10 @@ interface SiderProps {
     direction?: 'left' | 'right',
     visible?: boolean,
     customizedToggler?: React.ReactNode,
+    className?: string,
+    style?: CSSProperties,
+    toggleClass?: string,
+    toggleStyle?: CSSProperties,
     onCollapse?: (visible: boolean) => void,
 }
 
@@ -52,10 +56,11 @@ class Navigation extends React.Component {
 class Sider extends React.Component<SiderProps> {
     state = { visible: false };
     toggler: HTMLInputElement | undefined | null;
-    mouseInToggleArea: boolean = false;
+    // mouseInToggleArea: boolean = false;
     componentDidMount() {
+        const { toggleClass, toggleStyle } = this.props;
         const toggler = (
-            <label className='toggle' onMouseLeave={this.onMouseLeaveToggle} onMouseEnter={this.onMouseEnterToggle}>
+            <label className={`toggle${toggleClass?` ${toggleClass}`:''}`} style={toggleStyle}>
                 <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
                 <div/><div/><div/>
             </label>
@@ -71,6 +76,15 @@ class Sider extends React.Component<SiderProps> {
         document.body.appendChild(container);
         if (container)
             ReactDOM.render(toggler, container);
+
+        const mask = document.getElementById('collapse-mask');
+        if (mask)
+            mask.onclick = this.closeSider;
+    }
+    componentWillUnmount() {
+        const mask = document.getElementById('collapse-mask');
+        if (mask)
+            mask.onclick = null;
     }
     onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (this.props.onCollapse)
@@ -78,26 +92,13 @@ class Sider extends React.Component<SiderProps> {
         this.setState({ visible: e.target.checked });
     }
     closeSider = () => { 
-        if (this.toggler && this.state.visible && !this.mouseInToggleArea) this.toggler.click();
-    }
-    onMouseLeave = () => {
-        document.addEventListener('click', this.closeSider, false);
-        document.addEventListener('touchstart', this.closeSider, false);
-    }
-    onMouseEnter = () => {
-        document.removeEventListener('click', this.closeSider, false);
-        document.removeEventListener('touchstart', this.closeSider, false);
-    }
-    onMouseLeaveToggle = () => {
-        this.mouseInToggleArea = false;
-    }
-    onMouseEnterToggle = () => {
-        this.mouseInToggleArea = true;
+        if (this.toggler && this.state.visible) this.toggler.click();
     }
     render() {
+        const { className, style } = this.props;
         const { visible } = this.state;
         const direction = this.props.direction ? this.props.direction : 'left';
-        let wrapperClass = `column ${direction}`;
+        let wrapperClass = `column ${direction}${className?` ${className}`:''}`;
         if (direction === 'left')
             window.layout.leftSideStatus = (visible) ? 'extend' : 'collapsed';
         else
@@ -105,7 +106,7 @@ class Sider extends React.Component<SiderProps> {
         if (visible)
             wrapperClass += ' visible';
         return (
-            <div className={wrapperClass} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
+            <div className={wrapperClass} style={style}>
                 <div className='column-wrapper'>{this.props.children}</div>
             </div>
         );
@@ -127,6 +128,7 @@ class Body extends React.Component {
         return (
             <div className='content'>
                 {this.props.children}
+                <div id='collapse-mask'></div>
             </div>
         );
     }

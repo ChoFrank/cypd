@@ -186,6 +186,14 @@ body {
     width: var(--default-leftsider-width);
 }
 
+.cypd-layout .column.left.visible~#collapse-mask {
+    position: absolute;
+    width: calc(100% - var(--default-leftsider-width));
+    height: 100%;
+    left: var(--default-leftsider-width);
+    z-index: 30;
+}
+
 #__cypd_sider_toggler_container .toggle {
     position: fixed;
     display: flex;
@@ -1645,10 +1653,10 @@ svg.cypd-icon:not([class*='fc-']) * {
 }
 
 .cypd-formitem-wrapper>.help {
-    color: var(--default-red-active-color);
+    color: var(--default-red-color);
     position: absolute;
     right: 0;
-    bottom: -13px;
+    bottom: -16px;
 }
 
 .cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {
