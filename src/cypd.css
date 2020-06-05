@@ -1508,11 +1508,6 @@ svg.cypd-icon.solid-right * {
 
 /* cypd tooltip */
 
-
-/* .cypd-tooltip-wrapper {
-    position: relative;
-} */
-
 .cypd-tooltip {
     position: absolute;
     max-width: var(--default-tooltip-width);
