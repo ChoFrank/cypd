@@ -29609,8 +29609,11 @@ var Sider = /** @class */ (function (_super) {
     };
     Sider.prototype.componentWillUnmount = function () {
         var mask = document.getElementById('collapse-mask');
+        var container = document.getElementById('__cypd_sider_toggler_container');
         if (mask)
             mask.onclick = null;
+        if (container)
+            container.remove();
     };
     Sider.prototype.render = function () {
         var _a = this.props, className = _a.className, style = _a.style;

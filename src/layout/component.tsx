@@ -83,8 +83,11 @@ class Sider extends React.Component<SiderProps> {
     }
     componentWillUnmount() {
         const mask = document.getElementById('collapse-mask');
+        const container = document.getElementById('__cypd_sider_toggler_container');
         if (mask)
             mask.onclick = null;
+        if (container)
+            container.remove();
     }
     onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (this.props.onCollapse)
