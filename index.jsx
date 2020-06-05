@@ -41,7 +41,7 @@ class App extends React.Component {
     triggerErrorDemo() { Notify({ title: 'Error', context: 'This is a Error notification demo.', type: 'error' }); }
     render() {
         const icons = [
-            'loading', 'write', 'arrow-left', 'arrow-right', 'left', 'right', 'zoom-out', 'zoom-in',
+            'loading', 'write', 'arrow-left', 'arrow-right', 'solid-left', 'solid-right', 'left', 'right', 'zoom-out', 'zoom-in',
             'minus', 'plus', 'circle-plus', 'square-plus', 'square-minus', 'trashcan', 'edit',
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'cyp-device',
             'cyplogo', 'scissors', 'cancel', 'import', 'download', 'upload', 'dashboard', 'device', 'update',
@@ -69,7 +69,7 @@ class App extends React.Component {
             headers={['1', '2', '3', '4']}
             rows={rows}
             pagination={true}
-            rowLimit={6}
+            rowLimit={5}
         />;
         const email_example = [
             ['David', 'Male', 'david.chang@example.com', '1987/5/31'],

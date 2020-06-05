@@ -48,6 +48,10 @@ const right = (props: SVGProps) => ([
     <polyline points='2,8 14,8' style={{ stroke: props.color }} strokeWidth={3} key={`2_${props.svgId}`} fill='none' />,
 ]);
 
+const solidRight = (props: SVGProps) => ([
+    <path d='M4 4 12 8 4 12Z' style={{ stroke: props.color, fill: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
+]);
+
 const arrowLeft = (props: SVGProps) => ([
     <polyline points='10,0 2,8 10,16' style={{ stroke: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
 ]);
@@ -56,6 +60,11 @@ const left = (props: SVGProps) => ([
     <polyline points='8,2 2,8 8,14' style={{ stroke: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
     <polyline points='2,8 14,8' style={{ stroke: props.color }} strokeWidth={3} key={`2_${props.svgId}`} fill='none' />,
 ]);
+
+const solidLeft = (props: SVGProps) => ([
+    <path d='M12 4 4 8 12 12Z' style={{ stroke: props.color, fill: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
+]);
+
 
 const zoomOut = (props: SVGProps) => ([
     <circle cx="7" cy="7" r="7" fill="none" style={{ stroke: props.color }} strokeWidth={2} key={`1_${props.svgId}`} />,
@@ -330,6 +339,8 @@ const TYPE_ICON_DRAW_INDEX: {
     'write': { className: 'write', generator: write },
     'arrow-left': { className: 'arrow-left', generator: arrowLeft },
     'arrow-right': { className: 'arrow-right', generator: arrowRight },
+    'solid-left': { className: 'solid-left', generator: solidLeft },
+    'solid-right': { className: 'solid-right', generator: solidRight },
     'left': { className: 'left', generator: left },
     'right': { className: 'right', generator: right },
     'zoom-out': { className: 'minus', generator: zoomOut },
