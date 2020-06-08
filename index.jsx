@@ -85,21 +85,21 @@ class App extends React.Component {
         //     columnWidth={[1, 1, 2, 1]}
         // ></Table>;
         const icondemo = icons.map(type => icon_container(type));
-        const form = <div style={{ width: '300px' }}>
-            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Name</span>} error='Name cannot be null'>
+        const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '100px' }}>
+            <Form.Item label='Name' error='Name cannot be null'>
                 <Input 
                     value={this.state.name} 
                     type='password'
                     onChange={(e) => { this.setState({ name: e.target.value }); }}
                 ></Input>
             </Form.Item>
-            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Gender</span>}>
+            <Form.Item label='Gender'>
                 <Select value={this.state.gender} onChange={(v) => { this.setState({ gender: v }); }}>
                     <Option value='1'>Male</Option>
                     <Option value='2'>Female</Option>
                 </Select>
             </Form.Item>
-            <Form.Item label={<span style={{display: 'inline-block', width: '55.5px'}}>Email</span>}>
+            <Form.Item label='Email'>
                 <Input
                     value={this.state.email}
                     placeholder="frank.cho@example.com"
@@ -109,7 +109,7 @@ class App extends React.Component {
             <Form.Item label='Birthday'>
                 <DateTime.DatePicker value={this.state.birthday} onChange={(date) => { this.setState({ birthday: date }); }} />
             </Form.Item>
-        </div>;
+        </Form.Form>;
         return (
             <Layout.Layout>
                 <Layout.Header />

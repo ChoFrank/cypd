@@ -1736,7 +1736,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-formitem-wrapper>.cypd-select-wrapper,
 .cypd-formitem-wrapper>.cypd-input {
-    flex-grow: 10;
+    flex-grow: 1;
 }
 
 .cypd-formitem-wrapper>.help {
@@ -1744,6 +1744,11 @@ svg.cypd-icon.solid-right * {
     position: absolute;
     right: 0;
     bottom: -16px;
+}
+
+.cypd-formitem-wrapper .cypd-formitem-label {
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {
