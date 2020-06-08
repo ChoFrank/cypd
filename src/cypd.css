@@ -1719,6 +1719,7 @@ svg.cypd-icon.solid-right * {
     position: relative;
     display: flex;
     flex-direction: row;
+    height: 40px;
     width: 100%;
     justify-content: flex-start;
     align-items: center;
