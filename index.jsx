@@ -125,7 +125,7 @@ class App extends React.Component {
                         <div className='app_dashboard_container'>
                             {table}
                             <div className='empty_demo_wrapper'><Empty /></div>
-                            <div className='empty_demo_wrapper'><Cone /></div>
+                            <div className='empty_demo_wrapper'><Cone color='yellow'/></div>
                             <div className='icon_demo_wrapper'>
                                 {icondemo}
                             </div>
