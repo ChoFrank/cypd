@@ -1711,6 +1711,10 @@ svg.cypd-icon.solid-right * {
 
 /* cypd form */
 
+.cypd-form {
+    width: 100%;
+}
+
 .cypd-formitem-wrapper {
     position: relative;
     display: flex;
