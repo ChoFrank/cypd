@@ -74,8 +74,7 @@ export default class Table extends React.Component<TableProps> {
             if (parent) {
                 const parent_rect = parent.getBoundingClientRect();
                 if (parent && this.needWidth > parent_rect.width - 80) {
-                    // global.setTimeout(() => { this.setState({ responsive: 'transform' }); }, 10000); 
-                    const { responsive } = this.props;
+                    // global.setTimeout(() => { this.setState({ responsive }); }, 100000); 
                     this.setState({ responsive: (responsive) ? responsive : 'transform' });
                 } else {
                     this.setState({ responsive: 'no' });
@@ -175,7 +174,7 @@ export default class Table extends React.Component<TableProps> {
         const id = this.id;
         const { responsive, page, tempPage } =  this.state;
         const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, checkable, onCheck } = this.props;
-        let containerClass = `cypd-table-container${checkable?' checkable':''}${(responsive?` ${responsive}`:' no')}`;
+        let containerClass = `cypd-table-container ${responsive}${checkable?' checkable':''}`;
         let wrapperClass = 'table-wrapper';
         const thead = (
             <thead style={headerStyle}><tr>
