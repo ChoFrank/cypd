@@ -1,4 +1,13 @@
 import React from 'react';
+declare type ResponsiveType = 'no' | 'transform' | 'shorten';
+declare type ShortenProps = {
+    layout: {
+        topLeft: number;
+        bottomLeft: number;
+        topRight: Array<number>;
+        bottomRight: Array<number>;
+    };
+};
 declare type TableProps = {
     headers: Array<string | React.ReactNode | undefined>;
     rows: Array<Array<string | React.ReactNode | undefined>>;
@@ -7,12 +16,19 @@ declare type TableProps = {
     pagination?: boolean;
     rowLimit?: number;
     columnWidth?: Array<number>;
+    responsive?: ResponsiveType;
+    shortenProps?: ShortenProps;
+    forceResponsive?: boolean;
+    checkable?: boolean;
+    onCheck?: (row_idx: number, checked: boolean) => void;
+    removeable?: boolean;
+    onRemove?: (row_idx: number) => void;
 };
 interface TableState {
     page: number;
     tempPage: string;
     mode: 'nextpage' | 'prevpage' | '';
-    responsive: 'no' | 'transform';
+    responsive: ResponsiveType;
 }
 export default class Table extends React.Component<TableProps> {
     state: TableState;
@@ -29,6 +45,9 @@ export default class Table extends React.Component<TableProps> {
     gotoPage: (no: number) => void;
     handleGotoKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     handleInputPage: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    basicBody: (rows: React.ReactNode[][]) => JSX.Element;
+    transformBody: (rows: React.ReactNode[][]) => JSX.Element;
+    shortenBody: (rows: React.ReactNode[][]) => JSX.Element;
     render(): JSX.Element;
 }
 export {};

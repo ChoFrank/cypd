@@ -322,6 +322,7 @@ body {
 }
 
 .cypd-table-container .table-wrapper tbody>tr {
+    position: relative;
     height: 40px;
 }
 
@@ -340,13 +341,15 @@ body {
     padding-right: 10px;
 }
 
+
+/* 
 .cypd-table-container .table-wrapper td {
     border-top: 2px solid white;
 }
 
 .cypd-table-container .table-wrapper tr:nth-child(1) td {
     border-top: 0;
-}
+} */
 
 .cypd-table-container .table-wrapper th:nth-child(1),
 .cypd-table-container .table-wrapper td:nth-child(1) {
@@ -375,9 +378,9 @@ body {
     color: black;
 }
 
-.cypd-table-container.transform,
-.cypd-table-container.transform .table-wrapper,
-.cypd-table-container.transform table {
+.cypd-table-container:not(.no),
+.cypd-table-container:not(.no) .table-wrapper,
+.cypd-table-container:not(.no) table {
     width: 100%;
 }
 
@@ -386,7 +389,7 @@ body {
     padding-right: 10px;
 }
 
-.cypd-table-container.transform .table-wrapper thead {
+.cypd-table-container:not(.no) .table-wrapper thead {
     display: none;
 }
 
@@ -395,7 +398,7 @@ body {
     padding-bottom: 10px;
 }
 
-.cypd-table-container.transform .table-wrapper tr.odd>td {
+.cypd-table-container .table-wrapper tr.odd>td {
     background-color: white;
 }
 
@@ -424,6 +427,46 @@ body {
 .cypd-table-container.transform .table-wrapper tr:nth-child(1) td:last-child,
 .cypd-table-container .table-wrapper thead>tr>th:last-child {
     border-top-right-radius: 3px;
+}
+
+.cypd-table-container.shorten td {
+    padding: 5px 20px 5px 20px;
+    max-height: 50px;
+    height: 50px;
+}
+
+.cypd-table-container.shorten td>div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    color: #7d7d7d;
+}
+
+.cypd-table-container.shorten .right,
+.cypd-table-container.shorten .upper,
+.cypd-table-container.shorten .lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cypd-table-container.shorten .upper {
+    height: 15px;
+}
+
+.cypd-table-container.shorten .lower {
+    height: 25px;
+    align-items: flex-end;
+}
+
+.cypd-table-container.shorten .right>div {
+    margin-left: 10px;
+}
+
+.cypd-table-container.shorten .left.bottom {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
 }
 
 .cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {
@@ -518,6 +561,76 @@ body {
     margin-right: 10px;
     border-radius: 0;
     width: 40px;
+}
+
+.cypd-table-container.checkable .cypd-page.current {
+    padding-left: 20px;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 40px;
+    left: 0;
+    top: 0;
+    padding-top: 40px;
+    z-index: 1;
+}
+
+.cypd-table-container.transform.checkable .cypd-table-checklist {
+    display: none;
+}
+
+.cypd-table-container.shorten.checkable .cypd-table-checklist {
+    padding-top: 0;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper {
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+}
+
+.cypd-table-container.shorten.checkable .cypd-table-checklist .cypd-checkbox-wrapper {
+    height: 50px;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox {
+    position: relative;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: transparent;
+    background-position: 4px 34px;
+    border: none;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox {
+    background-color: var(--default-cyp-blue);
+    background-position: 4px 4px;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 1px solid #777;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox::after {
+    border: none;
+}
+
+.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>span:nth-child(3) {
+    display: none;
 }
 
 
