@@ -1,4 +1,10 @@
 import React from 'react';
-export default class Empty extends React.Component {
+declare type EmptyProps = {
+    className: string;
+    style: React.CSSProperties;
+    text: string;
+};
+export default class Empty extends React.Component<Partial<EmptyProps>> {
     render(): JSX.Element;
 }
+export {};
