@@ -1,5 +1,8 @@
 import React, { CSSProperties } from 'react';
 import ReactDOM from 'react-dom';
+import { withRouter } from 'react-router-dom';
+
+import Icon from '../icon/component';
 
 
 type CenterExtendType = 'extend-left' | 'extend-right' | 'extend-both' | 'collapsed';
@@ -15,6 +18,57 @@ declare global {
     }
 }
 window.layout = {};
+
+declare type NavitemProps = {
+    label: string;
+    icon?: string;
+    url?: string;
+    disabled?: boolean;
+    children?: Array<NavitemProps>;
+    className?: string;
+    style?: React.CSSProperties;
+}
+
+class NavigationItem extends React.Component<NavitemProps> {
+    state = { extend: false };
+    id = Math.random().toString().slice(2);
+    flag: React.RefObject<HTMLInputElement>;
+    mouseon: boolean = false;
+    constructor(props: any) {
+        super(props);
+        this.flag = React.createRef();
+    }
+    get toggler_id() { return `cypd-navitem-input-${this.id}`; }
+    onToggle = () => {
+        if (this.flag.current)
+            this.flag.current.focus();
+        this.setState({ extend: true });
+    }
+    onBlur = () => {
+        this.setState({ extend: false });
+    }
+    render() {
+        const { extend } = this.state;
+        const { label, icon, url, disabled, children, className, style } = this.props;
+        const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
+        const NavIcon = withRouter(({ history }) => (
+            <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={() => { if (url) history.push(url); }} onClick={this.onToggle} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
+        ));
+        const NavLabel = withRouter(({ history }) => (
+            <div className='label' onMouseDown={() => { if (url) history.push(url); }} onClick={this.onToggle}>{label}</div>
+        ));
+        return (!disabled) ? (
+            <div className={wrapperClass} style={style}>
+                {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
+                <NavIcon />
+                <NavLabel />
+                {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
+                {children ? <div className='toggler'></div> : undefined}
+            </div>
+        ) : <div />;
+    }
+}
+
 
 interface SiderProps {
     direction?: 'left' | 'right',
@@ -60,9 +114,9 @@ class Sider extends React.Component<SiderProps> {
     componentDidMount() {
         const { toggleClass, toggleStyle } = this.props;
         const toggler = (
-            <label className={`toggle${toggleClass?` ${toggleClass}`:''}`} style={toggleStyle}>
-                <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox'/>
-                <div/><div/><div/>
+            <label className={`toggle${toggleClass ? ` ${toggleClass}` : ''}`} style={toggleStyle}>
+                <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox' />
+                <div /><div /><div />
             </label>
         );
         const old_container = document.getElementById('__cypd_sider_toggler_container');
@@ -94,14 +148,14 @@ class Sider extends React.Component<SiderProps> {
             this.props.onCollapse(e.target.checked);
         this.setState({ visible: e.target.checked });
     }
-    closeSider = () => { 
+    closeSider = () => {
         if (this.toggler && this.state.visible) this.toggler.click();
     }
     render() {
         const { className, style } = this.props;
         const { visible } = this.state;
         const direction = this.props.direction ? this.props.direction : 'left';
-        let wrapperClass = `column ${direction}${className?` ${className}`:''}`;
+        let wrapperClass = `column ${direction}${className ? ` ${className}` : ''}`;
         if (direction === 'left')
             window.layout.leftSideStatus = (visible) ? 'extend' : 'collapsed';
         else
@@ -151,6 +205,7 @@ export default {
     Layout,
     Header,
     Navigation,
+    NavigationItem,
     Sider,
     Body,
     Center,

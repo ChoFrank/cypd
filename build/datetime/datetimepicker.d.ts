@@ -23,7 +23,7 @@ declare class TimePicker extends React.Component<Partial<TimePickerProps>> {
     onMouseDown: () => void;
     onMouseLeave: () => void;
     onMouseEnter: () => void;
-    onMeridiemChange: (meridiem: "ante" | "post") => void;
+    onMeridiemChange: (meridiem: 'ante' | 'post') => void;
     onHourChange: (hr: string) => void;
     onMinuteChange: (min: string) => void;
     onSecondChange: (sec: string) => void;

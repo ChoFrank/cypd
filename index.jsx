@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Table, Icon, Input, Button, Select, DateTime, Empty, List, Form, Cone, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
 
@@ -17,7 +18,7 @@ const cross_point = (x11, y11, x12, y12, x21, y21, x22, y22) => {
 
 const icon_container = (type) => {
     return <div className='icon_container' key={Math.random()}>
-        <Icon type={type} color='gray' onClick={() => { console.log('cross_point(6,1,9,15,1,6,15,9) :', cross_point(6,1,9,15,1,6,15,9)); }}/>
+        <Icon type={type} color='gray' onClick={() => { console.log('cross_point(6,1,9,15,1,6,15,9) :', cross_point(6, 1, 9, 15, 1, 6, 15, 9)); }} />
         <div className='label'>{type}</div>
     </div>;
 }
@@ -62,8 +63,8 @@ class App extends React.Component {
             [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
-            [<Icon type='loading' />, <Slider max={1} min={0} step={0.1}/>, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
-            ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress}/>, <DateTime.DatePicker />, <DateTime.TimePicker />],
+            [<Icon type='loading' />, <Slider max={1} min={0} step={0.1} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
+            ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
         ];
         // const table = <Table
         //     headers={['1', '2', '3', '4']}
@@ -102,8 +103,8 @@ class App extends React.Component {
         const icondemo = icons.map(type => icon_container(type));
         const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '100px' }}>
             <Form.Item label='Name' error='Name cannot be null'>
-                <Input 
-                    value={this.state.name} 
+                <Input
+                    value={this.state.name}
                     type='password'
                     onChange={(e) => { this.setState({ name: e.target.value }); }}
                 ></Input>
@@ -126,38 +127,46 @@ class App extends React.Component {
             </Form.Item>
         </Form.Form>;
         return (
-            <Layout.Layout>
-                <Layout.Header />
-                <Layout.Navigation />
-                <Layout.Body>
-                    <Spin type='linear' visible={false}/>
-                    <Layout.Sider 
-                        visible={this.state.visible}
-                        onCollapse={(visible) => { this.setState({ visible }); }}
-                    >
-                    </Layout.Sider>
-                    <Layout.Center>
-                        <div className='app_dashboard_container'>
-                            {table}
-                            <div className='empty_demo_wrapper'><Empty /></div>
-                            <div className='empty_demo_wrapper'><Cone color='yellow'/></div>
-                            <div className='icon_demo_wrapper'>
-                                {icondemo}
+            <Router>
+                <Layout.Layout>
+                    <Layout.Header />
+                    <Layout.Navigation />
+                    <Layout.Body>
+                        <Spin type='linear' visible={false} />
+                        <Layout.Sider
+                            visible={this.state.visible}
+                            onCollapse={(visible) => { this.setState({ visible }); }}
+                        >
+                            <Layout.NavigationItem icon='dashboard' label='alksjcasn' />
+                            <Layout.NavigationItem icon='calendar' label='asdas'/>
+                            <Layout.NavigationItem icon='save' label='asva'/>
+                            <Layout.NavigationItem icon='cyplogo' label='asc'/>
+                            <Layout.NavigationItem icon='setting' label='assv'/>
+                            <Layout.NavigationItem icon='idea' label='asvasvavas'/>
+                        </Layout.Sider>
+                        <Layout.Center>
+                            <div className='app_dashboard_container'>
+                                {table}
+                                <div className='empty_demo_wrapper'><Empty /></div>
+                                <div className='empty_demo_wrapper'><Cone color='yellow' /></div>
+                                <div className='icon_demo_wrapper'>
+                                    {icondemo}
+                                </div>
+                                <SwitchButton defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} />
+                                <List draggable={this.state.list_draggable} items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))} />
+                                {form}
                             </div>
-                            <SwitchButton defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }}/>
-                            <List draggable={this.state.list_draggable} items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))}/>
-                            {form}
-                        </div>
-                    </Layout.Center>
-                </Layout.Body>
-                <Modal
-                    visible={this.state.popup}
-                    onClose={this.closeModal}
-                    title='Demostration'
-                >
-                    This is a CYPD demostration.
+                        </Layout.Center>
+                    </Layout.Body>
+                    <Modal
+                        visible={this.state.popup}
+                        onClose={this.closeModal}
+                        title='Demostration'
+                    >
+                        This is a CYPD demostration.
                 </Modal>
-            </Layout.Layout>
+                </Layout.Layout>
+            </Router>
         );
     }
 }

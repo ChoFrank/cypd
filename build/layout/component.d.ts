@@ -10,6 +10,28 @@ declare global {
         };
     }
 }
+declare type NavitemProps = {
+    label: string;
+    icon?: string;
+    url?: string;
+    disabled?: boolean;
+    children?: Array<NavitemProps>;
+    className?: string;
+    style?: React.CSSProperties;
+};
+declare class NavigationItem extends React.Component<NavitemProps> {
+    state: {
+        extend: boolean;
+    };
+    id: string;
+    flag: React.RefObject<HTMLInputElement>;
+    mouseon: boolean;
+    constructor(props: any);
+    get toggler_id(): string;
+    onToggle: () => void;
+    onBlur: () => void;
+    render(): JSX.Element;
+}
 interface SiderProps {
     direction?: 'left' | 'right';
     visible?: boolean;
@@ -53,6 +75,7 @@ declare const _default: {
     Layout: typeof Layout;
     Header: typeof Header;
     Navigation: typeof Navigation;
+    NavigationItem: typeof NavigationItem;
     Sider: typeof Sider;
     Body: typeof Body;
     Center: typeof Center;

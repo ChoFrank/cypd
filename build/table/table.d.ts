@@ -45,9 +45,9 @@ export default class Table extends React.Component<TableProps> {
     gotoPage: (no: number) => void;
     handleGotoKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
     handleInputPage: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    basicBody: (rows: React.ReactNode[][]) => JSX.Element;
-    transformBody: (rows: React.ReactNode[][]) => JSX.Element;
-    shortenBody: (rows: React.ReactNode[][]) => JSX.Element;
+    basicBody: (rows: Array<Array<React.ReactNode>>) => JSX.Element;
+    transformBody: (rows: Array<Array<React.ReactNode>>) => JSX.Element;
+    shortenBody: (rows: Array<Array<React.ReactNode>>) => JSX.Element;
     render(): JSX.Element;
 }
 export {};
