@@ -25,7 +25,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = "* {\r\n    box-sizing: border-box;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-size: var(--default-normal-fontsize);\r\n    letter-spacing: 0.5px;\r\n    scrollbar-color: #7fbeca rgba(108, 151, 158, 0.376);\r\n    scrollbar-width: thin;\r\n    scrollbar-highlight-color: #00839E;\r\n    scrollbar-darkshadow-color: #00839E;\r\n}\r\n\r\n*::selection {\r\n    color: white;\r\n    background-color: #00839E;\r\n}\r\n\r\n\r\n/* \r\n@font-face {\r\n    font-family: 'Noto Sans TC', sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');\r\n    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+F900-FAFF, U+2F800-2FA1F;\r\n}\r\n\r\n@font-face {\r\n    font-family: \"Open Sans\", sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');\r\n    unicode-range: U+00-7F;\r\n} */\r\n\r\nbody {\r\n    --default-large-fontsize: 16px;\r\n    --default-normal-fontsize: 14px;\r\n    --default-small-fontsize: 12px;\r\n    --default-large-height: 39px;\r\n    --default-normal-height: 32px;\r\n    --default-small-height: 25px;\r\n    --default-cyp-blue: #008aab;\r\n    --default-cyp-blue-active: #00839E;\r\n    --default-cyp-blue-hover: #33a8c0;\r\n    --default-cyp-blue-light: #47bbd3;\r\n    --default-cyp-blue-opa-light: #00839E2F;\r\n    --default-cyp-blue-opa-medium: #00839E7F;\r\n    --default-cyp-blue-opa-deep: #00839EAF;\r\n    --default-header-height: 60px;\r\n    --default-nav-height: 5px;\r\n    --default-footer-height: 0px;\r\n    --default-leftsider-width: 255px;\r\n    --default-rightsider-width: 0px;\r\n    --default-content-height: calc(100% - var(--default-header-height) - var(--default-nav-height) - var(--default-footer-height));\r\n    /* --default-leftsider-width: 0px;\r\n--default-rightsider-width: 250px; */\r\n    --default-header-width: 100%;\r\n    --default-left-collapser-width: 13px;\r\n    --default-right-collapser-width: 0px;\r\n    /* --default-left-collapser-width: 0px;\r\n--default-right-collapser-width: 15px; */\r\n    --default-gray-color: rgb(163, 163, 163);\r\n    --default-disabled-color: rgb(185, 185, 185);\r\n    --default-disabled-background: rgb(231, 231, 231);\r\n    /* --default-red-color: rgb(255, 72, 72);\r\n    --default-red-hover-color: rgb(255, 128, 128);\r\n    --default-red-active-color: rgb(255, 28, 28); */\r\n    --default-red-color: #b92454;\r\n    --default-red-hover-color: #d12b60;\r\n    --default-red-active-color: #a01f48;\r\n    --default-deepgray-color: rgb(139, 139, 139);\r\n    --default-lightblack-color: rgb(31, 31, 31);\r\n    --default-transition-duration: 150ms;\r\n    /* for navbar cypd-tree */\r\n    --default-nav-background-color: rgb(51, 51, 51);\r\n    --default-navhover-background-color: rgba(51, 51, 51, 0.9);\r\n    --default-nav-item-width: 150px;\r\n    --default-nav-item-padding: 0px 20px 0px 20px;\r\n    --default-dropdown-item-height: 35px;\r\n    /* for cypd-select */\r\n    --default-select-normal-height: 32px;\r\n    --default-select-small-height: 25px;\r\n    --default-select-dropdown-height: 200px;\r\n    /* for cypd-tooltip */\r\n    --default-tooltip-width: 150px;\r\n    --default-tooltip-opacity: 1;\r\n    /* for cypd-slider */\r\n    --default-slider-drag-width: 17px;\r\n    --default-inrange-hover-color: var(--default-cyp-blue-active);\r\n    --default-inrange-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd general */\r\n\r\n[class^='cypd-'].small {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    /* width */\r\n    width: 5px;\r\n}\r\n\r\n ::-webkit-scrollbar-track {\r\n    /* Track */\r\n    background: rgba(108, 151, 158, 0.376);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb {\r\n    /* Handle */\r\n    background: var(--default-cyp-blue-light);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:hover {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-hover);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:active {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-active);\r\n}\r\n\r\n\r\n/* cypd layout */\r\n\r\n.cypd-layout {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: nowrap;\r\n    justify-content: stretch;\r\n    width: 100%;\r\n    height: 100%;\r\n    top: 0;\r\n    left: 0;\r\n}\r\n\r\n.cypd-layout>.header {\r\n    background-color: white;\r\n    text-align: center;\r\n    height: var(--default-header-height);\r\n    width: 100%;\r\n    padding: 10px;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-layout>.navigation {\r\n    height: var(--default-nav-height);\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n    flex-shrink: 0;\r\n    background-color: #008aab;\r\n}\r\n\r\n.cypd-layout>.content {\r\n    position: relative;\r\n    display: flex;\r\n    width: 100vw;\r\n    height: 100%;\r\n    overflow-y: hidden;\r\n}\r\n\r\n.cypd-layout .column {\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-layout .column.left {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    height: 100%;\r\n    max-width: 60px;\r\n    overflow: hidden;\r\n    flex-shrink: 0;\r\n    transition: max-width var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover, */\r\n\r\n.cypd-layout .column.left.visible {\r\n    max-width: var(--default-leftsider-width);\r\n    width: var(--default-leftsider-width);\r\n}\r\n\r\n.cypd-layout #collapse-mask {\r\n    position: absolute;\r\n    left: 0;\r\n}\r\n\r\n.cypd-layout .column.left.visible~#collapse-mask {\r\n    position: absolute;\r\n    width: calc(100% - var(--default-leftsider-width));\r\n    height: 100%;\r\n    left: var(--default-leftsider-width);\r\n    z-index: 30;\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    top: 0;\r\n    left: 0;\r\n    height: 60px;\r\n    width: 60px;\r\n    cursor: pointer;\r\n    user-select: none;\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle>div {\r\n    position: relative;\r\n    width: 29px;\r\n    height: 3px;\r\n    margin-bottom: 5px;\r\n    background: var(--default-cyp-blue-active);\r\n    border-radius: 3px;\r\n    flex-shrink: 0;\r\n    transition: opacity var(--default-transition-duration), transform var(--default-transition-duration);\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle>div:last-child {\r\n    margin-bottom: 0;\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle>input {\r\n    height: 0;\r\n    width: 0;\r\n    visibility: hidden;\r\n    position: absolute;\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover .toggle>span:nth-child(2), */\r\n\r\n#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(2) {\r\n    transform: rotate(45deg) translate(5px, 7px);\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover .toggle>span:nth-child(3), */\r\n\r\n#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(3) {\r\n    opacity: 0;\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover .toggle>span:nth-child(4), */\r\n\r\n#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(4) {\r\n    transform: rotate(-45deg) translate(4px, -6px);\r\n}\r\n\r\n.cypd-layout .column.left .column-wrapper {\r\n    width: var(--default-leftsider-width);\r\n    height: 100%;\r\n    background-color: var(--default-cyp-blue-active);\r\n    flex-grow: 1;\r\n}\r\n\r\n@media(max-width: 700px) {\r\n    .cypd-layout .column.left {\r\n        position: absolute;\r\n        max-width: var(--default-leftsider-width);\r\n        width: var(--default-leftsider-width);\r\n        overflow: visible;\r\n        z-index: 0;\r\n        transform: translateX(-100%);\r\n        transition: z-index 0s linear var(--default-transition-duration), transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);\r\n    }\r\n    .cypd-layout .column.left.visible {\r\n        z-index: 32;\r\n        transform: translateX(0);\r\n        transition: z-index 0s linear 0s, transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);\r\n    }\r\n}\r\n\r\n.cypd-layout .column.middle {\r\n    overflow: hidden;\r\n    flex-grow: 1;\r\n}\r\n\r\n.cypd-navitem {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    /* border-bottom: 1px solid rgb(0, 101, 121); */\r\n    cursor: pointer;\r\n    transition: background-color 300ms;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-navitem>.toggler {\r\n    position: absolute;\r\n    width: 6px;\r\n    height: 6px;\r\n    top: 27px;\r\n    right: 27px;\r\n    border-top: 2px solid white;\r\n    border-right: 2px solid white;\r\n    transform: rotate(45deg);\r\n    transition: transform 150ms;\r\n}\r\n\r\n.cypd-navitem.extend>.toggler {\r\n    transform: rotate(135deg);\r\n}\r\n\r\n.cypd-navitem ul {\r\n    width: 100%;\r\n    padding-left: 60px;\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    opacity: 0;\r\n    pointer-events: none;\r\n    transition: opacity 150ms linear 150ms;\r\n}\r\n\r\n.cypd-navitem.extend>ul {\r\n    max-height: 3000px;\r\n    opacity: 1;\r\n    pointer-events: inherit;\r\n    background-color: rgb(2, 91, 109);\r\n}\r\n\r\n.cypd-layout .column.left:not(.visible) .cypd-navitem>ul {\r\n    position: fixed;\r\n    max-height: 3000px;\r\n    width: 220px;\r\n    transform: translateX(60px);\r\n    z-index: 0;\r\n    background-color: rgb(2, 91, 109);\r\n    padding-left: 20px;\r\n    transition: none;\r\n}\r\n\r\n.cypd-layout .column.left:not(.visible) .cypd-navitem.extend>ul {\r\n    opacity: 1;\r\n    z-index: 31;\r\n    transition: opacity 150ms;\r\n}\r\n\r\n.cypd-navitem li {\r\n    list-style-type: none;\r\n}\r\n\r\n.cypd-navitem:hover {\r\n    background-color: rgb(0, 101, 121);\r\n}\r\n\r\n.cypd-navitem .cypd-navitem:hover {\r\n    background-color: transparent !important;\r\n}\r\n\r\n.cypd-navitem>.icon {\r\n    width: 60px;\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n}\r\n\r\n.cypd-navitem>.label {\r\n    color: white;\r\n    font-size: 16px;\r\n    flex-shrink: 0;\r\n    flex-grow: 1;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    transition: text-indent 300ms;\r\n}\r\n\r\n.cypd-navitem.extend>.icon,\r\n.cypd-navitem.extend>.label {\r\n    background-color: rgb(0, 101, 121);\r\n}\r\n\r\n.cypd-navitem .cypd-navitem>.label {\r\n    height: 40px;\r\n    line-height: 40px;\r\n}\r\n\r\n.cypd-navitem>.label:active,\r\n.cypd-navitem>.label:hover {\r\n    text-indent: 30px;\r\n}\r\n\r\n\r\n/* cypd table */\r\n\r\n.cypd-table-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    width: min-content;\r\n}\r\n\r\n.cypd-table-container .table-wrapper {\r\n    border-radius: 3px;\r\n    width: min-content;\r\n}\r\n\r\n.cypd-table-container .table-wrapper table {\r\n    border-collapse: separate;\r\n    border-spacing: 0;\r\n    box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.3);\r\n    /* width: 100%; */\r\n}\r\n\r\n.cypd-table-container .table-wrapper thead>tr {\r\n    color: white;\r\n    height: 40px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper thead>tr>th {\r\n    background-color: #008AAB;\r\n    border: 1px solid #008AAB;\r\n    border-right: 1px solid white;\r\n    white-space: nowrap;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody>tr {\r\n    position: relative;\r\n    height: 40px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tr.odd>td {\r\n    background-color: rgb(223, 238, 241);\r\n}\r\n\r\n.cypd-table-container .table-wrapper tr.even>td {\r\n    background-color: rgb(223, 238, 241);\r\n}\r\n\r\n.cypd-table-container .table-wrapper th,\r\n.cypd-table-container .table-wrapper td {\r\n    border: 0;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper th:nth-child(1),\r\n.cypd-table-container .table-wrapper td:nth-child(1) {\r\n    padding-left: 20px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper th:last-child,\r\n.cypd-table-container .table-wrapper td:last-child {\r\n    border-right: 0;\r\n    padding-right: 20px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper td>div {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: rgba(0, 0, 0, 0.75);\r\n    white-space: nowrap;\r\n    transition: color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody>tr:hover>td>div {\r\n    color: black;\r\n}\r\n\r\n.cypd-table-container:not(.no),\r\n.cypd-table-container:not(.no) .table-wrapper,\r\n.cypd-table-container:not(.no) table {\r\n    max-width: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-table-container.transform {\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.cypd-table-container:not(.no) .table-wrapper thead {\r\n    display: none;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr td {\r\n    border-top: 0;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tr.odd>td {\r\n    background-color: white;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr td:nth-child(1)>div {\r\n    font-weight: bold;\r\n    color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:nth-child(1) td {\r\n    padding-top: 20px;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:last-child td {\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper td>div:last-child {\r\n    justify-content: flex-start;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:nth-child(1) td:nth-child(1),\r\n.cypd-table-container .table-wrapper thead>tr>th:nth-child(1) {\r\n    border-top-left-radius: 3px;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:nth-child(1) td:last-child,\r\n.cypd-table-container .table-wrapper thead>tr>th:last-child {\r\n    border-top-right-radius: 3px;\r\n}\r\n\r\n.cypd-table-container.shorten td {\r\n    padding: 5px 20px 5px 20px;\r\n    max-height: 50px;\r\n    height: 50px;\r\n}\r\n\r\n.cypd-table-container.shorten td>div {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: stretch;\r\n    color: #7d7d7d;\r\n}\r\n\r\n.cypd-table-container.shorten .right,\r\n.cypd-table-container.shorten .upper,\r\n.cypd-table-container.shorten .lower {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n}\r\n\r\n.cypd-table-container.shorten .upper {\r\n    height: 15px;\r\n}\r\n\r\n.cypd-table-container.shorten .lower {\r\n    height: 25px;\r\n    align-items: flex-end;\r\n}\r\n\r\n.cypd-table-container.shorten .right>div {\r\n    margin-left: 10px;\r\n}\r\n\r\n.cypd-table-container.shorten .left.bottom {\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    color: #555;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {\r\n    border-bottom-left-radius: 3px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:last-child {\r\n    border-bottom-right-radius: 3px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {\r\n    border-left: 1px solid;\r\n    border-bottom: 1px solid;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:last-child {\r\n    border-right: 1px solid;\r\n    border-bottom: 1px solid;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr.odd:last-child td:last-child,\r\n.cypd-table-container .table-wrapper tbody tr.odd:last-child td:nth-child(1) {\r\n    border-color: white;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr.even:last-child td:last-child,\r\n.cypd-table-container .table-wrapper tbody tr.even:last-child td:nth-child(1) {\r\n    border-color: rgb(233, 243, 245);\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer {\r\n    margin-top: 10px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button {\r\n    border-radius: 0;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(1) {\r\n    order: 1;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(2) {\r\n    order: 3;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.default {\r\n    border-right: 0;\r\n    border: 0.5px solid #bcbcbc;\r\n    order: 2;\r\n}\r\n\r\n.cypd-table-container:not(.no) .cypd-pagination-footer .cypd-button.default {\r\n    display: none;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.default:hover {\r\n    border: 0.5px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.default.focus {\r\n    background-color: #e4e4e4;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(3) {\r\n    border-left: 0;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button .context {\r\n    font-weight: normal;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .form {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n    font: Regular 18px/21px Arial;\r\n    color: #707070;\r\n    white-space: nowrap;\r\n    order: 4;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-table-container:not(.no) .cypd-pagination-footer .form {\r\n    order: 2;\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .form .cypd-input {\r\n    margin-right: 10px;\r\n    border-radius: 0;\r\n    width: 40px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-page.current {\r\n    padding-left: 20px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist {\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    height: 100%;\r\n    width: 40px;\r\n    left: 0;\r\n    top: 0;\r\n    padding-top: 40px;\r\n    z-index: 1;\r\n}\r\n\r\n.cypd-table-container.transform.checkable .cypd-table-checklist {\r\n    display: none;\r\n}\r\n\r\n.cypd-table-container.shorten.checkable .cypd-table-checklist {\r\n    padding-top: 0;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper {\r\n    height: 40px;\r\n    width: 40px;\r\n    justify-content: center;\r\n}\r\n\r\n.cypd-table-container.shorten.checkable .cypd-table-checklist .cypd-checkbox-wrapper {\r\n    height: 50px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox {\r\n    position: relative;\r\n    height: 26px;\r\n    width: 26px;\r\n    border-radius: 50%;\r\n    justify-content: center;\r\n    background-color: transparent;\r\n    background-position: 4px 34px;\r\n    border: none;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox {\r\n    background-color: var(--default-cyp-blue);\r\n    background-position: 4px 4px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    border-radius: 50%;\r\n    border: 1px solid #777;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox::after {\r\n    border: none;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>span:nth-child(3) {\r\n    display: none;\r\n}\r\n\r\n\r\n/* cypd cypd-modal */\r\n\r\n.cypd-modal-container {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    user-select: text;\r\n    z-index: 41;\r\n}\r\n\r\n.cypd-modal-container.active {\r\n    opacity: 1;\r\n    visibility: visible;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container.hide {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility 0ms ease-in var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.8);\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal {\r\n    position: relative;\r\n    background: white;\r\n    display: inline-block;\r\n    border-radius: 3px;\r\n    min-width: 400px;\r\n    padding: 10px;\r\n    text-align: left;\r\n}\r\n\r\n.cypd-confirm-dialog-container {\r\n    position: relative;\r\n    z-index: 31;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal h3 {\r\n    margin: 10px 20px 15px 20px;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    line-height: 30px;\r\n    font-size: 18px;\r\n    border-bottom: 1px solid rgba(40, 40, 40, 0.3);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal .content {\r\n    margin: 0px 20px 15px 20px;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal svg.close-svg {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    height: 20px;\r\n    width: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n/* cypd href */\r\n\r\n.cypd-href {\r\n    display: inline;\r\n    color: var(--default-cyp-blue-hover);\r\n    cursor: pointer;\r\n}\r\n\r\n.cypd-href:hover {\r\n    color: var(--default-cyp-blue-light);\r\n    text-decoration: underline;\r\n}\r\n\r\n\r\n/* cypd input */\r\n\r\n.cypd-input {\r\n    width: 60px;\r\n    height: 32px;\r\n    position: relative;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    text-align: left;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-input::placeholder {\r\n    /* color: var(--default-gray-color); */\r\n    color: #999;\r\n}\r\n\r\n.cypd-input:hover {\r\n    /* border: 1px solid var(---default-cyp-blue-hover); */\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-input:focus {\r\n    cursor: text;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd select */\r\n\r\n.cypd-select-wrapper {\r\n    position: relative;\r\n    display: inline-block;\r\n    text-align: left;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select {\r\n    padding: 0px 25px 0px 10px;\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    cursor: pointer;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2333a8c0' fill='%2333a8c0' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:hover {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:disabled {\r\n    cursor: not-allowed;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='rgb(160,160,160)' fill='rgb(160,160,160)' /></svg>\");\r\n    background-color: var(--default-disabled-background);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select.focus {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2300839E' fill='%2300839E' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select::placeholder {\r\n    /* color: var(--default-deepgray-color); */\r\n    color: #999;\r\n}\r\n\r\n.cypd-options-container {\r\n    /* position: absolute;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    border-radius: 3px;\r\n    transform: scaleY(1) translateY(1px);\r\n    transform-origin: top;\r\n    opacity: 1;\r\n    z-index: 21;\r\n    box-shadow: 0px 0px 4px var(--default-cyp-blue-active);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 50ms; */\r\n    position: absolute;\r\n    top: var(--default-select-normal-height);\r\n    left: 0;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    border-radius: 3px;\r\n    max-height: 3000px;\r\n    height: auto;\r\n    z-index: 21;\r\n    box-shadow: 0px 3px 6px #00000029;\r\n    transition: max-height var(--default-transition-duration);\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-options-container {\r\n    top: var(--default-select-small-height);\r\n}\r\n\r\n.cypd-options-container.extend-top {\r\n    transform: translateY(calc(-100% - var(--default-select-normal-height) - 2px));\r\n    transform-origin: bottom;\r\n    box-shadow: 0px -3px 6px #0000005f;\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-options-container.extend-top {\r\n    transform: translateY(calc(-100% - var(--default-select-small-height) - 2px));\r\n}\r\n\r\n.cypd-options-container.limit-height {\r\n    height: var(--default-select-dropdown-height);\r\n}\r\n\r\n.cypd-options-container.collapsed {\r\n    /* opacity: 0;\r\n    height: 0;\r\n    transform: scaleY(0);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 150ms; */\r\n    max-height: 0;\r\n    height: 0;\r\n}\r\n\r\n.cypd-options-wrapper {\r\n    position: relative;\r\n    width: 100%;\r\n    max-height: 100%;\r\n    scrollbar-color: #7fbeca white;\r\n    overflow-y: auto;\r\n}\r\n\r\n.cypd-options-wrapper::-webkit-scrollbar-track {\r\n    background: white;\r\n}\r\n\r\n.cypd-options-wrapper .cypd-option {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-option input[type=\"radio\"] {\r\n    position: absolute;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-option label {\r\n    position: relative;\r\n    display: block;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration), color var(--default-transition-duration);\r\n    color: black;\r\n    background-color: white;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-option label {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n.cypd-option input[type=\"radio\"]:checked~label,\r\n.cypd-option label:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    color: white;\r\n}\r\n\r\n\r\n/* cypd icon */\r\n\r\n.cypd-icon-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable {\r\n    cursor: pointer;\r\n    pointer-events: all;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable:active {\r\n    opacity: 0.5;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable svg.cypd-icon * {\r\n    /* if not disable pointer event, parent onclick will not triggered sometimes */\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon:not(.senario) {\r\n    overflow: visible;\r\n    max-width: 16px;\r\n    max-height: 16px;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.fc-loading {\r\n    animation: rotateLoad 1s linear infinite;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.senario {\r\n    overflow: visible;\r\n    top: 0;\r\n    left: 0;\r\n    min-height: 100%;\r\n    min-width: 250px;\r\n    opacity: 0.3;\r\n}\r\n\r\nsvg.cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n    stroke-linejoin: round;\r\n    stroke-linecap: round;\r\n}\r\n\r\nsvg.cypd-icon.solid-left *,\r\nsvg.cypd-icon.solid-right * {\r\n    fill: white;\r\n    stroke-linejoin: miter;\r\n    stroke-linecap: miter;\r\n}\r\n\r\n@keyframes rotateLoad {\r\n    0% {\r\n        transform: rotate(0);\r\n    }\r\n    100% {\r\n        transform: rotate(1turn);\r\n    }\r\n}\r\n\r\n\r\n/* cypd button */\r\n\r\n.cypd-button {\r\n    box-sizing: border-box;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: relative;\r\n    padding: 0px 12px 0px 12px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    transition: color var(--default-transition-duration) ease-in-out 50ms, border var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n    user-select: none;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-button.round {\r\n    border-radius: calc(var(--default-select-normal-height) / 2);\r\n}\r\n\r\n.cypd-button.small.round {\r\n    border-radius: calc(var(--default-select-small-height) / 2);\r\n}\r\n\r\n.cypd-button.small {\r\n    padding: 0px 6px 0px 6px;\r\n}\r\n\r\n.cypd-button.no-content {\r\n    width: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-button.small.no-content {\r\n    width: var(--default-select-small-height);\r\n}\r\n\r\n.cypd-button.primary {\r\n    color: white;\r\n    background-color: var(--default-cyp-blue);\r\n}\r\n\r\n.cypd-button.primary:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.primary:active {\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.danger {\r\n    color: white;\r\n    background-color: var(--default-red-color);\r\n}\r\n\r\n.cypd-button.danger:hover {\r\n    background-color: var(--default-red-hover-color);\r\n}\r\n\r\n.cypd-button.danger:active {\r\n    background-color: var(--default-red-active-color);\r\n}\r\n\r\n.cypd-button.default {\r\n    background-color: white;\r\n    color: var(--default-deepgray-color);\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.cypd-button.default:hover {\r\n    color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active {\r\n    color: var(--default-cyp-blue-active);\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.default .cypd-icon:not([class*='fc-']) * {\r\n    transition: stroke var(--default-transition-duration) ease-in-out 50ms;\r\n}\r\n\r\n.cypd-button.disabled {\r\n    background-color: var(--default-disabled-background);\r\n    color: var(--default-disabled-color);\r\n    border: 1px solid var(--default-disabled-color);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-button .context {\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-button.small .context {\r\n    font-weight: 500;\r\n}\r\n\r\n.cypd-button .wrap-icon {\r\n    display: flex;\r\n    margin-right: 3px;\r\n}\r\n\r\n.cypd-button.no-content .wrap-icon {\r\n    margin-right: 0;\r\n}\r\n\r\n.cypd-button .cypd-icon-wrapper {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-button.primary .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) *,\r\n.cypd-button.danger .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-button.default .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(139, 139, 139);\r\n}\r\n\r\n.cypd-button.default:hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(163, 163, 163);\r\n}\r\n\r\n\r\n/* cypd checkbox */\r\n\r\n.cypd-checkbox-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    position: relative;\r\n    width: auto;\r\n    height: var(--default-normal-height);\r\n    line-height: var(--default-normal-height);\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-checkbox-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-checkbox-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-checkbox-wrapper .cypd-checkbox {\r\n    flex-shrink: 0;\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 3px;\r\n    background-color: white;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='white' stroke-width='2' fill='none' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    transition: border var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-checkbox-wrapper:hover .cypd-checkbox {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:checked~.cypd-checkbox {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:disabled~.cypd-checkbox {\r\n    background-color: gray;\r\n    border: 1px solid gray;\r\n}\r\n\r\n.cypd-checkbox-wrapper span {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    padding-left: 5px;\r\n    overflow: hidden;\r\n}\r\n\r\n\r\n/* cypd radio group */\r\n\r\n.cypd-radio-group-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical {\r\n    flex-direction: column;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical .cypd-radio-wrapper {\r\n    margin-top: 2.5px;\r\n    margin-bottom: 2.5px;\r\n}\r\n\r\n.cypd-radio-wrapper input {\r\n    position: absolute;\r\n    visibility: hidden;\r\n    height: 0;\r\n    width: 0;\r\n}\r\n\r\n.cypd-radio-wrapper {\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    margin-left: 5px;\r\n}\r\n\r\n.cypd-radio-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    transition: border-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper:hover .cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio::after {\r\n    content: '';\r\n    width: 10px;\r\n    height: 10px;\r\n    border-radius: 50%;\r\n    background-color: var(--default-cyp-blue-hover);\r\n    transform: scale(0);\r\n    transition: transform var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio::after {\r\n    transform: scale(1);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n    border: 1px solid rgb(163, 163, 163);\r\n    box-shadow: none;\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio::after {\r\n    background-color: rgb(163, 163, 163) !important;\r\n}\r\n\r\n.cypd-radio-wrapper span {\r\n    height: 20px;\r\n    line-height: 20px;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n\r\n/* cypd switch button */\r\n\r\n.cypd-switchbutton-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-switchbutton {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 30px;\r\n    height: 7px;\r\n    border-radius: 3.5px;\r\n    background-color: var(--default-gray-color);\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-switchbutton::after {\r\n    content: '';\r\n    position: absolute;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    box-shadow: 0px 1px 3px var(--default-deepgray-color);\r\n    transition: transform var(--default-transition-duration), background-color 80ms 70ms;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton {\r\n    background-color: #84abb4;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::after {\r\n    background-color: var(--default-cyp-blue-active);\r\n    transform: translateX(15px);\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton::after {\r\n    background-color: rgb(160, 160, 160) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 12px;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: transparent;\r\n}\r\n\r\n\r\n/* cypd spin */\r\n\r\n.cypd-spin-wrapper {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    background: white;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal {\r\n    flex-direction: row;\r\n}\r\n\r\n.cypd-spin-wrapper.visible {\r\n    z-index: 31;\r\n    visibility: visible;\r\n}\r\n\r\n.cypd-spin-wrapper>* {\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal>* {\r\n    margin-bottom: 0px;\r\n    margin-right: 12px;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin {\r\n    transform: scale(1.5);\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg {\r\n    letter-spacing: 1px;\r\n    color: var(--default-cyp-blue-active);\r\n    font-weight: normal;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg::after {\r\n    content: ' ...';\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo {\r\n    position: relative;\r\n    height: 40px;\r\n    width: 40px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo>* {\r\n    position: absolute;\r\n    height: 100%;\r\n    width: 100%;\r\n    animation: spin-cyp 4s linear infinite;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo>.c {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40px' height='40px' overflow='visible'><path fill='rgb(0, 131, 158)' stroke='rgb(0, 131, 158)' d='M3.676446787518377,9.790230231676986 v-3.5921140107470366 c0,-0.4732942910965607 0.24601297685563064,-0.9105747437440805 0.6452390987909704,-1.1472218892923611 l5.713729239679878,-3.386153212752969 c0.05626119555095024,-0.033350093001626314 0.05626119555095024,-0.11667205059674352 0,-0.1499155937804732 l-1.391582264863536,-0.824695590519446 c-0.399329924879161,-0.23664714554828062 -0.8911482727027799,-0.23664714554828062 -1.290478197581939,0 l-5.19315747641786,3.0775849401245052 c-0.399329924879161,0.23664714554828062 -0.6452390987909704,0.6739275981958015 -0.6452390987909704,1.1472218892923611 v6.155382979884802 c0,0.4731877412786646 0.24601297685563064,0.910468193926184 0.6452390987909704,1.1471153394744642 l3.528158257529965,2.0910401762201705 c0.05626119555095024,0.033350093001626314 0.12663959146154832,-0.008417435613829004 0.12653578851772745,-0.07511762161708156 l-0.0028026794831654206,-2.3630618613101113 c0,-0.03079289737210857 -0.016089456292245927,-0.05934824856838922 -0.04224779813512318,-0.07479797216339183 l-1.448051066302127,-0.8579391337031752 C3.9224597643740085,10.700911525238965 3.676446787518377,10.263417972955654 3.676446787518377,9.790230231676986 z' transform='matrix(2.5,0,0,2.5,0,0)'/></svg>\");\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo>.yp {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40px' height='40px' overflow='visible'><path fill='rgb(0, 131, 158)' stroke='rgb(0, 131, 158)' d='M13.837094140487364,3.767714874709207 l-0.8821174165903569,-0.5227334066005692 c-0.399329924879161,-0.23664714554828062 -0.8911482727027799,-0.23664714554828062 -1.290478197581939,0 L6.460337937852195,6.329172496942728 c-0.399329924879161,0.23664714554828062 -0.6452390987909704,0.6739275981958015 -0.6452390987909704,1.1472218892923611 v1.0364100786799286 c0,0.47862178199138955 0.2515145328781407,0.9199511277189786 0.6579030579371249,1.15468037654512 l1.5256956682801912,0.8806342449151449 l-0.0010380294382094143,-1.7929137857455697 c-0.00031140883146282475,-0.47393359000394014 0.24622058274327238,-0.9119598913767358 0.6462771282291797,-1.1485004871071194 l3.539057566631164,-2.0929580729423085 c0.05626119555095024,-0.03324354318372969 0.12643198557390625,0.008417435613829004 0.12643198557390625,0.0750110717991849 v1.638416549795544 c0,0.47308119146076777 -0.24580537096798888,0.9102550942903906 -0.6449276899595073,1.1469022398386712 L7.998697565278539,10.548012536557389 v4.979392639760369 c0,0.06670018600325262 0.07027459296677742,0.10836116480081084 0.12653578851772745,0.0750110717991849 l1.1452578791764425,-0.6787223400011468 c0.399329924879161,-0.23664714554828062 0.6453429017347906,-0.6738210483779042 0.6453429017347906,-1.1472218892923611 l-0.0001038029438209416,-1.8044211660783989 l3.9214676116675085,-2.3239580781420703 c0.39922612193533935,-0.23664714554828062 0.6452390987909704,-0.6738210483779042 0.6452390987909704,-1.1472218892923611 v-3.586147220944829 C14.482333239278338,4.441642472905005 14.236424065366528,4.0043620202574886 13.837094140487364,3.767714874709207 z' transform='matrix(2.5,0,0,2.5,0,0)'/></svg>\");\r\n    animation-delay: 0.2s;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container {\r\n    position: relative;\r\n    background-color: transparent;\r\n    height: 30px;\r\n    width: 100px;\r\n    overflow: hidden;\r\n    /* border: 1px solid black; */\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div {\r\n    position: absolute;\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: 8px;\r\n    width: 8px;\r\n    border-radius: 50%;\r\n    top: 11px;\r\n    animation: spin-linear 3s cubic-bezier(0, .89, 1, .12) infinite;\r\n    flex-grow: 0;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(1) {\r\n    animation-delay: 0.12s;\r\n    left: 29px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(2) {\r\n    animation-delay: 0.24s;\r\n    left: 43px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(3) {\r\n    animation-delay: 0.36s;\r\n    left: 57px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(4) {\r\n    animation-delay: 0.48s;\r\n    left: 71px;\r\n}\r\n\r\n@keyframes spin-linear {\r\n    0% {\r\n        transform: translateX(120px);\r\n    }\r\n    70%,\r\n    100% {\r\n        transform: translateX(-120px);\r\n    }\r\n}\r\n\r\n@keyframes spin-cyp {\r\n    0% {\r\n        opacity: 1;\r\n    }\r\n    30% {\r\n        opacity: 0.4;\r\n    }\r\n    60%,\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n\r\n/* cypd tree */\r\n\r\n.cypd-tree-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    text-align: left;\r\n    padding: 10px;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-tree-element .children,\r\n.cypd-tree-element {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding-left: 13px;\r\n    width: 100%;\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-tree-element.hide .children {\r\n    display: none;\r\n}\r\n\r\n.cypd-tree-element .self {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    padding-left: 5px;\r\n    cursor: pointer;\r\n    color: rgba(255, 255, 255, 0.883);\r\n    transition: color var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self {\r\n    color: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: rgba(255, 255, 255, 0.883);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self:hover {\r\n    background-color: var(--default-lightblack-color);\r\n    color: white;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self:hover {\r\n    background-color: rgba(128, 128, 128, 0.3);\r\n    color: rgb(109, 109, 109);\r\n}\r\n\r\n.cypd-tree-element .self:hover .cypd-icon-wrapper svg * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-tree-element .self>* {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-tree-element .self .label {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-icon-expand,\r\n.cypd-tree-inline-icon {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container {\r\n    position: relative;\r\n    flex-direction: row;\r\n    padding: 0;\r\n    background: transparent;\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container>.cypd-tree-element:not(:last-child) {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element {\r\n    padding-left: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self {\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>* {\r\n    margin-right: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>.label {\r\n    text-align: center;\r\n    white-space: nowrap;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .children {\r\n    visibility: hidden;\r\n}\r\n\r\n\r\n/* cypd tooltip */\r\n\r\n.cypd-tooltip {\r\n    position: absolute;\r\n    max-width: var(--default-tooltip-width);\r\n    height: auto;\r\n    color: white;\r\n    background-color: var(--default-cyp-blue-active);\r\n    padding: 10px;\r\n    border-radius: 3px;\r\n    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);\r\n    opacity: 0;\r\n    z-index: 41;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tooltip.active {\r\n    visibility: visible;\r\n    opacity: 1;\r\n}\r\n\r\n.cypd-tooltip.hide {\r\n    opacity: 0;\r\n}\r\n\r\n.cypd-tooltip::after,\r\n.cypd-tooltip::before {\r\n    content: ' ';\r\n    position: absolute;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n\r\n.cypd-tooltip.left {\r\n    transform: translate(calc(-100% - 10px), -50%);\r\n}\r\n\r\n.cypd-tooltip.right {\r\n    transform: translate(10px, -50%);\r\n}\r\n\r\n.cypd-tooltip.top {\r\n    transform: translate(-50%, calc(-100% - 10px));\r\n}\r\n\r\n.cypd-tooltip.bottom {\r\n    transform: translate(-50%, 10px);\r\n}\r\n\r\n.cypd-tooltip.top::before {\r\n    bottom: -10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 10 0 5 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.bottom::before {\r\n    top: -10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M5 0 0 10 10 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.left::before {\r\n    right: -10px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 0 10 10 5 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.right::before {\r\n    left: -10px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 5 10 0 10 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n\r\n/* cypd slider */\r\n\r\n.cypd-slider-container {\r\n    position: relative;\r\n    height: var(--default-normal-height);\r\n    flex-grow: 1;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n    /* background-color: var(--default-cyp-blue-opa-deep); */\r\n}\r\n\r\n.cypd-slider-container.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-slider-track {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 5px;\r\n    width: 100%;\r\n    border-radius: 2.5px;\r\n    background-color: var(--default-disabled-color);\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-track.progress-track {\r\n    overflow: hidden;\r\n    cursor: default;\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-track {\r\n    background-color: rgb(163, 163, 163, 0.6);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-track:not(.progress-track).active,\r\n.cypd-slider-track:not(.progress-track):hover {\r\n    background-color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-slider-point.drag {\r\n    position: absolute;\r\n    height: var(--default-slider-drag-width);\r\n    width: var(--default-slider-drag-width);\r\n    background-color: white;\r\n    border: 3px solid var(--default-cyp-blue-hover);\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n    z-index: 1;\r\n    transform: translateX(calc(-1 * var(--default-slider-drag-width) / 2));\r\n    transition: border-color var(--default-transition-duration), box-shadow var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-point.drag.active {\r\n    border-color: var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 5px var(--default-cyp-blue-opa-medium);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-point.drag {\r\n    border-color: rgb(160, 160, 160) !important;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip-wrapper {\r\n    display: flex !important;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip {\r\n    width: auto;\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.cypd-slider-range {\r\n    position: absolute;\r\n    overflow: visible;\r\n    height: 5px;\r\n}\r\n\r\n.cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-light);\r\n    stroke-width: 5px;\r\n    stroke-linecap: round;\r\n    transition: stroke var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-track.active .cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-range path {\r\n    stroke: rgb(160, 160, 160) !important;\r\n}\r\n\r\n.cypd-progress-hint {\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    margin-right: 5px;\r\n    font-size: 11px;\r\n    letter-spacing: 0;\r\n    user-select: none;\r\n}\r\n\r\n\r\n/* cypd form */\r\n\r\n.cypd-form {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-formitem-wrapper {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    height: 40px;\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    text-align: left;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper.vertical {\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n}\r\n\r\n.cypd-formitem-wrapper>* {\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper>.cypd-select-wrapper,\r\n.cypd-formitem-wrapper>.cypd-input {\r\n    flex-grow: 1;\r\n}\r\n\r\n.cypd-formitem-wrapper>.help {\r\n    color: var(--default-red-color);\r\n    position: absolute;\r\n    right: 0;\r\n    bottom: -16px;\r\n}\r\n\r\n.cypd-formitem-wrapper .cypd-formitem-label {\r\n    flex-grow: 0;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {\r\n    content: ':';\r\n    display: inline;\r\n}\r\n\r\n.cypd-formitem-wrapper.error {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.cypd-formitem-wrapper.error>.cypd-select-wrapper,\r\n.cypd-formitem-wrapper.error>.cypd-input {\r\n    border-color: var(--default-red-color);\r\n}\r\n\r\n\r\n/* cypd calendar - overwrite react-calendar */\r\n\r\n#g__cypd_calendar_window {\r\n    z-index: 11;\r\n    height: 250px;\r\n    opacity: 0;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-picker-wrapper {\r\n    /* position: relative;\r\n    display: inline-flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    height: var(--default-normal-height);\r\n    width: 150px; */\r\n    position: relative;\r\n    width: 150px;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    top: 6px;\r\n    right: 5px;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-input {\r\n    cursor: text;\r\n    color: var(--default-gray-color);\r\n    width: 100%;\r\n}\r\n\r\n.cypd-picker-wrapper.hide .cypd-input:focus {\r\n    box-shadow: none;\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.react-calendar {\r\n    position: relative;\r\n    width: 250px;\r\n    border-radius: 5px;\r\n    padding: 5px;\r\n    margin-top: 2px;\r\n    margin-bottom: 2px;\r\n    background: white;\r\n    z-index: 11;\r\n    box-shadow: 0px 3px 6px #00000029;\r\n}\r\n\r\n.react-calendar button {\r\n    position: relative;\r\n    background-color: transparent;\r\n    color: var(--default-cyp-blue-active);\r\n    border: 0;\r\n    height: 30px;\r\n    cursor: pointer;\r\n    transition: background-color 50ms;\r\n}\r\n\r\n.react-calendar button abbr {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.react-calendar button.react-calendar__tile--active,\r\n.react-calendar button:focus,\r\n.react-calendar button::-moz-focus-inner {\r\n    border: none;\r\n}\r\n\r\n.react-calendar button.react-calendar__month-view__days__day.react-calendar__tile--active,\r\n.react-calendar button.react-calendar__month-view__days__day:focus,\r\n.react-calendar button.react-calendar__month-view__days__day::-moz-focus-inner {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\nbutton.react-calendar__month-view__days__day {\r\n    height: 0;\r\n    padding-top: calc(100% / 7);\r\n    border-radius: 50%;\r\n}\r\n\r\nbutton.react-calendar__century-view__decades__decade {\r\n    height: 40px;\r\n}\r\n\r\n.react-calendar button:hover {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\n.react-calendar__month-view__weekdays {\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: 30px;\r\n    line-height: 30px;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.react-calendar__month-view__weekdays__weekday abbr {\r\n    color: white;\r\n    font-weight: bold;\r\n    text-decoration: none;\r\n}\r\n\r\n.cypd-digital-clock-wrapper {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    width: 150px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input {\r\n    position: absolute;\r\n    width: 100%;\r\n    z-index: 1;\r\n    color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input:hover {\r\n    cursor: text;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper {\r\n    margin-right: -1px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select {\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-options-container {\r\n    margin-top: 1px;\r\n    box-shadow: none;\r\n    background-color: white;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container {\r\n    height: var(--default-select-dropdown-height);\r\n    transition-delay: 0s;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.hr .cypd-options-container {\r\n    border-radius: 3px 0 0 3px;\r\n    box-shadow: 0 3px 6px #00000029;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.hr .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.min .cypd-options-container {\r\n    border-radius: 0;\r\n    box-shadow: 0 3px 6px #00000029;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.sec .cypd-options-container {\r\n    border-radius: 0 3px 3px 0;\r\n    box-shadow: 0 3px 6px #00000029;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    width: 0;\r\n    top: 6px;\r\n    right: 20px;\r\n    z-index: 1;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n\r\n/* cypd notification */\r\n\r\n#g__cypd_notify_window {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-flow: column-reverse;\r\n    flex-direction: column-reverse;\r\n    margin-right: 10px;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 350px;\r\n    z-index: 51;\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper {\r\n    overflow: hidden;\r\n    margin-bottom: 10px;\r\n    max-height: 90px;\r\n    box-shadow: 0px 0px 12px -2px var(--default-deepgray-color);\r\n    transition: max-height .2s cubic-bezier(0.215, 0.610, 0.355, 1), margin-bottom 0s cubic-bezier(0.215, 0.610, 0.355, 1) .1s;\r\n    animation: PushIn 500ms cubic-bezier(0.215, 0.610, 0.355, 1);\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper.hide {\r\n    margin-bottom: 0px;\r\n    max-height: 0px;\r\n}\r\n\r\n@keyframes PushIn {\r\n    0% {\r\n        transform: translateX(150%);\r\n    }\r\n    100% {\r\n        transform: none;\r\n    }\r\n}\r\n\r\n@keyframes PushOut {\r\n    0% {\r\n        transform: scaleY(1);\r\n    }\r\n    100% {\r\n        transform: scaleY(0);\r\n    }\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 100%;\r\n    padding: 10px 10px 10px 15px;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info {\r\n    border-left: 5px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success {\r\n    border-left: 5px solid #2fdc17;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning {\r\n    border-left: 5px solid #ff9b02;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error {\r\n    border-left: 5px solid var(--default-red-active-color);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .icon {\r\n    overflow: visible;\r\n    min-width: 25px;\r\n    height: 25px;\r\n    left: 15px;\r\n    border-radius: 50%;\r\n    background-position-y: center;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info .icon {\r\n    background-color: var(--default-cyp-blue-active);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><circle cx='12.5' cy='8' r='2' stroke='none' fill='white'/><path d='M9.5 12.5 14.5 12.5 14.5 18.5 16.5 19.5 9.5 19.5 11.5 18.5 11.5 14.5 Z' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success .icon {\r\n    background-color: #2fdc17;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M5 13 11 17 18 7' stroke='white' stroke-width='3' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning .icon {\r\n    background-color: white;\r\n    border-radius: 0px;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M12.5 2 22.026 20 2.974 20 Z' stroke='%23ff9b02' stroke-width='3' stroke-linejoin='round' fill='%23ff9b02'/><path d='M11.1 7 13.9 7 12.5 15 Z' stroke='none' fill='white' /><circle cx='12.5' cy='17.4' r='1.4' stroke='none' fill='white'/><circle cx='12.5' cy='7' r='1.4' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error .icon {\r\n    background-color: var(--default-red-active-color);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M7.5 7.5 17.5 17.5 M17.5 7.5 7.5 17.5' stroke='white' stroke-width='4' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content {\r\n    height: 80%;\r\n    flex-grow: 10;\r\n    margin-left: 20px;\r\n    margin-right: 15px;\r\n    min-width: 240px;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .title {\r\n    font-weight: bold;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .message {\r\n    margin-top: 5px;\r\n    white-space: pre-wrap;\r\n    word-wrap: break-word;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .remove {\r\n    overflow: visible;\r\n    min-width: 20px;\r\n    height: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n/* cypd-dropdown */\r\n\r\n.cypd-dropdown {\r\n    position: relative;\r\n    cursor: pointer;\r\n}\r\n\r\n.cypd-dropdown>.wrapper {\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    opacity: 0;\r\n    background-color: white;\r\n    padding: 0px;\r\n    box-shadow: 0px 0px 2px gray;\r\n    z-index: 21;\r\n    transform: translateY(5px);\r\n    transition: opacity 150ms, max-height 0ms linear 150ms;\r\n}\r\n\r\n.cypd-dropdown>input:checked~.wrapper {\r\n    height: auto;\r\n    max-height: 2000px;\r\n    opacity: 1;\r\n    transition: opacity 150ms;\r\n}\r\n\r\n.cypd-dropdown>.wrapper>.cypd-dropdown-item {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    padding: 5px 10px 5px 10px;\r\n    height: 32px;\r\n    color: var(--default-cyp-blue);\r\n    transition: background-color 150ms, color 150ms, transform 150ms;\r\n}\r\n\r\n.cypd-dropdown>.wrapper>.cypd-dropdown-item:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    color: white;\r\n}\r\n\r\n.cypd-dropdown>.wrapper>.cypd-dropdown-item>*:not(:nth-child(1)) {\r\n    margin-left: 20px;\r\n}\r\n\r\n.cypd-dropdown-item>.prefix>img {\r\n    width: 24px;\r\n}\r\n\r\n.cypd-dropdown-item>.label {\r\n    white-space: nowrap;\r\n}\r\n\r\nhtml {\r\n    visibility: visible;\r\n}\r\n\r\n\r\n/* cypd-empty */\r\n\r\n\r\n/* .cypd-empty-view {\r\n    min-height: 150px;\r\n    position: relative;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' overflow='visible'><ellipse cx='45' cy='60' rx='25' ry='5' stroke='none' fill='rgba(170,170,170,0.5)' /><path d='M20 45 30 30 60 30 70 45' stroke='rgba(170,170,170,0.8)' fill='none' stroke-linejoin='round' /><path d='M70 45 55 45 53 50 37 50 35 45 20 45 20 60 70 60 Z' stroke='rgba(170,170,170,0.8)' fill='rgb(238,238,238)' stroke-linejoin='round' /><text x='45' y='85' font-family='Arial' fill='rgba(170,170,170,0.8)' text-anchor='middle'>No Data</text></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n} */\r\n\r\n.cypd-empty-view,\r\n.cypd-cone-view {\r\n    min-height: 150px;\r\n    position: relative;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.cypd-empty-view .background {\r\n    width: 100px;\r\n    height: 100px;\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n}\r\n\r\n.cypd-cone-view .background {\r\n    width: 160px;\r\n    height: 100px;\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n}\r\n\r\n\r\n/* cypd-book */\r\n\r\n.cypd-book {\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-page {\r\n    width: 100%;\r\n    position: relative;\r\n    opacity: 1;\r\n    transform: translateX(0%);\r\n    transition: opacity 150ms, transform 150ms;\r\n}\r\n\r\n.cypd-page.history,\r\n.cypd-page.future {\r\n    position: absolute;\r\n    opacity: 0;\r\n    width: 0;\r\n    overflow: hidden;\r\n}\r\n\r\n.cypd-page.history {\r\n    transform: translate(-10px);\r\n}\r\n\r\n.cypd-page.future {\r\n    transform: translate(10px);\r\n}\r\n\r\n\r\n/* cypd-list */\r\n\r\n.cypd-list {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: stretch;\r\n    height: auto;\r\n    max-height: 100%;\r\n    width: 100%;\r\n    padding: 10px 20px 10px 20px;\r\n    overflow-y: auto;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-list>.cypd-listitem {\r\n    position: relative;\r\n    min-height: 50px;\r\n    border-radius: 10px;\r\n    border: 2px solid transparent;\r\n    opacity: 1;\r\n    flex-shrink: 0;\r\n    cursor: default;\r\n    transition: border-color 150ms, opacity 150ms;\r\n}\r\n\r\n.cypd-list.draggable>.cypd-listitem {\r\n    cursor: move;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-list.draggable>.cypd-listitem.dragged {\r\n    opacity: 0.5;\r\n}\r\n\r\n.cypd-list>.cypd-listitem:hover {\r\n    border-color: #00839E;\r\n}\r\n\r\n.cypd-list.dragging>.cypd-listitem,\r\n.cypd-list.dragging>.cypd-listitem:hover {\r\n    border-color: transparent;\r\n    border-radius: 0;\r\n}\r\n\r\n.cypd-list.dragging>.cypd-listitem.hover-top:hover {\r\n    border-top: 2px solid #00839E;\r\n}\r\n\r\n.cypd-list.dragging>.cypd-listitem.hover-bottom:hover {\r\n    border-bottom: 2px solid #00839E;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.readmore-check {\r\n    display: none;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    min-height: 50px;\r\n    text-align: start;\r\n    padding-left: 10px;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.label {\r\n    font-weight: bold;\r\n    justify-self: flex-start;\r\n    margin-right: auto;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration>* {\r\n    margin-left: 10px;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label {\r\n    width: 40px;\r\n    user-select: none;\r\n    cursor: pointer;\r\n    color: #33a8c0;\r\n    font-size: 12px;\r\n    transition: color 150ms;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {\r\n    color: #47bbd3;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.readmore-check~.detail {\r\n    box-sizing: border-box;\r\n    position: relative;\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    height: 0;\r\n    text-indent: 40px;\r\n    text-align: start;\r\n    word-wrap: break-word;\r\n    border-top: 1px solid rgba(128, 128, 128, 0.414);\r\n    opacity: 0;\r\n    padding: 0px;\r\n    transition: opacity 150ms, padding 150ms, max-height 150ms linear 150ms;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.readmore-check:checked~.detail {\r\n    height: auto;\r\n    max-height: 70px;\r\n    padding: 10px;\r\n    opacity: 1;\r\n    transition: max-height 150ms, padding 150ms, opacity 150ms linear 150ms;\r\n}";
+var css_248z = "* {\r\n    box-sizing: border-box;\r\n    font-family: Arial, Helvetica, sans-serif;\r\n    font-size: var(--default-normal-fontsize);\r\n    letter-spacing: 0.5px;\r\n    scrollbar-color: #7fbeca rgba(108, 151, 158, 0.376);\r\n    scrollbar-width: thin;\r\n    scrollbar-highlight-color: #00839E;\r\n    scrollbar-darkshadow-color: #00839E;\r\n}\r\n\r\n*::selection {\r\n    color: white;\r\n    background-color: #00839E;\r\n}\r\n\r\n\r\n/* \r\n@font-face {\r\n    font-family: 'Noto Sans TC', sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');\r\n    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+F900-FAFF, U+2F800-2FA1F;\r\n}\r\n\r\n@font-face {\r\n    font-family: \"Open Sans\", sans-serif;\r\n    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');\r\n    unicode-range: U+00-7F;\r\n} */\r\n\r\nbody {\r\n    --default-large-fontsize: 16px;\r\n    --default-normal-fontsize: 14px;\r\n    --default-small-fontsize: 12px;\r\n    --default-large-height: 39px;\r\n    --default-normal-height: 32px;\r\n    --default-small-height: 25px;\r\n    --default-cyp-blue: #008aab;\r\n    --default-cyp-blue-active: #00839E;\r\n    --default-cyp-blue-hover: #33a8c0;\r\n    --default-cyp-blue-light: #47bbd3;\r\n    --default-cyp-blue-opa-light: #00839E2F;\r\n    --default-cyp-blue-opa-medium: #00839E7F;\r\n    --default-cyp-blue-opa-deep: #00839EAF;\r\n    --default-header-height: 60px;\r\n    --default-nav-height: 5px;\r\n    --default-footer-height: 0px;\r\n    --default-leftsider-width: 255px;\r\n    --default-rightsider-width: 0px;\r\n    --default-content-height: calc(100% - var(--default-header-height) - var(--default-nav-height) - var(--default-footer-height));\r\n    /* --default-leftsider-width: 0px;\r\n--default-rightsider-width: 250px; */\r\n    --default-header-width: 100%;\r\n    --default-left-collapser-width: 13px;\r\n    --default-right-collapser-width: 0px;\r\n    /* --default-left-collapser-width: 0px;\r\n--default-right-collapser-width: 15px; */\r\n    --default-gray-color: rgb(163, 163, 163);\r\n    --default-disabled-color: rgb(185, 185, 185);\r\n    --default-disabled-background: rgb(231, 231, 231);\r\n    /* --default-red-color: rgb(255, 72, 72);\r\n    --default-red-hover-color: rgb(255, 128, 128);\r\n    --default-red-active-color: rgb(255, 28, 28); */\r\n    --default-red-color: #b92454;\r\n    --default-red-hover-color: #d12b60;\r\n    --default-red-active-color: #a01f48;\r\n    --default-deepgray-color: rgb(139, 139, 139);\r\n    --default-lightblack-color: rgb(31, 31, 31);\r\n    --default-transition-duration: 150ms;\r\n    /* for navbar cypd-tree */\r\n    --default-nav-background-color: rgb(51, 51, 51);\r\n    --default-navhover-background-color: rgba(51, 51, 51, 0.9);\r\n    --default-nav-item-width: 150px;\r\n    --default-nav-item-padding: 0px 20px 0px 20px;\r\n    --default-dropdown-item-height: 35px;\r\n    /* for cypd-select */\r\n    --default-select-normal-height: 32px;\r\n    --default-select-small-height: 25px;\r\n    --default-select-dropdown-height: 200px;\r\n    /* for cypd-tooltip */\r\n    --default-tooltip-width: 150px;\r\n    --default-tooltip-opacity: 1;\r\n    /* for cypd-slider */\r\n    --default-slider-drag-width: 17px;\r\n    --default-inrange-hover-color: var(--default-cyp-blue-active);\r\n    --default-inrange-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd general */\r\n\r\n[class^='cypd-'].small {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n::-webkit-scrollbar {\r\n    /* width */\r\n    width: 5px;\r\n}\r\n\r\n ::-webkit-scrollbar-track {\r\n    /* Track */\r\n    background: rgba(108, 151, 158, 0.376);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb {\r\n    /* Handle */\r\n    background: var(--default-cyp-blue-light);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:hover {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-hover);\r\n}\r\n\r\n ::-webkit-scrollbar-thumb:active {\r\n    /* Handle on hover */\r\n    background: var(--default-cyp-blue-active);\r\n}\r\n\r\n\r\n/* cypd layout */\r\n\r\n.cypd-layout {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: nowrap;\r\n    justify-content: stretch;\r\n    width: 100%;\r\n    height: 100%;\r\n    top: 0;\r\n    left: 0;\r\n}\r\n\r\n.cypd-layout>.header {\r\n    background-color: white;\r\n    text-align: center;\r\n    height: var(--default-header-height);\r\n    width: 100%;\r\n    padding: 10px;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-layout>.navigation {\r\n    height: var(--default-nav-height);\r\n    width: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    flex-wrap: wrap;\r\n    flex-shrink: 0;\r\n    background-color: #008aab;\r\n}\r\n\r\n.cypd-layout>.content {\r\n    position: relative;\r\n    display: flex;\r\n    width: 100vw;\r\n    height: 100%;\r\n    overflow-y: hidden;\r\n}\r\n\r\n.cypd-layout .column {\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-layout .column.left {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    height: 100%;\r\n    max-width: 60px;\r\n    overflow: hidden;\r\n    flex-shrink: 0;\r\n    transition: max-width var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover, */\r\n\r\n.cypd-layout .column.left.visible {\r\n    max-width: var(--default-leftsider-width);\r\n    width: var(--default-leftsider-width);\r\n}\r\n\r\n.cypd-layout #collapse-mask {\r\n    position: absolute;\r\n    left: 0;\r\n}\r\n\r\n.cypd-layout .column.left.visible~#collapse-mask {\r\n    position: absolute;\r\n    width: calc(100% - var(--default-leftsider-width));\r\n    height: 100%;\r\n    left: var(--default-leftsider-width);\r\n    z-index: 30;\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: center;\r\n    top: 0;\r\n    left: 0;\r\n    height: 60px;\r\n    width: 60px;\r\n    cursor: pointer;\r\n    user-select: none;\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle>div {\r\n    position: relative;\r\n    width: 29px;\r\n    height: 3px;\r\n    margin-bottom: 5px;\r\n    background: var(--default-cyp-blue-active);\r\n    border-radius: 3px;\r\n    flex-shrink: 0;\r\n    transition: opacity var(--default-transition-duration), transform var(--default-transition-duration);\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle>div:last-child {\r\n    margin-bottom: 0;\r\n}\r\n\r\n#__cypd_sider_toggler_container .toggle>input {\r\n    height: 0;\r\n    width: 0;\r\n    visibility: hidden;\r\n    position: absolute;\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover .toggle>span:nth-child(2), */\r\n\r\n#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(2) {\r\n    transform: rotate(45deg) translate(5px, 7px);\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover .toggle>span:nth-child(3), */\r\n\r\n#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(3) {\r\n    opacity: 0;\r\n}\r\n\r\n\r\n/* .cypd-layout .column.left:hover .toggle>span:nth-child(4), */\r\n\r\n#__cypd_sider_toggler_container .toggle>input:checked~div:nth-child(4) {\r\n    transform: rotate(-45deg) translate(4px, -6px);\r\n}\r\n\r\n.cypd-layout .column.left .column-wrapper {\r\n    width: var(--default-leftsider-width);\r\n    height: 100%;\r\n    background-color: var(--default-cyp-blue-active);\r\n    flex-grow: 1;\r\n}\r\n\r\n@media(max-width: 700px) {\r\n    .cypd-layout .column.left {\r\n        position: absolute;\r\n        max-width: var(--default-leftsider-width);\r\n        width: var(--default-leftsider-width);\r\n        overflow: visible;\r\n        z-index: 0;\r\n        transform: translateX(-100%);\r\n        transition: z-index 0s linear var(--default-transition-duration), transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);\r\n    }\r\n    .cypd-layout .column.left.visible {\r\n        z-index: 32;\r\n        transform: translateX(0);\r\n        transition: z-index 0s linear 0s, transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);\r\n    }\r\n}\r\n\r\n.cypd-layout .column.middle {\r\n    overflow: hidden;\r\n    flex-grow: 1;\r\n}\r\n\r\n.cypd-navitem {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    flex-wrap: wrap;\r\n    /* border-bottom: 1px solid rgb(0, 101, 121); */\r\n    cursor: pointer;\r\n    transition: background-color 300ms;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-navitem>.toggler {\r\n    position: absolute;\r\n    width: 6px;\r\n    height: 6px;\r\n    top: 27px;\r\n    right: 27px;\r\n    border-top: 2px solid white;\r\n    border-right: 2px solid white;\r\n    transform: rotate(45deg);\r\n    transition: transform 150ms;\r\n}\r\n\r\n.cypd-navitem.extend>.toggler {\r\n    transform: rotate(135deg);\r\n}\r\n\r\n.cypd-navitem ul {\r\n    width: 100%;\r\n    padding-left: 60px;\r\n    margin-top: 0;\r\n    margin-bottom: 0;\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    opacity: 0;\r\n    pointer-events: none;\r\n    transition: opacity 150ms linear 150ms;\r\n}\r\n\r\n.cypd-navitem.extend>ul {\r\n    max-height: 3000px;\r\n    opacity: 1;\r\n    pointer-events: inherit;\r\n    background-color: rgb(2, 91, 109);\r\n}\r\n\r\n.cypd-layout .column.left:not(.visible) .cypd-navitem>ul {\r\n    position: fixed;\r\n    max-height: 3000px;\r\n    width: 220px;\r\n    transform: translateX(60px);\r\n    z-index: 0;\r\n    background-color: rgb(2, 91, 109);\r\n    padding-left: 20px;\r\n    transition: none;\r\n}\r\n\r\n.cypd-layout .column.left:not(.visible) .cypd-navitem.extend>ul {\r\n    opacity: 1;\r\n    z-index: 31;\r\n    transition: opacity 150ms;\r\n}\r\n\r\n.cypd-navitem li {\r\n    list-style-type: none;\r\n}\r\n\r\n.cypd-navitem:hover {\r\n    background-color: rgb(0, 101, 121);\r\n}\r\n\r\n.cypd-navitem .cypd-navitem:hover {\r\n    background-color: transparent !important;\r\n}\r\n\r\n.cypd-navitem>.icon {\r\n    width: 60px;\r\n    height: 60px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    flex-shrink: 0;\r\n    flex-grow: 0;\r\n}\r\n\r\n.cypd-navitem>.label {\r\n    color: white;\r\n    font-size: 16px;\r\n    flex-shrink: 0;\r\n    flex-grow: 1;\r\n    height: 60px;\r\n    line-height: 60px;\r\n    transition: text-indent 300ms;\r\n}\r\n\r\n.cypd-navitem.extend>.icon,\r\n.cypd-navitem.extend>.label {\r\n    background-color: rgb(0, 101, 121);\r\n}\r\n\r\n.cypd-navitem .cypd-navitem>.label {\r\n    height: 40px;\r\n    line-height: 40px;\r\n}\r\n\r\n.cypd-navitem>.label:active,\r\n.cypd-navitem>.label:hover {\r\n    text-indent: 30px;\r\n}\r\n\r\n\r\n/* cypd table */\r\n\r\n.cypd-table-container {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    width: min-content;\r\n}\r\n\r\n.cypd-table-container .table-wrapper {\r\n    border-radius: 3px;\r\n    width: min-content;\r\n}\r\n\r\n.cypd-table-container .table-wrapper table {\r\n    border-collapse: separate;\r\n    border-spacing: 0;\r\n    box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.3);\r\n    width: 100%;\r\n}\r\n\r\n.cypd-table-container .table-wrapper thead>tr {\r\n    color: white;\r\n    height: 40px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper thead>tr>th {\r\n    background-color: #008AAB;\r\n    border: 1px solid #008AAB;\r\n    border-right: 1px solid white;\r\n    white-space: nowrap;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody>tr {\r\n    position: relative;\r\n    height: 40px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tr.odd>td {\r\n    background-color: rgb(223, 238, 241);\r\n}\r\n\r\n.cypd-table-container .table-wrapper tr.even>td {\r\n    background-color: rgb(223, 238, 241);\r\n}\r\n\r\n.cypd-table-container .table-wrapper th,\r\n.cypd-table-container .table-wrapper td {\r\n    border: 0;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper th:nth-child(1),\r\n.cypd-table-container .table-wrapper td:nth-child(1) {\r\n    padding-left: 20px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper th:last-child,\r\n.cypd-table-container .table-wrapper td:last-child {\r\n    border-right: 0;\r\n    padding-right: 20px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper td>div {\r\n    width: 100%;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    color: rgba(0, 0, 0, 0.75);\r\n    white-space: nowrap;\r\n    transition: color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody>tr:hover>td>div {\r\n    color: black;\r\n}\r\n\r\n.cypd-table-container:not(.no),\r\n.cypd-table-container:not(.no) .table-wrapper,\r\n.cypd-table-container:not(.no) table {\r\n    max-width: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-table-container.transform {\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n}\r\n\r\n.cypd-table-container:not(.no) .table-wrapper thead {\r\n    display: none;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr td {\r\n    border-top: 0;\r\n    padding-bottom: 10px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tr.odd>td {\r\n    background-color: white;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr td:nth-child(1)>div {\r\n    font-weight: bold;\r\n    color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:nth-child(1) td {\r\n    padding-top: 20px;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:last-child td {\r\n    padding-bottom: 20px;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper td>div:last-child {\r\n    justify-content: flex-start;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:nth-child(1) td:nth-child(1),\r\n.cypd-table-container .table-wrapper thead>tr>th:nth-child(1) {\r\n    border-top-left-radius: 3px;\r\n}\r\n\r\n.cypd-table-container.transform .table-wrapper tr:nth-child(1) td:last-child,\r\n.cypd-table-container .table-wrapper thead>tr>th:last-child {\r\n    border-top-right-radius: 3px;\r\n}\r\n\r\n.cypd-table-container.shorten td {\r\n    padding: 5px 20px 5px 20px;\r\n    max-height: 50px;\r\n    height: 50px;\r\n}\r\n\r\n.cypd-table-container.shorten td>div {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: stretch;\r\n    color: #7d7d7d;\r\n}\r\n\r\n.cypd-table-container.shorten .right,\r\n.cypd-table-container.shorten .upper,\r\n.cypd-table-container.shorten .lower {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n}\r\n\r\n.cypd-table-container.shorten .upper {\r\n    height: 15px;\r\n}\r\n\r\n.cypd-table-container.shorten .lower {\r\n    height: 25px;\r\n    align-items: flex-end;\r\n}\r\n\r\n.cypd-table-container.shorten .right>div {\r\n    margin-left: 10px;\r\n}\r\n\r\n.cypd-table-container.shorten .left.bottom {\r\n    font-size: 16px;\r\n    font-weight: bold;\r\n    color: #555;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {\r\n    border-bottom-left-radius: 3px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:last-child {\r\n    border-bottom-right-radius: 3px;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:nth-child(1) {\r\n    border-left: 1px solid;\r\n    border-bottom: 1px solid;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr:last-child td:last-child {\r\n    border-right: 1px solid;\r\n    border-bottom: 1px solid;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr.odd:last-child td:last-child,\r\n.cypd-table-container .table-wrapper tbody tr.odd:last-child td:nth-child(1) {\r\n    border-color: white;\r\n}\r\n\r\n.cypd-table-container .table-wrapper tbody tr.even:last-child td:last-child,\r\n.cypd-table-container .table-wrapper tbody tr.even:last-child td:nth-child(1) {\r\n    border-color: rgb(233, 243, 245);\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer {\r\n    margin-top: 10px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button {\r\n    border-radius: 0;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(1) {\r\n    order: 1;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(2) {\r\n    order: 3;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.default {\r\n    border-right: 0;\r\n    border: 0.5px solid #bcbcbc;\r\n    order: 2;\r\n}\r\n\r\n.cypd-table-container:not(.no) .cypd-pagination-footer .cypd-button.default {\r\n    display: none;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.default:hover {\r\n    border: 0.5px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button.default.focus {\r\n    background-color: #e4e4e4;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(3) {\r\n    border-left: 0;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .cypd-button .context {\r\n    font-weight: normal;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .form {\r\n    display: inline-block;\r\n    margin-left: 10px;\r\n    font: Regular 18px/21px Arial;\r\n    color: #707070;\r\n    white-space: nowrap;\r\n    order: 4;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-table-container:not(.no) .cypd-pagination-footer .form {\r\n    order: 2;\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-table-container .cypd-pagination-footer .form .cypd-input {\r\n    margin-right: 10px;\r\n    border-radius: 0;\r\n    width: 40px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-page.current {\r\n    padding-left: 50px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist {\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    height: 100%;\r\n    width: 40px;\r\n    left: 0;\r\n    top: 0;\r\n    padding-top: 40px;\r\n    z-index: 1;\r\n}\r\n\r\n.cypd-table-container.transform.checkable .cypd-table-checklist {\r\n    display: none;\r\n}\r\n\r\n.cypd-table-container.shorten.checkable .cypd-table-checklist {\r\n    padding-top: 0;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper {\r\n    height: 40px;\r\n    width: 40px;\r\n    justify-content: center;\r\n}\r\n\r\n.cypd-table-container.shorten.checkable .cypd-table-checklist .cypd-checkbox-wrapper {\r\n    height: 50px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox {\r\n    position: relative;\r\n    height: 26px;\r\n    width: 26px;\r\n    border-radius: 50%;\r\n    justify-content: center;\r\n    background-color: transparent;\r\n    background-position: 4px 34px;\r\n    border: none;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox {\r\n    background-color: var(--default-cyp-blue);\r\n    background-position: 4px 4px;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox:after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    border-radius: 50%;\r\n    border: 1px solid #777;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox::after {\r\n    border: none;\r\n}\r\n\r\n.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>span:nth-child(3) {\r\n    display: none;\r\n}\r\n\r\n\r\n/* cypd cypd-modal */\r\n\r\n.cypd-modal-container {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    height: 100%;\r\n    width: 100%;\r\n    user-select: text;\r\n    z-index: 41;\r\n}\r\n\r\n.cypd-modal-container.active {\r\n    opacity: 1;\r\n    visibility: visible;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container.hide {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration) ease-in, visibility 0ms ease-in var(--default-transition-duration);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n    background: rgba(0, 0, 0, 0.8);\r\n    text-align: center;\r\n    vertical-align: middle;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal {\r\n    position: relative;\r\n    background: white;\r\n    display: inline-block;\r\n    border-radius: 3px;\r\n    min-width: 400px;\r\n    padding: 10px;\r\n    text-align: left;\r\n}\r\n\r\n.cypd-confirm-dialog-container {\r\n    position: relative;\r\n    z-index: 31;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal h3 {\r\n    margin: 10px 20px 15px 20px;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    line-height: 30px;\r\n    font-size: 18px;\r\n    border-bottom: 1px solid rgba(40, 40, 40, 0.3);\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal .content {\r\n    margin: 0px 20px 15px 20px;\r\n}\r\n\r\n.cypd-modal-container .cypd-modal-background .cypd-modal svg.close-svg {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    height: 20px;\r\n    width: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n/* cypd href */\r\n\r\n.cypd-href {\r\n    display: inline;\r\n    color: var(--default-cyp-blue-hover);\r\n    cursor: pointer;\r\n}\r\n\r\n.cypd-href:hover {\r\n    color: var(--default-cyp-blue-light);\r\n    text-decoration: underline;\r\n}\r\n\r\n\r\n/* cypd input */\r\n\r\n.cypd-input {\r\n    width: 60px;\r\n    height: 32px;\r\n    position: relative;\r\n    padding-left: 10px;\r\n    padding-right: 10px;\r\n    text-align: left;\r\n    border-radius: 5px;\r\n    cursor: pointer;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-input::placeholder {\r\n    /* color: var(--default-gray-color); */\r\n    color: #999;\r\n}\r\n\r\n.cypd-input:hover {\r\n    /* border: 1px solid var(---default-cyp-blue-hover); */\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-input:focus {\r\n    cursor: text;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n\r\n/* cypd select */\r\n\r\n.cypd-select-wrapper {\r\n    position: relative;\r\n    display: inline-block;\r\n    text-align: left;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select {\r\n    padding: 0px 25px 0px 10px;\r\n    width: 100%;\r\n    height: 100%;\r\n    border-radius: 5px;\r\n    border: 1px solid var(--default-gray-color);\r\n    letter-spacing: 1px;\r\n    cursor: pointer;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2333a8c0' fill='%2333a8c0' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:hover {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select:disabled {\r\n    cursor: not-allowed;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='rgb(160,160,160)' fill='rgb(160,160,160)' /></svg>\");\r\n    background-color: var(--default-disabled-background);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select.focus {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2300839E' fill='%2300839E' /></svg>\");\r\n    background-position: right;\r\n    background-repeat: no-repeat;\r\n    background-color: white;\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-select-wrapper .cypd-select::placeholder {\r\n    /* color: var(--default-deepgray-color); */\r\n    color: #999;\r\n}\r\n\r\n.cypd-options-container {\r\n    /* position: absolute;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    border-radius: 3px;\r\n    transform: scaleY(1) translateY(1px);\r\n    transform-origin: top;\r\n    opacity: 1;\r\n    z-index: 21;\r\n    box-shadow: 0px 0px 4px var(--default-cyp-blue-active);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 50ms; */\r\n    position: absolute;\r\n    top: var(--default-select-normal-height);\r\n    left: 0;\r\n    width: 100%;\r\n    overflow: hidden;\r\n    border-radius: 3px;\r\n    max-height: 3000px;\r\n    height: auto;\r\n    z-index: 21;\r\n    box-shadow: 0px 3px 6px #00000029;\r\n    transition: max-height var(--default-transition-duration);\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-options-container {\r\n    top: var(--default-select-small-height);\r\n}\r\n\r\n.cypd-options-container.extend-top {\r\n    transform: translateY(calc(-100% - var(--default-select-normal-height) - 2px));\r\n    transform-origin: bottom;\r\n    box-shadow: 0px -3px 6px #0000005f;\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-options-container.extend-top {\r\n    transform: translateY(calc(-100% - var(--default-select-small-height) - 2px));\r\n}\r\n\r\n.cypd-options-container.limit-height {\r\n    height: var(--default-select-dropdown-height);\r\n}\r\n\r\n.cypd-options-container.collapsed {\r\n    /* opacity: 0;\r\n    height: 0;\r\n    transform: scaleY(0);\r\n    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 150ms; */\r\n    max-height: 0;\r\n    height: 0;\r\n}\r\n\r\n.cypd-options-wrapper {\r\n    position: relative;\r\n    width: 100%;\r\n    max-height: 100%;\r\n    scrollbar-color: #7fbeca white;\r\n    overflow-y: auto;\r\n}\r\n\r\n.cypd-options-wrapper::-webkit-scrollbar-track {\r\n    background: white;\r\n}\r\n\r\n.cypd-options-wrapper .cypd-option {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-option input[type=\"radio\"] {\r\n    position: absolute;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-option label {\r\n    position: relative;\r\n    display: block;\r\n    height: var(--default-select-normal-height);\r\n    line-height: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n    width: 100%;\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration), color var(--default-transition-duration);\r\n    color: black;\r\n    background-color: white;\r\n    overflow: hidden;\r\n    text-overflow: ellipsis;\r\n    white-space: nowrap;\r\n}\r\n\r\n.cypd-select-wrapper.small .cypd-option label {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    font-size: var(--default-small-fontsize);\r\n}\r\n\r\n.cypd-option input[type=\"radio\"]:checked~label,\r\n.cypd-option label:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    color: white;\r\n}\r\n\r\n\r\n/* cypd icon */\r\n\r\n.cypd-icon-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: center;\r\n    width: 20px;\r\n    height: 20px;\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable {\r\n    cursor: pointer;\r\n    pointer-events: all;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable:active {\r\n    opacity: 0.5;\r\n}\r\n\r\n.cypd-icon-wrapper.clickable svg.cypd-icon * {\r\n    /* if not disable pointer event, parent onclick will not triggered sometimes */\r\n    pointer-events: none;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon:not(.senario) {\r\n    overflow: visible;\r\n    max-width: 16px;\r\n    max-height: 16px;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.fc-loading {\r\n    animation: rotateLoad 1s linear infinite;\r\n}\r\n\r\n.cypd-icon-wrapper svg.cypd-icon.senario {\r\n    overflow: visible;\r\n    top: 0;\r\n    left: 0;\r\n    min-height: 100%;\r\n    min-width: 250px;\r\n    opacity: 0.3;\r\n}\r\n\r\nsvg.cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n    stroke-linejoin: round;\r\n    stroke-linecap: round;\r\n}\r\n\r\nsvg.cypd-icon.solid-left *,\r\nsvg.cypd-icon.solid-right * {\r\n    fill: white;\r\n    stroke-linejoin: miter;\r\n    stroke-linecap: miter;\r\n}\r\n\r\n@keyframes rotateLoad {\r\n    0% {\r\n        transform: rotate(0);\r\n    }\r\n    100% {\r\n        transform: rotate(1turn);\r\n    }\r\n}\r\n\r\n\r\n/* cypd button */\r\n\r\n.cypd-button {\r\n    box-sizing: border-box;\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    position: relative;\r\n    padding: 0px 12px 0px 12px;\r\n    border-radius: 4px;\r\n    cursor: pointer;\r\n    height: 32px;\r\n    line-height: 32px;\r\n    overflow: hidden;\r\n    white-space: nowrap;\r\n    transition: color var(--default-transition-duration) ease-in-out 50ms, border var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;\r\n    user-select: none;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-button.round {\r\n    border-radius: calc(var(--default-select-normal-height) / 2);\r\n}\r\n\r\n.cypd-button.small.round {\r\n    border-radius: calc(var(--default-select-small-height) / 2);\r\n}\r\n\r\n.cypd-button.small {\r\n    padding: 0px 6px 0px 6px;\r\n}\r\n\r\n.cypd-button.no-content {\r\n    width: var(--default-select-normal-height);\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-button.small.no-content {\r\n    width: var(--default-select-small-height);\r\n}\r\n\r\n.cypd-button.primary {\r\n    color: white;\r\n    background-color: var(--default-cyp-blue);\r\n}\r\n\r\n.cypd-button.primary:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.primary:active {\r\n    background-color: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.danger {\r\n    color: white;\r\n    background-color: var(--default-red-color);\r\n}\r\n\r\n.cypd-button.danger:hover {\r\n    background-color: var(--default-red-hover-color);\r\n}\r\n\r\n.cypd-button.danger:active {\r\n    background-color: var(--default-red-active-color);\r\n}\r\n\r\n.cypd-button.default {\r\n    background-color: white;\r\n    color: var(--default-deepgray-color);\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.cypd-button.default:hover {\r\n    color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active {\r\n    color: var(--default-cyp-blue-active);\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.default .cypd-icon:not([class*='fc-']) * {\r\n    transition: stroke var(--default-transition-duration) ease-in-out 50ms;\r\n}\r\n\r\n.cypd-button.disabled {\r\n    background-color: var(--default-disabled-background);\r\n    color: var(--default-disabled-color);\r\n    border: 1px solid var(--default-disabled-color);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-button .context {\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-button.small .context {\r\n    font-weight: 500;\r\n}\r\n\r\n.cypd-button .wrap-icon {\r\n    display: flex;\r\n    margin-right: 3px;\r\n}\r\n\r\n.cypd-button.no-content .wrap-icon {\r\n    margin-right: 0;\r\n}\r\n\r\n.cypd-button .cypd-icon-wrapper {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-button.primary .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) *,\r\n.cypd-button.danger .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-button.default .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(139, 139, 139);\r\n}\r\n\r\n.cypd-button.default:hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-button.default:active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: var(--default-cyp-blue-active);\r\n}\r\n\r\n.cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {\r\n    stroke: rgb(163, 163, 163);\r\n}\r\n\r\n\r\n/* cypd checkbox */\r\n\r\n.cypd-checkbox-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    position: relative;\r\n    width: auto;\r\n    height: var(--default-normal-height);\r\n    line-height: var(--default-normal-height);\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-checkbox-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-checkbox-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-checkbox-wrapper .cypd-checkbox {\r\n    flex-shrink: 0;\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 3px;\r\n    background-color: white;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='white' stroke-width='2' fill='none' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    transition: border var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-checkbox-wrapper:hover .cypd-checkbox {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:checked~.cypd-checkbox {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-checkbox-wrapper input:disabled~.cypd-checkbox {\r\n    background-color: gray;\r\n    border: 1px solid gray;\r\n}\r\n\r\n.cypd-checkbox-wrapper span {\r\n    height: var(--default-small-height);\r\n    line-height: var(--default-small-height);\r\n    padding-left: 5px;\r\n    overflow: hidden;\r\n}\r\n\r\n\r\n/* cypd radio group */\r\n\r\n.cypd-radio-group-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical {\r\n    flex-direction: column;\r\n}\r\n\r\n.cypd-radio-group-wrapper.vertical .cypd-radio-wrapper {\r\n    margin-top: 2.5px;\r\n    margin-bottom: 2.5px;\r\n}\r\n\r\n.cypd-radio-wrapper input {\r\n    position: absolute;\r\n    visibility: hidden;\r\n    height: 0;\r\n    width: 0;\r\n}\r\n\r\n.cypd-radio-wrapper {\r\n    display: flex;\r\n    flex-direction: row;\r\n    cursor: pointer;\r\n    margin-left: 5px;\r\n}\r\n\r\n.cypd-radio-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 20px;\r\n    width: 20px;\r\n    border: 1px solid var(--default-gray-color);\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    transition: border-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper:hover .cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper .cypd-radio::after {\r\n    content: '';\r\n    width: 10px;\r\n    height: 10px;\r\n    border-radius: 50%;\r\n    background-color: var(--default-cyp-blue-hover);\r\n    transform: scale(0);\r\n    transition: transform var(--default-transition-duration);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio::after {\r\n    transform: scale(1);\r\n}\r\n\r\n.cypd-radio-wrapper input:checked~.cypd-radio {\r\n    border: 1px solid var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n    border: 1px solid rgb(163, 163, 163);\r\n    box-shadow: none;\r\n}\r\n\r\n.cypd-radio-wrapper input:disabled~.cypd-radio::after {\r\n    background-color: rgb(163, 163, 163) !important;\r\n}\r\n\r\n.cypd-radio-wrapper span {\r\n    height: 20px;\r\n    line-height: 20px;\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n\r\n/* cypd switch button */\r\n\r\n.cypd-switchbutton-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    cursor: pointer;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input {\r\n    position: absolute;\r\n    width: 0;\r\n    height: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-switchbutton {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 30px;\r\n    height: 7px;\r\n    border-radius: 3.5px;\r\n    background-color: var(--default-gray-color);\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-switchbutton::after {\r\n    content: '';\r\n    position: absolute;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: white;\r\n    box-shadow: 0px 1px 3px var(--default-deepgray-color);\r\n    transition: transform var(--default-transition-duration), background-color 80ms 70ms;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton {\r\n    background-color: #84abb4;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::after {\r\n    background-color: var(--default-cyp-blue-active);\r\n    transform: translateX(15px);\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton {\r\n    background-color: rgb(163, 163, 163, 0.6) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper.disabled .cypd-switchbutton::after {\r\n    background-color: rgb(160, 160, 160) !important;\r\n}\r\n\r\n.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::before {\r\n    content: '';\r\n    position: absolute;\r\n    left: 12px;\r\n    height: 15px;\r\n    width: 15px;\r\n    border-radius: 50%;\r\n    background-color: transparent;\r\n}\r\n\r\n\r\n/* cypd spin */\r\n\r\n.cypd-spin-wrapper {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 0;\r\n    top: 0;\r\n    background: white;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 0;\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal {\r\n    flex-direction: row;\r\n}\r\n\r\n.cypd-spin-wrapper.visible {\r\n    z-index: 31;\r\n    visibility: visible;\r\n}\r\n\r\n.cypd-spin-wrapper>* {\r\n    margin-bottom: 10px;\r\n}\r\n\r\n.cypd-spin-wrapper.horizontal>* {\r\n    margin-bottom: 0px;\r\n    margin-right: 12px;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin {\r\n    transform: scale(1.5);\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg {\r\n    letter-spacing: 1px;\r\n    color: var(--default-cyp-blue-active);\r\n    font-weight: normal;\r\n}\r\n\r\n.cypd-spin-wrapper .cypd-spin-msg::after {\r\n    content: ' ...';\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo {\r\n    position: relative;\r\n    height: 40px;\r\n    width: 40px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo>* {\r\n    position: absolute;\r\n    height: 100%;\r\n    width: 100%;\r\n    animation: spin-cyp 4s linear infinite;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo>.c {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40px' height='40px' overflow='visible'><path fill='rgb(0, 131, 158)' stroke='rgb(0, 131, 158)' d='M3.676446787518377,9.790230231676986 v-3.5921140107470366 c0,-0.4732942910965607 0.24601297685563064,-0.9105747437440805 0.6452390987909704,-1.1472218892923611 l5.713729239679878,-3.386153212752969 c0.05626119555095024,-0.033350093001626314 0.05626119555095024,-0.11667205059674352 0,-0.1499155937804732 l-1.391582264863536,-0.824695590519446 c-0.399329924879161,-0.23664714554828062 -0.8911482727027799,-0.23664714554828062 -1.290478197581939,0 l-5.19315747641786,3.0775849401245052 c-0.399329924879161,0.23664714554828062 -0.6452390987909704,0.6739275981958015 -0.6452390987909704,1.1472218892923611 v6.155382979884802 c0,0.4731877412786646 0.24601297685563064,0.910468193926184 0.6452390987909704,1.1471153394744642 l3.528158257529965,2.0910401762201705 c0.05626119555095024,0.033350093001626314 0.12663959146154832,-0.008417435613829004 0.12653578851772745,-0.07511762161708156 l-0.0028026794831654206,-2.3630618613101113 c0,-0.03079289737210857 -0.016089456292245927,-0.05934824856838922 -0.04224779813512318,-0.07479797216339183 l-1.448051066302127,-0.8579391337031752 C3.9224597643740085,10.700911525238965 3.676446787518377,10.263417972955654 3.676446787518377,9.790230231676986 z' transform='matrix(2.5,0,0,2.5,0,0)'/></svg>\");\r\n}\r\n\r\n.cypd-spin-wrapper.linear .logo>.yp {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40px' height='40px' overflow='visible'><path fill='rgb(0, 131, 158)' stroke='rgb(0, 131, 158)' d='M13.837094140487364,3.767714874709207 l-0.8821174165903569,-0.5227334066005692 c-0.399329924879161,-0.23664714554828062 -0.8911482727027799,-0.23664714554828062 -1.290478197581939,0 L6.460337937852195,6.329172496942728 c-0.399329924879161,0.23664714554828062 -0.6452390987909704,0.6739275981958015 -0.6452390987909704,1.1472218892923611 v1.0364100786799286 c0,0.47862178199138955 0.2515145328781407,0.9199511277189786 0.6579030579371249,1.15468037654512 l1.5256956682801912,0.8806342449151449 l-0.0010380294382094143,-1.7929137857455697 c-0.00031140883146282475,-0.47393359000394014 0.24622058274327238,-0.9119598913767358 0.6462771282291797,-1.1485004871071194 l3.539057566631164,-2.0929580729423085 c0.05626119555095024,-0.03324354318372969 0.12643198557390625,0.008417435613829004 0.12643198557390625,0.0750110717991849 v1.638416549795544 c0,0.47308119146076777 -0.24580537096798888,0.9102550942903906 -0.6449276899595073,1.1469022398386712 L7.998697565278539,10.548012536557389 v4.979392639760369 c0,0.06670018600325262 0.07027459296677742,0.10836116480081084 0.12653578851772745,0.0750110717991849 l1.1452578791764425,-0.6787223400011468 c0.399329924879161,-0.23664714554828062 0.6453429017347906,-0.6738210483779042 0.6453429017347906,-1.1472218892923611 l-0.0001038029438209416,-1.8044211660783989 l3.9214676116675085,-2.3239580781420703 c0.39922612193533935,-0.23664714554828062 0.6452390987909704,-0.6738210483779042 0.6452390987909704,-1.1472218892923611 v-3.586147220944829 C14.482333239278338,4.441642472905005 14.236424065366528,4.0043620202574886 13.837094140487364,3.767714874709207 z' transform='matrix(2.5,0,0,2.5,0,0)'/></svg>\");\r\n    animation-delay: 0.2s;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container {\r\n    position: relative;\r\n    background-color: transparent;\r\n    height: 30px;\r\n    width: 100px;\r\n    overflow: hidden;\r\n    /* border: 1px solid black; */\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div {\r\n    position: absolute;\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: 8px;\r\n    width: 8px;\r\n    border-radius: 50%;\r\n    top: 11px;\r\n    animation: spin-linear 3s cubic-bezier(0, .89, 1, .12) infinite;\r\n    flex-grow: 0;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(1) {\r\n    animation-delay: 0.12s;\r\n    left: 29px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(2) {\r\n    animation-delay: 0.24s;\r\n    left: 43px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(3) {\r\n    animation-delay: 0.36s;\r\n    left: 57px;\r\n}\r\n\r\n.cypd-spin-wrapper.linear .container div:nth-child(4) {\r\n    animation-delay: 0.48s;\r\n    left: 71px;\r\n}\r\n\r\n@keyframes spin-linear {\r\n    0% {\r\n        transform: translateX(120px);\r\n    }\r\n    70%,\r\n    100% {\r\n        transform: translateX(-120px);\r\n    }\r\n}\r\n\r\n@keyframes spin-cyp {\r\n    0% {\r\n        opacity: 1;\r\n    }\r\n    30% {\r\n        opacity: 0.4;\r\n    }\r\n    60%,\r\n    100% {\r\n        opacity: 1;\r\n    }\r\n}\r\n\r\n\r\n/* cypd tree */\r\n\r\n.cypd-tree-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    text-align: left;\r\n    padding: 10px;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-tree-element .children,\r\n.cypd-tree-element {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding-left: 13px;\r\n    width: 100%;\r\n    font-weight: bold;\r\n}\r\n\r\n.cypd-tree-element.hide .children {\r\n    display: none;\r\n}\r\n\r\n.cypd-tree-element .self {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 40px;\r\n    line-height: 40px;\r\n    padding-left: 5px;\r\n    cursor: pointer;\r\n    color: rgba(255, 255, 255, 0.883);\r\n    transition: color var(--default-transition-duration), background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self {\r\n    color: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: rgba(255, 255, 255, 0.883);\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self .cypd-icon-wrapper svg * {\r\n    stroke: var(--default-deepgray-color);\r\n}\r\n\r\n.cypd-tree-element .self:hover {\r\n    background-color: var(--default-lightblack-color);\r\n    color: white;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .self:hover {\r\n    background-color: rgba(128, 128, 128, 0.3);\r\n    color: rgb(109, 109, 109);\r\n}\r\n\r\n.cypd-tree-element .self:hover .cypd-icon-wrapper svg * {\r\n    stroke: white;\r\n}\r\n\r\n.cypd-tree-element .self>* {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-tree-element .self .label {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='rgba(256, 256, 256, 0.5)' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>* {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 40 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>.last {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='40px' overflow='visible'><path d='M0 0 0 20 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: no-repeat;\r\n}\r\n\r\n.cypd-tree-container.black .cypd-tree-element .children>.parent:not(.last) {\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='4000px' overflow='visible'><path d='M0 0 0 4000 M0 20 11 20' stroke-dasharray='2,2' stroke='black' /></svg>\");\r\n    background-repeat: repeat-y;\r\n}\r\n\r\n.cypd-tree-icon-expand,\r\n.cypd-tree-inline-icon {\r\n    transform: scale(0.8);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container {\r\n    position: relative;\r\n    flex-direction: row;\r\n    padding: 0;\r\n    background: transparent;\r\n    overflow: visible;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-container>.cypd-tree-element:not(:last-child) {\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element {\r\n    padding-left: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self {\r\n    padding: 0px 10px 0px 10px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>* {\r\n    margin-right: 0px;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .self>.label {\r\n    text-align: center;\r\n    white-space: nowrap;\r\n}\r\n\r\n.cypd-layout-navigation .cypd-tree-element .children {\r\n    visibility: hidden;\r\n}\r\n\r\n\r\n/* cypd tooltip */\r\n\r\n.cypd-tooltip {\r\n    position: absolute;\r\n    max-width: var(--default-tooltip-width);\r\n    height: auto;\r\n    color: white;\r\n    background-color: var(--default-cyp-blue-active);\r\n    padding: 10px;\r\n    border-radius: 3px;\r\n    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);\r\n    opacity: 0;\r\n    z-index: 41;\r\n    visibility: hidden;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-tooltip.active {\r\n    visibility: visible;\r\n    opacity: 1;\r\n}\r\n\r\n.cypd-tooltip.hide {\r\n    opacity: 0;\r\n}\r\n\r\n.cypd-tooltip::after,\r\n.cypd-tooltip::before {\r\n    content: ' ';\r\n    position: absolute;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n\r\n.cypd-tooltip.left {\r\n    transform: translate(calc(-100% - 10px), -50%);\r\n}\r\n\r\n.cypd-tooltip.right {\r\n    transform: translate(10px, -50%);\r\n}\r\n\r\n.cypd-tooltip.top {\r\n    transform: translate(-50%, calc(-100% - 10px));\r\n}\r\n\r\n.cypd-tooltip.bottom {\r\n    transform: translate(-50%, 10px);\r\n}\r\n\r\n.cypd-tooltip.top::before {\r\n    bottom: -10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 10 0 5 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.bottom::before {\r\n    top: -10px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M5 0 0 10 10 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.left::before {\r\n    right: -10px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 0 0 10 10 5 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n.cypd-tooltip.right::before {\r\n    left: -10px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 5 10 0 10 10 Z' fill='%2300839E' /></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center;\r\n}\r\n\r\n\r\n/* cypd slider */\r\n\r\n.cypd-slider-container {\r\n    position: relative;\r\n    height: var(--default-normal-height);\r\n    flex-grow: 1;\r\n    padding-left: 5px;\r\n    padding-right: 5px;\r\n    /* background-color: var(--default-cyp-blue-opa-deep); */\r\n}\r\n\r\n.cypd-slider-container.disabled {\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-wrapper {\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100%;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-slider-track {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    height: 5px;\r\n    width: 100%;\r\n    border-radius: 2.5px;\r\n    background-color: var(--default-disabled-color);\r\n    cursor: pointer;\r\n    transition: background-color var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-track.progress-track {\r\n    overflow: hidden;\r\n    cursor: default;\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-track {\r\n    background-color: rgb(163, 163, 163, 0.6);\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-track:not(.progress-track).active,\r\n.cypd-slider-track:not(.progress-track):hover {\r\n    background-color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-slider-point.drag {\r\n    position: absolute;\r\n    height: var(--default-slider-drag-width);\r\n    width: var(--default-slider-drag-width);\r\n    background-color: white;\r\n    border: 3px solid var(--default-cyp-blue-hover);\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n    z-index: 1;\r\n    transform: translateX(calc(-1 * var(--default-slider-drag-width) / 2));\r\n    transition: border-color var(--default-transition-duration), box-shadow var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-point.drag.active {\r\n    border-color: var(--default-cyp-blue-active);\r\n    box-shadow: 0px 0px 5px var(--default-cyp-blue-opa-medium);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-point.drag {\r\n    border-color: rgb(160, 160, 160) !important;\r\n    cursor: not-allowed;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip-wrapper {\r\n    display: flex !important;\r\n}\r\n\r\n.cypd-slider-point.drag .cypd-tooltip {\r\n    width: auto;\r\n    transition-delay: 0ms;\r\n}\r\n\r\n.cypd-slider-range {\r\n    position: absolute;\r\n    overflow: visible;\r\n    height: 5px;\r\n}\r\n\r\n.cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-light);\r\n    stroke-width: 5px;\r\n    stroke-linecap: round;\r\n    transition: stroke var(--default-transition-duration);\r\n}\r\n\r\n.cypd-slider-track.active .cypd-slider-range path {\r\n    stroke: var(--default-cyp-blue-hover);\r\n}\r\n\r\n.cypd-slider-container.disabled .cypd-slider-range path {\r\n    stroke: rgb(160, 160, 160) !important;\r\n}\r\n\r\n.cypd-progress-hint {\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    margin-right: 5px;\r\n    font-size: 11px;\r\n    letter-spacing: 0;\r\n    user-select: none;\r\n}\r\n\r\n\r\n/* cypd form */\r\n\r\n.cypd-form {\r\n    width: 100%;\r\n}\r\n\r\n.cypd-formitem-wrapper {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    height: 40px;\r\n    width: 100%;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    text-align: left;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper.vertical {\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    align-items: flex-start;\r\n}\r\n\r\n.cypd-formitem-wrapper>* {\r\n    margin-left: 5px;\r\n    margin-right: 5px;\r\n}\r\n\r\n.cypd-formitem-wrapper>.cypd-select-wrapper,\r\n.cypd-formitem-wrapper>.cypd-input {\r\n    flex-grow: 1;\r\n}\r\n\r\n.cypd-formitem-wrapper>.help {\r\n    color: var(--default-red-color);\r\n    position: absolute;\r\n    right: 0;\r\n    bottom: -16px;\r\n}\r\n\r\n.cypd-formitem-wrapper .cypd-formitem-label {\r\n    flex-grow: 0;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {\r\n    content: ':';\r\n    display: inline;\r\n}\r\n\r\n.cypd-formitem-wrapper.error {\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.cypd-formitem-wrapper.error>.cypd-select-wrapper,\r\n.cypd-formitem-wrapper.error>.cypd-input {\r\n    border-color: var(--default-red-color);\r\n}\r\n\r\n\r\n/* cypd calendar - overwrite react-calendar */\r\n\r\n#g__cypd_calendar_window {\r\n    z-index: 11;\r\n    height: 250px;\r\n    opacity: 0;\r\n    transition: opacity var(--default-transition-duration);\r\n}\r\n\r\n.cypd-picker-wrapper {\r\n    /* position: relative;\r\n    display: inline-flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    height: var(--default-normal-height);\r\n    width: 150px; */\r\n    position: relative;\r\n    width: 150px;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    top: 6px;\r\n    right: 5px;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n.cypd-picker-wrapper .cypd-input {\r\n    cursor: text;\r\n    color: var(--default-gray-color);\r\n    width: 100%;\r\n}\r\n\r\n.cypd-picker-wrapper.hide .cypd-input:focus {\r\n    box-shadow: none;\r\n    border: 1px solid var(--default-gray-color);\r\n}\r\n\r\n.react-calendar {\r\n    position: relative;\r\n    width: 250px;\r\n    border-radius: 5px;\r\n    padding: 5px;\r\n    margin-top: 2px;\r\n    margin-bottom: 2px;\r\n    background: white;\r\n    z-index: 11;\r\n    box-shadow: 0px 3px 6px #00000029;\r\n}\r\n\r\n.react-calendar button {\r\n    position: relative;\r\n    background-color: transparent;\r\n    color: var(--default-cyp-blue-active);\r\n    border: 0;\r\n    height: 30px;\r\n    cursor: pointer;\r\n    transition: background-color 50ms;\r\n}\r\n\r\n.react-calendar button abbr {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.react-calendar button.react-calendar__tile--active,\r\n.react-calendar button:focus,\r\n.react-calendar button::-moz-focus-inner {\r\n    border: none;\r\n}\r\n\r\n.react-calendar button.react-calendar__month-view__days__day.react-calendar__tile--active,\r\n.react-calendar button.react-calendar__month-view__days__day:focus,\r\n.react-calendar button.react-calendar__month-view__days__day::-moz-focus-inner {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\nbutton.react-calendar__month-view__days__day {\r\n    height: 0;\r\n    padding-top: calc(100% / 7);\r\n    border-radius: 50%;\r\n}\r\n\r\nbutton.react-calendar__century-view__decades__decade {\r\n    height: 40px;\r\n}\r\n\r\n.react-calendar button:hover {\r\n    background-color: var(--default-cyp-blue-opa-light);\r\n}\r\n\r\n.react-calendar__month-view__weekdays {\r\n    background-color: var(--default-cyp-blue-active);\r\n    height: 30px;\r\n    line-height: 30px;\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.react-calendar__month-view__weekdays__weekday abbr {\r\n    color: white;\r\n    font-weight: bold;\r\n    text-decoration: none;\r\n}\r\n\r\n.cypd-digital-clock-wrapper {\r\n    position: relative;\r\n    display: inline-flex;\r\n    flex-direction: row;\r\n    width: 150px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input {\r\n    position: absolute;\r\n    width: 100%;\r\n    z-index: 1;\r\n    color: var(--default-gray-color);\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-input:hover {\r\n    cursor: text;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper {\r\n    margin-right: -1px;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select {\r\n    visibility: hidden;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-options-container {\r\n    margin-top: 1px;\r\n    box-shadow: none;\r\n    background-color: white;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container {\r\n    height: var(--default-select-dropdown-height);\r\n    transition-delay: 0s;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.hr .cypd-options-container {\r\n    border-radius: 3px 0 0 3px;\r\n    box-shadow: 0 3px 6px #00000029;\r\n}\r\n\r\n.cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.hr .cypd-options-container,\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.min .cypd-options-container {\r\n    border-radius: 0;\r\n    box-shadow: 0 3px 6px #00000029;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-select-wrapper.sec .cypd-options-container {\r\n    border-radius: 0 3px 3px 0;\r\n    box-shadow: 0 3px 6px #00000029;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper {\r\n    position: absolute;\r\n    width: 0;\r\n    top: 6px;\r\n    right: 20px;\r\n    z-index: 1;\r\n    transform: scale(0.8) !important;\r\n}\r\n\r\n.cypd-digital-clock-wrapper .cypd-icon-wrapper svg * {\r\n    stroke: rgb(109, 108, 108);\r\n}\r\n\r\n\r\n/* cypd notification */\r\n\r\n#g__cypd_notify_window {\r\n    position: fixed;\r\n    display: flex;\r\n    flex-flow: column-reverse;\r\n    flex-direction: column-reverse;\r\n    margin-right: 10px;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 350px;\r\n    z-index: 51;\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper {\r\n    overflow: hidden;\r\n    margin-bottom: 10px;\r\n    max-height: 90px;\r\n    box-shadow: 0px 0px 12px -2px var(--default-deepgray-color);\r\n    transition: max-height .2s cubic-bezier(0.215, 0.610, 0.355, 1), margin-bottom 0s cubic-bezier(0.215, 0.610, 0.355, 1) .1s;\r\n    animation: PushIn 500ms cubic-bezier(0.215, 0.610, 0.355, 1);\r\n}\r\n\r\n#g__cypd_notify_window>.cypd-notify-wrapper.hide {\r\n    margin-bottom: 0px;\r\n    max-height: 0px;\r\n}\r\n\r\n@keyframes PushIn {\r\n    0% {\r\n        transform: translateX(150%);\r\n    }\r\n    100% {\r\n        transform: none;\r\n    }\r\n}\r\n\r\n@keyframes PushOut {\r\n    0% {\r\n        transform: scaleY(1);\r\n    }\r\n    100% {\r\n        transform: scaleY(0);\r\n    }\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    width: 100%;\r\n    padding: 10px 10px 10px 15px;\r\n    border-radius: 5px;\r\n    background-color: white;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info {\r\n    border-left: 5px solid var(--default-cyp-blue-active);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success {\r\n    border-left: 5px solid #2fdc17;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning {\r\n    border-left: 5px solid #ff9b02;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error {\r\n    border-left: 5px solid var(--default-red-active-color);\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .icon {\r\n    overflow: visible;\r\n    min-width: 25px;\r\n    height: 25px;\r\n    left: 15px;\r\n    border-radius: 50%;\r\n    background-position-y: center;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.info .icon {\r\n    background-color: var(--default-cyp-blue-active);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><circle cx='12.5' cy='8' r='2' stroke='none' fill='white'/><path d='M9.5 12.5 14.5 12.5 14.5 18.5 16.5 19.5 9.5 19.5 11.5 18.5 11.5 14.5 Z' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.success .icon {\r\n    background-color: #2fdc17;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M5 13 11 17 18 7' stroke='white' stroke-width='3' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.warning .icon {\r\n    background-color: white;\r\n    border-radius: 0px;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M12.5 2 22.026 20 2.974 20 Z' stroke='%23ff9b02' stroke-width='3' stroke-linejoin='round' fill='%23ff9b02'/><path d='M11.1 7 13.9 7 12.5 15 Z' stroke='none' fill='white' /><circle cx='12.5' cy='17.4' r='1.4' stroke='none' fill='white'/><circle cx='12.5' cy='7' r='1.4' stroke='none' fill='white'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container.error .icon {\r\n    background-color: var(--default-red-active-color);\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M7.5 7.5 17.5 17.5 M17.5 7.5 7.5 17.5' stroke='white' stroke-width='4' fill='none'/></svg>\");\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content {\r\n    height: 80%;\r\n    flex-grow: 10;\r\n    margin-left: 20px;\r\n    margin-right: 15px;\r\n    min-width: 240px;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .title {\r\n    font-weight: bold;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .content .message {\r\n    margin-top: 5px;\r\n    white-space: pre-wrap;\r\n    word-wrap: break-word;\r\n}\r\n\r\n#g__cypd_notify_window .cypd-notify-container .remove {\r\n    overflow: visible;\r\n    min-width: 20px;\r\n    height: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n/* cypd-dropdown */\r\n\r\n.cypd-dropdown {\r\n    position: relative;\r\n    cursor: pointer;\r\n}\r\n\r\n.cypd-dropdown>.wrapper {\r\n    position: absolute;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: stretch;\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    opacity: 0;\r\n    background-color: white;\r\n    padding: 0px;\r\n    box-shadow: 0px 0px 2px gray;\r\n    z-index: 21;\r\n    transform: translateY(5px);\r\n    transition: opacity 150ms, max-height 0ms linear 150ms;\r\n}\r\n\r\n.cypd-dropdown>input:checked~.wrapper {\r\n    height: auto;\r\n    max-height: 2000px;\r\n    opacity: 1;\r\n    transition: opacity 150ms;\r\n}\r\n\r\n.cypd-dropdown>.wrapper>.cypd-dropdown-item {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    padding: 5px 10px 5px 10px;\r\n    height: 32px;\r\n    color: var(--default-cyp-blue);\r\n    transition: background-color 150ms, color 150ms, transform 150ms;\r\n}\r\n\r\n.cypd-dropdown>.wrapper>.cypd-dropdown-item:hover {\r\n    background-color: var(--default-cyp-blue-hover);\r\n    color: white;\r\n}\r\n\r\n.cypd-dropdown>.wrapper>.cypd-dropdown-item>*:not(:nth-child(1)) {\r\n    margin-left: 20px;\r\n}\r\n\r\n.cypd-dropdown-item>.prefix>img {\r\n    width: 24px;\r\n}\r\n\r\n.cypd-dropdown-item>.label {\r\n    white-space: nowrap;\r\n}\r\n\r\nhtml {\r\n    visibility: visible;\r\n}\r\n\r\n\r\n/* cypd-empty */\r\n\r\n\r\n/* .cypd-empty-view {\r\n    min-height: 150px;\r\n    position: relative;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-image: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100px' height='100px' overflow='visible'><ellipse cx='45' cy='60' rx='25' ry='5' stroke='none' fill='rgba(170,170,170,0.5)' /><path d='M20 45 30 30 60 30 70 45' stroke='rgba(170,170,170,0.8)' fill='none' stroke-linejoin='round' /><path d='M70 45 55 45 53 50 37 50 35 45 20 45 20 60 70 60 Z' stroke='rgba(170,170,170,0.8)' fill='rgb(238,238,238)' stroke-linejoin='round' /><text x='45' y='85' font-family='Arial' fill='rgba(170,170,170,0.8)' text-anchor='middle'>No Data</text></svg>\");\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n} */\r\n\r\n.cypd-empty-view,\r\n.cypd-cone-view {\r\n    min-height: 150px;\r\n    position: relative;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.cypd-empty-view .background {\r\n    width: 100px;\r\n    height: 100px;\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n}\r\n\r\n.cypd-cone-view .background {\r\n    width: 160px;\r\n    height: 100px;\r\n    background-repeat: no-repeat;\r\n    background-position: center center;\r\n}\r\n\r\n\r\n/* cypd-book */\r\n\r\n.cypd-book {\r\n    display: flex;\r\n    flex-direction: row;\r\n    width: 100%;\r\n}\r\n\r\n.cypd-page {\r\n    width: 100%;\r\n    position: relative;\r\n    opacity: 1;\r\n    transform: translateX(0%);\r\n    transition: opacity 150ms, transform 150ms;\r\n}\r\n\r\n.cypd-page.history,\r\n.cypd-page.future {\r\n    position: absolute;\r\n    opacity: 0;\r\n    width: 0;\r\n    overflow: hidden;\r\n}\r\n\r\n.cypd-page.history {\r\n    transform: translate(-10px);\r\n}\r\n\r\n.cypd-page.future {\r\n    transform: translate(10px);\r\n}\r\n\r\n\r\n/* cypd-list */\r\n\r\n.cypd-list {\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: stretch;\r\n    height: auto;\r\n    max-height: 100%;\r\n    width: 100%;\r\n    padding: 10px 20px 10px 20px;\r\n    overflow-y: auto;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.cypd-list>.cypd-listitem {\r\n    position: relative;\r\n    min-height: 50px;\r\n    border-radius: 10px;\r\n    border: 2px solid transparent;\r\n    opacity: 1;\r\n    flex-shrink: 0;\r\n    cursor: default;\r\n    transition: border-color 150ms, opacity 150ms;\r\n}\r\n\r\n.cypd-list.draggable>.cypd-listitem {\r\n    cursor: move;\r\n    user-select: none;\r\n}\r\n\r\n.cypd-list.draggable>.cypd-listitem.dragged {\r\n    opacity: 0.5;\r\n}\r\n\r\n.cypd-list>.cypd-listitem:hover {\r\n    border-color: #00839E;\r\n}\r\n\r\n.cypd-list.dragging>.cypd-listitem,\r\n.cypd-list.dragging>.cypd-listitem:hover {\r\n    border-color: transparent;\r\n    border-radius: 0;\r\n}\r\n\r\n.cypd-list.dragging>.cypd-listitem.hover-top:hover {\r\n    border-top: 2px solid #00839E;\r\n}\r\n\r\n.cypd-list.dragging>.cypd-listitem.hover-bottom:hover {\r\n    border-bottom: 2px solid #00839E;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.readmore-check {\r\n    display: none;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten {\r\n    position: relative;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    min-height: 50px;\r\n    text-align: start;\r\n    padding-left: 10px;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.label {\r\n    font-weight: bold;\r\n    justify-self: flex-start;\r\n    margin-right: auto;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration {\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    justify-content: flex-end;\r\n    margin-right: 10px;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration>* {\r\n    margin-left: 10px;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label {\r\n    width: 40px;\r\n    user-select: none;\r\n    cursor: pointer;\r\n    color: #33a8c0;\r\n    font-size: 12px;\r\n    transition: color 150ms;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {\r\n    color: #47bbd3;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.readmore-check~.detail {\r\n    box-sizing: border-box;\r\n    position: relative;\r\n    overflow: hidden;\r\n    max-height: 0;\r\n    height: 0;\r\n    text-indent: 40px;\r\n    text-align: start;\r\n    word-wrap: break-word;\r\n    border-top: 1px solid rgba(128, 128, 128, 0.414);\r\n    opacity: 0;\r\n    padding: 0px;\r\n    transition: opacity 150ms, padding 150ms, max-height 150ms linear 150ms;\r\n}\r\n\r\n.cypd-list>.cypd-listitem>.readmore-check:checked~.detail {\r\n    height: auto;\r\n    max-height: 70px;\r\n    padding: 10px;\r\n    opacity: 1;\r\n    transition: max-height 150ms, padding 150ms, opacity 150ms linear 150ms;\r\n}";
 styleInject(css_248z);
 
 /*! *****************************************************************************
@@ -29839,11 +29839,592 @@ if (process.env.NODE_ENV === 'production') {
 });
 var reactDom_1 = reactDom.render;
 
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
+window.layout = {};
+var NavigationItem = /** @class */ (function (_super) {
+    __extends(NavigationItem, _super);
+    function NavigationItem(props) {
+        var _this = _super.call(this, props) || this;
+        _this.state = { extend: false };
+        _this.id = Math.random().toString().slice(2);
+        _this.mouseon = false;
+        _this.onToggle = function () {
+            if (_this.flag.current)
+                _this.flag.current.focus();
+            _this.setState({ extend: true });
+        };
+        _this.onBlur = function () {
+            _this.setState({ extend: false });
+        };
+        _this.direct = function () {
+            var _a = _this.props, url = _a.url, onClick = _a.onClick;
+            if (url)
+                window.location.href = url;
+            if (onClick)
+                onClick();
+        };
+        _this.flag = react.createRef();
+        return _this;
+    }
+    Object.defineProperty(NavigationItem.prototype, "toggler_id", {
+        get: function () { return "cypd-navitem-input-" + this.id; },
+        enumerable: false,
+        configurable: true
+    });
+    NavigationItem.prototype.render = function () {
+        var _this = this;
+        var extend = this.state.extend;
+        var _a = this.props, label = _a.label, icon = _a.icon, disabled = _a.disabled, children = _a.children, className = _a.className, style = _a.style;
+        var wrapperClass = "cypd-navitem" + ((children && children.length > 0 && extend) ? ' extend' : '') + (className ? " " + className : '');
+        return (!disabled) ? (react.createElement("div", { className: wrapperClass, style: style },
+            children ? react.createElement("input", { ref: this.flag, style: { position: 'absolute', transform: 'scale(0)' }, onBlur: this.onBlur, type: 'checkbox' }) : undefined,
+            react.createElement("div", { style: { display: (icon) ? undefined : 'none' }, onMouseDown: this.direct, onClick: this.onToggle, className: 'icon' },
+                react.createElement(Icon, { type: (icon) ? icon : '', color: 'white' })),
+            react.createElement("div", { className: 'label', onMouseDown: this.direct, onClick: this.onToggle }, label),
+            children ? react.createElement("ul", null, children.map(function (props, idx) { return react.createElement("li", { key: _this.id + "-" + idx },
+                react.createElement(NavigationItem, __assign({}, props))); })) : undefined,
+            children ? react.createElement("div", { className: 'toggler' }) : undefined)) : react.createElement("div", null);
+    };
+    return NavigationItem;
+}(react.Component));
+var Layout = /** @class */ (function (_super) {
+    __extends(Layout, _super);
+    function Layout() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Layout.prototype.render = function () {
+        return react.createElement("div", { className: 'cypd-layout' }, this.props.children);
+    };
+    return Layout;
+}(react.Component));
+var Header = /** @class */ (function (_super) {
+    __extends(Header, _super);
+    function Header() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Header.prototype.render = function () {
+        return (react.createElement("div", { className: 'header' }, this.props.children));
+    };
+    return Header;
+}(react.Component));
+var Navigation = /** @class */ (function (_super) {
+    __extends(Navigation, _super);
+    function Navigation() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Navigation.prototype.render = function () {
+        return (react.createElement("div", { className: 'navigation' }, this.props.children));
+    };
+    return Navigation;
+}(react.Component));
+var Sider = /** @class */ (function (_super) {
+    __extends(Sider, _super);
+    function Sider() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { visible: false };
+        _this.onToggle = function (e) {
+            if (_this.props.onCollapse)
+                _this.props.onCollapse(e.target.checked);
+            _this.setState({ visible: e.target.checked });
+        };
+        _this.closeSider = function () {
+            if (_this.toggler && _this.state.visible)
+                _this.toggler.click();
+        };
+        return _this;
+    }
+    // mouseInToggleArea: boolean = false;
+    Sider.prototype.componentDidMount = function () {
+        var _this = this;
+        var _a = this.props, toggleClass = _a.toggleClass, toggleStyle = _a.toggleStyle;
+        var toggler = (react.createElement("label", { className: "toggle" + (toggleClass ? " " + toggleClass : ''), style: toggleStyle },
+            react.createElement("input", { ref: function (inst) { _this.toggler = inst; }, onChange: this.onToggle, type: 'checkbox' }),
+            react.createElement("div", null),
+            react.createElement("div", null),
+            react.createElement("div", null)));
+        var old_container = document.getElementById('__cypd_sider_toggler_container');
+        if (old_container)
+            old_container.remove();
+        var container = document.createElement('div');
+        container.id = '__cypd_sider_toggler_container';
+        container.style['position'] = 'fixed';
+        container.style['top'] = '0';
+        container.style['left'] = '0';
+        document.body.appendChild(container);
+        if (container)
+            reactDom.render(toggler, container);
+        var mask = document.getElementById('collapse-mask');
+        if (mask)
+            mask.onclick = this.closeSider;
+    };
+    Sider.prototype.componentWillUnmount = function () {
+        var mask = document.getElementById('collapse-mask');
+        var container = document.getElementById('__cypd_sider_toggler_container');
+        if (mask)
+            mask.onclick = null;
+        if (container)
+            container.remove();
+    };
+    Sider.prototype.render = function () {
+        var _a = this.props, className = _a.className, style = _a.style;
+        var visible = this.state.visible;
+        var direction = this.props.direction ? this.props.direction : 'left';
+        var wrapperClass = "column " + direction + (className ? " " + className : '');
+        if (direction === 'left')
+            window.layout.leftSideStatus = (visible) ? 'extend' : 'collapsed';
+        else
+            window.layout.rightSideStatus = (visible) ? 'extend' : 'collapsed';
+        if (visible)
+            wrapperClass += ' visible';
+        return (react.createElement("div", { className: wrapperClass, style: style },
+            react.createElement("div", { className: 'column-wrapper' }, this.props.children)));
+    };
+    return Sider;
+}(react.Component));
+var Center = /** @class */ (function (_super) {
+    __extends(Center, _super);
+    function Center() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Center.prototype.render = function () {
+        return (react.createElement("div", { className: 'column middle' }, this.props.children));
+    };
+    return Center;
+}(react.Component));
+var Body = /** @class */ (function (_super) {
+    __extends(Body, _super);
+    function Body() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Body.prototype.render = function () {
+        return (react.createElement("div", { className: 'content' },
+            this.props.children,
+            react.createElement("div", { id: 'collapse-mask' })));
+    };
+    return Body;
+}(react.Component));
+var Footer = /** @class */ (function (_super) {
+    __extends(Footer, _super);
+    function Footer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Footer.prototype.render = function () {
+        return (react.createElement("div", { className: 'footer' }, this.props.children));
+    };
+    return Footer;
+}(react.Component));
+var component = {
+    Layout: Layout,
+    Header: Header,
+    Navigation: Navigation,
+    NavigationItem: NavigationItem,
+    Sider: Sider,
+    Body: Body,
+    Center: Center,
+    Footer: Footer,
+};
+
+var Spin = /** @class */ (function (_super) {
+    __extends(Spin, _super);
+    function Spin() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Spin.prototype.render = function () {
+        var wrapperClass = 'cypd-spin-wrapper';
+        if (this.props.visible)
+            wrapperClass += " visible";
+        if (this.props.layout)
+            wrapperClass += " " + this.props.layout;
+        if (this.props.type)
+            wrapperClass += " " + this.props.type;
+        var element = (react.createElement("div", { className: wrapperClass, style: this.props.style },
+            react.createElement(Icon, { className: 'cypd-spin', type: 'loading' }),
+            react.createElement("span", { className: 'cypd-spin-msg' }, this.props.message)));
+        if (this.props.type === 'linear') {
+            element = (react.createElement("div", { className: wrapperClass, style: this.props.style },
+                react.createElement("div", { className: 'logo' },
+                    react.createElement("div", { className: 'c' }),
+                    react.createElement("div", { className: 'yp' })),
+                react.createElement("div", { className: 'container' },
+                    react.createElement("div", null),
+                    react.createElement("div", null),
+                    react.createElement("div", null),
+                    react.createElement("div", null))));
+        }
+        return element;
+    };
+    return Spin;
+}(react.Component));
+
+var Node = /** @class */ (function (_super) {
+    __extends(Node, _super);
+    function Node(props) {
+        var _this = _super.call(this, props) || this;
+        _this.onCollapse = function () {
+            _this.setState(function (prevState) {
+                return { collapsed: !prevState.collapsed };
+            });
+        };
+        _this.state = { collapsed: false };
+        return _this;
+    }
+    Node.prototype.componentDidMount = function () { if (this.props.defaultClose)
+        this.setState({ collapsed: true }); };
+    Node.prototype.render = function () {
+        var _this = this;
+        var childrenCount = react.Children.toArray(this.props.children).length;
+        var parentClass = 'cypd-tree-element';
+        if (this.props.className)
+            parentClass += " " + this.props.className;
+        if (this.props.children)
+            parentClass += ' parent';
+        if (this.state.collapsed)
+            parentClass += ' hide';
+        parentClass += (this.props.children) ? ' node' : ' leaf';
+        return (react.createElement("div", { className: parentClass, onClick: function (e) { if (_this.props.onClick) {
+                e.stopPropagation();
+                _this.props.onClick(e);
+            } } },
+            react.createElement("div", { className: 'self' },
+                (this.props.children && this.props.collapsable) ? react.createElement(Icon, { className: 'cypd-tree-icon-expand', type: this.state.collapsed ? 'square-plus' : 'square-minus', onClick: this.onCollapse }) : ((this.props.icon) ? react.createElement(Icon, { className: 'cypd-tree-inline-icon', type: this.props.icon }) : undefined),
+                react.createElement("span", { className: 'label' }, this.props.label)),
+            react.createElement("div", { className: 'children', style: { display: ((childrenCount > 0) ? undefined : 'none') } }, react.Children.map(this.props.children, function (child, idx) {
+                var childClass = '';
+                if (idx === 0)
+                    childClass += ' first';
+                if (idx === childrenCount - 1)
+                    childClass += ' last';
+                if (react.isValidElement(child))
+                    return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : ''), collapsable: _this.props.collapsable });
+                else
+                    return child;
+            }))));
+    };
+    return Node;
+}(react.Component));
+var Tree = /** @class */ (function (_super) {
+    __extends(Tree, _super);
+    function Tree() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Tree.prototype.render = function () {
+        var _this = this;
+        var childrenCount = react.Children.toArray(this.props.children).length;
+        var containerClass = 'cypd-tree-container';
+        if (this.props.collapsable)
+            containerClass += " collapsable";
+        if (this.props.color)
+            containerClass += " " + this.props.color;
+        return (react.createElement("div", { className: containerClass }, react.Children.map(this.props.children, function (child, idx) {
+            var childClass = '';
+            if (idx === 0)
+                childClass += ' first';
+            if (idx === childrenCount - 1)
+                childClass += ' last';
+            if (react.isValidElement(child))
+                return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : ''), collapsable: _this.props.collapsable });
+            else
+                return child;
+        })));
+    };
+    return Tree;
+}(react.Component));
+var component$1 = { Tree: Tree, Node: Node };
+
+var Tooltip = /** @class */ (function (_super) {
+    __extends(Tooltip, _super);
+    function Tooltip() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.tooltipId = Math.random().toString().slice(2);
+        _this.create = function () {
+            var container = document.getElementById(_this.tooltipId);
+            if (!container && _this.wrapperRef) {
+                var rect = _this.wrapperRef.getBoundingClientRect();
+                var direction = _this.props.direction;
+                container = document.createElement('div');
+                container.id = _this.tooltipId;
+                container.classList.add('cypd-tooltip');
+                container.classList.add((_this.props.direction) ? _this.props.direction : 'bottom');
+                container.innerText = _this.props.text;
+                if (direction === 'left') {
+                    container.style.left = window.pageXOffset + rect.left + "px";
+                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
+                }
+                else if (direction === 'right') {
+                    container.style.left = window.pageXOffset + rect.right + "px";
+                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
+                }
+                else if (direction === 'top') {
+                    container.style.left = window.pageYOffset + rect.left + (rect.width / 2) + "px";
+                    container.style.top = window.pageYOffset + rect.top + "px";
+                }
+                else {
+                    container.style.left = window.pageXOffset + rect.left + (rect.width / 2) + "px";
+                    container.style.top = window.pageYOffset + rect.bottom + "px";
+                }
+                document.body.appendChild(container);
+                setTimeout(function () { if (container)
+                    container.classList.add('active'); }, 1000);
+            }
+        };
+        _this.delete = function () {
+            var container = document.getElementById(_this.tooltipId);
+            if (container) {
+                container.classList.add('hide');
+                setTimeout(function () { if (container)
+                    container.remove(); }, 150);
+            }
+        };
+        return _this;
+    }
+    Tooltip.prototype.componentWillUnmount = function () { this.delete(); };
+    Tooltip.prototype.render = function () {
+        var _this = this;
+        var wrapperClass = 'cypd-tooltip-wrapper';
+        if (this.props.className)
+            wrapperClass += " " + this.props.className;
+        return (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete }, this.props.children));
+    };
+    return Tooltip;
+}(react.Component));
+
+var props_proc = function (props) {
+    var value = props.value, min = props.min, max = props.max, step = props.step;
+    min = min ? min : 0;
+    max = max ? max : 100;
+    step = step ? step : 1;
+    value = value ? value : min;
+    value = (value < min) ? min : value;
+    value = (value > max) ? max : value;
+    return { value: value, min: min, max: max, step: step, prevProps: __assign({}, props) };
+};
+var cssDragWidth = parseInt(getComputedStyle(document.body).getPropertyValue("--default-slider-drag-width").replace('px', ''));
+var Slider = /** @class */ (function (_super) {
+    __extends(Slider, _super);
+    function Slider(props) {
+        var _this = _super.call(this, props) || this;
+        _this.clearTemp = function () {
+            _this.origX = undefined;
+            _this.origM = undefined;
+            _this.tempR = undefined;
+        };
+        _this.handleXMove = function (xpos) {
+            var _a = _this.state, step = _a.step, max = _a.max, min = _a.min;
+            if (_this.dragElem && _this.trackElem && _this.origX && _this.origM) {
+                var drag_w_p = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
+                var track_w = _this.trackElem.offsetWidth ? _this.trackElem.offsetWidth : 1; // avoid zero divide
+                var orig_px = parseInt(_this.origX);
+                var orig_p = parseFloat(_this.origM);
+                var dist_x = xpos - orig_px;
+                var offset_bound_p = 100 - (drag_w_p * 100 / track_w);
+                var offset_x_p = (dist_x * offset_bound_p / track_w);
+                var offset_temp_p = orig_p + offset_x_p;
+                if (offset_temp_p < 0) {
+                    _this.tempR = min;
+                }
+                else if (offset_temp_p > offset_bound_p) {
+                    _this.tempR = max;
+                }
+                else {
+                    var temp = Math.floor((max - min) * (offset_temp_p / offset_bound_p) / step);
+                    _this.tempR = parseFloat((min + temp * step).toFixed(10));
+                }
+                if (_this.prevR !== _this.tempR) {
+                    _this.prevR = _this.tempR;
+                    _this.setState({ value: _this.tempR });
+                    if (_this.props.onChange)
+                        _this.props.onChange(_this.tempR);
+                }
+            }
+        };
+        _this.handleDrag = function (ev) {
+            _this.handleXMove(ev.clientX);
+        };
+        _this.handleTouchDrag = function (ev) {
+            _this.handleXMove(ev.touches[0].clientX);
+        };
+        _this.handleDragMouseUp = function () {
+            if (_this.props.onAfterChange && _this.tempR)
+                _this.props.onAfterChange(_this.tempR);
+            _this.clearTemp();
+            document.body.style.userSelect = 'auto';
+            document.removeEventListener('mousemove', _this.handleDrag, false);
+            document.removeEventListener('mouseup', _this.handleDragMouseUp, false);
+            document.removeEventListener('touchmove', _this.handleTouchDrag, false);
+            document.removeEventListener('touchend', _this.handleDragMouseUp, false);
+            _this.setState({ pressSta: false });
+        };
+        _this.handleDragPress = function (xpos) {
+            if (_this.props.disabled) {
+                return;
+            }
+            if (_this.dragElem && _this.dragElem.style.left) {
+                _this.origX = xpos.toString();
+                _this.origM = _this.dragElem.style.left.replace('%', '');
+            }
+            document.body.style.userSelect = 'none';
+            document.addEventListener('mousemove', _this.handleDrag, false);
+            document.addEventListener('mouseup', _this.handleDragMouseUp, false);
+            _this.setState({ pressSta: true });
+        };
+        _this.handleDragMouseDown = function (event) {
+            event.stopPropagation();
+            _this.handleDragPress(event.clientX);
+            document.addEventListener('mousemove', _this.handleDrag, false);
+            document.addEventListener('mouseup', _this.handleDragMouseUp, false);
+        };
+        _this.handleDragTouchDown = function (event) {
+            event.stopPropagation();
+            _this.handleDragPress(event.touches[0].clientX);
+            document.addEventListener('touchmove', _this.handleTouchDrag, false);
+            document.addEventListener('touchend', _this.handleDragMouseUp, false);
+        };
+        _this.handleTrackMouseDown = function (event) {
+            if (_this.props.disabled) {
+                return;
+            }
+            if (_this.trackElem) {
+                var _a = _this.state, step = _a.step, max = _a.max, min = _a.min;
+                var offsetWidth = _this.trackElem.offsetWidth;
+                var offset_temp_p = (event.clientX - _this.trackElem.getBoundingClientRect().left) * 100 / offsetWidth;
+                var press_v_1 = parseFloat((min + Math.round((max - min) * (offset_temp_p / 100) / step) * step).toFixed(10));
+                if (_this.prevR !== press_v_1) {
+                    _this.setState({ value: press_v_1 }, function () { _this.prevR = press_v_1; });
+                    if (_this.props.onChange)
+                        _this.props.onChange(press_v_1);
+                    if (_this.props.onAfterChange)
+                        _this.props.onAfterChange(press_v_1);
+                }
+            }
+        };
+        _this.state = props_proc(_this.props);
+        return _this;
+    }
+    Slider.prototype.componentDidMount = function () {
+        this.forceUpdate();
+    };
+    Slider.getDerivedStateFromProps = function (nextProps, prevState) {
+        var prevProps = prevState.prevProps;
+        if (!prevState.pressSta && (nextProps.value !== prevProps.value || nextProps.min !== prevProps.min ||
+            nextProps.max !== prevProps.max || nextProps.step !== prevProps.step)) {
+            return props_proc(nextProps);
+        }
+        else if (!prevState.pressSta && (nextProps.value !== prevState.value || nextProps.min !== prevState.min ||
+            nextProps.max !== prevState.max || nextProps.step !== prevState.step)) {
+            return props_proc(nextProps);
+        }
+        else {
+            return null;
+        }
+    };
+    Slider.prototype.render = function () {
+        var _this = this;
+        var _a = this.state, value = _a.value, min = _a.min, max = _a.max, pressSta = _a.pressSta, hoverSta = _a.hoverSta;
+        var containerClass = 'cypd-slider-container';
+        var wrapperClass = 'cypd-slider-wrapper';
+        var trackClass = 'cypd-slider-track';
+        var pointClass = 'cypd-slider-point';
+        var rangeClass = 'cypd-slider-range';
+        var draw, offset_p = 0;
+        offset_p = ((value - min) * 100) / (max - min);
+        draw = (react.createElement("svg", { className: rangeClass, style: { width: offset_p + "%", overflow: 'hidden' } },
+            react.createElement("path", { d: "M2.5 2.5 H 3000" })));
+        if (this.props.className)
+            containerClass += " " + this.props.className;
+        if (this.props.disabled)
+            containerClass += " disabled";
+        if (!!pressSta) {
+            pointClass += ' active';
+            trackClass += ' active';
+        }
+        return (react.createElement("div", { className: containerClass, style: this.props.style },
+            react.createElement("div", { className: wrapperClass },
+                react.createElement("div", { className: trackClass, ref: function (node) { if (node)
+                        _this.trackElem = node; }, onMouseDown: this.handleTrackMouseDown },
+                    draw,
+                    react.createElement("div", { ref: function (node) { if (node)
+                            _this.dragElem = node; }, className: pointClass + ' drag', style: { left: offset_p + "%" }, onMouseDown: this.handleDragMouseDown, onMouseEnter: function () { _this.setState({ hoverSta: true }); }, onMouseLeave: function () { _this.setState({ hoverSta: false }); }, onTouchStart: this.handleDragTouchDown },
+                        react.createElement("div", { className: "cypd-tooltip top " + ((pressSta || hoverSta) ? 'active' : 'hide'), style: { marginLeft: '6px', visibility: (pressSta || hoverSta) ? 'visible' : 'hidden' } }, value))))));
+    };
+    return Slider;
+}(react.Component));
+
+var ProgressBar = /** @class */ (function (_super) {
+    __extends(ProgressBar, _super);
+    function ProgressBar() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ProgressBar.prototype.render = function () {
+        var _a = this.props, percentage = _a.percentage, hint = _a.hint;
+        var containerClass = 'cypd-slider-container';
+        var wrapperClass = 'cypd-slider-wrapper';
+        var trackClass = 'cypd-slider-track progress-track';
+        var rangeClass = 'cypd-slider-range';
+        var hintClass = 'cypd-progress-hint';
+        var draw, offset_p = percentage;
+        if (offset_p > 100)
+            offset_p = 100;
+        if (offset_p < 0)
+            offset_p = 0;
+        draw = (react.createElement("svg", { className: rangeClass, style: { width: offset_p + "%", overflow: 'hidden' } },
+            react.createElement("path", { d: "M2.5 2.5 H 3000" })));
+        if (this.props.className)
+            containerClass += " " + this.props.className;
+        return (react.createElement("div", { className: containerClass, style: this.props.style },
+            react.createElement("div", { className: wrapperClass },
+                (hint) ? react.createElement("div", { className: hintClass }, hint) : undefined,
+                react.createElement("div", { className: trackClass }, draw))));
+    };
+    return ProgressBar;
+}(react.Component));
+
+var Item = /** @class */ (function (_super) {
+    __extends(Item, _super);
+    function Item() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Item.prototype.render = function () {
+        var _a = this.props, className = _a.className, label = _a.label, colon = _a.colon, layout = _a.layout, labelClass = _a.labelClass, labelStyle = _a.labelStyle, error = _a.error, disabled = _a.disabled, style = _a.style;
+        var wrapperClass = "cypd-formitem-wrapper" + (className ? " " + className : '') + (layout ? " " + layout : '');
+        var _labelClass = "cypd-formitem-label" + (labelClass ? " " + labelClass : '');
+        if (typeof colon !== 'undefined' && !colon)
+            _labelClass += " no-colon";
+        if (this.props.error && this.props.error.length > 0)
+            wrapperClass += ' error';
+        return (react.createElement("div", { className: wrapperClass, style: style },
+            (label) ? react.createElement("div", { className: _labelClass, style: labelStyle }, label) : undefined,
+            react.Children.map(this.props.children, function (child) {
+                if (react.isValidElement(child)) {
+                    return react.cloneElement(child, { disabled: ('disabled' in child.props) ? child.props.disabled : disabled });
+                }
+                else {
+                    return child;
+                }
+            }),
+            react.createElement("div", { className: 'help' }, error)));
+    };
+    return Item;
+}(react.Component));
+var Form = /** @class */ (function (_super) {
+    __extends(Form, _super);
+    function Form() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Form.prototype.render = function () {
+        var _a = this.props, className = _a.className, colon = _a.colon, layout = _a.layout, labelClass = _a.labelClass, labelStyle = _a.labelStyle, disabled = _a.disabled, style = _a.style;
+        var item_props = { colon: colon, layout: layout, labelClass: labelClass, labelStyle: labelStyle, disabled: disabled };
+        var wrapperClass = "cypd-form" + (className ? " " + className : '');
+        return (react.createElement("div", { className: wrapperClass, style: style }, react.Children.map(this.props.children, function (child) {
+            if (react.isValidElement(child) && child.type === Item) {
+                return react.cloneElement(child, __assign({}, item_props));
+            }
+            else {
+                return child;
+            }
+        })));
+    };
+    return Form;
+}(react.Component));
+var form = { Item: Item, Form: Form };
 
 /** @license React v16.13.1
  * react-is.production.min.js
@@ -30752,2502 +31333,6 @@ if (process.env.NODE_ENV !== 'production') {
   module.exports = factoryWithThrowingShims();
 }
 });
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function isAbsolute(pathname) {
-  return pathname.charAt(0) === '/';
-}
-
-// About 1.5x faster than the two-arg version of Array#splice()
-function spliceOne(list, index) {
-  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1) {
-    list[i] = list[k];
-  }
-
-  list.pop();
-}
-
-// This implementation is based heavily on node's url.parse
-function resolvePathname(to, from) {
-  if (from === undefined) from = '';
-
-  var toParts = (to && to.split('/')) || [];
-  var fromParts = (from && from.split('/')) || [];
-
-  var isToAbs = to && isAbsolute(to);
-  var isFromAbs = from && isAbsolute(from);
-  var mustEndAbs = isToAbs || isFromAbs;
-
-  if (to && isAbsolute(to)) {
-    // to is absolute
-    fromParts = toParts;
-  } else if (toParts.length) {
-    // to is relative, drop the filename
-    fromParts.pop();
-    fromParts = fromParts.concat(toParts);
-  }
-
-  if (!fromParts.length) return '/';
-
-  var hasTrailingSlash;
-  if (fromParts.length) {
-    var last = fromParts[fromParts.length - 1];
-    hasTrailingSlash = last === '.' || last === '..' || last === '';
-  } else {
-    hasTrailingSlash = false;
-  }
-
-  var up = 0;
-  for (var i = fromParts.length; i >= 0; i--) {
-    var part = fromParts[i];
-
-    if (part === '.') {
-      spliceOne(fromParts, i);
-    } else if (part === '..') {
-      spliceOne(fromParts, i);
-      up++;
-    } else if (up) {
-      spliceOne(fromParts, i);
-      up--;
-    }
-  }
-
-  if (!mustEndAbs) for (; up--; up) fromParts.unshift('..');
-
-  if (
-    mustEndAbs &&
-    fromParts[0] !== '' &&
-    (!fromParts[0] || !isAbsolute(fromParts[0]))
-  )
-    fromParts.unshift('');
-
-  var result = fromParts.join('/');
-
-  if (hasTrailingSlash && result.substr(-1) !== '/') result += '/';
-
-  return result;
-}
-
-function valueOf(obj) {
-  return obj.valueOf ? obj.valueOf() : Object.prototype.valueOf.call(obj);
-}
-
-function valueEqual(a, b) {
-  // Test for strict equality first.
-  if (a === b) return true;
-
-  // Otherwise, if either of them == null they are not equal.
-  if (a == null || b == null) return false;
-
-  if (Array.isArray(a)) {
-    return (
-      Array.isArray(b) &&
-      a.length === b.length &&
-      a.every(function(item, index) {
-        return valueEqual(item, b[index]);
-      })
-    );
-  }
-
-  if (typeof a === 'object' || typeof b === 'object') {
-    var aValue = valueOf(a);
-    var bValue = valueOf(b);
-
-    if (aValue !== a || bValue !== b) return valueEqual(aValue, bValue);
-
-    return Object.keys(Object.assign({}, a, b)).every(function(key) {
-      return valueEqual(a[key], b[key]);
-    });
-  }
-
-  return false;
-}
-
-var isProduction = process.env.NODE_ENV === 'production';
-function warning$1(condition, message) {
-  if (!isProduction) {
-    if (condition) {
-      return;
-    }
-
-    var text = "Warning: " + message;
-
-    if (typeof console !== 'undefined') {
-      console.warn(text);
-    }
-
-    try {
-      throw Error(text);
-    } catch (x) {}
-  }
-}
-
-var isProduction$1 = process.env.NODE_ENV === 'production';
-var prefix = 'Invariant failed';
-function invariant(condition, message) {
-    if (condition) {
-        return;
-    }
-    if (isProduction$1) {
-        throw new Error(prefix);
-    }
-    throw new Error(prefix + ": " + (message || ''));
-}
-
-function parsePath(path) {
-  var pathname = path || '/';
-  var search = '';
-  var hash = '';
-  var hashIndex = pathname.indexOf('#');
-
-  if (hashIndex !== -1) {
-    hash = pathname.substr(hashIndex);
-    pathname = pathname.substr(0, hashIndex);
-  }
-
-  var searchIndex = pathname.indexOf('?');
-
-  if (searchIndex !== -1) {
-    search = pathname.substr(searchIndex);
-    pathname = pathname.substr(0, searchIndex);
-  }
-
-  return {
-    pathname: pathname,
-    search: search === '?' ? '' : search,
-    hash: hash === '#' ? '' : hash
-  };
-}
-function createPath(location) {
-  var pathname = location.pathname,
-      search = location.search,
-      hash = location.hash;
-  var path = pathname || '/';
-  if (search && search !== '?') path += search.charAt(0) === '?' ? search : "?" + search;
-  if (hash && hash !== '#') path += hash.charAt(0) === '#' ? hash : "#" + hash;
-  return path;
-}
-
-function createLocation(path, state, key, currentLocation) {
-  var location;
-
-  if (typeof path === 'string') {
-    // Two-arg form: push(path, state)
-    location = parsePath(path);
-    location.state = state;
-  } else {
-    // One-arg form: push(location)
-    location = _extends({}, path);
-    if (location.pathname === undefined) location.pathname = '';
-
-    if (location.search) {
-      if (location.search.charAt(0) !== '?') location.search = '?' + location.search;
-    } else {
-      location.search = '';
-    }
-
-    if (location.hash) {
-      if (location.hash.charAt(0) !== '#') location.hash = '#' + location.hash;
-    } else {
-      location.hash = '';
-    }
-
-    if (state !== undefined && location.state === undefined) location.state = state;
-  }
-
-  try {
-    location.pathname = decodeURI(location.pathname);
-  } catch (e) {
-    if (e instanceof URIError) {
-      throw new URIError('Pathname "' + location.pathname + '" could not be decoded. ' + 'This is likely caused by an invalid percent-encoding.');
-    } else {
-      throw e;
-    }
-  }
-
-  if (key) location.key = key;
-
-  if (currentLocation) {
-    // Resolve incomplete/relative pathname relative to current location.
-    if (!location.pathname) {
-      location.pathname = currentLocation.pathname;
-    } else if (location.pathname.charAt(0) !== '/') {
-      location.pathname = resolvePathname(location.pathname, currentLocation.pathname);
-    }
-  } else {
-    // When there is no prior location and pathname is empty, set it to /
-    if (!location.pathname) {
-      location.pathname = '/';
-    }
-  }
-
-  return location;
-}
-function locationsAreEqual(a, b) {
-  return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && valueEqual(a.state, b.state);
-}
-
-function createTransitionManager() {
-  var prompt = null;
-
-  function setPrompt(nextPrompt) {
-    process.env.NODE_ENV !== "production" ? warning$1(prompt == null, 'A history supports only one prompt at a time') : void 0;
-    prompt = nextPrompt;
-    return function () {
-      if (prompt === nextPrompt) prompt = null;
-    };
-  }
-
-  function confirmTransitionTo(location, action, getUserConfirmation, callback) {
-    // TODO: If another transition starts while we're still confirming
-    // the previous one, we may end up in a weird state. Figure out the
-    // best way to handle this.
-    if (prompt != null) {
-      var result = typeof prompt === 'function' ? prompt(location, action) : prompt;
-
-      if (typeof result === 'string') {
-        if (typeof getUserConfirmation === 'function') {
-          getUserConfirmation(result, callback);
-        } else {
-          process.env.NODE_ENV !== "production" ? warning$1(false, 'A history needs a getUserConfirmation function in order to use a prompt message') : void 0;
-          callback(true);
-        }
-      } else {
-        // Return false from a transition hook to cancel the transition.
-        callback(result !== false);
-      }
-    } else {
-      callback(true);
-    }
-  }
-
-  var listeners = [];
-
-  function appendListener(fn) {
-    var isActive = true;
-
-    function listener() {
-      if (isActive) fn.apply(void 0, arguments);
-    }
-
-    listeners.push(listener);
-    return function () {
-      isActive = false;
-      listeners = listeners.filter(function (item) {
-        return item !== listener;
-      });
-    };
-  }
-
-  function notifyListeners() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    listeners.forEach(function (listener) {
-      return listener.apply(void 0, args);
-    });
-  }
-
-  return {
-    setPrompt: setPrompt,
-    confirmTransitionTo: confirmTransitionTo,
-    appendListener: appendListener,
-    notifyListeners: notifyListeners
-  };
-}
-
-function clamp(n, lowerBound, upperBound) {
-  return Math.min(Math.max(n, lowerBound), upperBound);
-}
-/**
- * Creates a history object that stores locations in memory.
- */
-
-
-function createMemoryHistory(props) {
-  if (props === void 0) {
-    props = {};
-  }
-
-  var _props = props,
-      getUserConfirmation = _props.getUserConfirmation,
-      _props$initialEntries = _props.initialEntries,
-      initialEntries = _props$initialEntries === void 0 ? ['/'] : _props$initialEntries,
-      _props$initialIndex = _props.initialIndex,
-      initialIndex = _props$initialIndex === void 0 ? 0 : _props$initialIndex,
-      _props$keyLength = _props.keyLength,
-      keyLength = _props$keyLength === void 0 ? 6 : _props$keyLength;
-  var transitionManager = createTransitionManager();
-
-  function setState(nextState) {
-    _extends(history, nextState);
-
-    history.length = history.entries.length;
-    transitionManager.notifyListeners(history.location, history.action);
-  }
-
-  function createKey() {
-    return Math.random().toString(36).substr(2, keyLength);
-  }
-
-  var index = clamp(initialIndex, 0, initialEntries.length - 1);
-  var entries = initialEntries.map(function (entry) {
-    return typeof entry === 'string' ? createLocation(entry, undefined, createKey()) : createLocation(entry, undefined, entry.key || createKey());
-  }); // Public interface
-
-  var createHref = createPath;
-
-  function push(path, state) {
-    process.env.NODE_ENV !== "production" ? warning$1(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
-    var action = 'PUSH';
-    var location = createLocation(path, state, createKey(), history.location);
-    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
-      if (!ok) return;
-      var prevIndex = history.index;
-      var nextIndex = prevIndex + 1;
-      var nextEntries = history.entries.slice(0);
-
-      if (nextEntries.length > nextIndex) {
-        nextEntries.splice(nextIndex, nextEntries.length - nextIndex, location);
-      } else {
-        nextEntries.push(location);
-      }
-
-      setState({
-        action: action,
-        location: location,
-        index: nextIndex,
-        entries: nextEntries
-      });
-    });
-  }
-
-  function replace(path, state) {
-    process.env.NODE_ENV !== "production" ? warning$1(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
-    var action = 'REPLACE';
-    var location = createLocation(path, state, createKey(), history.location);
-    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
-      if (!ok) return;
-      history.entries[history.index] = location;
-      setState({
-        action: action,
-        location: location
-      });
-    });
-  }
-
-  function go(n) {
-    var nextIndex = clamp(history.index + n, 0, history.entries.length - 1);
-    var action = 'POP';
-    var location = history.entries[nextIndex];
-    transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
-      if (ok) {
-        setState({
-          action: action,
-          location: location,
-          index: nextIndex
-        });
-      } else {
-        // Mimic the behavior of DOM histories by
-        // causing a render after a cancelled POP.
-        setState();
-      }
-    });
-  }
-
-  function goBack() {
-    go(-1);
-  }
-
-  function goForward() {
-    go(1);
-  }
-
-  function canGo(n) {
-    var nextIndex = history.index + n;
-    return nextIndex >= 0 && nextIndex < history.entries.length;
-  }
-
-  function block(prompt) {
-    if (prompt === void 0) {
-      prompt = false;
-    }
-
-    return transitionManager.setPrompt(prompt);
-  }
-
-  function listen(listener) {
-    return transitionManager.appendListener(listener);
-  }
-
-  var history = {
-    length: entries.length,
-    action: 'POP',
-    location: entries[index],
-    index: index,
-    entries: entries,
-    createHref: createHref,
-    push: push,
-    replace: replace,
-    go: go,
-    goBack: goBack,
-    goForward: goForward,
-    canGo: canGo,
-    block: block,
-    listen: listen
-  };
-  return history;
-}
-
-var MAX_SIGNED_31_BIT_INT = 1073741823;
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {};
-
-function getUniqueId() {
-  var key = '__global_unique_id__';
-  return commonjsGlobal[key] = (commonjsGlobal[key] || 0) + 1;
-}
-
-function objectIs(x, y) {
-  if (x === y) {
-    return x !== 0 || 1 / x === 1 / y;
-  } else {
-    return x !== x && y !== y;
-  }
-}
-
-function createEventEmitter(value) {
-  var handlers = [];
-  return {
-    on: function on(handler) {
-      handlers.push(handler);
-    },
-    off: function off(handler) {
-      handlers = handlers.filter(function (h) {
-        return h !== handler;
-      });
-    },
-    get: function get() {
-      return value;
-    },
-    set: function set(newValue, changedBits) {
-      value = newValue;
-      handlers.forEach(function (handler) {
-        return handler(value, changedBits);
-      });
-    }
-  };
-}
-
-function onlyChild(children) {
-  return Array.isArray(children) ? children[0] : children;
-}
-
-function createReactContext(defaultValue, calculateChangedBits) {
-  var _Provider$childContex, _Consumer$contextType;
-
-  var contextProp = '__create-react-context-' + getUniqueId() + '__';
-
-  var Provider = /*#__PURE__*/function (_Component) {
-    _inheritsLoose(Provider, _Component);
-
-    function Provider() {
-      var _this;
-
-      _this = _Component.apply(this, arguments) || this;
-      _this.emitter = createEventEmitter(_this.props.value);
-      return _this;
-    }
-
-    var _proto = Provider.prototype;
-
-    _proto.getChildContext = function getChildContext() {
-      var _ref;
-
-      return _ref = {}, _ref[contextProp] = this.emitter, _ref;
-    };
-
-    _proto.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-      if (this.props.value !== nextProps.value) {
-        var oldValue = this.props.value;
-        var newValue = nextProps.value;
-        var changedBits;
-
-        if (objectIs(oldValue, newValue)) {
-          changedBits = 0;
-        } else {
-          changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
-
-          if (process.env.NODE_ENV !== 'production') {
-            warning$1((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: ' + changedBits);
-          }
-
-          changedBits |= 0;
-
-          if (changedBits !== 0) {
-            this.emitter.set(nextProps.value, changedBits);
-          }
-        }
-      }
-    };
-
-    _proto.render = function render() {
-      return this.props.children;
-    };
-
-    return Provider;
-  }(react_2);
-
-  Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = propTypes.object.isRequired, _Provider$childContex);
-
-  var Consumer = /*#__PURE__*/function (_Component2) {
-    _inheritsLoose(Consumer, _Component2);
-
-    function Consumer() {
-      var _this2;
-
-      _this2 = _Component2.apply(this, arguments) || this;
-      _this2.state = {
-        value: _this2.getValue()
-      };
-
-      _this2.onUpdate = function (newValue, changedBits) {
-        var observedBits = _this2.observedBits | 0;
-
-        if ((observedBits & changedBits) !== 0) {
-          _this2.setState({
-            value: _this2.getValue()
-          });
-        }
-      };
-
-      return _this2;
-    }
-
-    var _proto2 = Consumer.prototype;
-
-    _proto2.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-      var observedBits = nextProps.observedBits;
-      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;
-    };
-
-    _proto2.componentDidMount = function componentDidMount() {
-      if (this.context[contextProp]) {
-        this.context[contextProp].on(this.onUpdate);
-      }
-
-      var observedBits = this.props.observedBits;
-      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT : observedBits;
-    };
-
-    _proto2.componentWillUnmount = function componentWillUnmount() {
-      if (this.context[contextProp]) {
-        this.context[contextProp].off(this.onUpdate);
-      }
-    };
-
-    _proto2.getValue = function getValue() {
-      if (this.context[contextProp]) {
-        return this.context[contextProp].get();
-      } else {
-        return defaultValue;
-      }
-    };
-
-    _proto2.render = function render() {
-      return onlyChild(this.props.children)(this.state.value);
-    };
-
-    return Consumer;
-  }(react_2);
-
-  Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = propTypes.object, _Consumer$contextType);
-  return {
-    Provider: Provider,
-    Consumer: Consumer
-  };
-}
-
-var index = react.createContext || createReactContext;
-
-var isarray = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-/**
- * Expose `pathToRegexp`.
- */
-var pathToRegexp_1 = pathToRegexp;
-var parse_1 = parse;
-var compile_1 = compile;
-var tokensToFunction_1 = tokensToFunction;
-var tokensToRegExp_1 = tokensToRegExp;
-
-/**
- * The main path matching regexp utility.
- *
- * @type {RegExp}
- */
-var PATH_REGEXP = new RegExp([
-  // Match escaped characters that would otherwise appear in future matches.
-  // This allows the user to escape special characters that won't transform.
-  '(\\\\.)',
-  // Match Express-style parameters and un-named parameters with a prefix
-  // and optional suffixes. Matches appear as:
-  //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
-  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
-  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
-  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
-].join('|'), 'g');
-
-/**
- * Parse a string for the raw tokens.
- *
- * @param  {string}  str
- * @param  {Object=} options
- * @return {!Array}
- */
-function parse (str, options) {
-  var tokens = [];
-  var key = 0;
-  var index = 0;
-  var path = '';
-  var defaultDelimiter = options && options.delimiter || '/';
-  var res;
-
-  while ((res = PATH_REGEXP.exec(str)) != null) {
-    var m = res[0];
-    var escaped = res[1];
-    var offset = res.index;
-    path += str.slice(index, offset);
-    index = offset + m.length;
-
-    // Ignore already escaped sequences.
-    if (escaped) {
-      path += escaped[1];
-      continue
-    }
-
-    var next = str[index];
-    var prefix = res[2];
-    var name = res[3];
-    var capture = res[4];
-    var group = res[5];
-    var modifier = res[6];
-    var asterisk = res[7];
-
-    // Push the current path onto the tokens.
-    if (path) {
-      tokens.push(path);
-      path = '';
-    }
-
-    var partial = prefix != null && next != null && next !== prefix;
-    var repeat = modifier === '+' || modifier === '*';
-    var optional = modifier === '?' || modifier === '*';
-    var delimiter = res[2] || defaultDelimiter;
-    var pattern = capture || group;
-
-    tokens.push({
-      name: name || key++,
-      prefix: prefix || '',
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      partial: partial,
-      asterisk: !!asterisk,
-      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
-    });
-  }
-
-  // Match any characters still remaining.
-  if (index < str.length) {
-    path += str.substr(index);
-  }
-
-  // If the path exists, push it onto the end.
-  if (path) {
-    tokens.push(path);
-  }
-
-  return tokens
-}
-
-/**
- * Compile a string to a template function for the path.
- *
- * @param  {string}             str
- * @param  {Object=}            options
- * @return {!function(Object=, Object=)}
- */
-function compile (str, options) {
-  return tokensToFunction(parse(str, options), options)
-}
-
-/**
- * Prettier encoding of URI path segments.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeURIComponentPretty (str) {
-  return encodeURI(str).replace(/[\/?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeAsterisk (str) {
-  return encodeURI(str).replace(/[?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction (tokens, options) {
-  // Compile all the tokens into regexps.
-  var matches = new Array(tokens.length);
-
-  // Compile all the patterns before compilation.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options));
-    }
-  }
-
-  return function (obj, opts) {
-    var path = '';
-    var data = obj || {};
-    var options = opts || {};
-    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent;
-
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i];
-
-      if (typeof token === 'string') {
-        path += token;
-
-        continue
-      }
-
-      var value = data[token.name];
-      var segment;
-
-      if (value == null) {
-        if (token.optional) {
-          // Prepend partial segment prefixes.
-          if (token.partial) {
-            path += token.prefix;
-          }
-
-          continue
-        } else {
-          throw new TypeError('Expected "' + token.name + '" to be defined')
-        }
-      }
-
-      if (isarray(value)) {
-        if (!token.repeat) {
-          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
-        }
-
-        if (value.length === 0) {
-          if (token.optional) {
-            continue
-          } else {
-            throw new TypeError('Expected "' + token.name + '" to not be empty')
-          }
-        }
-
-        for (var j = 0; j < value.length; j++) {
-          segment = encode(value[j]);
-
-          if (!matches[i].test(segment)) {
-            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
-          }
-
-          path += (j === 0 ? token.prefix : token.delimiter) + segment;
-        }
-
-        continue
-      }
-
-      segment = token.asterisk ? encodeAsterisk(value) : encode(value);
-
-      if (!matches[i].test(segment)) {
-        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
-      }
-
-      path += token.prefix + segment;
-    }
-
-    return path
-  }
-}
-
-/**
- * Escape a regular expression string.
- *
- * @param  {string} str
- * @return {string}
- */
-function escapeString (str) {
-  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
-}
-
-/**
- * Escape the capturing group by escaping special characters and meaning.
- *
- * @param  {string} group
- * @return {string}
- */
-function escapeGroup (group) {
-  return group.replace(/([=!:$\/()])/g, '\\$1')
-}
-
-/**
- * Attach the keys as a property of the regexp.
- *
- * @param  {!RegExp} re
- * @param  {Array}   keys
- * @return {!RegExp}
- */
-function attachKeys (re, keys) {
-  re.keys = keys;
-  return re
-}
-
-/**
- * Get the flags for a regexp from the options.
- *
- * @param  {Object} options
- * @return {string}
- */
-function flags (options) {
-  return options && options.sensitive ? '' : 'i'
-}
-
-/**
- * Pull out keys from a regexp.
- *
- * @param  {!RegExp} path
- * @param  {!Array}  keys
- * @return {!RegExp}
- */
-function regexpToRegexp (path, keys) {
-  // Use a negative lookahead to match only capturing groups.
-  var groups = path.source.match(/\((?!\?)/g);
-
-  if (groups) {
-    for (var i = 0; i < groups.length; i++) {
-      keys.push({
-        name: i,
-        prefix: null,
-        delimiter: null,
-        optional: false,
-        repeat: false,
-        partial: false,
-        asterisk: false,
-        pattern: null
-      });
-    }
-  }
-
-  return attachKeys(path, keys)
-}
-
-/**
- * Transform an array into a regexp.
- *
- * @param  {!Array}  path
- * @param  {Array}   keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function arrayToRegexp (path, keys, options) {
-  var parts = [];
-
-  for (var i = 0; i < path.length; i++) {
-    parts.push(pathToRegexp(path[i], keys, options).source);
-  }
-
-  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options));
-
-  return attachKeys(regexp, keys)
-}
-
-/**
- * Create a path regexp from string input.
- *
- * @param  {string}  path
- * @param  {!Array}  keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function stringToRegexp (path, keys, options) {
-  return tokensToRegExp(parse(path, options), keys, options)
-}
-
-/**
- * Expose a function for taking tokens and returning a RegExp.
- *
- * @param  {!Array}          tokens
- * @param  {(Array|Object)=} keys
- * @param  {Object=}         options
- * @return {!RegExp}
- */
-function tokensToRegExp (tokens, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options);
-    keys = [];
-  }
-
-  options = options || {};
-
-  var strict = options.strict;
-  var end = options.end !== false;
-  var route = '';
-
-  // Iterate over the tokens and create our regexp string.
-  for (var i = 0; i < tokens.length; i++) {
-    var token = tokens[i];
-
-    if (typeof token === 'string') {
-      route += escapeString(token);
-    } else {
-      var prefix = escapeString(token.prefix);
-      var capture = '(?:' + token.pattern + ')';
-
-      keys.push(token);
-
-      if (token.repeat) {
-        capture += '(?:' + prefix + capture + ')*';
-      }
-
-      if (token.optional) {
-        if (!token.partial) {
-          capture = '(?:' + prefix + '(' + capture + '))?';
-        } else {
-          capture = prefix + '(' + capture + ')?';
-        }
-      } else {
-        capture = prefix + '(' + capture + ')';
-      }
-
-      route += capture;
-    }
-  }
-
-  var delimiter = escapeString(options.delimiter || '/');
-  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter;
-
-  // In non-strict mode we allow a slash at the end of match. If the path to
-  // match already ends with a slash, we remove it for consistency. The slash
-  // is valid at the end of a path match, not in the middle. This is important
-  // in non-ending mode, where "/test/" shouldn't match "/test//route".
-  if (!strict) {
-    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?';
-  }
-
-  if (end) {
-    route += '$';
-  } else {
-    // In non-ending mode, we need the capturing groups to match as much as
-    // possible by using a positive lookahead to the end or next path segment.
-    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)';
-  }
-
-  return attachKeys(new RegExp('^' + route, flags(options)), keys)
-}
-
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- *
- * @param  {(string|RegExp|Array)} path
- * @param  {(Array|Object)=}       keys
- * @param  {Object=}               options
- * @return {!RegExp}
- */
-function pathToRegexp (path, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options);
-    keys = [];
-  }
-
-  options = options || {};
-
-  if (path instanceof RegExp) {
-    return regexpToRegexp(path, /** @type {!Array} */ (keys))
-  }
-
-  if (isarray(path)) {
-    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
-  }
-
-  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
-}
-pathToRegexp_1.parse = parse_1;
-pathToRegexp_1.compile = compile_1;
-pathToRegexp_1.tokensToFunction = tokensToFunction_1;
-pathToRegexp_1.tokensToRegExp = tokensToRegExp_1;
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-/**
- * Copyright 2015, Yahoo! Inc.
- * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
- */
-var REACT_STATICS = {
-  childContextTypes: true,
-  contextType: true,
-  contextTypes: true,
-  defaultProps: true,
-  displayName: true,
-  getDefaultProps: true,
-  getDerivedStateFromError: true,
-  getDerivedStateFromProps: true,
-  mixins: true,
-  propTypes: true,
-  type: true
-};
-var KNOWN_STATICS = {
-  name: true,
-  length: true,
-  prototype: true,
-  caller: true,
-  callee: true,
-  arguments: true,
-  arity: true
-};
-var FORWARD_REF_STATICS = {
-  '$$typeof': true,
-  render: true,
-  defaultProps: true,
-  displayName: true,
-  propTypes: true
-};
-var MEMO_STATICS = {
-  '$$typeof': true,
-  compare: true,
-  defaultProps: true,
-  displayName: true,
-  propTypes: true,
-  type: true
-};
-var TYPE_STATICS = {};
-TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
-TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
-
-function getStatics(component) {
-  // React v16.11 and below
-  if (reactIs.isMemo(component)) {
-    return MEMO_STATICS;
-  } // React v16.12 and above
-
-
-  return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
-}
-
-var defineProperty = Object.defineProperty;
-var getOwnPropertyNames = Object.getOwnPropertyNames;
-var getOwnPropertySymbols$1 = Object.getOwnPropertySymbols;
-var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
-var getPrototypeOf = Object.getPrototypeOf;
-var objectPrototype = Object.prototype;
-function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
-  if (typeof sourceComponent !== 'string') {
-    // don't hoist over string (html) components
-    if (objectPrototype) {
-      var inheritedComponent = getPrototypeOf(sourceComponent);
-
-      if (inheritedComponent && inheritedComponent !== objectPrototype) {
-        hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
-      }
-    }
-
-    var keys = getOwnPropertyNames(sourceComponent);
-
-    if (getOwnPropertySymbols$1) {
-      keys = keys.concat(getOwnPropertySymbols$1(sourceComponent));
-    }
-
-    var targetStatics = getStatics(targetComponent);
-    var sourceStatics = getStatics(sourceComponent);
-
-    for (var i = 0; i < keys.length; ++i) {
-      var key = keys[i];
-
-      if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
-        var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
-
-        try {
-          // Avoid failures from read-only properties
-          defineProperty(targetComponent, key, descriptor);
-        } catch (e) {}
-      }
-    }
-  }
-
-  return targetComponent;
-}
-
-var hoistNonReactStatics_cjs = hoistNonReactStatics;
-
-// TODO: Replace with React.createContext once we can assume React 16+
-
-var createNamedContext = function createNamedContext(name) {
-  var context = index();
-  context.displayName = name;
-  return context;
-};
-
-var historyContext =
-/*#__PURE__*/
-createNamedContext("Router-History");
-
-// TODO: Replace with React.createContext once we can assume React 16+
-
-var createNamedContext$1 = function createNamedContext(name) {
-  var context = index();
-  context.displayName = name;
-  return context;
-};
-
-var context =
-/*#__PURE__*/
-createNamedContext$1("Router");
-
-/**
- * The public API for putting history on context.
- */
-
-var Router =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(Router, _React$Component);
-
-  Router.computeRootMatch = function computeRootMatch(pathname) {
-    return {
-      path: "/",
-      url: "/",
-      params: {},
-      isExact: pathname === "/"
-    };
-  };
-
-  function Router(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.state = {
-      location: props.history.location
-    }; // This is a bit of a hack. We have to start listening for location
-    // changes here in the constructor in case there are any <Redirect>s
-    // on the initial render. If there are, they will replace/push when
-    // they mount and since cDM fires in children before parents, we may
-    // get a new location before the <Router> is mounted.
-
-    _this._isMounted = false;
-    _this._pendingLocation = null;
-
-    if (!props.staticContext) {
-      _this.unlisten = props.history.listen(function (location) {
-        if (_this._isMounted) {
-          _this.setState({
-            location: location
-          });
-        } else {
-          _this._pendingLocation = location;
-        }
-      });
-    }
-
-    return _this;
-  }
-
-  var _proto = Router.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    this._isMounted = true;
-
-    if (this._pendingLocation) {
-      this.setState({
-        location: this._pendingLocation
-      });
-    }
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.unlisten) this.unlisten();
-  };
-
-  _proto.render = function render() {
-    return react.createElement(context.Provider, {
-      value: {
-        history: this.props.history,
-        location: this.state.location,
-        match: Router.computeRootMatch(this.state.location.pathname),
-        staticContext: this.props.staticContext
-      }
-    }, react.createElement(historyContext.Provider, {
-      children: this.props.children || null,
-      value: this.props.history
-    }));
-  };
-
-  return Router;
-}(react.Component);
-
-if (process.env.NODE_ENV !== "production") {
-  Router.propTypes = {
-    children: propTypes.node,
-    history: propTypes.object.isRequired,
-    staticContext: propTypes.object
-  };
-
-  Router.prototype.componentDidUpdate = function (prevProps) {
-    process.env.NODE_ENV !== "production" ? warning$1(prevProps.history === this.props.history, "You cannot change <Router history>") : void 0;
-  };
-}
-
-/**
- * The public API for a <Router> that stores location in memory.
- */
-
-var MemoryRouter =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(MemoryRouter, _React$Component);
-
-  function MemoryRouter() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-    _this.history = createMemoryHistory(_this.props);
-    return _this;
-  }
-
-  var _proto = MemoryRouter.prototype;
-
-  _proto.render = function render() {
-    return react.createElement(Router, {
-      history: this.history,
-      children: this.props.children
-    });
-  };
-
-  return MemoryRouter;
-}(react.Component);
-
-if (process.env.NODE_ENV !== "production") {
-  MemoryRouter.propTypes = {
-    initialEntries: propTypes.array,
-    initialIndex: propTypes.number,
-    getUserConfirmation: propTypes.func,
-    keyLength: propTypes.number,
-    children: propTypes.node
-  };
-
-  MemoryRouter.prototype.componentDidMount = function () {
-    process.env.NODE_ENV !== "production" ? warning$1(!this.props.history, "<MemoryRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { MemoryRouter as Router }`.") : void 0;
-  };
-}
-
-var Lifecycle =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(Lifecycle, _React$Component);
-
-  function Lifecycle() {
-    return _React$Component.apply(this, arguments) || this;
-  }
-
-  var _proto = Lifecycle.prototype;
-
-  _proto.componentDidMount = function componentDidMount() {
-    if (this.props.onMount) this.props.onMount.call(this, this);
-  };
-
-  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
-    if (this.props.onUpdate) this.props.onUpdate.call(this, this, prevProps);
-  };
-
-  _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.props.onUnmount) this.props.onUnmount.call(this, this);
-  };
-
-  _proto.render = function render() {
-    return null;
-  };
-
-  return Lifecycle;
-}(react.Component);
-
-/**
- * The public API for prompting the user before navigating away from a screen.
- */
-
-function Prompt(_ref) {
-  var message = _ref.message,
-      _ref$when = _ref.when,
-      when = _ref$when === void 0 ? true : _ref$when;
-  return react.createElement(context.Consumer, null, function (context) {
-    !context ? process.env.NODE_ENV !== "production" ? invariant(false, "You should not use <Prompt> outside a <Router>") : invariant(false) : void 0;
-    if (!when || context.staticContext) return null;
-    var method = context.history.block;
-    return react.createElement(Lifecycle, {
-      onMount: function onMount(self) {
-        self.release = method(message);
-      },
-      onUpdate: function onUpdate(self, prevProps) {
-        if (prevProps.message !== message) {
-          self.release();
-          self.release = method(message);
-        }
-      },
-      onUnmount: function onUnmount(self) {
-        self.release();
-      },
-      message: message
-    });
-  });
-}
-
-if (process.env.NODE_ENV !== "production") {
-  var messageType = propTypes.oneOfType([propTypes.func, propTypes.string]);
-  Prompt.propTypes = {
-    when: propTypes.bool,
-    message: messageType.isRequired
-  };
-}
-
-var cache = {};
-var cacheLimit = 10000;
-var cacheCount = 0;
-
-function compilePath(path) {
-  if (cache[path]) return cache[path];
-  var generator = pathToRegexp_1.compile(path);
-
-  if (cacheCount < cacheLimit) {
-    cache[path] = generator;
-    cacheCount++;
-  }
-
-  return generator;
-}
-/**
- * Public API for generating a URL pathname from a path and parameters.
- */
-
-
-function generatePath(path, params) {
-  if (path === void 0) {
-    path = "/";
-  }
-
-  if (params === void 0) {
-    params = {};
-  }
-
-  return path === "/" ? path : compilePath(path)(params, {
-    pretty: true
-  });
-}
-
-/**
- * The public API for navigating programmatically with a component.
- */
-
-function Redirect(_ref) {
-  var computedMatch = _ref.computedMatch,
-      to = _ref.to,
-      _ref$push = _ref.push,
-      push = _ref$push === void 0 ? false : _ref$push;
-  return react.createElement(context.Consumer, null, function (context) {
-    !context ? process.env.NODE_ENV !== "production" ? invariant(false, "You should not use <Redirect> outside a <Router>") : invariant(false) : void 0;
-    var history = context.history,
-        staticContext = context.staticContext;
-    var method = push ? history.push : history.replace;
-    var location = createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extends({}, to, {
-      pathname: generatePath(to.pathname, computedMatch.params)
-    }) : to); // When rendering in a static context,
-    // set the new location immediately.
-
-    if (staticContext) {
-      method(location);
-      return null;
-    }
-
-    return react.createElement(Lifecycle, {
-      onMount: function onMount() {
-        method(location);
-      },
-      onUpdate: function onUpdate(self, prevProps) {
-        var prevLocation = createLocation(prevProps.to);
-
-        if (!locationsAreEqual(prevLocation, _extends({}, location, {
-          key: prevLocation.key
-        }))) {
-          method(location);
-        }
-      },
-      to: to
-    });
-  });
-}
-
-if (process.env.NODE_ENV !== "production") {
-  Redirect.propTypes = {
-    push: propTypes.bool,
-    from: propTypes.string,
-    to: propTypes.oneOfType([propTypes.string, propTypes.object]).isRequired
-  };
-}
-
-var cache$1 = {};
-var cacheLimit$1 = 10000;
-var cacheCount$1 = 0;
-
-function compilePath$1(path, options) {
-  var cacheKey = "" + options.end + options.strict + options.sensitive;
-  var pathCache = cache$1[cacheKey] || (cache$1[cacheKey] = {});
-  if (pathCache[path]) return pathCache[path];
-  var keys = [];
-  var regexp = pathToRegexp_1(path, keys, options);
-  var result = {
-    regexp: regexp,
-    keys: keys
-  };
-
-  if (cacheCount$1 < cacheLimit$1) {
-    pathCache[path] = result;
-    cacheCount$1++;
-  }
-
-  return result;
-}
-/**
- * Public API for matching a URL pathname to a path.
- */
-
-
-function matchPath(pathname, options) {
-  if (options === void 0) {
-    options = {};
-  }
-
-  if (typeof options === "string" || Array.isArray(options)) {
-    options = {
-      path: options
-    };
-  }
-
-  var _options = options,
-      path = _options.path,
-      _options$exact = _options.exact,
-      exact = _options$exact === void 0 ? false : _options$exact,
-      _options$strict = _options.strict,
-      strict = _options$strict === void 0 ? false : _options$strict,
-      _options$sensitive = _options.sensitive,
-      sensitive = _options$sensitive === void 0 ? false : _options$sensitive;
-  var paths = [].concat(path);
-  return paths.reduce(function (matched, path) {
-    if (!path && path !== "") return null;
-    if (matched) return matched;
-
-    var _compilePath = compilePath$1(path, {
-      end: exact,
-      strict: strict,
-      sensitive: sensitive
-    }),
-        regexp = _compilePath.regexp,
-        keys = _compilePath.keys;
-
-    var match = regexp.exec(pathname);
-    if (!match) return null;
-    var url = match[0],
-        values = match.slice(1);
-    var isExact = pathname === url;
-    if (exact && !isExact) return null;
-    return {
-      path: path,
-      // the path used to match
-      url: path === "/" && url === "" ? "/" : url,
-      // the matched portion of the URL
-      isExact: isExact,
-      // whether or not we matched exactly
-      params: keys.reduce(function (memo, key, index) {
-        memo[key.name] = values[index];
-        return memo;
-      }, {})
-    };
-  }, null);
-}
-
-function isEmptyChildren(children) {
-  return react.Children.count(children) === 0;
-}
-
-function evalChildrenDev(children, props, path) {
-  var value = children(props);
-  process.env.NODE_ENV !== "production" ? warning$1(value !== undefined, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? " path=\"" + path + "\"" : "") + ">, but you ") + "should have returned a React element or `null`") : void 0;
-  return value || null;
-}
-/**
- * The public API for matching a single path and rendering.
- */
-
-
-var Route =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(Route, _React$Component);
-
-  function Route() {
-    return _React$Component.apply(this, arguments) || this;
-  }
-
-  var _proto = Route.prototype;
-
-  _proto.render = function render() {
-    var _this = this;
-
-    return react.createElement(context.Consumer, null, function (context$1) {
-      !context$1 ? process.env.NODE_ENV !== "production" ? invariant(false, "You should not use <Route> outside a <Router>") : invariant(false) : void 0;
-      var location = _this.props.location || context$1.location;
-      var match = _this.props.computedMatch ? _this.props.computedMatch // <Switch> already computed the match for us
-      : _this.props.path ? matchPath(location.pathname, _this.props) : context$1.match;
-
-      var props = _extends({}, context$1, {
-        location: location,
-        match: match
-      });
-
-      var _this$props = _this.props,
-          children = _this$props.children,
-          component = _this$props.component,
-          render = _this$props.render; // Preact uses an empty array as children by
-      // default, so use null if that's the case.
-
-      if (Array.isArray(children) && children.length === 0) {
-        children = null;
-      }
-
-      return react.createElement(context.Provider, {
-        value: props
-      }, props.match ? children ? typeof children === "function" ? process.env.NODE_ENV !== "production" ? evalChildrenDev(children, props, _this.props.path) : children(props) : children : component ? react.createElement(component, props) : render ? render(props) : null : typeof children === "function" ? process.env.NODE_ENV !== "production" ? evalChildrenDev(children, props, _this.props.path) : children(props) : null);
-    });
-  };
-
-  return Route;
-}(react.Component);
-
-if (process.env.NODE_ENV !== "production") {
-  Route.propTypes = {
-    children: propTypes.oneOfType([propTypes.func, propTypes.node]),
-    component: function component(props, propName) {
-      if (props[propName] && !reactIs_1(props[propName])) {
-        return new Error("Invalid prop 'component' supplied to 'Route': the prop is not a valid React component");
-      }
-    },
-    exact: propTypes.bool,
-    location: propTypes.object,
-    path: propTypes.oneOfType([propTypes.string, propTypes.arrayOf(propTypes.string)]),
-    render: propTypes.func,
-    sensitive: propTypes.bool,
-    strict: propTypes.bool
-  };
-
-  Route.prototype.componentDidMount = function () {
-    process.env.NODE_ENV !== "production" ? warning$1(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.component), "You should not use <Route component> and <Route children> in the same route; <Route component> will be ignored") : void 0;
-    process.env.NODE_ENV !== "production" ? warning$1(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.render), "You should not use <Route render> and <Route children> in the same route; <Route render> will be ignored") : void 0;
-    process.env.NODE_ENV !== "production" ? warning$1(!(this.props.component && this.props.render), "You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored") : void 0;
-  };
-
-  Route.prototype.componentDidUpdate = function (prevProps) {
-    process.env.NODE_ENV !== "production" ? warning$1(!(this.props.location && !prevProps.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
-    process.env.NODE_ENV !== "production" ? warning$1(!(!this.props.location && prevProps.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
-  };
-}
-
-function addLeadingSlash(path) {
-  return path.charAt(0) === "/" ? path : "/" + path;
-}
-
-function addBasename(basename, location) {
-  if (!basename) return location;
-  return _extends({}, location, {
-    pathname: addLeadingSlash(basename) + location.pathname
-  });
-}
-
-function stripBasename(basename, location) {
-  if (!basename) return location;
-  var base = addLeadingSlash(basename);
-  if (location.pathname.indexOf(base) !== 0) return location;
-  return _extends({}, location, {
-    pathname: location.pathname.substr(base.length)
-  });
-}
-
-function createURL(location) {
-  return typeof location === "string" ? location : createPath(location);
-}
-
-function staticHandler(methodName) {
-  return function () {
-     process.env.NODE_ENV !== "production" ? invariant(false, "You cannot %s with <StaticRouter>") : invariant(false) ;
-  };
-}
-
-function noop() {}
-/**
- * The public top-level API for a "static" <Router>, so-called because it
- * can't actually change the current location. Instead, it just records
- * location changes in a context object. Useful mainly in testing and
- * server-rendering scenarios.
- */
-
-
-var StaticRouter =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(StaticRouter, _React$Component);
-
-  function StaticRouter() {
-    var _this;
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-    _this.handlePush = function (location) {
-      return _this.navigateTo(location, "PUSH");
-    };
-
-    _this.handleReplace = function (location) {
-      return _this.navigateTo(location, "REPLACE");
-    };
-
-    _this.handleListen = function () {
-      return noop;
-    };
-
-    _this.handleBlock = function () {
-      return noop;
-    };
-
-    return _this;
-  }
-
-  var _proto = StaticRouter.prototype;
-
-  _proto.navigateTo = function navigateTo(location, action) {
-    var _this$props = this.props,
-        _this$props$basename = _this$props.basename,
-        basename = _this$props$basename === void 0 ? "" : _this$props$basename,
-        _this$props$context = _this$props.context,
-        context = _this$props$context === void 0 ? {} : _this$props$context;
-    context.action = action;
-    context.location = addBasename(basename, createLocation(location));
-    context.url = createURL(context.location);
-  };
-
-  _proto.render = function render() {
-    var _this$props2 = this.props,
-        _this$props2$basename = _this$props2.basename,
-        basename = _this$props2$basename === void 0 ? "" : _this$props2$basename,
-        _this$props2$context = _this$props2.context,
-        context = _this$props2$context === void 0 ? {} : _this$props2$context,
-        _this$props2$location = _this$props2.location,
-        location = _this$props2$location === void 0 ? "/" : _this$props2$location,
-        rest = _objectWithoutPropertiesLoose(_this$props2, ["basename", "context", "location"]);
-
-    var history = {
-      createHref: function createHref(path) {
-        return addLeadingSlash(basename + createURL(path));
-      },
-      action: "POP",
-      location: stripBasename(basename, createLocation(location)),
-      push: this.handlePush,
-      replace: this.handleReplace,
-      go: staticHandler(),
-      goBack: staticHandler(),
-      goForward: staticHandler(),
-      listen: this.handleListen,
-      block: this.handleBlock
-    };
-    return react.createElement(Router, _extends({}, rest, {
-      history: history,
-      staticContext: context
-    }));
-  };
-
-  return StaticRouter;
-}(react.Component);
-
-if (process.env.NODE_ENV !== "production") {
-  StaticRouter.propTypes = {
-    basename: propTypes.string,
-    context: propTypes.object,
-    location: propTypes.oneOfType([propTypes.string, propTypes.object])
-  };
-
-  StaticRouter.prototype.componentDidMount = function () {
-    process.env.NODE_ENV !== "production" ? warning$1(!this.props.history, "<StaticRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { StaticRouter as Router }`.") : void 0;
-  };
-}
-
-/**
- * The public API for rendering the first <Route> that matches.
- */
-
-var Switch =
-/*#__PURE__*/
-function (_React$Component) {
-  _inheritsLoose(Switch, _React$Component);
-
-  function Switch() {
-    return _React$Component.apply(this, arguments) || this;
-  }
-
-  var _proto = Switch.prototype;
-
-  _proto.render = function render() {
-    var _this = this;
-
-    return react.createElement(context.Consumer, null, function (context) {
-      !context ? process.env.NODE_ENV !== "production" ? invariant(false, "You should not use <Switch> outside a <Router>") : invariant(false) : void 0;
-      var location = _this.props.location || context.location;
-      var element, match; // We use React.Children.forEach instead of React.Children.toArray().find()
-      // here because toArray adds keys to all child elements and we do not want
-      // to trigger an unmount/remount for two <Route>s that render the same
-      // component at different URLs.
-
-      react.Children.forEach(_this.props.children, function (child) {
-        if (match == null && react.isValidElement(child)) {
-          element = child;
-          var path = child.props.path || child.props.from;
-          match = path ? matchPath(location.pathname, _extends({}, child.props, {
-            path: path
-          })) : context.match;
-        }
-      });
-      return match ? react.cloneElement(element, {
-        location: location,
-        computedMatch: match
-      }) : null;
-    });
-  };
-
-  return Switch;
-}(react.Component);
-
-if (process.env.NODE_ENV !== "production") {
-  Switch.propTypes = {
-    children: propTypes.node,
-    location: propTypes.object
-  };
-
-  Switch.prototype.componentDidUpdate = function (prevProps) {
-    process.env.NODE_ENV !== "production" ? warning$1(!(this.props.location && !prevProps.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
-    process.env.NODE_ENV !== "production" ? warning$1(!(!this.props.location && prevProps.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
-  };
-}
-
-/**
- * A public higher-order component to access the imperative API
- */
-
-function withRouter(Component) {
-  var displayName = "withRouter(" + (Component.displayName || Component.name) + ")";
-
-  var C = function C(props) {
-    var wrappedComponentRef = props.wrappedComponentRef,
-        remainingProps = _objectWithoutPropertiesLoose(props, ["wrappedComponentRef"]);
-
-    return react.createElement(context.Consumer, null, function (context) {
-      !context ? process.env.NODE_ENV !== "production" ? invariant(false, "You should not use <" + displayName + " /> outside a <Router>") : invariant(false) : void 0;
-      return react.createElement(Component, _extends({}, remainingProps, context, {
-        ref: wrappedComponentRef
-      }));
-    });
-  };
-
-  C.displayName = displayName;
-  C.WrappedComponent = Component;
-
-  if (process.env.NODE_ENV !== "production") {
-    C.propTypes = {
-      wrappedComponentRef: propTypes.oneOfType([propTypes.string, propTypes.func, propTypes.object])
-    };
-  }
-
-  return hoistNonReactStatics_cjs(C, Component);
-}
-
-var useContext$1 = react.useContext;
-
-if (process.env.NODE_ENV !== "production") {
-  if (typeof window !== "undefined") {
-    var global$1 = window;
-    var key = "__react_router_build__";
-    var buildNames = {
-      cjs: "CommonJS",
-      esm: "ES modules",
-      umd: "UMD"
-    };
-
-    if (global$1[key] && global$1[key] !== "esm") {
-      var initialBuildName = buildNames[global$1[key]];
-      var secondaryBuildName = buildNames["esm"]; // TODO: Add link to article that explains in detail how to avoid
-      // loading 2 different builds.
-
-      throw new Error("You are loading the " + secondaryBuildName + " build of React Router " + ("on a page that is already running the " + initialBuildName + " ") + "build, so things won't work right.");
-    }
-
-    global$1[key] = "esm";
-  }
-}
-
-window.layout = {};
-var NavigationItem = /** @class */ (function (_super) {
-    __extends(NavigationItem, _super);
-    function NavigationItem(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = { extend: false };
-        _this.id = Math.random().toString().slice(2);
-        _this.mouseon = false;
-        _this.onToggle = function () {
-            if (_this.flag.current)
-                _this.flag.current.focus();
-            _this.setState({ extend: true });
-        };
-        _this.onBlur = function () {
-            _this.setState({ extend: false });
-        };
-        _this.flag = react.createRef();
-        return _this;
-    }
-    Object.defineProperty(NavigationItem.prototype, "toggler_id", {
-        get: function () { return "cypd-navitem-input-" + this.id; },
-        enumerable: false,
-        configurable: true
-    });
-    NavigationItem.prototype.render = function () {
-        var _this = this;
-        var extend = this.state.extend;
-        var _a = this.props, label = _a.label, icon = _a.icon, url = _a.url, disabled = _a.disabled, children = _a.children, className = _a.className, style = _a.style;
-        var wrapperClass = "cypd-navitem" + ((children && children.length > 0 && extend) ? ' extend' : '') + (className ? " " + className : '');
-        var NavIcon = withRouter(function (_a) {
-            var history = _a.history;
-            return (react.createElement("div", { style: { display: (icon) ? undefined : 'none' }, onMouseDown: function () { if (url)
-                    history.push(url); }, onClick: _this.onToggle, className: 'icon' },
-                react.createElement(Icon, { type: (icon) ? icon : '', color: 'white' })));
-        });
-        var NavLabel = withRouter(function (_a) {
-            var history = _a.history;
-            return (react.createElement("div", { className: 'label', onMouseDown: function () { if (url)
-                    history.push(url); }, onClick: _this.onToggle }, label));
-        });
-        return (!disabled) ? (react.createElement("div", { className: wrapperClass, style: style },
-            children ? react.createElement("input", { ref: this.flag, style: { position: 'absolute', transform: 'scale(0)' }, onBlur: this.onBlur, type: 'checkbox' }) : undefined,
-            react.createElement(NavIcon, null),
-            react.createElement(NavLabel, null),
-            children ? react.createElement("ul", null, children.map(function (props, idx) { return react.createElement("li", { key: _this.id + "-" + idx },
-                react.createElement(NavigationItem, __assign({}, props))); })) : undefined,
-            children ? react.createElement("div", { className: 'toggler' }) : undefined)) : react.createElement("div", null);
-    };
-    return NavigationItem;
-}(react.Component));
-var Layout = /** @class */ (function (_super) {
-    __extends(Layout, _super);
-    function Layout() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Layout.prototype.render = function () {
-        return react.createElement("div", { className: 'cypd-layout' }, this.props.children);
-    };
-    return Layout;
-}(react.Component));
-var Header = /** @class */ (function (_super) {
-    __extends(Header, _super);
-    function Header() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Header.prototype.render = function () {
-        return (react.createElement("div", { className: 'header' }, this.props.children));
-    };
-    return Header;
-}(react.Component));
-var Navigation = /** @class */ (function (_super) {
-    __extends(Navigation, _super);
-    function Navigation() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Navigation.prototype.render = function () {
-        return (react.createElement("div", { className: 'navigation' }, this.props.children));
-    };
-    return Navigation;
-}(react.Component));
-var Sider = /** @class */ (function (_super) {
-    __extends(Sider, _super);
-    function Sider() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = { visible: false };
-        _this.onToggle = function (e) {
-            if (_this.props.onCollapse)
-                _this.props.onCollapse(e.target.checked);
-            _this.setState({ visible: e.target.checked });
-        };
-        _this.closeSider = function () {
-            if (_this.toggler && _this.state.visible)
-                _this.toggler.click();
-        };
-        return _this;
-    }
-    // mouseInToggleArea: boolean = false;
-    Sider.prototype.componentDidMount = function () {
-        var _this = this;
-        var _a = this.props, toggleClass = _a.toggleClass, toggleStyle = _a.toggleStyle;
-        var toggler = (react.createElement("label", { className: "toggle" + (toggleClass ? " " + toggleClass : ''), style: toggleStyle },
-            react.createElement("input", { ref: function (inst) { _this.toggler = inst; }, onChange: this.onToggle, type: 'checkbox' }),
-            react.createElement("div", null),
-            react.createElement("div", null),
-            react.createElement("div", null)));
-        var old_container = document.getElementById('__cypd_sider_toggler_container');
-        if (old_container)
-            old_container.remove();
-        var container = document.createElement('div');
-        container.id = '__cypd_sider_toggler_container';
-        container.style['position'] = 'fixed';
-        container.style['top'] = '0';
-        container.style['left'] = '0';
-        document.body.appendChild(container);
-        if (container)
-            reactDom.render(toggler, container);
-        var mask = document.getElementById('collapse-mask');
-        if (mask)
-            mask.onclick = this.closeSider;
-    };
-    Sider.prototype.componentWillUnmount = function () {
-        var mask = document.getElementById('collapse-mask');
-        var container = document.getElementById('__cypd_sider_toggler_container');
-        if (mask)
-            mask.onclick = null;
-        if (container)
-            container.remove();
-    };
-    Sider.prototype.render = function () {
-        var _a = this.props, className = _a.className, style = _a.style;
-        var visible = this.state.visible;
-        var direction = this.props.direction ? this.props.direction : 'left';
-        var wrapperClass = "column " + direction + (className ? " " + className : '');
-        if (direction === 'left')
-            window.layout.leftSideStatus = (visible) ? 'extend' : 'collapsed';
-        else
-            window.layout.rightSideStatus = (visible) ? 'extend' : 'collapsed';
-        if (visible)
-            wrapperClass += ' visible';
-        return (react.createElement("div", { className: wrapperClass, style: style },
-            react.createElement("div", { className: 'column-wrapper' }, this.props.children)));
-    };
-    return Sider;
-}(react.Component));
-var Center = /** @class */ (function (_super) {
-    __extends(Center, _super);
-    function Center() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Center.prototype.render = function () {
-        return (react.createElement("div", { className: 'column middle' }, this.props.children));
-    };
-    return Center;
-}(react.Component));
-var Body = /** @class */ (function (_super) {
-    __extends(Body, _super);
-    function Body() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Body.prototype.render = function () {
-        return (react.createElement("div", { className: 'content' },
-            this.props.children,
-            react.createElement("div", { id: 'collapse-mask' })));
-    };
-    return Body;
-}(react.Component));
-var Footer = /** @class */ (function (_super) {
-    __extends(Footer, _super);
-    function Footer() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Footer.prototype.render = function () {
-        return (react.createElement("div", { className: 'footer' }, this.props.children));
-    };
-    return Footer;
-}(react.Component));
-var component = {
-    Layout: Layout,
-    Header: Header,
-    Navigation: Navigation,
-    NavigationItem: NavigationItem,
-    Sider: Sider,
-    Body: Body,
-    Center: Center,
-    Footer: Footer,
-};
-
-var Spin = /** @class */ (function (_super) {
-    __extends(Spin, _super);
-    function Spin() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Spin.prototype.render = function () {
-        var wrapperClass = 'cypd-spin-wrapper';
-        if (this.props.visible)
-            wrapperClass += " visible";
-        if (this.props.layout)
-            wrapperClass += " " + this.props.layout;
-        if (this.props.type)
-            wrapperClass += " " + this.props.type;
-        var element = (react.createElement("div", { className: wrapperClass, style: this.props.style },
-            react.createElement(Icon, { className: 'cypd-spin', type: 'loading' }),
-            react.createElement("span", { className: 'cypd-spin-msg' }, this.props.message)));
-        if (this.props.type === 'linear') {
-            element = (react.createElement("div", { className: wrapperClass, style: this.props.style },
-                react.createElement("div", { className: 'logo' },
-                    react.createElement("div", { className: 'c' }),
-                    react.createElement("div", { className: 'yp' })),
-                react.createElement("div", { className: 'container' },
-                    react.createElement("div", null),
-                    react.createElement("div", null),
-                    react.createElement("div", null),
-                    react.createElement("div", null))));
-        }
-        return element;
-    };
-    return Spin;
-}(react.Component));
-
-var Node = /** @class */ (function (_super) {
-    __extends(Node, _super);
-    function Node(props) {
-        var _this = _super.call(this, props) || this;
-        _this.onCollapse = function () {
-            _this.setState(function (prevState) {
-                return { collapsed: !prevState.collapsed };
-            });
-        };
-        _this.state = { collapsed: false };
-        return _this;
-    }
-    Node.prototype.componentDidMount = function () { if (this.props.defaultClose)
-        this.setState({ collapsed: true }); };
-    Node.prototype.render = function () {
-        var _this = this;
-        var childrenCount = react.Children.toArray(this.props.children).length;
-        var parentClass = 'cypd-tree-element';
-        if (this.props.className)
-            parentClass += " " + this.props.className;
-        if (this.props.children)
-            parentClass += ' parent';
-        if (this.state.collapsed)
-            parentClass += ' hide';
-        parentClass += (this.props.children) ? ' node' : ' leaf';
-        return (react.createElement("div", { className: parentClass, onClick: function (e) { if (_this.props.onClick) {
-                e.stopPropagation();
-                _this.props.onClick(e);
-            } } },
-            react.createElement("div", { className: 'self' },
-                (this.props.children && this.props.collapsable) ? react.createElement(Icon, { className: 'cypd-tree-icon-expand', type: this.state.collapsed ? 'square-plus' : 'square-minus', onClick: this.onCollapse }) : ((this.props.icon) ? react.createElement(Icon, { className: 'cypd-tree-inline-icon', type: this.props.icon }) : undefined),
-                react.createElement("span", { className: 'label' }, this.props.label)),
-            react.createElement("div", { className: 'children', style: { display: ((childrenCount > 0) ? undefined : 'none') } }, react.Children.map(this.props.children, function (child, idx) {
-                var childClass = '';
-                if (idx === 0)
-                    childClass += ' first';
-                if (idx === childrenCount - 1)
-                    childClass += ' last';
-                if (react.isValidElement(child))
-                    return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : ''), collapsable: _this.props.collapsable });
-                else
-                    return child;
-            }))));
-    };
-    return Node;
-}(react.Component));
-var Tree = /** @class */ (function (_super) {
-    __extends(Tree, _super);
-    function Tree() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Tree.prototype.render = function () {
-        var _this = this;
-        var childrenCount = react.Children.toArray(this.props.children).length;
-        var containerClass = 'cypd-tree-container';
-        if (this.props.collapsable)
-            containerClass += " collapsable";
-        if (this.props.color)
-            containerClass += " " + this.props.color;
-        return (react.createElement("div", { className: containerClass }, react.Children.map(this.props.children, function (child, idx) {
-            var childClass = '';
-            if (idx === 0)
-                childClass += ' first';
-            if (idx === childrenCount - 1)
-                childClass += ' last';
-            if (react.isValidElement(child))
-                return react.cloneElement(child, { className: "" + childClass + (child.props.className ? child.props.className : ''), collapsable: _this.props.collapsable });
-            else
-                return child;
-        })));
-    };
-    return Tree;
-}(react.Component));
-var component$1 = { Tree: Tree, Node: Node };
-
-var Tooltip = /** @class */ (function (_super) {
-    __extends(Tooltip, _super);
-    function Tooltip() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.tooltipId = Math.random().toString().slice(2);
-        _this.create = function () {
-            var container = document.getElementById(_this.tooltipId);
-            if (!container && _this.wrapperRef) {
-                var rect = _this.wrapperRef.getBoundingClientRect();
-                var direction = _this.props.direction;
-                container = document.createElement('div');
-                container.id = _this.tooltipId;
-                container.classList.add('cypd-tooltip');
-                container.classList.add((_this.props.direction) ? _this.props.direction : 'bottom');
-                container.innerText = _this.props.text;
-                if (direction === 'left') {
-                    container.style.left = window.pageXOffset + rect.left + "px";
-                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
-                }
-                else if (direction === 'right') {
-                    container.style.left = window.pageXOffset + rect.right + "px";
-                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
-                }
-                else if (direction === 'top') {
-                    container.style.left = window.pageYOffset + rect.left + (rect.width / 2) + "px";
-                    container.style.top = window.pageYOffset + rect.top + "px";
-                }
-                else {
-                    container.style.left = window.pageXOffset + rect.left + (rect.width / 2) + "px";
-                    container.style.top = window.pageYOffset + rect.bottom + "px";
-                }
-                document.body.appendChild(container);
-                setTimeout(function () { if (container)
-                    container.classList.add('active'); }, 1000);
-            }
-        };
-        _this.delete = function () {
-            var container = document.getElementById(_this.tooltipId);
-            if (container) {
-                container.classList.add('hide');
-                setTimeout(function () { if (container)
-                    container.remove(); }, 150);
-            }
-        };
-        return _this;
-    }
-    Tooltip.prototype.componentWillUnmount = function () { this.delete(); };
-    Tooltip.prototype.render = function () {
-        var _this = this;
-        var wrapperClass = 'cypd-tooltip-wrapper';
-        if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        return (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete }, this.props.children));
-    };
-    return Tooltip;
-}(react.Component));
-
-var props_proc = function (props) {
-    var value = props.value, min = props.min, max = props.max, step = props.step;
-    min = min ? min : 0;
-    max = max ? max : 100;
-    step = step ? step : 1;
-    value = value ? value : min;
-    value = (value < min) ? min : value;
-    value = (value > max) ? max : value;
-    return { value: value, min: min, max: max, step: step, prevProps: __assign({}, props) };
-};
-var cssDragWidth = parseInt(getComputedStyle(document.body).getPropertyValue("--default-slider-drag-width").replace('px', ''));
-var Slider = /** @class */ (function (_super) {
-    __extends(Slider, _super);
-    function Slider(props) {
-        var _this = _super.call(this, props) || this;
-        _this.clearTemp = function () {
-            _this.origX = undefined;
-            _this.origM = undefined;
-            _this.tempR = undefined;
-        };
-        _this.handleXMove = function (xpos) {
-            var _a = _this.state, step = _a.step, max = _a.max, min = _a.min;
-            if (_this.dragElem && _this.trackElem && _this.origX && _this.origM) {
-                var drag_w_p = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
-                var track_w = _this.trackElem.offsetWidth ? _this.trackElem.offsetWidth : 1; // avoid zero divide
-                var orig_px = parseInt(_this.origX);
-                var orig_p = parseFloat(_this.origM);
-                var dist_x = xpos - orig_px;
-                var offset_bound_p = 100 - (drag_w_p * 100 / track_w);
-                var offset_x_p = (dist_x * offset_bound_p / track_w);
-                var offset_temp_p = orig_p + offset_x_p;
-                if (offset_temp_p < 0) {
-                    _this.tempR = min;
-                }
-                else if (offset_temp_p > offset_bound_p) {
-                    _this.tempR = max;
-                }
-                else {
-                    var temp = Math.floor((max - min) * (offset_temp_p / offset_bound_p) / step);
-                    _this.tempR = parseFloat((min + temp * step).toFixed(10));
-                }
-                if (_this.prevR !== _this.tempR) {
-                    _this.prevR = _this.tempR;
-                    _this.setState({ value: _this.tempR });
-                    if (_this.props.onChange)
-                        _this.props.onChange(_this.tempR);
-                }
-            }
-        };
-        _this.handleDrag = function (ev) {
-            _this.handleXMove(ev.clientX);
-        };
-        _this.handleTouchDrag = function (ev) {
-            _this.handleXMove(ev.touches[0].clientX);
-        };
-        _this.handleDragMouseUp = function () {
-            if (_this.props.onAfterChange && _this.tempR)
-                _this.props.onAfterChange(_this.tempR);
-            _this.clearTemp();
-            document.body.style.userSelect = 'auto';
-            document.removeEventListener('mousemove', _this.handleDrag, false);
-            document.removeEventListener('mouseup', _this.handleDragMouseUp, false);
-            document.removeEventListener('touchmove', _this.handleTouchDrag, false);
-            document.removeEventListener('touchend', _this.handleDragMouseUp, false);
-            _this.setState({ pressSta: false });
-        };
-        _this.handleDragPress = function (xpos) {
-            if (_this.props.disabled) {
-                return;
-            }
-            if (_this.dragElem && _this.dragElem.style.left) {
-                _this.origX = xpos.toString();
-                _this.origM = _this.dragElem.style.left.replace('%', '');
-            }
-            document.body.style.userSelect = 'none';
-            document.addEventListener('mousemove', _this.handleDrag, false);
-            document.addEventListener('mouseup', _this.handleDragMouseUp, false);
-            _this.setState({ pressSta: true });
-        };
-        _this.handleDragMouseDown = function (event) {
-            event.stopPropagation();
-            _this.handleDragPress(event.clientX);
-            document.addEventListener('mousemove', _this.handleDrag, false);
-            document.addEventListener('mouseup', _this.handleDragMouseUp, false);
-        };
-        _this.handleDragTouchDown = function (event) {
-            event.stopPropagation();
-            _this.handleDragPress(event.touches[0].clientX);
-            document.addEventListener('touchmove', _this.handleTouchDrag, false);
-            document.addEventListener('touchend', _this.handleDragMouseUp, false);
-        };
-        _this.handleTrackMouseDown = function (event) {
-            if (_this.props.disabled) {
-                return;
-            }
-            if (_this.trackElem) {
-                var _a = _this.state, step = _a.step, max = _a.max, min = _a.min;
-                var offsetWidth = _this.trackElem.offsetWidth;
-                var offset_temp_p = (event.clientX - _this.trackElem.getBoundingClientRect().left) * 100 / offsetWidth;
-                var press_v_1 = parseFloat((min + Math.round((max - min) * (offset_temp_p / 100) / step) * step).toFixed(10));
-                if (_this.prevR !== press_v_1) {
-                    _this.setState({ value: press_v_1 }, function () { _this.prevR = press_v_1; });
-                    if (_this.props.onChange)
-                        _this.props.onChange(press_v_1);
-                    if (_this.props.onAfterChange)
-                        _this.props.onAfterChange(press_v_1);
-                }
-            }
-        };
-        _this.state = props_proc(_this.props);
-        return _this;
-    }
-    Slider.prototype.componentDidMount = function () {
-        this.forceUpdate();
-    };
-    Slider.getDerivedStateFromProps = function (nextProps, prevState) {
-        var prevProps = prevState.prevProps;
-        if (!prevState.pressSta && (nextProps.value !== prevProps.value || nextProps.min !== prevProps.min ||
-            nextProps.max !== prevProps.max || nextProps.step !== prevProps.step)) {
-            return props_proc(nextProps);
-        }
-        else if (!prevState.pressSta && (nextProps.value !== prevState.value || nextProps.min !== prevState.min ||
-            nextProps.max !== prevState.max || nextProps.step !== prevState.step)) {
-            return props_proc(nextProps);
-        }
-        else {
-            return null;
-        }
-    };
-    Slider.prototype.render = function () {
-        var _this = this;
-        var _a = this.state, value = _a.value, min = _a.min, max = _a.max, pressSta = _a.pressSta, hoverSta = _a.hoverSta;
-        var containerClass = 'cypd-slider-container';
-        var wrapperClass = 'cypd-slider-wrapper';
-        var trackClass = 'cypd-slider-track';
-        var pointClass = 'cypd-slider-point';
-        var rangeClass = 'cypd-slider-range';
-        var draw, offset_p = 0;
-        offset_p = ((value - min) * 100) / (max - min);
-        draw = (react.createElement("svg", { className: rangeClass, style: { width: offset_p + "%", overflow: 'hidden' } },
-            react.createElement("path", { d: "M2.5 2.5 H 3000" })));
-        if (this.props.className)
-            containerClass += " " + this.props.className;
-        if (this.props.disabled)
-            containerClass += " disabled";
-        if (!!pressSta) {
-            pointClass += ' active';
-            trackClass += ' active';
-        }
-        return (react.createElement("div", { className: containerClass, style: this.props.style },
-            react.createElement("div", { className: wrapperClass },
-                react.createElement("div", { className: trackClass, ref: function (node) { if (node)
-                        _this.trackElem = node; }, onMouseDown: this.handleTrackMouseDown },
-                    draw,
-                    react.createElement("div", { ref: function (node) { if (node)
-                            _this.dragElem = node; }, className: pointClass + ' drag', style: { left: offset_p + "%" }, onMouseDown: this.handleDragMouseDown, onMouseEnter: function () { _this.setState({ hoverSta: true }); }, onMouseLeave: function () { _this.setState({ hoverSta: false }); }, onTouchStart: this.handleDragTouchDown },
-                        react.createElement("div", { className: "cypd-tooltip top " + ((pressSta || hoverSta) ? 'active' : 'hide'), style: { marginLeft: '6px', visibility: (pressSta || hoverSta) ? 'visible' : 'hidden' } }, value))))));
-    };
-    return Slider;
-}(react.Component));
-
-var ProgressBar = /** @class */ (function (_super) {
-    __extends(ProgressBar, _super);
-    function ProgressBar() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ProgressBar.prototype.render = function () {
-        var _a = this.props, percentage = _a.percentage, hint = _a.hint;
-        var containerClass = 'cypd-slider-container';
-        var wrapperClass = 'cypd-slider-wrapper';
-        var trackClass = 'cypd-slider-track progress-track';
-        var rangeClass = 'cypd-slider-range';
-        var hintClass = 'cypd-progress-hint';
-        var draw, offset_p = percentage;
-        if (offset_p > 100)
-            offset_p = 100;
-        if (offset_p < 0)
-            offset_p = 0;
-        draw = (react.createElement("svg", { className: rangeClass, style: { width: offset_p + "%", overflow: 'hidden' } },
-            react.createElement("path", { d: "M2.5 2.5 H 3000" })));
-        if (this.props.className)
-            containerClass += " " + this.props.className;
-        return (react.createElement("div", { className: containerClass, style: this.props.style },
-            react.createElement("div", { className: wrapperClass },
-                (hint) ? react.createElement("div", { className: hintClass }, hint) : undefined,
-                react.createElement("div", { className: trackClass }, draw))));
-    };
-    return ProgressBar;
-}(react.Component));
-
-var Item = /** @class */ (function (_super) {
-    __extends(Item, _super);
-    function Item() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Item.prototype.render = function () {
-        var _a = this.props, className = _a.className, label = _a.label, colon = _a.colon, layout = _a.layout, labelClass = _a.labelClass, labelStyle = _a.labelStyle, error = _a.error, disabled = _a.disabled, style = _a.style;
-        var wrapperClass = "cypd-formitem-wrapper" + (className ? " " + className : '') + (layout ? " " + layout : '');
-        var _labelClass = "cypd-formitem-label" + (labelClass ? " " + labelClass : '');
-        if (typeof colon !== 'undefined' && !colon)
-            _labelClass += " no-colon";
-        if (this.props.error && this.props.error.length > 0)
-            wrapperClass += ' error';
-        return (react.createElement("div", { className: wrapperClass, style: style },
-            (label) ? react.createElement("div", { className: _labelClass, style: labelStyle }, label) : undefined,
-            react.Children.map(this.props.children, function (child) {
-                if (react.isValidElement(child)) {
-                    return react.cloneElement(child, { disabled: ('disabled' in child.props) ? child.props.disabled : disabled });
-                }
-                else {
-                    return child;
-                }
-            }),
-            react.createElement("div", { className: 'help' }, error)));
-    };
-    return Item;
-}(react.Component));
-var Form = /** @class */ (function (_super) {
-    __extends(Form, _super);
-    function Form() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Form.prototype.render = function () {
-        var _a = this.props, className = _a.className, colon = _a.colon, layout = _a.layout, labelClass = _a.labelClass, labelStyle = _a.labelStyle, disabled = _a.disabled, style = _a.style;
-        var item_props = { colon: colon, layout: layout, labelClass: labelClass, labelStyle: labelStyle, disabled: disabled };
-        var wrapperClass = "cypd-form" + (className ? " " + className : '');
-        return (react.createElement("div", { className: wrapperClass, style: style }, react.Children.map(this.props.children, function (child) {
-            if (react.isValidElement(child) && child.type === Item) {
-                return react.cloneElement(child, __assign({}, item_props));
-            }
-            else {
-                return child;
-            }
-        })));
-    };
-    return Form;
-}(react.Component));
-var form = { Item: Item, Form: Form };
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.

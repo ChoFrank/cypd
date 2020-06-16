@@ -416,7 +416,7 @@ body {
     border-collapse: separate;
     border-spacing: 0;
     box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.3);
-    /* width: 100%; */
+    width: 100%;
 }
 
 .cypd-table-container .table-wrapper thead>tr {
@@ -665,7 +665,7 @@ body {
 }
 
 .cypd-table-container.checkable .cypd-page.current {
-    padding-left: 20px;
+    padding-left: 50px;
 }
 
 .cypd-table-container.checkable .cypd-table-checklist {

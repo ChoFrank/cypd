@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Table, Icon, Input, Button, Select, DateTime, Empty, List, Form, Cone, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
 
@@ -127,7 +126,6 @@ class App extends React.Component {
             </Form.Item>
         </Form.Form>;
         return (
-            <Router>
                 <Layout.Layout>
                     <Layout.Header />
                     <Layout.Navigation />
@@ -166,7 +164,6 @@ class App extends React.Component {
                         This is a CYPD demostration.
                 </Modal>
                 </Layout.Layout>
-            </Router>
         );
     }
 }

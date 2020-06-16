@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react';
 import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
 
 import Icon from '../icon/component';
 
@@ -27,6 +26,7 @@ declare type NavitemProps = {
     children?: Array<NavitemProps>;
     className?: string;
     style?: React.CSSProperties;
+    onClick?: () => void;
 }
 
 class NavigationItem extends React.Component<NavitemProps> {
@@ -47,21 +47,22 @@ class NavigationItem extends React.Component<NavitemProps> {
     onBlur = () => {
         this.setState({ extend: false });
     }
+    direct = () => {
+        const { url, onClick } = this.props;
+        if (url)
+            window.location.href = url;
+        if (onClick)
+            onClick();
+    }
     render() {
         const { extend } = this.state;
-        const { label, icon, url, disabled, children, className, style } = this.props;
+        const { label, icon, disabled, children, className, style } = this.props;
         const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
-        const NavIcon = withRouter(({ history }) => (
-            <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={() => { if (url) history.push(url); }} onClick={this.onToggle} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
-        ));
-        const NavLabel = withRouter(({ history }) => (
-            <div className='label' onMouseDown={() => { if (url) history.push(url); }} onClick={this.onToggle}>{label}</div>
-        ));
         return (!disabled) ? (
             <div className={wrapperClass} style={style}>
                 {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
-                <NavIcon />
-                <NavLabel />
+                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} onClick={this.onToggle} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
+                <div className='label' onMouseDown={this.direct} onClick={this.onToggle}>{label}</div>
                 {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
                 {children ? <div className='toggler'></div> : undefined}
             </div>

@@ -18,6 +18,7 @@ declare type NavitemProps = {
     children?: Array<NavitemProps>;
     className?: string;
     style?: React.CSSProperties;
+    onClick?: () => void;
 };
 declare class NavigationItem extends React.Component<NavitemProps> {
     state: {
@@ -30,6 +31,7 @@ declare class NavigationItem extends React.Component<NavitemProps> {
     get toggler_id(): string;
     onToggle: () => void;
     onBlur: () => void;
+    direct: () => void;
     render(): JSX.Element;
 }
 interface SiderProps {
