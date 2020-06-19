@@ -2536,6 +2536,10 @@ var scissors = function (props) { return ([
     react.createElement("path", { d: 'M7.36 7.36 16 10 15 6.5 Z', style: { stroke: props.color }, fill: 'white', key: "6_" + props.svgId }),
     react.createElement("circle", { cx: "7.5", cy: "7.5", r: "0.1", key: "7_" + props.svgId, fill: "white" }),
 ]); };
+var exit = function (props) { return ([
+    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M0 8 12 8 M3 4 0 8 3 12', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M7 4 7 0 16 0 16 16 7 16 7 12', fill: 'none' }),
+]); };
 var _import = function (props) { return ([
     react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M2 8 12 8 M8 4 12 8 8 12', fill: 'none' }),
     react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M0 4 0 0 16 0 16 16 0 16 0 12', fill: 'none' }),
@@ -2816,6 +2820,7 @@ var TYPE_ICON_DRAW_INDEX = {
     // 'scenario': { className: 'scenario', generator: scenario },
     'scissors': { className: 'scissors', generator: scissors },
     'cancel': { className: 'cancel', generator: cancel },
+    'exit': { className: 'exit', generator: exit },
     'import': { className: 'import', generator: _import },
     'download': { className: 'download', generator: download },
     'dashboard': { className: 'fc-dashboard', generator: dashboard },

@@ -44,7 +44,7 @@ class App extends React.Component {
             'loading', 'write', 'arrow-left', 'arrow-right', 'solid-left', 'solid-right', 'left', 'right', 'zoom-out', 'zoom-in',
             'minus', 'plus', 'circle-plus', 'square-plus', 'square-minus', 'trashcan', 'edit',
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'warning', 'cyp-device',
-            'cyplogo', 'scissors', 'cancel', 'import', 'download', 'upload', 'dashboard', 'device', 'update',
+            'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
             'setting', 'scene', 'volumn', 'idea', 'scenario'
         ];
         const sampleOptions = [
