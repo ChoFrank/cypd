@@ -665,7 +665,7 @@ body {
 }
 
 .cypd-table-container.checkable .cypd-page.current {
-    padding-left: 50px;
+    padding-left: 40px;
 }
 
 .cypd-table-container.checkable .cypd-table-checklist {
@@ -705,25 +705,16 @@ body {
     width: 26px;
     border-radius: 50%;
     justify-content: center;
-    background-color: transparent;
-    background-position: 4px 34px;
+    background-color: white;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='rgb(200, 200, 200)' stroke-width='2' fill='none' /><path d='M3 43 8 48 15 38' stroke='white' stroke-width='2' fill='none' /></svg>");
+    background-position: 4px 4px;
     border: none;
+    box-shadow: 0px 3px 6px #00000029;
 }
 
 .cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox {
     background-color: var(--default-cyp-blue);
-    background-position: 4px 4px;
-}
-
-.cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    border: 1px solid #777;
+    background-position: 4px -30px;
 }
 
 .cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox::after {
@@ -905,16 +896,6 @@ body {
 }
 
 .cypd-options-container {
-    /* position: absolute;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 3px;
-    transform: scaleY(1) translateY(1px);
-    transform-origin: top;
-    opacity: 1;
-    z-index: 21;
-    box-shadow: 0px 0px 4px var(--default-cyp-blue-active);
-    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 50ms; */
     position: absolute;
     top: var(--default-select-normal-height);
     left: 0;

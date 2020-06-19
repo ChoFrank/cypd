@@ -173,179 +173,179 @@ const clock = (props: SVGProps) => ([
     <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`5_${props.svgId}`} d="M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z" />,
 ]);
 
-const ledGreen = (props: SVGProps) => ([
-    <defs key={`1_${props.svgId}`}>
-        <linearGradient id="fc-led-green-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
-            <stop offset="0.03" stopColor="#00ff5d" />
-            <stop offset="0.509" stopColor="#00de00" />
-            <stop offset="0.524" stopColor="#00e00a" />
-            <stop offset="0.621" stopColor="#00e948" />
-            <stop offset="0.715" stopColor="#00f17a" />
-            <stop offset="0.801" stopColor="#00f7a2" />
-            <stop offset="0.881" stopColor="#00fbbf" />
-            <stop offset="0.949" stopColor="#00fed0" />
-            <stop offset="1" stopColor="#00ffd6" />
-        </linearGradient>
-        <filter id="Green_light" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse">
-            <feOffset in="SourceAlpha" />
-            <feGaussianBlur stdDeviation="4" result="blur" />
-            <feFlood floodColor="#36f508" />
-            <feComposite operator="in" in2="blur" />
-            <feComposite in="SourceGraphic" />
-        </filter>
-    </defs>,
-    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Green_light)" key={`2_${props.svgId}`}>
-        <path id="Green_light-2" data-name="Green light" d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0Z" fill="url(#fc-led-green-lg)" />
-    </g>
-]);
-
-const ledYellow = (props: SVGProps) => ([
-    <defs key={`1_${props.svgId}`}>
-        <linearGradient id="fc-led-yellow-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
-            <stop offset="0.03" stopColor="#ff0" />
-            <stop offset="0.509" stopColor="#ffde00" />
-            <stop offset="0.607" stopColor="#ffe800" />
-            <stop offset="0.833" stopColor="#fff900" />
-            <stop offset="1" stopColor="#ff0" />
-        </linearGradient>
-        <filter id="Yellow_light" x="0" y="0" width="50" height="50" filterUnits="userSpaceOnUse">
-            <feOffset in="SourceAlpha" />
-            <feGaussianBlur stdDeviation="5" result="blur" />
-            <feFlood floodColor="#ded009" />
-            <feComposite operator="in" in2="blur" />
-            <feComposite in="SourceGraphic" />
-        </filter>
-    </defs>,
-    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Yellow_light)" key={`2_${props.svgId}`}>
-        <ellipse id="Yellow_light-2" data-name="Yellow light" cx="8" cy="8" rx="8" ry="8" fill="url(#fc-led-yellow-lg)" />
-    </g>
-]);
-
-const ledRed = (props: SVGProps) => ([
-    <defs key={`1_${props.svgId}`}>
-        <linearGradient id="fc-led-red-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
-            <stop offset="0.03" stopColor="#ff5d5d" />
-            <stop offset="0.509" stopColor="red" />
-            <stop offset="0.51" stopColor="#ff1313" />
-            <stop offset="0.512" stopColor="#ff3030" />
-            <stop offset="0.514" stopColor="#ff4141" />
-            <stop offset="0.515" stopColor="#ff4747" />
-            <stop offset="0.774" stopColor="#ff9292" />
-            <stop offset="1" stopColor="#ffd6d6" />
-        </linearGradient>
-        <filter id="Red_light" x="-12" y="-12" width="44" height="44" filterUnits="userSpaceOnUse">
-            <feOffset in="SourceAlpha" />
-            <feGaussianBlur stdDeviation="4" result="blur" />
-            <feFlood floodColor="#f60808" />
-            <feComposite operator="in" in2="blur" />
-            <feComposite in="SourceGraphic" />
-        </filter>
-    </defs>,
-    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Red_light)" key={`2_${props.svgId}`}>
-        <path id="Red_light-2" data-name="Red light" d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0Z" fill="url(#fc-led-red-lg)" />
-    </g>
-]);
-
-const ledGray = (props: SVGProps) => ([
-    <defs key={`1_${props.svgId}`}>
-        <linearGradient id="fc-led-gray-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
-            <stop offset="0" stopColor="#d4d4d4" />
-            <stop offset="0.36" stopColor="#7e7e7e" stopOpacity="0.98" />
-            <stop offset="1" stopColor="#e2e2e2" />
-        </linearGradient>
-        <filter id="Gray_light" x="0" y="0" width="38" height="38" filterUnits="userSpaceOnUse">
-            <feOffset dy="3" in="SourceAlpha" />
-            <feGaussianBlur stdDeviation="3" result="blur" />
-            <feFlood floodOpacity="0.161" />
-            <feComposite operator="in" in2="blur" />
-            <feComposite in="SourceGraphic" />
-        </filter>
-    </defs>,
-    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Gray_light)" key={`2_${props.svgId}`}>
-        <ellipse id="Gray_light-2" data-name="Gray light" cx="8" cy="8" rx="8" ry="8" fill="url(#fc-led-gray-lg)" />
-    </g>
-]);
-
 // const ledGreen = (props: SVGProps) => ([
-//     <radialGradient id='fc-led-green-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-//         <stop offset="20%" stopColor="#82ff61" />
-//         <stop offset="50%" stopColor="#75ff50" />
-//         <stop offset="90%" stopColor='#5bff2f' />
-//         {/* <stop offset="20%" stopColor="#abff7e" />
-//         <stop offset="45%" stopColor="#84ff43" />
-//         <stop offset="90%" stopColor='#57dd10' /> */}
-//     </radialGradient>,
-//     <filter id='led-green-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
-//         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
-//         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-//         <feFlood floodColor='#82ff61' floodOpacity='1' result='offsetColor' />
-//         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
-//     </filter>,
-//     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-green-blur)' />,
-//     <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-green-light)' />,
+//     <defs key={`1_${props.svgId}`}>
+//         <linearGradient id="fc-led-green-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+//             <stop offset="0.03" stopColor="#00ff5d" />
+//             <stop offset="0.509" stopColor="#00de00" />
+//             <stop offset="0.524" stopColor="#00e00a" />
+//             <stop offset="0.621" stopColor="#00e948" />
+//             <stop offset="0.715" stopColor="#00f17a" />
+//             <stop offset="0.801" stopColor="#00f7a2" />
+//             <stop offset="0.881" stopColor="#00fbbf" />
+//             <stop offset="0.949" stopColor="#00fed0" />
+//             <stop offset="1" stopColor="#00ffd6" />
+//         </linearGradient>
+//         <filter id="Green_light" x="0" y="0" width="44" height="44" filterUnits="userSpaceOnUse">
+//             <feOffset in="SourceAlpha" />
+//             <feGaussianBlur stdDeviation="4" result="blur" />
+//             <feFlood floodColor="#36f508" />
+//             <feComposite operator="in" in2="blur" />
+//             <feComposite in="SourceGraphic" />
+//         </filter>
+//     </defs>,
+//     <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Green_light)" key={`2_${props.svgId}`}>
+//         <path id="Green_light-2" data-name="Green light" d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0Z" fill="url(#fc-led-green-lg)" />
+//     </g>
 // ]);
 
 // const ledYellow = (props: SVGProps) => ([
-//     <radialGradient id='fc-led-yellow-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-//         <stop offset="20%" stopColor="#fad97f">
-//             {/* <animate dur='1.5s' attributeName='stopColor' values='#fbee8e; #e9d22a; #fbee8e' repeatCount='indefinite'/> */}
-//         </stop>
-//         <stop offset="40%" stopColor="#f8ce5c">
-//             {/* <animate dur='1.5s' attributeName='stopColor' values='#fefc56; #e9d22a; #fefc56' repeatCount='indefinite'/> */}
-//         </stop>
-//         <stop offset="90%" stopColor='#ffc629' />
-//     </radialGradient>,
-//     <filter id='led-yellow-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
-//         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
-//         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-//         <feFlood floodColor='#fad97f' floodOpacity='1' result='offsetColor' />
-//         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
-//     </filter>,
-//     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-yellow-blur)' />,
-//     <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-yellow-light)' />,
+//     <defs key={`1_${props.svgId}`}>
+//         <linearGradient id="fc-led-yellow-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+//             <stop offset="0.03" stopColor="#ff0" />
+//             <stop offset="0.509" stopColor="#ffde00" />
+//             <stop offset="0.607" stopColor="#ffe800" />
+//             <stop offset="0.833" stopColor="#fff900" />
+//             <stop offset="1" stopColor="#ff0" />
+//         </linearGradient>
+//         <filter id="Yellow_light" x="0" y="0" width="50" height="50" filterUnits="userSpaceOnUse">
+//             <feOffset in="SourceAlpha" />
+//             <feGaussianBlur stdDeviation="5" result="blur" />
+//             <feFlood floodColor="#ded009" />
+//             <feComposite operator="in" in2="blur" />
+//             <feComposite in="SourceGraphic" />
+//         </filter>
+//     </defs>,
+//     <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Yellow_light)" key={`2_${props.svgId}`}>
+//         <ellipse id="Yellow_light-2" data-name="Yellow light" cx="8" cy="8" rx="8" ry="8" fill="url(#fc-led-yellow-lg)" />
+//     </g>
 // ]);
 
 // const ledRed = (props: SVGProps) => ([
-//     <radialGradient id='fc-led-red-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-//         <stop offset="20%" stopColor="#f1719a">
-//             {/* <animate dur='0.75s' attributeName='stopColor' values='#ff8383; #e01919; #ff8383' repeatCount='indefinite'/> */}
-//         </stop>
-//         <stop offset="40%" stopColor="#ff6193">
-//             {/* <animate dur='0.75s' attributeName='stopColor' values='#ff3f3f; #e01919; #ff3f3f' repeatCount='indefinite'/> */}
-//         </stop>
-//         <stop offset="90%" stopColor='#b92454' />
-//     </radialGradient>,
-//     <filter id='led-red-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
-//         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
-//         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-//         <feFlood floodColor='#f1719a' floodOpacity='1' result='offsetColor' />
-//         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
-//     </filter>,
-//     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-red-blur)' />,
-//     <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-red-light)' />,
+//     <defs key={`1_${props.svgId}`}>
+//         <linearGradient id="fc-led-red-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+//             <stop offset="0.03" stopColor="#ff5d5d" />
+//             <stop offset="0.509" stopColor="red" />
+//             <stop offset="0.51" stopColor="#ff1313" />
+//             <stop offset="0.512" stopColor="#ff3030" />
+//             <stop offset="0.514" stopColor="#ff4141" />
+//             <stop offset="0.515" stopColor="#ff4747" />
+//             <stop offset="0.774" stopColor="#ff9292" />
+//             <stop offset="1" stopColor="#ffd6d6" />
+//         </linearGradient>
+//         <filter id="Red_light" x="-12" y="-12" width="44" height="44" filterUnits="userSpaceOnUse">
+//             <feOffset in="SourceAlpha" />
+//             <feGaussianBlur stdDeviation="4" result="blur" />
+//             <feFlood floodColor="#f60808" />
+//             <feComposite operator="in" in2="blur" />
+//             <feComposite in="SourceGraphic" />
+//         </filter>
+//     </defs>,
+//     <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Red_light)" key={`2_${props.svgId}`}>
+//         <path id="Red_light-2" data-name="Red light" d="M8,0A8,8,0,1,1,0,8,8,8,0,0,1,8,0Z" fill="url(#fc-led-red-lg)" />
+//     </g>
 // ]);
 
 // const ledGray = (props: SVGProps) => ([
-//     <radialGradient id='fc-led-gray-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
-//         <stop offset="20%" stopColor="#9b9b9b" />
-//         <stop offset="60%" stopColor="#8c8c8c" />
-//         <stop offset="90%" stopColor='#6c6c6c' />
-//     </radialGradient>,
-//     <filter id='led-gray-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
-//         <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
-//         <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
-//         <feFlood floodColor='#9b9b9b' floodOpacity='1' result='offsetColor' />
-//         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
-//     </filter>,
-//     <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-gray-blur)' />,
-//     <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-gray-light)' />,
+//     <defs key={`1_${props.svgId}`}>
+//         <linearGradient id="fc-led-gray-lg" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+//             <stop offset="0" stopColor="#d4d4d4" />
+//             <stop offset="0.36" stopColor="#7e7e7e" stopOpacity="0.98" />
+//             <stop offset="1" stopColor="#e2e2e2" />
+//         </linearGradient>
+//         <filter id="Gray_light" x="0" y="0" width="38" height="38" filterUnits="userSpaceOnUse">
+//             <feOffset dy="3" in="SourceAlpha" />
+//             <feGaussianBlur stdDeviation="3" result="blur" />
+//             <feFlood floodOpacity="0.161" />
+//             <feComposite operator="in" in2="blur" />
+//             <feComposite in="SourceGraphic" />
+//         </filter>
+//     </defs>,
+//     <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Gray_light)" key={`2_${props.svgId}`}>
+//         <ellipse id="Gray_light-2" data-name="Gray light" cx="8" cy="8" rx="8" ry="8" fill="url(#fc-led-gray-lg)" />
+//     </g>
 // ]);
 
+const ledGreen = (props: SVGProps) => ([
+    <radialGradient id='fc-led-green-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
+        <stop offset="20%" stopColor="#82ff61" />
+        <stop offset="50%" stopColor="#75ff50" />
+        <stop offset="90%" stopColor='#5bff2f' />
+        {/* <stop offset="20%" stopColor="#abff7e" />
+        <stop offset="45%" stopColor="#84ff43" />
+        <stop offset="90%" stopColor='#57dd10' /> */}
+    </radialGradient>,
+    <filter id='led-green-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
+        <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
+        <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
+        <feFlood floodColor='#82ff61' floodOpacity='1' result='offsetColor' />
+        <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
+    </filter>,
+    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-green-blur)' />,
+    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-green-light)' />,
+]);
+
+const ledYellow = (props: SVGProps) => ([
+    <radialGradient id='fc-led-yellow-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
+        <stop offset="20%" stopColor="#fad97f">
+            {/* <animate dur='1.5s' attributeName='stopColor' values='#fbee8e; #e9d22a; #fbee8e' repeatCount='indefinite'/> */}
+        </stop>
+        <stop offset="40%" stopColor="#f8ce5c">
+            {/* <animate dur='1.5s' attributeName='stopColor' values='#fefc56; #e9d22a; #fefc56' repeatCount='indefinite'/> */}
+        </stop>
+        <stop offset="90%" stopColor='#ffc629' />
+    </radialGradient>,
+    <filter id='led-yellow-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
+        <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
+        <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
+        <feFlood floodColor='#fad97f' floodOpacity='1' result='offsetColor' />
+        <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
+    </filter>,
+    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-yellow-blur)' />,
+    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-yellow-light)' />,
+]);
+
+const ledRed = (props: SVGProps) => ([
+    <radialGradient id='fc-led-red-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
+        <stop offset="20%" stopColor="#f1719a">
+            {/* <animate dur='0.75s' attributeName='stopColor' values='#ff8383; #e01919; #ff8383' repeatCount='indefinite'/> */}
+        </stop>
+        <stop offset="40%" stopColor="#ff6193">
+            {/* <animate dur='0.75s' attributeName='stopColor' values='#ff3f3f; #e01919; #ff3f3f' repeatCount='indefinite'/> */}
+        </stop>
+        <stop offset="90%" stopColor='#b92454' />
+    </radialGradient>,
+    <filter id='led-red-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
+        <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
+        <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
+        <feFlood floodColor='#f1719a' floodOpacity='1' result='offsetColor' />
+        <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
+    </filter>,
+    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-red-blur)' />,
+    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-red-light)' />,
+]);
+
+const ledGray = (props: SVGProps) => ([
+    <radialGradient id='fc-led-gray-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
+        <stop offset="20%" stopColor="#9b9b9b" />
+        <stop offset="60%" stopColor="#8c8c8c" />
+        <stop offset="90%" stopColor='#6c6c6c' />
+    </radialGradient>,
+    <filter id='led-gray-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
+        <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
+        <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
+        <feFlood floodColor='#9b9b9b' floodOpacity='1' result='offsetColor' />
+        <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
+    </filter>,
+    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-gray-blur)' />,
+    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-gray-light)' />,
+]);
+
 const warning = (props: SVGProps) => ([
-    <path transform='scale(0.73)' d='M12.5 2 22.026 20 2.974 20 Z' stroke='#ff9b02' strokeWidth='3' strokeLinejoin='round' fill='#ff9b02' key={`1_${props.svgId}`}/>,
-    <path transform='scale(0.73)' d='M11.1 7 13.9 7 12.5 15 Z' stroke='none' fill='white'  key={`2_${props.svgId}`}/>,
-    <circle transform='scale(0.73)' cx='12.5' cy='17.4' r='1.4' stroke='none' fill='white' key={`3_${props.svgId}`}/>,
-    <circle transform='scale(0.73)' cx='12.5' cy='7' r='1.4' stroke='none' fill='white' key={`4_${props.svgId}`}/>,
+    <path transform='scale(0.73)' d='M12.5 2 22.026 20 2.974 20 Z' stroke='#ff9b02' strokeWidth='3' strokeLinejoin='round' fill='#ff9b02' key={`1_${props.svgId}`} />,
+    <path transform='scale(0.73)' d='M11.1 7 13.9 7 12.5 15 Z' stroke='none' fill='white' key={`2_${props.svgId}`} />,
+    <circle transform='scale(0.73)' cx='12.5' cy='17.4' r='1.4' stroke='none' fill='white' key={`3_${props.svgId}`} />,
+    <circle transform='scale(0.73)' cx='12.5' cy='7' r='1.4' stroke='none' fill='white' key={`4_${props.svgId}`} />,
 ]);
 
 const cypDevice = (props: SVGProps) => ([
@@ -404,30 +404,47 @@ const idea = (props: SVGProps) => ([
 ]);
 
 const scenario = (props: SVGProps) => ([
-    <defs key={`1_${props.svgId}`}>
-        <radialGradient id='test1' cx='0.5' cy='0.5' r='0.5'>
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="90%" stopColor="#FFFF77" />
-            <stop offset="95%" stopColor="#FFFF33" />
-            <stop offset="100%" stopColor="#FF7744" />
-        </radialGradient>
-        <linearGradient id='test2' gradientTransform='rotate(90)'>
-            <stop offset="0%" stopColor="#EEEE00" />
-            <stop offset="40%" stopColor="#FF5511" />
-            <stop offset="78%" stopColor="#880000" />
-            <stop offset="80%" stopColor="black" />
-        </linearGradient>
-        <radialGradient id='test3' cx='.72' cy='1' r='1' fx='.72' fy='0'>
-            <stop offset="0%" stopColor="#FFFFFF" stopOpacity='0.3' />
-            <stop offset="30%" stopColor="#FFFF33" stopOpacity='0.15' />
-            <stop offset="60%" stopColor="#FFFF33" stopOpacity='0.05' />
-            <stop offset="100%" stopColor="black" stopOpacity='0' />
-        </radialGradient>
-    </defs>,
-    <rect x="0" y="0" width="250" height="500" fill='url(#test2)' key={`2_${props.svgId}`} />,
-    <circle cx='180' cy='250' r='50' fill='url(#test1)' key={`3_${props.svgId}`} />,
-    <rect x="0" y="200" width="250" height="300" fill='url(#test3)' key={`4_${props.svgId}`} />,
+    <g id="Group_1425" data-name="Group 1425" transform="translate(-844 -701.023) scale(1.1)" key={`1_${props.svgId}`} >
+        <g id="Group_2" data-name="Group 2" transform="translate(765 632.023) scale(1.1)">
+            <path id="Subtraction_1" data-name="Subtraction 1" d="M5.415,11.508H2.031V6.092H0L6.77,0l6.769,6.092H11.508v5.415H8.123V7.446H5.415v4.061ZM6.77,2.769A1.539,1.539,0,1,0,8.308,4.308,1.54,1.54,0,0,0,6.77,2.769Z" transform="translate(0 4.292) scale(1.1)" fill={props.color} />            
+            <g id="Ellipse_34" data-name="Ellipse 34" transform="translate(5.334 0) scale(1.1)" fill="none" stroke={props.color} stroke-width="1">
+                <circle cx="2" cy="2" r="2" stroke="none" />
+                <circle cx="2" cy="2" r="1.5" fill="none" />
+            </g>
+            <g id="Ellipse_35" data-name="Ellipse 35" transform="translate(12 5.333) scale(1.1)" fill="none" stroke={props.color} stroke-width="1">
+                <circle cx="2" cy="2" r="2" stroke="none" />
+                <circle cx="2" cy="2" r="1.5" fill="none" />
+            </g>
+            <path id="Path_9029" data-name="Path 9029" d="M771.572,635.938l-4.884,4.577,2.538,2.192" transform="translate(-841.649 -697.53) scale(1.1)" fill="none" stroke={props.color} stroke-width="1" />
+            <path id="Path_9030" data-name="Path 9030" d="M778.875,636.438l4.385,3.923" transform="translate(-848.336 -697.722) scale(1.1)" fill="none" stroke={props.color} stroke-width="1" />
+        </g>
+    </g>
 ]);
+// const scenario = (props: SVGProps) => ([
+//     <defs key={`1_${props.svgId}`}>
+//         <radialGradient id='test1' cx='0.5' cy='0.5' r='0.5'>
+//             <stop offset="0%" stopColor="#FFFFFF" />
+//             <stop offset="90%" stopColor="#FFFF77" />
+//             <stop offset="95%" stopColor="#FFFF33" />
+//             <stop offset="100%" stopColor="#FF7744" />
+//         </radialGradient>
+//         <linearGradient id='test2' gradientTransform='rotate(90)'>
+//             <stop offset="0%" stopColor="#EEEE00" />
+//             <stop offset="40%" stopColor="#FF5511" />
+//             <stop offset="78%" stopColor="#880000" />
+//             <stop offset="80%" stopColor="black" />
+//         </linearGradient>
+//         <radialGradient id='test3' cx='.72' cy='1' r='1' fx='.72' fy='0'>
+//             <stop offset="0%" stopColor="#FFFFFF" stopOpacity='0.3' />
+//             <stop offset="30%" stopColor="#FFFF33" stopOpacity='0.15' />
+//             <stop offset="60%" stopColor="#FFFF33" stopOpacity='0.05' />
+//             <stop offset="100%" stopColor="black" stopOpacity='0' />
+//         </radialGradient>
+//     </defs>,
+//     <rect x="0" y="0" width="250" height="500" fill='url(#test2)' key={`2_${props.svgId}`} />,
+//     <circle cx='180' cy='250' r='50' fill='url(#test1)' key={`3_${props.svgId}`} />,
+//     <rect x="0" y="200" width="250" height="300" fill='url(#test3)' key={`4_${props.svgId}`} />,
+// ]);
 
 const TYPE_ICON_DRAW_INDEX: {
     [s: string]: {
@@ -463,7 +480,8 @@ const TYPE_ICON_DRAW_INDEX: {
     'warning': { className: 'fc-warning', generator: warning },
     'cyp-device': { className: 'document', generator: cypDevice },
     'cyplogo': { className: 'cyplogo', generator: cyplogo },
-    'scenario': { className: 'scenario', generator: scenario },
+    'scenario': { className: 'fc-scenario', generator: scenario },
+    // 'scenario': { className: 'scenario', generator: scenario },
     'scissors': { className: 'scissors', generator: scissors },
     'cancel': { className: 'cancel', generator: cancel },
     'import': { className: 'import', generator: _import },

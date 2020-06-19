@@ -91,7 +91,7 @@ class Layout extends React.Component {
 class Header extends React.Component {
     render() {
         return (
-            <div className='header'>
+            <div className='header' id='__cypd_header_container'>
                 {this.props.children}
             </div>
         );
@@ -120,6 +120,7 @@ class Sider extends React.Component<SiderProps> {
                 <div /><div /><div />
             </label>
         );
+        const header = document.getElementById('__cypd_header_container');
         const old_container = document.getElementById('__cypd_sider_toggler_container');
         if (old_container)
             old_container.remove();
@@ -128,9 +129,11 @@ class Sider extends React.Component<SiderProps> {
         container.style['position'] = 'fixed';
         container.style['top'] = '0';
         container.style['left'] = '0';
-        document.body.appendChild(container);
-        if (container)
-            ReactDOM.render(toggler, container);
+        if (header) {
+            header.appendChild(container);
+            if (container)
+                ReactDOM.render(toggler, container);
+        }
 
         const mask = document.getElementById('collapse-mask');
         if (mask)
