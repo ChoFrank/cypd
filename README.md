@@ -8,6 +8,12 @@ yarn create-react-app my-app --template typescript
 yarn add typescript @types/node @types/react @types/react-dom @types/jest
 npm install --save https://github.com/ChoFrank/cypd.git
 # my-app可自由替換成專案名稱
+
+也可以使用
+npm install --save ChoFrank/cypd
+
+如要安裝其他分之支
+npm install --save ChoFrank/cypd#ct_style
 ```
 
 * 利用 npm/yarn 測試/編譯您的 javascript project
@@ -23,6 +29,7 @@ npm run build
 ```
 npm update cypd
 ```
+
 Update to speific version
 ```
 npm install --save https://github.com/ChoFrank/cypd.git#${commit}
