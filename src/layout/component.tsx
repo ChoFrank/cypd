@@ -122,8 +122,8 @@ class Sider extends React.Component<SiderProps> {
         );
         const header = document.getElementById('__cypd_header_container');
         const old_container = document.getElementById('__cypd_sider_toggler_container');
-        if (old_container)
-            old_container.remove();
+        if (old_container && header)
+            header.removeChild(old_container);
         const container = document.createElement('div');
         container.id = '__cypd_sider_toggler_container';
         container.style['position'] = 'fixed';
@@ -141,11 +141,12 @@ class Sider extends React.Component<SiderProps> {
     }
     componentWillUnmount() {
         const mask = document.getElementById('collapse-mask');
+        const header = document.getElementById('__cypd_header_container');
         const container = document.getElementById('__cypd_sider_toggler_container');
         if (mask)
             mask.onclick = null;
-        if (container)
-            container.remove();
+        if (header && container)
+            header.removeChild(container);
     }
     onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (this.props.onCollapse)

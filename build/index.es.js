@@ -29963,8 +29963,8 @@ var Sider = /** @class */ (function (_super) {
             react.createElement("div", null)));
         var header = document.getElementById('__cypd_header_container');
         var old_container = document.getElementById('__cypd_sider_toggler_container');
-        if (old_container)
-            old_container.remove();
+        if (old_container && header)
+            header.removeChild(old_container);
         var container = document.createElement('div');
         container.id = '__cypd_sider_toggler_container';
         container.style['position'] = 'fixed';
@@ -29981,11 +29981,12 @@ var Sider = /** @class */ (function (_super) {
     };
     Sider.prototype.componentWillUnmount = function () {
         var mask = document.getElementById('collapse-mask');
+        var header = document.getElementById('__cypd_header_container');
         var container = document.getElementById('__cypd_sider_toggler_container');
         if (mask)
             mask.onclick = null;
-        if (container)
-            container.remove();
+        if (header && container)
+            header.removeChild(container);
     };
     Sider.prototype.render = function () {
         var _a = this.props, className = _a.className, style = _a.style;
