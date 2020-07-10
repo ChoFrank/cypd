@@ -30195,7 +30195,8 @@ var Tooltip = /** @class */ (function (_super) {
             if (container) {
                 container.classList.add('hide');
                 setTimeout(function () { if (container)
-                    container.remove(); }, 150);
+                    document.body.removeChild(container); }, 150);
+                // setTimeout(() => { if (container) container.remove(); }, 150);
             }
         };
         return _this;
