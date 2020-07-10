@@ -1,98 +1,21 @@
 * {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: var(--default-normal-fontsize);
+    font-size: 14px;
     letter-spacing: 0.5px;
-    scrollbar-color: #7fbeca rgba(108, 151, 158, 0.376);
+    /* scrollbar-color: #7fbeca rgba(108, 151, 158, 0.376);
     scrollbar-width: thin;
     scrollbar-highlight-color: #00839E;
-    scrollbar-darkshadow-color: #00839E;
-}
-
-*::selection {
-    color: white;
-    background-color: #00839E;
-}
-
-
-/* 
-@font-face {
-    font-family: 'Noto Sans TC', sans-serif;
-    src: url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-    unicode-range: U+4E00-9FFF, U+3400-4DBF, U+20000-2A6DF, U+2A700–2B73F, U+2B740–2B81F, U+2B820–2CEAF, U+F900-FAFF, U+2F800-2FA1F;
-}
-
-@font-face {
-    font-family: "Open Sans", sans-serif;
-    src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-    unicode-range: U+00-7F;
-} */
-
-body {
-    --default-large-fontsize: 16px;
-    --default-normal-fontsize: 14px;
-    --default-small-fontsize: 12px;
-    --default-large-height: 39px;
-    --default-normal-height: 32px;
-    --default-small-height: 25px;
-    --default-cyp-blue: #008aab;
-    --default-cyp-blue-active: #00839E;
-    --default-cyp-blue-hover: #33a8c0;
-    --default-cyp-blue-light: #47bbd3;
-    --default-cyp-blue-opa-light: #00839E2F;
-    --default-cyp-blue-opa-medium: #00839E7F;
-    --default-cyp-blue-opa-deep: #00839EAF;
-    --default-header-height: 60px;
-    --default-nav-height: 5px;
-    --default-footer-height: 0px;
-    --default-leftsider-width: 255px;
-    --default-rightsider-width: 0px;
-    --default-content-height: calc(100% - var(--default-header-height) - var(--default-nav-height) - var(--default-footer-height));
-    /* --default-leftsider-width: 0px;
---default-rightsider-width: 250px; */
-    --default-header-width: 100%;
-    --default-left-collapser-width: 13px;
-    --default-right-collapser-width: 0px;
-    /* --default-left-collapser-width: 0px;
---default-right-collapser-width: 15px; */
-    --default-gray-color: rgb(163, 163, 163);
-    --default-disabled-color: rgb(185, 185, 185);
-    --default-disabled-background: rgb(231, 231, 231);
-    /* --default-red-color: rgb(255, 72, 72);
-    --default-red-hover-color: rgb(255, 128, 128);
-    --default-red-active-color: rgb(255, 28, 28); */
-    --default-red-color: #b92454;
-    --default-red-hover-color: #d12b60;
-    --default-red-active-color: #a01f48;
-    --default-deepgray-color: rgb(139, 139, 139);
-    --default-lightblack-color: rgb(31, 31, 31);
-    --default-transition-duration: 150ms;
-    /* for navbar cypd-tree */
-    --default-nav-background-color: rgb(51, 51, 51);
-    --default-navhover-background-color: rgba(51, 51, 51, 0.9);
-    --default-nav-item-width: 150px;
-    --default-nav-item-padding: 0px 20px 0px 20px;
-    --default-dropdown-item-height: 35px;
-    /* for cypd-select */
-    --default-select-normal-height: 32px;
-    --default-select-small-height: 25px;
-    --default-select-dropdown-height: 200px;
-    /* for cypd-tooltip */
-    --default-tooltip-width: 150px;
-    --default-tooltip-opacity: 1;
-    /* for cypd-slider */
-    --default-slider-drag-width: 17px;
-    --default-inrange-hover-color: var(--default-cyp-blue-active);
-    --default-inrange-color: var(--default-cyp-blue-hover);
+    scrollbar-darkshadow-color: #00839E; */
 }
 
 
 /* cypd general */
 
 [class^='cypd-'].small {
-    height: var(--default-small-height);
-    line-height: var(--default-small-height);
-    font-size: var(--default-small-fontsize);
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
 }
 
 ::-webkit-scrollbar {
@@ -107,17 +30,17 @@ body {
 
  ::-webkit-scrollbar-thumb {
     /* Handle */
-    background: var(--default-cyp-blue-light);
+    background: #47bbd3;
 }
 
  ::-webkit-scrollbar-thumb:hover {
     /* Handle on hover */
-    background: var(--default-cyp-blue-hover);
+    background: #33a8c0;
 }
 
  ::-webkit-scrollbar-thumb:active {
     /* Handle on hover */
-    background: var(--default-cyp-blue-active);
+    background: #00839E;
 }
 
 
@@ -138,14 +61,14 @@ body {
 .cypd-layout>.header {
     background-color: white;
     text-align: center;
-    height: var(--default-header-height);
+    height: 60px;
     width: 100%;
     padding: 10px;
     flex-shrink: 0;
 }
 
 .cypd-layout>.navigation {
-    height: var(--default-nav-height);
+    height: 5px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -176,15 +99,15 @@ body {
     max-width: 60px;
     overflow: hidden;
     flex-shrink: 0;
-    transition: max-width var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: max-width 150ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
 
 /* .cypd-layout .column.left:hover, */
 
 .cypd-layout .column.left.visible {
-    max-width: var(--default-leftsider-width);
-    width: var(--default-leftsider-width);
+    max-width: 255px;
+    width: 255px;
 }
 
 .cypd-layout #collapse-mask {
@@ -194,9 +117,9 @@ body {
 
 .cypd-layout .column.left.visible~#collapse-mask {
     position: absolute;
-    width: calc(100% - var(--default-leftsider-width));
+    width: calc(100% - 255px);
     height: 100%;
-    left: var(--default-leftsider-width);
+    left: 255px;
     z-index: 30;
 }
 
@@ -219,10 +142,10 @@ body {
     width: 29px;
     height: 3px;
     margin-bottom: 5px;
-    background: var(--default-cyp-blue-active);
+    background: #00839E;
     border-radius: 3px;
     flex-shrink: 0;
-    transition: opacity var(--default-transition-duration), transform var(--default-transition-duration);
+    transition: opacity 150ms, transform 150ms;
 }
 
 #__cypd_sider_toggler_container .toggle>div:last-child {
@@ -258,26 +181,26 @@ body {
 }
 
 .cypd-layout .column.left .column-wrapper {
-    width: var(--default-leftsider-width);
+    width: 255px;
     height: 100%;
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
     flex-grow: 1;
 }
 
 @media(max-width: 700px) {
     .cypd-layout .column.left {
         position: absolute;
-        max-width: var(--default-leftsider-width);
-        width: var(--default-leftsider-width);
+        max-width: 255px;
+        width: 255px;
         overflow: visible;
         z-index: 0;
         transform: translateX(-100%);
-        transition: z-index 0s linear var(--default-transition-duration), transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        transition: z-index 0s linear 150ms, transform 150ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
     }
     .cypd-layout .column.left.visible {
         z-index: 32;
         transform: translateX(0);
-        transition: z-index 0s linear 0s, transform var(--default-transition-duration) cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        transition: z-index 0s linear 0s, transform 150ms cubic-bezier(0.77, 0.2, 0.05, 1.0);
     }
 }
 
@@ -471,7 +394,7 @@ body {
     align-items: center;
     color: rgba(0, 0, 0, 0.75);
     white-space: nowrap;
-    transition: color var(--default-transition-duration);
+    transition: color 150ms;
 }
 
 .cypd-table-container .table-wrapper tbody>tr:hover>td>div {
@@ -505,7 +428,7 @@ body {
 
 .cypd-table-container.transform .table-wrapper tr td:nth-child(1)>div {
     font-weight: bold;
-    color: var(--default-cyp-blue-active);
+    color: #00839E;
 }
 
 .cypd-table-container.transform .table-wrapper tr:nth-child(1) td {
@@ -628,7 +551,7 @@ body {
 }
 
 .cypd-table-container .cypd-pagination-footer .cypd-button.default:hover {
-    border: 0.5px solid var(--default-cyp-blue-hover);
+    border: 0.5px solid #33a8c0;
 }
 
 .cypd-table-container .cypd-pagination-footer .cypd-button.default.focus {
@@ -713,7 +636,7 @@ body {
 }
 
 .cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox {
-    background-color: var(--default-cyp-blue);
+    background-color: #088aab;
     background-position: 4px -30px;
 }
 
@@ -741,13 +664,13 @@ body {
 .cypd-modal-container.active {
     opacity: 1;
     visibility: visible;
-    transition: opacity var(--default-transition-duration) ease-in, visibility var(--default-transition-duration);
+    transition: opacity 150ms ease-in, visibility 150ms;
 }
 
 .cypd-modal-container.hide {
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--default-transition-duration) ease-in, visibility 0ms ease-in var(--default-transition-duration);
+    transition: opacity 150ms ease-in, visibility 0ms ease-in 150ms;
 }
 
 .cypd-modal-container .cypd-modal-background {
@@ -803,12 +726,12 @@ body {
 
 .cypd-href {
     display: inline;
-    color: var(--default-cyp-blue-hover);
+    color: #33a8c0;
     cursor: pointer;
 }
 
 .cypd-href:hover {
-    color: var(--default-cyp-blue-light);
+    color: #47bbd3;
     text-decoration: underline;
 }
 
@@ -824,25 +747,24 @@ body {
     text-align: left;
     border-radius: 5px;
     cursor: pointer;
-    border: 1px solid var(--default-gray-color);
+    border: 1px solid rgb(163, 163, 163);
     letter-spacing: 1px;
-    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;
+    transition: border 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out;
 }
 
 .cypd-input::placeholder {
-    /* color: var(--default-gray-color); */
+    /* color: rgb(163, 163, 163); */
     color: #999;
 }
 
 .cypd-input:hover {
-    /* border: 1px solid var(---default-cyp-blue-hover); */
-    border: 1px solid var(--default-cyp-blue-hover);
+    border: 1px solid #33a8c0;
 }
 
 .cypd-input:focus {
     cursor: text;
-    border: 1px solid var(--default-cyp-blue-active);
-    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);
+    border: 1px solid #00839E;
+    box-shadow: 0px 0px 2px #33a8c0;
 }
 
 
@@ -852,8 +774,8 @@ body {
     position: relative;
     display: inline-block;
     text-align: left;
-    height: var(--default-select-normal-height);
-    line-height: var(--default-select-normal-height);
+    height: 32px;
+    line-height: 32px;
 }
 
 .cypd-select-wrapper .cypd-select {
@@ -861,24 +783,24 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    border: 1px solid var(--default-gray-color);
+    border: 1px solid rgb(163, 163, 163);
     letter-spacing: 1px;
     cursor: pointer;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='%2333a8c0' fill='%2333a8c0' /></svg>");
     background-position: right;
     background-repeat: no-repeat;
     background-color: white;
-    transition: border var(--default-transition-duration) ease-in-out, box-shadow var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;
+    transition: border 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out;
 }
 
 .cypd-select-wrapper .cypd-select:hover {
-    border: 1px solid var(--default-cyp-blue-hover);
+    border: 1px solid #33a8c0;
 }
 
 .cypd-select-wrapper .cypd-select:disabled {
     cursor: not-allowed;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28px' height='32px' overflow='visible'><path d='M13 14 16 10 19 14 M13 18 16 22 19 18' stroke='rgb(160,160,160)' fill='rgb(160,160,160)' /></svg>");
-    background-color: var(--default-disabled-background);
+    background-color: rgb(231, 231, 231);
 }
 
 .cypd-select-wrapper .cypd-select.focus {
@@ -886,18 +808,18 @@ body {
     background-position: right;
     background-repeat: no-repeat;
     background-color: white;
-    border: 1px solid var(--default-cyp-blue-active);
-    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);
+    border: 1px solid #00839E;
+    box-shadow: 0px 0px 2px #33a8c0;
 }
 
 .cypd-select-wrapper .cypd-select::placeholder {
-    /* color: var(--default-deepgray-color); */
+    /* color: rgb(139, 139, 139); */
     color: #999;
 }
 
 .cypd-options-container {
     position: absolute;
-    top: var(--default-select-normal-height);
+    top: 32px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -906,32 +828,32 @@ body {
     height: auto;
     z-index: 21;
     box-shadow: 0px 3px 6px #00000029;
-    transition: max-height var(--default-transition-duration);
+    transition: max-height 150ms;
 }
 
 .cypd-select-wrapper.small .cypd-options-container {
-    top: var(--default-select-small-height);
+    top: 25px;
 }
 
 .cypd-options-container.extend-top {
-    transform: translateY(calc(-100% - var(--default-select-normal-height) - 2px));
+    transform: translateY(calc(-100% - 32px - 2px));
     transform-origin: bottom;
     box-shadow: 0px -3px 6px #0000005f;
 }
 
 .cypd-select-wrapper.small .cypd-options-container.extend-top {
-    transform: translateY(calc(-100% - var(--default-select-small-height) - 2px));
+    transform: translateY(calc(-100% - 25px - 2px));
 }
 
 .cypd-options-container.limit-height {
-    height: var(--default-select-dropdown-height);
+    height: 200px;
 }
 
 .cypd-options-container.collapsed {
     /* opacity: 0;
     height: 0;
     transform: scaleY(0);
-    transition: transform var(--default-transition-duration), opacity var(--default-transition-duration) 150ms; */
+    transition: transform 150ms, opacity 150ms 150ms; */
     max-height: 0;
     height: 0;
 }
@@ -960,12 +882,12 @@ body {
 .cypd-option label {
     position: relative;
     display: block;
-    height: var(--default-select-normal-height);
-    line-height: var(--default-select-normal-height);
+    height: 32px;
+    line-height: 32px;
     padding: 0px 10px 0px 10px;
     width: 100%;
     cursor: pointer;
-    transition: background-color var(--default-transition-duration), color var(--default-transition-duration);
+    transition: background-color 150ms, color 150ms;
     color: black;
     background-color: white;
     overflow: hidden;
@@ -974,14 +896,14 @@ body {
 }
 
 .cypd-select-wrapper.small .cypd-option label {
-    height: var(--default-small-height);
-    line-height: var(--default-small-height);
-    font-size: var(--default-small-fontsize);
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
 }
 
 .cypd-option input[type="radio"]:checked~label,
 .cypd-option label:hover {
-    background-color: var(--default-cyp-blue-hover);
+    background-color: #33a8c0;
     color: white;
 }
 
@@ -1069,17 +991,17 @@ svg.cypd-icon.solid-right * {
     line-height: 32px;
     overflow: hidden;
     white-space: nowrap;
-    transition: color var(--default-transition-duration) ease-in-out 50ms, border var(--default-transition-duration) ease-in-out, background-color var(--default-transition-duration) ease-in-out;
+    transition: color 150ms ease-in-out 50ms, border 150ms ease-in-out, background-color 150ms ease-in-out;
     user-select: none;
     flex-shrink: 0;
 }
 
 .cypd-button.round {
-    border-radius: calc(var(--default-select-normal-height) / 2);
+    border-radius: calc(32px / 2);
 }
 
 .cypd-button.small.round {
-    border-radius: calc(var(--default-select-small-height) / 2);
+    border-radius: calc(25px / 2);
 }
 
 .cypd-button.small {
@@ -1087,64 +1009,64 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-button.no-content {
-    width: var(--default-select-normal-height);
+    width: 32px;
     padding: 0px 10px 0px 10px;
 }
 
 .cypd-button.small.no-content {
-    width: var(--default-select-small-height);
+    width: 25px;
 }
 
 .cypd-button.primary {
     color: white;
-    background-color: var(--default-cyp-blue);
+    background-color: #088aab;
 }
 
 .cypd-button.primary:hover {
-    background-color: var(--default-cyp-blue-hover);
+    background-color: #33a8c0;
 }
 
 .cypd-button.primary:active {
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
 }
 
 .cypd-button.danger {
     color: white;
-    background-color: var(--default-red-color);
+    background-color: #b92454;
 }
 
 .cypd-button.danger:hover {
-    background-color: var(--default-red-hover-color);
+    background-color: #d12b60;
 }
 
 .cypd-button.danger:active {
-    background-color: var(--default-red-active-color);
+    background-color: #a01f48;
 }
 
 .cypd-button.default {
     background-color: white;
-    color: var(--default-deepgray-color);
-    border: 1px solid var(--default-gray-color);
+    color: rgb(139, 139, 139);
+    border: 1px solid rgb(163, 163, 163);
 }
 
 .cypd-button.default:hover {
-    color: var(--default-cyp-blue-hover);
-    border: 1px solid var(--default-cyp-blue-hover);
+    color: #33a8c0;
+    border: 1px solid #33a8c0;
 }
 
 .cypd-button.default:active {
-    color: var(--default-cyp-blue-active);
-    border: 1px solid var(--default-cyp-blue-active);
+    color: #00839E;
+    border: 1px solid #00839E;
 }
 
 .cypd-button.default .cypd-icon:not([class*='fc-']) * {
-    transition: stroke var(--default-transition-duration) ease-in-out 50ms;
+    transition: stroke 150ms ease-in-out 50ms;
 }
 
 .cypd-button.disabled {
-    background-color: var(--default-disabled-background);
-    color: var(--default-disabled-color);
-    border: 1px solid var(--default-disabled-color);
+    background-color: rgb(231, 231, 231);
+    color: rgb(185, 185, 185);
+    border: 1px solid rgb(185, 185, 185);
     cursor: not-allowed;
 }
 
@@ -1179,11 +1101,11 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-button.default:hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
-    stroke: var(--default-cyp-blue-hover);
+    stroke: #33a8c0;
 }
 
 .cypd-button.default:active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
-    stroke: var(--default-cyp-blue-active);
+    stroke: #00839E;
 }
 
 .cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
@@ -1199,8 +1121,8 @@ svg.cypd-icon.solid-right * {
     align-items: center;
     position: relative;
     width: auto;
-    height: var(--default-normal-height);
-    line-height: var(--default-normal-height);
+    height: 32px;
+    line-height: 32px;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -1223,21 +1145,21 @@ svg.cypd-icon.solid-right * {
     flex-shrink: 0;
     height: 20px;
     width: 20px;
-    border: 1px solid var(--default-gray-color);
+    border: 1px solid rgb(163, 163, 163);
     border-radius: 3px;
     background-color: white;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='20px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='white' stroke-width='2' fill='none' /></svg>");
     background-repeat: no-repeat;
-    transition: border var(--default-transition-duration), background-color var(--default-transition-duration);
+    transition: border 150ms, background-color 150ms;
 }
 
 .cypd-checkbox-wrapper:hover .cypd-checkbox {
-    border: 1px solid var(--default-cyp-blue-hover);
+    border: 1px solid #33a8c0;
 }
 
 .cypd-checkbox-wrapper input:checked~.cypd-checkbox {
-    background-color: var(--default-cyp-blue-hover);
-    border: 1px solid var(--default-cyp-blue-hover);
+    background-color: #33a8c0;
+    border: 1px solid #33a8c0;
 }
 
 .cypd-checkbox-wrapper input:disabled~.cypd-checkbox {
@@ -1246,8 +1168,8 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-checkbox-wrapper span {
-    height: var(--default-small-height);
-    line-height: var(--default-small-height);
+    height: 25px;
+    line-height: 25px;
     padding-left: 5px;
     overflow: hidden;
 }
@@ -1300,14 +1222,14 @@ svg.cypd-icon.solid-right * {
     align-items: center;
     height: 20px;
     width: 20px;
-    border: 1px solid var(--default-gray-color);
+    border: 1px solid rgb(163, 163, 163);
     border-radius: 50%;
     background-color: white;
-    transition: border-color var(--default-transition-duration);
+    transition: border-color 150ms;
 }
 
 .cypd-radio-wrapper:hover .cypd-radio {
-    border: 1px solid var(--default-cyp-blue-hover);
+    border: 1px solid #33a8c0;
 }
 
 .cypd-radio-wrapper .cypd-radio::after {
@@ -1315,9 +1237,9 @@ svg.cypd-icon.solid-right * {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: var(--default-cyp-blue-hover);
+    background-color: #33a8c0;
     transform: scale(0);
-    transition: transform var(--default-transition-duration);
+    transition: transform 150ms;
 }
 
 .cypd-radio-wrapper input:checked~.cypd-radio::after {
@@ -1325,8 +1247,8 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-radio-wrapper input:checked~.cypd-radio {
-    border: 1px solid var(--default-cyp-blue-active);
-    box-shadow: 0px 0px 2px var(--default-cyp-blue-hover);
+    border: 1px solid #00839E;
+    box-shadow: 0px 0px 2px #33a8c0;
 }
 
 .cypd-radio-wrapper input:disabled~.cypd-radio {
@@ -1379,8 +1301,8 @@ svg.cypd-icon.solid-right * {
     width: 30px;
     height: 7px;
     border-radius: 3.5px;
-    background-color: var(--default-gray-color);
-    transition: background-color var(--default-transition-duration);
+    background-color: rgb(163, 163, 163);
+    transition: background-color 150ms;
 }
 
 .cypd-switchbutton::after {
@@ -1390,8 +1312,8 @@ svg.cypd-icon.solid-right * {
     width: 15px;
     border-radius: 50%;
     background-color: white;
-    box-shadow: 0px 1px 3px var(--default-deepgray-color);
-    transition: transform var(--default-transition-duration), background-color 80ms 70ms;
+    box-shadow: 0px 1px 3px rgb(139, 139, 139);
+    transition: transform 150ms, background-color 80ms 70ms;
 }
 
 .cypd-switchbutton-wrapper input:checked+.cypd-switchbutton {
@@ -1399,7 +1321,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::after {
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
     transform: translateX(15px);
 }
 
@@ -1463,7 +1385,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-spin-wrapper .cypd-spin-msg {
     letter-spacing: 1px;
-    color: var(--default-cyp-blue-active);
+    color: #00839E;
     font-weight: normal;
 }
 
@@ -1504,7 +1426,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-spin-wrapper.linear .container div {
     position: absolute;
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
     height: 8px;
     width: 8px;
     border-radius: 50%;
@@ -1591,11 +1513,11 @@ svg.cypd-icon.solid-right * {
     padding-left: 5px;
     cursor: pointer;
     color: rgba(255, 255, 255, 0.883);
-    transition: color var(--default-transition-duration), background-color var(--default-transition-duration);
+    transition: color 150ms, background-color 150ms;
 }
 
 .cypd-tree-container.black .cypd-tree-element .self {
-    color: var(--default-deepgray-color);
+    color: rgb(139, 139, 139);
 }
 
 .cypd-tree-element .self .cypd-icon-wrapper svg * {
@@ -1603,11 +1525,11 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-tree-container.black .cypd-tree-element .self .cypd-icon-wrapper svg * {
-    stroke: var(--default-deepgray-color);
+    stroke: rgb(139, 139, 139);
 }
 
 .cypd-tree-element .self:hover {
-    background-color: var(--default-lightblack-color);
+    background-color: rgb(31, 31, 31);
     color: white;
 }
 
@@ -1684,7 +1606,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-layout-navigation .cypd-tree-element .self:hover {
-    background-color: var(--default-cyp-blue-hover);
+    background-color: #33a8c0;
 }
 
 .cypd-layout-navigation .cypd-tree-element .self>* {
@@ -1705,17 +1627,17 @@ svg.cypd-icon.solid-right * {
 
 .cypd-tooltip {
     position: absolute;
-    max-width: var(--default-tooltip-width);
+    max-width: 150px;
     height: auto;
     color: white;
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
     padding: 10px;
     border-radius: 3px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.486);
     opacity: 0;
     z-index: 41;
     visibility: hidden;
-    transition: opacity var(--default-transition-duration);
+    transition: opacity 150ms;
 }
 
 .cypd-tooltip.active {
@@ -1792,11 +1714,11 @@ svg.cypd-icon.solid-right * {
 
 .cypd-slider-container {
     position: relative;
-    height: var(--default-normal-height);
+    height: 32px;
     flex-grow: 1;
     padding-left: 5px;
     padding-right: 5px;
-    /* background-color: var(--default-cyp-blue-opa-deep); */
+    /* background-color: #00839EAF; */
 }
 
 .cypd-slider-container.disabled {
@@ -1820,9 +1742,9 @@ svg.cypd-icon.solid-right * {
     height: 5px;
     width: 100%;
     border-radius: 2.5px;
-    background-color: var(--default-disabled-color);
+    background-color: rgb(185, 185, 185);
     cursor: pointer;
-    transition: background-color var(--default-transition-duration);
+    transition: background-color 150ms;
 }
 
 .cypd-slider-track.progress-track {
@@ -1837,25 +1759,25 @@ svg.cypd-icon.solid-right * {
 
 .cypd-slider-track:not(.progress-track).active,
 .cypd-slider-track:not(.progress-track):hover {
-    background-color: var(--default-gray-color);
+    background-color: rgb(163, 163, 163);
 }
 
 .cypd-slider-point.drag {
     position: absolute;
-    height: var(--default-slider-drag-width);
-    width: var(--default-slider-drag-width);
+    height: 17px;
+    width: 17px;
     background-color: white;
-    border: 3px solid var(--default-cyp-blue-hover);
+    border: 3px solid #33a8c0;
     border-radius: 50%;
     cursor: pointer;
     z-index: 1;
-    transform: translateX(calc(-1 * var(--default-slider-drag-width) / 2));
-    transition: border-color var(--default-transition-duration), box-shadow var(--default-transition-duration);
+    transform: translateX(calc(-1 * 17px / 2));
+    transition: border-color 150ms, box-shadow 150ms;
 }
 
 .cypd-slider-point.drag.active {
-    border-color: var(--default-cyp-blue-active);
-    box-shadow: 0px 0px 5px var(--default-cyp-blue-opa-medium);
+    border-color: #00839E;
+    box-shadow: 0px 0px 5px #00839E7F;
 }
 
 .cypd-slider-container.disabled .cypd-slider-point.drag {
@@ -1879,14 +1801,14 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-slider-range path {
-    stroke: var(--default-cyp-blue-light);
+    stroke: #47bbd3;
     stroke-width: 5px;
     stroke-linecap: round;
-    transition: stroke var(--default-transition-duration);
+    transition: stroke 150ms;
 }
 
 .cypd-slider-track.active .cypd-slider-range path {
-    stroke: var(--default-cyp-blue-hover);
+    stroke: #33a8c0;
 }
 
 .cypd-slider-container.disabled .cypd-slider-range path {
@@ -1940,7 +1862,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-formitem-wrapper>.help {
-    color: var(--default-red-color);
+    color: #b92454;
     position: absolute;
     right: 0;
     bottom: -16px;
@@ -1962,7 +1884,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-formitem-wrapper.error>.cypd-select-wrapper,
 .cypd-formitem-wrapper.error>.cypd-input {
-    border-color: var(--default-red-color);
+    border-color: #b92454;
 }
 
 
@@ -1972,7 +1894,7 @@ svg.cypd-icon.solid-right * {
     z-index: 11;
     height: 250px;
     opacity: 0;
-    transition: opacity var(--default-transition-duration);
+    transition: opacity 150ms;
 }
 
 .cypd-picker-wrapper {
@@ -1980,7 +1902,7 @@ svg.cypd-icon.solid-right * {
     display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: var(--default-normal-height);
+    height: 32px;
     width: 150px; */
     position: relative;
     width: 150px;
@@ -1999,13 +1921,13 @@ svg.cypd-icon.solid-right * {
 
 .cypd-picker-wrapper .cypd-input {
     cursor: text;
-    color: var(--default-gray-color);
+    color: rgb(163, 163, 163);
     width: 100%;
 }
 
 .cypd-picker-wrapper.hide .cypd-input:focus {
     box-shadow: none;
-    border: 1px solid var(--default-gray-color);
+    border: 1px solid rgb(163, 163, 163);
 }
 
 .react-calendar {
@@ -2023,7 +1945,7 @@ svg.cypd-icon.solid-right * {
 .react-calendar button {
     position: relative;
     background-color: transparent;
-    color: var(--default-cyp-blue-active);
+    color: #00839E;
     border: 0;
     height: 30px;
     cursor: pointer;
@@ -2046,7 +1968,7 @@ svg.cypd-icon.solid-right * {
 .react-calendar button.react-calendar__month-view__days__day.react-calendar__tile--active,
 .react-calendar button.react-calendar__month-view__days__day:focus,
 .react-calendar button.react-calendar__month-view__days__day::-moz-focus-inner {
-    background-color: var(--default-cyp-blue-opa-light);
+    background-color: #00839E2F;
 }
 
 button.react-calendar__month-view__days__day {
@@ -2060,11 +1982,11 @@ button.react-calendar__century-view__decades__decade {
 }
 
 .react-calendar button:hover {
-    background-color: var(--default-cyp-blue-opa-light);
+    background-color: #00839E2F;
 }
 
 .react-calendar__month-view__weekdays {
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
     height: 30px;
     line-height: 30px;
     margin-top: 5px;
@@ -2088,7 +2010,7 @@ button.react-calendar__century-view__decades__decade {
     position: absolute;
     width: 100%;
     z-index: 1;
-    color: var(--default-gray-color);
+    color: rgb(163, 163, 163);
 }
 
 .cypd-digital-clock-wrapper .cypd-input:hover {
@@ -2110,7 +2032,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 .cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container {
-    height: var(--default-select-dropdown-height);
+    height: 200px;
     transition-delay: 0s;
 }
 
@@ -2163,7 +2085,7 @@ button.react-calendar__century-view__decades__decade {
     overflow: hidden;
     margin-bottom: 10px;
     max-height: 90px;
-    box-shadow: 0px 0px 12px -2px var(--default-deepgray-color);
+    box-shadow: 0px 0px 12px -2px rgb(139, 139, 139);
     transition: max-height .2s cubic-bezier(0.215, 0.610, 0.355, 1), margin-bottom 0s cubic-bezier(0.215, 0.610, 0.355, 1) .1s;
     animation: PushIn 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
 }
@@ -2203,7 +2125,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window .cypd-notify-container.info {
-    border-left: 5px solid var(--default-cyp-blue-active);
+    border-left: 5px solid #00839E;
 }
 
 #g__cypd_notify_window .cypd-notify-container.success {
@@ -2215,7 +2137,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window .cypd-notify-container.error {
-    border-left: 5px solid var(--default-red-active-color);
+    border-left: 5px solid #a01f48;
 }
 
 #g__cypd_notify_window .cypd-notify-container .icon {
@@ -2228,7 +2150,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window .cypd-notify-container.info .icon {
-    background-color: var(--default-cyp-blue-active);
+    background-color: #00839E;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><circle cx='12.5' cy='8' r='2' stroke='none' fill='white'/><path d='M9.5 12.5 14.5 12.5 14.5 18.5 16.5 19.5 9.5 19.5 11.5 18.5 11.5 14.5 Z' stroke='none' fill='white'/></svg>");
 }
 
@@ -2244,7 +2166,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window .cypd-notify-container.error .icon {
-    background-color: var(--default-red-active-color);
+    background-color: #a01f48;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' overflow='visible'><path d='M7.5 7.5 17.5 17.5 M17.5 7.5 7.5 17.5' stroke='white' stroke-width='4' fill='none'/></svg>");
 }
 
@@ -2312,12 +2234,12 @@ button.react-calendar__century-view__decades__decade {
     justify-content: space-between;
     padding: 5px 10px 5px 10px;
     height: 32px;
-    color: var(--default-cyp-blue);
+    color: #088aab;
     transition: background-color 150ms, color 150ms, transform 150ms;
 }
 
 .cypd-dropdown>.wrapper>.cypd-dropdown-item:hover {
-    background-color: var(--default-cyp-blue-hover);
+    background-color: #33a8c0;
     color: white;
 }
 
