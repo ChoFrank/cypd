@@ -2757,14 +2757,14 @@ var scenario = function (props) { return ([
     react.createElement("g", { id: "Group_1425", "data-name": "Group 1425", transform: "translate(-844 -701.023) scale(1.1)", key: "1_" + props.svgId },
         react.createElement("g", { id: "Group_2", "data-name": "Group 2", transform: "translate(765 632.023) scale(1.1)" },
             react.createElement("path", { id: "Subtraction_1", "data-name": "Subtraction 1", d: "M5.415,11.508H2.031V6.092H0L6.77,0l6.769,6.092H11.508v5.415H8.123V7.446H5.415v4.061ZM6.77,2.769A1.539,1.539,0,1,0,8.308,4.308,1.54,1.54,0,0,0,6.77,2.769Z", transform: "translate(0 4.292) scale(1.1)", fill: props.color }),
-            react.createElement("g", { id: "Ellipse_34", "data-name": "Ellipse 34", transform: "translate(5.334 0) scale(1.1)", fill: "none", stroke: props.color, "stroke-width": "1" },
+            react.createElement("g", { id: "Ellipse_34", "data-name": "Ellipse 34", transform: "translate(5.334 0) scale(1.1)", fill: "none", stroke: props.color, strokeWidth: "1" },
                 react.createElement("circle", { cx: "2", cy: "2", r: "2", stroke: "none" }),
                 react.createElement("circle", { cx: "2", cy: "2", r: "1.5", fill: "none" })),
-            react.createElement("g", { id: "Ellipse_35", "data-name": "Ellipse 35", transform: "translate(12 5.333) scale(1.1)", fill: "none", stroke: props.color, "stroke-width": "1" },
+            react.createElement("g", { id: "Ellipse_35", "data-name": "Ellipse 35", transform: "translate(12 5.333) scale(1.1)", fill: "none", stroke: props.color, strokeWidth: "1" },
                 react.createElement("circle", { cx: "2", cy: "2", r: "2", stroke: "none" }),
                 react.createElement("circle", { cx: "2", cy: "2", r: "1.5", fill: "none" })),
-            react.createElement("path", { id: "Path_9029", "data-name": "Path 9029", d: "M771.572,635.938l-4.884,4.577,2.538,2.192", transform: "translate(-841.649 -697.53) scale(1.1)", fill: "none", stroke: props.color, "stroke-width": "1" }),
-            react.createElement("path", { id: "Path_9030", "data-name": "Path 9030", d: "M778.875,636.438l4.385,3.923", transform: "translate(-848.336 -697.722) scale(1.1)", fill: "none", stroke: props.color, "stroke-width": "1" })))
+            react.createElement("path", { id: "Path_9029", "data-name": "Path 9029", d: "M771.572,635.938l-4.884,4.577,2.538,2.192", transform: "translate(-841.649 -697.53) scale(1.1)", fill: "none", stroke: props.color, strokeWidth: "1" }),
+            react.createElement("path", { id: "Path_9030", "data-name": "Path 9030", d: "M778.875,636.438l4.385,3.923", transform: "translate(-848.336 -697.722) scale(1.1)", fill: "none", stroke: props.color, strokeWidth: "1" })))
 ]); };
 // const scenario = (props: SVGProps) => ([
 //     <defs key={`1_${props.svgId}`}>
