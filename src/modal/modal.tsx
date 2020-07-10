@@ -23,7 +23,7 @@ export default class Modal extends React.Component<Partial<ModalProps>> {
             <div className={wrapperClass}>
                 <div className='cypd-modal-background' onClick={props.onClose}>
                     <div className={modalClass} style={this.props.style} onClick={(e) => { e.stopPropagation(); }}>
-                        {(props.onClose) ? <svg className='close-svg' onClick={props.onClose}><path d='M4 4 16 16 M4 16 16 4' stroke='black' strokeWidth={3} /></svg> : undefined}
+                        {(props.onClose) ? <svg className='close-svg' onClick={props.onClose}><path d='M6 6 14 14 M6 14 14 6' stroke='white' strokeWidth={3} /></svg> : undefined}
                         {props.title?<h3 style={props.headerStyle}>{props.title}</h3>:undefined}
                         <div className='content' style={props.bodyStyle}>{props.children}</div>
                     </div>

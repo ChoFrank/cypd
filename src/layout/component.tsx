@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 import Icon from '../icon/component';
 
@@ -40,12 +40,8 @@ class NavigationItem extends React.Component<NavitemProps> {
     }
     get toggler_id() { return `cypd-navitem-input-${this.id}`; }
     onToggle = () => {
-        if (this.flag.current)
-            this.flag.current.focus();
-        this.setState({ extend: true });
-    }
-    onBlur = () => {
-        this.setState({ extend: false });
+        this.setState((prevState: { extend: boolean }) => ({ extend: !prevState.extend }));
+        this.direct();
     }
     direct = () => {
         const { url, onClick } = this.props;
@@ -59,10 +55,10 @@ class NavigationItem extends React.Component<NavitemProps> {
         const { label, icon, disabled, children, className, style } = this.props;
         const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
         return (!disabled) ? (
-            <div className={wrapperClass} style={style}>
-                {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
-                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} onClick={this.onToggle} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
-                <div className='label' onMouseDown={this.direct} onClick={this.onToggle}>{label}</div>
+            <div className={wrapperClass} style={style} onClick={this.onToggle}>
+                {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} type='checkbox'></input> : undefined}
+                <div style={{ display: (icon) ? undefined : 'none' }} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
+                <div className='label'>{label}</div>
                 {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
                 {children ? <div className='toggler'></div> : undefined}
             </div>
@@ -109,44 +105,44 @@ class Navigation extends React.Component {
 }
 
 class Sider extends React.Component<SiderProps> {
-    state = { visible: false };
+    state = { visible: true };
     toggler: HTMLInputElement | undefined | null;
     // mouseInToggleArea: boolean = false;
-    componentDidMount() {
-        const { toggleClass, toggleStyle } = this.props;
-        const toggler = (
-            <label className={`toggle${toggleClass ? ` ${toggleClass}` : ''}`} style={toggleStyle}>
-                <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox' />
-                <div /><div /><div />
-            </label>
-        );
-        const header = document.getElementById('__cypd_header_container');
-        const old_container = document.getElementById('__cypd_sider_toggler_container');
-        if (old_container)
-            old_container.remove();
-        const container = document.createElement('div');
-        container.id = '__cypd_sider_toggler_container';
-        container.style['position'] = 'fixed';
-        container.style['top'] = '0';
-        container.style['left'] = '0';
-        if (header) {
-            header.appendChild(container);
-            if (container)
-                ReactDOM.render(toggler, container);
-        }
+    // componentDidMount() {
+    //     const { toggleClass, toggleStyle } = this.props;
+    //     const toggler = (
+    //         <label className={`toggle${toggleClass ? ` ${toggleClass}` : ''}`} style={toggleStyle}>
+    //             <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox' />
+    //             <div /><div /><div />
+    //         </label>
+    //     );
+    //     const header = document.getElementById('__cypd_header_container');
+    //     const old_container = document.getElementById('__cypd_sider_toggler_container');
+    //     if (old_container)
+    //         old_container.remove();
+    //     const container = document.createElement('div');
+    //     container.id = '__cypd_sider_toggler_container';
+    //     container.style['position'] = 'fixed';
+    //     container.style['top'] = '0';
+    //     container.style['left'] = '0';
+    //     if (header) {
+    //         header.appendChild(container);
+    //         if (container)
+    //             ReactDOM.render(toggler, container);
+    //     }
 
-        const mask = document.getElementById('collapse-mask');
-        if (mask)
-            mask.onclick = this.closeSider;
-    }
-    componentWillUnmount() {
-        const mask = document.getElementById('collapse-mask');
-        const container = document.getElementById('__cypd_sider_toggler_container');
-        if (mask)
-            mask.onclick = null;
-        if (container)
-            container.remove();
-    }
+    //     const mask = document.getElementById('collapse-mask');
+    //     if (mask)
+    //         mask.onclick = this.closeSider;
+    // }
+    // componentWillUnmount() {
+    //     const mask = document.getElementById('collapse-mask');
+    //     const container = document.getElementById('__cypd_sider_toggler_container');
+    //     if (mask)
+    //         mask.onclick = null;
+    //     if (container)
+    //         container.remove();
+    // }
     onToggle = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (this.props.onCollapse)
             this.props.onCollapse(e.target.checked);
@@ -189,7 +185,7 @@ class Body extends React.Component {
         return (
             <div className='content'>
                 {this.props.children}
-                <div id='collapse-mask'></div>
+                {/* <div id='collapse-mask'></div> */}
             </div>
         );
     }

@@ -11,7 +11,7 @@ type ProgressBarProps = {
 export default class ProgressBar extends React.Component<ProgressBarProps> {
     render() {
         const { percentage, hint } = this.props;
-        var containerClass = 'cypd-slider-container';
+        var containerClass = 'cypd-slider-container progress';
         var wrapperClass = 'cypd-slider-wrapper';
         var trackClass = 'cypd-slider-track progress-track';
         var rangeClass = 'cypd-slider-range';
@@ -21,9 +21,7 @@ export default class ProgressBar extends React.Component<ProgressBarProps> {
             offset_p = 100;
         if (offset_p < 0)
             offset_p = 0;
-        draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
-            <path d={`M2.5 2.5 H 3000`}/>
-        </svg>);
+        draw = (<div className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}/>);
         if (this.props.className)
             containerClass += ` ${this.props.className}`;
         return (

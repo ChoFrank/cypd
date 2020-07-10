@@ -64,23 +64,23 @@ export default class Table extends React.Component<TableProps> {
     }
     get calculate_total_pages() { return (this.props.rowLimit) ? Math.ceil(this.props.rows.length / this.props.rowLimit) : 1; }
     handleResize = () => {
-        const { forceResponsive, responsive } = this.props;
-        if (forceResponsive)
-            this.setState({ responsive: (responsive) ? responsive : 'transform' });
-        if (this.wrapperRef) {
-            const parent = this.wrapperRef.parentElement;
-            const rect = this.wrapperRef.getBoundingClientRect();
-            this.needWidth = (this.needWidth) ? this.needWidth : rect.width;
-            if (parent) {
-                const parent_rect = parent.getBoundingClientRect();
-                if (parent && this.needWidth > parent_rect.width - 80) {
-                    // global.setTimeout(() => { this.setState({ responsive }); }, 100000); 
-                    this.setState({ responsive: (responsive) ? responsive : 'transform' });
-                } else {
-                    this.setState({ responsive: 'no' });
-                }
-            }
-        }
+        // const { forceResponsive, responsive } = this.props;
+        // if (forceResponsive)
+        //     this.setState({ responsive: (responsive) ? responsive : 'transform' });
+        // if (this.wrapperRef) {
+        //     const parent = this.wrapperRef.parentElement;
+        //     const rect = this.wrapperRef.getBoundingClientRect();
+        //     this.needWidth = (this.needWidth) ? this.needWidth : rect.width;
+        //     if (parent) {
+        //         const parent_rect = parent.getBoundingClientRect();
+        //         if (parent && this.needWidth > parent_rect.width - 80) {
+        //             // global.setTimeout(() => { this.setState({ responsive }); }, 100000); 
+        //             this.setState({ responsive: (responsive) ? responsive : 'transform' });
+        //         } else {
+        //             this.setState({ responsive: 'no' });
+        //         }
+        //     }
+        // }
     }
     onPrevPage = () => {
         this.setState((prevState: TableState) => {

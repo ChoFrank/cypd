@@ -54,24 +54,24 @@ class App extends React.Component {
             <Option value='4' key={Math.random()}>Chris</Option>,
         ]
         const rows = [
-            [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
-            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked />],
-            [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
-            [<Icon type='led-yellow' />, <Button type='primary' icon='edit'>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
-            [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
             [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
             [<Icon type='loading' />, <Slider max={1} min={0} step={0.1} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
             ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+            [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked />],
+            [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
+            [<Icon type='led-yellow' />, <Button type='primary' icon='edit'>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
+            [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
         ];
-        const table = <Table
-            headers={['1', '2', '3', '4']}
-            rows={rows}
-            pagination={true}
-            rowLimit={5}
-            responsive='transform'
-        />;
+        // const table = <Table
+        //     headers={['1', '2', '3', '4']}
+        //     rows={rows}
+        //     pagination={true}
+        //     rowLimit={5}
+        //     responsive='transform'
+        // />;
         const email_example = [
             ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
             ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
@@ -82,23 +82,22 @@ class App extends React.Component {
             ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
             ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
         ];
-        // const table = <Table
-        //     headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
-        //     rows={email_example}
-        //     pagination={true}
-        //     rowLimit={5}
-        //     columnWidth={[1, 1, 2, 1]}
-        //     responsive='shorten'
-        //     shortenProps={{
-        //         layout: {
-        //             bottomLeft: 0,
-        //             topLeft: 5,
-        //             topRight: [1, 4, 3],
-        //             bottomRight: [2],
-        //         }
-        //     }}
-        //     checkable
-        // ></Table>;
+        const table = <Table
+            headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
+            rows={email_example}
+            pagination={true}
+            rowLimit={5}
+            columnWidth={[1, 1, 2, 1]}
+            responsive='shorten'
+            shortenProps={{
+                layout: {
+                    bottomLeft: 0,
+                    topLeft: 5,
+                    topRight: [1, 4, 3],
+                    bottomRight: [2],
+                }
+            }}
+        ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '100px' }}>
             <Form.Item label='Name' error='Name cannot be null'>
@@ -135,12 +134,31 @@ class App extends React.Component {
                             visible={this.state.visible}
                             onCollapse={(visible) => { this.setState({ visible }); }}
                         >
-                            <Layout.NavigationItem icon='dashboard' label='alksjcasn' />
-                            <Layout.NavigationItem icon='calendar' label='asdas'/>
-                            <Layout.NavigationItem icon='save' label='asva'/>
-                            <Layout.NavigationItem icon='scenario' label='asc'/>
-                            <Layout.NavigationItem icon='setting' label='assv'/>
-                            <Layout.NavigationItem icon='idea' label='asvasvavas'/>
+                        {/* label: string;
+                        icon?: string | undefined;
+                        url?: string | undefined;
+                        disabled?: boolean | undefined;
+                        children?: NavitemProps[] | undefined;
+                        className?: string | undefined;
+                        style?: React.CSSProperties | undefined;
+                        onClick?: (() => void) | undefined; */}
+                            <Layout.NavigationItem label='STATUS' />
+                            <Layout.NavigationItem label='ROUTING'/>
+                            <Layout.NavigationItem label='INPUTS' children={[
+                                { label: 'HDMI1' },
+                                { label: 'HDMI2' },
+                                { label: 'DM LITE3' },
+                                { label: 'DM LITE4' },
+                                { label: 'DM LITE5' },
+                                { label: 'AUDIO' },
+                            ]}/>
+                            <Layout.NavigationItem label='OUTPUTS' children={[
+                                { label: 'HDMI/DM LITE 1' },
+                                { label: 'HDMI/DM LITE 2' },
+                                { label: 'ANALOG AUDIO' },
+                            ]}/>
+                            <Layout.NavigationItem label='NETWORK'/>
+                            <Layout.NavigationItem label='DEVICE'/>
                         </Layout.Sider>
                         <Layout.Center>
                             <div className='app_dashboard_container'>

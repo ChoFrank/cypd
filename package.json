@@ -5,7 +5,7 @@
     "files": [
         "build"
     ],
-    "main": "build/index.js",
+    "main": "index.jsx",
     "module": "build/index.es.js",
     "jsnext:main": "build/index.es.js",
     "typings": "build/index.d.ts",
