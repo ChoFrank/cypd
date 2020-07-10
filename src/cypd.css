@@ -608,7 +608,7 @@
     /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='rgb(200, 200, 200)' stroke-width='2' fill='none' /><path d='M3 43 8 48 15 38' stroke='white' stroke-width='2' fill='none' /></svg>"); */
     background-position: 4px 4px;
     border: none;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cypd-table-container.checkable .cypd-table-checklist .cypd-checkbox-wrapper>input:checked~.cypd-checkbox {
@@ -803,7 +803,7 @@
     max-height: 3000px;
     height: auto;
     z-index: 21;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     transition: max-height 150ms;
 }
 
@@ -814,7 +814,7 @@
 .cypd-options-container.extend-top {
     transform: translateY(calc(-100% - 32px - 2px));
     transform-origin: bottom;
-    box-shadow: 0px -3px 6px #0000005f;
+    box-shadow: 0px -3px 6px rgba(0, 0, 0, 0.371);
 }
 
 .cypd-select-wrapper.small .cypd-options-container.extend-top {
@@ -1765,7 +1765,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-slider-point.drag.active {
     border-color: #00839E;
-    box-shadow: 0px 0px 5px #00839E7F;
+    box-shadow: 0px 0px 5px rgba(0, 131, 158, 0.5);
 }
 
 .cypd-slider-container.disabled .cypd-slider-point.drag {
@@ -1927,7 +1927,7 @@ svg.cypd-icon.solid-right * {
     margin-bottom: 2px;
     background: white;
     z-index: 11;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .react-calendar button {
@@ -1956,7 +1956,7 @@ svg.cypd-icon.solid-right * {
 .react-calendar button.react-calendar__month-view__days__day.react-calendar__tile--active,
 .react-calendar button.react-calendar__month-view__days__day:focus,
 .react-calendar button.react-calendar__month-view__days__day::-moz-focus-inner {
-    background-color: #00839E2F;
+    background-color: rgba(0, 131, 158, 0.16);
 }
 
 button.react-calendar__month-view__days__day {
@@ -1970,7 +1970,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 .react-calendar button:hover {
-    background-color: #00839E2F;
+    background-color: rgba(0, 131, 158, 0.16);
 }
 
 .react-calendar__month-view__weekdays {
@@ -2027,18 +2027,18 @@ button.react-calendar__century-view__decades__decade {
 .cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container,
 .cypd-digital-clock-wrapper .cypd-select-wrapper.hr .cypd-options-container {
     border-radius: 3px 0 0 3px;
-    box-shadow: 0 3px 6px #00000029;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.hr .cypd-options-container,
 .cypd-digital-clock-wrapper .cypd-select-wrapper.min .cypd-options-container {
     border-radius: 0;
-    box-shadow: 0 3px 6px #00000029;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cypd-digital-clock-wrapper .cypd-select-wrapper.sec .cypd-options-container {
     border-radius: 0 3px 3px 0;
-    box-shadow: 0 3px 6px #00000029;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .cypd-digital-clock-wrapper .cypd-icon-wrapper {
