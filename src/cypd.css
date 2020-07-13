@@ -2376,7 +2376,7 @@ html {
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     min-height: 50px;
     text-align: start;
@@ -2385,8 +2385,6 @@ html {
 
 .cypd-list>.cypd-listitem>.shorten>.label {
     font-weight: bold;
-    justify-self: flex-start;
-    margin-right: auto;
 }
 
 .cypd-list>.cypd-listitem>.shorten>.decoration {
