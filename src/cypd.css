@@ -976,11 +976,11 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-button.round {
-    border-radius: calc(32px / 2);
+    border-radius: 16px;
 }
 
 .cypd-button.small.round {
-    border-radius: calc(25px / 2);
+    border-radius: 12.5px;
 }
 
 .cypd-button.small {
@@ -2435,4 +2435,30 @@ html {
     padding: 10px;
     opacity: 1;
     transition: max-height 150ms, padding 150ms, opacity 150ms linear 150ms;
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    /* IE10+ CSS */
+    .cypd-button.no-content {
+        padding: 0px 10px 0px 7px;
+    }
+    .cypd-button.small {
+        padding: 0px 6px 0px 3px;
+    }
+    .cypd-tooltip.left,
+    .cypd-tooltip.top,
+    .cypd-tooltip.bottom {
+        transform: translate(-50%, 10px);
+    }
+    .cypd-tooltip.left::before,
+    .cypd-tooltip.top::before,
+    .cypd-tooltip.bottom::before {
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMHB4JyBoZWlnaHQ9JzEwcHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNMCA1IDEwIDAgMTAgMTAgWicgZmlsbD0ncmdiKDAsMTMxLDE1OCknIC8+PC9zdmc+");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 }
