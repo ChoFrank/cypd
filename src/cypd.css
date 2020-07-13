@@ -2454,10 +2454,10 @@ html {
     .cypd-tooltip.left::before,
     .cypd-tooltip.top::before,
     .cypd-tooltip.bottom::before {
-        left: -10px;
-        top: 50%;
-        transform: translateY(-50%);
-        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMHB4JyBoZWlnaHQ9JzEwcHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNMCA1IDEwIDAgMTAgMTAgWicgZmlsbD0ncmdiKDAsMTMxLDE1OCknIC8+PC9zdmc+");
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMHB4JyBoZWlnaHQ9JzEwcHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNNSAwIDAgMTAgMTAgMTAgWicgZmlsbD0ncmdiKDAsMTMxLDE1OCknIC8+PC9zdmc+");
         background-repeat: no-repeat;
         background-position: center;
     }
