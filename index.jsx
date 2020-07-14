@@ -65,13 +65,13 @@ class App extends React.Component {
             [<Icon type='loading' />, <Slider max={1} min={0} step={0.1} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
             ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
         ];
-        const table = <Table
-            headers={['1', '2', '3', '4']}
-            rows={rows}
-            pagination={true}
-            rowLimit={5}
-            responsive='transform'
-        />;
+        // const table = <Table
+        //     headers={['1', '2', '3', '4']}
+        //     rows={rows}
+        //     pagination={true}
+        //     rowLimit={5}
+        //     responsive='transform'
+        // />;
         const email_example = [
             ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
             ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
@@ -82,23 +82,23 @@ class App extends React.Component {
             ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
             ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
         ];
-        // const table = <Table
-        //     headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
-        //     rows={email_example}
-        //     pagination={true}
-        //     rowLimit={5}
-        //     columnWidth={[1, 1, 2, 1]}
-        //     responsive='shorten'
-        //     shortenProps={{
-        //         layout: {
-        //             bottomLeft: 0,
-        //             topLeft: 5,
-        //             topRight: [1, 4, 3],
-        //             bottomRight: [2],
-        //         }
-        //     }}
-        //     checkable
-        // ></Table>;
+        const table = <Table
+            headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
+            rows={email_example}
+            pagination={true}
+            rowLimit={5}
+            columnWidth={[1, 1, 2, 1]}
+            responsive='shorten'
+            shortenProps={{
+                layout: {
+                    bottomLeft: 0,
+                    topLeft: 5,
+                    topRight: [1, 4, 3],
+                    bottomRight: [2],
+                }
+            }}
+            checkable
+        ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '100px' }}>
             <Form.Item label='Name' error='Name cannot be null'>
