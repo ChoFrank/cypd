@@ -215,8 +215,8 @@ export default class Table extends React.Component<TableProps> {
             }
             const goto_form = <div className='form'>Go to <Input value={tempPage} size='small' onChange={this.handleInputPage}></Input>Page</div>
             return (
-                <div className={containerClass} ref={inst => { this.wrapperRef = inst; }} style={bodyStyle}>
-                    <div className={wrapperClass}>
+                <div className={containerClass} ref={inst => { this.wrapperRef = inst; }}>
+                    <div className={wrapperClass} style={bodyStyle}>
                         <Book page={page}>{pages}</Book>
                         {(rows.length === 0)?<Empty />:undefined}
                     </div>
@@ -239,7 +239,7 @@ export default class Table extends React.Component<TableProps> {
             }
             const table = <table>{thead}{tbody}</table>;
             return (
-                <div className={containerClass} ref={inst => { this.wrapperRef = inst; }} style={bodyStyle}><div className={wrapperClass}>
+                <div className={containerClass} ref={inst => { this.wrapperRef = inst; }}><div className={wrapperClass} style={bodyStyle}>
                     {table}
                     {(rows.length === 0)?<Empty />:undefined}
                 </div></div>

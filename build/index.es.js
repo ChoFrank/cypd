@@ -3188,8 +3188,8 @@ var Table = /** @class */ (function (_super) {
                 "Go to ",
                 react.createElement(Input, { value: tempPage, size: 'small', onChange: this.handleInputPage }),
                 "Page");
-            return (react.createElement("div", { className: containerClass, ref: function (inst) { _this.wrapperRef = inst; }, style: bodyStyle },
-                react.createElement("div", { className: wrapperClass },
+            return (react.createElement("div", { className: containerClass, ref: function (inst) { _this.wrapperRef = inst; } },
+                react.createElement("div", { className: wrapperClass, style: bodyStyle },
                     react.createElement(Book, { page: page }, pages),
                     (rows.length === 0) ? react.createElement(Empty, null) : undefined),
                 react.createElement("div", { className: 'cypd-pagination-footer' },
@@ -3212,8 +3212,8 @@ var Table = /** @class */ (function (_super) {
             var table = react.createElement("table", null,
                 thead,
                 tbody);
-            return (react.createElement("div", { className: containerClass, ref: function (inst) { _this.wrapperRef = inst; }, style: bodyStyle },
-                react.createElement("div", { className: wrapperClass },
+            return (react.createElement("div", { className: containerClass, ref: function (inst) { _this.wrapperRef = inst; } },
+                react.createElement("div", { className: wrapperClass, style: bodyStyle },
                     table,
                     (rows.length === 0) ? react.createElement(Empty, null) : undefined)));
         }
