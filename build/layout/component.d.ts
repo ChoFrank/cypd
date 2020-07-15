@@ -30,7 +30,6 @@ declare class NavigationItem extends React.Component<NavitemProps> {
     constructor(props: any);
     get toggler_id(): string;
     onToggle: () => void;
-    onBlur: () => void;
     direct: () => void;
     render(): JSX.Element;
 }
@@ -58,8 +57,6 @@ declare class Sider extends React.Component<SiderProps> {
         visible: boolean;
     };
     toggler: HTMLInputElement | undefined | null;
-    componentDidMount(): void;
-    componentWillUnmount(): void;
     onToggle: (e: React.ChangeEvent<HTMLInputElement>) => void;
     closeSider: () => void;
     render(): JSX.Element;
