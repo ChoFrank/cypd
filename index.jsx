@@ -25,7 +25,7 @@ const icon_container = (type) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), popup: false, progress: 0, list_draggable: false };
+        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), test_checklist: new Set(), popup: false, progress: 0, list_draggable: false };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
         // this.testProgress = setInterval(() => {
@@ -34,11 +34,21 @@ class App extends React.Component {
         //     else
         //         clearInterval(this.testProgress);
         // }, 100);
+        this.onCheckTableItem = this.onCheckTableItem.bind(this);
     }
     triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.........................................................................................', type: 'success', timeout: 1000000 }); }
     triggerWarningDemo() { Notify({ title: 'Warning', context: 'This is a Warning notification demo.', type: 'warning' }); }
     triggerInfoDemo() { Notify({ title: 'Info', context: 'This is a Info notification demo.', type: 'info' }); }
     triggerErrorDemo() { Notify({ title: 'Error', context: 'This is a Error notification demo.', type: 'error' }); }
+    onCheckTableItem(row_idx, checked) {
+        const { test_checklist } = this.state;
+        const new_checklist = new Set(test_checklist);
+        if (checked)
+            new_checklist.add(row_idx);
+        else
+            new_checklist.delete(row_idx);
+        this.setState({ test_checklist: new_checklist });
+    }
     render() {
         const icons = [
             'loading', 'write', 'arrow-left', 'arrow-right', 'solid-left', 'solid-right', 'left', 'right', 'zoom-out', 'zoom-in',
@@ -47,24 +57,24 @@ class App extends React.Component {
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
             'setting', 'scene', 'volumn', 'idea', 'scenario'
         ];
-        const sampleOptions = [
-            <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
-            <Option value='2' key={Math.random()}>Mary</Option>,
-            <Option value='3' key={Math.random()}>David</Option>,
-            <Option value='4' key={Math.random()}>Chris</Option>,
-        ]
-        const rows = [
-            [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
-            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked />],
-            [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
-            [<Icon type='led-yellow' />, <Button type='primary' icon='edit'>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
-            [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
-            [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
-            [<Icon type='loading' />, <Slider max={1} min={0} step={0.1} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
-            ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
-        ];
+        // const sampleOptions = [
+        //     <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
+        //     <Option value='2' key={Math.random()}>Mary</Option>,
+        //     <Option value='3' key={Math.random()}>David</Option>,
+        //     <Option value='4' key={Math.random()}>Chris</Option>,
+        // ]
+        // const rows = [
+        //     [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+        //     [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked />],
+        //     [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
+        //     [<Icon type='led-yellow' />, <Button type='primary' icon='edit'>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
+        //     [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
+        //     [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
+        //     [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
+        //     [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
+        //     [<Icon type='loading' />, <Slider max={1} min={0} step={0.1} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
+        //     ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+        // ];
         // const table = <Table
         //     headers={['1', '2', '3', '4']}
         //     rows={rows}
@@ -98,6 +108,8 @@ class App extends React.Component {
                 }
             }}
             checkable
+            checkList={Array.from(this.state.test_checklist)}
+            onCheck={this.onCheckTableItem}
         ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '100px' }}>

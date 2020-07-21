@@ -3147,7 +3147,7 @@ var Table = /** @class */ (function (_super) {
         var _this = this;
         var id = this.id;
         var _a = this.state, responsive = _a.responsive, page = _a.page, tempPage = _a.tempPage;
-        var _b = this.props, headers = _b.headers, rows = _b.rows, headerStyle = _b.headerStyle, bodyStyle = _b.bodyStyle, pagination = _b.pagination, rowLimit = _b.rowLimit, checkable = _b.checkable, onCheck = _b.onCheck;
+        var _b = this.props, headers = _b.headers, rows = _b.rows, headerStyle = _b.headerStyle, bodyStyle = _b.bodyStyle, pagination = _b.pagination, rowLimit = _b.rowLimit, checkable = _b.checkable, checkList = _b.checkList, onCheck = _b.onCheck;
         var containerClass = "cypd-table-container " + responsive + (checkable ? ' checkable' : '');
         var wrapperClass = 'table-wrapper';
         var thead = (react.createElement("thead", { style: headerStyle },
@@ -3156,8 +3156,11 @@ var Table = /** @class */ (function (_super) {
             var pages = Array.from(Array(this.calculate_total_pages).keys()).map(function (pageno) {
                 var start_row = pageno * rowLimit;
                 var end_row = (((pageno + 1) * rowLimit) < rows.length) ? ((pageno + 1) * rowLimit) : rows.length;
-                var checklist = react.createElement("div", { className: 'cypd-table-checklist' }, Array.from(Array(end_row - start_row).keys()).map(function (offset) { return (offset + start_row); }).map(function (row_idx) { return (react.createElement(CheckBox, { key: "cypd-table-row-" + row_idx + "-checked", onChange: function (e) { if (onCheck)
-                        onCheck(row_idx, e.target.checked); } })); }));
+                var checklist = react.createElement("div", { className: 'cypd-table-checklist' }, Array.from(Array(end_row - start_row).keys()).map(function (offset) { return (offset + start_row); }).map(function (row_idx) {
+                    var checked = (typeof checkList !== 'undefined' && (checkList.indexOf(row_idx) >= 0));
+                    return react.createElement(CheckBox, { key: "cypd-table-row-" + row_idx + "-checked", checked: checked, onChange: function (e) { if (onCheck)
+                            onCheck(row_idx, e.target.checked); } });
+                }));
                 var tbody = react.createElement("tbody", null);
                 if (responsive === 'no') {
                     tbody = _this.basicBody(rows.slice(start_row, end_row));
