@@ -32,6 +32,7 @@ type TableProps = {
     shortenProps?: ShortenProps,
     forceResponsive?: boolean,
     checkable?: boolean,
+    checkList?: Array<number>;
     onCheck?: (row_idx: number, checked: boolean) => void;
     removeable?: boolean,
     onRemove?: (row_idx: number) => void;
@@ -173,7 +174,7 @@ export default class Table extends React.Component<TableProps> {
     render() {
         const id = this.id;
         const { responsive, page, tempPage } =  this.state;
-        const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, checkable, onCheck } = this.props;
+        const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, checkable, checkList, onCheck } = this.props;
         let containerClass = `cypd-table-container ${responsive}${checkable?' checkable':''}`;
         let wrapperClass = 'table-wrapper';
         const thead = (
@@ -186,9 +187,10 @@ export default class Table extends React.Component<TableProps> {
                 const start_row = pageno * rowLimit;
                 const end_row = (((pageno + 1) * rowLimit) < rows.length) ? ((pageno + 1) * rowLimit) : rows.length;
                 const checklist = <div className='cypd-table-checklist'>{
-                    Array.from(Array(end_row - start_row).keys()).map(offset => (offset + start_row)).map(row_idx => (
-                        <Checkbox key={`cypd-table-row-${row_idx}-checked`} onChange={(e) => { if (onCheck) onCheck(row_idx, e.target.checked); }}/>
-                    ))
+                    Array.from(Array(end_row - start_row).keys()).map(offset => (offset + start_row)).map(row_idx => {
+                        const checked = (typeof checkList !== 'undefined' && (checkList.indexOf(row_idx) >= 0));
+                        return <Checkbox key={`cypd-table-row-${row_idx}-checked`} checked={checked} onChange={(e) => { if (onCheck) onCheck(row_idx, e.target.checked); }}/>
+                    })
                 }</div>;
                 let tbody = <tbody></tbody>;
                 if (responsive === 'no') {

@@ -36,7 +36,7 @@ const props_proc = (props: Partial<SlideProps>): SlideState => {
     return { value, min, max, step, prevProps: { ...props } };
 }
 
-const cssDragWidth = parseInt(getComputedStyle(document.body).getPropertyValue("--default-slider-drag-width").replace('px', ''));
+const cssDragWidth = 17;
 
 export default class Slider extends React.Component<Partial<SlideProps>> {
     state: SlideState;

@@ -20,6 +20,7 @@ declare type TableProps = {
     shortenProps?: ShortenProps;
     forceResponsive?: boolean;
     checkable?: boolean;
+    checkList?: Array<number>;
     onCheck?: (row_idx: number, checked: boolean) => void;
     removeable?: boolean;
     onRemove?: (row_idx: number) => void;
