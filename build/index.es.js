@@ -30231,7 +30231,7 @@ var props_proc = function (props) {
     value = (value > max) ? max : value;
     return { value: value, min: min, max: max, step: step, prevProps: __assign({}, props) };
 };
-var cssDragWidth = parseInt(getComputedStyle(document.body).getPropertyValue("--default-slider-drag-width").replace('px', ''));
+var cssDragWidth = 17;
 var Slider = /** @class */ (function (_super) {
     __extends(Slider, _super);
     function Slider(props) {
