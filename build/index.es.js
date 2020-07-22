@@ -3618,7 +3618,7 @@ var Slider = /** @class */ (function (_super) {
             _this.handleXMove(ev.touches[0].clientX);
         };
         _this.handleDragMouseUp = function () {
-            if (_this.props.onAfterChange && _this.tempR)
+            if (_this.props.onAfterChange && typeof _this.tempR === 'number')
                 _this.props.onAfterChange(_this.tempR);
             _this.clearTemp();
             document.body.style.userSelect = 'auto';

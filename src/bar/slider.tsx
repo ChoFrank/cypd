@@ -103,7 +103,7 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         this.handleXMove(ev.touches[0].clientX);
     }
     handleDragMouseUp = () => {
-        if (this.props.onAfterChange && this.tempR) this.props.onAfterChange(this.tempR);
+        if (this.props.onAfterChange && typeof this.tempR === 'number') this.props.onAfterChange(this.tempR);
         this.clearTemp();
         document.body.style.userSelect = 'auto';
         document.removeEventListener('mousemove', this.handleDrag, false);
