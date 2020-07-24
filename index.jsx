@@ -55,7 +55,7 @@ class App extends React.Component {
             'minus', 'plus', 'circle-plus', 'square-plus', 'square-minus', 'trashcan', 'edit',
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'warning', 'cyp-device',
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
-            'setting', 'scene', 'volumn', 'idea', 'scenario'
+            'setting', 'scene', 'volumn', 'idea', 'scenario', 'move'
         ];
         const sampleOptions = [
             <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,

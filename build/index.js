@@ -2538,6 +2538,10 @@ var scissors = function (props) { return ([
     react.createElement("path", { d: 'M7.36 7.36 16 10 15 6.5 Z', style: { stroke: props.color }, fill: 'white', key: "6_" + props.svgId }),
     react.createElement("circle", { cx: "7.5", cy: "7.5", r: "0.1", key: "7_" + props.svgId, fill: "white" }),
 ]); };
+var move = function (props) { return ([
+    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M0 8 16 8 M2 5 0 8 2 11 M14 5 16 8 14 11', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M8 0 8 16 M5 2 8 0 11 2 M5 14 8 16 11 14', fill: 'none' }),
+]); };
 var exit = function (props) { return ([
     react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M0 8 12 8 M3 4 0 8 3 12', fill: 'none' }),
     react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M7 4 7 0 16 0 16 16 7 16 7 12', fill: 'none' }),
@@ -2722,7 +2726,7 @@ var dashboard = function (props) { return ([
     react.createElement("path", { id: "ic_view_quilt_24px", d: "M10.588,19.275h5.49V12.686h-5.49ZM4,19.275H9.49V5H4Zm13.177,0h5.49V12.686h-5.49ZM10.588,5v6.588H22.667V5Z", transform: "translate(-4 -5)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
 ]); };
 var device = function (props) { return ([
-    react.createElement("path", { id: "Device_icon_blue", d: "M20,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14A1,1,0,0,0,20,13ZM7,19a2,2,0,1,1,2-2A2.006,2.006,0,0,1,7,19ZM20,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM7,9A2,2,0,1,1,9,7,2.006,2.006,0,0,1,7,9Z", transform: "scale(0.9) translate(-1 -3)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
+    react.createElement("path", { id: "Device_icon_blue", d: "M20,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14A1,1,0,0,0,20,13ZM7,19a2,2,0,1,1,2-2A2.006,2.006,0,0,1,7,19ZM20,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM7,9A2,2,0,1,1,9,7,2.006,2.006,0,0,1,7,9Z", transform: "scale(0.9) translate(-5 -3)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
 ]); };
 var update = function (props) { return ([
     react.createElement("path", { d: "M412.907,214.08C398.4,140.693,333.653,85.333,256,85.333c-61.653,0-115.093,34.987-141.867,86.08 \r\n        C50.027,178.347,0,232.64,0,298.667c0,70.72,57.28,128,128,128h277.333C464.213,426.667,512,378.88,512,320 \r\n        C512,263.68,468.16,218.027,412.907,214.08z M298.667,277.333v85.333h-85.333v-85.333h-64L256,170.667l106.667,106.667H298.667z", transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "1_" + props.svgId })
@@ -2833,6 +2837,7 @@ var TYPE_ICON_DRAW_INDEX = {
     'scene': { className: 'scene', generator: scene },
     'volumn': { className: 'volumn', generator: volumn },
     'idea': { className: 'idea', generator: idea },
+    'move': { className: 'move', generator: move },
 };
 var Icon = /** @class */ (function (_super) {
     __extends(Icon, _super);
