@@ -2281,6 +2281,9 @@ var react_4 = react.createElement;
 var react_5 = react.CSSProperties;
 
 window.__cypd_select_on_change = (window.__cypd_select_on_change) ? window.__cypd_select_on_change : {};
+var normalLineHeight = 32;
+var smallLineHeight = 25;
+var maxDropdownHeight = 200;
 var Option = /** @class */ (function (_super) {
     __extends(Option, _super);
     function Option() {
@@ -2309,8 +2312,6 @@ var Select = /** @class */ (function (_super) {
         _this.onMouseLeave = function () { document.addEventListener('mousedown', _this.onBlur, false); };
         _this.autoScroll = function () {
             if (_this.optionWrapper && typeof _this.scrollIndex !== 'undefined') {
-                var normalLineHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--default-select-normal-height").replace('px', ''));
-                var smallLineHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--default-select-small-height").replace('px', ''));
                 var scroll_unit = (_this.props.size === 'small') ? smallLineHeight : normalLineHeight;
                 var scroll_dist = (!isNaN(scroll_unit)) ? scroll_unit * _this.scrollIndex : 0;
                 if (typeof _this.optionWrapper.scrollTo === 'function')
@@ -2330,9 +2331,6 @@ var Select = /** @class */ (function (_super) {
     };
     Select.prototype.render = function () {
         var _this = this;
-        var normalLineHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--default-select-normal-height").replace('px', ''));
-        var smallLineHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--default-select-small-height").replace('px', ''));
-        var maxDropdownHeight = parseInt(getComputedStyle(document.body).getPropertyValue("--default-select-dropdown-height").replace('px', ''));
         var wrapperClass = 'cypd-select-wrapper';
         var triggerClass = 'cypd-select';
         var optionsClass = 'cypd-options-container ' + this.state.direction;
