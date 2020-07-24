@@ -150,6 +150,11 @@ const scissors = (props: SVGProps) => ([
     <circle cx="7.5" cy="7.5" r="0.1" key={`7_${props.svgId}`} fill="white" />,
 ]);
 
+const move = (props: SVGProps) => ([
+    <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M0 8 16 8 M2 5 0 8 2 11 M14 5 16 8 14 11' fill='none' />,
+    <path key={`2_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M8 0 8 16 M5 2 8 0 11 2 M5 14 8 16 11 14' fill='none' />,
+]);
+
 const exit = (props: SVGProps) => ([
     <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M0 8 12 8 M3 4 0 8 3 12' fill='none' />,
     <path key={`2_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M7 4 7 0 16 0 16 16 7 16 7 12' fill='none' />,
@@ -370,7 +375,7 @@ const dashboard = (props: SVGProps) => ([
 ]);
 
 const device = (props: SVGProps) => ([
-    <path id="Device_icon_blue" d="M20,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14A1,1,0,0,0,20,13ZM7,19a2,2,0,1,1,2-2A2.006,2.006,0,0,1,7,19ZM20,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM7,9A2,2,0,1,1,9,7,2.006,2.006,0,0,1,7,9Z" transform="scale(0.9) translate(-1 -3)" fill={props.color} stroke='transparent' key={`1_${props.svgId}`} />
+    <path id="Device_icon_blue" d="M20,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14A1,1,0,0,0,20,13ZM7,19a2,2,0,1,1,2-2A2.006,2.006,0,0,1,7,19ZM20,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM7,9A2,2,0,1,1,9,7,2.006,2.006,0,0,1,7,9Z" transform="scale(0.9) translate(-5 -3)" fill={props.color} stroke='transparent' key={`1_${props.svgId}`} />
 ]);
 
 const update = (props: SVGProps) => ([
@@ -500,6 +505,7 @@ const TYPE_ICON_DRAW_INDEX: {
     'scene': { className: 'scene', generator: scene },
     'volumn': { className: 'volumn', generator: volumn },
     'idea': { className: 'idea', generator: idea },
+    'move': { className: 'move', generator: move },
 }
 
 export default class Icon extends React.Component<IconProps> {
