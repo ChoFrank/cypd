@@ -10,34 +10,36 @@ type ButtonProps = {
     style: React.CSSProperties,
     disabled: boolean,
     size: 'small' | 'normal',
-    shape: 'round'
+    shape: 'round',
+    iconColor: string,
     onClick: (e: React.MouseEvent) => void,
 }
 
 export default class Button extends React.Component<Partial<ButtonProps>> {
     render() {
-        var classString: string = 'cypd-button ';
-        var icon: React.ReactNode;
-        if (this.props.disabled) {
+        const { type, icon, shape, iconColor, className, style, disabled, size, onClick } = this.props;
+        let classString: string = 'cypd-button ';
+        let icon_node: React.ReactNode;
+        if (disabled) {
             classString += 'disabled';
         } else {
-            if (this.props.type) 
-                classString += this.props.type;
+            if (type) 
+                classString += type;
             else 
                 classString += 'default';
         }
-        if (this.props.icon)
-            icon = <Icon type={this.props.icon}/>;
+        if (icon)
+            icon_node = <Icon type={icon} color={iconColor}/>;
         if (!this.props.children)
             classString += ' no-content';
-        if (this.props.className)
-            classString += ` ${this.props.className}`
-        if (this.props.shape)
-            classString += ` ${this.props.shape}`;
-        classString += (this.props.size) ? ` ${this.props.size}` : '';
+        if (className)
+            classString += ` ${className}`
+        if (shape)
+            classString += ` ${shape}`;
+        classString += (size) ? ` ${size}` : '';
         return (
-            <div className={classString} style={this.props.style} onClick={(this.props.disabled)?undefined:this.props.onClick}>
-                <div className='wrap-icon'>{icon}</div>
+            <div className={classString} style={style} onClick={(disabled)?undefined:onClick}>
+                <div className='wrap-icon'>{icon_node}</div>
                 <div className='context'>{this.props.children}</div>
             </div>
         );

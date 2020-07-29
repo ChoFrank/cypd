@@ -56,6 +56,10 @@ const arrowLeft = (props: SVGProps) => ([
     <polyline points='10,0 2,8 10,16' style={{ stroke: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
 ]);
 
+const stop = (props: SVGProps) => ([
+    <rect x='2' y='2' width='12' height='12' style={{ stroke: props.color, fill: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
+]);
+
 const left = (props: SVGProps) => ([
     <polyline points='8,2 2,8 8,14' style={{ stroke: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
     <polyline points='2,8 14,8' style={{ stroke: props.color }} strokeWidth={3} key={`2_${props.svgId}`} fill='none' />,
@@ -506,6 +510,7 @@ const TYPE_ICON_DRAW_INDEX: {
     'volumn': { className: 'volumn', generator: volumn },
     'idea': { className: 'idea', generator: idea },
     'move': { className: 'move', generator: move },
+    'stop': { className: 'stop', generator: stop },
 }
 
 export default class Icon extends React.Component<IconProps> {

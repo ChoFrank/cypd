@@ -2461,6 +2461,9 @@ var solidRight = function (props) { return ([
 var arrowLeft = function (props) { return ([
     react.createElement("polyline", { points: '10,0 2,8 10,16', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
 ]); };
+var stop = function (props) { return ([
+    react.createElement("rect", { x: '2', y: '2', width: '12', height: '12', style: { stroke: props.color, fill: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
+]); };
 var left = function (props) { return ([
     react.createElement("polyline", { points: '8,2 2,8 8,14', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
     react.createElement("polyline", { points: '2,8 14,8', style: { stroke: props.color }, strokeWidth: 3, key: "2_" + props.svgId, fill: 'none' }),
@@ -2838,6 +2841,7 @@ var TYPE_ICON_DRAW_INDEX = {
     'volumn': { className: 'volumn', generator: volumn },
     'idea': { className: 'idea', generator: idea },
     'move': { className: 'move', generator: move },
+    'stop': { className: 'stop', generator: stop },
 };
 var Icon = /** @class */ (function (_super) {
     __extends(Icon, _super);
@@ -2948,28 +2952,29 @@ var Button = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
+        var _a = this.props, type = _a.type, icon = _a.icon, shape = _a.shape, iconColor = _a.iconColor, className = _a.className, style = _a.style, disabled = _a.disabled, size = _a.size, onClick = _a.onClick;
         var classString = 'cypd-button ';
-        var icon;
-        if (this.props.disabled) {
+        var icon_node;
+        if (disabled) {
             classString += 'disabled';
         }
         else {
-            if (this.props.type)
-                classString += this.props.type;
+            if (type)
+                classString += type;
             else
                 classString += 'default';
         }
-        if (this.props.icon)
-            icon = react.createElement(Icon, { type: this.props.icon });
+        if (icon)
+            icon_node = react.createElement(Icon, { type: icon, color: iconColor });
         if (!this.props.children)
             classString += ' no-content';
-        if (this.props.className)
-            classString += " " + this.props.className;
-        if (this.props.shape)
-            classString += " " + this.props.shape;
-        classString += (this.props.size) ? " " + this.props.size : '';
-        return (react.createElement("div", { className: classString, style: this.props.style, onClick: (this.props.disabled) ? undefined : this.props.onClick },
-            react.createElement("div", { className: 'wrap-icon' }, icon),
+        if (className)
+            classString += " " + className;
+        if (shape)
+            classString += " " + shape;
+        classString += (size) ? " " + size : '';
+        return (react.createElement("div", { className: classString, style: style, onClick: (disabled) ? undefined : onClick },
+            react.createElement("div", { className: 'wrap-icon' }, icon_node),
             react.createElement("div", { className: 'context' }, this.props.children)));
     };
     return Button;

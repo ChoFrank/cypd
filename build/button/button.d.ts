@@ -7,6 +7,7 @@ declare type ButtonProps = {
     disabled: boolean;
     size: 'small' | 'normal';
     shape: 'round';
+    iconColor: string;
     onClick: (e: React.MouseEvent) => void;
 };
 export default class Button extends React.Component<Partial<ButtonProps>> {
