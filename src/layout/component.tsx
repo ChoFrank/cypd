@@ -55,12 +55,12 @@ class NavigationItem extends React.Component<NavitemProps> {
         const { label, icon, disabled, children, className, style } = this.props;
         const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
         return (!disabled) ? (
-            <div className={wrapperClass} style={style} onClick={this.onToggle}>
+            <div className={wrapperClass} style={style}>
                 {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} type='checkbox'></input> : undefined}
                 <div style={{ display: (icon) ? undefined : 'none' }} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
-                <div className='label'>{label}</div>
+                <div className='label' onClick={this.onToggle}>{label}</div>
                 {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
-                {children ? <div className='toggler'></div> : undefined}
+                {children ? <div className='toggler' onClick={this.onToggle}></div> : undefined}
             </div>
         ) : <div />;
     }
