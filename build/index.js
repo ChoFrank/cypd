@@ -30238,7 +30238,7 @@ var props_proc = function (props) {
     min = (typeof min === 'number') ? min : 0;
     max = (typeof max === 'number') ? max : 100;
     step = step ? step : 1;
-    value = (typeof value === 'number') ? value : min;
+    value = (typeof value === 'number' && !isNaN(value)) ? value : min;
     value = (value < min) ? min : value;
     value = (value > max) ? max : value;
     return { value: value, min: min, max: max, step: step, prevProps: __assign({}, props) };

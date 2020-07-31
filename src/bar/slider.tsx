@@ -30,7 +30,7 @@ const props_proc = (props: Partial<SlideProps>): SlideState => {
     min = (typeof min === 'number') ? min : 0;
     max = (typeof max === 'number') ? max : 100;
     step = step ? step : 1;
-    value = (typeof value === 'number') ? value : min;
+    value = (typeof value === 'number' && !isNaN(value)) ? value : min;
     value = (value < min) ? min : value;
     value = (value > max) ? max : value;
     return { value, min, max, step, prevProps: { ...props } };
