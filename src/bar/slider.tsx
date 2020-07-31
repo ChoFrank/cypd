@@ -27,8 +27,8 @@ type SlideState = {
 
 const props_proc = (props: Partial<SlideProps>): SlideState => {
     var { value, min, max, step } = props;
-    min = min ? min : 0;
-    max = max ? max : 100;
+    min = (typeof min === 'number') ? min : 0;
+    max = (typeof max === 'number') ? max : 100;
     step = step ? step : 1;
     value = (typeof value === 'number') ? value : min;
     value = (value < min) ? min : value;

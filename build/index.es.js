@@ -3555,8 +3555,8 @@ var Tooltip = /** @class */ (function (_super) {
 
 var props_proc = function (props) {
     var value = props.value, min = props.min, max = props.max, step = props.step;
-    min = min ? min : 0;
-    max = max ? max : 100;
+    min = (typeof min === 'number') ? min : 0;
+    max = (typeof max === 'number') ? max : 100;
     step = step ? step : 1;
     value = (typeof value === 'number') ? value : min;
     value = (value < min) ? min : value;
