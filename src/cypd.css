@@ -195,7 +195,8 @@
     height: 10px;
     top: 10px;
     left: -23px;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 7 10 10 7 0 Z' stroke='white' fill='white' /></svg>");
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMHB4JyBoZWlnaHQ9JzEwcHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNMCA3IDEwIDEwIDcgMCBaJyBzdHJva2U9J3doaXRlJyBmaWxsPSd3aGl0ZScgLz48L3N2Zz4=");
+    /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M0 7 10 10 7 0 Z' stroke='white' fill='white' /></svg>"); */
     transform: rotate(-45deg);
     transition: transform 150ms;
 }
@@ -255,7 +256,7 @@
     flex-shrink: 0;
     flex-grow: 1;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 0;
     height: 30px;
@@ -300,6 +301,8 @@
 .cypd-table-container .table-wrapper thead>tr>th {
     background-color: rgb(228, 228, 228);
     white-space: nowrap;
+    font-weight: normal;
+    text-align: left;
 }
 
 .cypd-table-container .table-wrapper tbody>tr {
@@ -310,20 +313,20 @@
 .cypd-table-container .table-wrapper th,
 .cypd-table-container .table-wrapper td {
     border: 0;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     border-bottom: 1px solid rgb(214, 214, 214);
 }
 
 .cypd-table-container .table-wrapper th:nth-child(1),
 .cypd-table-container .table-wrapper td:nth-child(1) {
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
 .cypd-table-container .table-wrapper th:last-child,
 .cypd-table-container .table-wrapper td:last-child {
     border-right: 0;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 .cypd-table-container .table-wrapper td>div {
@@ -544,7 +547,8 @@
     border-radius: 50%;
     justify-content: center;
     background-color: white;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='rgb(200, 200, 200)' stroke-width='2' fill='none' /><path d='M3 43 8 48 15 38' stroke='white' stroke-width='2' fill='none' /></svg>");
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyMHB4JyBoZWlnaHQ9JzYwcHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNMyAxMCA4IDE0IDE1IDQnIHN0cm9rZT0ncmdiKDIwMCwgMjAwLCAyMDApJyBzdHJva2Utd2lkdGg9JzInIGZpbGw9J25vbmUnIC8+PHBhdGggZD0nTTMgNDMgOCA0OCAxNSAzOCcgc3Ryb2tlPSd3aGl0ZScgc3Ryb2tlLXdpZHRoPScyJyBmaWxsPSdub25lJyAvPjwvc3ZnPg==");
+    /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20px' height='60px' overflow='visible'><path d='M3 10 8 14 15 4' stroke='rgb(200, 200, 200)' stroke-width='2' fill='none' /><path d='M3 43 8 48 15 38' stroke='white' stroke-width='2' fill='none' /></svg>"); */
     background-position: 4px 4px;
     border: none;
     box-shadow: 0px 3px 6px #00000029;
@@ -703,7 +707,8 @@
     letter-spacing: 0;
     cursor: pointer;
     user-select: none;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' overflow='visible'><path d='M6 9 18 9 12 16' stroke='rgb(67,72,73)' fill='rgb(67,72,73)' /></svg>");
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScyNHB4JyBoZWlnaHQ9JzI0cHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNNiA5IDE4IDkgMTIgMTYnIHN0cm9rZT0ncmdiKDY3LDcyLDczKScgZmlsbD0ncmdiKDY3LDcyLDczKScgLz48L3N2Zz4=");
+    /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24px' height='24px' overflow='visible'><path d='M6 9 18 9 12 16' stroke='rgb(67,72,73)' fill='rgb(67,72,73)' /></svg>"); */
     background-position: right;
     background-repeat: no-repeat;
     background-color: white;
@@ -1113,22 +1118,18 @@ svg.cypd-icon.solid-right * {
     align-items: center;
     height: 20px;
     width: 20px;
-    border: 1px solid rgb(163, 163, 163);
+    border: 1px solid rgb(116, 116, 116);
     border-radius: 50%;
     background-color: white;
     transition: border-color 150ms;
 }
 
-.cypd-radio-wrapper:hover .cypd-radio {
-    border: 1px solid #33a8c0;
-}
-
 .cypd-radio-wrapper .cypd-radio::after {
     content: '';
-    width: 10px;
-    height: 10px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    background-color: #33a8c0;
+    background-color: #1986ca;
     transform: scale(0);
     transition: transform 150ms;
 }
@@ -1137,19 +1138,13 @@ svg.cypd-icon.solid-right * {
     transform: scale(1);
 }
 
-.cypd-radio-wrapper input:checked~.cypd-radio {
-    border: 1px solid #00839E;
-    box-shadow: 0px 0px 2px #33a8c0;
-}
-
 .cypd-radio-wrapper input:disabled~.cypd-radio {
-    background-color: rgb(163, 163, 163, 0.6) !important;
-    border: 1px solid rgb(163, 163, 163);
+    border: 1px solid rgb(187, 187, 187);
     box-shadow: none;
 }
 
 .cypd-radio-wrapper input:disabled~.cypd-radio::after {
-    background-color: rgb(163, 163, 163) !important;
+    background-color: rgb(187, 187, 187) !important;
 }
 
 .cypd-radio-wrapper span {
@@ -1232,6 +1227,54 @@ svg.cypd-icon.solid-right * {
     width: 15px;
     border-radius: 50%;
     background-color: transparent;
+}
+
+.cypd-switchbutton-wrapper.has-label .cypd-switchbutton {
+    width: auto;
+    height: 20px;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid rgb(153, 152, 152);
+}
+
+.cypd-switchbutton-wrapper.has-label .cypd-switchbutton::after {
+    height: 18px;
+    width: 50%;
+    border-radius: 9px;
+    background-color: white;
+    box-shadow: none;
+    border: 1px solid rgb(153, 152, 152);
+    border-left: 0;
+}
+
+.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton {
+    background-color: white;
+}
+
+.cypd-switchbutton-wrapper input:checked+.cypd-switchbutton::after {
+    background-color: #1c93dd;
+    transform: translateX(100%);
+    border: 1px solid #1c93dd;
+    border-right: 0;
+}
+
+.cypd-switchbutton-wrapper.has-label .display-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.cypd-switchbutton-wrapper.has-label .display-label>#on {
+    margin-right: 10px;
+    font-size: 11px;
+    color: #1986ca;
+}
+
+.cypd-switchbutton-wrapper.has-label .display-label>#off {
+    font-size: 11px;
+    color: rgb(129, 129, 129);
 }
 
 

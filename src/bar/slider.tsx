@@ -30,7 +30,7 @@ const props_proc = (props: Partial<SlideProps>): SlideState => {
     min = min ? min : 0;
     max = max ? max : 100;
     step = step ? step : 1;
-    value = value ? value : min;
+    value = (typeof value === 'number') ? value : min;
     value = (value < min) ? min : value;
     value = (value > max) ? max : value;
     return { value, min, max, step, prevProps: { ...props } };
@@ -157,7 +157,8 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         var pointClass = 'cypd-slider-point';
         var rangeClass = 'cypd-slider-range';
         var draw, offset_p = 0;
-        offset_p = ((value - min) * 100) / (max - min);
+        if (max > min)
+            offset_p = ((value - min) * 100) / (max - min);
         draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
             <path d={`M2.5 2.5 H 3000`}/>
         </svg>);

@@ -2,34 +2,42 @@ import React, { CSSProperties } from 'react';
 
 
 type SwitchButtonProps = {
-    // label: string,
     checked: boolean,
     disabled: boolean,
     className: string,
     style: CSSProperties,
     readOnly: boolean,
     defaultChecked: boolean,
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+    label?: [string, string],
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
     render() {
+        const { className, disabled, checked, defaultChecked, onChange, readOnly, style, label } = this.props;
         var wrapperClass = 'cypd-switchbutton-wrapper';
-        if (this.props.className)
-            wrapperClass += ` ${this.props.className}`;
-        if (this.props.disabled)
+        if (className)
+            wrapperClass += ` ${className}`;
+        if (label)
+            wrapperClass += ` has-label`
+        if (disabled)
             wrapperClass += ` disabled`;
         return (
-            <label className={wrapperClass} style={this.props.style}>
+            <label className={wrapperClass} style={style}>
                 <input 
                     type='checkbox' 
-                    disabled={this.props.disabled} 
-                    checked={this.props.checked} 
-                    defaultChecked={this.props.defaultChecked}
-                    onChange={this.props.onChange} 
-                    readOnly={this.props.readOnly}
+                    disabled={disabled} 
+                    checked={checked} 
+                    defaultChecked={defaultChecked}
+                    onChange={onChange} 
+                    readOnly={readOnly}
                 />
-                <div className='cypd-switchbutton'/>
+                <div className='cypd-switchbutton'>
+                    {label ? <div className='display-label'>
+                        <div id='on'>{label[0]}</div>
+                        <div id='off'>{label[1]}</div>
+                    </div> : undefined}
+                </div>
             </label>
         );
     }
