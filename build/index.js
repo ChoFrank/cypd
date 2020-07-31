@@ -30238,6 +30238,7 @@ var props_proc = function (props) {
     min = min ? min : 0;
     max = max ? max : 100;
     step = step ? step : 1;
+    value = (typeof value === 'number') ? value : min;
     value = value ? value : min;
     value = (value < min) ? min : value;
     value = (value > max) ? max : value;
