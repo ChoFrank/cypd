@@ -27,5 +27,6 @@ export { default as Href } from './href/href';
 export { default as Empty } from './empty/empty';
 export { default as Cone } from './empty/cone';
 export { default as List } from './list/list';
+export { default as ColorPicker } from './color/picker';
 export { Select, Option, Book, Page };
 export { DropdownInstance as Dropdown };

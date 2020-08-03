@@ -13,6 +13,8 @@ type SlideProps = {
     onChange: (value: number) => void,
     onAfterChange: (value: number) => void,
     disabled: boolean,
+    layout: 'vertical' | 'horizaontal',
+    dragSize: number;
 }
 
 type SlideState = {
@@ -43,6 +45,7 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
     trackElem?: HTMLDivElement;
     dragElem?: HTMLDivElement;
     origX?: string;
+    origY?: string;
     origM?: string;
     prevR?: number;
     tempR?: number;
@@ -67,13 +70,15 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
     }
     clearTemp = () => {
         this.origX = undefined;
+        this.origY = undefined;
         this.origM = undefined;
         this.tempR = undefined;
     }
     handleXMove = (xpos: number) => {
+        const { dragSize } = this.props;
         const { step, max, min } = this.state;
         if (this.dragElem && this.trackElem && this.origX && this.origM) {
-            const drag_w_p = ((isNaN(cssDragWidth)) ? 0 : cssDragWidth);
+            const drag_w_p = (typeof dragSize === 'number') ? dragSize : cssDragWidth;
             const track_w = this.trackElem.offsetWidth ? this.trackElem.offsetWidth : 1; // avoid zero divide
             const orig_px = parseInt(this.origX);
             const orig_p = parseFloat(this.origM);
@@ -96,11 +101,44 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
             }
         }
     }
+    handleYMove = (ypos: number) => {
+        const { dragSize } = this.props;
+        const { step, max, min } = this.state;
+        if (this.dragElem && this.trackElem && this.origY && this.origM) {
+            const drag_h_p = (typeof dragSize === 'number') ? dragSize : cssDragWidth;
+            const track_h = this.trackElem.offsetHeight ? this.trackElem.offsetHeight : 1; // avoid zero divide
+            const orig_py = parseInt(this.origY);
+            const orig_p = parseFloat(this.origM);
+            const dist_y = orig_py - ypos;
+            const offset_bound_p = 100 - (drag_h_p * 100 / track_h);
+            const offset_x_p = (dist_y * offset_bound_p / track_h);
+            const offset_temp_p = orig_p + offset_x_p;
+            if (offset_temp_p < 0) {
+                this.tempR = min;
+            } else if (offset_temp_p > offset_bound_p) {
+                this.tempR = max;
+            } else {
+                const temp = Math.floor((max - min) * (offset_temp_p / offset_bound_p) / step);
+                this.tempR = parseFloat((min + temp * step).toFixed(10));
+            }
+            if (this.prevR !== this.tempR) {
+                this.prevR = this.tempR;
+                this.setState({ value: this.tempR });
+                if (this.props.onChange) this.props.onChange(this.tempR);
+            }
+        }
+    }
     handleDrag = (ev: MouseEvent) => {
-        this.handleXMove(ev.clientX);
+        if (this.props.layout === 'vertical')
+            this.handleYMove(ev.clientY);
+        else
+            this.handleXMove(ev.clientX);
     }
     handleTouchDrag = (ev: TouchEvent) => {
-        this.handleXMove(ev.touches[0].clientX);
+        if (this.props.layout === 'vertical')
+            this.handleYMove(ev.touches[0].clientY);
+        else
+            this.handleXMove(ev.touches[0].clientX);
     }
     handleDragMouseUp = () => {
         if (this.props.onAfterChange && typeof this.tempR === 'number') this.props.onAfterChange(this.tempR);
@@ -112,38 +150,56 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         document.removeEventListener('touchend', this.handleDragMouseUp, false);
         this.setState({ pressSta: false });
     }
-    handleDragPress = (xpos: number) => {
-        if (this.props.disabled) { return; }
-        if (this.dragElem && this.dragElem.style.left) {
-            this.origX = xpos.toString();
-            this.origM = this.dragElem.style.left.replace('%', '');
+    handleDragPress = (pos: number) => {
+        const { disabled, layout } = this.props;
+        if (disabled) { return; }
+        if (this.dragElem) {
+            if (this.dragElem.style.left && (typeof layout === 'undefined' || layout === 'horizaontal')) {
+                this.origX = pos.toString();
+                this.origM = this.dragElem.style.left.replace('%', '');
+            }
+            if (this.dragElem.style.bottom && layout === 'vertical') {
+                this.origY = pos.toString();
+                this.origM = this.dragElem.style.bottom.replace('%', '');
+            }
         }
         document.body.style.userSelect = 'none';
         document.addEventListener('mousemove', this.handleDrag, false);
         document.addEventListener('mouseup', this.handleDragMouseUp, false);
         this.setState({ pressSta: true });
     }
-    handleDragMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        event.stopPropagation();
-        this.handleDragPress(event.clientX);
+    handleDragMouseDown = (x: number, y: number) => {
+        if (this.props.layout === 'vertical')
+            this.handleDragPress(y);
+        else
+            this.handleDragPress(x);
         document.addEventListener('mousemove', this.handleDrag, false);
         document.addEventListener('mouseup', this.handleDragMouseUp, false);
     }
-    handleDragTouchDown = (event: React.TouchEvent<HTMLDivElement>) => {
-        event.stopPropagation();
-        this.handleDragPress(event.touches[0].clientX);
+    handleDragTouchDown = (x: number, y: number) => {
+        if (this.props.layout === 'vertical')
+            this.handleDragPress(y);
+        else
+            this.handleDragPress(x);
         document.addEventListener('touchmove', this.handleTouchDrag, false);
         document.addEventListener('touchend', this.handleDragMouseUp, false);
     }
     handleTrackMouseDown = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         if (this.props.disabled) { return; }
+        
         if (this.trackElem) {
             const { step, max, min } = this.state;
-            const { offsetWidth } = this.trackElem;
-            const offset_temp_p = (event.clientX - this.trackElem.getBoundingClientRect().left) * 100 / offsetWidth;
+            const { offsetWidth, offsetHeight } = this.trackElem;
+            const { clientX, clientY } = event;
+            let offset_temp_p = (event.clientX - this.trackElem.getBoundingClientRect().left) * 100 / offsetWidth;
+            if (this.props.layout === 'vertical')
+                offset_temp_p = (this.trackElem.getBoundingClientRect().bottom - event.clientY) * 100 / offsetHeight;
             const press_v = parseFloat((min + Math.round((max - min) * (offset_temp_p / 100) / step) * step).toFixed(10));
             if (this.prevR !== press_v) {
-                this.setState({value: press_v}, () => { this.prevR = press_v; });
+                this.setState({value: press_v}, () => {
+                    this.prevR = press_v;
+                    this.handleDragMouseDown(clientX, clientY);
+                });
                 if (this.props.onChange) this.props.onChange(press_v);
                 if (this.props.onAfterChange) this.props.onAfterChange(press_v);
             }
@@ -151,6 +207,7 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
     }
     render() {
         const { value, min, max, pressSta, hoverSta } = this.state
+        const { className, style, disabled, layout } = this.props;
         var containerClass = 'cypd-slider-container';
         var wrapperClass = 'cypd-slider-wrapper';
         var trackClass = 'cypd-slider-track';
@@ -159,30 +216,32 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         var draw, offset_p = 0;
         if (max > min)
             offset_p = ((value - min) * 100) / (max - min);
-        draw = (<svg className={rangeClass} style={{width: `${offset_p}%`, overflow: 'hidden'}}>
+        draw = (<svg className={rangeClass} style={{width: (layout === 'vertical' ? '10px' : `${offset_p}%`), height: (layout === 'vertical' ? `${offset_p}%` : undefined), overflow: 'hidden'}}>
             <path d={`M2.5 2.5 H 3000`}/>
         </svg>);
-        if (this.props.className)
-            containerClass += ` ${this.props.className}`;
-        if (this.props.disabled)
+        if (className)
+            containerClass += ` ${className}`;
+        if (layout)
+            containerClass += ` ${layout}`;
+        if (disabled)
             containerClass += ` disabled`;
         if (!!pressSta) {
             pointClass += ' active';
             trackClass += ' active'
         }
         return (
-            <div className={containerClass} style={this.props.style}>
+            <div className={containerClass} style={style}>
                 <div className={wrapperClass}>
                     <div className={trackClass} ref={(node) => { if (node) this.trackElem = node; }} onMouseDown={this.handleTrackMouseDown}>
                         {draw}
                         <div
                             ref={(node) => { if (node) this.dragElem = node; }}
                             className={pointClass + ' drag'}
-                            style={{ left: `${offset_p}%` }}
-                            onMouseDown={this.handleDragMouseDown}
+                            style={(layout === 'vertical') ? { bottom: `${offset_p}%` } : { left: `${offset_p}%` }}
+                            onMouseDown={(e) => { e.stopPropagation(); this.handleDragMouseDown(e.clientX, e.clientY); }}
                             onMouseEnter={() => { this.setState({ hoverSta: true }); }}
                             onMouseLeave={() => { this.setState({ hoverSta: false }); }}
-                            onTouchStart={this.handleDragTouchDown}
+                            onTouchStart={(e) => { e.stopPropagation(); this.handleDragMouseDown(e.touches[0].clientX, e.touches[0].clientY); }}
                         >
                             <div className={`cypd-tooltip top ${(pressSta || hoverSta)?'active':'hide'}`} style={{ marginLeft: '6px', visibility: (pressSta || hoverSta)?'visible':'hidden' }}>{value}</div>
                         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Empty, List, Form, Cone, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
+import { Table, Icon, Input, Button, Select, DateTime, Empty, List, Form, Cone, Checkbox, Option, RadioGroup, ColorPicker, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin } from './src';
 
 import './index.css'
 
@@ -60,8 +60,8 @@ class App extends React.Component {
             [<Icon type='loading' />, <Slider max={10} min={-10} step={1} value={this.state.progress} onAfterChange={(v) => { this.setState({ progress: v }) }}/>, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
             ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
             [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
-            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked />],
-            [<Icon type='led-green' />, <SwitchButton label={[ 'Enabled', 'Disabled' ]}/>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>],
+            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked label={[ 'Enabled', 'Disabled' ]}/>],
+            [<Icon type='led-green' />, <SwitchButton label={[ 'On', 'Off' ]}/>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>],
             [<Icon type='led-yellow' />, <Button type='primary' icon='edit'>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
             [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
         ];
@@ -171,6 +171,7 @@ class App extends React.Component {
                                 <SwitchButton defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} />
                                 <List draggable={this.state.list_draggable} items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))} />
                                 {form}
+                                <ColorPicker />
                             </div>
                         </Layout.Center>
                     </Layout.Body>

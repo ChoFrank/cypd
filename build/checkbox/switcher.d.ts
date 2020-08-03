@@ -6,7 +6,7 @@ declare type SwitchButtonProps = {
     style: CSSProperties;
     readOnly: boolean;
     defaultChecked: boolean;
-    label?: [string, string];
+    label?: [JSX.Element, JSX.Element];
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
