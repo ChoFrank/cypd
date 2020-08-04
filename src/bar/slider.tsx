@@ -216,7 +216,6 @@ export default class Slider extends React.Component<Partial<SlideProps>> {
         var pointClass = 'cypd-slider-point';
         var rangeClass = 'cypd-slider-range';
         var draw, offset_p = 0;
-        console.log('value :>> ', value);
         if (max > min)
             offset_p = ((value - min) * 100) / (max - min);
         draw = (<svg className={rangeClass} style={{ width: (layout === 'vertical' ? '10px' : `${offset_p}%`), height: (layout === 'vertical' ? `${offset_p}%` : undefined), overflow: 'hidden' }}>
