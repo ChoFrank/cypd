@@ -277,7 +277,6 @@
     flex-grow: 1;
     height: 60px;
     line-height: 60px;
-    transition: text-indent 300ms;
 }
 
 .cypd-navitem.extend>.icon,
@@ -290,10 +289,12 @@
     line-height: 40px;
 }
 
+
+/* 
 .cypd-navitem>.label:active,
 .cypd-navitem>.label:hover {
     text-indent: 30px;
-}
+} */
 
 
 /* cypd table */
@@ -308,6 +309,7 @@
 .cypd-table-container .table-wrapper {
     border-radius: 3px;
     width: min-content;
+    z-index: 1;
 }
 
 .cypd-table-container .table-wrapper table {
@@ -1133,6 +1135,14 @@ svg.cypd-icon.solid-right * {
     transition: border 150ms, background-color 150ms;
 }
 
+.cypd-checkbox-wrapper.square .cypd-checkbox {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNnB4JyBoZWlnaHQ9JzE2cHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBmaWxsPSdyZ2IoNTEsMTY4LDE5MiknIHN0cm9rZT0ncmdiKDUxLDE2OCwxOTIpJyBzdHJva2Utd2lkdGg9JzMnIGQ9J000IDQgNCAxMiAxMiAxMiAxMiA0Wicgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjwvc3ZnPg==");
+    /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' overflow='visible'><path fill='rgb(51,168,192)' stroke='rgb(51,168,192)' stroke-width='3' d='M4 4 4 12 12 12 12 4Z' stroke-linejoin='round'/></svg>"); */
+    background-position: center;
+    background-size: 0%;
+    transition: border 150ms, background-size 150ms;
+}
+
 .cypd-checkbox-wrapper:hover .cypd-checkbox {
     border: 1px solid #33a8c0;
 }
@@ -1142,9 +1152,23 @@ svg.cypd-icon.solid-right * {
     border: 1px solid #33a8c0;
 }
 
+.cypd-checkbox-wrapper.square input:checked~.cypd-checkbox {
+    background-color: white;
+    background-size: 100%;
+}
+
 .cypd-checkbox-wrapper input:disabled~.cypd-checkbox {
-    background-color: gray;
-    border: 1px solid gray;
+    border: 1px solid rgb(173, 173, 173);
+}
+
+.cypd-checkbox-wrapper input:checked:disabled~.cypd-checkbox {
+    background-color: rgb(173, 173, 173);
+}
+
+.cypd-checkbox-wrapper.square input:checked:disabled~.cypd-checkbox {
+    background-color: white;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxNnB4JyBoZWlnaHQ9JzE2cHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBmaWxsPSdyZ2IoMTczLCAxNzMsIDE3MyknIHN0cm9rZT0ncmdiKDE3MywgMTczLCAxNzMpJyBzdHJva2Utd2lkdGg9JzMnIGQ9J000IDQgNCAxMiAxMiAxMiAxMiA0Wicgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjwvc3ZnPg==");
+    /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' overflow='visible'><path fill='rgb(173, 173, 173)' stroke='rgb(173, 173, 173)' stroke-width='3' d='M4 4 4 12 12 12 12 4Z' stroke-linejoin='round'/></svg>"); */
 }
 
 .cypd-checkbox-wrapper span {
@@ -1321,6 +1345,64 @@ svg.cypd-icon.solid-right * {
     width: 15px;
     border-radius: 50%;
     background-color: transparent;
+}
+
+.cypd-switchbutton-wrapper.has-label .cypd-switchbutton {
+    width: auto;
+    height: 24px;
+    border-radius: 12px;
+    background-color: white;
+    border: 1px solid rgb(153, 152, 152);
+}
+
+.cypd-switchbutton-wrapper.has-label .cypd-switchbutton::after {
+    left: 2px;
+    height: 18px;
+    width: 40%;
+    border-radius: 9px;
+    background-color: rgb(234, 234, 234);
+    box-shadow: none;
+    border: 1px solid rgb(153, 152, 152);
+}
+
+.cypd-switchbutton-wrapper.has-label input:checked+.cypd-switchbutton {
+    background-color: white;
+}
+
+.cypd-switchbutton-wrapper.has-label input:checked+.cypd-switchbutton::after {
+    background-color: #088aab;
+    transform: translateX(calc(150% - 10px));
+    border: 1px solid #088aab;
+    transform: left 150ms;
+}
+
+.cypd-switchbutton-wrapper.has-label .display-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+}
+
+.cypd-switchbutton-wrapper.has-label .display-label>#on {
+    font-size: 11px;
+    color: #088aab;
+    margin-right: 5px;
+    opacity: 0;
+}
+
+.cypd-switchbutton-wrapper.has-label input:checked+.cypd-switchbutton .display-label>#on {
+    opacity: 1;
+}
+
+.cypd-switchbutton-wrapper.has-label .display-label>#off {
+    font-size: 11px;
+    color: rgb(129, 129, 129);
+    opacity: 1;
+}
+
+.cypd-switchbutton-wrapper.has-label input:checked+.cypd-switchbutton .display-label>#off {
+    opacity: 0;
 }
 
 

@@ -55,7 +55,8 @@ class App extends React.Component {
             'minus', 'plus', 'circle-plus', 'square-plus', 'square-minus', 'trashcan', 'edit',
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'warning', 'cyp-device',
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
-            'setting', 'scene', 'volumn', 'idea', 'scenario', 'move', 'stop'
+            'setting', 'scene', 'volumn', 'idea', 'scenario', 'move', 'stop', 'previous', 'next', 'forward',
+            'backward',
         ];
         const sampleOptions = [
             <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
@@ -66,14 +67,14 @@ class App extends React.Component {
         const rows = [
             [<Icon type='loading' />, <Slider max={10} min={-10} step={1} value={this.state.progress} onAfterChange={(v) => { this.setState({ progress: v }); }} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
             [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
-            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked />],
-            [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked /><Checkbox label='Afternoon' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
+            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked label={[ 'Enabled', 'Disabled' ]}/>],
+            [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked checkedType='square'/><Checkbox label='Afternoon' checkedType='square' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
             [<Icon type='led-yellow' />, <Button type='primary' icon='stop' iconColor='white' onClick={() => { this.setState({ progress: 6 }) }}>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
             [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
             [<Icon type='led-red' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
-            ['', <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+            ['', <DateTime.TimePicker />, <DateTime.DatePicker />, <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />],
         ];
         const table = <Table
             headers={['1', '2', '3', '4']}

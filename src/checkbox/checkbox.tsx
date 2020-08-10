@@ -8,21 +8,25 @@ type CheckBoxProps = {
     className: string,
     style: CSSProperties,
     readOnly: boolean,
+    checkedType: 'v-line' | 'square',
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export default class CheckBox extends React.Component<Partial<CheckBoxProps>> {
     render() {
-        var wrapperClass = 'cypd-checkbox-wrapper';
-        if (this.props.className)
-            wrapperClass += ` ${this.props.className}`;
-        if (this.props.disabled)
+        const { className, style, disabled, label, checked, readOnly, checkedType, onChange } = this.props;
+        let wrapperClass = 'cypd-checkbox-wrapper';
+        if (className)
+            wrapperClass += ` ${className}`;
+        if (checkedType)
+            wrapperClass += ` ${checkedType}`;
+        if (disabled)
             wrapperClass += ` disabled`;
         return (
-            <label className={wrapperClass} style={this.props.style}>
-                <input type='checkbox' checked={this.props.checked} disabled={this.props.disabled} onChange={this.props.onChange} readOnly={this.props.readOnly}/>
+            <label className={wrapperClass} style={style}>
+                <input type='checkbox' checked={checked} disabled={disabled} onChange={onChange} readOnly={readOnly}/>
                 <span className='cypd-checkbox'/>
-                <span>{this.props.label}</span>
+                <span>{label}</span>
             </label>
         );
     }

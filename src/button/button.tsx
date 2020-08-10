@@ -20,6 +20,7 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
         const { type, icon, shape, iconColor, className, style, disabled, size, onClick } = this.props;
         let classString: string = 'cypd-button ';
         let icon_node: React.ReactNode;
+        let icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
         if (disabled) {
             classString += 'disabled';
         } else {
@@ -29,7 +30,7 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
                 classString += 'default';
         }
         if (icon)
-            icon_node = <Icon type={icon} color={iconColor}/>;
+            icon_node = <Icon type={icon} color={(iconColor)?iconColor:icon_default_color}/>;
         if (!this.props.children)
             classString += ' no-content';
         if (className)
