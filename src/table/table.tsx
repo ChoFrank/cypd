@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '../button/button';
-import Input from '../input/input';
+// import Input from '../input/input';
 import Empty from '../empty/empty';
 import Checkbox from '../checkbox/checkbox';
 import { Book, Page } from '../story/story';
@@ -156,8 +156,10 @@ export default class Table extends React.Component<TableProps> {
     }
     render() {
         const id = this.id;
-        const { responsive, page, tempPage } =  this.state;
+        // const { responsive, page, tempPage } =  this.state;
+        const { responsive, page } =  this.state;
         const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, checkable, checkList, onCheck } = this.props;
+        const total_pages = this.calculate_total_pages;
         let containerClass = `cypd-table-container ${responsive}${checkable?' checkable':''}`;
         let wrapperClass = 'table-wrapper';
         const thead = (
@@ -188,7 +190,7 @@ export default class Table extends React.Component<TableProps> {
             let goto_buttons = [];
             if (this.calculate_total_pages <= 5) {
                 goto_buttons = Array.from(Array(this.calculate_total_pages).keys()).map(pageno => {
-                    return <Button size='small' key={`cypd-pagination-table-${this.id}-goto-${pageno}`} onClick={() => { this.gotoPage(pageno); }}>{pageno+1}</Button>
+                    return <Button size='small' className={`goto_page${(pageno === page)?' focus':''}`} key={`cypd-pagination-table-${this.id}-goto-${pageno}`} onClick={() => { this.gotoPage(pageno); }}>{pageno+1}</Button>
                 });
             } else {
                 const start_pageno = ((page - 2) >= 0) ? (page - 2) : 0;
@@ -198,7 +200,7 @@ export default class Table extends React.Component<TableProps> {
                     return <Button size='small' key={`cypd-pagination-table-${this.id}-goto-${abs_pageno}`} className={(abs_pageno === page)?'focus':undefined} onClick={() => { this.gotoPage(abs_pageno); }}>{abs_pageno+1}</Button>
                 });
             }
-            const goto_form = <div className='form'>Go to <Input value={tempPage} size='small' onChange={this.handleInputPage}></Input>Page</div>
+            // const goto_form = <div className='form'>Go to <Input value={tempPage} size='small' onChange={this.handleInputPage}></Input>Page</div>
             return (
                 <div className={containerClass} ref={inst => { this.wrapperRef = inst; }}>
                     <div className={wrapperClass} style={bodyStyle}>
@@ -206,10 +208,12 @@ export default class Table extends React.Component<TableProps> {
                         {(rows.length === 0)?<Empty />:undefined}
                     </div>
                     <div className='cypd-pagination-footer'>
-                        <Button size='small' type='primary' icon='solid-left' onClick={this.onPrevPage}/>
-                        <Button size='small' type='primary' icon='solid-right' onClick={this.onNextPage}/>
+                        <Button size='small' icon='previous' disabled={(page === 0)} onClick={() => { this.gotoPage(0); }}/>
+                        <Button size='small' icon='backward' disabled={(page === 0)} onClick={this.onPrevPage}/>
+                        <Button size='small' icon='forward' disabled={(page === total_pages-1)} onClick={this.onNextPage}/>
+                        <Button size='small' icon='next' disabled={(page === total_pages-1)} onClick={() => { this.gotoPage(total_pages - 1); }}/>
                         {goto_buttons}
-                        {goto_form}
+                        {/* {goto_form} */}
                     </div>
                 </div>
             );

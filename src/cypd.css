@@ -446,34 +446,43 @@
     border-top: none;
 }
 
-.cypd-table-container .cypd-pagination-footer .cypd-button {
+.cypd-table-container .cypd-pagination-footer .cypd-button,
+.cypd-table-container .cypd-pagination-footer .cypd-button:hover {
     border-radius: 0;
+    border: none;
 }
 
-.cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(1) {
+.cypd-table-container .cypd-pagination-footer .cypd-button.disabled {
+    background-color: white;
+}
+
+.cypd-table-container .cypd-pagination-footer .cypd-button.disabled .cypd-icon-wrapper svg * {
+    stroke: rgb(185, 185, 185) !important;
+    fill: rgb(185, 185, 185) !important;
+}
+
+.cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(1),
+.cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(2) {
     order: 1;
 }
 
-.cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(2) {
+.cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(3),
+.cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(4) {
     order: 3;
 }
 
-.cypd-table-container .cypd-pagination-footer .cypd-button.default {
+.cypd-table-container .cypd-pagination-footer .cypd-button.goto_page {
     border-right: 0;
-    border: 0.5px solid #bcbcbc;
     order: 2;
 }
 
-.cypd-table-container:not(.no) .cypd-pagination-footer .cypd-button.default {
+.cypd-table-container:not(.no) .cypd-pagination-footer .cypd-button.goto_page {
     display: none;
 }
 
-.cypd-table-container .cypd-pagination-footer .cypd-button.default:hover {
-    border: 0.5px solid #33a8c0;
-}
-
-.cypd-table-container .cypd-pagination-footer .cypd-button.default.focus {
-    background-color: #e4e4e4;
+.cypd-table-container .cypd-pagination-footer .cypd-button.goto_page.focus {
+    color: #1986ca;
+    border-bottom: 1px solid #1986ca;
 }
 
 .cypd-table-container .cypd-pagination-footer .cypd-button:nth-child(3) {
@@ -892,7 +901,7 @@ svg.cypd-icon.solid-right * {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0px 8px;
+    padding: 0px 8px 0 7px;
     cursor: pointer;
     height: 24px;
     overflow: hidden;
@@ -976,7 +985,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-button .wrap-icon {
     display: flex;
-    margin-right: 3px;
+    margin-right: 1px;
 }
 
 .cypd-button.no-content .wrap-icon {
@@ -988,7 +997,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-button:not(.no-content) .cypd-icon-wrapper {
-    transform: scale(0.7) translateX(-6px);
+    transform: scale(0.7) translateX(-3px);
 }
 
 .cypd-button.primary .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) *,

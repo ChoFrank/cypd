@@ -56,6 +56,24 @@ const arrowLeft = (props: SVGProps) => ([
     <polyline points='10,0 2,8 10,16' style={{ stroke: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
 ]);
 
+const forward = (props: SVGProps) => ([
+    <path d='M0 2 0 14 8 8Z M8 2 8 14 16 8Z' style={{ fill: props.color, stroke: 'none' }} key={`1_${props.svgId}`} fill='none' />,
+]);
+
+const backward = (props: SVGProps) => ([
+    <path d='M0 8 8 2 8 14Z M8 8 16 2 16 14Z' style={{ fill: props.color, stroke: 'none' }} key={`1_${props.svgId}`} fill='none' />,
+]);
+
+const next = (props: SVGProps) => ([
+    <path d='M4 2 4 14 12 8Z' style={{ fill: props.color, stroke: 'none' }} key={`1_${props.svgId}`} fill='none' />,
+    <path d='M12 2.5 12 13.5' style={{ fill: 'none', stroke: props.color }} strokeWidth={2} key={`2_${props.svgId}`} fill='none' />,
+]);
+
+const previous = (props: SVGProps) => ([
+    <path d='M12 2 12 14 4 8Z' style={{ fill: props.color, stroke: 'none' }} key={`1_${props.svgId}`} fill='none' />,
+    <path d='M4 2.5 4 13.5' style={{ fill: 'none', stroke: props.color }} strokeWidth={2} key={`2_${props.svgId}`} fill='none' />,
+]);
+
 const stop = (props: SVGProps) => ([
     <rect x='2' y='2' width='12' height='12' style={{ stroke: props.color, fill: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
 ]);
@@ -472,6 +490,10 @@ const TYPE_ICON_DRAW_INDEX: {
     'arrow-right': { className: 'arrow-right', generator: arrowRight },
     'solid-left': { className: 'solid-left', generator: solidLeft },
     'solid-right': { className: 'solid-right', generator: solidRight },
+    'forward': { className: 'forward', generator: forward },
+    'backward': { className: 'backward', generator: backward },
+    'next': { className: 'next', generator: next },
+    'previous': { className: 'previous', generator: previous },
     'left': { className: 'left', generator: left },
     'right': { className: 'right', generator: right },
     'zoom-out': { className: 'minus', generator: zoomOut },
