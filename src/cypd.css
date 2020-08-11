@@ -1550,6 +1550,7 @@ svg.cypd-icon.solid-right * {
     display: flex;
     flex-direction: column;
     text-align: left;
+    width: 100%;
     padding: 10px;
     user-select: none;
 }
@@ -1707,6 +1708,8 @@ svg.cypd-icon.solid-right * {
     opacity: 0;
     z-index: 41;
     visibility: hidden;
+    font-size: 12px;
+    letter-spacing: 0px;
     transition: opacity 150ms;
 }
 
