@@ -29911,15 +29911,27 @@ var NavigationItem = /** @class */ (function (_super) {
         _this.id = Math.random().toString().slice(2);
         _this.mouseon = false;
         _this.onToggle = function () {
-            if (_this.flag.current)
-                _this.flag.current.focus();
-            _this.setState({ extend: true });
+            global.setTimeout(function () {
+                var extend = _this.state.extend;
+                if (_this.flag.current) {
+                    if (extend) {
+                        _this.flag.current.focus();
+                    }
+                    else {
+                        _this.flag.current.blur();
+                    }
+                }
+            }, 100);
+            _this.setState(function (prevState) {
+                return { extend: !prevState.extend };
+            });
         };
         _this.onBlur = function () {
             _this.setState({ extend: false });
         };
         _this.direct = function () {
             var _a = _this.props, url = _a.url, onClick = _a.onClick;
+            _this.onToggle();
             if (url)
                 window.location.href = url;
             if (onClick)
@@ -29940,9 +29952,9 @@ var NavigationItem = /** @class */ (function (_super) {
         var wrapperClass = "cypd-navitem" + ((children && children.length > 0 && extend) ? ' extend' : '') + (className ? " " + className : '');
         return (!disabled) ? (react.createElement("div", { className: wrapperClass, style: style },
             children ? react.createElement("input", { ref: this.flag, style: { position: 'absolute', transform: 'scale(0)' }, onBlur: this.onBlur, type: 'checkbox' }) : undefined,
-            react.createElement("div", { style: { display: (icon) ? undefined : 'none' }, onMouseDown: this.direct, onClick: this.onToggle, className: 'icon' },
+            react.createElement("div", { style: { display: (icon) ? undefined : 'none' }, onMouseDown: this.direct, className: 'icon' },
                 react.createElement(Icon, { type: (icon) ? icon : '', color: 'white' })),
-            react.createElement("div", { className: 'label', onMouseDown: this.direct, onClick: this.onToggle }, label),
+            react.createElement("div", { className: 'label', onMouseDown: this.direct }, label),
             children ? react.createElement("ul", null, children.map(function (props, idx) { return react.createElement("li", { key: _this.id + "-" + idx },
                 react.createElement(NavigationItem, __assign({}, props))); })) : undefined,
             children ? react.createElement("div", { className: 'toggler' }) : undefined)) : react.createElement("div", null);

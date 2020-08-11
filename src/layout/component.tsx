@@ -40,15 +40,26 @@ class NavigationItem extends React.Component<NavitemProps> {
     }
     get toggler_id() { return `cypd-navitem-input-${this.id}`; }
     onToggle = () => {
-        if (this.flag.current)
-            this.flag.current.focus();
-        this.setState({ extend: true });
+        global.setTimeout(() => {
+            const { extend } = this.state;
+            if (this.flag.current) {
+                if (extend) {
+                    this.flag.current.focus();
+                } else {
+                    this.flag.current.blur();
+                }
+            }
+        }, 100);
+        this.setState((prevState: { extend: boolean }) => {
+            return { extend: !prevState.extend };
+        });
     }
     onBlur = () => {
         this.setState({ extend: false });
     }
     direct = () => {
         const { url, onClick } = this.props;
+        this.onToggle();
         if (url)
             window.location.href = url;
         if (onClick)
@@ -61,8 +72,8 @@ class NavigationItem extends React.Component<NavitemProps> {
         return (!disabled) ? (
             <div className={wrapperClass} style={style}>
                 {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
-                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} onClick={this.onToggle} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
-                <div className='label' onMouseDown={this.direct} onClick={this.onToggle}>{label}</div>
+                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
+                <div className='label' onMouseDown={this.direct}>{label}</div>
                 {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
                 {children ? <div className='toggler'></div> : undefined}
             </div>

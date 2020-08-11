@@ -151,9 +151,9 @@ class App extends React.Component {
                             visible={this.state.visible}
                             onCollapse={(visible) => { this.setState({ visible }); }}
                         >
-                            <Layout.NavigationItem icon='dashboard' label='alksjcasn' />
+                            <Layout.NavigationItem icon='dashboard' label='alksjcasn' children={[ { label: 'sadas' }, { label: 'sadas' }, { label: 'sadas' } ]} />
                             <Layout.NavigationItem icon='calendar' label='asdas'/>
-                            <Layout.NavigationItem icon='save' label='asva'/>
+                            <Layout.NavigationItem icon='save' label='asva' children={[ { label: 'sadas' }, { label: 'sadas' }, { label: 'sadas' } ]} />
                             <Layout.NavigationItem icon='scenario' label='asc'/>
                             <Layout.NavigationItem icon='setting' label='assv'/>
                             <Layout.NavigationItem icon='idea' label='asvasvavas'/>
