@@ -54,7 +54,7 @@ const notify = (options: NotificationArgs) => {
     const removeBlock = (e: HTMLDivElement) => {
         clearTimeout(auto_timeout);
         e.classList.add('hide');
-        setTimeout(() => { if (container) container.removeChild(e); }, 210);
+        setTimeout(() => { if (container && e) container.removeChild(e); }, 210);
     }
     ReactDOM.render(
         <Notification 

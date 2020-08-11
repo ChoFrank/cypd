@@ -35536,7 +35536,7 @@ var notify = function (options) {
     var removeBlock = function (e) {
         clearTimeout(auto_timeout);
         e.classList.add('hide');
-        setTimeout(function () { if (container)
+        setTimeout(function () { if (container && e)
             container.removeChild(e); }, 210);
     };
     reactDom.render(react.createElement(Notification, { title: title, context: context, type: type, onRemove: function () { removeBlock(block); } }), block);
