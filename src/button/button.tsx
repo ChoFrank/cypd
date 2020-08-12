@@ -31,6 +31,8 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
         }
         if (icon)
             icon_node = <Icon type={icon} color={(iconColor)?iconColor:icon_default_color}/>;
+        if (iconColor)
+            classString += ' specify-icon-color';
         if (!this.props.children)
             classString += ' no-content';
         if (className)

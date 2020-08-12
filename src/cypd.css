@@ -965,7 +965,7 @@ svg.cypd-icon.solid-right * {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 0px 12px 0px 12px;
+    padding: 0px 12px 0px 10px;
     border-radius: 4px;
     cursor: pointer;
     height: 32px;
@@ -1077,16 +1077,12 @@ svg.cypd-icon.solid-right * {
     stroke: white;
 }
 
-.cypd-button.default .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
-    stroke: rgb(139, 139, 139);
+.cypd-button.default:not(.specify-icon-color):hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
+    stroke: #33a8c0 !important;
 }
 
-.cypd-button.default:hover .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
-    stroke: #33a8c0;
-}
-
-.cypd-button.default:active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
-    stroke: #00839E;
+.cypd-button.default:not(.specify-icon-color):active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
+    stroke: #00839E !important;
 }
 
 .cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
