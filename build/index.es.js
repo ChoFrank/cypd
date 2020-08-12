@@ -2972,6 +2972,7 @@ var Button = /** @class */ (function (_super) {
         var icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
         if (disabled) {
             classString += 'disabled';
+            icon_default_color = 'rgb(185, 185, 185)';
         }
         else {
             if (type)
