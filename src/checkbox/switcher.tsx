@@ -8,7 +8,7 @@ type SwitchButtonProps = {
     style: CSSProperties,
     readOnly: boolean,
     defaultChecked: boolean,
-    label?: [JSX.Element, JSX.Element],
+    label?: [string | React.ReactNode, string | React.ReactNode],
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
