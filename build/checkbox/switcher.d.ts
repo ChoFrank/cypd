@@ -9,14 +9,17 @@ declare type SwitchButtonProps = {
     label?: [string | React.ReactNode, string | React.ReactNode];
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
+declare type SwitchButtonState = {
+    calibrateMargin?: number;
+};
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
-    state: {
-        calibrateMargin?: number;
-    };
+    state: SwitchButtonState;
     onLabel: HTMLDivElement | null | undefined;
     offLabel: HTMLDivElement | null | undefined;
     constructor(props: any);
+    testCalibrateLabel: () => void;
     componentDidMount(): void;
+    componentDidUpdate(): void;
     render(): JSX.Element;
 }
 export {};

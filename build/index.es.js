@@ -35445,19 +35445,23 @@ var SwitchButton = /** @class */ (function (_super) {
     __extends(SwitchButton, _super);
     function SwitchButton(props) {
         var _this = _super.call(this, props) || this;
+        _this.testCalibrateLabel = function () {
+            var calibrateMargin = _this.state.calibrateMargin;
+            if (_this.onLabel && _this.offLabel) {
+                var on_rect = _this.onLabel.getBoundingClientRect();
+                var off_rect = _this.offLabel.getBoundingClientRect();
+                if (on_rect.width !== off_rect.width) {
+                    var dist = Math.abs(on_rect.width - off_rect.width);
+                    if (dist !== calibrateMargin)
+                        _this.setState({ calibrateMargin: dist });
+                }
+            }
+        };
         _this.state = {};
         return _this;
     }
-    SwitchButton.prototype.componentDidMount = function () {
-        if (this.onLabel && this.offLabel) {
-            var on_rect = this.onLabel.getBoundingClientRect();
-            var off_rect = this.offLabel.getBoundingClientRect();
-            if (on_rect.width !== off_rect.width) {
-                var dist = Math.abs(on_rect.width - off_rect.width);
-                this.setState({ calibrateMargin: dist });
-            }
-        }
-    };
+    SwitchButton.prototype.componentDidMount = function () { this.testCalibrateLabel(); };
+    SwitchButton.prototype.componentDidUpdate = function () { this.testCalibrateLabel(); };
     SwitchButton.prototype.render = function () {
         var _this = this;
         var _a = this.props, className = _a.className, disabled = _a.disabled, checked = _a.checked, defaultChecked = _a.defaultChecked, onChange = _a.onChange, readOnly = _a.readOnly, style = _a.style, label = _a.label;

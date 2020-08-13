@@ -12,24 +12,32 @@ type SwitchButtonProps = {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
+type SwitchButtonState = {
+    calibrateMargin?: number;
+}
+
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
-    state: { calibrateMargin?: number };
+    state: SwitchButtonState;
     onLabel: HTMLDivElement | null | undefined;
     offLabel: HTMLDivElement | null |undefined;
     constructor(props: any) {
         super(props);
         this.state = {};
     }
-    componentDidMount() {
+    testCalibrateLabel = () => {
+        const { calibrateMargin } = this.state;
         if (this.onLabel && this.offLabel) {
             const on_rect = this.onLabel.getBoundingClientRect();
             const off_rect = this.offLabel.getBoundingClientRect();
             if (on_rect.width !== off_rect.width) {
                 const dist = Math.abs(on_rect.width - off_rect.width);
-                this.setState({ calibrateMargin: dist });
+                if (dist !== calibrateMargin)
+                    this.setState({ calibrateMargin: dist });
             }
         }
     }
+    componentDidMount() { this.testCalibrateLabel(); }
+    componentDidUpdate() { this.testCalibrateLabel(); }
     render() {
         const { className, disabled, checked, defaultChecked, onChange, readOnly, style, label } = this.props;
         const { calibrateMargin } = this.state;
