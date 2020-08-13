@@ -7,6 +7,7 @@ declare type SwitchButtonProps = {
     readOnly: boolean;
     defaultChecked: boolean;
     label?: [string | React.ReactNode, string | React.ReactNode];
+    type?: 'hexigon' | 'normal';
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 declare type SwitchButtonState = {

@@ -393,6 +393,22 @@ const cyplogo = (props: SVGProps) => ([
 ]);
 
 const dashboard = (props: SVGProps) => ([
+    <g key={`1_${props.svgId}`} transform="translate(-213.752 -80.537)">
+        <path style={{ fill: props.color }} d="M214.4,96.282l.248.255H227.4l.249-.255a9.27,9.27,0,1,0-13.253,0Zm6.626-14.052a7.573,7.573,0,0,1,5.654,12.615H215.367a7.573,7.573,0,0,1,5.654-12.615Z" transform="translate(0)" />
+        <path style={{ fill: props.color }} d="M221.8,95.058a1.8,1.8,0,0,0,1.739-2.355l2.887-3.11-1.339-1.243-2.882,3.1a1.87,1.87,0,0,0-.4-.048,1.826,1.826,0,1,0,0,3.652Z" transform="translate(-0.886 -0.934)" />
+        <path style={{ fill: props.color }} d="M221.8,85.015a.9.9,0,1,0-.648-.265A.963.963,0,0,0,221.8,85.015Z" transform="translate(-0.734 -0.217)" />
+        <path style={{ fill: props.color }} d="M218.6,85.873a.947.947,0,0,0,.649-.264.917.917,0,0,0-1.3-1.3.942.942,0,0,0-.265.648.923.923,0,0,0,.265.639A.912.912,0,0,0,218.6,85.873Z" transform="translate(-0.477 -0.287)" />
+        <path style={{ fill: props.color }} d="M216.262,88.21a.917.917,0,0,0,.913-.913.916.916,0,1,0-.913.913Z" transform="translate(-0.289 -0.478)" />
+        <path style={{ fill: props.color }} d="M214.756,91.141a.964.964,0,0,0,.649.265.946.946,0,0,0,.648-.265.914.914,0,1,0-1.3,0Z" transform="translate(0 -0.739)" />
+        <path style={{ fill: props.color }} d="M215.615,93.041a.912.912,0,1,0,1.3,0A.959.959,0,0,0,215.615,93.041Z" transform="translate(-0.289 -1)" />
+        <path style={{ fill: props.color }} d="M226.69,93.041a.894.894,0,0,0-.273.648.9.9,0,0,0,.913.913.924.924,0,0,0,.647-.275.878.878,0,0,0,.266-.638.964.964,0,0,0-.266-.648A.943.943,0,0,0,226.69,93.041Z" transform="translate(-1.179 -1)" />
+        <path style={{ fill: props.color }} d="M227.539,89.845a.925.925,0,0,0,0,1.3.946.946,0,0,0,.648.265.932.932,0,0,0,.649-.274.922.922,0,0,0,.264-.639.913.913,0,0,0-1.561-.648Z" transform="translate(-1.461 -0.739)" />
+        <path style={{ fill: props.color }} d="M227.33,88.21a.958.958,0,0,0,.647-.264.924.924,0,0,0,0-1.3.917.917,0,1,0-.647,1.561Z" transform="translate(-1.179 -0.478)" />
+        <path style={{ fill: props.color }} d="M224.992,85.873a.919.919,0,0,0,.638-.264.931.931,0,0,0,.275-.649.942.942,0,0,0-.265-.648.956.956,0,0,0-1.3,0,.928.928,0,0,0,0,1.3A.963.963,0,0,0,224.992,85.873Z" transform="translate(-0.991 -0.287)" />
+    </g>,
+]);
+
+const grid = (props: SVGProps) => ([
     <path id="ic_view_quilt_24px" d="M10.588,19.275h5.49V12.686h-5.49ZM4,19.275H9.49V5H4Zm13.177,0h5.49V12.686h-5.49ZM10.588,5v6.588H22.667V5Z" transform="translate(-4 -5)" fill={props.color} stroke='transparent' key={`1_${props.svgId}`} />
 ]);
 
@@ -449,6 +465,30 @@ const scenario = (props: SVGProps) => ([
             </g>
             <path id="Path_9029" data-name="Path 9029" d="M771.572,635.938l-4.884,4.577,2.538,2.192" transform="translate(-841.649 -697.53) scale(1.1)" fill="none" stroke={props.color} strokeWidth="1" />
             <path id="Path_9030" data-name="Path 9030" d="M778.875,636.438l4.385,3.923" transform="translate(-848.336 -697.722) scale(1.1)" fill="none" stroke={props.color} strokeWidth="1" />
+        </g>
+    </g>
+]);
+const hexNo = (props: SVGProps) => ([
+    <g transform="translate(-116.439 -608.381)" key={`1_${props.svgId}`} >
+        <g>
+            <g>
+                <path style={{ fill: props.color, stroke: props.color }} d="M126.872,624.146h-5.529a1.939,1.939,0,0,1-1.614-.863l-3.962-5.944a1.93,1.93,0,0,1,0-2.152l3.962-5.943a1.937,1.937,0,0,1,1.614-.863h5.529a1.939,1.939,0,0,1,1.615.863l3.962,5.944a1.932,1.932,0,0,1,0,2.151l-3.962,5.943A1.939,1.939,0,0,1,126.872,624.146Zm-5.529-14.432a.607.607,0,0,0-.505.27l-3.962,5.943a.6.6,0,0,0,0,.672h0l3.962,5.944a.607.607,0,0,0,.505.27h5.529a.605.605,0,0,0,.5-.271l3.962-5.943a.6.6,0,0,0,0-.671l-3.962-5.944a.607.607,0,0,0-.5-.27Z"/>
+            </g>
+        </g>
+        <g>
+            <path style={{ fill: props.color, stroke: props.color }} d="M127.036,616.93h-5.857a.667.667,0,1,1,0-1.333h5.857a.667.667,0,1,1,0,1.333Z"/>
+        </g>
+    </g>
+]);
+const hexYes = (props: SVGProps) => ([
+    <g transform="translate(-87.552 -608.595)" key={`1_${props.svgId}`}>
+        <g>
+            <g>
+                <path style={{ fill: props.color, stroke: props.color }} d="M95.436,624.931a1.926,1.926,0,0,1-1.076-.327l-5.944-3.962a1.937,1.937,0,0,1-.864-1.614V613.5a1.933,1.933,0,0,1,.864-1.613l5.944-3.963a1.934,1.934,0,0,1,2.151,0l5.943,3.963a1.934,1.934,0,0,1,.865,1.613v5.53a1.937,1.937,0,0,1-.865,1.614L96.511,624.6A1.927,1.927,0,0,1,95.436,624.931Zm0-16a.6.6,0,0,0-.335.1h0l-5.943,3.962a.6.6,0,0,0-.271.5v5.53a.605.605,0,0,0,.271.505l5.943,3.962a.6.6,0,0,0,.671,0l5.943-3.962a.605.605,0,0,0,.271-.505V613.5a.6.6,0,0,0-.271-.5l-5.943-3.962A.606.606,0,0,0,95.435,608.929Zm-.7-.452h0Z"/>
+            </g>
+        </g>
+        <g>
+            <path style={{ fill: props.color, stroke: props.color }} d="M94.52,618.856a.667.667,0,0,1-.472-.2l-2.02-2.02a.667.667,0,0,1,.943-.943l1.549,1.548,3.38-3.38a.666.666,0,1,1,.943.942l-3.851,3.852A.664.664,0,0,1,94.52,618.856Z"/>
         </g>
     </g>
 ]);
@@ -533,6 +573,9 @@ const TYPE_ICON_DRAW_INDEX: {
     'idea': { className: 'idea', generator: idea },
     'move': { className: 'move', generator: move },
     'stop': { className: 'stop', generator: stop },
+    'grid': { className: 'grid', generator: grid },
+    'hexigon-no': { className: 'hexigon-no', generator: hexNo },
+    'hexigon-yes': { className: 'hexigon-yes', generator: hexYes },
 }
 
 export default class Icon extends React.Component<IconProps> {

@@ -1,6 +1,8 @@
 import React, { CSSProperties } from 'react';
 
 
+import Icon from '../icon/component';
+
 type SwitchButtonProps = {
     checked: boolean,
     disabled: boolean,
@@ -9,6 +11,7 @@ type SwitchButtonProps = {
     readOnly: boolean,
     defaultChecked: boolean,
     label?: [string | React.ReactNode, string | React.ReactNode],
+    type?: 'hexigon' | 'normal',
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
@@ -39,13 +42,15 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
     componentDidMount() { this.testCalibrateLabel(); }
     componentDidUpdate() { this.testCalibrateLabel(); }
     render() {
-        const { className, disabled, checked, defaultChecked, onChange, readOnly, style, label } = this.props;
+        const { className, disabled, checked, defaultChecked, onChange, readOnly, style, label, type } = this.props;
         const { calibrateMargin } = this.state;
         var wrapperClass = 'cypd-switchbutton-wrapper';
         if (className)
             wrapperClass += ` ${className}`;
         if (label)
-            wrapperClass += ` has-label`
+            wrapperClass += ` has-label`;
+        if (type)
+            wrapperClass += ` ${type}`;
         if (disabled)
             wrapperClass += ` disabled`;
         return (
@@ -58,7 +63,11 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
                     onChange={onChange} 
                     readOnly={readOnly}
                 />
-                <div className='cypd-switchbutton'>
+                {(typeof label === 'undefined' && type === 'hexigon') ? <div className='hexigon-wrapper'>
+                    <Icon type='hexigon-no' color={disabled?'rgb(200,200,200)':'rgb(129, 129, 129)'}/>
+                    <Icon type='hexigon-yes' color={disabled?'rgb(200,200,200)':'#088aab'}/>
+                </div> : undefined }
+                <div className='cypd-switchbutton' style={{ display: (type === 'hexigon') ? 'none' : undefined }}>
                     {label ? <div className='display-label'>
                         <div style={(calibrateMargin) ? { marginRight: `${calibrateMargin}px` } : undefined} ref={ (inst) => { this.onLabel = inst; } } id='on'>{label[0]}</div>
                         <div ref={ (inst) => { this.offLabel = inst; } } id='off'>{label[1]}</div>
