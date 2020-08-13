@@ -1377,13 +1377,12 @@ svg.cypd-icon.solid-right * {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5px;
+    padding: 2px 5px 0 5px;
 }
 
 .cypd-switchbutton-wrapper.has-label .display-label>#on {
     font-size: 11px;
     color: #088aab;
-    margin-right: 5px;
     opacity: 0;
 }
 

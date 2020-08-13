@@ -10,6 +10,13 @@ declare type SwitchButtonProps = {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
+    state: {
+        calibrateMargin?: number;
+    };
+    onLabel: HTMLDivElement | null | undefined;
+    offLabel: HTMLDivElement | null | undefined;
+    constructor(props: any);
+    componentDidMount(): void;
     render(): JSX.Element;
 }
 export {};
