@@ -244,7 +244,7 @@
 
 .cypd-layout .column.left:not(.visible) .cypd-navitem.extend>ul {
     opacity: 1;
-    z-index: 31;
+    z-index: 99;
     transition: opacity 150ms;
 }
 
