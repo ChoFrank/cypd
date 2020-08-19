@@ -35397,11 +35397,29 @@ var datetimepicker = { DatePicker: DatePicker, FormatDateTime: FormatDateTime, T
 
 var SwitchButton = /** @class */ (function (_super) {
     __extends(SwitchButton, _super);
-    function SwitchButton() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    function SwitchButton(props) {
+        var _this = _super.call(this, props) || this;
+        _this.testCalibrateLabel = function () {
+            var calibrateMargin = _this.state.calibrateMargin;
+            if (_this.onLabel && _this.offLabel) {
+                var on_rect = _this.onLabel.getBoundingClientRect();
+                var off_rect = _this.offLabel.getBoundingClientRect();
+                if (on_rect.width !== off_rect.width) {
+                    var dist = Math.abs(on_rect.width - off_rect.width) + 5;
+                    if (dist !== calibrateMargin)
+                        _this.setState({ calibrateMargin: dist });
+                }
+            }
+        };
+        _this.state = {};
+        return _this;
     }
+    SwitchButton.prototype.componentDidMount = function () { this.testCalibrateLabel(); };
+    SwitchButton.prototype.componentDidUpdate = function () { this.testCalibrateLabel(); };
     SwitchButton.prototype.render = function () {
+        var _this = this;
         var _a = this.props, className = _a.className, disabled = _a.disabled, checked = _a.checked, defaultChecked = _a.defaultChecked, onChange = _a.onChange, readOnly = _a.readOnly, style = _a.style, label = _a.label;
+        var calibrateMargin = this.state.calibrateMargin;
         var wrapperClass = 'cypd-switchbutton-wrapper';
         if (className)
             wrapperClass += " " + className;
@@ -35412,8 +35430,8 @@ var SwitchButton = /** @class */ (function (_super) {
         return (react.createElement("label", { className: wrapperClass, style: style },
             react.createElement("input", { type: 'checkbox', disabled: disabled, checked: checked, defaultChecked: defaultChecked, onChange: onChange, readOnly: readOnly }),
             react.createElement("div", { className: 'cypd-switchbutton' }, label ? react.createElement("div", { className: 'display-label' },
-                react.createElement("div", { id: 'on' }, label[0]),
-                react.createElement("div", { id: 'off' }, label[1])) : undefined)));
+                react.createElement("div", { style: (calibrateMargin) ? { marginRight: calibrateMargin + "px" } : undefined, ref: function (inst) { _this.onLabel = inst; }, id: 'on' }, label[0]),
+                react.createElement("div", { ref: function (inst) { _this.offLabel = inst; }, id: 'off' }, label[1])) : undefined)));
     };
     return SwitchButton;
 }(react.Component));
