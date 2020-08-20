@@ -2571,6 +2571,12 @@ var upload = function (props) { return ([
     react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M8 2 8 12 M4 6 8 2 12 6', fill: 'none' }),
     react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M1 12 1 16 15 16 15 12', fill: 'none' }),
 ]); };
+var home = function (props) { return ([
+    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M1 7.5 8 2 15 7.5', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color, fill: props.color }, strokeWidth: 2, d: 'M4 9 4 15 12 15 12 9 8 6Z' }),
+    react.createElement("path", { key: "3_" + props.svgId, style: { stroke: 'white', fill: 'white' }, strokeWidth: 2, d: 'M7 14 9 14 9 12 7 12Z' }),
+    react.createElement("path", { key: "3_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M12 2 12 4.2', fill: 'none' }),
+]); };
 var clock = function (props) { return ([
     react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "1_" + props.svgId, d: "M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z" }),
     react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "2_" + props.svgId, d: "M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z" }),
@@ -2856,6 +2862,7 @@ var TYPE_ICON_DRAW_INDEX = {
     'idea': { className: 'idea', generator: idea },
     'move': { className: 'move', generator: move },
     'stop': { className: 'stop', generator: stop },
+    'home': { className: 'home', generator: home },
 };
 var Icon = /** @class */ (function (_super) {
     __extends(Icon, _super);
