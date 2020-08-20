@@ -178,8 +178,9 @@ const move = (props: SVGProps) => ([
 ]);
 
 const exit = (props: SVGProps) => ([
-    <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M0 8 12 8 M3 4 0 8 3 12' fill='none' />,
-    <path key={`2_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M7 4 7 0 16 0 16 16 7 16 7 12' fill='none' />,
+    <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M11 5 11 1 1 1 1 14 11 14 11 11' fill='none' />,
+    <path key={`2_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M10 8 15 8 M 13.5 6 15 8 13.5 10' fill='none' />,
+    <path key={`3_${props.svgId}`} style={{ stroke: props.color, fill: props.color }} strokeWidth={1} d='M1 1 7 3 7 16 1 14' />,
 ]);
 
 const _import = (props: SVGProps) => ([

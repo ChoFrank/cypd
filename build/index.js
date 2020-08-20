@@ -2560,8 +2560,9 @@ var move = function (props) { return ([
     react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M8 0 8 16 M5 2 8 0 11 2 M5 14 8 16 11 14', fill: 'none' }),
 ]); };
 var exit = function (props) { return ([
-    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M0 8 12 8 M3 4 0 8 3 12', fill: 'none' }),
-    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M7 4 7 0 16 0 16 16 7 16 7 12', fill: 'none' }),
+    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M11 5 11 1 1 1 1 14 11 14 11 11', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M10 8 15 8 M 13.5 6 15 8 13.5 10', fill: 'none' }),
+    react.createElement("path", { key: "3_" + props.svgId, style: { stroke: props.color, fill: props.color }, strokeWidth: 1, d: 'M1 1 7 3 7 16 1 14' }),
 ]); };
 var _import = function (props) { return ([
     react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M2 8 12 8 M8 4 12 8 8 12', fill: 'none' }),
