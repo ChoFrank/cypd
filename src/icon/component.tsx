@@ -202,7 +202,7 @@ const home = (props: SVGProps) => ([
     <path key={`1_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M1 7.5 8 2 15 7.5' fill='none' />,
     <path key={`2_${props.svgId}`} style={{ stroke: props.color, fill: props.color }} strokeWidth={2} d='M4 9 4 15 12 15 12 9 8 6Z'/>,
     <path key={`3_${props.svgId}`} style={{ stroke: 'white', fill: 'white' }} strokeWidth={2} d='M7 14 9 14 9 12 7 12Z'/>,
-    <path key={`3_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M12 2 12 4.2' fill='none'/>,
+    <path key={`4_${props.svgId}`} style={{ stroke: props.color }} strokeWidth={2} d='M12 2 12 4.2' fill='none'/>,
 ]);
 
 const clock = (props: SVGProps) => ([
