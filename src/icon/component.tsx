@@ -365,6 +365,26 @@ const ledRed = (props: SVGProps) => ([
     <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-red-light)' />,
 ]);
 
+const ledBlue = (props: SVGProps) => ([
+    <radialGradient id='fc-led-blue-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
+        <stop offset="20%" stopColor="#7cf1ff">
+            {/* <animate dur='0.75s' attributeName='stopColor' values='#ff8383; #e01919; #ff8383' repeatCount='indefinite'/> */}
+        </stop>
+        <stop offset="40%" stopColor="#61fdff">
+            {/* <animate dur='0.75s' attributeName='stopColor' values='#ff3f3f; #e01919; #ff3f3f' repeatCount='indefinite'/> */}
+        </stop>
+        <stop offset="90%" stopColor='#24b9a5' />
+    </radialGradient>,
+    <filter id='led-blue-blur' width='200%' height='200%' key={`2_${props.svgId}`}>
+        <feGaussianBlur in='SourceAlpha' stdDeviation='1' result='blur' />
+        <feOffset in='blur' dx='0' dy='0' result='offsetBlur' />
+        <feFlood floodColor='#71e3f1' floodOpacity='1' result='offsetColor' />
+        <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
+    </filter>,
+    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-blue-blur)' />,
+    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-blue-light)' />,
+]);
+
 const ledGray = (props: SVGProps) => ([
     <radialGradient id='fc-led-gray-light' cx='.5' cy='.5' r='.5' key={`1_${props.svgId}`}>
         <stop offset="20%" stopColor="#9b9b9b" />
@@ -560,6 +580,7 @@ const TYPE_ICON_DRAW_INDEX: {
     'led-green': { className: 'fc-led-green', generator: ledGreen },
     'led-yellow': { className: 'fc-led-yellow', generator: ledYellow },
     'led-red': { className: 'fc-led-red', generator: ledRed },
+    'led-blue': { className: 'fc-led-blue', generator: ledBlue },
     'led-gray': { className: 'fc-led-gray', generator: ledGray },
     'warning': { className: 'fc-warning', generator: warning },
     'cyp-device': { className: 'document', generator: cypDevice },
