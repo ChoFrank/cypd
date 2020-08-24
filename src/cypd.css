@@ -1367,7 +1367,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-switchbutton-wrapper.has-label input:checked+.cypd-switchbutton::after {
     background-color: #088aab;
-    transform: translateX(calc(150% - 10px));
+    transform: translateX(calc(150% - 9px));
     border: 1px solid #088aab;
     transform: left 150ms;
 }
