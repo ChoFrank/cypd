@@ -2582,6 +2582,14 @@ var home = function (props) { return ([
     react.createElement("path", { key: "3_" + props.svgId, style: { stroke: 'white', fill: 'white' }, strokeWidth: 2, d: 'M7 14 9 14 9 12 7 12Z' }),
     react.createElement("path", { key: "4_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M12 2 12 4.2', fill: 'none' }),
 ]); };
+var pushpin = function (props) { return ([
+    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color, fill: props.color }, strokeWidth: 2, d: 'M10 2 14 6 C10 8, 10 8, 10 13Z M10 13 3 6 C8 6, 8 6, 10 2Z' }),
+    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M12 4 2 14' }),
+]); };
+var forbid = function (props) { return ([
+    react.createElement("circle", { key: "1_" + props.svgId, cx: '8', cy: '8', r: '7', style: { stroke: props.color }, strokeWidth: 2, fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M12 4 4 12' }),
+]); };
 var clock = function (props) { return ([
     react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "1_" + props.svgId, d: "M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z" }),
     react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "2_" + props.svgId, d: "M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z" }),
@@ -2913,6 +2921,8 @@ var TYPE_ICON_DRAW_INDEX = {
     'stop': { className: 'stop', generator: stop },
     'grid': { className: 'grid', generator: grid },
     'home': { className: 'home', generator: home },
+    'pushpin': { className: 'pushpin', generator: pushpin },
+    'forbid': { className: 'forbid', generator: forbid },
     'hexigon-no': { className: 'hexigon-no', generator: hexNo },
     'hexigon-yes': { className: 'hexigon-yes', generator: hexYes },
 };

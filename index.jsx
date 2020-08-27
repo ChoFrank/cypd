@@ -58,7 +58,7 @@ class App extends React.Component {
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'warning', 'cyp-device',
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
             'setting', 'scene', 'volumn', 'idea', 'scenario', 'move', 'stop', 'previous', 'next', 'forward',
-            'backward', 'grid', 'hexigon-no', 'hexigon-yes',
+            'backward', 'grid', 'pushpin', 'forbid', 'hexigon-no', 'hexigon-yes',
         ];
         const sampleOptions = [
             <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
