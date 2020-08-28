@@ -458,7 +458,7 @@ const update = (props: SVGProps) => ([
     <path d="M412.907,214.08C398.4,140.693,333.653,85.333,256,85.333c-61.653,0-115.093,34.987-141.867,86.08 
         C50.027,178.347,0,232.64,0,298.667c0,70.72,57.28,128,128,128h277.333C464.213,426.667,512,378.88,512,320 
         C512,263.68,468.16,218.027,412.907,214.08z M298.667,277.333v85.333h-85.333v-85.333h-64L256,170.667l106.667,106.667H298.667z"
-        transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`1_${props.svgId}`} />
+        transform="scale(0.038) translate(-45 -60)" style={{ fill: props.color, stroke: props.color }} key={`1_${props.svgId}`} />
 ]);
 
 const setting = (props: SVGProps) => ([

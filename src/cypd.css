@@ -1041,7 +1041,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-button.default .cypd-icon:not([class*='fc-']) * {
-    transition: stroke 150ms ease-in-out 50ms;
+    transition: stroke 150ms ease-in-out 50ms, fill 150ms ease-in-out 50ms;
 }
 
 .cypd-button.disabled {
@@ -1081,8 +1081,16 @@ svg.cypd-icon.solid-right * {
     stroke: #33a8c0 !important;
 }
 
+.cypd-button.default:not(.specify-icon-color):hover .cypd-icon-wrapper .cypd-icon.update:not([class*='fc-']) * {
+    fill: #33a8c0 !important;
+}
+
 .cypd-button.default:not(.specify-icon-color):active .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
     stroke: #00839E !important;
+}
+
+.cypd-button.default:not(.specify-icon-color):active .cypd-icon-wrapper .cypd-icon.update:not([class*='fc-']) * {
+    fill: #00839E !important;
 }
 
 .cypd-button.disabled .cypd-icon-wrapper .cypd-icon:not([class*='fc-']) * {
