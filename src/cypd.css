@@ -2160,6 +2160,10 @@ button.react-calendar__century-view__decades__decade {
     background-color: white;
 }
 
+.cypd-digital-clock-wrapper .cypd-options-container .cypd-option label {
+    text-overflow: clip;
+}
+
 .cypd-digital-clock-wrapper.clock-system .cypd-select-wrapper.meridiem .cypd-options-container {
     height: 200px;
     transition-delay: 0s;
