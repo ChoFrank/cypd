@@ -2303,7 +2303,12 @@ var Select = /** @class */ (function (_super) {
         var _this = _super.call(this, props) || this;
         // onFocus = () => { /* window.__cypd_select_on_change[this.selectId] = this.props.onChange; */ }
         _this.onBlur = function () { _this.setState({ collapsed: true }); _this.autoScroll(); };
-        _this.onClick = function (e) { e.persist(); _this.setState(function (prevState) { return { collapsed: !prevState.collapsed, direction: (e.clientY >= 700) ? 'extend-top' : 'extend-down' }; }); };
+        _this.onClick = function (e) {
+            e.persist();
+            _this.setState(function (prevState) {
+                return { collapsed: !prevState.collapsed, direction: (e.clientY >= (_this.windowHeight - 200)) ? 'extend-top' : 'extend-down' };
+            });
+        };
         _this.onMouseEnter = function () { document.removeEventListener('mousedown', _this.onBlur, false); };
         _this.onMouseLeave = function () { document.addEventListener('mousedown', _this.onBlur, false); };
         _this.autoScroll = function () {
@@ -2318,7 +2323,19 @@ var Select = /** @class */ (function (_super) {
         _this.selectId = Math.random().toString();
         return _this;
     }
-    Select.getDerivedStateFromProps = function (nextProps, prevState) { return (typeof nextProps.collapsed !== 'undefined') ? { collapsed: nextProps.collapsed, direction: prevState.direction } : null; };
+    Object.defineProperty(Select.prototype, "windowHeight", {
+        get: function () { return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; },
+        enumerable: false,
+        configurable: true
+    });
+    Select.getDerivedStateFromProps = function (nextProps, prevState) {
+        if (typeof nextProps.collapsed !== 'undefined') {
+            return { collapsed: nextProps.collapsed, direction: prevState.direction };
+        }
+        else {
+            return null;
+        }
+    };
     Select.prototype.componentDidMount = function () { this.autoScroll(); };
     Select.prototype.componentWillUnmount = function () { this.setState = function () { }; };
     Select.prototype.componentDidUpdate = function () {

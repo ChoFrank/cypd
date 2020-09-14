@@ -37,6 +37,7 @@ export default class Select extends React.Component<SelectProps> {
     selectWrapper?: HTMLDivElement | null;
     optionWrapper?: HTMLDivElement | null;
     constructor(props: SelectProps);
+    get windowHeight(): number;
     static getDerivedStateFromProps(nextProps: SelectProps, prevState: SelectState): SelectState | null;
     componentDidMount(): void;
     componentWillUnmount(): void;
