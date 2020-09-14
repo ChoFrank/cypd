@@ -62,13 +62,25 @@ export default class Select extends React.Component<SelectProps> {
         this.state = { collapsed: true, direction: 'extend-down' };
         this.selectId = Math.random().toString();
     }
-    static getDerivedStateFromProps(nextProps: SelectProps, prevState: SelectState): SelectState | null { return (typeof nextProps.collapsed !== 'undefined') ? { collapsed: nextProps.collapsed, direction: prevState.direction } : null; }
+    get windowHeight() { return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; }
+    static getDerivedStateFromProps(nextProps: SelectProps, prevState: SelectState): SelectState | null { 
+        if (typeof nextProps.collapsed !== 'undefined') {
+            return { collapsed: nextProps.collapsed, direction: prevState.direction };
+        } else {
+            return null;
+        }
+    }
     componentDidMount() { this.autoScroll(); }
     componentWillUnmount() { this.setState = () => {}; }
     componentDidUpdate() { window.__cypd_select_on_change[this.selectId] = (value: string) => { this.props.onChange(value); this.onBlur(); }; }
     // onFocus = () => { /* window.__cypd_select_on_change[this.selectId] = this.props.onChange; */ }
     onBlur = () => { this.setState({ collapsed: true }); this.autoScroll(); }
-    onClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => { e.persist(); this.setState((prevState: SelectState): Partial<SelectState> => { return { collapsed: !prevState.collapsed, direction: (e.clientY >= 700)?'extend-top':'extend-down' } }); }
+    onClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+        e.persist();
+        this.setState((prevState: SelectState): Partial<SelectState> => { 
+            return { collapsed: !prevState.collapsed, direction: (e.clientY >= (this.windowHeight - 200))?'extend-top':'extend-down' } 
+        }); 
+    }
     onMouseEnter = () => { document.removeEventListener('mousedown', this.onBlur, false); }
     onMouseLeave = () => { document.addEventListener('mousedown', this.onBlur, false); }
     autoScroll = () => {
