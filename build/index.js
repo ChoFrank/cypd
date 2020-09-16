@@ -2956,7 +2956,7 @@ var Icon = /** @class */ (function (_super) {
             var svgClass = 'cypd-icon ' + TYPE_ICON_DRAW_INDEX[type].className;
             var wrapperClass = 'cypd-icon-wrapper' + (className ? " " + className : '');
             wrapperClass += (onClick ? ' clickable' : '');
-            return react.createElement("div", { className: wrapperClass, style: style, onClick: onClick },
+            return react.createElement("div", { className: wrapperClass, style: style, onPointerUp: onClick, onClick: (window.PointerEvent) ? undefined : onClick },
                 react.createElement("svg", __assign({ className: svgClass }, otherProps), TYPE_ICON_DRAW_INDEX[type].generator(__assign(__assign({}, otherProps), { svgId: this.id }))));
         }
         else {

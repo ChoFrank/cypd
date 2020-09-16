@@ -628,7 +628,7 @@ export default class Icon extends React.Component<IconProps> {
             var svgClass = 'cypd-icon ' + TYPE_ICON_DRAW_INDEX[type].className;
             var wrapperClass = 'cypd-icon-wrapper' + (className ? ` ${className}` : '')
             wrapperClass += (onClick ? ' clickable' : '');
-            return <div className={wrapperClass} style={style} onClick={onClick}><svg className={svgClass} {...otherProps}>{TYPE_ICON_DRAW_INDEX[type].generator({ ...otherProps, svgId: this.id })}</svg></div>;
+            return <div className={wrapperClass} style={style} onPointerUp={onClick} onClick={(window.PointerEvent) ? undefined : onClick}><svg className={svgClass} {...otherProps}>{TYPE_ICON_DRAW_INDEX[type].generator({ ...otherProps, svgId: this.id })}</svg></div>;
         } else { return <div className='cypd-icon-wrapper' />; }
     }
 }
