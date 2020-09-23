@@ -44,7 +44,6 @@ export default {
         'node_modules/react/index.js': ['Children', 'Component', 'PropTypes', 'createElement', 'CSSProperties'],
         'node_modules/react-is/index.js': ['isValidElementType'],
         'node_modules/react-dom/index.js': ['render'],
-        'src/list/sortable.min.js': ['Sortable'],
       }
     })
   ]
