@@ -2,7 +2,8 @@ import React, { CSSProperties } from 'react';
 // import ReactDOM from 'react-dom';
 
 import Empty from '../empty/empty'; 
-import * as Sortable from './sortable.min';
+// import Sortable from './sortable.min';
+const Sortable = require('./sortable.min.js');
 
 declare type CypdListDragManagement = {
     onHover: (item_id?: number) => void;
