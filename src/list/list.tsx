@@ -62,6 +62,17 @@ class ListItem extends React.Component<ListItemInterface> {
                 this.setState({ hovering: 'top' });
         }
     }
+    onTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+        if (this.itemRef) {
+            const { hovering } = this.state;
+            const rect = this.itemRef.getBoundingClientRect();
+            const offset_y = event.touches[0].clientY - rect.top;
+            if (offset_y >= (rect.height / 2) && hovering !== 'bottom')
+                this.setState({ hovering: 'bottom' });
+            if (offset_y < (rect.height / 2) && hovering !== 'top')
+                this.setState({ hovering: 'top' });
+        }
+    }
     get_insert_position = (): number => {
         const { hovering } = this.state;
         const { __cypd_listitem_order } = this.props;
@@ -97,11 +108,16 @@ class ListItem extends React.Component<ListItemInterface> {
             <div 
                 className={wrapperClass} 
                 style={{ order: (__cypd_listitem_order+1) }} 
-                onMouseEnter={this.onMouseEnter}
-                onMouseLeave={this.onMouseLeave}
-                onMouseDown={this.onMouseDown}
-                onMouseUp={this.onMouseUp}
+                onMouseEnter={(window.PointerEvent) ? undefined : this.onMouseEnter}
+                onMouseLeave={(window.PointerEvent) ? undefined : this.onMouseLeave}
+                onMouseDown={(window.PointerEvent) ? undefined : this.onMouseDown}
+                onMouseUp={(window.PointerEvent) ? undefined : this.onMouseUp}
                 onMouseMove={this.onMouseMove}
+                onPointerEnter={(window.PointerEvent) ? this.onMouseEnter : undefined}
+                onPointerLeave={(window.PointerEvent) ? this.onMouseLeave : undefined}
+                onPointerDown={(window.PointerEvent) ? this.onMouseDown : undefined}
+                onPointerUp={(window.PointerEvent) ? this.onMouseUp : undefined}
+                onTouchMove={this.onTouchMove}
                 ref={ (inst) => { this.itemRef = inst; } }
             >
                 <input className='readmore-check' id={list_id} type='checkbox' onChange={this.onCheck}/>

@@ -35734,6 +35734,17 @@ var ListItem = /** @class */ (function (_super) {
                     _this.setState({ hovering: 'top' });
             }
         };
+        _this.onTouchMove = function (event) {
+            if (_this.itemRef) {
+                var hovering = _this.state.hovering;
+                var rect = _this.itemRef.getBoundingClientRect();
+                var offset_y = event.touches[0].clientY - rect.top;
+                if (offset_y >= (rect.height / 2) && hovering !== 'bottom')
+                    _this.setState({ hovering: 'bottom' });
+                if (offset_y < (rect.height / 2) && hovering !== 'top')
+                    _this.setState({ hovering: 'top' });
+            }
+        };
         _this.get_insert_position = function () {
             var hovering = _this.state.hovering;
             var __cypd_listitem_order = _this.props.__cypd_listitem_order;
@@ -35775,7 +35786,7 @@ var ListItem = /** @class */ (function (_super) {
             wrapperClass += " " + className;
         if (hovering !== 'none')
             wrapperClass += " hover-" + hovering;
-        return (react.createElement("div", { className: wrapperClass, style: { order: (__cypd_listitem_order + 1) }, onMouseEnter: this.onMouseEnter, onMouseLeave: this.onMouseLeave, onMouseDown: this.onMouseDown, onMouseUp: this.onMouseUp, onMouseMove: this.onMouseMove, ref: function (inst) { _this.itemRef = inst; } },
+        return (react.createElement("div", { className: wrapperClass, style: { order: (__cypd_listitem_order + 1) }, onMouseEnter: (window.PointerEvent) ? undefined : this.onMouseEnter, onMouseLeave: (window.PointerEvent) ? undefined : this.onMouseLeave, onMouseDown: (window.PointerEvent) ? undefined : this.onMouseDown, onMouseUp: (window.PointerEvent) ? undefined : this.onMouseUp, onMouseMove: this.onMouseMove, onPointerEnter: (window.PointerEvent) ? this.onMouseEnter : undefined, onPointerLeave: (window.PointerEvent) ? this.onMouseLeave : undefined, onPointerDown: (window.PointerEvent) ? this.onMouseDown : undefined, onPointerUp: (window.PointerEvent) ? this.onMouseUp : undefined, onTouchMove: this.onTouchMove, ref: function (inst) { _this.itemRef = inst; } },
             react.createElement("input", { className: 'readmore-check', id: list_id, type: 'checkbox', onChange: this.onCheck }),
             react.createElement("div", { className: 'shorten' },
                 react.createElement("div", { className: 'label' }, label),
