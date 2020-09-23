@@ -2482,12 +2482,17 @@ html {
 .cypd-list>.cypd-listitem {
     position: relative;
     min-height: 50px;
-    border-radius: 10px;
-    border: 2px solid transparent;
+    border-bottom: 1px solid #00839E;
     opacity: 1;
     flex-shrink: 0;
     cursor: default;
+    background-color: rgb(245, 245, 245);
     transition: border-color 150ms, opacity 150ms;
+    list-style-type: none;
+}
+
+.cypd-list>.cypd-listitem:last-child {
+    border-bottom: 0px;
 }
 
 .cypd-list.draggable>.cypd-listitem {
@@ -2495,18 +2500,9 @@ html {
     user-select: none;
 }
 
-.cypd-list.draggable>.cypd-listitem.dragged {
+.cypd-list.draggable>.cypd-listitem.sortable-chosen {
     opacity: 0.5;
-}
-
-.cypd-list>.cypd-listitem:hover {
-    border-color: #00839E;
-}
-
-.cypd-list.dragging>.cypd-listitem,
-.cypd-list.dragging>.cypd-listitem:hover {
-    border-color: transparent;
-    border-radius: 0;
+    background-color: rgb(216, 216, 216);
 }
 
 .cypd-list.dragging>.cypd-listitem.hover-top:hover {
@@ -2533,6 +2529,7 @@ html {
 }
 
 .cypd-list>.cypd-listitem>.shorten>.label {
+    color: rgb(60, 60, 60);
     font-weight: bold;
 }
 
@@ -2570,6 +2567,7 @@ html {
     text-indent: 40px;
     text-align: start;
     word-wrap: break-word;
+    color: rgb(60, 60, 60);
     border-top: 1px solid rgba(128, 128, 128, 0.414);
     opacity: 0;
     padding: 0px;

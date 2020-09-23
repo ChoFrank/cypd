@@ -169,7 +169,7 @@ class App extends React.Component {
                                     {icondemo}
                                 </div>
                                 <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='hexigon' />
-                                <List draggable={this.state.list_draggable} items={email_example.map(data => ({ label: data[0], description: data.slice(1).join(',') }))} />
+                                <List draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} />
                                 {form}
                             </div>
                         </Layout.Center>

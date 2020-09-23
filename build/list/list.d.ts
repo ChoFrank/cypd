@@ -30,8 +30,24 @@ declare type ListState = {
     animated_class: Array<string>;
     dragging: boolean;
     prevProps: ListProperties;
+    resetMark: number;
+    __refresh?: (() => void);
 };
-export default class List extends React.Component<ListProperties> {
+declare type SortEvent = {
+    bubbles: boolean;
+    cancelBubble: boolean;
+    cancelable: boolean;
+    clone: HTMLElement;
+    clones: Array<HTMLElement>;
+    composed: boolean;
+    defaultPrevented: boolean;
+    eventPhase: number;
+    newDraggableIndex: number;
+    newIndex: number;
+    oldDraggableIndex: number;
+    oldIndex: number;
+};
+export declare class List extends React.Component<ListProperties> {
     state: ListState;
     private _id;
     constructor(props: ListProperties);
@@ -42,6 +58,20 @@ export default class List extends React.Component<ListProperties> {
     onHover: (item_id?: number | undefined) => void;
     onDrop: (drop_order: number) => void;
     releaseMouse: () => void;
+    render(): JSX.Element;
+}
+export default class SortableList extends React.Component<ListProperties> {
+    state: ListState;
+    sort: any;
+    private _id;
+    refresh_key: number;
+    index_order: Array<string>;
+    constructor(props: ListProperties);
+    static getDerivedStateFromProps(nextProps: ListProperties, prevState: ListState): Partial<ListState> | null;
+    componentDidMount(): void;
+    initSortable: () => void;
+    onSort: (event: SortEvent) => void;
+    forceRefreshSortable: () => void;
     render(): JSX.Element;
 }
 export {};
