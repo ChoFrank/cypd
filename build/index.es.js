@@ -39030,71 +39030,7 @@ var ListItem = /** @class */ (function (_super) {
         _this.onCheck = function (event) { _this.setState({ checked: event.target.checked }); };
         return _this;
     }
-    // itemRef: HTMLDivElement | null | undefined;
-    // componentDidMount() {
-    //     const parent_dom = ReactDOM.findDOMNode(this);
-    //     const parent_elem = (parent_dom) ? parent_dom.parentElement : undefined;
-    //     const parent_id = (parent_elem) ? parent_elem.getAttribute('id') : '';
-    //     this.setState({ parent_id });
-    // }
     ListItem.prototype.componentWillUnmount = function () { this.setState = function () { }; };
-    // onMouseEnter = () => {
-    //     const drag_management = window.__cypd_list_drag_management[this.state.parent_id];
-    //     if (drag_management) {
-    //         drag_management.onHover(this.props.__cypd_listitem_order);
-    //     }
-    // }
-    // onMouseLeave = () => {
-    //     const drag_management = window.__cypd_list_drag_management[this.state.parent_id];
-    //     if (drag_management) {
-    //         drag_management.onHover(undefined);
-    //         this.setState({ hovering: 'none' });
-    //     }
-    // }
-    // onMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    //     if (this.itemRef) {
-    //         const { hovering } = this.state;
-    //         const rect = this.itemRef.getBoundingClientRect();
-    //         const offset_y = event.clientY - rect.top;
-    //         if (offset_y >= (rect.height / 2) && hovering !== 'bottom')
-    //             this.setState({ hovering: 'bottom' });
-    //         if (offset_y < (rect.height / 2) && hovering !== 'top')
-    //             this.setState({ hovering: 'top' });
-    //     }
-    // }
-    // onTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    //     if (this.itemRef) {
-    //         const { hovering } = this.state;
-    //         const rect = this.itemRef.getBoundingClientRect();
-    //         const offset_y = event.touches[0].clientY - rect.top;
-    //         if (offset_y >= (rect.height / 2) && hovering !== 'bottom')
-    //             this.setState({ hovering: 'bottom' });
-    //         if (offset_y < (rect.height / 2) && hovering !== 'top')
-    //             this.setState({ hovering: 'top' });
-    //     }
-    // }
-    // get_insert_position = (): number => {
-    //     const { hovering } = this.state;
-    //     const { __cypd_listitem_order } = this.props;
-    //     const drag_management = window.__cypd_list_drag_management[this.state.parent_id];
-    //     const { drag_order } = drag_management;
-    //     if (typeof drag_order === 'number' && __cypd_listitem_order > drag_order)
-    //         return (hovering === 'top') ? (__cypd_listitem_order-1) : __cypd_listitem_order;
-    //     if (typeof drag_order === 'number' && __cypd_listitem_order < drag_order)
-    //         return (hovering === 'bottom') ? (__cypd_listitem_order+1) : __cypd_listitem_order;
-    //     return (typeof drag_order === 'number') ? drag_order : -1;
-    // }
-    // onMouseDown = () => {
-    //     const { __cypd_listitem_order } = this.props;
-    //     const drag_management = window.__cypd_list_drag_management[this.state.parent_id];
-    //     if (drag_management) 
-    //         drag_management.onDragStart(__cypd_listitem_order);
-    // }
-    // onMouseUp = () => {
-    //     const drag_management = window.__cypd_list_drag_management[this.state.parent_id];
-    //     const insert_idx = this.get_insert_position();
-    //     drag_management.onDrop(insert_idx);
-    // }
     ListItem.prototype.render = function () {
         // const { label, description, decoration, className, __cypd_listitem_order } = this.props;
         var _a = this.props, label = _a.label, description = _a.description, decoration = _a.decoration, className = _a.className;
@@ -39248,21 +39184,7 @@ var SortableList = /** @class */ (function (_super) {
                 var string_idx = _this.index_order[oldIndex];
                 _this.index_order.splice(oldIndex, 1);
                 _this.index_order.splice(newIndex, 0, string_idx);
-                // for (let i = 0; i < this.index_order.length; i++) {
-                //     const flex_order = item_flex_order[i];
-                //     if (flex_order < oldIndex && flex_order >= oldIndex)
-                //         item_flex_order[i] ++;
-                //     if (flex_order > oldIndex && flex_order <= oldIndex)
-                //         item_flex_order[i] --;
-                //     if (flex_order == oldIndex)
-                //         item_flex_order[i] = oldIndex; // handle hover-bottom class
-                // }
                 if (draggable && onAfterDrag) {
-                    // const reorder_items = item_flex_order.map((_, idx) => {
-                    //     const idx_flex_order = item_flex_order.indexOf(idx);
-                    //     const item_key = items[idx_flex_order].index;
-                    //     return (item_key) ? item_key : idx_flex_order.toString();
-                    // });
                     onAfterDrag(_this.index_order);
                 }
             }
@@ -39302,7 +39224,6 @@ var SortableList = /** @class */ (function (_super) {
             wrapperClass += " draggable";
         console.log('render');
         return (react.createElement("ul", { id: this._id, className: wrapperClass, style: style, key: this.state.resetMark }, items.map(function (listitem, idx) {
-            // return <li key={`cypd-list-${this._id}-item-${idx}`} className='cypd-listitem'>{listitem.label}</li>
             return react.createElement(ListItem, __assign({ key: _this._id + "_item_" + idx }, listitem, { __cypd_listitem_order: parseInt(_this.index_order[idx]) }));
         })));
     };
