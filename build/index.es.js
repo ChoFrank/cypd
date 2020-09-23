@@ -36939,13 +36939,13 @@ function Sortable(el, options) {
     )}`;
   }
 
-  const __warn =
-    "" +
-    "Importing Sortable directly from GitHub is deprecated.\n" +
-    "This file will not receive any more updates.\n" +
-    "Please follow the usage instructions to continue getting support: https://github.com/SortableJS/Sortable";
+//   const __warn =
+//     "" +
+//     "Importing Sortable directly from GitHub is deprecated.\n" +
+//     "This file will not receive any more updates.\n" +
+//     "Please follow the usage instructions to continue getting support: https://github.com/SortableJS/Sortable";
 
-  console.warn(__warn);
+//   console.warn(__warn);
 
   this.el = el; // root element
   this.options = options = Object.assign({}, options);
