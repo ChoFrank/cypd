@@ -260,7 +260,6 @@ export default class SortableList extends React.Component<ListProperties> {
             wrapperClass += ` ${className}`;
         if (draggable)
             wrapperClass += ` draggable`;
-        console.log('render');
         return (
             <ul id={this._id} className={wrapperClass} style={style} key={this.state.resetMark}>
                 {items.map((listitem, idx) => {

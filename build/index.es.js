@@ -39222,7 +39222,6 @@ var SortableList = /** @class */ (function (_super) {
             wrapperClass += " " + className;
         if (draggable)
             wrapperClass += " draggable";
-        console.log('render');
         return (react.createElement("ul", { id: this._id, className: wrapperClass, style: style, key: this.state.resetMark }, items.map(function (listitem, idx) {
             return react.createElement(ListItem, __assign({ key: _this._id + "_item_" + idx }, listitem, { __cypd_listitem_order: parseInt(_this.index_order[idx]) }));
         })));
