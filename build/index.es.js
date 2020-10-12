@@ -2449,7 +2449,11 @@ var Grid = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Grid.prototype.render = function () {
-        return (react.createElement("div", { className: 'cypd-grid' }, this.props.children));
+        var _a = this.props, className = _a.className, style = _a.style;
+        var gridClass = 'cypd-grid';
+        if (className)
+            gridClass += " " + className;
+        return (react.createElement("div", { className: gridClass, style: style }, this.props.children));
     };
     return Grid;
 }(react.Component));
@@ -2469,12 +2473,12 @@ var Card = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Card.prototype.render = function () {
-        var _a = this.props, label = _a.label, className = _a.className;
+        var _a = this.props, label = _a.label, className = _a.className, style = _a.style;
         var cardClass = 'cypd-grid-card';
         if (className)
             cardClass += " " + className;
         return (react.createElement("div", { className: 'cypd-grid-card-wrapper' },
-            react.createElement("div", { className: cardClass },
+            react.createElement("div", { className: cardClass, style: style },
                 react.createElement("div", { className: 'title' }, label),
                 react.createElement("div", { className: 'content' }, this.props.children))));
     };
