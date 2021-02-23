@@ -127,13 +127,14 @@ export default class Table extends React.Component<TableProps> {
         this.setState({ tempPage: e.target.value });
     }
     basicBody = (rows: Array<Array<React.ReactNode>>) => {
+        const { responsive } = this.state;
         const { headers, columnWidth } = this.props;
         return (
             <tbody>{rows.map((row, idx) => (
                 <tr className={(idx%2)?'odd':'even'} key={`table-${this.id}-body-row-${idx}`}>
                     {row.map((cell, cell_idx) => (
                         (cell_idx < headers.length) 
-                            ? <td style={{ width: (columnWidth?`${columnWidth[cell_idx]}px`:undefined) }} key={`table-${this.id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td> 
+                            ? <td style={{ width: ((columnWidth && responsive === 'no')?`${columnWidth[cell_idx]}px`:undefined) }} key={`table-${this.id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td> 
                             : undefined
                     )).filter(cell => (!!cell))}
                 </tr>
@@ -181,7 +182,7 @@ export default class Table extends React.Component<TableProps> {
         let containerClass = `cypd-table-container ${responsive}${checkable?' checkable':''}`;
         let wrapperClass = 'table-wrapper';
         let columnSum = 0;
-        if (typeof columnWidth !== 'undefined') {
+        if (typeof columnWidth !== 'undefined' && responsive === 'no') {
             containerClass += ' column-fixed-width';
             for (let i = 0; i < columnWidth.length; i++) {
                 const width = columnWidth[i];
@@ -193,7 +194,7 @@ export default class Table extends React.Component<TableProps> {
         }
         const thead = (
             <thead style={headerStyle}><tr>
-                {headers.map((content, idx) => <th style={{ width: (columnWidth?columnWidth[idx]:undefined) }} key={`table-${id}-th-${idx}`}>{content}</th>)}
+                {headers.map((content, idx) => <th style={{ width: ((columnWidth && responsive === 'no')?columnWidth[idx]:undefined) }} key={`table-${id}-th-${idx}`}>{content}</th>)}
             </tr></thead>
         );
         if (pagination && rowLimit) {
