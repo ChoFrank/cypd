@@ -36,7 +36,7 @@ type TableProps = {
     onCheck?: (row_idx: number, checked: boolean) => void;
     removeable?: boolean,
     onRemove?: (row_idx: number) => void;
-    className: string;
+    className?: string;
 }
 
 interface TableState {
