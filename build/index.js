@@ -2762,8 +2762,8 @@ var ledGreen = function (props) { return ([
         react.createElement("feOffset", { in: 'blur', dx: '0', dy: '0', result: 'offsetBlur' }),
         react.createElement("feFlood", { floodColor: '#82ff61', floodOpacity: '1', result: 'offsetColor' }),
         react.createElement("feComposite", { in: 'offsetColor', in2: 'offsetBlur', operator: 'in', result: 'offsetBlur' })),
-    react.createElement("circle", { cx: '8', cy: '8', r: '9', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-green-blur)' }),
-    react.createElement("circle", { cx: '8', cy: '8', r: '8', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-green-light)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '9', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-green-blur)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '8', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-green-light)' }),
 ]); };
 var ledYellow = function (props) { return ([
     react.createElement("radialGradient", { id: 'fc-led-yellow-light', cx: '.5', cy: '.5', r: '.5', key: "1_" + props.svgId },
@@ -2775,8 +2775,8 @@ var ledYellow = function (props) { return ([
         react.createElement("feOffset", { in: 'blur', dx: '0', dy: '0', result: 'offsetBlur' }),
         react.createElement("feFlood", { floodColor: '#fad97f', floodOpacity: '1', result: 'offsetColor' }),
         react.createElement("feComposite", { in: 'offsetColor', in2: 'offsetBlur', operator: 'in', result: 'offsetBlur' })),
-    react.createElement("circle", { cx: '8', cy: '8', r: '9', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-yellow-blur)' }),
-    react.createElement("circle", { cx: '8', cy: '8', r: '8', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-yellow-light)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '8', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-yellow-blur)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '7', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-yellow-light)' }),
 ]); };
 var ledRed = function (props) { return ([
     react.createElement("radialGradient", { id: 'fc-led-red-light', cx: '.5', cy: '.5', r: '.5', key: "1_" + props.svgId },
@@ -2788,8 +2788,8 @@ var ledRed = function (props) { return ([
         react.createElement("feOffset", { in: 'blur', dx: '0', dy: '0', result: 'offsetBlur' }),
         react.createElement("feFlood", { floodColor: '#f1719a', floodOpacity: '1', result: 'offsetColor' }),
         react.createElement("feComposite", { in: 'offsetColor', in2: 'offsetBlur', operator: 'in', result: 'offsetBlur' })),
-    react.createElement("circle", { cx: '8', cy: '8', r: '9', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-red-blur)' }),
-    react.createElement("circle", { cx: '8', cy: '8', r: '8', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-red-light)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '8', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-red-blur)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '7', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-red-light)' }),
 ]); };
 var ledBlue = function (props) { return ([
     react.createElement("radialGradient", { id: 'fc-led-blue-light', cx: '.5', cy: '.5', r: '.5', key: "1_" + props.svgId },
@@ -2801,8 +2801,8 @@ var ledBlue = function (props) { return ([
         react.createElement("feOffset", { in: 'blur', dx: '0', dy: '0', result: 'offsetBlur' }),
         react.createElement("feFlood", { floodColor: '#71e3f1', floodOpacity: '1', result: 'offsetColor' }),
         react.createElement("feComposite", { in: 'offsetColor', in2: 'offsetBlur', operator: 'in', result: 'offsetBlur' })),
-    react.createElement("circle", { cx: '8', cy: '8', r: '9', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-blue-blur)' }),
-    react.createElement("circle", { cx: '8', cy: '8', r: '8', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-blue-light)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '8', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-blue-blur)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '7', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-blue-light)' }),
 ]); };
 var ledGray = function (props) { return ([
     react.createElement("radialGradient", { id: 'fc-led-gray-light', cx: '.5', cy: '.5', r: '.5', key: "1_" + props.svgId },
@@ -2814,8 +2814,8 @@ var ledGray = function (props) { return ([
         react.createElement("feOffset", { in: 'blur', dx: '0', dy: '0', result: 'offsetBlur' }),
         react.createElement("feFlood", { floodColor: '#9b9b9b', floodOpacity: '1', result: 'offsetColor' }),
         react.createElement("feComposite", { in: 'offsetColor', in2: 'offsetBlur', operator: 'in', result: 'offsetBlur' })),
-    react.createElement("circle", { cx: '8', cy: '8', r: '9', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-gray-blur)' }),
-    react.createElement("circle", { cx: '8', cy: '8', r: '8', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-gray-light)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '8', stroke: 'none', key: "3_" + props.svgId, filter: 'url(#led-gray-blur)' }),
+    react.createElement("circle", { cx: '10', cy: '8', r: '7', stroke: 'none', key: "4_" + props.svgId, fill: 'url(#fc-led-gray-light)' }),
 ]); };
 var warning = function (props) { return ([
     react.createElement("path", { transform: 'scale(0.73)', d: 'M12.5 2 22.026 20 2.974 20 Z', stroke: '#ff9b02', strokeWidth: '3', strokeLinejoin: 'round', fill: '#ff9b02', key: "1_" + props.svgId }),

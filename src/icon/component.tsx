@@ -331,8 +331,8 @@ const ledGreen = (props: SVGProps) => ([
         <feFlood floodColor='#82ff61' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
-    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-green-blur)' />,
-    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-green-light)' />,
+    <circle cx='10' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-green-blur)' />,
+    <circle cx='10' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-green-light)' />,
 ]);
 
 const ledYellow = (props: SVGProps) => ([
@@ -351,8 +351,8 @@ const ledYellow = (props: SVGProps) => ([
         <feFlood floodColor='#fad97f' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
-    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-yellow-blur)' />,
-    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-yellow-light)' />,
+    <circle cx='10' cy='8' r='8' stroke='none' key={`3_${props.svgId}`} filter='url(#led-yellow-blur)' />,
+    <circle cx='10' cy='8' r='7' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-yellow-light)' />,
 ]);
 
 const ledRed = (props: SVGProps) => ([
@@ -371,8 +371,8 @@ const ledRed = (props: SVGProps) => ([
         <feFlood floodColor='#f1719a' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
-    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-red-blur)' />,
-    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-red-light)' />,
+    <circle cx='10' cy='8' r='8' stroke='none' key={`3_${props.svgId}`} filter='url(#led-red-blur)' />,
+    <circle cx='10' cy='8' r='7' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-red-light)' />,
 ]);
 
 const ledBlue = (props: SVGProps) => ([
@@ -391,8 +391,8 @@ const ledBlue = (props: SVGProps) => ([
         <feFlood floodColor='#71e3f1' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
-    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-blue-blur)' />,
-    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-blue-light)' />,
+    <circle cx='10' cy='8' r='8' stroke='none' key={`3_${props.svgId}`} filter='url(#led-blue-blur)' />,
+    <circle cx='10' cy='8' r='7' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-blue-light)' />,
 ]);
 
 const ledGray = (props: SVGProps) => ([
@@ -407,8 +407,8 @@ const ledGray = (props: SVGProps) => ([
         <feFlood floodColor='#9b9b9b' floodOpacity='1' result='offsetColor' />
         <feComposite in='offsetColor' in2='offsetBlur' operator='in' result='offsetBlur' />
     </filter>,
-    <circle cx='8' cy='8' r='9' stroke='none' key={`3_${props.svgId}`} filter='url(#led-gray-blur)' />,
-    <circle cx='8' cy='8' r='8' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-gray-light)' />,
+    <circle cx='10' cy='8' r='8' stroke='none' key={`3_${props.svgId}`} filter='url(#led-gray-blur)' />,
+    <circle cx='10' cy='8' r='7' stroke='none' key={`4_${props.svgId}`} fill='url(#fc-led-gray-light)' />,
 ]);
 
 const warning = (props: SVGProps) => ([
