@@ -306,6 +306,10 @@
     width: min-content;
 }
 
+.cypd-table-container.column-fixed-width table {
+    table-layout: fixed;
+}
+
 .cypd-table-container .table-wrapper {
     border-radius: 3px;
     width: min-content;

@@ -80,6 +80,7 @@ class App extends React.Component {
         ];
         const table = <Table
             headers={['1', '2', '3', '4']}
+            columnWidth={[ 300, 200, 200, 200 ]}
             rows={rows}
             pagination={true}
             rowLimit={10}

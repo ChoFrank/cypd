@@ -36,6 +36,7 @@ type TableProps = {
     onCheck?: (row_idx: number, checked: boolean) => void;
     removeable?: boolean,
     onRemove?: (row_idx: number) => void;
+    className: string;
 }
 
 interface TableState {
@@ -126,12 +127,14 @@ export default class Table extends React.Component<TableProps> {
         this.setState({ tempPage: e.target.value });
     }
     basicBody = (rows: Array<Array<React.ReactNode>>) => {
-        const { headers } = this.props;
+        const { headers, columnWidth } = this.props;
         return (
             <tbody>{rows.map((row, idx) => (
                 <tr className={(idx%2)?'odd':'even'} key={`table-${this.id}-body-row-${idx}`}>
                     {row.map((cell, cell_idx) => (
-                        (cell_idx < headers.length) ? <td key={`table-${this.id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td> : undefined
+                        (cell_idx < headers.length) 
+                            ? <td style={{ width: (columnWidth?`${columnWidth[cell_idx]}px`:undefined) }} key={`table-${this.id}-body-cell-${idx}-${cell_idx}`}><div>{cell}</div></td> 
+                            : undefined
                     )).filter(cell => (!!cell))}
                 </tr>
             ))}</tbody>
@@ -174,12 +177,23 @@ export default class Table extends React.Component<TableProps> {
     render() {
         const id = this.id;
         const { responsive, page, tempPage } =  this.state;
-        const { headers, rows, headerStyle, bodyStyle, pagination, rowLimit, checkable, checkList, onCheck } = this.props;
+        const { className, headers, rows, headerStyle, bodyStyle, pagination, rowLimit, columnWidth, checkable, checkList, onCheck } = this.props;
         let containerClass = `cypd-table-container ${responsive}${checkable?' checkable':''}`;
         let wrapperClass = 'table-wrapper';
+        let columnSum = 0;
+        if (typeof columnWidth !== 'undefined') {
+            containerClass += ' column-fixed-width';
+            for (let i = 0; i < columnWidth.length; i++) {
+                const width = columnWidth[i];
+                columnSum += width;
+            }
+        }
+        if (typeof className !== 'undefined') {
+            containerClass += ` ${className}`;
+        }
         const thead = (
             <thead style={headerStyle}><tr>
-                {headers.map((content, idx) => <th key={`table-${id}-th-${idx}`}>{content}</th>)}
+                {headers.map((content, idx) => <th style={{ width: (columnWidth?columnWidth[idx]:undefined) }} key={`table-${id}-th-${idx}`}>{content}</th>)}
             </tr></thead>
         );
         if (pagination && rowLimit) {
@@ -200,7 +214,7 @@ export default class Table extends React.Component<TableProps> {
                 } else if (responsive === 'shorten') {
                     tbody = this.shortenBody(rows.slice(start_row, end_row));
                 }
-                return <Page key={`cypd-pagination-table-${this.id}-page-${pageno}`}>{(checkable)?checklist:undefined}<table>{thead}{tbody}</table></Page>
+                return <Page key={`cypd-pagination-table-${this.id}-page-${pageno}`}>{(checkable)?checklist:undefined}<table style={{ width: (columnSum?`${columnSum}px`:undefined) }}>{thead}{tbody}</table></Page>
             });
             let goto_buttons = [];
             if (this.calculate_total_pages <= 5) {
@@ -239,7 +253,7 @@ export default class Table extends React.Component<TableProps> {
             } else if (responsive === 'shorten') {
                 tbody = this.shortenBody(rows);
             }
-            const table = <table>{thead}{tbody}</table>;
+            const table = <table style={{ width: (columnSum?`${columnSum}px`:undefined) }}>{thead}{tbody}</table>;
             return (
                 <div className={containerClass} ref={inst => { this.wrapperRef = inst; }}><div className={wrapperClass} style={bodyStyle}>
                     {table}
