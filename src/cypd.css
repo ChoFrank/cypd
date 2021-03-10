@@ -809,6 +809,7 @@
     position: absolute;
     top: 32px;
     left: 0;
+    min-width: 100px;
     width: 100%;
     overflow: hidden;
     border-radius: 3px;
@@ -2013,13 +2014,15 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-formitem-wrapper .cypd-formitem-label {
+    position: relative;
     flex-grow: 0;
     flex-shrink: 0;
 }
 
 .cypd-formitem-wrapper .cypd-formitem-label:not(.no-colon)::after {
+    position: absolute;
+    right: 0;
     content: ':';
-    display: inline;
 }
 
 .cypd-formitem-wrapper.error {
@@ -2555,16 +2558,28 @@ html {
     position: relative;
     min-height: 50px;
     border-bottom: 1px solid #00839E;
+    background-color: white;
     opacity: 1;
     flex-shrink: 0;
     cursor: default;
-    background-color: rgb(245, 245, 245);
     transition: border-color 150ms, opacity 150ms;
     list-style-type: none;
 }
 
+.cypd-list.dark>.cypd-listitem {
+    border-bottom: 1px solid white;
+    background-color: #00839E;
+}
+
+.cypd-list>.cypd-listitem:nth-child(1) {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
 .cypd-list>.cypd-listitem:last-child {
-    border-bottom: 0px;
+    border-color: transparent;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .cypd-list.draggable>.cypd-listitem {
@@ -2575,6 +2590,10 @@ html {
 .cypd-list.draggable>.cypd-listitem.sortable-chosen {
     opacity: 0.5;
     background-color: rgb(216, 216, 216);
+}
+
+.cypd-list.dark.draggable>.cypd-listitem.sortable-chosen {
+    background-color: #44b0c5;
 }
 
 .cypd-list.dragging>.cypd-listitem.hover-top:hover {
@@ -2605,6 +2624,10 @@ html {
     font-weight: bold;
 }
 
+.cypd-list.dark>.cypd-listitem>.shorten>.label {
+    color: white;
+}
+
 .cypd-list>.cypd-listitem>.shorten>.decoration {
     display: flex;
     flex-direction: row;
@@ -2626,8 +2649,16 @@ html {
     transition: color 150ms;
 }
 
+.cypd-list.dark>.cypd-listitem>.shorten>.decoration>.readmore-label {
+    color: rgb(226, 226, 226);
+}
+
 .cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {
     color: #47bbd3;
+}
+
+.cypd-list.dark>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {
+    color: white;
 }
 
 .cypd-list>.cypd-listitem>.readmore-check~.detail {
@@ -2644,6 +2675,11 @@ html {
     opacity: 0;
     padding: 0px;
     transition: opacity 150ms, padding 150ms, max-height 150ms linear 150ms;
+}
+
+.cypd-list.dark>.cypd-listitem>.readmore-check~.detail {
+    color: white;
+    border-top: 1px solid rgb(106, 207, 216);
 }
 
 .cypd-list>.cypd-listitem>.readmore-check:checked~.detail {

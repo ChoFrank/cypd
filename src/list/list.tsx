@@ -62,6 +62,7 @@ declare type ListProperties = {
     className?: string;
     style?: CSSProperties;
     draggable?: boolean;
+    theme?: 'normal' | 'dark'
     onAfterDrag?: (new_order: Array<string>) => void;
 }
 
@@ -254,12 +255,14 @@ export default class SortableList extends React.Component<ListProperties> {
     }
     forceRefreshSortable = () => { this.setState((prevState: ListState) => ({ resetMark: (prevState.resetMark + 1) })) }
     render() {
-        const { items, className, style, draggable } = this.props;
+        const { items, className, style, draggable, theme } = this.props;
         let wrapperClass = 'cypd-list';
         if (className)
             wrapperClass += ` ${className}`;
         if (draggable)
             wrapperClass += ` draggable`;
+        if (theme)
+            wrapperClass += ` ${theme}`;
         return (
             <ul id={this._id} className={wrapperClass} style={style} key={this.state.resetMark}>
                 {items.map((listitem, idx) => {

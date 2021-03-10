@@ -23,6 +23,7 @@ declare type ListProperties = {
     className?: string;
     style?: CSSProperties;
     draggable?: boolean;
+    theme?: 'normal' | 'dark';
     onAfterDrag?: (new_order: Array<string>) => void;
 };
 declare type ListState = {

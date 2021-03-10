@@ -17,6 +17,8 @@ type SwitchButtonProps = {
 
 type SwitchButtonState = {
     calibrateMargin?: number;
+    calibrateTransformOff?: number;
+    calibrateTransformOn?: number;
 }
 
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
@@ -33,9 +35,13 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
             const on_rect = this.onLabel.getBoundingClientRect();
             const off_rect = this.offLabel.getBoundingClientRect();
             if (on_rect.width !== off_rect.width) {
-                const dist = Math.abs(on_rect.width - off_rect.width);
-                if (dist !== calibrateMargin)
-                    this.setState({ calibrateMargin: dist });
+                const dist = Math.abs(on_rect.width - off_rect.width) + 5;
+                const sumwidth = on_rect.width + off_rect.width + dist;
+                if (dist !== calibrateMargin) {
+                    const calcOff = -1 * ((sumwidth * 0.6 - off_rect.width) / 2 - 5);
+                    const calcOn = ((sumwidth * 0.6 - on_rect.width) / 2 - 5);
+                    this.setState({ calibrateMargin: dist, calibrateTransformOn: calcOn, calibrateTransformOff: calcOff });
+                }
             }
         }
     }
@@ -43,7 +49,7 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
     componentDidUpdate() { this.testCalibrateLabel(); }
     render() {
         const { className, disabled, checked, defaultChecked, onChange, readOnly, style, label, type } = this.props;
-        const { calibrateMargin } = this.state;
+        const { calibrateMargin, calibrateTransformOff, calibrateTransformOn } = this.state;
         var wrapperClass = 'cypd-switchbutton-wrapper';
         if (className)
             wrapperClass += ` ${className}`;
@@ -53,6 +59,14 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
             wrapperClass += ` ${type}`;
         if (disabled)
             wrapperClass += ` disabled`;
+
+        const onStyle: React.CSSProperties = {
+            marginRight: `${(calibrateMargin?calibrateMargin:0)}px`,
+            transform: `translateX(${(calibrateTransformOn?calibrateTransformOn:0)}px)`,
+        }
+        const offStyle: React.CSSProperties = {
+            transform: `translateX(${(calibrateTransformOff?calibrateTransformOff:0)}px)`,
+        }
         return (
             <label className={wrapperClass} style={style}>
                 <input 
@@ -69,8 +83,8 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
                 </div> : undefined }
                 <div className='cypd-switchbutton' style={{ display: (type === 'hexigon') ? 'none' : undefined }}>
                     {label ? <div className='display-label'>
-                        <div style={(calibrateMargin) ? { marginRight: `${calibrateMargin}px` } : undefined} ref={ (inst) => { this.onLabel = inst; } } id='on'>{label[0]}</div>
-                        <div ref={ (inst) => { this.offLabel = inst; } } id='off'>{label[1]}</div>
+                        <div style={onStyle} ref={ (inst) => { this.onLabel = inst; } } id='on'>{label[0]}</div>
+                        <div style={offStyle} ref={ (inst) => { this.offLabel = inst; } } id='off'>{label[1]}</div>
                     </div> : undefined}
                 </div>
             </label>

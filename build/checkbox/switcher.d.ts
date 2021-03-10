@@ -12,6 +12,8 @@ declare type SwitchButtonProps = {
 };
 declare type SwitchButtonState = {
     calibrateMargin?: number;
+    calibrateTransformOff?: number;
+    calibrateTransformOn?: number;
 };
 export default class SwitchButton extends React.Component<Partial<SwitchButtonProps>> {
     state: SwitchButtonState;
