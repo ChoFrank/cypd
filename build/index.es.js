@@ -35501,7 +35501,6 @@ function ParseDateTime(str, format) {
         }
     }
     if (parse_order.length > 0) {
-        console.log('parse_order :>> ', parse_order);
         var matcher = new RegExp(parse_pattern);
         var match = matcher.exec(str);
         if (match) {

@@ -78,7 +78,6 @@ function ParseDateTime(str: string, format?: string): Date | undefined {
     }
 
     if (parse_order.length > 0) {
-        console.log('parse_order :>> ', parse_order);
         const matcher = new RegExp(parse_pattern);
         const match = matcher.exec(str);
         if (match) {
