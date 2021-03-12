@@ -2176,6 +2176,7 @@ button.react-calendar__century-view__decades__decade {
     margin-top: 1px;
     box-shadow: none;
     background-color: white;
+    min-width: 40px;
 }
 
 .cypd-digital-clock-wrapper .cypd-options-container .cypd-option label {
