@@ -35443,7 +35443,7 @@ var toIntegerFixed = function (v, len) {
         ret = "0" + ret;
     return ret;
 };
-var FormatDateTime = function (date, format, clockSystem) {
+function FormatDateTime(date, format, clockSystem) {
     var r = (clockSystem === '12-hour') ? ((date.getHours() < 12) ? 'AM ' : 'PM ') : '';
     r += format ? format.slice() : 'YYYY-MM-DD HH:mm:ss';
     r = r.replace('YYYY', toIntegerFixed(date.getFullYear(), 4).toString());
@@ -35459,7 +35459,84 @@ var FormatDateTime = function (date, format, clockSystem) {
         r = r.replace('HH', toIntegerFixed(date.getHours(), 2).toString());
     }
     return r;
-};
+}
+function ParseDateTime(str, format) {
+    var parse = new Date();
+    var use_format = (format) ? format.slice() : 'YYYY-MM-DD HH:mm:ss';
+    var symbol_parse = ['YYYY', 'MM', 'DD', 'HH', 'mm', 'ss', 'sss'];
+    var symbol_index = symbol_parse.map(function (symbol) {
+        var search = use_format.indexOf(symbol);
+        if (symbol === 'ss' && search >= 0) {
+            var sss_search = use_format.indexOf('sss');
+            if (search === sss_search) {
+                // avoid conflict with 'sss'
+                return use_format.substr(sss_search + 3).indexOf('ss');
+            }
+        }
+        return search;
+    });
+    var parse_order = [];
+    var parse_pattern = use_format.slice();
+    for (var i = 0; i < symbol_parse.length; i++) {
+        var symbol = symbol_parse[i];
+        var search = symbol_index[i];
+        if (search >= 0) {
+            var insert_idx = 0;
+            for (var j = 0; j < parse_order.length; j++) {
+                var exist_symbol = parse_order[j];
+                var exist_search = symbol_index[symbol_parse.indexOf(exist_symbol)];
+                if (exist_search < search) {
+                    // find next insert point
+                    insert_idx = j + 1;
+                }
+                else if (exist_search > search) {
+                    // insert here
+                    break;
+                }
+            }
+            // record parse order
+            parse_order.splice(insert_idx, 0, symbol);
+            // generate parse pattern
+            parse_pattern = parse_pattern.replace(symbol, '(\\d+)');
+        }
+    }
+    if (parse_order.length > 0) {
+        console.log('parse_order :>> ', parse_order);
+        var matcher = new RegExp(parse_pattern);
+        var match = matcher.exec(str);
+        if (match) {
+            var match_array_1 = Array.from(match).slice(1);
+            parse_order.forEach(function (symbol, order) {
+                var val = parseInt(match_array_1[order]);
+                if (symbol === 'YYYY') {
+                    parse.setFullYear(val);
+                }
+                else if (symbol === 'MM') {
+                    parse.setMonth((val - 1));
+                }
+                else if (symbol === 'DD') {
+                    parse.setDate(val);
+                }
+                else if (symbol === 'HH') {
+                    parse.setHours(val);
+                }
+                else if (symbol === 'mm') {
+                    parse.setMinutes(val);
+                }
+                else if (symbol === 'ss') {
+                    parse.setSeconds(val);
+                }
+                else if (symbol === 'sss') {
+                    parse.setMilliseconds(val);
+                }
+            });
+        }
+        else {
+            return undefined;
+        }
+    }
+    return parse;
+}
 var TimePicker = /** @class */ (function (_super) {
     __extends(TimePicker, _super);
     function TimePicker(props) {
@@ -35589,7 +35666,7 @@ var DatePicker = /** @class */ (function (_super) {
     };
     return DatePicker;
 }(react.Component));
-var datetimepicker = { DatePicker: DatePicker, FormatDateTime: FormatDateTime, TimePicker: TimePicker };
+var datetimepicker = { DatePicker: DatePicker, FormatDateTime: FormatDateTime, ParseDateTime: ParseDateTime, TimePicker: TimePicker };
 
 var SwitchButton = /** @class */ (function (_super) {
     __extends(SwitchButton, _super);

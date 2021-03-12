@@ -1,5 +1,7 @@
 import React, { CSSProperties } from 'react';
 declare type ClockSystemType = '12-hour' | '24-hour';
+declare function FormatDateTime(date: Date, format?: string, clockSystem?: ClockSystemType): string;
+declare function ParseDateTime(str: string, format?: string): Date | undefined;
 declare type TimePickerProps = {
     value: Date;
     format: string;
@@ -57,7 +59,8 @@ declare class DatePicker extends React.Component<Partial<DatePickerProps>> {
 }
 declare const _default: {
     DatePicker: typeof DatePicker;
-    FormatDateTime: (date: Date, format?: string | undefined, clockSystem?: "12-hour" | "24-hour" | undefined) => string;
+    FormatDateTime: typeof FormatDateTime;
+    ParseDateTime: typeof ParseDateTime;
     TimePicker: typeof TimePicker;
 };
 export default _default;

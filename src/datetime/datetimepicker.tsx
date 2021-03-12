@@ -15,7 +15,7 @@ const toIntegerFixed = (v: number, len: number) => {
     return ret;
 }
 
-const FormatDateTime = (date: Date, format?: string, clockSystem?: ClockSystemType): string => {
+function FormatDateTime(date: Date, format?: string, clockSystem?: ClockSystemType): string {
     var r = (clockSystem === '12-hour') ? ((date.getHours() < 12) ? 'AM ': 'PM ') : '';
     r += format ? format.slice() : 'YYYY-MM-DD HH:mm:ss';
     r = r.replace('YYYY', toIntegerFixed(date.getFullYear(), 4).toString());
@@ -30,6 +30,83 @@ const FormatDateTime = (date: Date, format?: string, clockSystem?: ClockSystemTy
         r = r.replace('HH', toIntegerFixed(date.getHours(), 2).toString());
     }
     return r;
+}
+
+function ParseDateTime(str: string, format?: string): Date | undefined {
+    const parse = new Date();
+    const use_format = (format) ? format.slice() : 'YYYY-MM-DD HH:mm:ss';
+    const symbol_parse = [ 'YYYY', 'MM', 'DD', 'HH', 'mm', 'ss', 'sss' ];
+    const symbol_index = symbol_parse.map(symbol => {
+        const search = use_format.indexOf(symbol);
+        if (symbol === 'ss' && search >= 0) {
+            const sss_search = use_format.indexOf('sss');
+            if (search === sss_search) {
+                // avoid conflict with 'sss'
+                return use_format.substr(sss_search + 3).indexOf('ss');
+            }
+        }
+        return search;
+    });
+    const parse_order: Array<string> = [];
+    let parse_pattern = use_format.slice();
+
+    for (let i = 0; i < symbol_parse.length; i++) {
+        const symbol = symbol_parse[i];
+        const search = symbol_index[i];
+
+        if (search >= 0) {
+            let insert_idx = 0;
+
+            for (let j = 0; j < parse_order.length; j++) {
+                const exist_symbol = parse_order[j];
+                const exist_search = symbol_index[symbol_parse.indexOf(exist_symbol)];
+                if (exist_search < search) {
+                    // find next insert point
+                    insert_idx = j + 1;
+                } else if (exist_search > search) {
+                    // insert here
+                    break;
+                } else {
+                    // never happen!!!
+                }
+            }
+            // record parse order
+            parse_order.splice(insert_idx, 0, symbol);
+            // generate parse pattern
+            parse_pattern = parse_pattern.replace(symbol, '(\\d+)');
+        }
+    }
+
+    if (parse_order.length > 0) {
+        console.log('parse_order :>> ', parse_order);
+        const matcher = new RegExp(parse_pattern);
+        const match = matcher.exec(str);
+        if (match) {
+            const match_array = Array.from(match).slice(1);
+            parse_order.forEach((symbol, order) => {
+                const val = parseInt(match_array[order]);
+                if (symbol === 'YYYY') {
+                    parse.setFullYear(val);
+                } else if (symbol === 'MM') {
+                    parse.setMonth((val - 1));
+                } else if (symbol === 'DD') {
+                    parse.setDate(val);
+                } else if (symbol === 'HH') {
+                    parse.setHours(val);
+                } else if (symbol === 'mm') {
+                    parse.setMinutes(val);
+                } else if (symbol === 'ss') {
+                    parse.setSeconds(val);
+                } else if (symbol === 'sss') {
+                    parse.setMilliseconds(val);
+                }
+            });
+        } else {
+            return undefined;
+        }
+    }
+
+    return parse;
 }
 
 // declare type HourType = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23;
@@ -199,4 +276,4 @@ class DatePicker extends React.Component<Partial<DatePickerProps>> {
         );
     }
 };
-export default { DatePicker, FormatDateTime, TimePicker };
+export default { DatePicker, FormatDateTime, ParseDateTime, TimePicker };
