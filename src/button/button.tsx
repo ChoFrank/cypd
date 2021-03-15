@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Icon from '../icon/component';
+import Tooltip from '../tooltip/component';
 
 
 type ButtonProps = {
@@ -13,22 +14,25 @@ type ButtonProps = {
     shape: 'round',
     iconColor: string,
     onClick: (e: React.MouseEvent) => void,
+    tooltip?: string,
+    tooltipDirection?: 'top' | 'bottom' | 'left' | 'right',
 }
 
 export default class Button extends React.Component<Partial<ButtonProps>> {
     render() {
-        const { type, icon, shape, iconColor, className, style, disabled, size, onClick } = this.props;
-        let classString: string = 'cypd-button ';
+        const { type, icon, shape, iconColor, className, style, disabled, size, tooltip, tooltipDirection, onClick } = this.props;
+        let classString: string = 'cypd-button';
         let icon_node: React.ReactNode;
         let icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
+
         if (disabled) {
-            classString += 'disabled';
+            classString += ' disabled';
             icon_default_color = 'rgb(185, 185, 185)';
         } else {
             if (type) 
-                classString += type;
+                classString += ` ${type}`;
             else 
-                classString += 'default';
+                classString += ' default';
         }
         if (icon)
             icon_node = <Icon type={icon} color={(iconColor)?iconColor:icon_default_color}/>;
@@ -41,11 +45,17 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
         if (shape)
             classString += ` ${shape}`;
         classString += (size) ? ` ${size}` : '';
-        return (
+
+        const button = (
             <div className={classString} style={style} onClick={(disabled)?undefined:onClick}>
                 <div className='wrap-icon'>{icon_node}</div>
                 <div className='context'>{this.props.children}</div>
+                {tooltip ? (
+                    <Tooltip fillinOutside text={tooltip} direction={tooltipDirection?tooltipDirection:'top'}/>
+                ) : undefined}
             </div>
         );
+
+        return button;
     }
 };

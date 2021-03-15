@@ -3,6 +3,7 @@ declare type TooltipProps = {
     text: string;
     direction?: 'top' | 'bottom' | 'left' | 'right';
     className?: string;
+    fillinOutside?: boolean;
 };
 export default class Tooltip extends React.Component<TooltipProps> {
     tooltipId: string;

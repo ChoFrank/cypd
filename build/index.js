@@ -3100,25 +3100,85 @@ var Modal = /** @class */ (function (_super) {
     return Modal;
 }(react.Component));
 
+var Tooltip = /** @class */ (function (_super) {
+    __extends(Tooltip, _super);
+    function Tooltip() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.tooltipId = Math.random().toString().slice(2);
+        _this.create = function () {
+            var container = document.getElementById(_this.tooltipId);
+            if (!container && _this.wrapperRef) {
+                var rect = _this.wrapperRef.getBoundingClientRect();
+                var _a = _this.props, direction = _a.direction, text = _a.text;
+                var use_direction = (direction) ? direction : 'bottom';
+                container = document.createElement('div');
+                container.id = _this.tooltipId;
+                container.classList.add('cypd-tooltip');
+                container.classList.add(use_direction);
+                container.innerText = text;
+                if (use_direction === 'left') {
+                    container.style.left = window.pageXOffset + rect.left + "px";
+                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
+                }
+                else if (use_direction === 'right') {
+                    container.style.left = window.pageXOffset + rect.right + "px";
+                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
+                }
+                else if (use_direction === 'top') {
+                    container.style.left = window.pageYOffset + rect.left + (rect.width / 2) + "px";
+                    container.style.top = window.pageYOffset + rect.top + "px";
+                }
+                else {
+                    container.style.left = window.pageXOffset + rect.left + (rect.width / 2) + "px";
+                    container.style.top = window.pageYOffset + rect.bottom + "px";
+                }
+                document.body.appendChild(container);
+                setTimeout(function () { if (container)
+                    container.classList.add('active'); }, 1000);
+            }
+        };
+        _this.delete = function () {
+            var container = document.getElementById(_this.tooltipId);
+            if (container) {
+                container.classList.add('hide');
+                setTimeout(function () { if (container && document.getElementById(container.id))
+                    document.body.removeChild(container); }, 150);
+                // setTimeout(() => { if (container) container.remove(); }, 150);
+            }
+        };
+        return _this;
+    }
+    Tooltip.prototype.componentWillUnmount = function () { this.delete(); };
+    Tooltip.prototype.render = function () {
+        var _this = this;
+        var _a = this.props, className = _a.className, fillinOutside = _a.fillinOutside;
+        var wrapperClass = 'cypd-tooltip-wrapper';
+        if (className)
+            wrapperClass += " " + className;
+        return (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete, style: (fillinOutside) ? { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 } : undefined }, this.props.children));
+    };
+    return Tooltip;
+}(react.Component));
+
 var Button = /** @class */ (function (_super) {
     __extends(Button, _super);
     function Button() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, type = _a.type, icon = _a.icon, shape = _a.shape, iconColor = _a.iconColor, className = _a.className, style = _a.style, disabled = _a.disabled, size = _a.size, onClick = _a.onClick;
-        var classString = 'cypd-button ';
+        var _a = this.props, type = _a.type, icon = _a.icon, shape = _a.shape, iconColor = _a.iconColor, className = _a.className, style = _a.style, disabled = _a.disabled, size = _a.size, tooltip = _a.tooltip, tooltipDirection = _a.tooltipDirection, onClick = _a.onClick;
+        var classString = 'cypd-button';
         var icon_node;
         var icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
         if (disabled) {
-            classString += 'disabled';
+            classString += ' disabled';
             icon_default_color = 'rgb(185, 185, 185)';
         }
         else {
             if (type)
-                classString += type;
+                classString += " " + type;
             else
-                classString += 'default';
+                classString += ' default';
         }
         if (icon)
             icon_node = react.createElement(Icon, { type: icon, color: (iconColor) ? iconColor : icon_default_color });
@@ -3131,9 +3191,11 @@ var Button = /** @class */ (function (_super) {
         if (shape)
             classString += " " + shape;
         classString += (size) ? " " + size : '';
-        return (react.createElement("div", { className: classString, style: style, onClick: (disabled) ? undefined : onClick },
+        var button = (react.createElement("div", { className: classString, style: style, onClick: (disabled) ? undefined : onClick },
             react.createElement("div", { className: 'wrap-icon' }, icon_node),
-            react.createElement("div", { className: 'context' }, this.props.children)));
+            react.createElement("div", { className: 'context' }, this.props.children),
+            tooltip ? (react.createElement(Tooltip, { fillinOutside: true, text: tooltip, direction: tooltipDirection ? tooltipDirection : 'top' })) : undefined));
+        return button;
     };
     return Button;
 }(react.Component));
@@ -30361,64 +30423,6 @@ var Tree = /** @class */ (function (_super) {
     return Tree;
 }(react.Component));
 var component$1 = { Tree: Tree, Node: Node };
-
-var Tooltip = /** @class */ (function (_super) {
-    __extends(Tooltip, _super);
-    function Tooltip() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.tooltipId = Math.random().toString().slice(2);
-        _this.create = function () {
-            var container = document.getElementById(_this.tooltipId);
-            if (!container && _this.wrapperRef) {
-                var rect = _this.wrapperRef.getBoundingClientRect();
-                var direction = _this.props.direction;
-                container = document.createElement('div');
-                container.id = _this.tooltipId;
-                container.classList.add('cypd-tooltip');
-                container.classList.add((_this.props.direction) ? _this.props.direction : 'bottom');
-                container.innerText = _this.props.text;
-                if (direction === 'left') {
-                    container.style.left = window.pageXOffset + rect.left + "px";
-                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
-                }
-                else if (direction === 'right') {
-                    container.style.left = window.pageXOffset + rect.right + "px";
-                    container.style.top = window.pageYOffset + rect.top + (rect.height / 2) + "px";
-                }
-                else if (direction === 'top') {
-                    container.style.left = window.pageYOffset + rect.left + (rect.width / 2) + "px";
-                    container.style.top = window.pageYOffset + rect.top + "px";
-                }
-                else {
-                    container.style.left = window.pageXOffset + rect.left + (rect.width / 2) + "px";
-                    container.style.top = window.pageYOffset + rect.bottom + "px";
-                }
-                document.body.appendChild(container);
-                setTimeout(function () { if (container)
-                    container.classList.add('active'); }, 1000);
-            }
-        };
-        _this.delete = function () {
-            var container = document.getElementById(_this.tooltipId);
-            if (container) {
-                container.classList.add('hide');
-                setTimeout(function () { if (container && document.getElementById(container.id))
-                    document.body.removeChild(container); }, 150);
-                // setTimeout(() => { if (container) container.remove(); }, 150);
-            }
-        };
-        return _this;
-    }
-    Tooltip.prototype.componentWillUnmount = function () { this.delete(); };
-    Tooltip.prototype.render = function () {
-        var _this = this;
-        var wrapperClass = 'cypd-tooltip-wrapper';
-        if (this.props.className)
-            wrapperClass += " " + this.props.className;
-        return (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete }, this.props.children));
-    };
-    return Tooltip;
-}(react.Component));
 
 var props_proc = function (props) {
     var value = props.value, min = props.min, max = props.max, step = props.step;

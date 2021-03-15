@@ -75,7 +75,7 @@ class App extends React.Component {
             [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button icon='update' onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
             [<Icon type='led-blue' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
             [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button icon='move' onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='import' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
+            [<Icon type='led-red' />, <Button type='primary' icon='import' tooltip='aipusdvbaisu' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
             ['', <DateTime.TimePicker />, <DateTime.DatePicker />, <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />],
         ];
         const table = <Table

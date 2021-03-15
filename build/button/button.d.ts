@@ -9,6 +9,8 @@ declare type ButtonProps = {
     shape: 'round';
     iconColor: string;
     onClick: (e: React.MouseEvent) => void;
+    tooltip?: string;
+    tooltipDirection?: 'top' | 'bottom' | 'left' | 'right';
 };
 export default class Button extends React.Component<Partial<ButtonProps>> {
     render(): JSX.Element;

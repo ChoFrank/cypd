@@ -4,7 +4,8 @@ import React from 'react';
 type TooltipProps = {
     text: string,
     direction?: 'top' | 'bottom' | 'left' | 'right',
-    className?: string
+    className?: string,
+    fillinOutside?: boolean,
 }
 
 export default class Tooltip extends React.Component<TooltipProps> {
@@ -15,19 +16,20 @@ export default class Tooltip extends React.Component<TooltipProps> {
         var container = document.getElementById(this.tooltipId);
         if (!container && this.wrapperRef) {
             const rect = this.wrapperRef.getBoundingClientRect();
-            const { direction } = this.props;
+            const { direction, text } = this.props;
+            const use_direction = (direction)?direction:'bottom';
             container = document.createElement('div');
             container.id = this.tooltipId;
             container.classList.add('cypd-tooltip');
-            container.classList.add((this.props.direction)?this.props.direction:'bottom');
-            container.innerText = this.props.text;
-            if (direction === 'left') {
+            container.classList.add(use_direction);
+            container.innerText = text;
+            if (use_direction === 'left') {
                 container.style.left = `${window.pageXOffset + rect.left}px`;
                 container.style.top = `${window.pageYOffset + rect.top + (rect.height / 2)}px`;
-            } else if (direction === 'right') {
+            } else if (use_direction === 'right') {
                 container.style.left = `${window.pageXOffset + rect.right}px`;
                 container.style.top = `${window.pageYOffset + rect.top + (rect.height / 2)}px`;
-            } else if (direction === 'top') {
+            } else if (use_direction === 'top') {
                 container.style.left = `${window.pageYOffset + rect.left + (rect.width / 2)}px`;
                 container.style.top = `${window.pageYOffset + rect.top}px`;
             } else {
@@ -47,15 +49,17 @@ export default class Tooltip extends React.Component<TooltipProps> {
         }
     }
     render() {
+        const { className, fillinOutside } = this.props;
         var wrapperClass = 'cypd-tooltip-wrapper';
-        if (this.props.className)
-            wrapperClass += ` ${this.props.className}`;
+        if (className)
+            wrapperClass += ` ${className}`;
         return (
             <div 
                 className={wrapperClass} 
                 ref={(inst) => { this.wrapperRef = inst; }} 
                 onMouseEnter={this.create} 
                 onMouseLeave={this.delete}
+                style={(fillinOutside) ? { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 } : undefined}
             >
                 {this.props.children}
             </div>
