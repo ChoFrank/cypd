@@ -1889,7 +1889,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-tooltip.bottom-left::before {
-    top: 50%;
+    left: 80%;
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMHB4JyBoZWlnaHQ9JzEwcHgnIG92ZXJmbG93PSd2aXNpYmxlJz48cGF0aCBkPSdNMTAgMCAwIDEwIDEwIDEwIFonIGZpbGw9J3JnYigwLDEzMSwxNTgpJyAvPjwvc3ZnPg==");
     /* background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10px' height='10px' overflow='visible'><path d='M10 0 0 10 10 10 Z' fill='rgb(0,131,158)' /></svg>"); */
 }
