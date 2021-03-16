@@ -10,7 +10,7 @@ declare type ButtonProps = {
     iconColor: string;
     onClick: (e: React.MouseEvent) => void;
     tooltip?: string;
-    tooltipDirection?: 'top' | 'bottom' | 'left' | 'right';
+    tooltipDirection?: ('top' | 'bottom' | 'left' | 'right' | 'top-right' | 'top-left' | 'right-top' | 'right-bottom' | 'bottom-right' | 'bottom-left' | 'left-bottom' | 'left-top');
 };
 export default class Button extends React.Component<Partial<ButtonProps>> {
     render(): JSX.Element;

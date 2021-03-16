@@ -66,6 +66,7 @@ class App extends React.Component {
             <Option value='3' key={Math.random()}>David</Option>,
             <Option value='4' key={Math.random()}>Chris</Option>,
         ]
+        const tooltip_sample = 'Return to main dashboard page where setup and configuration of the unit is performed.';
         const rows = [
             [<Icon type='loading' />, <Slider max={10} min={-10} step={1} value={this.state.progress} onAfterChange={(v) => { this.setState({ progress: v }); }} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
             [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
@@ -73,9 +74,9 @@ class App extends React.Component {
             [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked checkedType='square'/><Checkbox label='Afternoon' checkedType='square' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
             [<Icon type='led-yellow' />, <Button type='primary' icon='stop' iconColor='white' onClick={() => { this.setState({ progress: 6 }) }}>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
             [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo}>Warning</Button>, <Button icon='update' onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo}>Error</Button>],
-            [<Icon type='led-blue' />, <Button type='primary' size='small' icon='edit'>Submit</Button>, <Button size='small'>Click</Button>, <Button icon='trashcan' type='danger' size='small'>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='edit'>Submit</Button>, <Button icon='move' onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger'>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='import' tooltip='aipusdvbaisu' />, <Button icon='zoom-out' />, <Button icon='square-minus' type='danger' />],
+            [<Icon type='led-blue' />, <Button type='primary' size='small' icon='edit' tooltipDirection='left-top' tooltip={tooltip_sample}>Submit</Button>, <Button size='small' tooltipDirection='top' tooltip={tooltip_sample}>Click</Button>, <Button icon='trashcan' type='danger' size='small' tooltipDirection='right-top' tooltip={tooltip_sample}>Delete</Button>],
+            [<Icon type='led-red' />, <Button type='primary' icon='edit' tooltipDirection='left' tooltip={tooltip_sample}>Submit</Button>, <Button icon='move' onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger' tooltipDirection='right' tooltip={tooltip_sample}>Delete</Button>],
+            [<Icon type='led-red' />, <Button type='primary' icon='import' tooltipDirection='left-bottom' tooltip={tooltip_sample} />, <Button icon='zoom-out' tooltipDirection='bottom' tooltip={tooltip_sample} />, <Button icon='square-minus' type='danger' tooltipDirection='right-bottom' tooltip={tooltip_sample} />],
             ['', <DateTime.TimePicker />, <DateTime.DatePicker />, <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />],
         ];
         const table = <Table
@@ -164,7 +165,7 @@ class App extends React.Component {
                         <Layout.Center>
                             <div className='app_dashboard_container'>
                                 {table}
-                                <div className='empty_demo_wrapper'><Tooltip text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
+                                <div className='empty_demo_wrapper'><Tooltip direction='top-left' text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
                                 <div className='empty_demo_wrapper'><Cone color='yellow' /></div>
                                 <div className='icon_demo_wrapper'>
                                     {icondemo}
