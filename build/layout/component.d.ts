@@ -18,6 +18,9 @@ declare type NavitemProps = {
     children?: Array<NavitemProps>;
     className?: string;
     style?: React.CSSProperties;
+    tooltip?: string;
+    tooltipDirection?: ('top' | 'bottom' | 'left' | 'right' | 'top-right' | 'top-left' | 'right-top' | 'right-bottom' | 'bottom-right' | 'bottom-left' | 'left-bottom' | 'left-top');
+    tooltipFixedWidth?: number | string;
     onClick?: () => void;
 };
 declare class NavigationItem extends React.Component<NavitemProps> {
@@ -42,6 +45,9 @@ interface SiderProps {
     style?: CSSProperties;
     toggleClass?: string;
     toggleStyle?: CSSProperties;
+    toggleTooltip?: string;
+    toggleTooltipDirection?: ('top' | 'bottom' | 'left' | 'right' | 'top-right' | 'top-left' | 'right-top' | 'right-bottom' | 'bottom-right' | 'bottom-left' | 'left-bottom' | 'left-top');
+    toggleTooltipFixedWidth?: number | string;
     onCollapse?: (visible: boolean) => void;
 }
 declare class Layout extends React.Component {

@@ -2,6 +2,7 @@ import React, { CSSProperties } from 'react';
 import ReactDOM from 'react-dom';
 
 import Icon from '../icon/component';
+import Tooltip from '../tooltip/component';
 
 
 type CenterExtendType = 'extend-left' | 'extend-right' | 'extend-both' | 'collapsed';
@@ -26,6 +27,13 @@ declare type NavitemProps = {
     children?: Array<NavitemProps>;
     className?: string;
     style?: React.CSSProperties;
+    tooltip?: string,
+    tooltipDirection?: ('top' | 'bottom' | 'left' | 'right' 
+        | 'top-right' | 'top-left' 
+        | 'right-top' | 'right-bottom'
+        | 'bottom-right' | 'bottom-left'
+        | 'left-bottom' | 'left-top'),
+    tooltipFixedWidth?: number | string,
     onClick?: () => void;
 }
 
@@ -67,12 +75,32 @@ class NavigationItem extends React.Component<NavitemProps> {
     }
     render() {
         const { extend } = this.state;
-        const { label, icon, disabled, children, className, style } = this.props;
+        const { label, icon, disabled, children, className, style, tooltip, tooltipDirection, tooltipFixedWidth } = this.props;
         const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
+        let checkSiderOpen: boolean = false;
+
+        if (window.layout.leftSideStatus) {
+            /* layout use left sider (may also use right sider in the same time) */
+            /* but we just ignore... there hasn't been an acceptable solution yet */
+            checkSiderOpen = (window.layout.leftSideStatus === 'extend');
+        }
+        // if (window.layout.rightSideStatus) {
+        //     /* layout use right sider (may also use left sider in the same time) */
+        //     checkSiderOpen = (window.layout.rightSideStatus === 'extend');
+        // }
+
         return (!disabled) ? (
             <div className={wrapperClass} style={style}>
                 {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
-                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} className='icon'><Icon type={(icon) ? icon : ''} color='white' /></div>
+                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} className='icon'>
+                    <Icon type={(icon) ? icon : ''} color='white' />
+                    {(tooltip && !extend && !checkSiderOpen) ? <Tooltip
+                        fillinOutside
+                        text={tooltip}
+                        direction={tooltipDirection?tooltipDirection:'right'}
+                        fixedWidth={tooltipFixedWidth}
+                    /> : undefined}
+                </div>
                 <div className='label' onMouseDown={this.direct}>{label}</div>
                 {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
                 {children ? <div className='toggler'></div> : undefined}
@@ -90,6 +118,13 @@ interface SiderProps {
     style?: CSSProperties,
     toggleClass?: string,
     toggleStyle?: CSSProperties,
+    toggleTooltip?: string,
+    toggleTooltipDirection?: ('top' | 'bottom' | 'left' | 'right' 
+        | 'top-right' | 'top-left' 
+        | 'right-top' | 'right-bottom'
+        | 'bottom-right' | 'bottom-left'
+        | 'left-bottom' | 'left-top'),
+    toggleTooltipFixedWidth?: number | string,
     onCollapse?: (visible: boolean) => void,
 }
 
@@ -124,11 +159,17 @@ class Sider extends React.Component<SiderProps> {
     toggler: HTMLInputElement | undefined | null;
     // mouseInToggleArea: boolean = false;
     componentDidMount() {
-        const { toggleClass, toggleStyle } = this.props;
+        const { toggleClass, toggleStyle, toggleTooltip, toggleTooltipDirection, toggleTooltipFixedWidth } = this.props;
         const toggler = (
             <label className={`toggle${toggleClass ? ` ${toggleClass}` : ''}`} style={toggleStyle}>
                 <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox' />
                 <div /><div /><div />
+                {toggleTooltip ? <Tooltip
+                    fillinOutside
+                    text={toggleTooltip}
+                    direction={toggleTooltipDirection?toggleTooltipDirection:'right'}
+                    fixedWidth={toggleTooltipFixedWidth}
+                /> : undefined}
             </label>
         );
         const header = document.getElementById('__cypd_header_container');
