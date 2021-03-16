@@ -3159,8 +3159,15 @@ var Tooltip = /** @class */ (function (_super) {
             var container = document.getElementById(_this.tooltipId);
             if (container) {
                 container.classList.add('hide');
-                setTimeout(function () { if (container && document.getElementById(container.id))
-                    document.body.removeChild(container); }, 150);
+                setTimeout(function () {
+                    try {
+                        if (container && document.getElementById(container.id))
+                            document.body.removeChild(container);
+                    }
+                    catch (e) {
+                        console.log('cypd error :>> ', e);
+                    }
+                }, 150);
                 // setTimeout(() => { if (container) container.remove(); }, 150);
             }
         };
