@@ -15,6 +15,7 @@ type ButtonProps = {
     iconColor: string,
     onClick: (e: React.MouseEvent) => void,
     tooltip?: string,
+    tooltipFixedWidth?: string | number,
     tooltipDirection?: ('top' | 'bottom' | 'left' | 'right' 
         | 'top-right' | 'top-left' 
         | 'right-top' | 'right-bottom'
@@ -24,7 +25,7 @@ type ButtonProps = {
 
 export default class Button extends React.Component<Partial<ButtonProps>> {
     render() {
-        const { type, icon, shape, iconColor, className, style, disabled, size, tooltip, tooltipDirection, onClick } = this.props;
+        const { type, icon, shape, iconColor, className, style, disabled, size, tooltip, tooltipDirection, tooltipFixedWidth, onClick } = this.props;
         let classString: string = 'cypd-button';
         let icon_node: React.ReactNode;
         let icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
@@ -55,7 +56,7 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
                 <div className='wrap-icon'>{icon_node}</div>
                 <div className='context'>{this.props.children}</div>
                 {tooltip ? (
-                    <Tooltip fillinOutside text={tooltip} direction={tooltipDirection?tooltipDirection:'top'}/>
+                    <Tooltip fillinOutside text={tooltip} fixedWidth={tooltipFixedWidth} direction={tooltipDirection?tooltipDirection:'top'}/>
                 ) : undefined}
             </div>
         );

@@ -3109,7 +3109,7 @@ var Tooltip = /** @class */ (function (_super) {
             var container = document.getElementById(_this.tooltipId);
             if (!container && _this.wrapperRef) {
                 var rect = _this.wrapperRef.getBoundingClientRect();
-                var _a = _this.props, direction = _a.direction, text = _a.text, timeout = _a.timeout;
+                var _a = _this.props, direction = _a.direction, text = _a.text, timeout = _a.timeout, fixedWidth = _a.fixedWidth;
                 var use_direction = (direction) ? direction : 'bottom';
                 container = document.createElement('div');
                 container.id = _this.tooltipId;
@@ -3155,6 +3155,10 @@ var Tooltip = /** @class */ (function (_super) {
                     container.style.top = bottomY;
                 }
                 document.body.appendChild(container);
+                if (typeof fixedWidth !== 'undefined') {
+                    container.style.maxWidth = 'none';
+                    container.style.width = (typeof fixedWidth === 'number') ? fixedWidth + "px" : fixedWidth;
+                }
                 setTimeout(function () { if (container)
                     container.classList.add('active'); }, (timeout ? timeout : 1000));
             }
@@ -3195,7 +3199,7 @@ var Button = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, type = _a.type, icon = _a.icon, shape = _a.shape, iconColor = _a.iconColor, className = _a.className, style = _a.style, disabled = _a.disabled, size = _a.size, tooltip = _a.tooltip, tooltipDirection = _a.tooltipDirection, onClick = _a.onClick;
+        var _a = this.props, type = _a.type, icon = _a.icon, shape = _a.shape, iconColor = _a.iconColor, className = _a.className, style = _a.style, disabled = _a.disabled, size = _a.size, tooltip = _a.tooltip, tooltipDirection = _a.tooltipDirection, tooltipFixedWidth = _a.tooltipFixedWidth, onClick = _a.onClick;
         var classString = 'cypd-button';
         var icon_node;
         var icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
@@ -3223,7 +3227,7 @@ var Button = /** @class */ (function (_super) {
         var button = (react.createElement("div", { className: classString, style: style, onClick: (disabled) ? undefined : onClick },
             react.createElement("div", { className: 'wrap-icon' }, icon_node),
             react.createElement("div", { className: 'context' }, this.props.children),
-            tooltip ? (react.createElement(Tooltip, { fillinOutside: true, text: tooltip, direction: tooltipDirection ? tooltipDirection : 'top' })) : undefined));
+            tooltip ? (react.createElement(Tooltip, { fillinOutside: true, text: tooltip, fixedWidth: tooltipFixedWidth, direction: tooltipDirection ? tooltipDirection : 'top' })) : undefined));
         return button;
     };
     return Button;

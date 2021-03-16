@@ -5,6 +5,7 @@ declare type TooltipProps = {
     className?: string;
     fillinOutside?: boolean;
     timeout?: number;
+    fixedWidth?: number | string;
 };
 export default class Tooltip extends React.Component<TooltipProps> {
     tooltipId: string;

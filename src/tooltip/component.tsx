@@ -11,6 +11,7 @@ type TooltipProps = {
     className?: string,
     fillinOutside?: boolean,
     timeout?: number,
+    fixedWidth?: number | string,
 }
 
 export default class Tooltip extends React.Component<TooltipProps> {
@@ -21,7 +22,7 @@ export default class Tooltip extends React.Component<TooltipProps> {
         var container = document.getElementById(this.tooltipId);
         if (!container && this.wrapperRef) {
             const rect = this.wrapperRef.getBoundingClientRect();
-            const { direction, text, timeout } = this.props;
+            const { direction, text, timeout, fixedWidth } = this.props;
             const use_direction = (direction)?direction:'bottom';
             container = document.createElement('div');
             container.id = this.tooltipId;
@@ -60,6 +61,10 @@ export default class Tooltip extends React.Component<TooltipProps> {
                 container.style.top = bottomY;
             }
             document.body.appendChild(container);
+            if (typeof fixedWidth !== 'undefined') {
+                container.style.maxWidth = 'none';
+                container.style.width = (typeof fixedWidth === 'number') ? `${fixedWidth}px` : fixedWidth;
+            }
             setTimeout(() => { if (container) container.classList.add('active') }, (timeout?timeout:1000));
         }
     }

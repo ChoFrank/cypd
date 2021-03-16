@@ -166,7 +166,7 @@ class App extends React.Component {
                         <Layout.Center>
                             <div className='app_dashboard_container'>
                                 {table}
-                                <div className='empty_demo_wrapper'><Tooltip direction='top-left' text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
+                                <div className='empty_demo_wrapper'><Tooltip direction='top-left' fixedWidth={300} text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
                                 <div className='empty_demo_wrapper'><Cone color='yellow' /></div>
                                 <div className='icon_demo_wrapper'>
                                     {icondemo}
