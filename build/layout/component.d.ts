@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { CSSProperties } from 'react';
 declare type CenterExtendType = 'extend-left' | 'extend-right' | 'extend-both' | 'collapsed';
 declare type SideExtendType = 'extend' | 'collapsed';
 declare global {
@@ -13,8 +13,6 @@ declare global {
 declare type NavitemProps = {
     label: string;
     icon?: string;
-    customizedLabel?: ReactElement;
-    customizedIcon?: ReactElement;
     url?: string;
     disabled?: boolean;
     children?: Array<NavitemProps>;

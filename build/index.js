@@ -30196,7 +30196,7 @@ var NavigationItem = /** @class */ (function (_super) {
     NavigationItem.prototype.render = function () {
         var _this = this;
         var extend = this.state.extend;
-        var _a = this.props, label = _a.label, icon = _a.icon, disabled = _a.disabled, children = _a.children, className = _a.className, style = _a.style, tooltip = _a.tooltip, customizedLabel = _a.customizedLabel, customizedIcon = _a.customizedIcon, tooltipDirection = _a.tooltipDirection, tooltipFixedWidth = _a.tooltipFixedWidth;
+        var _a = this.props, label = _a.label, icon = _a.icon, disabled = _a.disabled, children = _a.children, className = _a.className, style = _a.style, tooltip = _a.tooltip, tooltipDirection = _a.tooltipDirection, tooltipFixedWidth = _a.tooltipFixedWidth;
         var wrapperClass = "cypd-navitem" + ((children && children.length > 0 && extend) ? ' extend' : '') + (className ? " " + className : '');
         var checkSiderOpen = false;
         if (window.layout.leftSideStatus) {
@@ -30210,10 +30210,10 @@ var NavigationItem = /** @class */ (function (_super) {
         // }
         return (!disabled) ? (react.createElement("div", { className: wrapperClass, style: style },
             children ? react.createElement("input", { ref: this.flag, style: { position: 'absolute', transform: 'scale(0)' }, onBlur: this.onBlur, type: 'checkbox' }) : undefined,
-            (customizedLabel) ? customizedLabel : react.createElement("div", { style: { display: (icon) ? undefined : 'none' }, onMouseDown: this.direct, className: 'icon' },
+            react.createElement("div", { style: { display: (icon) ? undefined : 'none' }, onMouseDown: this.direct, className: 'icon' },
                 react.createElement(Icon, { type: (icon) ? icon : '', color: 'white' }),
                 (tooltip && !extend && !checkSiderOpen) ? react.createElement(Tooltip, { fillinOutside: true, text: tooltip, direction: tooltipDirection ? tooltipDirection : 'right', fixedWidth: tooltipFixedWidth }) : undefined),
-            (customizedIcon) ? customizedIcon : react.createElement("div", { className: 'label', onMouseDown: this.direct }, label),
+            react.createElement("div", { className: 'label', onMouseDown: this.direct }, label),
             children ? react.createElement("ul", null, children.map(function (props, idx) { return react.createElement("li", { key: _this.id + "-" + idx },
                 react.createElement(NavigationItem, __assign({}, props))); })) : undefined,
             children ? react.createElement("div", { className: 'toggler' }) : undefined)) : react.createElement("div", null);

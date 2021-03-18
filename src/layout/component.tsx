@@ -1,4 +1,4 @@
-import React, { CSSProperties, ReactElement } from 'react';
+import React, { CSSProperties } from 'react';
 import ReactDOM from 'react-dom';
 
 import Icon from '../icon/component';
@@ -22,8 +22,6 @@ window.layout = {};
 declare type NavitemProps = {
     label: string;
     icon?: string;
-    customizedLabel?: ReactElement,
-    customizedIcon?: ReactElement,
     url?: string;
     disabled?: boolean;
     children?: Array<NavitemProps>;
@@ -77,7 +75,7 @@ class NavigationItem extends React.Component<NavitemProps> {
     }
     render() {
         const { extend } = this.state;
-        const { label, icon, disabled, children, className, style, tooltip, customizedLabel, customizedIcon, tooltipDirection, tooltipFixedWidth } = this.props;
+        const { label, icon, disabled, children, className, style, tooltip, tooltipDirection, tooltipFixedWidth } = this.props;
         const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
         let checkSiderOpen: boolean = false;
 
@@ -94,7 +92,7 @@ class NavigationItem extends React.Component<NavitemProps> {
         return (!disabled) ? (
             <div className={wrapperClass} style={style}>
                 {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
-                {(customizedLabel) ? customizedLabel : <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} className='icon'>
+                <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} className='icon'>
                     <Icon type={(icon) ? icon : ''} color='white' />
                     {(tooltip && !extend && !checkSiderOpen) ? <Tooltip
                         fillinOutside
@@ -102,8 +100,8 @@ class NavigationItem extends React.Component<NavitemProps> {
                         direction={tooltipDirection?tooltipDirection:'right'}
                         fixedWidth={tooltipFixedWidth}
                     /> : undefined}
-                </div>}
-                {(customizedIcon) ? customizedIcon : <div className='label' onMouseDown={this.direct}>{label}</div>}
+                </div>
+                <div className='label' onMouseDown={this.direct}>{label}</div>
                 {children ? <ul>{children.map((props, idx) => <li key={`${this.id}-${idx}`}><NavigationItem {...props} /></li>)}</ul> : undefined}
                 {children ? <div className='toggler'></div> : undefined}
             </div>
