@@ -77,24 +77,13 @@ class NavigationItem extends React.Component<NavitemProps> {
         const { extend } = this.state;
         const { label, icon, disabled, children, className, style, tooltip, tooltipDirection, tooltipFixedWidth } = this.props;
         const wrapperClass = `cypd-navitem${(children && children.length > 0 && extend) ? ' extend' : ''}${className ? ` ${className}` : ''}`;
-        let checkSiderOpen: boolean = false;
-
-        if (window.layout.leftSideStatus) {
-            /* layout use left sider (may also use right sider in the same time) */
-            /* but we just ignore... there hasn't been an acceptable solution yet */
-            checkSiderOpen = (window.layout.leftSideStatus === 'extend');
-        }
-        // if (window.layout.rightSideStatus) {
-        //     /* layout use right sider (may also use left sider in the same time) */
-        //     checkSiderOpen = (window.layout.rightSideStatus === 'extend');
-        // }
 
         return (!disabled) ? (
             <div className={wrapperClass} style={style}>
                 {children ? <input ref={this.flag} style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} type='checkbox'></input> : undefined}
                 <div style={{ display: (icon) ? undefined : 'none' }} onMouseDown={this.direct} className='icon'>
                     <Icon type={(icon) ? icon : ''} color='white' />
-                    {(tooltip && !extend && !checkSiderOpen) ? <Tooltip
+                    {(tooltip && !extend) ? <Tooltip
                         fillinOutside
                         text={tooltip}
                         direction={tooltipDirection?tooltipDirection:'right'}

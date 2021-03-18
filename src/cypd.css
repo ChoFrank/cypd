@@ -290,12 +290,11 @@
     line-height: 40px;
 }
 
-
-/* 
-.cypd-navitem>.label:active,
-.cypd-navitem>.label:hover {
-    text-indent: 30px;
-} */
+.cypd-layout .column.right.visible .cypd-navitem .cypd-tooltip-wrapper,
+.cypd-layout .column.left.visible .cypd-navitem .cypd-tooltip-wrapper {
+    height: 0;
+    width: 0;
+}
 
 
 /* cypd table */
