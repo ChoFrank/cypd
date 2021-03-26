@@ -642,6 +642,9 @@
     left: 0;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     user-select: text;
     z-index: 41;
 }
@@ -659,17 +662,19 @@
 }
 
 .cypd-modal-container .cypd-modal-background {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    /* width: 100%;
+    height: 100%; */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.8);
     text-align: center;
     vertical-align: middle;
 }
 
-.cypd-modal-container .cypd-modal-background .cypd-modal {
+.cypd-modal-container .cypd-modal {
     position: relative;
     background: white;
     display: inline-block;
@@ -684,7 +689,7 @@
     z-index: 31;
 }
 
-.cypd-modal-container .cypd-modal-background .cypd-modal h3 {
+.cypd-modal-container .cypd-modal h3 {
     margin: 10px 20px 15px 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -693,11 +698,11 @@
     border-bottom: 1px solid rgba(40, 40, 40, 0.3);
 }
 
-.cypd-modal-container .cypd-modal-background .cypd-modal .content {
+.cypd-modal-container .cypd-modal .content {
     margin: 0px 20px 15px 20px;
 }
 
-.cypd-modal-container .cypd-modal-background .cypd-modal svg.close-svg {
+.cypd-modal-container .cypd-modal svg.close-svg {
     position: absolute;
     top: 10px;
     right: 10px;
