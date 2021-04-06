@@ -58,7 +58,7 @@ class App extends React.Component {
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'warning', 'cyp-device',
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
             'setting', 'scene', 'volumn', 'idea', 'scenario', 'move', 'stop', 'previous', 'next', 'forward',
-            'backward', 'grid', 'pushpin', 'forbid', 'hexigon-no', 'hexigon-yes', 'revert',
+            'backward', 'grid', 'pushpin', 'forbid', 'hexigon-no', 'hexigon-yes', 'revert', 'heart', 'heart-solid'
         ];
         const sampleOptions = [
             <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
@@ -173,6 +173,7 @@ class App extends React.Component {
                                     {icondemo}
                                 </div>
                                 <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='hexigon' />
+                                <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='heart' />
                                 <List draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} />
                                 {form}
                             </div>

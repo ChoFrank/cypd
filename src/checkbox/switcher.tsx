@@ -11,7 +11,7 @@ type SwitchButtonProps = {
     readOnly: boolean,
     defaultChecked: boolean,
     label?: [string | React.ReactNode, string | React.ReactNode],
-    type?: 'hexigon' | 'normal',
+    type?: 'hexigon' | 'heart' | 'normal',
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
@@ -81,7 +81,11 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
                     <Icon type='hexigon-no' color={disabled?'rgb(200,200,200)':'rgb(129, 129, 129)'}/>
                     <Icon type='hexigon-yes' color={disabled?'rgb(200,200,200)':'#088aab'}/>
                 </div> : undefined }
-                <div className='cypd-switchbutton' style={{ display: (type === 'hexigon') ? 'none' : undefined }}>
+                {(typeof label === 'undefined' && type === 'heart') ? <div className='heart-wrapper'>
+                    <Icon type='heart' color={disabled?'rgb(200,200,200)':'#b92454'}/>
+                    <Icon type='heart-solid' color={disabled?'rgb(200,200,200)':'#b92454'}/>
+                </div> : undefined }
+                <div className='cypd-switchbutton' style={{ display: (type === 'normal' || !type) ? undefined : 'none' }}>
                     {label ? <div className='display-label'>
                         <div style={onStyle} ref={ (inst) => { this.onLabel = inst; } } id='on'>{label[0]}</div>
                         <div style={offStyle} ref={ (inst) => { this.offLabel = inst; } } id='off'>{label[1]}</div>

@@ -1421,12 +1421,14 @@ svg.cypd-icon.solid-right * {
     opacity: 0;
 }
 
+.cypd-switchbutton-wrapper.heart .heart-wrapper,
 .cypd-switchbutton-wrapper.hexigon .hexigon-wrapper {
     position: relative;
     height: 20px;
     width: 20px;
 }
 
+.cypd-switchbutton-wrapper.heart .heart-wrapper .cypd-icon-wrapper,
 .cypd-switchbutton-wrapper.hexigon .hexigon-wrapper .cypd-icon-wrapper {
     position: absolute;
     top: 0;
@@ -1441,10 +1443,20 @@ svg.cypd-icon.solid-right * {
     transition: opacity 150ms linear 50ms, transform 150ms;
 }
 
+.cypd-switchbutton-wrapper.heart .heart-wrapper .cypd-icon.heart-solid {
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
 .cypd-switchbutton-wrapper.hexigon .hexigon-wrapper .cypd-icon.hexigon-no {
     opacity: 1;
     transform: rotate(0deg);
     transition: opacity 150ms linear 50ms, transform 150ms;
+}
+
+.cypd-switchbutton-wrapper.heart .heart-wrapper .cypd-icon.heart {
+    opacity: 1;
+    transition: opacity 150ms linear;
 }
 
 .cypd-switchbutton-wrapper.hexigon input:checked+.hexigon-wrapper .cypd-icon.hexigon-yes {
@@ -1456,6 +1468,32 @@ svg.cypd-icon.solid-right * {
     transform: rotate(60deg);
     opacity: 0;
 }
+
+.cypd-switchbutton-wrapper.heart input:checked+.heart-wrapper .cypd-icon.heart-solid {
+    opacity: 1;
+}
+
+.cypd-switchbutton-wrapper.heart input:checked+.heart-wrapper .cypd-icon.heart {
+    opacity: 0;
+}
+
+
+/* 
+.cypd-switchbutton-wrapper.heart:hover .cypd-icon.heart {
+    animation: heartbeat 150ms linear forwards;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+} */
 
 
 /* cypd spin */
