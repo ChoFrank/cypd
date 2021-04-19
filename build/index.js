@@ -3108,6 +3108,9 @@ var Modal = /** @class */ (function (_super) {
     return Modal;
 }(react.Component));
 
+function browserIE() {
+    return /MSIE|Trident/.test(window.navigator.userAgent);
+}
 var Tooltip = /** @class */ (function (_super) {
     __extends(Tooltip, _super);
     function Tooltip() {
@@ -3192,11 +3195,13 @@ var Tooltip = /** @class */ (function (_super) {
     Tooltip.prototype.componentWillUnmount = function () { this.delete(); };
     Tooltip.prototype.render = function () {
         var _this = this;
-        var _a = this.props, className = _a.className, fillinOutside = _a.fillinOutside;
+        var _a = this.props, className = _a.className, fillinOutside = _a.fillinOutside, text = _a.text;
+        var _b = this.props;
+        var useNativeAbbr = browserIE();
         var wrapperClass = 'cypd-tooltip-wrapper';
         if (className)
             wrapperClass += " " + className;
-        return (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete, style: (fillinOutside) ? { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 } : undefined }, this.props.children));
+        return useNativeAbbr ? (react.createElement("abbr", { title: text, className: className }, this.props.children)) : (react.createElement("div", { className: wrapperClass, ref: function (inst) { _this.wrapperRef = inst; }, onMouseEnter: this.create, onMouseLeave: this.delete, style: (fillinOutside) ? { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 } : undefined }, this.props.children));
     };
     return Tooltip;
 }(react.Component));

@@ -14,6 +14,10 @@ type TooltipProps = {
     fixedWidth?: number | string,
 }
 
+function browserIE(): boolean {
+    return /MSIE|Trident/.test(window.navigator.userAgent);
+}
+
 export default class Tooltip extends React.Component<TooltipProps> {
     tooltipId: string = Math.random().toString().slice(2);
     wrapperRef?: HTMLDivElement | null;
@@ -83,11 +87,18 @@ export default class Tooltip extends React.Component<TooltipProps> {
         }
     }
     render() {
-        const { className, fillinOutside } = this.props;
+        const { className, fillinOutside, text } = this.props;
+        const {  } = this.props;
+        const useNativeAbbr = browserIE();
         var wrapperClass = 'cypd-tooltip-wrapper';
         if (className)
             wrapperClass += ` ${className}`;
-        return (
+        return useNativeAbbr ? (
+            <abbr
+                title={text}
+                className={className}
+            >{this.props.children}</abbr>
+        ) : (
             <div 
                 className={wrapperClass} 
                 ref={(inst) => { this.wrapperRef = inst; }} 
