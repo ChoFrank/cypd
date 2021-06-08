@@ -1478,7 +1478,7 @@ svg.cypd-icon.solid-right * {
 }
 
 
-/* 
+/*
 .cypd-switchbutton-wrapper.heart:hover .cypd-icon.heart {
     animation: heartbeat 150ms linear forwards;
 }
@@ -2134,6 +2134,18 @@ svg.cypd-icon.solid-right * {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    height: 80px;
+}
+
+.cypd-formitem-wrapper.vertical .cypd-formitem-label {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+
+.cypd-formitem-wrapper.vertical .verical-children_wrapper {
+    position: relative;
+    width: 100%;
 }
 
 .cypd-formitem-wrapper>* {

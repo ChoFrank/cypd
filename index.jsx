@@ -142,9 +142,9 @@ class App extends React.Component {
             <Form.Item label='Birthday'>
                 <DateTime.DatePicker value={this.state.birthday} onChange={(date) => { this.setState({ birthday: date }); }} />
             </Form.Item>
-            {/* <Form.Item label='Score'>
+            <Form.Item label='Score' layout='vertical'>
                 <Slider max={10} min={-10} onAfterChange={(v) => { console.log('v :>> ', v); }}></Slider>
-            </Form.Item> */}
+            </Form.Item>
         </Form.Form>;
         return (
                 <Layout.Layout>

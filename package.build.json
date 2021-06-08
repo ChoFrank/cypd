@@ -11,9 +11,11 @@
     "typings": "build/index.d.ts",
     "scripts": {
         "build": "copy package.build.json package.json && rollup -c",
+        "build-unix": "cp package.build.json package.json && rollup -c",
         "lint": "standard",
         "format": "prettier-standard --format",
         "test": "jest --coverage",
+        "start-unix": "cp package.dev.json package.json && webpack-dev-server",
         "start": "copy package.dev.json package.json && webpack-dev-server"
     },
     "keywords": [],
