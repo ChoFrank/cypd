@@ -2178,6 +2178,10 @@ svg.cypd-icon.solid-right * {
     content: ':';
 }
 
+.cypd-formitem-wrapper.verical .cypd-formitem-label:not(.no-colon)::after {
+    right: -5px;
+}
+
 .cypd-formitem-wrapper.error {
     margin-bottom: 20px;
 }
