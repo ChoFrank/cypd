@@ -53,12 +53,12 @@ type FormProps = {
 class Form extends React.Component<Partial<FormProps>> {
     render() {
         const { className, colon, layout, labelClass, labelStyle, disabled, style } = this.props;
-        const item_props = { colon, layout, labelClass, labelStyle, disabled };
         let wrapperClass = `cypd-form${className ? ` ${className}` : ''}`;
         return (
             <div className={wrapperClass} style={style}>
                 {React.Children.map(this.props.children, (child) => {
                     if (React.isValidElement(child) && child.type === Item) {
+                        const item_props = { colon, layout, labelClass, labelStyle, disabled };
                         item_props.colon = (typeof child.props.colon !== 'undefined') ? child.props.colon : item_props.colon;
                         item_props.layout = (typeof child.props.layout !== 'undefined') ? child.props.layout : item_props.layout;
                         item_props.labelClass = (typeof child.props.labelClass !== 'undefined') ? child.props.labelClass : item_props.labelClass;

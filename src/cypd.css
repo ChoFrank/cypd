@@ -2146,6 +2146,7 @@ svg.cypd-icon.solid-right * {
 .cypd-formitem-wrapper.vertical .verical-children_wrapper {
     position: relative;
     width: 100%;
+    height: 40px;
 }
 
 .cypd-formitem-wrapper>* {
