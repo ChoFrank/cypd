@@ -965,6 +965,10 @@
     padding: 0 25px 0 12px;
 }
 
+.cypd-select-native-wrapper select {
+    padding: 0 25px 0 5px;
+}
+
 .cypd-select-native-wrapper select:invalid {
     color: #9e9e9e;
 }
