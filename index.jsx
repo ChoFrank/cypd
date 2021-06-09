@@ -168,7 +168,7 @@ class App extends React.Component {
                 </Select>
             </Form.Item>
             <Form.Item label='Favorit Number'>
-                <SelectNative value={favorit_number} placeholder='Select favorit color' onChange={(v) => { this.setState({ favorit_number: v }); }}>
+                <SelectNative value={favorit_number} size='small' placeholder='Select favorit color' onChange={(v) => { this.setState({ favorit_number: v }); }}>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>

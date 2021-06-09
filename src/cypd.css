@@ -937,6 +937,14 @@
     border-top: 5px solid #33a8c0;
 }
 
+.cypd-select-native-wrapper.small::before {
+    top: 4.5px;
+}
+
+.cypd-select-native-wrapper.small::after {
+    bottom: 4.5px;
+}
+
 .cypd-select-native-wrapper select {
     /* A reset of styles, including removing the default dropdown arrow */
     border:none !important;
