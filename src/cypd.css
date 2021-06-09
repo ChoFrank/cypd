@@ -2268,6 +2268,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-formitem-wrapper.error>.cypd-select-wrapper,
+.cypd-formitem-wrapper.error>.cypd-select-native-wrapper,
 .cypd-formitem-wrapper.error>.cypd-input {
     border-color: #b92454;
 }

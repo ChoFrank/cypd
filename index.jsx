@@ -167,8 +167,8 @@ class App extends React.Component {
                     <Option value='2'>Female</Option>
                 </Select>
             </Form.Item>
-            <Form.Item label='Favorit Number'>
-                <SelectNative value={favorit_number} size='small' placeholder='Select favorit color' onChange={(v) => { this.setState({ favorit_number: v }); }}>
+            <Form.Item label='Favorit Number' error={(favorit_number.length === 0) ? 'Required field' : undefined}>
+                <SelectNative value={favorit_number} onChange={(v) => { this.setState({ favorit_number: v }); }}>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>
