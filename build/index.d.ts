@@ -1,5 +1,5 @@
 import './cypd.css';
-import Select, { Option } from './select/component';
+import Select, { Option, SelectNative } from './select/component';
 import { Book, Page } from './story/story';
 import * as Matrix from './grid/grid';
 import DropdownWrapper, { DropdownItem } from './dropdown/dropdown';
@@ -28,6 +28,6 @@ export { default as Href } from './href/href';
 export { default as Empty } from './empty/empty';
 export { default as Cone } from './empty/cone';
 export { default as List } from './list/list';
-export { Select, Option, Book, Page };
+export { Select, Option, SelectNative, Book, Page };
 export { DropdownInstance as Dropdown };
 export { Matrix };

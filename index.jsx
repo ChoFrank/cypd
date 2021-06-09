@@ -1,7 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Table, Icon, Input, Button, Select, DateTime, Empty, List, Form, Cone, Checkbox, Option, RadioGroup, SwitchButton, Notify, Layout, Slider, Modal, ProgressBar, Spin, Tooltip } from './src';
+import {
+    Table,
+    Icon,
+    Input,
+    Button,
+    Select,
+    SelectNative,
+    DateTime,
+    Empty,
+    List,
+    Form,
+    Cone,
+    Checkbox,
+    Option,
+    RadioGroup,
+    SwitchButton,
+    Notify,
+    Layout,
+    Slider,
+    Modal,
+    ProgressBar,
+    Spin,
+    Tooltip
+} from './src';
 
 import './index.css'
 
@@ -16,16 +39,28 @@ const cross_point = (x11, y11, x12, y12, x21, y21, x22, y22) => {
 }
 
 const icon_container = (type) => {
-    return <div className='icon_container' key={Math.random()}>
+    return (<div className='icon_container' key={Math.random()}>
         <Icon type={type} color='gray' onClick={() => { console.log('cross_point(6,1,9,15,1,6,15,9) :', cross_point(6, 1, 9, 15, 1, 6, 15, 9)); }} />
         <div className='label'>{type}</div>
-    </div>;
+    </div>);
 }
 
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { visible: true, name: '', gender: 1, email: '', birthday: new Date(), test_checklist: new Set(), popup: false, progress: 0, list_draggable: false, label_test: 'TEST' };
+        this.state = {
+            visible: true,
+            name: '',
+            gender: 1,
+            favorit_number: '',
+            email: '',
+            birthday: new Date(),
+            test_checklist: new Set(),
+            popup: false,
+            progress: 0,
+            list_draggable: false,
+            label_test: 'TEST'
+        };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
         // this.testProgress = setInterval(() => {
@@ -51,7 +86,7 @@ class App extends React.Component {
         this.setState({ test_checklist: new_checklist });
     }
     render() {
-        const { label_test } = this.state;
+        const { label_test, favorit_number } = this.state;
         const icons = [
             'loading', 'write', 'arrow-left', 'arrow-right', 'solid-left', 'solid-right', 'left', 'right', 'zoom-out', 'zoom-in',
             'minus', 'plus', 'circle-plus', 'square-plus', 'square-minus', 'trashcan', 'edit',
@@ -118,7 +153,7 @@ class App extends React.Component {
         //     onCheck={this.onCheckTableItem}
         // ></Table>;
         const icondemo = icons.map(type => icon_container(type));
-        const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '100px' }}>
+        const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '130px' }}>
             <Form.Item label='Name' error='Name cannot be null'>
                 <Input
                     value={this.state.name}
@@ -131,6 +166,20 @@ class App extends React.Component {
                     <Option value='1'>Male</Option>
                     <Option value='2'>Female</Option>
                 </Select>
+            </Form.Item>
+            <Form.Item label='Favorit Number'>
+                <SelectNative value={favorit_number} placeholder='Select favorit color' onChange={(v) => { this.setState({ favorit_number: v }); }}>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                    <option value='6'>6</option>
+                    <option value='7'>7</option>
+                    <option value='8'>8</option>
+                    <option value='9'>9</option>
+                    <option value='10'>10</option>
+                </SelectNative>
             </Form.Item>
             <Form.Item label='Email'>
                 <Input

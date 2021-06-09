@@ -45,7 +45,7 @@ export class Option extends React.Component<OptionProps> {
         if (disabled)
             optionClass += ' disabled';
         return <div className={optionClass}>
-            <input id={`${__name}_${value}`} value={value.toString()} name={__name} type='radio' checked={__selected} onChange={(e) => { if (__name) window.__cypd_select_on_change[__name](e.target.value); }}/>
+            <input id={`${__name}_${value}`} value={value.toString()} name={__name} type='radio' checked={__selected} onChange={(e) => { if (__name) window.__cypd_select_on_change[__name](e.target.value); }} />
             <label htmlFor={`${__name}_${value}`}>{this.props.children}</label>
         </div>
     }
@@ -63,7 +63,7 @@ export default class Select extends React.Component<SelectProps> {
         this.selectId = Math.random().toString();
     }
     get windowHeight() { return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight; }
-    static getDerivedStateFromProps(nextProps: SelectProps, prevState: SelectState): SelectState | null { 
+    static getDerivedStateFromProps(nextProps: SelectProps, prevState: SelectState): SelectState | null {
         if (typeof nextProps.collapsed !== 'undefined') {
             return { collapsed: nextProps.collapsed, direction: prevState.direction };
         } else {
@@ -71,15 +71,15 @@ export default class Select extends React.Component<SelectProps> {
         }
     }
     componentDidMount() { this.autoScroll(); }
-    componentWillUnmount() { this.setState = () => {}; }
+    componentWillUnmount() { this.setState = () => { }; }
     componentDidUpdate() { window.__cypd_select_on_change[this.selectId] = (value: string) => { this.props.onChange(value); this.onBlur(); }; }
     // onFocus = () => { /* window.__cypd_select_on_change[this.selectId] = this.props.onChange; */ }
     onBlur = () => { this.setState({ collapsed: true }); this.autoScroll(); }
     onClick = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
         e.persist();
-        this.setState((prevState: SelectState): Partial<SelectState> => { 
-            return { collapsed: !prevState.collapsed, direction: (e.clientY >= (this.windowHeight - 200))?'extend-top':'extend-down' } 
-        }); 
+        this.setState((prevState: SelectState): Partial<SelectState> => {
+            return { collapsed: !prevState.collapsed, direction: (e.clientY >= (this.windowHeight - 200)) ? 'extend-top' : 'extend-down' }
+        });
     }
     onMouseEnter = () => { document.removeEventListener('mousedown', this.onBlur, false); }
     onMouseLeave = () => { document.addEventListener('mousedown', this.onBlur, false); }
@@ -97,12 +97,12 @@ export default class Select extends React.Component<SelectProps> {
         var optionsClass = 'cypd-options-container ' + this.state.direction;
         var disp = '';
         var children = React.Children.toArray(this.props.children);
-        children.forEach((child) => { 
+        children.forEach((child) => {
             if (React.isValidElement(child) && child.type === Option) {
                 if (`${child.props.value}` === `${this.props.value}`) {
                     if (typeof child.props.children === 'string')
                         disp = child.props.children;
-                    else 
+                    else
                         disp = `${this.props.value}`;
                 }
             }
@@ -134,11 +134,33 @@ export default class Select extends React.Component<SelectProps> {
                             this.scrollIndex = (this.props.value === child.props.value) ? idx : this.scrollIndex;
                             return React.cloneElement(child, { __selected: (`${this.props.value}` === `${child.props.value}`), __name: this.selectId });
                         }
-                        else 
+                        else
                             return child;
                     })
                 }</div></div>
             </div>
         );
     }
-};
+}
+
+export class SelectNative extends React.Component<SelectProps> {
+    render() {
+        const { className, size, style, value, placeholder, onChange, disabled } = this.props;
+        var wrapperClass = 'cypd-select-native-wrapper';
+        if (className)
+            wrapperClass += ` ${className}`;
+        if (disabled)
+            wrapperClass += ` disabled`;
+        if (size)
+            wrapperClass += ` ${size}`;
+
+        return (
+            <div className={wrapperClass} style={style}>
+                <select disabled={disabled} required value={value} placeholder={placeholder} onChange={e => { onChange(e.target.value); }}>
+                    <option value="" disabled>{placeholder}</option>
+                    {this.props.children}
+                </select>
+            </div>
+        );
+    }
+}

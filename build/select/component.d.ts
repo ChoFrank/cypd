@@ -49,4 +49,7 @@ export default class Select extends React.Component<SelectProps> {
     autoScroll: () => void;
     render(): JSX.Element;
 }
+export declare class SelectNative extends React.Component<SelectProps> {
+    render(): JSX.Element;
+}
 export {};
