@@ -978,8 +978,8 @@
     padding: 0 20px 0 6px;
 }
 
-.cypd-select-native-wrapper select:invalid {
-    color: #9e9e9e;
+.cypd-select-native-wrapper.show-placeholder select {
+    color: transparent;
 }
 
 .cypd-select-native-wrapper select:disabled {
@@ -995,6 +995,22 @@
     border-top-color: #9e9e9e;
 }
 
+.cypd-select-native-wrapper .cypd-select-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    line-height: 32px;
+    color: #999;
+    padding-left: 13px;
+}
+
+.cypd-select-native-wrapper.small .cypd-select-placeholder {
+    padding-left: 7px;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+}
 
 /* cypd icon */
 
