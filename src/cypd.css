@@ -978,10 +978,6 @@
     padding: 0 20px 0 6px;
 }
 
-.cypd-select-native-wrapper.show-placeholder select {
-    color: transparent;
-}
-
 .cypd-select-native-wrapper select:disabled {
     cursor: not-allowed;
     background-color: rgb(231, 231, 231);
@@ -997,19 +993,19 @@
 
 .cypd-select-native-wrapper .cypd-select-placeholder {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 32px;
-    line-height: 32px;
+    top: 50%;
+    left: 2px;
+    background-color: white;
     color: #999;
-    padding-left: 13px;
+    padding-left: 11px;
+    transform: translateY(-45%);
 }
 
 .cypd-select-native-wrapper.small .cypd-select-placeholder {
-    padding-left: 7px;
+    padding-left: 5px;
     font-size: 12px;
-    height: 25px;
-    line-height: 25px;
+    height: 12px;
+    line-height: 12px;
 }
 
 /* cypd icon */
