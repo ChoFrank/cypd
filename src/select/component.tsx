@@ -147,25 +147,18 @@ export class SelectNative extends React.Component<SelectProps> {
     render() {
         const { className, size, style, value, placeholder, onChange, disabled } = this.props;
         var wrapperClass = 'cypd-select-native-wrapper';
-        let showPlaceholder = false;
         if (className)
             wrapperClass += ` ${className}`;
         if (disabled)
             wrapperClass += ` disabled`;
         if (size)
             wrapperClass += ` ${size}`;
-        if (placeholder) {
-            if (typeof value === 'string' && value.length === 0) {
-                showPlaceholder = true;
-                wrapperClass += ` show-placeholder`;
-            }
-        }
         return (
             <div className={wrapperClass} style={style}>
                 <select disabled={disabled} required value={value} onChange={e => { onChange(e.target.value); }}>
+                    {placeholder ? <option value="" disabled selected>{placeholder}</option> : undefined}
                     {this.props.children}
                 </select>
-                {(showPlaceholder) ? <div className='cypd-select-placeholder'>{placeholder}</div> : undefined}
             </div>
         );
     }
