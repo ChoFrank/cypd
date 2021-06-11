@@ -978,6 +978,10 @@
     padding: 0 20px 0 6px;
 }
 
+.cypd-select-native-wrapper select option:disabled {
+    cursor: not-allowed;
+}
+
 .cypd-select-native-wrapper select:disabled {
     cursor: not-allowed;
     background-color: rgb(231, 231, 231);
@@ -995,6 +999,13 @@
     border-top-color: #9e9e9e;
 }
 
+.cypd-select-native-wrapper select option {
+    border-top-color: #5e5e5e;
+}
+
+.cypd-select-native-wrapper select option:disabled {
+    border-top-color: #bdbdbd;
+}
 /* cypd icon */
 
 .cypd-icon-wrapper {
