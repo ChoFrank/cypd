@@ -2415,7 +2415,7 @@ var SelectNative = /** @class */ (function (_super) {
             wrapperClass += " " + size;
         return (react.createElement("div", { className: wrapperClass, style: style },
             react.createElement("select", { disabled: disabled, required: true, value: value, onChange: function (e) { onChange(e.target.value); } },
-                placeholder ? react.createElement("option", { value: "", disabled: true, selected: true }, placeholder) : undefined,
+                placeholder ? react.createElement("option", { value: "", disabled: true }, placeholder) : undefined,
                 this.props.children)));
     };
     return SelectNative;

@@ -156,7 +156,7 @@ export class SelectNative extends React.Component<SelectProps> {
         return (
             <div className={wrapperClass} style={style}>
                 <select disabled={disabled} required value={value} onChange={e => { onChange(e.target.value); }}>
-                    {placeholder ? <option value="" disabled selected>{placeholder}</option> : undefined}
+                    {placeholder ? <option value="" disabled>{placeholder}</option> : undefined}
                     {this.props.children}
                 </select>
             </div>
