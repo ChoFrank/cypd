@@ -1000,11 +1000,11 @@
 }
 
 .cypd-select-native-wrapper select option {
-    border-top-color: #5e5e5e;
+    color: #5e5e5e;
 }
 
 .cypd-select-native-wrapper select option:disabled {
-    border-top-color: #bdbdbd;
+    color: #bdbdbd;
 }
 /* cypd icon */
 
