@@ -1,5 +1,5 @@
 import React from 'react';
-interface IconProps {
+export interface IconProps {
     type: string;
     className?: string;
     style?: React.CSSProperties;
@@ -10,4 +10,3 @@ export default class Icon extends React.Component<IconProps> {
     id: string;
     render(): JSX.Element;
 }
-export {};

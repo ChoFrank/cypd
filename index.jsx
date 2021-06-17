@@ -23,7 +23,8 @@ import {
     Modal,
     ProgressBar,
     Spin,
-    Tooltip
+    Tooltip,
+    Dropdown,
 } from './src';
 
 import './index.css'
@@ -93,7 +94,7 @@ class App extends React.Component {
             'document', 'save', 'calendar', 'clock', 'led-green', 'led-yellow', 'led-red', 'led-gray', 'warning', 'cyp-device',
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
             'setting', 'scene', 'volumn', 'idea', 'scenario', 'move', 'stop', 'previous', 'next', 'forward',
-            'backward', 'grid', 'pushpin', 'forbid', 'hexigon-no', 'hexigon-yes', 'revert', 'heart', 'heart-solid'
+            'backward', 'grid', 'pushpin', 'forbid', 'hexigon-no', 'hexigon-yes', 'revert', 'heart', 'heart-solid', 'earth',
         ];
         const sampleOptions = [
             <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,
@@ -197,7 +198,32 @@ class App extends React.Component {
         </Form.Form>;
         return (
                 <Layout.Layout>
-                    <Layout.Header />
+                    <Layout.Header>
+                        <div
+                            className='demo-navitem'
+                            style={{
+                                height: '100%',
+                                width: '300px',
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                display: 'flex',
+                                flexDirection: 'row',
+                                justifyContent: 'flex-end',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Dropdown.Wrapper
+                                parent={<Icon type='earth' color='#008AAB' style={{ transform: 'scale(1.3)' }}/>}
+                                children={[
+                                    { label: 'Chinese', icon: { type: 'dashboard', color: '#008aab' } },
+                                    { label: 'English', icon: { type: 'scene', color: '#008aab' } },
+                                    { label: 'Japanese', icon: { type: 'calendar', color: '#008aab' } },
+                                ]}
+                                style={{ marginRight: '20px' }}
+                            />
+                        </div>
+                    </Layout.Header>
                     <Layout.Navigation />
                     <Layout.Body>
                         <Spin type='linear' visible={false} />

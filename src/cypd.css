@@ -34,6 +34,7 @@
 }
 
 .cypd-layout>.header {
+    position: relative;
     background-color: white;
     text-align: center;
     height: 60px;
@@ -2630,6 +2631,8 @@ button.react-calendar__century-view__decades__decade {
 .cypd-dropdown {
     position: relative;
     cursor: pointer;
+    height: auto;
+    width: auto;
 }
 
 .cypd-dropdown>.wrapper {
@@ -2638,6 +2641,8 @@ button.react-calendar__century-view__decades__decade {
     flex-direction: column;
     justify-content: stretch;
     overflow: hidden;
+    top: 100%;
+    right: 0;
     max-height: 0;
     opacity: 0;
     background-color: white;
@@ -2648,7 +2653,7 @@ button.react-calendar__century-view__decades__decade {
     transition: opacity 150ms, max-height 0ms linear 150ms;
 }
 
-.cypd-dropdown>input:checked~.wrapper {
+.cypd-dropdown.extend>.wrapper {
     height: auto;
     max-height: 2000px;
     opacity: 1;
@@ -2672,8 +2677,21 @@ button.react-calendar__century-view__decades__decade {
     color: white;
 }
 
-.cypd-dropdown>.wrapper>.cypd-dropdown-item>*:not(:nth-child(1)) {
-    margin-left: 20px;
+.cypd-dropdown-item>.prefix {
+    margin-right: 10px;
+}
+
+.cypd-dropdown-item .prefix .cypd-icon-wrapper {
+    transform: scale(0.8);
+}
+
+.cypd-dropdown-item .prefix .cypd-icon-wrapper svg * {
+    transition: stroke 150ms;
+}
+
+.cypd-dropdown-item:hover .prefix .cypd-icon-wrapper svg * {
+    stroke: white !important;
+    fill: white !important;
 }
 
 .cypd-dropdown-item>.prefix>img {

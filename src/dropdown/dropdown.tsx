@@ -1,10 +1,10 @@
 import React, { CSSProperties } from 'react';
 
-import Icon from '../icon/component';
+import Icon, { IconProps } from '../icon/component';
 
 
 declare type DropdownItemProps = {
-    icon?: string;
+    icon?: IconProps;
     image?: string;
     label: string;
     className?: string;
@@ -25,7 +25,7 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
             wrapperClass += ` ${className}`;
         let prefix = <div />;
         if (icon)
-            prefix = <Icon type={icon}/>;
+            prefix = <Icon {...icon}/>;
         if (image)
             prefix = <img src={image} alt={image}/>;
         return (
@@ -38,32 +38,63 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
 }
 
 declare type DropdownProps = {
-    items: Array<React.ReactNode>;
+    children: Array<DropdownItemProps>;
+    parent: React.ReactNode | (() => React.ReactNode);
     className?: string;
     style?: CSSProperties;
 }
 
 export default class DropdownWrapper extends React.Component<DropdownProps> {
-    checkbox?: HTMLInputElement | null
-    forceClose = () => { if (this.checkbox) this.checkbox.checked = false; }
-    onMouseLeave = () => { 
-        document.addEventListener('click', this.forceClose, false);
-        document.addEventListener('touchstart', this.forceClose, false);
+    id: string = Math.random().toString().slice(3);
+    state = { extend: false };
+    checkbox: React.RefObject<HTMLInputElement>;
+    constructor(props: any) {
+        super(props);
+        this.checkbox = React.createRef();
     }
-    onMouseEnter = () => {
-        document.removeEventListener('click', this.forceClose, false);
-        document.removeEventListener('touchstart', this.forceClose, false);
+    onToggle = () => {
+        global.setTimeout(() => {
+            const { extend } = this.state;
+            if (this.checkbox.current) {
+                if (extend) {
+                    this.checkbox.current.focus();
+                } else {
+                    this.checkbox.current.blur();
+                }
+            }
+        }, 100);
+        this.setState((prevState: { extend: boolean }) => {
+            return { extend: !prevState.extend };
+        });
+    }
+    onBlur = () => {
+        this.setState({ extend: false });
     }
     render() {
-        const { items, className, style } = this.props;
-        let wrapperClass = 'cypd-dropdown';
+        const { extend } = this.state;
+        const { children, className, style, parent } = this.props;
+        let renderComponent: React.ReactNode = '';
+        let wrapperClass = `cypd-dropdown${(children && children.length > 0 && extend) ? ' extend' : ''}`;
         if (className)
             wrapperClass += ` ${className}`;
+
+        if (typeof parent === 'function') {
+            renderComponent = parent();
+        } else {
+            renderComponent = parent;
+        }
         return (
-            <label className={wrapperClass} style={style} onMouseLeave={this.onMouseLeave} onMouseEnter={this.onMouseEnter}>
-                {this.props.children}
-                <input type='checkbox' style={{ display: 'none' }} ref={inst => { this.checkbox = inst; }}/>
-                <div className='wrapper'>{items.filter(item => (React.isValidElement(item) && item.type === DropdownItem))}</div>
+            <label className={wrapperClass} style={style} onMouseDown={this.onToggle}>
+                {renderComponent}
+                {(children.length > 0) ? <input type='checkbox' style={{ position: 'absolute', transform: 'scale(0)' }} onBlur={this.onBlur} ref={this.checkbox}/> : undefined}
+                <div className='wrapper'>{children.map((child, i) => {
+                    return (
+                        <DropdownItem
+                            key={`dropdown_${this.id}_${i}`}
+                            {...child}
+                        />
+                    );
+                })}</div>
             </label>
         );
     }

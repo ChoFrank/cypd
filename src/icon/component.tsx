@@ -9,7 +9,7 @@ interface SVGProps {
     onClick?: (event: React.MouseEvent) => void,
 }
 
-interface IconProps {
+export interface IconProps {
     type: string
     className?: string,
     style?: React.CSSProperties,
@@ -221,6 +221,14 @@ const clock = (props: SVGProps) => ([
     <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`3_${props.svgId}`} d="M409.6,221.867h-17.067c-9.426,0-17.067,7.641-17.067,17.067S383.108,256,392.533,256H409.6 c9.426,0,17.067-7.641,17.067-17.067S419.026,221.867,409.6,221.867z" />,
     <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`4_${props.svgId}`} d="M238.933,375.467c-9.426,0-17.067,7.641-17.067,17.067V409.6c0,9.426,7.641,17.067,17.067,17.067S256,419.026,256,409.6 v-17.067C256,383.108,248.359,375.467,238.933,375.467z" />,
     <path transform="scale(0.038) translate(-45 -60)" fill={props.color} key={`5_${props.svgId}`} d="M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z" />,
+]);
+
+const earth = (props: SVGProps) => ([
+    <circle key={`1_${props.svgId}`} cx='8' cy='8' r='7' style={{ stroke: props.color, fill: 'none' }} strokeWidth={2} />,
+    <path key={`2_${props.svgId}`} style={{ stroke: props.color, fill: 'none' }} strokeWidth={2} d='M3.2 3 A 10 7 0 0 0 12.8 3' />,
+    <path key={`3${props.svgId}`} style={{ stroke: props.color, fill: 'none' }} strokeWidth={2} d='M2 8 14 8' />,
+    <path key={`4_${props.svgId}`} style={{ stroke: props.color, fill: 'none' }} strokeWidth={2} d='M3.2 13 A 10 7 0 0 1 12.8 13' />,
+    <ellipse key={`5_${props.svgId}`} cx='8' cy='8' rx='3' ry='7' style={{ stroke: props.color, fill: 'none' }} strokeWidth={2} />,
 ]);
 
 // const ledGreen = (props: SVGProps) => ([
@@ -460,8 +468,8 @@ const device = (props: SVGProps) => ([
 ]);
 
 const update = (props: SVGProps) => ([
-    <path d="M412.907,214.08C398.4,140.693,333.653,85.333,256,85.333c-61.653,0-115.093,34.987-141.867,86.08 
-        C50.027,178.347,0,232.64,0,298.667c0,70.72,57.28,128,128,128h277.333C464.213,426.667,512,378.88,512,320 
+    <path d="M412.907,214.08C398.4,140.693,333.653,85.333,256,85.333c-61.653,0-115.093,34.987-141.867,86.08
+        C50.027,178.347,0,232.64,0,298.667c0,70.72,57.28,128,128,128h277.333C464.213,426.667,512,378.88,512,320
         C512,263.68,468.16,218.027,412.907,214.08z M298.667,277.333v85.333h-85.333v-85.333h-64L256,170.667l106.667,106.667H298.667z"
         transform="scale(0.038) translate(-45 -60)" style={{ fill: props.color, stroke: props.color }} key={`1_${props.svgId}`} />
 ]);
@@ -497,7 +505,7 @@ const idea = (props: SVGProps) => ([
 const scenario = (props: SVGProps) => ([
     <g id="Group_1425" data-name="Group 1425" transform="translate(-844 -701.023) scale(1.1)" key={`1_${props.svgId}`} >
         <g id="Group_2" data-name="Group 2" transform="translate(765 632.023) scale(1.1)">
-            <path id="Subtraction_1" data-name="Subtraction 1" d="M5.415,11.508H2.031V6.092H0L6.77,0l6.769,6.092H11.508v5.415H8.123V7.446H5.415v4.061ZM6.77,2.769A1.539,1.539,0,1,0,8.308,4.308,1.54,1.54,0,0,0,6.77,2.769Z" transform="translate(0 4.292) scale(1.1)" fill={props.color} />            
+            <path id="Subtraction_1" data-name="Subtraction 1" d="M5.415,11.508H2.031V6.092H0L6.77,0l6.769,6.092H11.508v5.415H8.123V7.446H5.415v4.061ZM6.77,2.769A1.539,1.539,0,1,0,8.308,4.308,1.54,1.54,0,0,0,6.77,2.769Z" transform="translate(0 4.292) scale(1.1)" fill={props.color} />
             <g id="Ellipse_34" data-name="Ellipse 34" transform="translate(5.334 0) scale(1.1)" fill="none" stroke={props.color} strokeWidth="1">
                 <circle cx="2" cy="2" r="2" stroke="none" />
                 <circle cx="2" cy="2" r="1.5" fill="none" />
@@ -632,6 +640,7 @@ const TYPE_ICON_DRAW_INDEX: {
     'hexigon-yes': { className: 'hexigon-yes', generator: hexYes },
     'heart': { className: 'heart', generator: heart },
     'heart-solid': { className: 'heart-solid', generator: heartSolid },
+    'earth': { className: 'earth', generator: earth },
 }
 
 export default class Icon extends React.Component<IconProps> {

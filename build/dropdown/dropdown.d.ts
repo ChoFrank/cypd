@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react';
+import { IconProps } from '../icon/component';
 declare type DropdownItemProps = {
-    icon?: string;
+    icon?: IconProps;
     image?: string;
     label: string;
     className?: string;
@@ -12,15 +13,20 @@ export declare class DropdownItem extends React.Component<DropdownItemProps> {
     render(): JSX.Element;
 }
 declare type DropdownProps = {
-    items: Array<React.ReactNode>;
+    children: Array<DropdownItemProps>;
+    parent: React.ReactNode | (() => React.ReactNode);
     className?: string;
     style?: CSSProperties;
 };
 export default class DropdownWrapper extends React.Component<DropdownProps> {
-    checkbox?: HTMLInputElement | null;
-    forceClose: () => void;
-    onMouseLeave: () => void;
-    onMouseEnter: () => void;
+    id: string;
+    state: {
+        extend: boolean;
+    };
+    checkbox: React.RefObject<HTMLInputElement>;
+    constructor(props: any);
+    onToggle: () => void;
+    onBlur: () => void;
     render(): JSX.Element;
 }
 export {};
