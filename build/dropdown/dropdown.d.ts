@@ -8,10 +8,6 @@ declare type DropdownItemProps = {
     style?: CSSProperties;
     onClick?: ((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void);
 };
-export declare class DropdownItem extends React.Component<DropdownItemProps> {
-    onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-    render(): JSX.Element;
-}
 declare type DropdownProps = {
     children: Array<DropdownItemProps>;
     parent: React.ReactNode | (() => React.ReactNode);

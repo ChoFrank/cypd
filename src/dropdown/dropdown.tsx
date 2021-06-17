@@ -12,7 +12,7 @@ declare type DropdownItemProps = {
     onClick?: ((event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void);
 }
 
-export class DropdownItem extends React.Component<DropdownItemProps> {
+class DropdownItem extends React.Component<DropdownItemProps> {
     onClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         event.preventDefault();
         if (this.props.onClick)

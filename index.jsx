@@ -213,7 +213,7 @@ class App extends React.Component {
                                 alignItems: 'center',
                             }}
                         >
-                            <Dropdown.Wrapper
+                            <Dropdown
                                 parent={<Icon type='earth' color='#008AAB' style={{ transform: 'scale(1.3)' }}/>}
                                 children={[
                                     { label: 'Chinese', icon: { type: 'dashboard', color: '#008aab' } },

@@ -3059,85 +3059,6 @@ var Icon = /** @class */ (function (_super) {
     return Icon;
 }(react.Component));
 
-var DropdownItem = /** @class */ (function (_super) {
-    __extends(DropdownItem, _super);
-    function DropdownItem() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.onClick = function (event) {
-            event.preventDefault();
-            if (_this.props.onClick)
-                _this.props.onClick(event);
-        };
-        return _this;
-    }
-    DropdownItem.prototype.render = function () {
-        var _a = this.props, icon = _a.icon, image = _a.image, label = _a.label, className = _a.className, style = _a.style;
-        var wrapperClass = 'cypd-dropdown-item';
-        if (className)
-            wrapperClass += " " + className;
-        var prefix = react.createElement("div", null);
-        if (icon)
-            prefix = react.createElement(Icon, __assign({}, icon));
-        if (image)
-            prefix = react.createElement("img", { src: image, alt: image });
-        return (react.createElement("div", { className: wrapperClass, style: style, onClick: this.onClick },
-            react.createElement("div", { className: 'prefix' }, prefix),
-            react.createElement("div", { className: 'label' }, label)));
-    };
-    return DropdownItem;
-}(react.Component));
-var DropdownWrapper = /** @class */ (function (_super) {
-    __extends(DropdownWrapper, _super);
-    function DropdownWrapper(props) {
-        var _this = _super.call(this, props) || this;
-        _this.id = Math.random().toString().slice(3);
-        _this.state = { extend: false };
-        _this.onToggle = function () {
-            global.setTimeout(function () {
-                var extend = _this.state.extend;
-                if (_this.checkbox.current) {
-                    if (extend) {
-                        _this.checkbox.current.focus();
-                    }
-                    else {
-                        _this.checkbox.current.blur();
-                    }
-                }
-            }, 100);
-            _this.setState(function (prevState) {
-                return { extend: !prevState.extend };
-            });
-        };
-        _this.onBlur = function () {
-            _this.setState({ extend: false });
-        };
-        _this.checkbox = react.createRef();
-        return _this;
-    }
-    DropdownWrapper.prototype.render = function () {
-        var _this = this;
-        var extend = this.state.extend;
-        var _a = this.props, children = _a.children, className = _a.className, style = _a.style, parent = _a.parent;
-        var renderComponent = '';
-        var wrapperClass = "cypd-dropdown" + ((children && children.length > 0 && extend) ? ' extend' : '');
-        if (className)
-            wrapperClass += " " + className;
-        if (typeof parent === 'function') {
-            renderComponent = parent();
-        }
-        else {
-            renderComponent = parent;
-        }
-        return (react.createElement("label", { className: wrapperClass, style: style, onMouseDown: this.onToggle },
-            renderComponent,
-            (children.length > 0) ? react.createElement("input", { type: 'checkbox', style: { position: 'absolute', transform: 'scale(0)' }, onBlur: this.onBlur, ref: this.checkbox }) : undefined,
-            react.createElement("div", { className: 'wrapper' }, children.map(function (child, i) {
-                return (react.createElement(DropdownItem, __assign({ key: "dropdown_" + _this.id + "_" + i }, child)));
-            }))));
-    };
-    return DropdownWrapper;
-}(react.Component));
-
 var Modal = /** @class */ (function (_super) {
     __extends(Modal, _super);
     function Modal() {
@@ -39495,14 +39416,91 @@ var SortableList = /** @class */ (function (_super) {
     return SortableList;
 }(react.Component));
 
-var DropdownInstance = { Wrapper: DropdownWrapper, Item: DropdownItem, };
+var DropdownItem = /** @class */ (function (_super) {
+    __extends(DropdownItem, _super);
+    function DropdownItem() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.onClick = function (event) {
+            event.preventDefault();
+            if (_this.props.onClick)
+                _this.props.onClick(event);
+        };
+        return _this;
+    }
+    DropdownItem.prototype.render = function () {
+        var _a = this.props, icon = _a.icon, image = _a.image, label = _a.label, className = _a.className, style = _a.style;
+        var wrapperClass = 'cypd-dropdown-item';
+        if (className)
+            wrapperClass += " " + className;
+        var prefix = react.createElement("div", null);
+        if (icon)
+            prefix = react.createElement(Icon, __assign({}, icon));
+        if (image)
+            prefix = react.createElement("img", { src: image, alt: image });
+        return (react.createElement("div", { className: wrapperClass, style: style, onClick: this.onClick },
+            react.createElement("div", { className: 'prefix' }, prefix),
+            react.createElement("div", { className: 'label' }, label)));
+    };
+    return DropdownItem;
+}(react.Component));
+var DropdownWrapper = /** @class */ (function (_super) {
+    __extends(DropdownWrapper, _super);
+    function DropdownWrapper(props) {
+        var _this = _super.call(this, props) || this;
+        _this.id = Math.random().toString().slice(3);
+        _this.state = { extend: false };
+        _this.onToggle = function () {
+            global.setTimeout(function () {
+                var extend = _this.state.extend;
+                if (_this.checkbox.current) {
+                    if (extend) {
+                        _this.checkbox.current.focus();
+                    }
+                    else {
+                        _this.checkbox.current.blur();
+                    }
+                }
+            }, 100);
+            _this.setState(function (prevState) {
+                return { extend: !prevState.extend };
+            });
+        };
+        _this.onBlur = function () {
+            _this.setState({ extend: false });
+        };
+        _this.checkbox = react.createRef();
+        return _this;
+    }
+    DropdownWrapper.prototype.render = function () {
+        var _this = this;
+        var extend = this.state.extend;
+        var _a = this.props, children = _a.children, className = _a.className, style = _a.style, parent = _a.parent;
+        var renderComponent = '';
+        var wrapperClass = "cypd-dropdown" + ((children && children.length > 0 && extend) ? ' extend' : '');
+        if (className)
+            wrapperClass += " " + className;
+        if (typeof parent === 'function') {
+            renderComponent = parent();
+        }
+        else {
+            renderComponent = parent;
+        }
+        return (react.createElement("label", { className: wrapperClass, style: style, onMouseDown: this.onToggle },
+            renderComponent,
+            (children.length > 0) ? react.createElement("input", { type: 'checkbox', style: { position: 'absolute', transform: 'scale(0)' }, onBlur: this.onBlur, ref: this.checkbox }) : undefined,
+            react.createElement("div", { className: 'wrapper' }, children.map(function (child, i) {
+                return (react.createElement(DropdownItem, __assign({ key: "dropdown_" + _this.id + "_" + i }, child)));
+            }))));
+    };
+    return DropdownWrapper;
+}(react.Component));
 
 exports.Book = Book;
 exports.Button = Button;
 exports.Checkbox = CheckBox;
 exports.Cone = Cone;
 exports.DateTime = datetimepicker;
-exports.Dropdown = DropdownInstance;
+exports.Dropdown = DropdownWrapper;
 exports.Empty = Empty;
 exports.Form = form;
 exports.Href = Href;

@@ -2,10 +2,10 @@ import './cypd.css'
 import Select, { Option, SelectNative } from './select/component';
 import { Book, Page } from './story/story';
 import * as Matrix from './grid/grid';
-import DropdownWrapper, { DropdownItem } from './dropdown/dropdown';
+// import DropdownWrapper from './dropdown/dropdown';
 
 
-const DropdownInstance = { Wrapper: DropdownWrapper, Item: DropdownItem, }
+// const DropdownInstance = { Wrapper: DropdownWrapper }
 
 export { default as Icon} from './icon/component';
 export { default as Modal} from './modal/modal';
@@ -28,6 +28,7 @@ export { default as Href } from './href/href';
 export { default as Empty } from './empty/empty';
 export { default as Cone } from './empty/cone';
 export { default as List } from './list/list';
+export { default as Dropdown } from './dropdown/dropdown';
 export { Select, Option, SelectNative, Book, Page };
-export { DropdownInstance as Dropdown };
+// export { DropdownInstance as Dropdown };
 export { Matrix };
