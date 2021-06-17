@@ -2496,10 +2496,10 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window>.cypd-notify-wrapper {
-    overflow: hidden;
+    position: relative;
+    /* overflow: hidden; */
     margin-bottom: 10px;
-    max-height: 90px;
-    box-shadow: 0px 0px 12px -2px rgb(139, 139, 139);
+    /* max-height: 90px; */
     transition: max-height .2s cubic-bezier(0.215, 0.610, 0.355, 1), margin-bottom 0s cubic-bezier(0.215, 0.610, 0.355, 1) .1s;
     animation: PushIn 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
 }
@@ -2528,30 +2528,41 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window .cypd-notify-container {
+    overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
     padding: 10px 10px 10px 15px;
+    border: 1px solid transparent;
     border-radius: 5px;
     background-color: white;
+    box-shadow: 0px 0px 12px -2px rgb(139, 139, 139);
 }
 
-#g__cypd_notify_window .cypd-notify-container.info {
-    border-left: 5px solid #00839E;
+#g__cypd_notify_window .cypd-notify-container::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    height: 110%;
+    width: 7px;
 }
 
-#g__cypd_notify_window .cypd-notify-container.success {
-    border-left: 5px solid #2fdc17;
+#g__cypd_notify_window .cypd-notify-container.info::before {
+    background-color: #00839E;
 }
 
-#g__cypd_notify_window .cypd-notify-container.warning {
-    border-left: 5px solid #ff9b02;
+#g__cypd_notify_window .cypd-notify-container.success::before {
+    background-color: #2fdc17;
 }
 
-#g__cypd_notify_window .cypd-notify-container.error {
-    border-left: 5px solid #a01f48;
+#g__cypd_notify_window .cypd-notify-container.warning::before {
+    background-color: #ff9b02;
+}
+
+#g__cypd_notify_window .cypd-notify-container.error::before {
+    background-color: #a01f48;
 }
 
 #g__cypd_notify_window .cypd-notify-container .icon {

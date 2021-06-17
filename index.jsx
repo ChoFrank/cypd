@@ -72,7 +72,7 @@ class App extends React.Component {
         global.setTimeout(() => { this.setState({ label_test: 'APPOINT' }); }, 3000);
         this.onCheckTableItem = this.onCheckTableItem.bind(this);
     }
-    triggerSuccessDemo() { Notify({ title: 'Success', context: 'This is a Success.........................................................................................', type: 'success', timeout: 1000000 }); }
+    triggerSuccessDemo() { Notify({ title: 'Success', context: 'You don\'t have enough permissions, please contact the administrator.', type: 'success', timeout: 1000000 }); }
     triggerWarningDemo() { Notify({ title: 'Warning', context: 'This is a Warning notification demo.', type: 'warning' }); }
     triggerInfoDemo() { Notify({ title: 'Info', context: 'This is a Info notification demo.', type: 'info' }); }
     triggerErrorDemo() { Notify({ title: 'Error', context: 'This is a Error notification demo.', type: 'error' }); }
