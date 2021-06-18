@@ -195,6 +195,11 @@ class App extends React.Component {
             <Form.Item label='Score' layout='vertical'>
                 <Slider max={10} min={-10} onAfterChange={(v) => { console.log('v :>> ', v); }}></Slider>
             </Form.Item>
+            <Form.Item error='Test hint affect in only button formitem' style={{ justifyContent: 'flex-end' }}>
+                <Button type='danger'>Delete</Button>
+                <Button>Reset</Button>
+                <Button type='primary'>Save</Button>
+            </Form.Item>
         </Form.Form>;
         return (
                 <Layout.Layout>

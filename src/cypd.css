@@ -2268,7 +2268,9 @@ svg.cypd-icon.solid-right * {
     color: #b92454;
     position: absolute;
     right: 0;
-    bottom: -16px;
+    bottom: -20px;
+    height: 20px;
+    line-height: 20px;
 }
 
 .cypd-formitem-wrapper .cypd-formitem-label {
