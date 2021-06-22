@@ -910,6 +910,7 @@
     border: 1px solid rgb(163, 163, 163);
     letter-spacing: 1px;
     cursor: pointer;
+    background-color: white;
 }
 
 .cypd-select-native-wrapper:hover {
