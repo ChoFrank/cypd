@@ -3,6 +3,7 @@
 ## I. Quick Start
 
 * 利用 npx 安裝開發環境
+
 ```
 yarn create-react-app my-app --template typescript
 yarn add typescript @types/node @types/react @types/react-dom @types/jest
@@ -17,6 +18,7 @@ npm install --save ChoFrank/cypd#ct_style
 ```
 
 * 利用 npm/yarn 測試/編譯您的 javascript project
+
 ```
 npm run start 
 # run your project through the entry point (usually index.js/index.tsx/index.jsx)
@@ -38,7 +40,7 @@ npm install --save https://github.com/ChoFrank/cypd.git#${commit}
 
 ## III. Basic Component Example
 
-* [Button 按鍵](#1)
+* [Button 按鍵](https://github.com/ChoFrank/cypd/tree/master/src/button)
 * [Icon 圖標](#2)
 * [Input 輸入框](#3)
 * [Select & Option 選擇框與選項](#4)

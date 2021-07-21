@@ -97,7 +97,9 @@ export default class Tooltip extends React.Component<TooltipProps> {
             <abbr
                 title={text}
                 className={className}
-            >{this.props.children}</abbr>
+            >
+                {this.props.children}
+            </abbr>
         ) : (
             <div 
                 className={wrapperClass} 
