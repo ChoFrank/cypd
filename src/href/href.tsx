@@ -19,4 +19,4 @@ export default class Href extends React.Component<HrefProps> {
                 this.props.to();
         }}>{this.props.children}</div>;
     }
-};
+}

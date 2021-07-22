@@ -1,7 +1,6 @@
 import React from 'react';
 interface ModalProps {
     title: string;
-    footer: boolean;
     style: React.CSSProperties;
     bodyStyle: React.CSSProperties;
     headerStyle: React.CSSProperties;

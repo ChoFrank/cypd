@@ -253,6 +253,8 @@ export default class Table extends React.Component<TableProps> {
                 tbody = this.transformBody(rows);
             } else if (responsive === 'shorten') {
                 tbody = this.shortenBody(rows);
+            } else {
+                tbody = this.basicBody(rows);
             }
             const table = <table style={{ width: (columnSum?`${columnSum}px`:undefined) }}>{thead}{tbody}</table>;
             return (

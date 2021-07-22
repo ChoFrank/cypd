@@ -1,21 +1,7 @@
 import React, { CSSProperties } from 'react';
 // import ReactDOM from 'react-dom';
 
-import Empty from '../empty/empty'; 
 import Sortable from './sortable.min.js';
-
-declare type CypdListDragManagement = {
-    onHover: (item_id?: number) => void;
-    onDragStart: (drag_order: number) => void;
-    onDrop: (drop_order: number) => void;
-    drag_order?: number;
-}
-
-declare global {
-    interface Window {
-        __cypd_list_drag_management: { [s: string]: CypdListDragManagement };
-    }
-}
 
 declare type ListItemProperties = {
     label: React.ReactNode;
@@ -91,103 +77,6 @@ declare type SortEvent = {
     oldIndex: number;
 }
 
-// export default class List extends React.Component<ListProperties> {
-export class List extends React.Component<ListProperties> {
-    state: ListState;
-    private _id = Math.random().toString().slice(2);
-    constructor(props: ListProperties) {
-        super(props);
-        const { items } = this.props;
-        this.state = { item_flex_order: items.map((_, idx) => idx), animated_class: items.map(_ => ''), dragging: false, prevProps: { ...this.props }, resetMark: 0 };
-        window.__cypd_list_drag_management = (window.__cypd_list_drag_management) ? window.__cypd_list_drag_management : {};
-    }
-    static getDerivedStateFromProps(nextProps: ListProperties, prevState: ListState): Partial<ListState> | null { 
-        let new_state: Partial<ListState> = { prevProps: { ...nextProps } };
-        if (prevState.prevProps.draggable && !nextProps.draggable)
-            new_state.item_flex_order = nextProps.items.map((_, idx) => idx);
-        if (prevState.item_flex_order.length !== nextProps.items.length)
-            new_state.item_flex_order = nextProps.items.map((_, idx) => idx);
-        return new_state;
-    }
-    componentDidMount() {
-        window.__cypd_list_drag_management[this._id] = { onHover: this.onHover, onDragStart: this.onDragStart, onDrop: this.onDrop, };
-    }
-    componentWillUnmount() { 
-        delete window.__cypd_list_drag_management[this._id];
-        this.setState = () => {}; 
-    }
-    onDragStart = (drag_order: number) => {
-        const { draggable } = this.props;
-        if (draggable && window.__cypd_list_drag_management[this._id]) {
-            const { item_flex_order, animated_class } = this.state;
-            const drag_idx = item_flex_order.indexOf(drag_order);
-            window.__cypd_list_drag_management[this._id].drag_order = drag_order;
-            animated_class[drag_idx] += 'dragged ';
-            this.setState({ animated_class, dragging: true });
-        }
-    }
-    onHover = (item_id?: number) => { 
-        const { draggable } = this.props;
-        if (draggable) {
-            if (item_id) {
-                document.removeEventListener('mouseup', this.releaseMouse, false);
-                // document.removeEventListener('touchend', this.releaseMouse, false);
-            } else {
-                document.addEventListener('mouseup', this.releaseMouse, false);
-                // document.addEventListener('touchend', this.releaseMouse, false);
-            }
-        }
-    }
-    onDrop = (drop_order: number) => {
-        const { item_flex_order } = this.state;
-        const { draggable, onAfterDrag, items } = this.props;
-        if (draggable) {
-            const { drag_order } = window.__cypd_list_drag_management[this._id];
-            if (typeof drag_order === 'number' && drag_order !== drop_order) {
-                for (let i = 0; i < item_flex_order.length; i++) {
-                    const flex_order = item_flex_order[i];
-                    if (flex_order < drag_order && flex_order >= drop_order)
-                        item_flex_order[i] ++;
-                    if (flex_order > drag_order && flex_order <= drop_order)
-                        item_flex_order[i] --;
-                    if (flex_order == drag_order)
-                        item_flex_order[i] = drop_order; // handle hover-bottom class
-                }
-                if (draggable && onAfterDrag) {
-                    const reorder_items = item_flex_order.map((_, idx) => {
-                        const idx_flex_order = item_flex_order.indexOf(idx);
-                        const item_key = items[idx_flex_order].index;
-                        return (item_key) ? item_key : idx_flex_order.toString();
-                    });
-                    onAfterDrag(reorder_items);
-                }
-            }
-            this.setState({ item_flex_order }, this.releaseMouse);
-        }
-    }
-    releaseMouse = () => {
-        if (window.__cypd_list_drag_management[this._id])
-            window.__cypd_list_drag_management[this._id].drag_order = undefined;
-        this.setState({ animated_class: this.props.items.map(_ => ''), dragging: false });
-    }
-    render() {
-        const { item_flex_order, animated_class, dragging } = this.state
-        const { items, className, style, draggable } = this.props;
-        let wrapperClass = 'cypd-list';
-        if (className)
-            wrapperClass += ` ${className}`;
-        if (draggable)
-            wrapperClass += ` draggable`;
-        if (draggable && dragging)
-            wrapperClass += ` dragging`;
-        return <div className={wrapperClass} style={style} id={this._id}>
-            { items.map((list_item, idx) => {
-                return <ListItem key={`${this._id}_item_${idx}`} {...list_item} __cypd_listitem_order={item_flex_order[idx]} className={animated_class[idx]}/>;
-            }) }
-            { (items.length > 0) ? undefined : <Empty />}
-        </div>;
-    }
-};
 
 export default class SortableList extends React.Component<ListProperties> {
     state: ListState;

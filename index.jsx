@@ -64,12 +64,12 @@ class App extends React.Component {
         };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
-        // this.testProgress = setInterval(() => {
-        //     if (this.state.progress < 100)
-        //         this.setState((prevState) => ({ progress: prevState.progress + 2 }));
-        //     else
-        //         clearInterval(this.testProgress);
-        // }, 100);
+        this.testProgress = setInterval(() => {
+            if (this.state.progress < 100)
+                this.setState((prevState) => ({ progress: prevState.progress + 2 }));
+            else
+                clearInterval(this.testProgress);
+        }, 100);
         global.setTimeout(() => { this.setState({ label_test: 'APPOINT' }); }, 3000);
         this.onCheckTableItem = this.onCheckTableItem.bind(this);
     }
@@ -103,27 +103,27 @@ class App extends React.Component {
             <Option value='4' key={Math.random()}>Chris</Option>,
         ]
         const tooltip_sample = 'Return to main dashboard page where setup and configuration of the unit is performed.';
-        const rows = [
-            [<Icon type='loading' />, <Slider max={10} min={-10} step={1} value={this.state.progress} onAfterChange={(v) => { this.setState({ progress: v }); }} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
-            [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
-            [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked label={[ 'ALL', label_test ]}/>],
-            [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked checkedType='square'/><Checkbox label='Afternoon' checkedType='square' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
-            [<Icon type='led-yellow' />, <Button type='primary' icon='stop' iconColor='white' onClick={() => { this.setState({ progress: 6 }) }}>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
-            [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo} tooltipDirection='top-left' tooltip={tooltip_sample}>Warning</Button>, <Button icon='update' onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo} tooltipDirection='top-right' tooltip={tooltip_sample}>Error</Button>],
-            [<Icon type='led-blue' />, <Button type='primary' size='small' icon='edit' tooltipDirection='left-top' tooltip={tooltip_sample}>Submit</Button>, <Button size='small' tooltipDirection='top' tooltip={tooltip_sample}>Click</Button>, <Button icon='trashcan' type='danger' size='small' tooltipDirection='right-top' tooltip={tooltip_sample}>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='edit' tooltipDirection='left' tooltip={tooltip_sample}>Submit</Button>, <Button icon='move' onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger' tooltipDirection='right' tooltip={tooltip_sample}>Delete</Button>],
-            [<Icon type='led-red' />, <Button type='primary' icon='import' tooltipDirection='left-bottom' tooltip={tooltip_sample} />, <Button icon='zoom-out' tooltipDirection='bottom' tooltip={tooltip_sample} />, <Button icon='square-minus' type='danger' tooltipDirection='right-bottom' tooltip={tooltip_sample} />],
-            [undefined, <Button type='primary' icon='import' tooltipDirection='bottom-left' tooltip={tooltip_sample} />, undefined, <Button icon='square-minus' type='danger' tooltipDirection='bottom-right' tooltip={tooltip_sample} />],
-            ['', <DateTime.TimePicker />, <DateTime.DatePicker />, <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />],
-        ];
-        const table = <Table
-            headers={['1', '2', '3', '4']}
-            columnWidth={[ 300, 200, 200, 200 ]}
-            rows={rows}
-            pagination={true}
-            rowLimit={10}
-            responsive='transform'
-        />;
+        // const rows = [
+        //     ['', <DateTime.TimePicker />, <DateTime.DatePicker />, <ProgressBar hint={`${this.state.progress}%`} percentage={this.state.progress} />],
+        //     [<Icon type='led-gray' />, <Input size='small' placeholder='sample input' style={{ width: '75%' }} />, <DateTime.DatePicker />, <DateTime.TimePicker />],
+        //     [<Icon type='led-red' />, <Input size='small' disabled placeholder='sample input' style={{ width: '75%' }} />, <Select value='' onChange={() => { }} style={{ width: '75%' }} size='small'>{sampleOptions}</Select>, <SwitchButton defaultChecked label={[ 'ALL', label_test ]}/>],
+        //     [<Icon type='led-green' />, <div><Checkbox readOnly label='Mornig' disabled checked checkedType='square'/><Checkbox label='Afternoon' checkedType='square' /><Checkbox readOnly checked label='Night' /></div>, <RadioGroup options={[{ value: '1', label: '1' }, { value: '2', label: '2' }, { value: '3', label: '3', disabled: true }, { value: '4', label: '4' }]} />, <SwitchButton />],
+        //     [<Icon type='led-yellow' />, <Button type='primary' icon='stop' iconColor='white' onClick={() => { this.setState({ progress: 6 }) }}>Nickname</Button>, <Button>IP addr</Button>, <Button icon='square-minus' type='danger'>gateway</Button>],
+        //     [<Button onClick={this.triggerSuccessDemo}>Success</Button>, <Button onClick={this.triggerWarningDemo} tooltipDirection='top-left' tooltip={tooltip_sample}>Warning</Button>, <Button icon='update' onClick={this.triggerInfoDemo}>Info</Button>, <Button onClick={this.triggerErrorDemo} tooltipDirection='top-right' tooltip={tooltip_sample}>Error</Button>],
+        //     [<Icon type='led-blue' />, <Button type='primary' size='small' icon='edit' tooltipDirection='left-top' tooltip={tooltip_sample}>Submit</Button>, <Button size='small' tooltipDirection='top' tooltip={tooltip_sample}>Click</Button>, <Button icon='trashcan' type='danger' size='small' tooltipDirection='right-top' tooltip={tooltip_sample}>Delete</Button>],
+        //     [<Icon type='led-red' />, <Button type='primary' icon='edit' tooltipDirection='left' tooltip={tooltip_sample}>Submit</Button>, <Button icon='move' onClick={this.openModal}>Click</Button>, <Button icon='trashcan' type='danger' tooltipDirection='right' tooltip={tooltip_sample}>Delete</Button>],
+        //     [<Icon type='led-red' />, <Button type='primary' icon='import' tooltipDirection='left-bottom' tooltip={tooltip_sample} />, <Button icon='zoom-out' tooltipDirection='bottom' tooltip={tooltip_sample} />, <Button icon='square-minus' type='danger' tooltipDirection='right-bottom' tooltip={tooltip_sample} />],
+        //     [undefined, <Button type='primary' icon='import' tooltipDirection='bottom-left' tooltip={tooltip_sample} />, undefined, <Button icon='square-minus' type='danger' tooltipDirection='bottom-right' tooltip={tooltip_sample} />],
+        //     [<Icon type='loading' />, <Slider max={10} min={-10} step={1} value={this.state.progress} onAfterChange={(v) => { this.setState({ progress: v }); }} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
+        // ];
+        // const table = <Table
+        //     headers={['1', '2', '3', '4']}
+        //     columnWidth={[ 300, 200, 200, 200 ]}
+        //     rows={rows}
+        //     pagination={true}
+        //     rowLimit={10}
+        //     responsive='transform'
+        // />;
         const email_example = [
             ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
             ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
@@ -134,25 +134,24 @@ class App extends React.Component {
             ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
             ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
         ];
-        // const table = <Table
-        //     headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
-        //     rows={email_example}
-        //     pagination={true}
-        //     rowLimit={5}
-        //     columnWidth={[1, 1, 2, 1]}
-        //     responsive='shorten'
-        //     shortenProps={{
-        //         layout: {
-        //             bottomLeft: 0,
-        //             topLeft: 5,
-        //             topRight: [1, 4, 3],
-        //             bottomRight: [2],
-        //         }
-        //     }}
-        //     checkable
-        //     checkList={Array.from(this.state.test_checklist)}
-        //     onCheck={this.onCheckTableItem}
-        // ></Table>;
+        const table = <Table
+            headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
+            rows={email_example}
+            pagination={true}
+            rowLimit={5}
+            responsive='transform'
+            shortenProps={{
+                layout: {
+                    bottomLeft: 0,
+                    topLeft: 5,
+                    topRight: [1, 4, 3],
+                    bottomRight: [2],
+                }
+            }}
+            checkable
+            checkList={Array.from(this.state.test_checklist)}
+            onCheck={this.onCheckTableItem}
+        ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '130px' }}>
             <Form.Item label='Name' error='Name cannot be null'>
@@ -204,6 +203,7 @@ class App extends React.Component {
         return (
                 <Layout.Layout>
                     <Layout.Header>
+                        <h1 style={{ fontSize: '24px', height: '40px', lineHeight: '40px', margin: 0, color: 'gray' }}>Layout.Header</h1>
                         <div
                             className='demo-navitem'
                             style={{
@@ -234,15 +234,16 @@ class App extends React.Component {
                         <Spin type='linear' visible={false} />
                         <Layout.Sider
                             visible={this.state.visible}
-                            toggleTooltip='Log the currently connected user out of the website.'
+                            toggleTooltip={'This is Layout.Sider\'s toggler.'}
                             onCollapse={(visible) => { this.setState({ visible }); }}
                         >
-                            <Layout.NavigationItem icon='dashboard' tooltip='dashboard' label='alksjcasn' children={[ { label: 'sadas' }, { label: 'sadas' }, { label: 'sadas' } ]} />
-                            <Layout.NavigationItem icon='calendar' label='asdas'/>
-                            <Layout.NavigationItem icon='save' label='asva' children={[ { label: 'sadas' }, { label: 'sadas' }, { label: 'sadas' } ]} />
-                            <Layout.NavigationItem icon='scenario' label='asc'/>
-                            <Layout.NavigationItem icon='setting' label='assv'/>
-                            <Layout.NavigationItem icon='idea' label='asvasvavas'/>
+                            <Layout.NavigationItem icon='dashboard' tooltip='dashboard' label='NavigationItem 1' children={[ { label: 'Level2 1' }, { label: 'Level2 2' }, { label: 'Level2 3' } ]} />
+                            <Layout.NavigationItem icon='calendar' label='NavigationItem 2'/>
+                            <Layout.NavigationItem icon='save' label='NavigationItem 3' children={[ { label: 'Level2 1' }, { label: 'Level2 2' }, { label: 'Level2 3' } ]} />
+                            <Layout.NavigationItem icon='scenario' label='NavigationItem 4'/>
+                            <Layout.NavigationItem icon='setting' label='NavigationItem 5'/>
+                            <Layout.NavigationItem icon='idea' label='NavigationItem 6'/>
+                            <h1 style={{ fontSize: '28px', paddingLeft: '80px', transform: 'translate(88px, -50px) rotate(-90deg)', height: '40px', lineHeight: '40px', margin: 0, color: 'white' }}>Layout.Sider</h1>
                         </Layout.Sider>
                         <Layout.Center>
                             <div className='app_dashboard_container'>
@@ -257,8 +258,12 @@ class App extends React.Component {
                                 <List draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} />
                                 {form}
                             </div>
+                            {/* <h1 style={{ fontSize: '48px', color: 'gray', paddingLeft: '20px' }}>Layout.Body</h1> */}
                         </Layout.Center>
                     </Layout.Body>
+                    <Layout.Footer>
+                        <h1 style={{ fontSize: '18px', height: '40px', lineHeight: '40px', margin: 0 }}>Layout.Footer</h1>
+                    </Layout.Footer>
                     <Modal
                         visible={this.state.popup}
                         onClose={this.closeModal}
@@ -266,7 +271,7 @@ class App extends React.Component {
                     >
                         This is a CYPD demostration.
                 </Modal>
-                </Layout.Layout>
+            </Layout.Layout>
         );
     }
 }

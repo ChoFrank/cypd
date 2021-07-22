@@ -297,6 +297,17 @@
     width: 0;
 }
 
+.cypd-layout>.footer {
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #e65381;
+    color: white;
+}
+
 
 /* cypd table */
 
@@ -958,11 +969,12 @@
 
 .cypd-select-native-wrapper select {
     /* A reset of styles, including removing the default dropdown arrow */
-    border:none !important;
+    border: none !important;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
+    -ms-appearance: none;
+    /* get rid of default appearance for IE8, 9 and 10*/
     /* Additional resets for further consistency */
     background-color: transparent;
     padding: 0;
@@ -1008,6 +1020,8 @@
 .cypd-select-native-wrapper select option:disabled {
     color: #bdbdbd;
 }
+
+
 /* cypd icon */
 
 .cypd-icon-wrapper {
