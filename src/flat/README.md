@@ -63,16 +63,16 @@ class App extends React.Component {
                             ></Input>
                         </Form.Item>
                     </Form.Form>
-					<Flat.Field title='Field Demo'>
-						<Form.Form labelStyle={{ width: '130px' }}>
-							<Form.Item label='Address'>
-								<Input 
-									value={this.state.address} 
-									onChange={(e) => { this.setState({ address: e.target.value }); }}
-								></Input>
-							</Form.Item>
-						</Form.Form>
-					</Flat.Field>
+                    <Flat.Field title='Field Demo'>
+                        <Form.Form labelStyle={{ width: '130px' }}>
+                            <Form.Item label='Address'>
+                                <Input 
+                                    value={this.state.address} 
+                                    onChange={(e) => { this.setState({ address: e.target.value }); }}
+                                ></Input>
+                            </Form.Item>
+                        </Form.Form>
+                    </Flat.Field>
                 </Flat.Section>
             </Flat.Playground>
         );
