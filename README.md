@@ -47,6 +47,7 @@ npm install --save https://github.com/ChoFrank/cypd.git#${commit}
 * [Datetime 時間與日期選擇器](https://github.com/ChoFrank/cypd/tree/master/src/datetime)
 * [Dropdown 下拉內容](https://github.com/ChoFrank/cypd/tree/master/src/dropdown)
 * [Empty & Cone 提示區塊](https://github.com/ChoFrank/cypd/tree/master/src/empty)
+* [Flat 平面規劃](https://github.com/ChoFrank/cypd/tree/master/src/flat)
 * [Form 表單](https://github.com/ChoFrank/cypd/tree/master/src/form)
 * [Href 超連結](https://github.com/ChoFrank/cypd/tree/master/src/href)
 * [Icon 圖標](https://github.com/ChoFrank/cypd/tree/master/src/icon)
