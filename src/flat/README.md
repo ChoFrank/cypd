@@ -41,7 +41,7 @@ titleStyle      | `React.CSSProperties` \| `undefined`              | `undefined
 // CYPD Flat sample code
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Flat } from 'cypd';
+import { Flat, Form, Input } from 'cypd';
 
 class App extends React.Component {
     constructor(props) {
