@@ -3024,3 +3024,181 @@ html {
         background-position: center;
     }
 }
+
+
+/* flat */
+
+.cypd_flat_playground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.cypd_flat_playground .extend_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: calc(100% - 40px);
+    min-width: 320px;
+    max-width: 600px;
+    margin: 10px 0px 0px 0px;
+    padding-right: 5px;
+}
+
+.cypd_flat_playground .cypd_flat_playground_wrapper>.extend_wrapper>.toggler::after {
+    content: '';
+    color: #008aab;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cypd_flat_playground .cypd_flat_playground_wrapper.extend>.extend_wrapper>.toggler::after {
+    content: 'Collapse All';
+}
+
+.cypd_flat_playground .cypd_flat_playground_wrapper.collapse>.extend_wrapper>.toggler::after {
+    content: 'Expand All';
+}
+
+.cypd_flat_playground_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+    flex-wrap: nowrap;
+    height: 100%;
+    min-height: 100%;
+}
+
+.cypd_flat_section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 5px;
+    margin: 10px 0px 10px 0px;
+    width: calc(100% - 40px);
+    min-width: 320px;
+    /* min-width: 400px; */
+    max-width: 600px;
+    background-color: white;
+    box-shadow: 0px 4px 16px rgba(69, 91, 99, 0.3);
+    height: auto;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler {
+    position: absolute;
+    box-sizing: content-box;
+    width: 26px;
+    height: 24px;
+    top: 7px;
+    right: 17px;
+    cursor: pointer;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler::before,
+.cypd_flat_section .cypd_flat_section_toggler::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 3px;
+    background-color: white;
+    transition: transform 150ms, opacity 150ms;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler::before {
+    transform: translate(5.5px, 11px) rotate(90deg);
+}
+
+.cypd_flat_section .cypd_flat_section_toggler::after {
+    transform: translate(5px, 8px);
+}
+
+.cypd_flat_section .cypd_flat_section_toggler.extend::before {
+    transform: translate(5px, 11px) rotate(180deg);
+}
+
+.cypd_flat_section .cypd_flat_section_toggler.extend::after {
+    transform: translate(5px, 11px) rotate(90deg);
+    opacity: 0;
+}
+
+.cypd_flat_section .cypd_flat_section_title {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: larger;
+    color: white;
+    background-color: #008aab;
+    font-weight: bold;
+    text-align: left;
+    text-indent: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    user-select: none;
+    cursor: default;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler~.cypd_flat_section_title {
+    cursor: pointer;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler.collapse~.cypd_flat_section_title {
+    border-radius: 5px;
+}
+
+.cypd_flat_section .cypd_flat_section_context {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px 60px; */
+    padding: 10px 30px;
+    height: auto;
+    max-height: 30000px;
+    overflow: visible;
+    transition: max-height 150ms, padding 0s;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler.collapse~.cypd_flat_section_context {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 150ms, padding 0s linear 150ms;
+}
+
+.cypd_flat_section .cypd_flat_section_toggler.collapse~.cypd_flat_section_context * {
+    visibility: hidden;
+}
+
+.cypd_flat_field {
+    width: 100%;
+}
+
+.cypd_flat_field .cypd_flat_field_title {
+    background-color: #66b6ca;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+
+@media (max-width: 800px) {
+    .cypd_flat_section .cypd_flat_section_context {
+        padding: 10px 20px;
+    }
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    /* IE10+ CSS */
+    .cypd_flat_section .cypd_flat_section_toggler.collapse~.cypd_flat_section_context {
+        height: 0;
+    }
+}

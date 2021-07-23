@@ -25,6 +25,7 @@ import {
     Spin,
     Tooltip,
     Dropdown,
+    Flat,
 } from './src';
 
 import './index.css'
@@ -153,7 +154,7 @@ class App extends React.Component {
             onCheck={this.onCheckTableItem}
         ></Table>;
         const icondemo = icons.map(type => icon_container(type));
-        const form = <Form.Form style={{ width: '400px' }} labelStyle={{ width: '130px' }}>
+        const form = <Form.Form labelStyle={{ width: '130px' }}>
             <Form.Item label='Name' error='Name cannot be null'>
                 <Input
                     value={this.state.name}
@@ -246,7 +247,21 @@ class App extends React.Component {
                             <h1 style={{ fontSize: '28px', paddingLeft: '80px', transform: 'translate(88px, -50px) rotate(-90deg)', height: '40px', lineHeight: '40px', margin: 0, color: 'white' }}>Layout.Sider</h1>
                         </Layout.Sider>
                         <Layout.Center>
-                            <div className='app_dashboard_container'>
+                            <Flat.Playground contextStyle={{ height: 'auto' }}>
+                                {table}
+                                <div className='empty_demo_wrapper'><Tooltip direction='top-left' fixedWidth={300} text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
+                                <div className='empty_demo_wrapper'><Cone color='yellow' /></div>
+                                <div className='icon_demo_wrapper'>
+                                    {icondemo}
+                                </div>
+                                <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='hexigon' />
+                                <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='heart' />
+                                <List draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} />
+                                <Flat.Section title='Form Demo'>
+                                    {form}
+                                </Flat.Section>
+                            </Flat.Playground>
+                            {/* <div className='app_dashboard_container'>
                                 {table}
                                 <div className='empty_demo_wrapper'><Tooltip direction='top-left' fixedWidth={300} text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
                                 <div className='empty_demo_wrapper'><Cone color='yellow' /></div>
@@ -257,7 +272,7 @@ class App extends React.Component {
                                 <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='heart' />
                                 <List draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} />
                                 {form}
-                            </div>
+                            </div> */}
                             {/* <h1 style={{ fontSize: '48px', color: 'gray', paddingLeft: '20px' }}>Layout.Body</h1> */}
                         </Layout.Center>
                     </Layout.Body>
