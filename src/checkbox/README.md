@@ -3,6 +3,7 @@
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
 label           | `string` \| `undefined`                           | `undefined`       | Determine Checkbox's label.
+defaultChecked  | `boolean` \| `undefined`                          | `undefined`       | Determine Checkbox is default checked or not.
 checked         | `boolean` \| `undefined`                          | `undefined`       | Determine Checkbox is checked or not.
 disabled        | `boolean` \| `undefined`                          | `undefined`       | Determine Checkbox is disabled or not.
 readOnly        | `boolean` \| `undefined`                          | `undefined`       | Make Checkbox read-only when this property is true.

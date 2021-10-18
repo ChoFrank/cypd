@@ -3497,7 +3497,7 @@ var CheckBox = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CheckBox.prototype.render = function () {
-        var _a = this.props, className = _a.className, style = _a.style, disabled = _a.disabled, label = _a.label, checked = _a.checked, readOnly = _a.readOnly, checkedType = _a.checkedType, onChange = _a.onChange;
+        var _a = this.props, className = _a.className, style = _a.style, disabled = _a.disabled, label = _a.label, checked = _a.checked, readOnly = _a.readOnly, checkedType = _a.checkedType, defaultChecked = _a.defaultChecked, onChange = _a.onChange;
         var wrapperClass = 'cypd-checkbox-wrapper';
         if (className)
             wrapperClass += " " + className;
@@ -3506,7 +3506,7 @@ var CheckBox = /** @class */ (function (_super) {
         if (disabled)
             wrapperClass += " disabled";
         return (react.createElement("label", { className: wrapperClass, style: style },
-            react.createElement("input", { type: 'checkbox', checked: checked, disabled: disabled, onChange: onChange, readOnly: readOnly }),
+            react.createElement("input", { type: 'checkbox', defaultChecked: defaultChecked, checked: checked, disabled: disabled, onChange: onChange, readOnly: readOnly }),
             react.createElement("span", { className: 'cypd-checkbox' }),
             react.createElement("span", null, label)));
     };

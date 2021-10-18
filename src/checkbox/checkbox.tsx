@@ -3,6 +3,7 @@ import React, { CSSProperties, ReactNode } from 'react';
 
 type CheckBoxProps = {
     label: ReactNode,
+    defaultChecked: boolean,
     checked: boolean,
     disabled: boolean,
     className: string,
@@ -14,7 +15,7 @@ type CheckBoxProps = {
 
 export default class CheckBox extends React.Component<Partial<CheckBoxProps>> {
     render() {
-        const { className, style, disabled, label, checked, readOnly, checkedType, onChange } = this.props;
+        const { className, style, disabled, label, checked, readOnly, checkedType, defaultChecked, onChange } = this.props;
         let wrapperClass = 'cypd-checkbox-wrapper';
         if (className)
             wrapperClass += ` ${className}`;
@@ -24,7 +25,7 @@ export default class CheckBox extends React.Component<Partial<CheckBoxProps>> {
             wrapperClass += ` disabled`;
         return (
             <label className={wrapperClass} style={style}>
-                <input type='checkbox' checked={checked} disabled={disabled} onChange={onChange} readOnly={readOnly}/>
+                <input type='checkbox' defaultChecked={defaultChecked} checked={checked} disabled={disabled} onChange={onChange} readOnly={readOnly}/>
                 <span className='cypd-checkbox'/>
                 <span>{label}</span>
             </label>
