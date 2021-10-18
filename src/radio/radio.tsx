@@ -11,7 +11,7 @@ declare type RadioProps = {
     name: string,
     option: RadioOption,
     checked?: boolean,
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void,
     style?: CSSProperties,
     className?: string,
 }
@@ -23,6 +23,7 @@ declare type RadioGroupProps = {
     onChange?: (v: string) => void,
     style?: CSSProperties,
     className?: string,
+    defaultValue?: string,
 }
 
 class Radio extends React.Component<RadioProps> {
@@ -41,9 +42,22 @@ class Radio extends React.Component<RadioProps> {
 }
 
 export default class RadioGroup extends React.Component<RadioGroupProps> {
+    state: { _internal_value: string } = { _internal_value: '' };
+    componentDidMount() {
+        const { defaultValue } = this.props;
+        if (typeof defaultValue === 'string') {
+            this.setState({ _internal_value: defaultValue });
+        }
+    }
     name = Math.random().toString().slice(2);
-    onRadioChecked = (event: React.ChangeEvent<HTMLInputElement>) => { if (this.props.onChange) this.props.onChange(event.target.value); }
+    onRadioChecked = (event: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({ _internal_value: event.target.value });
+        if (this.props.onChange) {
+            this.props.onChange(event.target.value);
+        }
+    }
     render() {
+        const { _internal_value } = this.state;
         const { className, value, options, style, layout } = this.props;
         var wrapperClass = 'cypd-radio-group-wrapper';
         if (className)
@@ -53,7 +67,19 @@ export default class RadioGroup extends React.Component<RadioGroupProps> {
         return (
             <div className={wrapperClass} style={style}>
                 {options.map(option => {
-                    return <Radio option={option} key={Math.random()} name={this.name} checked={(typeof value === 'undefined') ? undefined : (this.props.value === option.value)} onChange={this.onRadioChecked}/>
+                    let checked = (option.value.length > 0 && _internal_value === option.value);
+                    if (typeof value !== 'undefined') {
+                        checked = (value === option.value);
+                    }
+                    return (
+                        <Radio
+                            option={option}
+                            key={Math.random()}
+                            name={this.name}
+                            checked={checked}
+                            onChange={this.onRadioChecked}
+                        />
+                    )
                 })}
             </div>
         );

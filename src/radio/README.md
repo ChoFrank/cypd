@@ -5,6 +5,7 @@ Properties      | Type                                              | Default va
 options (*)     | `RadioOption` (below)                             |                   | Determine the radio amount and state
 layout          | "vertical" \| "horizontal"                        | "horizontal"      | Determine RadioGroup orientation
 value           | `string` \| `undefined`                           | `undefined`       | Determine current value of RadioGroup
+defaultValue    | `string` \| `undefined`                           | `undefined`       | Determine default value of RadioGroup. Priority is lower than `value` property.
 className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
 style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.
 onChange        | `(value: string) => void` \| `undefined`          | `undefined`       | This function is triggered after clicking.

@@ -24,6 +24,7 @@ A middle layer between `Layout.Header` and `Layout.Footer`
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
 direction       | "left" \| "right"                                 | "left"            | Sider appears in left/right of center context
+forceExtend     | `boolean` \| `undefined`                          | `undefined`       | If this property is defined as true, the sider is always visible.
 customizedToggler| `React.ReactNode` \| `undefined`       			| `undefined`       | If this property is defined, the sider will replace default toggler with this object.
 className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
 style           | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style.

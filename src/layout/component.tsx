@@ -101,6 +101,7 @@ class NavigationItem extends React.Component<NavitemProps> {
 
 interface SiderProps {
     direction?: 'left' | 'right',
+    forceExtend?: boolean,
     visible?: boolean,
     customizedToggler?: React.ReactNode,
     className?: string,
@@ -148,9 +149,9 @@ class Sider extends React.Component<SiderProps> {
     toggler: HTMLInputElement | undefined | null;
     // mouseInToggleArea: boolean = false;
     componentDidMount() {
-        const { toggleClass, toggleStyle, toggleTooltip, toggleTooltipDirection, toggleTooltipFixedWidth } = this.props;
+        const { toggleClass, toggleStyle, toggleTooltip, toggleTooltipDirection, toggleTooltipFixedWidth, forceExtend } = this.props;
         const toggler = (
-            <label className={`toggle${toggleClass ? ` ${toggleClass}` : ''}`} style={toggleStyle}>
+            <label className={`toggle${toggleClass ? ` ${toggleClass}` : ''}${forceExtend ? ` no-transform` : ''}`} style={toggleStyle}>
                 <input ref={inst => { this.toggler = inst; }} onChange={this.onToggle} type='checkbox' />
                 <div /><div /><div />
                 {toggleTooltip ? <Tooltip
@@ -198,7 +199,7 @@ class Sider extends React.Component<SiderProps> {
         if (this.toggler && this.state.visible) this.toggler.click();
     }
     render() {
-        const { className, style } = this.props;
+        const { className, style, forceExtend } = this.props;
         const { visible } = this.state;
         const direction = this.props.direction ? this.props.direction : 'left';
         let wrapperClass = `column ${direction}${className ? ` ${className}` : ''}`;
@@ -208,6 +209,8 @@ class Sider extends React.Component<SiderProps> {
             window.layout.rightSideStatus = (visible) ? 'extend' : 'collapsed';
         if (visible)
             wrapperClass += ' visible';
+        if (forceExtend) 
+            wrapperClass += ' force-visible'
         return (
             <div className={wrapperClass} style={style}>
                 <div className='column-wrapper'>{this.props.children}</div>

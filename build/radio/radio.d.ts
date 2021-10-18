@@ -11,8 +11,13 @@ declare type RadioGroupProps = {
     onChange?: (v: string) => void;
     style?: CSSProperties;
     className?: string;
+    defaultValue?: string;
 };
 export default class RadioGroup extends React.Component<RadioGroupProps> {
+    state: {
+        _internal_value: string;
+    };
+    componentDidMount(): void;
     name: string;
     onRadioChecked: (event: React.ChangeEvent<HTMLInputElement>) => void;
     render(): JSX.Element;

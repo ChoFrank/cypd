@@ -39,6 +39,7 @@ declare class NavigationItem extends React.Component<NavitemProps> {
 }
 interface SiderProps {
     direction?: 'left' | 'right';
+    forceExtend?: boolean;
     visible?: boolean;
     customizedToggler?: React.ReactNode;
     className?: string;
