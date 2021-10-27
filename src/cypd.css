@@ -2519,7 +2519,7 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window>.cypd-notify-wrapper {
-    position: relative;
+    position: absolute;
     /* overflow: hidden; */
     margin-bottom: 10px;
     /* max-height: 90px; */
