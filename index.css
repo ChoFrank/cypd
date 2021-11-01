@@ -45,3 +45,7 @@
 .icon_container .label {
     margin-left: 10px;
 }
+
+.icon_container .cypd-icon-wrapper {
+    border: 1px solid gray;
+}

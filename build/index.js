@@ -2536,7 +2536,7 @@ var write = function (props) { return ([
     react.createElement("path", { d: 'M11.5 5.5 10.5 4.5', style: { stroke: props.color }, strokeWidth: 1, key: "4_" + props.svgId, fill: 'none' }),
 ]); };
 var arrowRight = function (props) { return ([
-    react.createElement("polyline", { points: '4,0 12,8 4,16', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
+    react.createElement("polyline", { transform: "scale(0.8)", points: '6,2 14,10 6,18', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
 ]); };
 var right = function (props) { return ([
     react.createElement("polyline", { points: '6,2 14,8 6,14', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
@@ -2546,7 +2546,7 @@ var solidRight = function (props) { return ([
     react.createElement("path", { d: 'M4 4 12 8 4 12Z', style: { stroke: props.color, fill: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
 ]); };
 var arrowLeft = function (props) { return ([
-    react.createElement("polyline", { points: '10,0 2,8 10,16', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
+    react.createElement("polyline", { transform: "scale(0.8)", points: '12,2 4,10 12,18', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
 ]); };
 var forward = function (props) { return ([
     react.createElement("path", { d: 'M0 2 0 14 8 8Z M8 2 8 14 16 8Z', style: { fill: props.color, stroke: 'none' }, key: "1_" + props.svgId, fill: 'none' }),
@@ -2588,8 +2588,55 @@ var minus = function (props) { return ([
 var plus = function (props) { return ([
     react.createElement("path", { d: 'M4 8 12 8 M8 4 8 12', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
 ]); };
+var admin = function (props) { return ([
+    react.createElement("path", { id: "Admin", transform: 'translate(1.5 1.5) scale(0.8)', style: { stroke: props.color, fill: props.color }, d: "M0,16.979V14.857c0-2.335,3.616-4.245,8.036-4.245s8.036,1.91,8.036,4.245v2.122ZM4.017,4.245A4.136,4.136,0,0,1,8.036,0a4.136,4.136,0,0,1,4.017,4.245A4.136,4.136,0,0,1,8.036,8.49,4.136,4.136,0,0,1,4.017,4.245Z", key: "1_" + props.svgId })
+]); };
+var autorun = function (props) { return ([
+    react.createElement("path", { id: "ic_cached_24px", style: { stroke: props.color, fill: props.color }, d: "M19.041,8.009l-4.009,4.009h3.007a6.018,6.018,0,0,1-6.014,6.014,5.884,5.884,0,0,1-2.806-.7L7.755,18.794a8,8,0,0,0,12.288-6.775H23.05ZM6.011,12.018A6.018,6.018,0,0,1,12.025,6a5.884,5.884,0,0,1,2.806.7l1.463-1.463A8,8,0,0,0,4.007,12.018H1l4.009,4.009,4.009-4.009Z", transform: "translate(-2 -1.5) scale(0.8)", key: "1_" + props.svgId })
+]); };
+var mute = function (props) { return ([
+    react.createElement("path", { id: "ic_volume_mute", transform: "translate(-1 -2) scale(0.6)", style: { stroke: props.color, fill: props.color }, d: "M7,11.813v9.375h6.25L21.063,29V4L13.25,11.813Z", key: "1_" + props.svgId }),
+]); };
+var microphone = function (props) { return ([
+    react.createElement("path", { id: "mic", transform: "translate(-2 -2) scale(0.65)", style: { stroke: props.color, fill: props.color }, d: "M14.882,18.941A4.218,4.218,0,0,0,19.1,14.706l.014-8.471a4.235,4.235,0,0,0-8.471,0v8.471A4.23,4.23,0,0,0,14.882,18.941Zm7.482-4.235a7.325,7.325,0,0,1-7.482,7.2,7.325,7.325,0,0,1-7.482-7.2H5a9.859,9.859,0,0,0,8.471,9.487v4.631h2.824V24.193a9.837,9.837,0,0,0,8.471-9.487Z", key: "1_" + props.svgId })
+]); };
+var password = function (props) { return ([
+    react.createElement("path", { id: "Path_49", transform: "translate(1.008 -1) scale(0.95)", style: { fill: props.color }, "data-name": "Path 49", d: "M7.406,8.891a2.226,2.226,0,0,1,0,4.446,2.226,2.226,0,0,1,0-4.446Zm0-6.669A2.178,2.178,0,0,0,5.29,4.446H9.522A2.178,2.178,0,0,0,7.406,2.223Zm5.29,15.56H2.116A2.178,2.178,0,0,1,0,15.56V6.669A2.178,2.178,0,0,1,2.116,4.446H3.174A4.356,4.356,0,0,1,7.406,0a4.356,4.356,0,0,1,4.232,4.446H12.7a2.178,2.178,0,0,1,2.116,2.223V15.56A2.178,2.178,0,0,1,12.7,17.783Z", fillRule: "evenodd", key: "1_" + props.svgId }),
+]); };
+var reboot = function (props) { return ([
+    react.createElement("path", { id: "Reboot", transform: "translate(-3.001 -3) scale(0.75)", style: { stroke: props.color, fill: props.color }, d: "M25.289,11.817h-8.4l3.393-3.492A8.716,8.716,0,0,0,8.052,8.2a8.513,8.513,0,0,0,0,12.123,8.692,8.692,0,0,0,12.234,0,8.065,8.065,0,0,0,2.526-6.055h2.477a11.566,11.566,0,0,1-3.269,7.789,11.211,11.211,0,0,1-15.751,0A10.946,10.946,0,0,1,6.244,6.48a11.129,11.129,0,0,1,15.664,0L25.289,3ZM14.763,9.191v5.263L19.1,17.03l-.892,1.5-5.3-3.145V9.191Z", key: "1_" + props.svgId })
+]); };
+var info = function (props) { return ([
+    react.createElement("g", { id: "info", transform: "translate(0.5 0.5) scale(0.8)", key: "1_" + props.svgId },
+        react.createElement("g", { id: "Group_1427", "data-name": "Group 1427", transform: "translate(0)" },
+            react.createElement("path", { id: "Path_8993", "data-name": "Path 8993", style: { stroke: props.color, fill: 'none' }, d: "M449.612,701.269a8.969,8.969,0,1,1,3.5-.707A8.945,8.945,0,0,1,449.612,701.269Z", transform: "translate(-440.612 -683.269)", strokeWidth: "3" }),
+            react.createElement("g", { id: "Group_1426", "data-name": "Group 1426", transform: "translate(6.813 2.657)" },
+                react.createElement("g", { id: "Group_348", "data-name": "Group 348", transform: "translate(0 0)" },
+                    react.createElement("path", { id: "Path_336", style: { stroke: props.color, fill: props.color }, "data-name": "Path 336", d: "M463.405,701.992a7.571,7.571,0,0,0-.231-1.9,4.354,4.354,0,0,1,1.014-.178c.711,0,1.12.48,1.12,1.316,0,1.938-.64,4.036-.64,5.37,0,.8.142,1.493.764,1.493a1.513,1.513,0,0,0,.96-.462,8.746,8.746,0,0,0,1.529-2.188.329.329,0,0,1,.3-.2c.178,0,.391.16.3.374a8.582,8.582,0,0,1-2.134,2.9,2.787,2.787,0,0,1-1.724.64,1.763,1.763,0,0,1-1.8-2.009C462.872,706.277,463.388,704.143,463.405,701.992Zm.036-4.818a1.165,1.165,0,1,1,1.156,1.156A1.205,1.205,0,0,1,463.441,697.174Z", transform: "translate(-462.872 -696)", strokeWidth: "1" })))))
+]); };
+var menu = function (props) { return ([
+    react.createElement("g", { id: "Menu", transform: "translate(-5 -14) scale(0.6)", key: "1_" + props.svgId },
+        react.createElement("g", { id: "Group_1452", "data-name": "Group 1452", transform: "translate(9 25)" },
+            react.createElement("rect", { id: "Rectangle_1097", "data-name": "Rectangle 1097", width: "7", height: "7", style: { fill: props.color } }),
+            react.createElement("rect", { id: "Rectangle_1097-2", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(0 9)", style: { fill: props.color } }),
+            react.createElement("rect", { id: "Rectangle_1097-3", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(0 18)", style: { fill: props.color } })),
+        react.createElement("g", { id: "Group_1453", "data-name": "Group 1453", transform: "translate(18.212 25)" },
+            react.createElement("rect", { id: "Rectangle_1097-4", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(-0.213)", style: { fill: props.color } }),
+            react.createElement("rect", { id: "Rectangle_1097-5", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(-0.213 9)", style: { fill: props.color } }),
+            react.createElement("rect", { id: "Rectangle_1097-6", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(-0.213 18)", style: { fill: props.color } })),
+        react.createElement("g", { id: "Group_1454", "data-name": "Group 1454", transform: "translate(27.425 25)" },
+            react.createElement("rect", { id: "Rectangle_1097-7", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(-0.424)", style: { fill: props.color } }),
+            react.createElement("rect", { id: "Rectangle_1097-8", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(-0.424 9)", style: { fill: props.color } }),
+            react.createElement("rect", { id: "Rectangle_1097-9", "data-name": "Rectangle 1097", width: "7", height: "7", transform: "translate(-0.424 18)", style: { fill: props.color } })))
+]); };
 var cancel = function (props) { return ([
-    react.createElement("path", { d: 'M1 1 15 15 M15 1 1 15', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { d: 'M2 2 14 14 M14 2 2 14', style: { stroke: props.color }, strokeWidth: 3, key: "1_" + props.svgId, fill: 'none' }),
+]); };
+var phone = function (props) { return ([
+    react.createElement("path", { id: "address_phone", transform: "translate(-2 -2) scale(0.8)", style: { fill: props.color, stroke: props.color }, d: "M6.62,10.79a15.149,15.149,0,0,0,6.59,6.59l2.2-2.2a.994.994,0,0,1,1.02-.24,11.407,11.407,0,0,0,3.57.57,1,1,0,0,1,1,1V20a1,1,0,0,1-1,1A17,17,0,0,1,3,4,1,1,0,0,1,4,3H7.5a1,1,0,0,1,1,1,11.36,11.36,0,0,0,.57,3.57,1,1,0,0,1-.25,1.02Z", key: "1_" + props.svgId })
+]); };
+var address = function (props) { return ([
+    react.createElement("path", { id: "Contact_Information_address", transform: "translate(-3 -3) scale(0.9)", style: { fill: props.color, stroke: props.color }, "data-name": "Contact Information_address", d: "M10,20V14h4v6h5V12h3L12,3,2,12H5v8Z", key: "1_" + props.svgId })
 ]); };
 var circlePlus = function (props) { return ([
     react.createElement("circle", { cx: "8", cy: "8", r: "8", style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: "none" }),
@@ -2604,34 +2651,32 @@ var squareMinus = function (props) { return ([
     react.createElement("path", { d: 'M5 8 11 8', style: { stroke: props.color }, strokeWidth: 3, key: "2_" + props.svgId, fill: 'none' }),
 ]); };
 var trashcan = function (props) { return ([
-    react.createElement("path", { d: 'M2 3 14 3', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M6 7 6.1 12', style: { stroke: props.color }, strokeWidth: 1, key: "2_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M3.5 3 4 16 12 16 12.5 3', style: { stroke: props.color }, strokeWidth: 2, key: "3_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M6 3 6.1 1 9.9 1 10 3', style: { stroke: props.color }, strokeWidth: 2, key: "4_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { id: "Path_9044", "data-name": "Path 9044", style: { stroke: props.color, fill: props.color }, d: "M263.5,240.308H258v-1a3,3,0,0,0-3-3h-4a3,3,0,0,0-3,3v1h-5.5a2.5,2.5,0,0,0-2.5,2.5v2a1,1,0,0,0,1,1h24a1,1,0,0,0,1-1v-2A2.5,2.5,0,0,0,263.5,240.308Zm-13.5-1a1,1,0,0,1,1-1h4a1,1,0,0,1,1,1v1h-6Z", transform: "translate(-119 -117.154) scale(0.5)", key: "1_" + props.svgId }),
+    react.createElement("path", { id: "Path_9045", "data-name": "Path 9045", style: { stroke: props.color, fill: props.color }, d: "M242.264,250.462a.311.311,0,0,0-.312.327l.825,17.315a3,3,0,0,0,3,2.858h15.186a3,3,0,0,0,3-2.858l.825-17.315a.311.311,0,0,0-.312-.327Zm15.1,2.5a1,1,0,0,1,2,0v13a1,1,0,1,1-2,0Zm-5,0a1,1,0,0,1,2,0v13a1,1,0,1,1-2,0Zm-5,0a1,1,0,0,1,2,0v13a1,1,0,1,1-2,0Z", transform: "translate(-119.183 -118.481) scale(0.5)", key: "2_" + props.svgId }),
 ]); };
 var edit = function (props) { return ([
-    react.createElement("path", { d: 'M8 0 16 0 M0 16 16 16 M0 8 0 16 M 16 0 16 16', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M0 0 11 11 M5 11 11 11 M11 5 11 11', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 2) scale(0.8)", d: 'M8 0 16 0 M0 16 16 16 M0 8 0 16 M 16 0 16 16', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 2) scale(0.8)", d: 'M0 0 11 11 M5 11 11 11 M11 5 11 11', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
 ]); };
 var document$1 = function (props) { return ([
     react.createElement("path", { d: 'M2 0 10 0 14 4 14 16 2 16 Z', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
     react.createElement("path", { d: 'M9 1 9 5 13 5', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
 ]); };
 var save = function (props) { return ([
-    react.createElement("path", { d: 'M0 0 12 0 16 4 16 16 0 16 Z', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M5 0 5 4 11 4 11 0', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M4 16 4 9 12 9 12 16', style: { stroke: props.color }, strokeWidth: 2, key: "3_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(0.5 0.5) scale(0.9)", d: 'M0 0 12 0 16 4 16 16 0 16 Z', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(0.5 0.5) scale(0.9)", d: 'M5 0 5 4 11 4 11 0', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(0.5 0.5) scale(0.9)", d: 'M4 16 4 9 12 9 12 16', style: { stroke: props.color }, strokeWidth: 2, key: "3_" + props.svgId, fill: 'none' }),
 ]); };
 var calendar = function (props) { return ([
-    react.createElement("rect", { x: '0', y: '2', width: '16', height: '14', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M4 0 4 4', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M12 0 12 4', style: { stroke: props.color }, strokeWidth: 2, key: "3_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M0 6.667 H 16', style: { stroke: props.color }, strokeWidth: 1, key: "4_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M0 9.334 H 16', style: { stroke: props.color }, strokeWidth: 1, key: "5_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M0 12.663 H 16', style: { stroke: props.color }, strokeWidth: 1, key: "6_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M4 6.667 V 14', style: { stroke: props.color }, strokeWidth: 1, key: "7_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M8 6.667 V 14', style: { stroke: props.color }, strokeWidth: 1, key: "8_" + props.svgId, fill: 'none' }),
-    react.createElement("path", { d: 'M12 6.667 V 14', style: { stroke: props.color }, strokeWidth: 1, key: "9_" + props.svgId, fill: 'none' }),
+    react.createElement("rect", { transform: "translate(1.5 0.5) scale(0.9)", x: '0', y: '2', width: '16', height: '14', style: { stroke: props.color }, strokeWidth: 2, key: "1_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M4 0 4 4', style: { stroke: props.color }, strokeWidth: 2, key: "2_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M12 0 12 4', style: { stroke: props.color }, strokeWidth: 2, key: "3_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M0 6.667 H 16', style: { stroke: props.color }, strokeWidth: 1, key: "4_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M0 9.334 H 16', style: { stroke: props.color }, strokeWidth: 1, key: "5_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M0 12.663 H 16', style: { stroke: props.color }, strokeWidth: 1, key: "6_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M4 6.667 V 14', style: { stroke: props.color }, strokeWidth: 1, key: "7_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M8 6.667 V 14', style: { stroke: props.color }, strokeWidth: 1, key: "8_" + props.svgId, fill: 'none' }),
+    react.createElement("path", { transform: "translate(1.5 0.5) scale(0.9)", d: 'M12 6.667 V 14', style: { stroke: props.color }, strokeWidth: 1, key: "9_" + props.svgId, fill: 'none' }),
 ]); };
 var scissors = function (props) { return ([
     react.createElement("path", { d: 'M6 0 10 16 8 16 Z', style: { stroke: props.color }, strokeWidth: 2, fill: props.color, key: "1_" + props.svgId }),
@@ -2652,16 +2697,16 @@ var exit = function (props) { return ([
     react.createElement("path", { key: "3_" + props.svgId, style: { stroke: props.color, fill: props.color }, strokeWidth: 1, d: 'M1 1 7 3 7 16 1 14' }),
 ]); };
 var _import = function (props) { return ([
-    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M2 8 12 8 M8 4 12 8 8 12', fill: 'none' }),
-    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M0 4 0 0 16 0 16 16 0 16 0 12', fill: 'none' }),
+    react.createElement("path", { key: "1_" + props.svgId, transform: "translate(2 1) scale(0.85)", style: { stroke: props.color }, strokeWidth: 2, d: 'M2 8 12 8 M8 4 12 8 8 12', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, transform: "translate(2 1) scale(0.85)", style: { stroke: props.color }, strokeWidth: 2, d: 'M0 4 0 0 16 0 16 16 0 16 0 12', fill: 'none' }),
 ]); };
 var download = function (props) { return ([
-    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M8 2 8 12 M4 8 8 12 12 8', fill: 'none' }),
-    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M1 12 1 16 15 16 15 12', fill: 'none' }),
+    react.createElement("path", { key: "1_" + props.svgId, transform: "translate(0 -1)", style: { stroke: props.color }, strokeWidth: 2, d: 'M8 2 8 12 M4 8 8 12 12 8', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, transform: "translate(0 -1)", style: { stroke: props.color }, strokeWidth: 2, d: 'M1 12 1 16 15 16 15 12', fill: 'none' }),
 ]); };
 var upload = function (props) { return ([
-    react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M8 2 8 12 M4 6 8 2 12 6', fill: 'none' }),
-    react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M1 12 1 16 15 16 15 12', fill: 'none' }),
+    react.createElement("path", { key: "1_" + props.svgId, transform: "translate(0 -1)", style: { stroke: props.color }, strokeWidth: 2, d: 'M8 2 8 12 M4 6 8 2 12 6', fill: 'none' }),
+    react.createElement("path", { key: "2_" + props.svgId, transform: "translate(0 -1)", style: { stroke: props.color }, strokeWidth: 2, d: 'M1 12 1 16 15 16 15 12', fill: 'none' }),
 ]); };
 var home = function (props) { return ([
     react.createElement("path", { key: "1_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M1 7.5 8 2 15 7.5', fill: 'none' }),
@@ -2678,11 +2723,11 @@ var forbid = function (props) { return ([
     react.createElement("path", { key: "2_" + props.svgId, style: { stroke: props.color }, strokeWidth: 2, d: 'M12 4 4 12' }),
 ]); };
 var clock = function (props) { return ([
-    react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "1_" + props.svgId, d: "M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z" }),
-    react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "2_" + props.svgId, d: "M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z" }),
-    react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "3_" + props.svgId, d: "M409.6,221.867h-17.067c-9.426,0-17.067,7.641-17.067,17.067S383.108,256,392.533,256H409.6 c9.426,0,17.067-7.641,17.067-17.067S419.026,221.867,409.6,221.867z" }),
-    react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "4_" + props.svgId, d: "M238.933,375.467c-9.426,0-17.067,7.641-17.067,17.067V409.6c0,9.426,7.641,17.067,17.067,17.067S256,419.026,256,409.6 v-17.067C256,383.108,248.359,375.467,238.933,375.467z" }),
-    react.createElement("path", { transform: "scale(0.038) translate(-45 -60)", fill: props.color, key: "5_" + props.svgId, d: "M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z" }),
+    react.createElement("path", { transform: "scale(0.035) translate(-15 -20)", fill: props.color, key: "1_" + props.svgId, d: "M238.933,0C106.974,0,0,106.974,0,238.933s106.974,238.933,238.933,238.933s238.933-106.974,238.933-238.933 C477.726,107.033,370.834,0.141,238.933,0z M238.933,443.733c-113.108,0-204.8-91.692-204.8-204.8s91.692-204.8,204.8-204.8 s204.8,91.692,204.8,204.8C443.611,351.991,351.991,443.611,238.933,443.733z" }),
+    react.createElement("path", { transform: "scale(0.035) translate(-15 -20)", fill: props.color, key: "2_" + props.svgId, d: "M238.933,51.2c-9.426,0-17.067,7.641-17.067,17.067v170.667c0,9.426,7.641,17.067,17.067,17.067S256,248.359,256,238.933 V68.267C256,58.841,248.359,51.2,238.933,51.2z" }),
+    react.createElement("path", { transform: "scale(0.035) translate(-15 -20)", fill: props.color, key: "3_" + props.svgId, d: "M409.6,221.867h-17.067c-9.426,0-17.067,7.641-17.067,17.067S383.108,256,392.533,256H409.6 c9.426,0,17.067-7.641,17.067-17.067S419.026,221.867,409.6,221.867z" }),
+    react.createElement("path", { transform: "scale(0.035) translate(-15 -20)", fill: props.color, key: "4_" + props.svgId, d: "M238.933,375.467c-9.426,0-17.067,7.641-17.067,17.067V409.6c0,9.426,7.641,17.067,17.067,17.067S256,419.026,256,409.6 v-17.067C256,383.108,248.359,375.467,238.933,375.467z" }),
+    react.createElement("path", { transform: "scale(0.035) translate(-15 -20)", fill: props.color, key: "5_" + props.svgId, d: "M85.333,221.867H68.267c-9.426,0-17.067,7.641-17.067,17.067S58.841,256,68.267,256h17.067 c9.426,0,17.067-7.641,17.067-17.067S94.759,221.867,85.333,221.867z" }),
 ]); };
 var earth = function (props) { return ([
     react.createElement("circle", { key: "1_" + props.svgId, cx: '8', cy: '8', r: '7', style: { stroke: props.color, fill: 'none' }, strokeWidth: 2 }),
@@ -2781,7 +2826,7 @@ var earth = function (props) { return ([
 //     </g>
 // ]);
 var ledGreen = function (props) { return ([
-    react.createElement("radialGradient", { id: 'fc-led-green-light', cx: '.5', cy: '.5', r: '.5', key: "1_" + props.svgId },
+    react.createElement("radialGradient", { id: 'fc-led-green-light', cx: '.4', cy: '.5', r: '.5', key: "1_" + props.svgId },
         react.createElement("stop", { offset: "20%", stopColor: "#82ff61" }),
         react.createElement("stop", { offset: "50%", stopColor: "#75ff50" }),
         react.createElement("stop", { offset: "90%", stopColor: '#5bff2f' })),
@@ -2866,7 +2911,7 @@ var revert = function (props) { return ([
     react.createElement("path", { style: { fill: props.color, stroke: props.color }, strokeWidth: 3, d: "M0 8 4 8 2 11Z", key: "2_" + props.svgId }),
 ]); };
 var dashboard = function (props) { return ([
-    react.createElement("g", { key: "1_" + props.svgId, transform: "translate(-213.752 -80.537)" },
+    react.createElement("g", { key: "1_" + props.svgId, transform: "translate(-213 -80.537)" },
         react.createElement("path", { style: { fill: props.color }, d: "M214.4,96.282l.248.255H227.4l.249-.255a9.27,9.27,0,1,0-13.253,0Zm6.626-14.052a7.573,7.573,0,0,1,5.654,12.615H215.367a7.573,7.573,0,0,1,5.654-12.615Z", transform: "translate(0)" }),
         react.createElement("path", { style: { fill: props.color }, d: "M221.8,95.058a1.8,1.8,0,0,0,1.739-2.355l2.887-3.11-1.339-1.243-2.882,3.1a1.87,1.87,0,0,0-.4-.048,1.826,1.826,0,1,0,0,3.652Z", transform: "translate(-0.886 -0.934)" }),
         react.createElement("path", { style: { fill: props.color }, d: "M221.8,85.015a.9.9,0,1,0-.648-.265A.963.963,0,0,0,221.8,85.015Z", transform: "translate(-0.734 -0.217)" }),
@@ -2880,40 +2925,40 @@ var dashboard = function (props) { return ([
         react.createElement("path", { style: { fill: props.color }, d: "M224.992,85.873a.919.919,0,0,0,.638-.264.931.931,0,0,0,.275-.649.942.942,0,0,0-.265-.648.956.956,0,0,0-1.3,0,.928.928,0,0,0,0,1.3A.963.963,0,0,0,224.992,85.873Z", transform: "translate(-0.991 -0.287)" })),
 ]); };
 var grid$1 = function (props) { return ([
-    react.createElement("path", { id: "ic_view_quilt_24px", d: "M10.588,19.275h5.49V12.686h-5.49ZM4,19.275H9.49V5H4Zm13.177,0h5.49V12.686h-5.49ZM10.588,5v6.588H22.667V5Z", transform: "translate(-4 -5)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
+    react.createElement("path", { id: "ic_view_quilt_24px", d: "M10.588,19.275h5.49V12.686h-5.49ZM4,19.275H9.49V5H4Zm13.177,0h5.49V12.686h-5.49ZM10.588,5v6.588H22.667V5Z", transform: "translate(-4 -3) scale(0.9)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
 ]); };
 var device = function (props) { return ([
-    react.createElement("path", { id: "Device_icon_blue", d: "M20,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14A1,1,0,0,0,20,13ZM7,19a2,2,0,1,1,2-2A2.006,2.006,0,0,1,7,19ZM20,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM7,9A2,2,0,1,1,9,7,2.006,2.006,0,0,1,7,9Z", transform: "scale(0.9) translate(-5 -3)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
+    react.createElement("path", { id: "Device_icon_blue", d: "M20,13H4a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V14A1,1,0,0,0,20,13ZM7,19a2,2,0,1,1,2-2A2.006,2.006,0,0,1,7,19ZM20,3H4A1,1,0,0,0,3,4v6a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V4A1,1,0,0,0,20,3ZM7,9A2,2,0,1,1,9,7,2.006,2.006,0,0,1,7,9Z", transform: "scale(0.9) translate(-3.5 -3)", fill: props.color, stroke: 'transparent', key: "1_" + props.svgId })
 ]); };
 var update = function (props) { return ([
     react.createElement("path", { d: "M412.907,214.08C398.4,140.693,333.653,85.333,256,85.333c-61.653,0-115.093,34.987-141.867,86.08\r\n        C50.027,178.347,0,232.64,0,298.667c0,70.72,57.28,128,128,128h277.333C464.213,426.667,512,378.88,512,320\r\n        C512,263.68,468.16,218.027,412.907,214.08z M298.667,277.333v85.333h-85.333v-85.333h-64L256,170.667l106.667,106.667H298.667z", transform: "scale(0.038) translate(-45 -60)", style: { fill: props.color, stroke: props.color }, key: "1_" + props.svgId })
 ]); };
 var setting = function (props) { return ([
-    react.createElement("path", { id: "ic_settings_24px", d: "M19.911,13.288a8.012,8.012,0,0,0,.072-1.007,8.012,8.012,0,0,0-.072-1.007l2.169-1.7a.519.519,0,0,0,.123-.658L20.148,5.362a.517.517,0,0,0-.627-.226l-2.56,1.028a7.511,7.511,0,0,0-1.737-1.007l-.391-2.724a.5.5,0,0,0-.5-.432H10.217a.5.5,0,0,0-.5.432L9.322,5.156A7.9,7.9,0,0,0,7.585,6.164L5.025,5.136a.5.5,0,0,0-.627.226L2.342,8.919a.507.507,0,0,0,.123.658l2.169,1.7a8.153,8.153,0,0,0-.072,1.007,8.153,8.153,0,0,0,.072,1.007l-2.169,1.7a.519.519,0,0,0-.123.658L4.4,19.2a.517.517,0,0,0,.627.226L7.585,18.4A7.511,7.511,0,0,0,9.322,19.4l.391,2.724a.5.5,0,0,0,.5.432h4.112a.5.5,0,0,0,.5-.432l.391-2.724A7.9,7.9,0,0,0,16.961,18.4l2.56,1.028a.5.5,0,0,0,.627-.226L22.2,15.642a.519.519,0,0,0-.123-.658Zm-7.638,2.591a3.6,3.6,0,1,1,3.6-3.6A3.6,3.6,0,0,1,12.273,15.879Z", transform: "translate(-4 -3) scale(0.88)", fill: props.color, key: "1_" + props.svgId, stroke: 'transparent' })
+    react.createElement("path", { id: "ic_settings_24px", d: "M19.911,13.288a8.012,8.012,0,0,0,.072-1.007,8.012,8.012,0,0,0-.072-1.007l2.169-1.7a.519.519,0,0,0,.123-.658L20.148,5.362a.517.517,0,0,0-.627-.226l-2.56,1.028a7.511,7.511,0,0,0-1.737-1.007l-.391-2.724a.5.5,0,0,0-.5-.432H10.217a.5.5,0,0,0-.5.432L9.322,5.156A7.9,7.9,0,0,0,7.585,6.164L5.025,5.136a.5.5,0,0,0-.627.226L2.342,8.919a.507.507,0,0,0,.123.658l2.169,1.7a8.153,8.153,0,0,0-.072,1.007,8.153,8.153,0,0,0,.072,1.007l-2.169,1.7a.519.519,0,0,0-.123.658L4.4,19.2a.517.517,0,0,0,.627.226L7.585,18.4A7.511,7.511,0,0,0,9.322,19.4l.391,2.724a.5.5,0,0,0,.5.432h4.112a.5.5,0,0,0,.5-.432l.391-2.724A7.9,7.9,0,0,0,16.961,18.4l2.56,1.028a.5.5,0,0,0,.627-.226L22.2,15.642a.519.519,0,0,0-.123-.658Zm-7.638,2.591a3.6,3.6,0,1,1,3.6-3.6A3.6,3.6,0,0,1,12.273,15.879Z", transform: "translate(-1.5 -2.5) scale(0.85)", fill: props.color, key: "1_" + props.svgId, stroke: 'transparent' })
 ]); };
 var scene = function (props) { return ([
-    react.createElement("path", { transform: "scale(0.033) translate(-35 40)", d: "m149.332031 106.667969c0 23.5625-19.101562 42.664062-42.664062 42.664062-23.566407 0-42.667969-19.101562-42.667969-42.664062 0-23.566407 19.101562-42.667969 42.667969-42.667969 23.5625 0 42.664062 19.101562 42.664062 42.667969zm0 0", fill: props.color, key: "1_" + props.svgId }),
-    react.createElement("path", { transform: "scale(0.033) translate(-35 40)", d: "m448 0h-384c-35.285156 0-64 28.714844-64 64v256c0 1.195312.296875 2.324219.363281 3.519531-.300781 2.558594-.171875 5.140625.765625 7.574219 5.269532 29.996094 31.382813 52.90625 62.871094 52.90625h384c35.285156 0 64-28.714844 64-64v-256c0-35.285156-28.714844-64-64-64zm-384 42.667969h384c11.753906 0 21.332031 9.578125 21.332031 21.332031v169.367188l-112.210937-112.214844c-14.59375-14.59375-38.335938-14.59375-52.90625 0l-101.546875 101.546875-26.882813-26.878907c-14.589844-14.59375-38.335937-14.59375-52.90625 0l-80.210937 80.210938v-212.03125c0-11.753906 9.578125-21.332031 21.332031-21.332031zm0 0", fill: props.color, key: "2_" + props.svgId })
+    react.createElement("path", { transform: "scale(0.033) translate(-20 60)", d: "m149.332031 106.667969c0 23.5625-19.101562 42.664062-42.664062 42.664062-23.566407 0-42.667969-19.101562-42.667969-42.664062 0-23.566407 19.101562-42.667969 42.667969-42.667969 23.5625 0 42.664062 19.101562 42.664062 42.667969zm0 0", fill: props.color, key: "1_" + props.svgId }),
+    react.createElement("path", { transform: "scale(0.033) translate(-20 60)", d: "m448 0h-384c-35.285156 0-64 28.714844-64 64v256c0 1.195312.296875 2.324219.363281 3.519531-.300781 2.558594-.171875 5.140625.765625 7.574219 5.269532 29.996094 31.382813 52.90625 62.871094 52.90625h384c35.285156 0 64-28.714844 64-64v-256c0-35.285156-28.714844-64-64-64zm-384 42.667969h384c11.753906 0 21.332031 9.578125 21.332031 21.332031v169.367188l-112.210937-112.214844c-14.59375-14.59375-38.335938-14.59375-52.90625 0l-101.546875 101.546875-26.882813-26.878907c-14.589844-14.59375-38.335937-14.59375-52.90625 0l-80.210937 80.210938v-212.03125c0-11.753906 9.578125-21.332031 21.332031-21.332031zm0 0", fill: props.color, key: "2_" + props.svgId })
 ]); };
 var volumn = function (props) { return ([
-    react.createElement("path", { d: "M206.896,0.874c-3.958-1.688-8.458-0.885-11.563,2.042L85.479,106.665H10.667C4.771,106.665,0,111.436,0,117.332v149.333 c0,5.896,4.771,10.667,10.667,10.667h74.813l109.854,103.75c2.021,1.917,4.667,2.917,7.333,2.917 c1.417,0,2.854-0.281,4.229-0.875c3.896-1.677,6.438-5.531,6.438-9.792V10.665C213.333,6.405,210.792,2.551,206.896,0.874z", transform: "scale(0.038) translate(40 0)", fill: props.color, key: "1_" + props.svgId }),
-    react.createElement("path", { d: "M262.452,132.214l-15.199,15.199c-3.505,3.505-4.44,9.168-1.513,13.168c6.449,8.819,10.26,19.682,10.26,31.418 c0,11.736-3.811,22.599-10.26,31.417c-2.927,4-1.992,9.664,1.513,13.169l15.199,15.198c4.655,4.656,12.259,3.939,16.28-1.276 c12.495-16.208,19.935-36.505,19.935-58.508c0-22.004-7.44-42.301-19.935-58.509 C274.711,128.275,267.107,127.557,262.452,132.214z", transform: "scale(0.038) translate(40 0)", fill: props.color, key: "2_" + props.svgId }),
-    react.createElement("path", { d: "M338.423,71.905c-4.01-4.53-11.151-4.512-15.428-0.234l-15.092,15.092c-4.043,4.042-4.005,10.395-0.27,14.721 c20.991,24.307,33.701,55.954,33.701,90.514c0,34.56-12.71,66.207-33.701,90.516c-3.736,4.326-3.772,10.677,0.27,14.719 l15.092,15.092c4.277,4.279,11.418,4.296,15.43-0.233C366.771,280.085,384,238.016,384,191.999 C384,145.981,366.771,103.912,338.423,71.905z", transform: "scale(0.038) translate(40 0)", fill: props.color, key: "3_" + props.svgId }),
+    react.createElement("path", { d: "M206.896,0.874c-3.958-1.688-8.458-0.885-11.563,2.042L85.479,106.665H10.667C4.771,106.665,0,111.436,0,117.332v149.333 c0,5.896,4.771,10.667,10.667,10.667h74.813l109.854,103.75c2.021,1.917,4.667,2.917,7.333,2.917 c1.417,0,2.854-0.281,4.229-0.875c3.896-1.677,6.438-5.531,6.438-9.792V10.665C213.333,6.405,210.792,2.551,206.896,0.874z", transform: "scale(0.038) translate(40 25)", fill: props.color, key: "1_" + props.svgId }),
+    react.createElement("path", { d: "M262.452,132.214l-15.199,15.199c-3.505,3.505-4.44,9.168-1.513,13.168c6.449,8.819,10.26,19.682,10.26,31.418 c0,11.736-3.811,22.599-10.26,31.417c-2.927,4-1.992,9.664,1.513,13.169l15.199,15.198c4.655,4.656,12.259,3.939,16.28-1.276 c12.495-16.208,19.935-36.505,19.935-58.508c0-22.004-7.44-42.301-19.935-58.509 C274.711,128.275,267.107,127.557,262.452,132.214z", transform: "scale(0.038) translate(40 25)", fill: props.color, key: "2_" + props.svgId }),
+    react.createElement("path", { d: "M338.423,71.905c-4.01-4.53-11.151-4.512-15.428-0.234l-15.092,15.092c-4.043,4.042-4.005,10.395-0.27,14.721 c20.991,24.307,33.701,55.954,33.701,90.514c0,34.56-12.71,66.207-33.701,90.516c-3.736,4.326-3.772,10.677,0.27,14.719 l15.092,15.092c4.277,4.279,11.418,4.296,15.43-0.233C366.771,280.085,384,238.016,384,191.999 C384,145.981,366.771,103.912,338.423,71.905z", transform: "scale(0.038) translate(40 25)", fill: props.color, key: "3_" + props.svgId }),
 ]); };
 var idea = function (props) { return ([
-    react.createElement("path", { d: "M374.031,241.75c-6.671-54.43-49.629-97.28-104.076-103.813c-4.688-0.535-9.402-0.803-14.121-0.804 c-48.118,0.074-91.444,29.154-109.742,73.657c-18.298,44.503-7.957,95.649,26.193,129.548c18.16,17.391,28.56,41.357,28.857,66.5 v13.733h109.714v-13.804c0.083-24.667,10.118-48.256,27.831-65.424c26.754-25.813,39.84-62.686,35.343-99.589V241.75z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "1_" + props.svgId }),
-    react.createElement("path", { d: "M256,512c11.62-0.013,21.975-7.335,25.862-18.286h-51.723C234.025,504.665,244.38,511.987,256,512z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "2_" + props.svgId }),
-    react.createElement("path", { d: "M210.286,466.286c0.007,5.047,4.096,9.136,9.143,9.143h73.143c5.047-0.007,9.136-4.096,9.143-9.143v-27.429h-91.429 V466.286z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "3_" + props.svgId }),
-    react.createElement("path", { d: "M256,82.286c10.099,0,18.286-8.187,18.286-18.286V18.286C274.286,8.187,266.099,0,256,0s-18.286,8.187-18.286,18.286V64 C237.714,74.099,245.901,82.286,256,82.286z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "4_" + props.svgId }),
-    react.createElement("path", { d: "M101.679,127.54c7.236,6.911,18.626,6.911,25.862,0c3.43-3.429,5.357-8.081,5.357-12.931 c0-4.85-1.927-9.502-5.357-12.931L95.214,69.357C91.786,65.927,87.135,64,82.286,64s-9.5,1.927-12.929,5.357 C65.927,72.785,64,77.436,64,82.286s1.927,9.5,5.357,12.929L101.679,127.54z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "5_" + props.svgId }),
-    react.createElement("path", { d: "M82.286,256c0-10.099-8.187-18.286-18.286-18.286H18.286C8.191,237.724,0.01,245.905,0,256 c0.01,10.095,8.191,18.276,18.286,18.286H64C74.099,274.286,82.286,266.099,82.286,256z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "6_" + props.svgId }),
-    react.createElement("path", { d: "M119.356,379.699c-6.32-1.689-13.06,0.126-17.677,4.761l-32.321,32.326c-3.43,3.428-5.357,8.079-5.357,12.929 s1.927,9.5,5.357,12.929c7.234,6.911,18.623,6.911,25.857,0l32.326-32.321c4.634-4.617,6.45-11.357,4.761-17.677 S125.676,381.388,119.356,379.699z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "7_" + props.svgId }),
-    react.createElement("path", { d: "M410.321,384.46c-4.617-4.634-11.357-6.45-17.677-4.761s-11.256,6.625-12.945,12.945s0.126,13.06,4.761,17.677 l32.326,32.321c7.234,6.911,18.623,6.911,25.857,0c3.43-3.428,5.357-8.079,5.357-12.929s-1.927-9.5-5.357-12.929L410.321,384.46z ", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "8_" + props.svgId }),
-    react.createElement("path", { d: "M493.714,237.714H448c-10.099,0-18.286,8.187-18.286,18.286s8.187,18.286,18.286,18.286h45.714 c10.099,0,18.286-8.187,18.286-18.286S503.813,237.714,493.714,237.714z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "9_" + props.svgId }),
-    react.createElement("path", { d: "M410.321,127.54l32.321-32.326c4.619-4.619,6.423-11.351,4.732-17.661c-1.691-6.31-6.619-11.238-12.929-12.929 c-6.31-1.691-13.042,0.113-17.661,4.732l-32.326,32.321c-3.43,3.429-5.357,8.081-5.357,12.931c0,4.85,1.927,9.502,5.357,12.931 C391.695,134.451,403.086,134.451,410.321,127.54z", transform: "scale(0.036) translate(-45 -60)", fill: props.color, key: "10_" + props.svgId }),
+    react.createElement("path", { d: "M374.031,241.75c-6.671-54.43-49.629-97.28-104.076-103.813c-4.688-0.535-9.402-0.803-14.121-0.804 c-48.118,0.074-91.444,29.154-109.742,73.657c-18.298,44.503-7.957,95.649,26.193,129.548c18.16,17.391,28.56,41.357,28.857,66.5 v13.733h109.714v-13.804c0.083-24.667,10.118-48.256,27.831-65.424c26.754-25.813,39.84-62.686,35.343-99.589V241.75z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "1_" + props.svgId }),
+    react.createElement("path", { d: "M256,512c11.62-0.013,21.975-7.335,25.862-18.286h-51.723C234.025,504.665,244.38,511.987,256,512z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "2_" + props.svgId }),
+    react.createElement("path", { d: "M210.286,466.286c0.007,5.047,4.096,9.136,9.143,9.143h73.143c5.047-0.007,9.136-4.096,9.143-9.143v-27.429h-91.429 V466.286z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "3_" + props.svgId }),
+    react.createElement("path", { d: "M256,82.286c10.099,0,18.286-8.187,18.286-18.286V18.286C274.286,8.187,266.099,0,256,0s-18.286,8.187-18.286,18.286V64 C237.714,74.099,245.901,82.286,256,82.286z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "4_" + props.svgId }),
+    react.createElement("path", { d: "M101.679,127.54c7.236,6.911,18.626,6.911,25.862,0c3.43-3.429,5.357-8.081,5.357-12.931 c0-4.85-1.927-9.502-5.357-12.931L95.214,69.357C91.786,65.927,87.135,64,82.286,64s-9.5,1.927-12.929,5.357 C65.927,72.785,64,77.436,64,82.286s1.927,9.5,5.357,12.929L101.679,127.54z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "5_" + props.svgId }),
+    react.createElement("path", { d: "M82.286,256c0-10.099-8.187-18.286-18.286-18.286H18.286C8.191,237.724,0.01,245.905,0,256 c0.01,10.095,8.191,18.276,18.286,18.286H64C74.099,274.286,82.286,266.099,82.286,256z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "6_" + props.svgId }),
+    react.createElement("path", { d: "M119.356,379.699c-6.32-1.689-13.06,0.126-17.677,4.761l-32.321,32.326c-3.43,3.428-5.357,8.079-5.357,12.929 s1.927,9.5,5.357,12.929c7.234,6.911,18.623,6.911,25.857,0l32.326-32.321c4.634-4.617,6.45-11.357,4.761-17.677 S125.676,381.388,119.356,379.699z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "7_" + props.svgId }),
+    react.createElement("path", { d: "M410.321,384.46c-4.617-4.634-11.357-6.45-17.677-4.761s-11.256,6.625-12.945,12.945s0.126,13.06,4.761,17.677 l32.326,32.321c7.234,6.911,18.623,6.911,25.857,0c3.43-3.428,5.357-8.079,5.357-12.929s-1.927-9.5-5.357-12.929L410.321,384.46z ", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "8_" + props.svgId }),
+    react.createElement("path", { d: "M493.714,237.714H448c-10.099,0-18.286,8.187-18.286,18.286s8.187,18.286,18.286,18.286h45.714 c10.099,0,18.286-8.187,18.286-18.286S503.813,237.714,493.714,237.714z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "9_" + props.svgId }),
+    react.createElement("path", { d: "M410.321,127.54l32.321-32.326c4.619-4.619,6.423-11.351,4.732-17.661c-1.691-6.31-6.619-11.238-12.929-12.929 c-6.31-1.691-13.042,0.113-17.661,4.732l-32.326,32.321c-3.43,3.429-5.357,8.081-5.357,12.931c0,4.85,1.927,9.502,5.357,12.931 C391.695,134.451,403.086,134.451,410.321,127.54z", transform: "scale(0.033) translate(-30 -20)", fill: props.color, key: "10_" + props.svgId }),
 ]); };
 var scenario = function (props) { return ([
-    react.createElement("g", { id: "Group_1425", "data-name": "Group 1425", transform: "translate(-844 -701.023) scale(1.1)", key: "1_" + props.svgId },
+    react.createElement("g", { id: "Group_1425", "data-name": "Group 1425", transform: "translate(-766 -634.023)", key: "1_" + props.svgId },
         react.createElement("g", { id: "Group_2", "data-name": "Group 2", transform: "translate(765 632.023) scale(1.1)" },
             react.createElement("path", { id: "Subtraction_1", "data-name": "Subtraction 1", d: "M5.415,11.508H2.031V6.092H0L6.77,0l6.769,6.092H11.508v5.415H8.123V7.446H5.415v4.061ZM6.77,2.769A1.539,1.539,0,1,0,8.308,4.308,1.54,1.54,0,0,0,6.77,2.769Z", transform: "translate(0 4.292) scale(1.1)", fill: props.color }),
             react.createElement("g", { id: "Ellipse_34", "data-name": "Ellipse 34", transform: "translate(5.334 0) scale(1.1)", fill: "none", stroke: props.color, strokeWidth: "1" },
@@ -2945,7 +2990,7 @@ var heart = function (props) { return ([
     react.createElement("path", { key: "1_" + props.svgId, transform: 'scale(0.028) translate(20 45)', style: { fill: 'white', stroke: props.color }, strokeWidth: '60', d: "m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm0 0" }),
 ]); };
 var heartSolid = function (props) { return ([
-    react.createElement("path", { key: "1_" + props.svgId, transform: 'scale(0.028) translate(20 45)', style: { fill: props.color, stroke: props.color }, strokeWidth: '60', d: "m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm0 0" }),
+    react.createElement("path", { key: "1_" + props.svgId, transform: 'scale(0.028) translate(60 45)', style: { fill: props.color, stroke: props.color }, strokeWidth: '60', d: "m256 455.515625c-7.289062 0-14.316406-2.640625-19.792969-7.4375-20.683593-18.085937-40.625-35.082031-58.21875-50.074219l-.089843-.078125c-51.582032-43.957031-96.125-81.917969-127.117188-119.3125-34.644531-41.804687-50.78125-81.441406-50.78125-124.742187 0-42.070313 14.425781-80.882813 40.617188-109.292969 26.503906-28.746094 62.871093-44.578125 102.414062-44.578125 29.554688 0 56.621094 9.34375 80.445312 27.769531 12.023438 9.300781 22.921876 20.683594 32.523438 33.960938 9.605469-13.277344 20.5-24.660157 32.527344-33.960938 23.824218-18.425781 50.890625-27.769531 80.445312-27.769531 39.539063 0 75.910156 15.832031 102.414063 44.578125 26.191406 28.410156 40.613281 67.222656 40.613281 109.292969 0 43.300781-16.132812 82.9375-50.777344 124.738281-30.992187 37.398437-75.53125 75.355469-127.105468 119.308594-17.625 15.015625-37.597657 32.039062-58.328126 50.167969-5.472656 4.789062-12.503906 7.429687-19.789062 7.429687zm0 0" }),
 ]); };
 // const scenario = (props: SVGProps) => ([
 //     <defs key={`1_${props.svgId}`}>
@@ -3033,6 +3078,16 @@ var TYPE_ICON_DRAW_INDEX = {
     'heart': { className: 'heart', generator: heart },
     'heart-solid': { className: 'heart-solid', generator: heartSolid },
     'earth': { className: 'earth', generator: earth },
+    'phone': { className: 'phone', generator: phone },
+    'admin': { className: 'admin', generator: admin },
+    'autorun': { className: 'autorun', generator: autorun },
+    'address': { className: 'address', generator: address },
+    'mute': { className: 'mute', generator: mute },
+    'info': { className: 'info', generator: info },
+    'menu': { className: 'menu', generator: menu },
+    'microphone': { className: 'microphone', generator: microphone },
+    'password': { className: 'password', generator: password },
+    'reboot': { className: 'reboot', generator: reboot },
 };
 var Icon = /** @class */ (function (_super) {
     __extends(Icon, _super);
