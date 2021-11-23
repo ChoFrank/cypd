@@ -3,8 +3,8 @@
 Properties      | Type                                              | Default value     | Description
 ----------------|:--------------------------------------------------|:------------------|:----------------------
 className       | `string` \| `undefined`                           | `undefined`       | Programmer can use this property to defined specific CSS style.
-headers (*)     | `Array<string | ReactNode | undefined>`           |                   | Define each column of table.
-rows (*)        | `Array<Array<string | ReactNode | undefined>>`    |                   | Define each row of table.
+headers (*)     | `Array<string \| ReactNode \| undefined>`         |                   | Define each column of table.
+rows (*)        | `Array<Array<string \| ReactNode \| undefined>>`  |                   | Define each row of table.
 pagination      | `boolean` \| `undefined`                          | `undefined`       | Determine the table shows contents in different page or not. 
 rowLimit        | `number` \| `undefined`                           | `undefined`       | Determine how many rows can a page have, only works when `pagination` is not `undefined`
 headerStyle     | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of table's header***.
