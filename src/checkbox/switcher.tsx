@@ -78,7 +78,7 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
                     readOnly={readOnly}
                 />
                 {(typeof label === 'undefined' && type === 'hexigon') ? <div className='hexigon-wrapper'>
-                    <Icon type='hexigon-no' color={disabled?'rgb(200,200,200)':'rgb(129, 129, 129)'}/>
+                    <Icon type='hexigon-no' color={disabled?'rgb(200,200,200)':'rgb(255, 255, 255)'}/>
                     <Icon type='hexigon-yes' color={disabled?'rgb(200,200,200)':'#088aab'}/>
                 </div> : undefined }
                 {(typeof label === 'undefined' && type === 'heart') ? <div className='heart-wrapper'>

@@ -192,7 +192,7 @@ class TimePicker extends React.Component<Partial<TimePickerProps>> {
                 <Select className='sec' value={sec_v} onChange={this.onSecondChange} collapsed={!visible}>{
                     Array.from(Array(60).keys()).map(v => <Option key={Math.random()} value={v.toString()}>{v}</Option>)
                 }</Select>
-                <Icon type='clock' />
+                <Icon type='clock' color='gray'/>
             </div>
         );
     }

@@ -91,7 +91,7 @@ export default class Empty extends React.Component<Partial<EmptyProps>> {
                 <ellipse cx='47' cy='60' rx='27' ry='5' style={{ stroke: 'none', fill: 'rgba(170,170,170,0.5)' }} />
                 <path d='M22 45 32 30 62 30 72 45 57 45 55 50 39 50 37 45 Z' style={{ stroke: 'rgba(170,170,170,0.8)', fill: 'white', strokeLinejoin: 'round' }} />
                 <path d='M72 45 57 45 55 50 39 50 37 45 22 45 22 60 72 60 Z' style={{ stroke: 'rgba(170,170,170,0.8)', fill: 'rgb(238,238,238)', strokeLinejoin: 'round' }} />
-                <text x='47' y='85' style={{ fontFamily: 'Arial', fill: (textColor?textColor:'rgba(170,170,170,0.8)'), textAnchor: 'middle' }}>{text?text:'No Data'}</text>
+                <text x='47' y='85' style={{ fontFamily: 'Arial', fill: (textColor?textColor:'#FFFFFF'), textAnchor: 'middle' }}>{text?text:'No Data'}</text>
             </svg>
         </div>;
     }

@@ -42,7 +42,7 @@ const cross_point = (x11, y11, x12, y12, x21, y21, x22, y22) => {
 
 const icon_container = (type) => {
     return (<div className='icon_container' key={Math.random()}>
-        <Icon type={type} color='gray' onClick={() => { console.log('cross_point(6,1,9,15,1,6,15,9) :', cross_point(6, 1, 9, 15, 1, 6, 15, 9)); }} />
+        <Icon type={type} onClick={() => { console.log('cross_point(6,1,9,15,1,6,15,9) :', cross_point(6, 1, 9, 15, 1, 6, 15, 9)); }} />
         <div className='label'>{type}</div>
     </div>);
 }
@@ -65,12 +65,12 @@ class App extends React.Component {
         };
         this.openModal = () => { this.setState({ popup: true }); }
         this.closeModal = () => { this.setState({ popup: false }); }
-        this.testProgress = setInterval(() => {
-            if (this.state.progress < 100)
-                this.setState((prevState) => ({ progress: prevState.progress + 2 }));
-            else
-                clearInterval(this.testProgress);
-        }, 100);
+        // this.testProgress = setInterval(() => {
+        //     if (this.state.progress < 100)
+        //         this.setState((prevState) => ({ progress: prevState.progress + 2 }));
+        //     else
+        //         clearInterval(this.testProgress);
+        // }, 100);
         global.setTimeout(() => { this.setState({ label_test: 'APPOINT' }); }, 3000);
         this.onCheckTableItem = this.onCheckTableItem.bind(this);
     }
@@ -249,7 +249,7 @@ class App extends React.Component {
                             <h1 style={{ fontSize: '28px', paddingLeft: '80px', transform: 'translate(88px, -50px) rotate(-90deg)', height: '40px', lineHeight: '40px', margin: 0, color: 'white' }}>Layout.Sider</h1>
                         </Layout.Sider>
                         <Layout.Center>
-                            <Flat.Playground contextStyle={{ height: 'auto' }}>
+                            <Flat.Playground contextStyle={{ height: 'auto', paddingTop: '10px' }}>
                                 {table}
                                 <div className='empty_demo_wrapper'><Tooltip direction='top-left' fixedWidth={300} text='Return to main dashboard page where setup and configuration of the unit is performed.'><Empty /></Tooltip></div>
                                 <div className='empty_demo_wrapper'><Cone color='yellow' /></div>

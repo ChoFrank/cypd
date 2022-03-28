@@ -28,7 +28,7 @@ export default class Button extends React.Component<Partial<ButtonProps>> {
         const { type, icon, shape, iconColor, className, style, disabled, size, tooltip, tooltipDirection, tooltipFixedWidth, onClick } = this.props;
         let classString: string = 'cypd-button';
         let icon_node: React.ReactNode;
-        let icon_default_color = (type === 'default' || typeof type === 'undefined') ? 'gray' : 'white';
+        let icon_default_color = 'white';
 
         if (disabled) {
             classString += ' disabled';
