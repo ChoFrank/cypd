@@ -813,7 +813,6 @@
     /* background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20width%3D%2728px%27%20height%3D%2732px%27%20overflow%3D%27visible%27%3E%3Cpath%20d%3D%27M13%2014%2016%2010%2019%2014%20M13%2018%2016%2022%2019%2018%27%20stroke%3D%27rgb(0%2C131%2C158)%27%20fill%3D%27rgb(0%2C131%2C158)%27%20%2F%3E%3C%2Fsvg%3E"); */
     background-position: right;
     background-repeat: no-repeat;
-    background-color: #242424;
     border: 1px solid #81CCFF;
     box-shadow: 0px 0px 2px #81CCFF;
 }
@@ -1527,9 +1526,9 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-switchbutton-wrapper.has-label input:checked+.cypd-switchbutton::after {
-    background-color: #088aab;
+    background-color: #254a63;
     transform: translateX(calc(150% - 9px));
-    border: 1px solid #088aab;
+    border: 1px solid #254a63;
     transform: left 150ms;
 }
 
@@ -1543,7 +1542,7 @@ svg.cypd-icon.solid-right * {
 
 .cypd-switchbutton-wrapper.has-label .display-label>#on {
     font-size: 11px;
-    color: #088aab;
+    color: #254a63;
     opacity: 0;
 }
 
