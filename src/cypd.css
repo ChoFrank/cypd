@@ -2655,10 +2655,12 @@ button.react-calendar__century-view__decades__decade {
 }
 
 #g__cypd_notify_window .cypd-notify-container .content .title {
+    color: #000000;
     font-weight: bold;
 }
 
 #g__cypd_notify_window .cypd-notify-container .content .message {
+    color: #000000;
     margin-top: 5px;
     white-space: pre-wrap;
     word-wrap: break-word;
