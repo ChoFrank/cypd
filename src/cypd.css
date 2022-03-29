@@ -266,8 +266,17 @@
     background-color: #2D6F9C;
 }
 
+.cypd-layout .column.left:not(.visible) .cypd-navitem .cypd-navitem {
+    padding-left: 10px;
+    background-color: #2D6F9C;
+}
+
 .cypd-navitem .cypd-navitem:hover {
     background-color: transparent !important;
+}
+
+.cypd-layout .column.left:not(.visible) .cypd-navitem .cypd-navitem:hover {
+    background-color: #4c9fd6 !important;
 }
 
 .cypd-navitem>.icon {
@@ -691,7 +700,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background: #FFFFFFCC;
+    background: #525252cc;
     text-align: center;
     vertical-align: middle;
 }
