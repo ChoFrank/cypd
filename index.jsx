@@ -164,7 +164,7 @@ class App extends React.Component {
                 ></Input>
             </Form.Item>
             <Form.Item label='Gender'>
-                <Select value={this.state.gender} onChange={(v) => { this.setState({ gender: v }); }}>
+                <Select value={this.state.gender} onChange={(v) => { this.setState({ gender: v }); }} disabled>
                     <Option value='1'>Male</Option>
                     <Option value='2'>Female</Option>
                 </Select>
@@ -188,6 +188,7 @@ class App extends React.Component {
                     value={this.state.email}
                     placeholder="frank.cho@example.com"
                     onChange={(e) => { this.setState({ email: e.target.name }); }}
+                    disabled
                 ></Input>
             </Form.Item>
             <Form.Item label='Birthday'>
@@ -198,7 +199,7 @@ class App extends React.Component {
             </Form.Item>
             <Form.Item error='Test hint affect in only button formitem' style={{ justifyContent: 'flex-end' }}>
                 <Button type='danger'>Delete</Button>
-                <Button>Reset</Button>
+                <Button icon='update' disabled>Reset</Button>
                 <Button type='primary'>Save</Button>
             </Form.Item>
         </Form.Form>;
