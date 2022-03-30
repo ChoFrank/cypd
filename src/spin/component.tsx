@@ -30,7 +30,7 @@ export default class Spin extends React.Component<Partial<SpinProps>> {
         if (this.props.type === 'linear') {
             element = (
                 <div className={wrapperClass} style={this.props.style}>
-                    <div className='logo'><div className='c'/><div className='yp'/></div>
+                    <div className='logo'><div className='cyp3slash'/></div>
                     <div className='container'><div /><div /><div /><div /></div></div>
             );
         }

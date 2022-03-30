@@ -205,6 +205,7 @@ class App extends React.Component {
         </Form.Form>;
         return (
                 <Layout.Layout>
+                    <Spin type='linear' visible={true}/>
                     <Layout.Header>
                         <h1 style={{ fontSize: '24px', height: '40px', lineHeight: '40px', margin: 0, color: 'gray' }}>Layout.Header</h1>
                         <div
@@ -234,7 +235,6 @@ class App extends React.Component {
                     </Layout.Header>
                     <Layout.Navigation />
                     <Layout.Body>
-                        <Spin type='linear' visible={false} />
                         <Layout.Sider
                             visible={this.state.visible}
                             toggleTooltip={'This is Layout.Sider\'s toggler.'}
