@@ -126,16 +126,16 @@ class App extends React.Component {
             rowLimit={10}
             responsive='transform'
         />;
-        // const email_example = [
-        //     ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
-        //     ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
-        //     ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
-        //     ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
-        //     ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
-        //     ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
-        //     ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
-        //     ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
-        // ];
+        const email_example = [
+            ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
+            ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
+            ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
+            ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
+            ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
+            ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
+            ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
+            ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
+        ];
         // const table = <Table
         //     headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
         //     rows={email_example}
@@ -205,7 +205,7 @@ class App extends React.Component {
         </Form.Form>;
         return (
                 <Layout.Layout>
-                    <Spin type='linear' visible={true}/>
+                    <Spin type='linear' visible={false}/>
                     <Layout.Header>
                         <h1 style={{ fontSize: '24px', height: '40px', lineHeight: '40px', margin: 0, color: 'gray' }}>Layout.Header</h1>
                         <div
@@ -225,9 +225,9 @@ class App extends React.Component {
                             <Dropdown
                                 parent={<Icon type='earth' color='#008AAB' style={{ transform: 'scale(1.3)' }}/>}
                                 children={[
-                                    { label: 'Chinese', icon: { type: 'dashboard', color: '#008aab' } },
-                                    { label: 'English', icon: { type: 'scene', color: '#008aab' } },
-                                    { label: 'Japanese', icon: { type: 'calendar', color: '#008aab' } },
+                                    { label: 'Chinese', icon: { type: 'dashboard', color: '#FFFFFF' } },
+                                    { label: 'English', icon: { type: 'scene', color: '#FFFFFF' } },
+                                    { label: 'Japanese', icon: { type: 'calendar', color: '#FFFFFF' } },
                                 ]}
                                 style={{ marginRight: '20px' }}
                             />
@@ -259,7 +259,7 @@ class App extends React.Component {
                                 </div>
                                 <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='hexigon' />
                                 <SwitchButton style={{ transform: 'scale(1.3)' }} defaultChecked={this.state.list_draggable} onChange={(e) => { this.setState({ list_draggable: e.target.checked }); }} type='heart' />
-                                {/* <List draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} /> */}
+                                <List theme='dark' draggable={this.state.list_draggable} onAfterDrag={undefined} items={email_example.map(data => ({ label: data[0], index: data[0], description: data.slice(1).join(',') }))} />
                                 <Flat.Section title='Form Demo'>
                                     {form}
                                 </Flat.Section>

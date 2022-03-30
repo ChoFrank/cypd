@@ -2673,7 +2673,7 @@ button.react-calendar__century-view__decades__decade {
     right: 0;
     max-height: 0;
     opacity: 0;
-    background-color: #FFFFFF;
+    background-color: #242424;
     padding: 0px;
     box-shadow: 0px 0px 2px gray;
     z-index: 21;
@@ -2696,12 +2696,18 @@ button.react-calendar__century-view__decades__decade {
     justify-content: space-between;
     padding: 5px 10px 5px 10px;
     height: 32px;
-    color: #088aab;
     transition: background-color 150ms, color 150ms, transform 150ms;
 }
 
 .cypd-dropdown>.wrapper>.cypd-dropdown-item:hover {
-    background-color: #33a8c0;
+    background-color: #122c3d;
+}
+
+.cypd-dropdown>.wrapper>.cypd-dropdown-item .label {
+    color: #c2c2c2;
+}
+
+.cypd-dropdown>.wrapper>.cypd-dropdown-item:hover .label {
     color: #FFFFFF;
 }
 
@@ -2877,8 +2883,8 @@ html {
 .cypd-list>.cypd-listitem {
     position: relative;
     min-height: 50px;
-    border-bottom: 1px solid #FFFFFF;
-    background-color: #242424;
+    border-bottom: 1px solid #00839E;
+    background-color: white;
     opacity: 1;
     flex-shrink: 0;
     cursor: default;
@@ -2887,8 +2893,8 @@ html {
 }
 
 .cypd-list.dark>.cypd-listitem {
-    border-bottom: 1px solid #81CCFF;
-    background-color: #2D6F9C;
+    border-bottom: 1px solid white;
+    background-color: #122c3d;
 }
 
 .cypd-list>.cypd-listitem:nth-child(1) {
@@ -2909,19 +2915,19 @@ html {
 
 .cypd-list.draggable>.cypd-listitem.sortable-chosen {
     opacity: 0.5;
-    background-color: #2D6F9C;
+    background-color: rgb(216, 216, 216);
 }
 
 .cypd-list.dark.draggable>.cypd-listitem.sortable-chosen {
-    background-color: #81CCFF;
+    background-color: #122c3d;
 }
 
 .cypd-list.dragging>.cypd-listitem.hover-top:hover {
-    border-top: 2px solid #FFFFFF;
+    border-top: 2px solid #00839E;
 }
 
 .cypd-list.dragging>.cypd-listitem.hover-bottom:hover {
-    border-bottom: 2px solid #FFFFFF;
+    border-bottom: 2px solid #00839E;
 }
 
 .cypd-list>.cypd-listitem>.readmore-check {
@@ -2940,12 +2946,12 @@ html {
 }
 
 .cypd-list>.cypd-listitem>.shorten>.label {
-    color: #FFFFFF;
+    color: rgb(60, 60, 60);
     font-weight: bold;
 }
 
 .cypd-list.dark>.cypd-listitem>.shorten>.label {
-    color: #242424;
+    color: white;
 }
 
 .cypd-list>.cypd-listitem>.shorten>.decoration {
@@ -2964,21 +2970,21 @@ html {
     width: 40px;
     user-select: none;
     cursor: pointer;
-    color: #FFFFFF;
+    color: #33a8c0;
     font-size: 12px;
     transition: color 150ms;
 }
 
 .cypd-list.dark>.cypd-listitem>.shorten>.decoration>.readmore-label {
-    color: #2D6F9C;
+    color: rgb(226, 226, 226);
 }
 
 .cypd-list>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {
-    color: #FFFFFF;
+    color: #47bbd3;
 }
 
 .cypd-list.dark>.cypd-listitem>.shorten>.decoration>.readmore-label:hover {
-    color: #242424;
+    color: white;
 }
 
 .cypd-list>.cypd-listitem>.readmore-check~.detail {
@@ -2990,16 +2996,16 @@ html {
     text-indent: 40px;
     text-align: start;
     word-wrap: break-word;
-    color: #3C3C3C;
-    border-top: 1px solid #2D6F9C69;
+    color: rgb(60, 60, 60);
+    border-top: 1px solid rgba(128, 128, 128, 0.414);
     opacity: 0;
     padding: 0px;
     transition: opacity 150ms, padding 150ms, max-height 150ms linear 150ms;
 }
 
 .cypd-list.dark>.cypd-listitem>.readmore-check~.detail {
-    color: #242424;
-    border-top: 1px solid #6ACFD8;
+    color: white;
+    border-top: 1px solid rgb(255, 255, 255);
 }
 
 .cypd-list>.cypd-listitem>.readmore-check:checked~.detail {
