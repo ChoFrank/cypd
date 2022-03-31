@@ -82,8 +82,8 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
                     <Icon type='hexigon-yes' color={disabled?'rgb(200,200,200)':'#088aab'}/>
                 </div> : undefined }
                 {(typeof label === 'undefined' && type === 'heart') ? <div className='heart-wrapper'>
-                    <Icon type='heart' color={disabled?'rgb(200,200,200)':'#b92454'}/>
-                    <Icon type='heart-solid' color={disabled?'rgb(200,200,200)':'#b92454'}/>
+                    <Icon type='heart' color={disabled?'rgb(200,200,200)':'#FF0000'}/>
+                    <Icon type='heart-solid' color={disabled?'rgb(200,200,200)':'#FF0000'}/>
                 </div> : undefined }
                 <div className='cypd-switchbutton' style={{ display: (type === 'normal' || !type) ? undefined : 'none' }}>
                     {label ? <div className='display-label'>

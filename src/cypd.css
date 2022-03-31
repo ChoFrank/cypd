@@ -1146,15 +1146,15 @@ svg.cypd-icon.solid-right * {
 
 .cypd-button.danger {
     color: #FFFFFF;
-    background-color: #b92454;
+    background-color: #FF0000;
 }
 
 .cypd-button.danger:hover {
-    background-color: #d12b60;
+    background-color: #ff4343;
 }
 
 .cypd-button.danger:active {
-    background-color: #a01f48;
+    background-color: #c40000;
 }
 
 .cypd-button.default {
@@ -2295,7 +2295,7 @@ svg.cypd-icon.solid-right * {
 }
 
 .cypd-formitem-wrapper>.help {
-    color: #e65381;
+    color: #FF0000;
     position: absolute;
     right: 0;
     bottom: -20px;
@@ -2326,7 +2326,7 @@ svg.cypd-icon.solid-right * {
 .cypd-formitem-wrapper.error>.cypd-select-wrapper,
 .cypd-formitem-wrapper.error>.cypd-select-native-wrapper,
 .cypd-formitem-wrapper.error>.cypd-input {
-    border-color: #e65381;
+    border-color: #FF0000;
 }
 
 
