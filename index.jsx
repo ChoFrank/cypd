@@ -118,14 +118,14 @@ class App extends React.Component {
             [undefined, <Button type='primary' icon='import' tooltipDirection='bottom-left' tooltip={tooltip_sample} />, undefined, <Button icon='square-minus' type='danger' tooltipDirection='bottom-right' tooltip={tooltip_sample} />],
             [<Icon type='loading' />, <Slider max={10} min={-10} step={1} value={this.state.progress} onAfterChange={(v) => { this.setState({ progress: v }); }} />, <Button icon='cancel' shape='round' />, <Button icon='square-minus' type='danger' shape='round' />],
         ];
-        const table = <Table
-            headers={['1', '2', '3', '4']}
-            columnWidth={[ 300, 200, 200, 200 ]}
-            rows={rows}
-            pagination={true}
-            rowLimit={10}
-            responsive='transform'
-        />;
+        // const table = <Table
+        //     headers={['1', '2', '3', '4']}
+        //     columnWidth={[ 300, 200, 200, 200 ]}
+        //     rows={rows}
+        //     pagination={true}
+        //     rowLimit={10}
+        //     responsive='transform'
+        // />;
         const email_example = [
             ['David', 'Male', 'david.chang@example.com', '1987/5/31', '21', 'in 2nd grade'],
             ['Chris', 'Male', 'chris.lou@example.com', '1990/12/1', '20', 'in 1st grade'],
@@ -136,24 +136,24 @@ class App extends React.Component {
             ['Kenipher', 'Female', 'kenipher.kenway@example.com', '1993/7/9', '22', 'in 3rd grade'],
             ['Mary', 'Female', 'mary.su@example.com', '1983/10/22', '21', 'in 2nd grade'],
         ];
-        // const table = <Table
-        //     headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
-        //     rows={email_example}
-        //     pagination={true}
-        //     rowLimit={5}
-        //     responsive='transform'
-        //     shortenProps={{
-        //         layout: {
-        //             bottomLeft: 0,
-        //             topLeft: 5,
-        //             topRight: [1, 4, 3],
-        //             bottomRight: [2],
-        //         }
-        //     }}
-        //     checkable
-        //     checkList={Array.from(this.state.test_checklist)}
-        //     onCheck={this.onCheckTableItem}
-        // ></Table>;
+        const table = <Table
+            headers={['Name', 'Gender', 'Email', 'Birthday', 'Age', 'Grade']}
+            rows={email_example}
+            pagination={true}
+            rowLimit={5}
+            responsive='shorten'
+            shortenProps={{
+                layout: {
+                    bottomLeft: 0,
+                    topLeft: 5,
+                    topRight: [1, 4, 3],
+                    bottomRight: [2],
+                }
+            }}
+            checkable
+            checkList={Array.from(this.state.test_checklist)}
+            onCheck={this.onCheckTableItem}
+        ></Table>;
         const icondemo = icons.map(type => icon_container(type));
         const form = <Form.Form labelStyle={{ width: '130px' }}>
             <Form.Item label='Name' error='Name cannot be null'>

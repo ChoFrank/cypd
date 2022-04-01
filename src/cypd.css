@@ -449,11 +449,13 @@
 }
 
 .cypd-table-container.transform .table-wrapper tr:nth-child(1) td:nth-child(1),
+.cypd-table-container.shorten .table-wrapper tr:nth-child(1) td:nth-child(1),
 .cypd-table-container .table-wrapper thead>tr>th:nth-child(1) {
     border-top-left-radius: 3px;
 }
 
 .cypd-table-container.transform .table-wrapper tr:nth-child(1) td:last-child,
+.cypd-table-container.shorten .table-wrapper tr:nth-child(1) td:last-child,
 .cypd-table-container .table-wrapper thead>tr>th:last-child {
     border-top-right-radius: 3px;
 }
@@ -519,14 +521,20 @@
 
 .cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(1) {
     border: 1px solid #FFFFFF;
-    border-right: 0;
     order: 1;
 }
 
 .cypd-table-container .cypd-pagination-footer .cypd-button.primary:nth-child(2) {
     border: 1px solid #FFFFFF;
-    border-left: 0;
     order: 3;
+}
+
+.cypd-table-container:not(.transform):not(.shorten) .cypd-pagination-footer .cypd-button.primary:nth-child(1) {
+    border-right: 0;
+}
+
+.cypd-table-container:not(.transform):not(.shorten) .cypd-pagination-footer .cypd-button.primary:nth-child(2) {
+    border-left: 0;
 }
 
 .cypd-table-container .cypd-pagination-footer .cypd-button {
@@ -536,12 +544,6 @@
 .cypd-table-container:not(.no) .cypd-pagination-footer .cypd-button.default {
     display: none;
 }
-
-
-/* 
-.cypd-table-container .cypd-pagination-footer .cypd-button.default:hover {
-    border: 0.5px solid #81CCFF;
-} */
 
 .cypd-table-container .cypd-pagination-footer .cypd-button.default.focus {
     background-color: #2D6F9C;
