@@ -120,6 +120,7 @@
     width: 60px;
     cursor: pointer;
     user-select: none;
+    background-color: transparent;
 }
 
 #__cypd_sider_toggler_container .toggle>div:not(.cypd-tooltip-wrapper) {
@@ -170,6 +171,10 @@
     height: 100%;
     background-color: transparent;
     flex-grow: 1;
+}
+
+.cypd-layout .column.left.visible .column-wrapper {
+    background-color: #122c3d;
 }
 
 @media(max-width: 700px) {
@@ -237,7 +242,7 @@
     max-height: 3000px;
     opacity: 1;
     pointer-events: inherit;
-    background-color: #81CCFF;
+    background-color: #214e6d;
 }
 
 .cypd-layout .column.left:not(.visible) .cypd-navitem>ul {
@@ -263,12 +268,12 @@
 }
 
 .cypd-navitem:hover {
-    background-color: #2D6F9C;
+    background-color: #214e6d;
 }
 
 .cypd-layout .column.left:not(.visible) .cypd-navitem .cypd-navitem {
     padding-left: 10px;
-    background-color: #2D6F9C;
+    background-color: #122c3d;
 }
 
 .cypd-navitem .cypd-navitem:hover {
@@ -276,7 +281,7 @@
 }
 
 .cypd-layout .column.left:not(.visible) .cypd-navitem .cypd-navitem:hover {
-    background-color: #4c9fd6 !important;
+    background-color: #214e6d !important;
 }
 
 .cypd-navitem>.icon {
@@ -301,7 +306,7 @@
 
 .cypd-navitem.extend>.icon,
 .cypd-navitem.extend>.label {
-    background-color: #81CCFF;
+    background-color: #214e6d;
 }
 
 .cypd-navitem .cypd-navitem>.label {
@@ -322,7 +327,7 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    background-color: #e65381;
+    background-color: #FF0000;
     color: #FFFFFF;
 }
 

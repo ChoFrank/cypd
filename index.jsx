@@ -233,7 +233,6 @@ class App extends React.Component {
                             />
                         </div>
                     </Layout.Header>
-                    <Layout.Navigation />
                     <Layout.Body>
                         <Layout.Sider
                             visible={this.state.visible}
