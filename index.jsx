@@ -96,7 +96,8 @@ class App extends React.Component {
             'cyplogo', 'scissors', 'cancel',  'exit','import', 'download', 'upload', 'dashboard', 'device', 'update',
             'setting', 'scene', 'volumn', 'idea', 'scenario', 'move', 'stop', 'previous', 'next', 'forward',
             'backward', 'grid', 'pushpin', 'forbid', 'hexigon-no', 'hexigon-yes', 'revert', 'heart', 'heart-solid', 'earth',
-            'phone', 'admin', 'autorun', 'address', 'mute', 'info', 'menu', 'microphone', 'password', 'reboot',
+            'phone', 'admin', 'autorun', 'address', 'mute', 'info', 'menu', 'menu-extend', 'microphone', 'password',
+            'reboot', 'reorder',
         ];
         const sampleOptions = [
             <Option value='1' key={Math.random()}>Johnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</Option>,

@@ -165,6 +165,12 @@ const menu = (props: SVGProps) => ([
     </g>
 ]);
 
+const menuExtend = (props: SVGProps) => ([
+    <g id="Group_741" data-name="Group 741" transform="translate(0 3.5555) scale(0.5)" key={`1_${props.svgId}`} >
+        <path id="ic_toc_24px" d="M3,10.556H27.889V7H3Zm0,7.111H27.889V14.111H3Zm0,7.111H27.889V21.222H3Zm28.444,0H35V21.222H31.444ZM31.444,7v3.556H35V7Zm0,10.667H35V14.111H31.444Z" transform="translate(-3 -7)" style={{ fill: props.color, stroke: props.color }} />
+    </g>
+]);
+
 const cancel = (props: SVGProps) => ([
     <path d='M2 2 14 14 M14 2 2 14' style={{ stroke: props.color }} strokeWidth={3} key={`1_${props.svgId}`} fill='none' />,
 ]);
@@ -638,6 +644,10 @@ const heartSolid = (props: SVGProps) => ([
 //     <rect x="0" y="200" width="250" height="300" fill='url(#test3)' key={`4_${props.svgId}`} />,
 // ]);
 
+const reorder = (props: SVGProps) => ([
+    <path key={`1_${props.svgId}`} stroke={props.color} transform="translate(-1,0) scale(0.75)" d="M 12 2 L 9 5 L 15 5 L 12 2 z M 2 7 L 2 9 L 22 9 L 22 7 L 2 7 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 15 L 2 17 L 22 17 L 22 15 L 2 15 z M 9 19 L 12 22 L 15 19 L 9 19 z" />
+]);
+
 const TYPE_ICON_DRAW_INDEX: {
     [s: string]: {
         className: string,
@@ -711,9 +721,11 @@ const TYPE_ICON_DRAW_INDEX: {
     'mute': { className: 'mute', generator: mute },
     'info': { className: 'info', generator: info },
     'menu': { className: 'menu', generator: menu },
+    'menu-extend': { className: 'menu-extend', generator: menuExtend },
     'microphone': { className: 'microphone', generator: microphone },
     'password': { className: 'password', generator: password },
     'reboot': { className: 'reboot', generator: reboot },
+    'reorder': { className: 'reorder', generator: reorder },
 }
 
 export default class Icon extends React.Component<IconProps> {
