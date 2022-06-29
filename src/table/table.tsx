@@ -27,6 +27,7 @@ type TableProps = {
     bodyStyle?: React.CSSProperties,
     pagination?: boolean,
     rowLimit?: number,
+    defaultPage?: number,
     columnWidth?: Array<number>,
     responsive?: ResponsiveType,
     shortenProps?: ShortenProps,
@@ -53,7 +54,7 @@ export default class Table extends React.Component<TableProps> {
     needWidth?: number;
     constructor(props: TableProps) {
         super(props);
-        this.state = { page: 0, tempPage: '', mode: '', responsive: 'no' };
+        this.state = { page: this.default_page, tempPage: '', mode: '', responsive: 'no' };
     }
     componentDidMount() { 
         window.onresize = this.handleResize;
@@ -63,6 +64,13 @@ export default class Table extends React.Component<TableProps> {
     componentWillUnmount() {
         window.onresize = null;
         document.removeEventListener('transitionend', this.handleResize, false);
+    }
+    get default_page() {
+        const max_page = this.calculate_total_pages - 1;
+        let dest_page = (this.props.defaultPage) ? this.props.defaultPage : 0;
+        if (dest_page < 0) dest_page = this.calculate_total_pages + dest_page;
+        if (dest_page > max_page) dest_page = max_page;
+        return dest_page;
     }
     get calculate_total_pages() { return (this.props.rowLimit) ? Math.ceil(this.props.rows.length / this.props.rowLimit) : 1; }
     handleResize = () => {

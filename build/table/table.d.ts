@@ -15,6 +15,7 @@ declare type TableProps = {
     bodyStyle?: React.CSSProperties;
     pagination?: boolean;
     rowLimit?: number;
+    defaultPage?: number;
     columnWidth?: Array<number>;
     responsive?: ResponsiveType;
     shortenProps?: ShortenProps;
@@ -40,6 +41,7 @@ export default class Table extends React.Component<TableProps> {
     constructor(props: TableProps);
     componentDidMount(): void;
     componentWillUnmount(): void;
+    get default_page(): number;
     get calculate_total_pages(): number;
     handleResize: () => void;
     onPrevPage: () => void;

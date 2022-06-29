@@ -7,6 +7,7 @@ headers (*)     | `Array<string \| ReactNode \| undefined>`         |           
 rows (*)        | `Array<Array<string \| ReactNode \| undefined>>`  |                   | Define each row of table.
 pagination      | `boolean` \| `undefined`                          | `undefined`       | Determine the table shows contents in different page or not. 
 rowLimit        | `number` \| `undefined`                           | `undefined`       | Determine how many rows can a page have, only works when `pagination` is not `undefined`
+defaultPage		| `number` \| `undefined`							| `undefined`		| Determine default page of table pagination. A negative index can be used, indicating a page from the end of the pagination
 headerStyle     | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of table's header***.
 bodyStyle       | `React.CSSProperties` \| `undefined`              | `undefined`       | Programmer can use this property to defined inline CSS style ***of table's rows***.
 columnWidth     | `Array<number>` \| `undefined`                    | `undefined`       | Fix each column's width of the table.

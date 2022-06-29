@@ -3679,7 +3679,7 @@ var Table = /** @class */ (function (_super) {
                             react.createElement("div", { className: 'bottom left' }, row[shortenProps.layout.bottomLeft]),
                             react.createElement("div", { className: 'bottom right' }, shortenProps.layout.bottomRight.map(function (elem_no, elem_idx) { return (react.createElement("div", { key: "table-" + _this.id + "-shorten-row-" + idx + "-tr-e-" + elem_idx }, row[elem_no])); }))))))); }))) : react.createElement("tbody", null);
         };
-        _this.state = { page: 0, tempPage: '', mode: '', responsive: 'no' };
+        _this.state = { page: _this.default_page, tempPage: '', mode: '', responsive: 'no' };
         return _this;
     }
     Table.prototype.componentDidMount = function () {
@@ -3691,6 +3691,19 @@ var Table = /** @class */ (function (_super) {
         window.onresize = null;
         document.removeEventListener('transitionend', this.handleResize, false);
     };
+    Object.defineProperty(Table.prototype, "default_page", {
+        get: function () {
+            var max_page = this.calculate_total_pages - 1;
+            var dest_page = (this.props.defaultPage) ? this.props.defaultPage : 0;
+            if (dest_page < 0)
+                dest_page = this.calculate_total_pages + dest_page;
+            if (dest_page > max_page)
+                dest_page = max_page;
+            return dest_page;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Object.defineProperty(Table.prototype, "calculate_total_pages", {
         get: function () { return (this.props.rowLimit) ? Math.ceil(this.props.rows.length / this.props.rowLimit) : 1; },
         enumerable: false,
