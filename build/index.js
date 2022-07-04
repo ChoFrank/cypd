@@ -3607,6 +3607,21 @@ var Table = /** @class */ (function (_super) {
                 }
             }
         };
+        _this.handlePropsPage = function () {
+            var page = _this.props.page;
+            if (page) {
+                var max_page = _this.calculate_total_pages - 1;
+                //handle negative value
+                var dest_page = (page < 0) ? _this.calculate_total_pages + page : page;
+                //handle out of range
+                if (dest_page > max_page)
+                    _this.gotoPage(max_page);
+                else if (dest_page < 0)
+                    _this.gotoPage(0);
+                else
+                    _this.gotoPage(dest_page);
+            }
+        };
         _this.onPrevPage = function () {
             _this.setState(function (prevState) {
                 var dest_page = prevState.page - 1;
@@ -3679,31 +3694,25 @@ var Table = /** @class */ (function (_super) {
                             react.createElement("div", { className: 'bottom left' }, row[shortenProps.layout.bottomLeft]),
                             react.createElement("div", { className: 'bottom right' }, shortenProps.layout.bottomRight.map(function (elem_no, elem_idx) { return (react.createElement("div", { key: "table-" + _this.id + "-shorten-row-" + idx + "-tr-e-" + elem_idx }, row[elem_no])); }))))))); }))) : react.createElement("tbody", null);
         };
-        _this.state = { page: _this.default_page, tempPage: '', mode: '', responsive: 'no' };
+        _this.state = { page: 0, tempPage: '', mode: '', responsive: 'no' };
         return _this;
     }
     Table.prototype.componentDidMount = function () {
         window.onresize = this.handleResize;
         document.addEventListener('transitionend', this.handleResize, false);
         this.handleResize();
+        this.handlePropsPage();
     };
     Table.prototype.componentWillUnmount = function () {
         window.onresize = null;
         document.removeEventListener('transitionend', this.handleResize, false);
     };
-    Object.defineProperty(Table.prototype, "default_page", {
-        get: function () {
-            var max_page = this.calculate_total_pages - 1;
-            var dest_page = (this.props.defaultPage) ? this.props.defaultPage : 0;
-            if (dest_page < 0)
-                dest_page = this.calculate_total_pages + dest_page;
-            if (dest_page > max_page)
-                dest_page = max_page;
-            return dest_page;
-        },
-        enumerable: false,
-        configurable: true
-    });
+    Table.prototype.componentDidUpdate = function (prevProps, prevState) {
+        if (prevProps.page != this.props.page)
+            this.handlePropsPage();
+        if (prevState.page != this.state.page && this.props.onPageChange)
+            this.props.onPageChange(this.state.page);
+    };
     Object.defineProperty(Table.prototype, "calculate_total_pages", {
         get: function () { return (this.props.rowLimit) ? Math.ceil(this.props.rows.length / this.props.rowLimit) : 1; },
         enumerable: false,
@@ -3757,7 +3766,7 @@ var Table = /** @class */ (function (_super) {
             var goto_buttons = [];
             if (this.calculate_total_pages <= 5) {
                 goto_buttons = Array.from(Array(this.calculate_total_pages).keys()).map(function (pageno) {
-                    return react.createElement(Button, { size: 'small', key: "cypd-pagination-table-" + _this.id + "-goto-" + pageno, onClick: function () { _this.gotoPage(pageno); } }, pageno + 1);
+                    return react.createElement(Button, { size: 'small', key: "cypd-pagination-table-" + _this.id + "-goto-" + pageno, className: (pageno === page) ? 'focus' : undefined, onClick: function () { _this.gotoPage(pageno); } }, pageno + 1);
                 });
             }
             else {
