@@ -27,6 +27,8 @@ type TableProps = {
     bodyStyle?: React.CSSProperties,
     pagination?: boolean,
     rowLimit?: number,
+    page?: number,
+    onPageChange?: (page: number) => void,
     columnWidth?: Array<number>,
     responsive?: ResponsiveType,
     shortenProps?: ShortenProps,
@@ -59,10 +61,17 @@ export default class Table extends React.Component<TableProps> {
         window.onresize = this.handleResize;
         document.addEventListener('transitionend', this.handleResize, false);
         this.handleResize();
+        this.handlePropsPage();
     }
     componentWillUnmount() {
         window.onresize = null;
         document.removeEventListener('transitionend', this.handleResize, false);
+    }
+    componentDidUpdate(prevProps: TableProps, prevState: TableState) {
+        if (prevProps.page != this.props.page)
+            this.handlePropsPage();
+        if (prevState.page != this.state.page && this.props.onPageChange)
+            this.props.onPageChange(this.state.page);
     }
     get calculate_total_pages() { return (this.props.rowLimit) ? Math.ceil(this.props.rows.length / this.props.rowLimit) : 1; }
     handleResize = () => {
@@ -82,6 +91,21 @@ export default class Table extends React.Component<TableProps> {
                     this.setState({ responsive: 'no' });
                 }
             }
+        }
+    }
+    handlePropsPage = () => {
+        const { page } = this.props;
+        if (page) {
+            const max_page = this.calculate_total_pages - 1;
+            //handle negative value
+            const dest_page = (page < 0) ? this.calculate_total_pages + page : page;
+            //handle out of range
+            if (dest_page > max_page)
+                this.gotoPage(max_page);
+            else if (dest_page < 0)
+                this.gotoPage(0);
+            else
+                this.gotoPage(dest_page);
         }
     }
     onPrevPage = () => {
@@ -220,7 +244,7 @@ export default class Table extends React.Component<TableProps> {
             let goto_buttons = [];
             if (this.calculate_total_pages <= 5) {
                 goto_buttons = Array.from(Array(this.calculate_total_pages).keys()).map(pageno => {
-                    return <Button size='small' key={`cypd-pagination-table-${this.id}-goto-${pageno}`} onClick={() => { this.gotoPage(pageno); }}>{pageno+1}</Button>
+                    return <Button size='small' key={`cypd-pagination-table-${this.id}-goto-${pageno}`} className={(pageno === page)?'focus':undefined} onClick={() => { this.gotoPage(pageno); }}>{pageno+1}</Button>
                 });
             } else {
                 const start_pageno = ((page - 2) >= 0) ? (page - 2) : 0;
