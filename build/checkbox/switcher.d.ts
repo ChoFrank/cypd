@@ -20,6 +20,7 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
     onLabel: HTMLDivElement | null | undefined;
     offLabel: HTMLDivElement | null | undefined;
     constructor(props: any);
+    roundDown: (num?: number | undefined, decimal?: number) => number | undefined;
     testCalibrateLabel: () => void;
     componentDidMount(): void;
     componentDidUpdate(): void;

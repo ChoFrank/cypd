@@ -36018,6 +36018,13 @@ var SwitchButton = /** @class */ (function (_super) {
     __extends(SwitchButton, _super);
     function SwitchButton(props) {
         var _this = _super.call(this, props) || this;
+        _this.roundDown = function (num, decimal) {
+            if (decimal === void 0) { decimal = 1; }
+            if (typeof num === 'undefined')
+                return num;
+            else
+                return Math.floor((num + Number.EPSILON) * Math.pow(10, decimal)) / Math.pow(10, decimal);
+        };
         _this.testCalibrateLabel = function () {
             var calibrateMargin = _this.state.calibrateMargin;
             if (_this.onLabel && _this.offLabel) {
@@ -36026,7 +36033,7 @@ var SwitchButton = /** @class */ (function (_super) {
                 if (on_rect.width !== off_rect.width) {
                     var dist = Math.abs(on_rect.width - off_rect.width) + 5;
                     var sumwidth = on_rect.width + off_rect.width + dist;
-                    if (dist !== calibrateMargin) {
+                    if (_this.roundDown(dist, 3) !== _this.roundDown(calibrateMargin, 3)) {
                         var calcOff = -1 * ((sumwidth * 0.6 - off_rect.width) / 2 - 5);
                         var calcOn = ((sumwidth * 0.6 - on_rect.width) / 2 - 5);
                         _this.setState({ calibrateMargin: dist, calibrateTransformOn: calcOn, calibrateTransformOff: calcOff });
