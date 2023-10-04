@@ -29,6 +29,12 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
         super(props);
         this.state = {};
     }
+    roundDown = (num?: number, decimal: number = 1) => {
+        if (typeof num === 'undefined')
+            return num;
+        else
+            return Math.floor((num + Number.EPSILON) * Math.pow(10, decimal)) / Math.pow(10, decimal);
+    }
     testCalibrateLabel = () => {
         const { calibrateMargin } = this.state;
         if (this.onLabel && this.offLabel) {
@@ -37,7 +43,7 @@ export default class SwitchButton extends React.Component<Partial<SwitchButtonPr
             if (on_rect.width !== off_rect.width) {
                 const dist = Math.abs(on_rect.width - off_rect.width) + 5;
                 const sumwidth = on_rect.width + off_rect.width + dist;
-                if (dist !== calibrateMargin) {
+                if (this.roundDown(dist, 3) !== this.roundDown(calibrateMargin, 3)) {
                     const calcOff = -1 * ((sumwidth * 0.6 - off_rect.width) / 2 - 5);
                     const calcOn = ((sumwidth * 0.6 - on_rect.width) / 2 - 5);
                     this.setState({ calibrateMargin: dist, calibrateTransformOn: calcOn, calibrateTransformOff: calcOff });
